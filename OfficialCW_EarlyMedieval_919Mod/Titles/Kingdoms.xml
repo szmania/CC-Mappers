@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Titles>
+	<!--This is to assign MEN-AT-ARMS units based on title key and not owner culture-->
+	<!--Levies do not take part in this!!-->
+	
+	
+	<!--DEFAULT value does not work here, every unit must have a unit key-->
+	<!--title_key = key of the landed title-->
+	<Faction title_key="k_france" name= "France">
+		<General key="cha_fra_paladin_guardsmen"></General>
+		<Knights key="cha_fra_guardsmen"></Knights>
+		
+		<MenAtArm type="light_footmen" key="cha_fra_skirm"></MenAtArm>
+		<MenAtArm type="armored_footmen" key="cha_fra_mounted_swordsmen"></MenAtArm>
+		<MenAtArm type="pikemen_unit" key="cha_fra_mounted_spear"></MenAtArm>
+		<MenAtArm type="bowmen" key="cha_fra_mounted_archers"></MenAtArm>
+		<MenAtArm type="crossbowmen" key="cha_cel_pictish_crossbowmen"></MenAtArm>
+		<MenAtArm type="light_horsemen" key="cha_fra_horsemen"></MenAtArm>
+		<MenAtArm type="armored_horsemen" key="cha_fra_scola_knights"></MenAtArm>
+		<MenAtArm type="house_guard" key="cha_fra_palace_guard"></MenAtArm>
+		<MenAtArm type="teutonic_knights" key="cha_pap_guardsmen"></MenAtArm>
+
+		<MenAtArm type="accolade_maa_archers" key="cha_fra_mounted_archers"></MenAtArm>
+		<MenAtArm type="accolade_maa_lancers" key="cha_fra_scola_knights"></MenAtArm>
+		<MenAtArm type="accolade_maa_outriders" key="cha_fra_cheval_javeloz"></MenAtArm>
+		<MenAtArm type="accolade_maa_pikes" key="cha_fra_palace_guard"></MenAtArm>
+		<MenAtArm type="accolade_maa_skirmishers" key="cha_fra_sword"></MenAtArm>
+		<MenAtArm type="accolade_maa_vanguard" key="cha_fra_mounted_swordsmen"></MenAtArm>
+		<MenAtArm type="accolade_maa_crossbowmen" key="att_rom_elite_ballistarii"></MenAtArm>
+	</Faction>
+
+	<Faction title_key="k_jerusalem" name= "Kingdom of Jerusalem">
+		<General key="cha_fra_paladin_guardsmen"></General>
+		<Knights key="cha_fra_scola_knights"></Knights>
+		
+		<MenAtArm type="light_footmen" key="cha_mus_andalusian_skirm"></MenAtArm>
+		<MenAtArm type="armored_footmen" key="cha_fra_armoured_sword"></MenAtArm>
+		<MenAtArm type="pikemen_unit" key="cha_fra_mounted_spear"></MenAtArm>
+		<MenAtArm type="bowmen" key="cha_mus_armoured_archers"></MenAtArm>
+		<MenAtArm type="crossbowmen" key="cha_cel_pictish_crossbowmen"></MenAtArm>
+		<MenAtArm type="light_horsemen" key="cha_mus_berber_horsemen"></MenAtArm>
+		<MenAtArm type="armored_horsemen" key="cha_fra_scola_cav"></MenAtArm>
+		<MenAtArm type="house_guard" key="cha_fra_palace_guard"></MenAtArm>
+		<MenAtArm type="teutonic_knights" key="cha_pap_guardsmen"></MenAtArm>
+
+		<MenAtArm type="accolade_maa_archers" key="cha_fra_mounted_archers"></MenAtArm>
+		<MenAtArm type="accolade_maa_lancers" key="cha_fra_scola_knights"></MenAtArm>
+		<MenAtArm type="accolade_maa_outriders" key="cha_fra_horsemen"></MenAtArm>
+		<MenAtArm type="accolade_maa_pikes" key="cha_fra_palace_guard"></MenAtArm>
+		<MenAtArm type="accolade_maa_skirmishers" key="cha_fra_skirm"></MenAtArm>
+		<MenAtArm type="accolade_maa_vanguard" key="cha_fra_mounted_swordsmen"></MenAtArm>
+		<MenAtArm type="accolade_maa_crossbowmen" key="att_rom_elite_ballistarii"></MenAtArm>
+	</Faction>	
+
+	<Faction title_key="k_papal_state" name= "Papal States">
+		<General key="cha_gen_guard_cav"></General>
+		<Knights key="cha_gen_knights"></Knights>
+		
+		<MenAtArm type="light_footmen" key="cha_spa_skirm"></MenAtArm>
+		<MenAtArm type="armored_footmen" key="cha_pap_guardsmen"></MenAtArm>
+		<MenAtArm type="pikemen_unit" key="cha_gen_spear"></MenAtArm>
+		<MenAtArm type="bowmen" key="cha_gen_archers"></MenAtArm>
+		<MenAtArm type="crossbowmen" key="cha_cel_pictish_crossbowmen"></MenAtArm>
+		<MenAtArm type="light_horsemen" key="cha_gen_horsemen"></MenAtArm>
+		<MenAtArm type="armored_horsemen" key="cha_gen_noble_cav"></MenAtArm>
+		<MenAtArm type="house_guard" key="cha_pap_guardsmen"></MenAtArm>
+		<MenAtArm type="teutonic_knights" key="cha_pap_guardsmen"></MenAtArm>
+		
+		<MenAtArm type="accolade_maa_archers" key="cha_fra_mounted_archers"></MenAtArm>
+		<MenAtArm type="accolade_maa_lancers" key="cha_gen_knights"></MenAtArm>
+		<MenAtArm type="accolade_maa_outriders" key="cha_lom_horsemen"></MenAtArm>
+		<MenAtArm type="accolade_maa_pikes" key="cha_pap_guardsmen"></MenAtArm>
+		<MenAtArm type="accolade_maa_skirmishers" key="cha_lom_skirm"></MenAtArm>
+		<MenAtArm type="accolade_maa_vanguard" key="cha_pap_guardsmen"></MenAtArm>
+		<MenAtArm type="accolade_maa_crossbowmen" key="att_rom_elite_ballistarii"></MenAtArm>
+	</Faction>	
+
+	<Faction title_key="k_danelaw" name= "Danelaw">
+		<General key="cha_vik_warlords_companions"></General>
+		<Knights key="cha_eng_royal_thegns"></Knights>
+		
+		<MenAtArm type="light_footmen" key="cha_eng_fyrd_javelinmen"></MenAtArm>
+		<MenAtArm type="armored_footmen" key="cha_vik_sword_hirdmen"></MenAtArm>
+		<MenAtArm type="pikemen_unit" key="cha_eng_thegn_spearmen"></MenAtArm>
+		<MenAtArm type="bowmen" key="cha_eng_select_archers"></MenAtArm>
+		<MenAtArm type="crossbowmen" key="cha_cel_pictish_crossbowmen"></MenAtArm>
+		<MenAtArm type="light_horsemen" key="cha_eng_horsemen"></MenAtArm>
+		<MenAtArm type="armored_horsemen" key="cha_eng_royal_horsemen"></MenAtArm>
+		<MenAtArm type="house_guard" key="cha_eng_royal_companions"></MenAtArm>
+		<MenAtArm type="teutonic_knights" key="cha_vik_berserkers"></MenAtArm>
+		
+		<MenAtArm type="accolade_maa_archers" key="cha_vik_armoured_archers"></MenAtArm>
+		<MenAtArm type="accolade_maa_lancers" key="cha_sax_hearth_cav"></MenAtArm>
+		<MenAtArm type="accolade_maa_outriders" key="att_nor_nordic_horse_raiders"></MenAtArm>
+		<MenAtArm type="accolade_maa_pikes" key="att_nor_nordic_spear_masters"></MenAtArm>
+		<MenAtArm type="accolade_maa_skirmishers" key="cha_cel_axemen"></MenAtArm>
+		<MenAtArm type="accolade_maa_vanguard" key="cha_vik_berserkers"></MenAtArm>
+		<MenAtArm type="accolade_maa_crossbowmen" key="att_rom_elite_ballistarii"></MenAtArm>
+	</Faction>
+
+	<Faction title_key="k_daneland" name= "Daneland">
+		<General key="cha_vik_warlords_companions"></General>
+		<Knights key="cha_eng_royal_thegns"></Knights>
+		
+		<MenAtArm type="light_footmen" key="cha_eng_fyrd_javelinmen"></MenAtArm>
+		<MenAtArm type="armored_footmen" key="cha_vik_sword_hirdmen"></MenAtArm>
+		<MenAtArm type="pikemen_unit" key="cha_eng_thegn_spearmen"></MenAtArm>
+		<MenAtArm type="bowmen" key="cha_eng_select_archers"></MenAtArm>
+		<MenAtArm type="crossbowmen" key="cha_cel_pictish_crossbowmen"></MenAtArm>
+		<MenAtArm type="light_horsemen" key="cha_eng_horsemen"></MenAtArm>
+		<MenAtArm type="armored_horsemen" key="cha_eng_royal_horsemen"></MenAtArm>
+		<MenAtArm type="house_guard" key="cha_eng_royal_companions"></MenAtArm>
+		<MenAtArm type="teutonic_knights" key="cha_vik_berserkers"></MenAtArm>
+		
+		<MenAtArm type="accolade_maa_archers" key="cha_vik_armoured_archers"></MenAtArm>
+		<MenAtArm type="accolade_maa_lancers" key="cha_sax_hearth_cav"></MenAtArm>
+		<MenAtArm type="accolade_maa_outriders" key="att_nor_nordic_horse_raiders"></MenAtArm>
+		<MenAtArm type="accolade_maa_pikes" key="att_nor_nordic_spear_masters"></MenAtArm>
+		<MenAtArm type="accolade_maa_skirmishers" key="cha_cel_axemen"></MenAtArm>
+		<MenAtArm type="accolade_maa_vanguard" key="cha_vik_berserkers"></MenAtArm>
+		<MenAtArm type="accolade_maa_crossbowmen" key="att_rom_elite_ballistarii"></MenAtArm>
+	</Faction>
+	
+</Titles>

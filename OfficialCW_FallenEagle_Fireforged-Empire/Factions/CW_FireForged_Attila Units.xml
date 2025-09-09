@@ -1,0 +1,1234 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FactionsGroups>
+
+	<Faction name="Default">
+		<General key="att_rom_protectores_domestici"></General>
+		<Knights key="att_rom_comes"></Knights>
+		
+		<Levies porcentage="55" key="rex_praeventores" max="LEVY"></Levies>
+		<Levies porcentage="35" key="rex_rom_legionis_romanenses" max="LEVY"></Levies>
+		<Levies porcentage="10" key="rex_rom_legionis_mattiarii_iuniores" max="LEVY"></Levies>
+		
+		<MenAtArm type="light_footmen" key="rex_rom_auxiliarii_bructeri" max="INFANTRY"></MenAtArm>
+		<MenAtArm type="armored_footmen" key="rex_rom_legionis_valentinianenses" max="INFANTRY"></MenAtArm>
+		<MenAtArm type="pikemen_unit" key="rex_rom_legionis_armigeri_defensores_seniores" max="INFANTRY"></MenAtArm>
+		<MenAtArm type="bowmen" key="rex_rom_sagittarii_lecti" max="RANGED"></MenAtArm>
+		<MenAtArm type="crossbowmen" key="rex_rom_millites_ball" max="RANGED"></MenAtArm>
+		<MenAtArm type="light_horsemen" key="rex_rom_equites_scutarii" max="CAVALRY"></MenAtArm>
+		<MenAtArm type="armored_horsemen" key="rex_rom_comites_catafractarii_bucellarii_iuniores" max="CAVALRY"></MenAtArm>
+        <MenAtArm type="house_guard" key="att_rom_magister_militum" max="INFANTRY"></MenAtArm>		
+
+		<MenAtArm type="abudrar" key="rex_des_desert_levy" max="INFANTRY"></MenAtArm>			
+        <MenAtArm type="african_horse_archers" key="rex_des_desert_imazighen" max="CAVALRY"></MenAtArm>
+		<MenAtArm type="african_pikemen" key="rex_des_axum_masqal_sentinels"></MenAtArm>
+		<MenAtArm type="ufp_argyraspides" key="rex_rom_legionis_armigeri_defensores_seniores" max="INFANTRY"></MenAtArm>
+		<MenAtArm type="asawira" key="rex_east_armenian_ayrudzi_archers" max="CAVALRY"></MenAtArm>
+		<MenAtArm type="ufp_athenian_epilektoi" key="rex_rom_millites_mena" max="INFANTRY"></MenAtArm>
+		<MenAtArm type="bondi" key="rex_slav_ant_squad_levy" max="INFANTRY"></MenAtArm>
+		<MenAtArm type="bush_hunter" key="rex_arab_skirmishers_watlai" max="RANGED"></MenAtArm>
+		<MenAtArm type="tfe_maa_byz_archers" key="rex_rom_auxiliarii_sagittarii_orientales" max="RANGED"></MenAtArm>
+		<MenAtArm type="camel_horse_archers" key="rex_arab_badyia_camel" max="CAVALRY"></MenAtArm>
+	    <MenAtArm type="camel_rider" key="rex_des_axum_caravan_sentinels" max="CAVALRY"></MenAtArm>
+	    <MenAtArm type="cataphract" key="rex_rom_comites_catafractarii_bucellarii_seniores" max="CAVALRY"></MenAtArm>
+		<MenAtArm type="legion_cataphract" key="rex_rom_comites_catafractarii_bucellarii_seniores" max="CAVALRY"></MenAtArm>
+		<MenAtArm type="prae_cataphract" key="rex_rom_comites_catafractarii_bucellarii_seniores" max="CAVALRY"></MenAtArm>
+	    <MenAtArm type="chakar" key="rex_east_segestani" max="INFANTRY"></MenAtArm>
+	    <MenAtArm type="churls" key="rex_germ_band_spearmen" max="INFANTRY"></MenAtArm>
+        <MenAtArm type="cichiciquitzo" key="att_des_es_rumha_skirmishers" max="RANGED"></MenAtArm>
+	    <MenAtArm type="clibanarii" key="rex_rom_equites_sagittarii_com" max="CAVALRY"></MenAtArm>
+	    <MenAtArm type="comitatenses" key="rex_rom_legionis_italica" max="INFANTRY" ></MenAtArm>
+      	<MenAtArm type="ufp_cretan_archer" key="rex_east_arm_archers" max="RANGED"></MenAtArm>
+        <MenAtArm type="cymbrogi" key="rex_celt_scot_band_skirmishers" max="INFANTRY"></MenAtArm>
+	   	<MenAtArm type="daylami" key="rex_east_daylamites_infantry" max="INFANTRY"></MenAtArm>
+        <MenAtArm type="ufp_ethopian_war_elephant" key="att_est_armoured_indian_elephants" max="CAVALRY"></MenAtArm>
+		<MenAtArm type="guanche_warrior" key="rex_des_desert_fast_javelins" max="RANGED"></MenAtArm>
+        <MenAtArm type="guinea_warrior" key="rex_des_axum_levy" max="RANGED"></MenAtArm>
+        <MenAtArm type="tfe_maa_hippo_toxotai" key="rex_rom_equites_sagittarii_parthi" max="CAVALRY"></MenAtArm>
+		<MenAtArm type="horse_archers" key="rex_rom_equites_sagittarii_com" max="CAVALRY"></MenAtArm>
+        <MenAtArm type="horn_warrior" key="rex_des_axum_levy" max="RANGED"></MenAtArm>
+		<MenAtArm type="huscarl" key="rex_germ_ulfhednar" max="INFANTRY"></MenAtArm>
+		<MenAtArm type="illyrian_pirates_" key="rex_exculcatores" max="INFANTRY"></MenAtArm>
+	    <MenAtArm type="kamandaran" key="rex_east_arm_archers" max="RANGED"></MenAtArm>	
+        <MenAtArm type="khandayat" key="rex_hun_band_gadrauhteis_gepids" max="INFANTRY"></MenAtArm>
+	    <MenAtArm type="desert_hussar" key="rex_arab_himyar_cavalry" max="CAVALRY"></MenAtArm>
+		<MenAtArm type="landsknecht" key="rex_germ_band_spearmen_duget" max="INFANTRY"></MenAtArm> 
+        <MenAtArm type="legionaries" key="rex_rom_legionis_ioviani_iuniores" max="INFANTRY"></MenAtArm>        
+		<MenAtArm type="garudas" key="ave_hepht_sogd_warriors_chosen" max="INFANTRY"></MenAtArm>
+        <MenAtArm type="longbowmen" key="rex_germ_band_archers" max="RANGED" ></MenAtArm>
+	    <MenAtArm type="marc_hegion" key="rex_germ_brachiati_horsemen_franc" max="CAVALRY"></MenAtArm>
+	    <MenAtArm type="metsanvartija" key="rex_slav_squad_hunters" max="RANGED"></MenAtArm>
+	    <MenAtArm type="mountaineer" key="rex_germ_band_wigman" max="INFANTRY"></MenAtArm>
+        <MenAtArm type="mubarizun" key="rex_east_segestani" max="INFANTRY" ></MenAtArm>
+        <MenAtArm type="archers_of_the_nile" key="rex_des_axum_elite_kushite_archers" max="RANGED" ></MenAtArm>
+        <MenAtArm type="norman_cavalry" key="rex_sarm_nobles_warband" max="CAVALRY"></MenAtArm>  	   
+        <MenAtArm type="palatinae" key="rex_rom_legionis_ioviani_seniores" max="INFANTRY"></MenAtArm>
+        <MenAtArm type="pamir_tribesmen" key="rex_rom_legionis_palaestinorum" max="RANGED" ></MenAtArm>		
+        <MenAtArm type="tfe_maa_protostates" key="rex_rom_legionis_lanciarii_seniores" max="INFANTRY"></MenAtArm>	
+        <MenAtArm type="ufp_sacred_band_carthage" key="rex_des_desert_garama_sentinels" max="INFANTRY"></MenAtArm>
+	    <MenAtArm type="hussar" key="rex_arab_arabic_cavalry" max="CAVALRY"></MenAtArm>
+		<MenAtArm type="sahel_horsemen" key="rex_arab_arabic_cavalry" max="CAVALRY"></MenAtArm>
+		<MenAtArm type="savran" key="rex_east_sas_savaran_archers" max="CAVALRY"></MenAtArm> 
+		<MenAtArm type="servile_soldiers" key="rex_townsfolks_des" max="INFANTRY"></MenAtArm>
+	    <MenAtArm type="siberian_hunters" key="rex_slav_ant_band_archers" max="RANGED"></MenAtArm>
+		<MenAtArm type="ufp_spartan" key="rex_rom_legionis_lanciarii_honoriani_gallicani" max="INFANTRY"></MenAtArm>
+        <MenAtArm type="swahili_sailors" key="rex_des_axum_allied_defenders" max="INFANTRY"></MenAtArm>
+        <MenAtArm type="tennataerion" key="rex_ost_barb_bowmen_ishoda" max="RANGED"></MenAtArm>
+		<MenAtArm type="varangian_veterans" key="rex_slav_warlords_braves" max="RANGED"></MenAtArm>
+	    <MenAtArm type="vigmen" key="rex_slav_ant_band_archers" max="RANGED"></MenAtArm>     
+        <MenAtArm type="war_dogs" key="rex_germ_band_hunting_dogs" max="RANGED"></MenAtArm>
+		<MenAtArm type="war_elephant" key="att_est_indian_elephants" max="CAVALRY"></MenAtArm>
+		<MenAtArm type="zupin_warrior" key="rex_east_daylamites" max="INFANTRY"></MenAtArm>     
+		    
+		<MenAtArm type="accolade_maa_elephantiers" key="att_est_armoured_indian_elephants" max="CAVALRY"></MenAtArm>
+		<MenAtArm type="accolade_maa_horse_archers" key="rex_sarm_long_arrows_arcaragantes" max="CAVALRY"></MenAtArm>
+		<MenAtArm type="accolade_maa_camel_riders" key="att_est_camel_clibanarii" max="CAVALRY"></MenAtArm>
+		<MenAtArm type="accolade_maa_archers" key="rex_rom_sagittarii_lecti" max="RANGED"></MenAtArm>
+		<MenAtArm type="accolade_maa_crossbowmen" key="rex_rom_legionis_balistarii" max="RANGED"></MenAtArm>
+		<MenAtArm type="accolade_maa_lancers" key="rex_rom_comites_catafractarii_bucellarii_seniores" max="CAVALRY"></MenAtArm>
+		<MenAtArm type="accolade_maa_outriders" key="rex_rom_equites_sagittarii_com" max="CAVALRY"></MenAtArm>
+		<MenAtArm type="accolade_maa_pikes" key="rex_rom_legionis_lanciarii_seniores" max="INFANTRY"></MenAtArm>
+		<MenAtArm type="accolade_maa_skirmishers" key="rex_rom_legionis_mattiarii_seniores" max="RANGED"></MenAtArm>
+		<MenAtArm type="accolade_maa_vanguard" key="rex_rom_legionis_ioviani_seniores" max="INFANTRY"></MenAtArm>
+	</Faction>
+	
+<Faction name="Rome WRE">
+		<General key="att_rom_protectores_domestici"></General>
+		<Knights key="att_rom_comes"></Knights>
+		
+		<Levies porcentage="55" key="rex_praeventores"></Levies>
+		<Levies porcentage="35" key="rex_rom_legionis_romanenses"></Levies>
+		<Levies porcentage="10" key="rex_rom_legionis_mattiarii_iuniores"></Levies>
+		
+		<MenAtArm type="light_footmen" key="rex_rom_auxiliarii_bructeri"></MenAtArm>
+		<MenAtArm type="armored_footmen" key="rex_rom_legionis_valentinianenses"></MenAtArm>
+		<MenAtArm type="pikemen_unit" key="rex_rom_legionis_armigeri_defensores_seniores"></MenAtArm>
+		<MenAtArm type="bowmen" key="rex_rom_sagittarii_lecti"></MenAtArm>
+		<MenAtArm type="crossbowmen" key="rex_rom_millites_ball"></MenAtArm>
+		<MenAtArm type="light_horsemen" key="rex_rom_equites_scutarii"></MenAtArm>
+		<MenAtArm type="armored_horsemen" key="rex_rom_comites_catafractarii_bucellarii_iuniores"></MenAtArm>
+        <MenAtArm type="comitatenses" key="rex_rom_legionis_italica"></MenAtArm>
+		<MenAtArm type="palatinae" key="rex_rom_legionis_ioviani_seniores"></MenAtArm>
+        <MenAtArm type="legionaries" key="rex_rom_legionis_ioviani_iuniores"></MenAtArm>
+		<MenAtArm type="clibanarii" key="rex_rom_equites_sagittarii_com"></MenAtArm>
+		<MenAtArm type="war_dogs" key="rex_germ_band_hunting_dogs"></MenAtArm>
+        <MenAtArm type="house_guard" key="att_rom_magister_militum"></MenAtArm>
+		
+        <MenAtArm type="cataphract" key="rex_rom_comites_catafractarii_bucellarii_seniores"></MenAtArm>
+
+		<MenAtArm type="accolade_maa_archers" key="rex_rom_sagittarii_lecti"></MenAtArm>
+		<MenAtArm type="accolade_maa_crossbowmen" key="rex_rom_legionis_balistarii"></MenAtArm>
+		<MenAtArm type="accolade_maa_lancers" key="rex_rom_comites_catafractarii_bucellarii_seniores"></MenAtArm>
+		<MenAtArm type="accolade_maa_outriders" key="rex_rom_equites_sagittarii_com"></MenAtArm>
+		<MenAtArm type="accolade_maa_pikes" key="rex_rom_legionis_lanciarii_seniores"></MenAtArm>
+		<MenAtArm type="accolade_maa_skirmishers" key="rex_rom_legionis_mattiarii_seniores"></MenAtArm>
+		<MenAtArm type="accolade_maa_vanguard" key="rex_rom_legionis_ioviani_seniores"></MenAtArm>
+	</Faction>
+	
+	<Faction name="Rome RHAETIO">
+		<General key="att_rom_protectores_domestici"></General>
+		<Knights key="att_rom_comes"></Knights>
+		
+		<Levies porcentage="55" key="rex_praeventores"></Levies>
+		<Levies porcentage="35" key="rex_rom_legionis_romanenses"></Levies>
+		<Levies porcentage="10" key="rex_rom_legionis_mattiarii_iuniores"></Levies>
+		
+		<MenAtArm type="light_footmen" key="rex_rom_auxiliarii_marcomanni_iuniores"></MenAtArm>
+		<MenAtArm type="armored_footmen" key="rex_rom_legionis_flavia_constantia"></MenAtArm>
+		<MenAtArm type="pikemen_unit" key="rex_rom_legionis_armigeri_defensores_seniores"></MenAtArm>
+		<MenAtArm type="bowmen" key="rex_rom_sagittarii_lecti"></MenAtArm>
+		<MenAtArm type="crossbowmen" key="rex_rom_millites_ball"></MenAtArm>
+		<MenAtArm type="light_horsemen" key="rex_rom_equites_brachiati_iuniores"></MenAtArm>
+		<MenAtArm type="armored_horsemen" key="rex_rom_comites_catafractarii_bucellarii_iuniores"></MenAtArm>
+        <MenAtArm type="comitatenses" key="rex_rom_auxiliarii_raetobarii"></MenAtArm>
+		<MenAtArm type="palatinae" key="rex_rom_legionis_ioviani_seniores"></MenAtArm>
+        <MenAtArm type="legionaries" key="rex_rom_legionis_ioviani_iuniores"></MenAtArm>
+		<MenAtArm type="clibanarii" key="rex_rom_equites_sagittarii_com"></MenAtArm>
+		<MenAtArm type="war_dogs" key="rex_germ_band_hunting_dogs"></MenAtArm>
+        <MenAtArm type="house_guard" key="att_rom_magister_militum"></MenAtArm>
+				
+        <MenAtArm type="cataphract" key="rex_rom_comites_catafractarii_bucellarii_seniores"></MenAtArm>
+
+		<MenAtArm type="accolade_maa_archers" key="rex_rom_sagittarii_lecti"></MenAtArm>
+		<MenAtArm type="accolade_maa_crossbowmen" key="rex_rom_legionis_balistarii"></MenAtArm>
+		<MenAtArm type="accolade_maa_lancers" key="rex_rom_comites_catafractarii_bucellarii_seniores"></MenAtArm>
+		<MenAtArm type="accolade_maa_outriders" key="rex_rom_equites_sagittarii_com"></MenAtArm>
+		<MenAtArm type="accolade_maa_pikes" key="rex_rom_legionis_lanciarii_seniores"></MenAtArm>
+		<MenAtArm type="accolade_maa_skirmishers" key="rex_rom_legionis_mattiarii_seniores"></MenAtArm>
+		<MenAtArm type="accolade_maa_vanguard" key="rex_rom_legionis_ioviani_seniores"></MenAtArm>		
+	</Faction>
+	
+	<Faction name="Rome AFRO">
+		<General key="att_rom_protectores_domestici"></General>
+		<Knights key="att_rom_comes"></Knights>
+		
+		<Levies porcentage="55" key="rex_rom_legionis_aegyptiorum"></Levies>
+		<Levies porcentage="35" key="rex_rom_legionis_carthaginensis"></Levies>
+		<Levies porcentage="10" key="rex_rom_legionis_gaetulorum"></Levies>
+		
+		<MenAtArm type="light_footmen" key="rex_rom_legionis_armigeri_propugnatores_seniores"></MenAtArm>
+		<MenAtArm type="armored_footmen" key="rex_rom_legionis_martii"></MenAtArm>
+		<MenAtArm type="pikemen_unit" key="rex_rom_legionis_lanciarii_iuniores"></MenAtArm>
+		<MenAtArm type="bowmen" key="rex_rom_auxiliarii_mauri_seniores"></MenAtArm>
+		<MenAtArm type="crossbowmen" key="rex_rom_millites_ball"></MenAtArm>
+		<MenAtArm type="light_horsemen" key="rex_arab_arabic_dromedaries"></MenAtArm>
+		<MenAtArm type="armored_horsemen" key="rex_des_desert_guard"></MenAtArm> 
+        <MenAtArm type="comitatenses" key="rex_rom_legionis_iulia_alpina"></MenAtArm>
+		<MenAtArm type="palatinae" key="rex_rom_legionis_ioviani_seniores"></MenAtArm>
+        <MenAtArm type="legionaries" key="rex_rom_legionis_ioviani_iuniores"></MenAtArm>
+		<MenAtArm type="clibanarii" key="rex_rom_equites_mauri"></MenAtArm>
+		<MenAtArm type="war_dogs" key="rex_germ_band_hunting_dogs"></MenAtArm>
+        <MenAtArm type="house_guard" key="att_rom_magister_militum"></MenAtArm>
+				
+        <MenAtArm type="cataphract" key="rex_rom_comites_catafractarii_bucellarii_seniores"></MenAtArm>
+
+		<MenAtArm type="accolade_maa_archers" key="rex_rom_sagittarii_lecti"></MenAtArm>
+		<MenAtArm type="accolade_maa_crossbowmen" key="rex_rom_legionis_balistarii"></MenAtArm>
+		<MenAtArm type="accolade_maa_lancers" key="rex_rom_comites_catafractarii_bucellarii_seniores"></MenAtArm>
+		<MenAtArm type="accolade_maa_outriders" key="rex_rom_equites_sagittarii_com"></MenAtArm>
+		<MenAtArm type="accolade_maa_pikes" key="rex_rom_legionis_lanciarii_seniores"></MenAtArm>
+		<MenAtArm type="accolade_maa_skirmishers" key="rex_rom_legionis_mattiarii_seniores"></MenAtArm>
+		<MenAtArm type="accolade_maa_vanguard" key="rex_rom_legionis_ioviani_seniores"></MenAtArm>		
+	</Faction>
+	
+	<Faction name="Rome HISPANO">
+		<General key="att_rom_protectores_domestici"></General>
+		<Knights key="att_rom_comes"></Knights>
+		
+		<Levies porcentage="55" key="rex_praeventores"></Levies>
+		<Levies porcentage="35" key="rex_rom_legionis_hispanorum"></Levies>
+		<Levies porcentage="10" key="rex_rom_millites_maur"></Levies>
+		
+		<MenAtArm type="light_footmen" key="rex_rom_auxiliarii_brisigavi_iuniores"></MenAtArm>
+		<MenAtArm type="armored_footmen" key="rex_rom_auxiliarii_brachiati_seniores"></MenAtArm>
+		<MenAtArm type="pikemen_unit" key="rex_rom_legionis_armigeri_defensores_seniores"></MenAtArm>
+		<MenAtArm type="bowmen" key="rex_rom_sagittarii_lecti"></MenAtArm>
+		<MenAtArm type="crossbowmen" key="rex_rom_millites_ball"></MenAtArm>
+		<MenAtArm type="light_horsemen" key="rex_rom_equites_stablesiani"></MenAtArm>
+		<MenAtArm type="armored_horsemen" key="rex_rom_comites_catafractarii_bucellarii_iuniores"></MenAtArm>
+        <MenAtArm type="comitatenses" key="rex_rom_legionis_germaniciani_seniores"></MenAtArm>
+		<MenAtArm type="palatinae" key="rex_rom_legionis_ioviani_seniores"></MenAtArm>
+        <MenAtArm type="legionaries" key="rex_rom_legionis_ioviani_iuniores"></MenAtArm>
+		<MenAtArm type="clibanarii" key="rex_rom_equites_sagittarii_com"></MenAtArm>
+		<MenAtArm type="war_dogs" key="rex_germ_band_hunting_dogs"></MenAtArm>
+                
+        <MenAtArm type="cataphract" key="rex_rom_comites_catafractarii_bucellarii_seniores"></MenAtArm>
+
+		<MenAtArm type="accolade_maa_archers" key="rex_rom_sagittarii_lecti"></MenAtArm>
+		<MenAtArm type="accolade_maa_crossbowmen" key="rex_rom_legionis_balistarii"></MenAtArm>
+		<MenAtArm type="accolade_maa_lancers" key="rex_rom_comites_catafractarii_bucellarii_seniores"></MenAtArm>
+		<MenAtArm type="accolade_maa_outriders" key="rex_rom_equites_sagittarii_com"></MenAtArm>
+		<MenAtArm type="accolade_maa_pikes" key="rex_rom_legionis_lanciarii_seniores"></MenAtArm>
+		<MenAtArm type="accolade_maa_skirmishers" key="rex_rom_legionis_mattiarii_seniores"></MenAtArm>
+		<MenAtArm type="accolade_maa_vanguard" key="rex_rom_legionis_ioviani_seniores"></MenAtArm>
+		<MenAtArm type="house_guard" key="att_rom_magister_militum"></MenAtArm>
+	</Faction>
+	
+	<Faction name="Rome GALLO">
+		<General key="att_rom_protectores_domestici"></General>
+		<Knights key="att_rom_comes"></Knights>
+		
+		<Levies porcentage="55" key="rex_praeventores"></Levies>
+		<Levies porcentage="35" key="rex_rom_legionis_gallorum"></Levies>
+		<Levies porcentage="10" key="rex_rom_legionis_mattiarii_iuniores"></Levies> 
+		
+		<MenAtArm type="light_footmen" key="rex_rom_legionis_germaniciani_iuniores"></MenAtArm>
+		<MenAtArm type="armored_footmen" key="rex_rom_legionis_gemina"></MenAtArm>
+		<MenAtArm type="pikemen_unit" key="rex_rom_legionis_armigeri_defensores_seniores"></MenAtArm>
+		<MenAtArm type="bowmen" key="rex_rom_sagittarii_lecti"></MenAtArm>
+		<MenAtArm type="crossbowmen" key="rex_rom_millites_ball"></MenAtArm>
+		<MenAtArm type="light_horsemen" key="rex_rom_cuneus_scutariorum"></MenAtArm>
+		<MenAtArm type="armored_horsemen" key="rex_rom_comites_catafractarii_bucellarii_iuniores"></MenAtArm>
+        <MenAtArm type="comitatenses" key="rex_rom_auxiliarii_marcomanni_seniores"></MenAtArm>
+		<MenAtArm type="palatinae" key="rex_rom_legionis_ioviani_seniores"></MenAtArm>
+        <MenAtArm type="legionaries" key="rex_rom_legionis_ioviani_iuniores"></MenAtArm>
+		<MenAtArm type="clibanarii" key="rex_rom_equites_sagittarii_com"></MenAtArm>
+		<MenAtArm type="war_dogs" key="rex_germ_band_hunting_dogs"></MenAtArm>
+        <MenAtArm type="house_guard" key="att_rom_magister_militum"></MenAtArm>
+		
+        <MenAtArm type="cataphract" key="rex_rom_comites_catafractarii_bucellarii_seniores"></MenAtArm>
+
+		<MenAtArm type="accolade_maa_archers" key="rex_rom_sagittarii_lecti"></MenAtArm>
+		<MenAtArm type="accolade_maa_crossbowmen" key="rex_rom_legionis_balistarii"></MenAtArm>
+		<MenAtArm type="accolade_maa_lancers" key="rex_rom_comites_catafractarii_bucellarii_seniores"></MenAtArm>
+		<MenAtArm type="accolade_maa_outriders" key="rex_rom_equites_sagittarii_com"></MenAtArm>
+		<MenAtArm type="accolade_maa_pikes" key="rex_rom_legionis_lanciarii_seniores"></MenAtArm>
+		<MenAtArm type="accolade_maa_skirmishers" key="rex_rom_legionis_mattiarii_seniores"></MenAtArm>
+		<MenAtArm type="accolade_maa_vanguard" key="rex_rom_legionis_ioviani_seniores"></MenAtArm>		
+	</Faction>
+
+<Faction name="Rome EST">
+		<General key="att_rom_protectores_domestici"></General>
+		<Knights key="att_rom_comes"></Knights>
+		
+		<Levies porcentage="55" key="rex_rom_millites_daci"></Levies>
+		<Levies porcentage="35" key="rex_rom_legionis_scutata_civium_romanorum"></Levies>
+		<Levies porcentage="10" key="rex_exculcatores"></Levies>
+		
+		<MenAtArm type="light_footmen" key="rex_rom_legionis_gothorum"></MenAtArm>
+		<MenAtArm type="armored_footmen" key="rex_rom_legionis_flavia_victrix_constantina"></MenAtArm>
+		<MenAtArm type="pikemen_unit" key="rex_rom_legionis_lanciarii_seniores"></MenAtArm>
+		<MenAtArm type="bowmen" key="rex_rom_auxiliarii_sagittarii_orientales"></MenAtArm>
+		<MenAtArm type="crossbowmen" key="rex_rom_millites_ball"></MenAtArm>
+		<MenAtArm type="light_horsemen" key="rex_rom_equites_stablesiani_italiciani"></MenAtArm>
+		<MenAtArm type="armored_horsemen" key="rex_rom_equites_scutarii_orientales"></MenAtArm>
+        <MenAtArm type="comitatenses" key="rex_rom_legionis_diocletiana"></MenAtArm>
+		<MenAtArm type="palatinae" key="rex_rom_legionis_herculiani_seniores"></MenAtArm>
+        <MenAtArm type="legionaries" key="rex_rom_legionis_herculiani_iuniores"></MenAtArm>
+		<MenAtArm type="clibanarii" key="rex_rom_equites_sagittarii_com"></MenAtArm>
+		<MenAtArm type="war_dogs" key="rex_sarm_hunting_dogs"></MenAtArm>
+        <MenAtArm type="house_guard" key="rex_rom_legionis_lanciarii_honoriani_gallicani"></MenAtArm>
+		
+        <MenAtArm type="cataphract" key="att_rom_clibanarii"></MenAtArm>
+   
+		<MenAtArm type="accolade_maa_archers" key="rex_rom_auxiliarii_sagittarii_orientales"></MenAtArm>
+		<MenAtArm type="accolade_maa_crossbowmen" key="rex_rom_legionis_balistarii"></MenAtArm>
+		<MenAtArm type="accolade_maa_lancers" key="rex_rom_comites_alani"></MenAtArm>
+		<MenAtArm type="accolade_maa_outriders" key="rex_rom_equites_sagittarii_parthi"></MenAtArm>
+		<MenAtArm type="accolade_maa_pikes" key="rex_rom_legionis_lanciarii_honoriani_gallicani"></MenAtArm>
+		<MenAtArm type="accolade_maa_skirmishers" key="rex_rom_auxiliarii_mattiarii_honoriani_gallicani"></MenAtArm>
+		<MenAtArm type="accolade_maa_vanguard" key="rex_rom_legionis_herculiani_seniores"></MenAtArm>		
+	</Faction>
+	
+	<Faction name="Rome AEGYPTIAN">
+		<General key="att_rom_protectores_domestici"></General>
+		<Knights key="att_rom_comes"></Knights>
+		
+		<Levies porcentage="55" key="rex_rom_legionis_aegyptiorum"></Levies>
+		<Levies porcentage="35" key="rex_rom_legionis_carthaginensis"></Levies>
+		<Levies porcentage="10" key="rex_rom_legionis_gaetulorum"></Levies>
+		
+		<MenAtArm type="light_footmen" key="rex_rom_legionis_moesiaci_seniores"></MenAtArm>
+		<MenAtArm type="armored_footmen" key="rex_rom_legionis_scythae"></MenAtArm>
+		<MenAtArm type="pikemen_unit" key="rex_rom_legionis_lanciarii_seniores"></MenAtArm>
+		<MenAtArm type="bowmen" key="rex_rom_auxiliarii_mauri_seniores"></MenAtArm>
+		<MenAtArm type="crossbowmen" key="rex_rom_millites_ball"></MenAtArm>
+		<MenAtArm type="light_horsemen" key="rex_arab_arabic_dromedaries"></MenAtArm>
+		<MenAtArm type="armored_horsemen" key="rex_rom_comites_sagittarii_armenii"></MenAtArm>
+        <MenAtArm type="comitatenses" key="rex_rom_legionis_flavia_constantia_thebaeorum"></MenAtArm>
+		<MenAtArm type="palatinae" key="rex_rom_legionis_herculiani_seniores"></MenAtArm>
+        <MenAtArm type="legionaries" key="rex_rom_legionis_herculiani_iuniores"></MenAtArm>
+		<MenAtArm type="clibanarii" key="rex_rom_equites_mauri"></MenAtArm>
+		<MenAtArm type="war_dogs" key="rex_sarm_hunting_dogs"></MenAtArm>
+        <MenAtArm type="house_guard" key="rex_rom_legionis_lanciarii_honoriani_gallicani"></MenAtArm>
+		
+        <MenAtArm type="cataphract" key="att_rom_clibanarii"></MenAtArm>
+   
+		<MenAtArm type="accolade_maa_archers" key="rex_rom_auxiliarii_sagittarii_orientales"></MenAtArm>
+		<MenAtArm type="accolade_maa_crossbowmen" key="rex_rom_legionis_balistarii"></MenAtArm>
+		<MenAtArm type="accolade_maa_lancers" key="rex_rom_comites_alani"></MenAtArm>
+		<MenAtArm type="accolade_maa_outriders" key="rex_rom_equites_sagittarii_parthi"></MenAtArm>
+		<MenAtArm type="accolade_maa_pikes" key="rex_rom_legionis_lanciarii_honoriani_gallicani"></MenAtArm>
+		<MenAtArm type="accolade_maa_skirmishers" key="rex_rom_auxiliarii_mattiarii_honoriani_gallicani"></MenAtArm>
+		<MenAtArm type="accolade_maa_vanguard" key="rex_rom_legionis_herculiani_seniores"></MenAtArm>		
+	</Faction>
+	
+	<Faction name="Rome SYRIAN">
+		<General key="att_rom_protectores_domestici"></General>
+		<Knights key="att_rom_comes"></Knights>
+		
+		<Levies porcentage="55" key="rex_rom_legionis_palaestinorum"></Levies>
+		<Levies porcentage="35" key="rex_rom_legionis_euphratensis"></Levies>
+		<Levies porcentage="10" key="rex_rom_millites_scyt"></Levies>
+		
+		<MenAtArm type="light_footmen" key="rex_rom_legionis_moesiaci_seniores"></MenAtArm>
+		<MenAtArm type="armored_footmen" key="rex_rom_legionis_scythae"></MenAtArm>
+		<MenAtArm type="pikemen_unit" key="rex_rom_legionis_lanciarii_seniores"></MenAtArm>
+		<MenAtArm type="bowmen" key="rex_rom_auxiliarii_sagittarii_orientales"></MenAtArm>
+		<MenAtArm type="crossbowmen" key="rex_rom_millites_ball"></MenAtArm>
+		<MenAtArm type="light_horsemen" key="rex_rom_cuneus_catafractariorum"></MenAtArm>
+		<MenAtArm type="armored_horsemen" key="rex_rom_comites_sagittarii_armenii"></MenAtArm>
+        <MenAtArm type="comitatenses" key="rex_rom_legionis_scythica"></MenAtArm>
+		<MenAtArm type="palatinae" key="rex_rom_legionis_herculiani_seniores"></MenAtArm>
+        <MenAtArm type="legionaries" key="rex_rom_legionis_herculiani_iuniores"></MenAtArm>
+		<MenAtArm type="clibanarii" key="rex_rom_equites_sagittarii_parthi"></MenAtArm>
+		<MenAtArm type="war_dogs" key="rex_sarm_hunting_dogs"></MenAtArm>
+        <MenAtArm type="house_guard" key="rex_rom_legionis_lanciarii_honoriani_gallicani"></MenAtArm>
+		
+        <MenAtArm type="cataphract" key="att_rom_clibanarii"></MenAtArm>
+   
+		<MenAtArm type="accolade_maa_archers" key="rex_rom_auxiliarii_sagittarii_orientales"></MenAtArm>
+		<MenAtArm type="accolade_maa_crossbowmen" key="rex_rom_legionis_balistarii"></MenAtArm>
+		<MenAtArm type="accolade_maa_lancers" key="rex_rom_comites_alani"></MenAtArm>
+		<MenAtArm type="accolade_maa_outriders" key="rex_rom_equites_sagittarii_parthi"></MenAtArm>
+		<MenAtArm type="accolade_maa_pikes" key="rex_rom_legionis_lanciarii_honoriani_gallicani"></MenAtArm>
+		<MenAtArm type="accolade_maa_skirmishers" key="rex_rom_auxiliarii_mattiarii_honoriani_gallicani"></MenAtArm>
+		<MenAtArm type="accolade_maa_vanguard" key="rex_rom_legionis_herculiani_seniores"></MenAtArm>		
+	</Faction>
+	
+	<Faction name="Rome CAPPADOCIA">
+		<General key="att_rom_protectores_domestici"></General>
+		<Knights key="att_rom_comes"></Knights>
+		
+		<Levies porcentage="55" key="rex_east_caucasians"></Levies>
+		<Levies porcentage="35" key="rex_rom_legionis_transtigritani"></Levies>
+		<Levies porcentage="10" key="rex_rom_millites_scyt"></Levies>
+		
+		<MenAtArm type="light_footmen" key="rex_rom_legionis_moesiaci_seniores"></MenAtArm>
+		<MenAtArm type="armored_footmen" key="rex_rom_legionis_scythae"></MenAtArm>
+		<MenAtArm type="pikemen_unit" key="rex_rom_legionis_lanciarii_seniores"></MenAtArm>
+		<MenAtArm type="bowmen" key="rex_rom_auxiliarii_sagittarii_orientales"></MenAtArm>
+		<MenAtArm type="crossbowmen" key="rex_rom_millites_ball"></MenAtArm>
+		<MenAtArm type="light_horsemen" key="rex_rom_cuneus_catafractariorum"></MenAtArm>
+		<MenAtArm type="armored_horsemen" key="rex_rom_comites_sagittarii_armenii"></MenAtArm>
+        <MenAtArm type="comitatenses" key="rex_rom_legionis_armeniaca"></MenAtArm>
+		<MenAtArm type="palatinae" key="rex_rom_legionis_herculiani_seniores"></MenAtArm>
+        <MenAtArm type="legionaries" key="rex_rom_legionis_herculiani_iuniores"></MenAtArm>
+		<MenAtArm type="clibanarii" key="rex_rom_equites_sagittarii_parthi"></MenAtArm>
+		<MenAtArm type="war_dogs" key="rex_sarm_hunting_dogs"></MenAtArm>
+        <MenAtArm type="house_guard" key="rex_rom_legionis_lanciarii_honoriani_gallicani"></MenAtArm>
+		
+        <MenAtArm type="cataphract" key="att_rom_clibanarii"></MenAtArm>
+   
+		<MenAtArm type="accolade_maa_archers" key="rex_rom_auxiliarii_sagittarii_orientales"></MenAtArm>
+		<MenAtArm type="accolade_maa_crossbowmen" key="rex_rom_legionis_balistarii"></MenAtArm>
+		<MenAtArm type="accolade_maa_lancers" key="rex_rom_comites_alani"></MenAtArm>
+		<MenAtArm type="accolade_maa_outriders" key="rex_rom_equites_sagittarii_parthi"></MenAtArm>
+		<MenAtArm type="accolade_maa_pikes" key="rex_rom_legionis_lanciarii_honoriani_gallicani"></MenAtArm>
+		<MenAtArm type="accolade_maa_skirmishers" key="rex_rom_auxiliarii_mattiarii_honoriani_gallicani"></MenAtArm>
+		<MenAtArm type="accolade_maa_vanguard" key="rex_rom_legionis_herculiani_seniores"></MenAtArm>		
+	</Faction>
+	
+	<Faction name="Rome ILLYRO">
+		<General key="att_rom_protectores_domestici"></General>
+		<Knights key="att_rom_comes"></Knights>
+		
+		<Levies porcentage="55" key="rex_rom_millites_dalm"></Levies>
+		<Levies porcentage="35" key="rex_rom_legionis_dalmatarum"></Levies>
+		<Levies porcentage="10" key="rex_exculcatores"></Levies>
+		
+		<MenAtArm type="light_footmen" key="rex_rom_legionis_pannoniciani_iuniores"></MenAtArm>
+		<MenAtArm type="armored_footmen" key="rex_rom_legionis_daci"></MenAtArm>
+		<MenAtArm type="pikemen_unit" key="rex_rom_legionis_lanciarii_seniores"></MenAtArm>
+		<MenAtArm type="bowmen" key="rex_rom_auxiliarii_sagittarii_orientales"></MenAtArm>
+		<MenAtArm type="crossbowmen" key="rex_rom_millites_ball"></MenAtArm>
+		<MenAtArm type="light_horsemen" key="rex_rom_equites_scutarii_illyriciani"></MenAtArm>
+		<MenAtArm type="armored_horsemen" key="att_rom_scholae_palatinae"></MenAtArm>
+        <MenAtArm type="comitatenses" key="rex_rom_legionis_macedonica"></MenAtArm>
+		<MenAtArm type="palatinae" key="rex_rom_legionis_herculiani_seniores"></MenAtArm>
+        <MenAtArm type="legionaries" key="rex_rom_legionis_herculiani_iuniores"></MenAtArm>
+		<MenAtArm type="clibanarii" key="rex_rom_equites_sagittarii_com"></MenAtArm>
+		<MenAtArm type="war_dogs" key="rex_sarm_hunting_dogs"></MenAtArm>
+        <MenAtArm type="house_guard" key="rex_rom_legionis_lanciarii_honoriani_gallicani"></MenAtArm>
+		
+        <MenAtArm type="cataphract" key="rex_rom_comites_taifali"></MenAtArm>
+   
+		<MenAtArm type="accolade_maa_archers" key="rex_rom_auxiliarii_sagittarii_orientales"></MenAtArm>
+		<MenAtArm type="accolade_maa_crossbowmen" key="rex_rom_legionis_balistarii"></MenAtArm>
+		<MenAtArm type="accolade_maa_lancers" key="rex_rom_comites_alani"></MenAtArm>
+		<MenAtArm type="accolade_maa_outriders" key="rex_rom_equites_sagittarii_parthi"></MenAtArm>
+		<MenAtArm type="accolade_maa_pikes" key="rex_rom_legionis_lanciarii_honoriani_gallicani"></MenAtArm>
+		<MenAtArm type="accolade_maa_skirmishers" key="rex_rom_auxiliarii_mattiarii_honoriani_gallicani"></MenAtArm>
+		<MenAtArm type="accolade_maa_vanguard" key="rex_rom_legionis_herculiani_seniores"></MenAtArm>		
+	</Faction>
+	
+	<Faction name="Rome THRACIO">
+		<General key="att_rom_protectores_domestici"></General>
+		<Knights key="att_rom_comes"></Knights>
+		
+		<Levies porcentage="55" key="rex_rom_millites_daci"></Levies>
+		<Levies porcentage="35" key="rex_rom_legionis_thracorum"></Levies>
+		<Levies porcentage="10" key="rex_exculcatores"></Levies>
+		
+		<MenAtArm type="light_footmen" key="rex_rom_legionis_dacorum"></MenAtArm>
+		<MenAtArm type="armored_footmen" key="rex_rom_legionis_daci"></MenAtArm>
+		<MenAtArm type="pikemen_unit" key="rex_rom_legionis_lanciarii_seniores"></MenAtArm>
+		<MenAtArm type="bowmen" key="rex_rom_auxiliarii_sagittarii_orientales"></MenAtArm>
+		<MenAtArm type="crossbowmen" key="rex_rom_millites_ball"></MenAtArm>
+		<MenAtArm type="light_horsemen" key="rex_rom_equites_stablesiani_italiciani"></MenAtArm>
+		<MenAtArm type="armored_horsemen" key="att_rom_scholae_palatinae"></MenAtArm>
+        <MenAtArm type="comitatenses" key="rex_rom_legionis_macedonica"></MenAtArm>
+		<MenAtArm type="palatinae" key="rex_rom_legionis_herculiani_seniores"></MenAtArm>
+        <MenAtArm type="legionaries" key="rex_rom_legionis_herculiani_iuniores"></MenAtArm>
+		<MenAtArm type="clibanarii" key="rex_rom_equites_sagittarii_com"></MenAtArm>
+		<MenAtArm type="war_dogs" key="rex_sarm_hunting_dogs"></MenAtArm>
+        <MenAtArm type="house_guard" key="rex_rom_legionis_lanciarii_honoriani_gallicani"></MenAtArm>
+		
+        <MenAtArm type="cataphract" key="rex_rom_comites_sagittarii_armenii"></MenAtArm>
+   
+		<MenAtArm type="accolade_maa_archers" key="rex_rom_auxiliarii_sagittarii_orientales"></MenAtArm>
+		<MenAtArm type="accolade_maa_crossbowmen" key="rex_rom_legionis_balistarii"></MenAtArm>
+		<MenAtArm type="accolade_maa_lancers" key="rex_rom_comites_alani"></MenAtArm>
+		<MenAtArm type="accolade_maa_outriders" key="rex_rom_equites_sagittarii_parthi"></MenAtArm>
+		<MenAtArm type="accolade_maa_pikes" key="rex_rom_legionis_lanciarii_honoriani_gallicani"></MenAtArm>
+		<MenAtArm type="accolade_maa_skirmishers" key="rex_rom_auxiliarii_mattiarii_honoriani_gallicani"></MenAtArm>
+		<MenAtArm type="accolade_maa_vanguard" key="rex_rom_legionis_herculiani_seniores"></MenAtArm>		
+	</Faction>
+	
+	<Faction name="Rome GALATIAN">
+		<General key="att_rom_protectores_domestici"></General>
+		<Knights key="att_rom_comes"></Knights>
+		
+		<Levies porcentage="55" key="rex_rom_millites_moes"></Levies>
+		<Levies porcentage="35" key="rex_rom_legionis_galatarum"></Levies>
+		<Levies porcentage="10" key="rex_exculcatores"></Levies>
+		
+		<MenAtArm type="light_footmen" key="rex_rom_auxiliarii_tervingi"></MenAtArm>
+		<MenAtArm type="armored_footmen" key="rex_rom_legionis_honoriani_felices_gallicani"></MenAtArm>
+		<MenAtArm type="pikemen_unit" key="rex_rom_legionis_lanciarii_seniores"></MenAtArm>
+		<MenAtArm type="bowmen" key="rex_rom_auxiliarii_sagittarii_orientales"></MenAtArm>
+		<MenAtArm type="crossbowmen" key="rex_rom_millites_ball"></MenAtArm>
+		<MenAtArm type="light_horsemen" key="rex_rom_equites_batavi_iuniores"></MenAtArm>
+		<MenAtArm type="armored_horsemen" key="rex_rom_equites_batavi_seniores"></MenAtArm>
+        <MenAtArm type="comitatenses" key="rex_rom_legionis_scythica"></MenAtArm>
+		<MenAtArm type="palatinae" key="rex_rom_legionis_herculiani_seniores"></MenAtArm>
+        <MenAtArm type="legionaries" key="rex_rom_legionis_herculiani_iuniores"></MenAtArm>
+		<MenAtArm type="clibanarii" key="rex_rom_equites_sagittarii_parthi"></MenAtArm>
+		<MenAtArm type="war_dogs" key="rex_sarm_hunting_dogs"></MenAtArm>
+        <MenAtArm type="house_guard" key="rex_rom_legionis_lanciarii_honoriani_gallicani"></MenAtArm>
+		
+        <MenAtArm type="cataphract" key="rex_rom_comites_taifali"></MenAtArm>
+   
+		<MenAtArm type="accolade_maa_archers" key="rex_rom_auxiliarii_sagittarii_orientales"></MenAtArm>
+		<MenAtArm type="accolade_maa_crossbowmen" key="rex_rom_legionis_balistarii"></MenAtArm>
+		<MenAtArm type="accolade_maa_lancers" key="rex_rom_comites_alani"></MenAtArm>
+		<MenAtArm type="accolade_maa_outriders" key="rex_rom_equites_sagittarii_parthi"></MenAtArm>
+		<MenAtArm type="accolade_maa_pikes" key="rex_rom_legionis_lanciarii_honoriani_gallicani"></MenAtArm>
+		<MenAtArm type="accolade_maa_skirmishers" key="rex_rom_auxiliarii_mattiarii_honoriani_gallicani"></MenAtArm>
+		<MenAtArm type="accolade_maa_vanguard" key="rex_rom_legionis_herculiani_seniores"></MenAtArm>		
+	</Faction>
+	
+	<Faction name="Rome PONTIC">
+		<General key="att_rom_protectores_domestici"></General>
+		<Knights key="att_rom_comes"></Knights>
+		
+		<Levies porcentage="55" key="rex_rom_millites_daci"></Levies>
+		<Levies porcentage="35" key="rex_rom_legionis_pontinenses"></Levies>
+		<Levies porcentage="10" key="rex_exculcatores"></Levies>
+		
+		<MenAtArm type="light_footmen" key="rex_rom_auxiliarii_visi"></MenAtArm>
+		<MenAtArm type="armored_footmen" key="rex_rom_legionis_minervii"></MenAtArm>
+		<MenAtArm type="pikemen_unit" key="rex_rom_legionis_lanciarii_seniores"></MenAtArm>
+		<MenAtArm type="bowmen" key="rex_rom_auxiliarii_sagittarii_orientales"></MenAtArm>
+		<MenAtArm type="crossbowmen" key="rex_rom_millites_ball"></MenAtArm>
+		<MenAtArm type="light_horsemen" key="rex_rom_equites_stablesiani_africani"></MenAtArm>
+		<MenAtArm type="armored_horsemen" key="rex_rom_comites_sagittarii_armenii"></MenAtArm>
+        <MenAtArm type="comitatenses" key="rex_rom_legionis_parthica"></MenAtArm>
+		<MenAtArm type="palatinae" key="rex_rom_legionis_herculiani_seniores"></MenAtArm>
+        <MenAtArm type="legionaries" key="rex_rom_legionis_herculiani_iuniores"></MenAtArm>
+		<MenAtArm type="clibanarii" key="rex_rom_equites_sagittarii_parthi"></MenAtArm>
+		<MenAtArm type="war_dogs" key="rex_sarm_hunting_dogs"></MenAtArm>
+        <MenAtArm type="house_guard" key="rex_rom_legionis_lanciarii_honoriani_gallicani"></MenAtArm>
+		
+        <MenAtArm type="cataphract" key="rex_rom_comites_sagittarii_armenii"></MenAtArm>
+   
+		<MenAtArm type="accolade_maa_archers" key="rex_rom_auxiliarii_sagittarii_orientales"></MenAtArm>
+		<MenAtArm type="accolade_maa_crossbowmen" key="rex_rom_legionis_balistarii"></MenAtArm>
+		<MenAtArm type="accolade_maa_lancers" key="rex_rom_comites_alani"></MenAtArm>
+		<MenAtArm type="accolade_maa_outriders" key="rex_rom_equites_sagittarii_parthi"></MenAtArm>
+		<MenAtArm type="accolade_maa_pikes" key="rex_rom_legionis_lanciarii_honoriani_gallicani"></MenAtArm>
+		<MenAtArm type="accolade_maa_skirmishers" key="rex_rom_auxiliarii_mattiarii_honoriani_gallicani"></MenAtArm>
+		<MenAtArm type="accolade_maa_vanguard" key="rex_rom_legionis_herculiani_seniores"></MenAtArm>		
+	</Faction>
+	
+<Faction name="Rome BRITANO">
+		<General key="att_rom_protectores_domestici"></General>
+		<Knights key="att_rom_comes"></Knights>
+		
+		<Levies porcentage="55" key="rex_rom_millites_tung"></Levies>
+		<Levies porcentage="35" key="rex_rom_legionis_britonum"></Levies>
+		<Levies porcentage="10" key="rex_rom_sagittarii_nervii"></Levies>
+		
+		<MenAtArm type="light_footmen" key="rex_rom_legionis_britones_seniores"></MenAtArm>
+		<MenAtArm type="armored_footmen" key="rex_rom_auxiliarii_cornuti_iuniores"></MenAtArm>
+		<MenAtArm type="pikemen_unit" key="rex_rom_legionis_armigeri_defensores_seniores"></MenAtArm>
+		<MenAtArm type="bowmen" key="rex_rom_sagittarii_tungri"></MenAtArm>
+		<MenAtArm type="crossbowmen" key="att_rom_ballistarii"></MenAtArm>
+		<MenAtArm type="light_horsemen" key="rex_rom_equites_cornuti_iuniores"></MenAtArm>
+		<MenAtArm type="armored_horsemen" key="rex_rom_equites_cornuti_seniores"></MenAtArm>
+        <MenAtArm type="comitatenses" key="rex_rom_auxiliarii_celtae_seniores"></MenAtArm>
+		<MenAtArm type="palatinae" key="rex_rom_auxiliarii_victores_seniores"></MenAtArm>
+        <MenAtArm type="legionaries" key="rex_rom_auxiliarii_victores_seniores"></MenAtArm>
+		<MenAtArm type="clibanarii" key="rex_rom_equites_sagittarii_com"></MenAtArm>
+		<MenAtArm type="war_dogs" key="rex_celt_pict_hunting_dogs"></MenAtArm>
+        <MenAtArm type="house_guard" key="rex_rom_legionis_lanciarii_seniores"></MenAtArm>    
+		
+        <MenAtArm type="cataphract" key="rex_rom_comites_catafractarii_bucellarii_seniores"></MenAtArm>
+
+		<MenAtArm type="accolade_maa_archers" key="rex_rom_sagittarii_tungri"></MenAtArm>
+		<MenAtArm type="accolade_maa_crossbowmen" key="att_rom_ballistarii"></MenAtArm>
+		<MenAtArm type="accolade_maa_lancers" key="rex_rom_schola_scutariorum_clibanariorum"></MenAtArm>
+		<MenAtArm type="accolade_maa_outriders" key="rex_rom_equites_sagittarii_com"></MenAtArm>
+		<MenAtArm type="accolade_maa_pikes" key="rex_rom_legionis_lanciarii_seniores"></MenAtArm>
+		<MenAtArm type="accolade_maa_skirmishers" key="rex_rom_legionis_mattiarii_seniores"></MenAtArm>
+		<MenAtArm type="accolade_maa_vanguard" key="rex_rom_auxiliarii_victores_seniores"></MenAtArm>		
+	</Faction>
+	
+<Faction name="Franks">
+		<General key="rex_germ_gileibo"></General>
+		<Knights key="rex_germ_gisind"></Knights>
+		
+		<Levies porcentage="55" key="rex_germ_band_spearmen_franc"></Levies>
+		<Levies porcentage="35" key="rex_germ_band_swordsmen_franc"></Levies>
+		<Levies porcentage="10" key="rex_germ_band_archers"></Levies>
+		
+		<MenAtArm type="light_footmen" key="rex_germ_brachiati_franc"></MenAtArm>
+		<MenAtArm type="armored_footmen" key="rex_germ_ulfhednar"></MenAtArm>
+		<MenAtArm type="pikemen_unit" key="rex_germ_band_spearmen_duget_franc"></MenAtArm>
+		<MenAtArm type="bowmen" key="rex_germ_band_choice_archers"></MenAtArm>
+		<MenAtArm type="light_horsemen" key="rex_germ_shield_bearers_franc"></MenAtArm>
+		<MenAtArm type="armored_horsemen" key="rex_germ_brachiati_horsemen_franc"></MenAtArm>
+        <MenAtArm type="war_dogs" key="rex_germ_band_hunting_dogs"></MenAtArm>
+        <MenAtArm type="house_guard" key="rex_germ_ulfhednar"></MenAtArm>
+		
+		<MenAtArm type="accolade_maa_archers" key="rex_germ_band_choice_archers"></MenAtArm>
+		<MenAtArm type="accolade_maa_crossbowmen" key="att_merc_rom_ballistarii"></MenAtArm>
+		<MenAtArm type="accolade_maa_lancers" key="rex_germ_gisind"></MenAtArm>
+		<MenAtArm type="accolade_maa_outriders" key="rex_goth_band_aihvamanne_bugjane"></MenAtArm>
+		<MenAtArm type="accolade_maa_pikes" key="rex_germ_band_spearmen_duget_franc"></MenAtArm>
+		<MenAtArm type="accolade_maa_skirmishers" key="rex_germ_band_archers"></MenAtArm>
+		<MenAtArm type="accolade_maa_vanguard" key="rex_germ_band_wigman_franc"></MenAtArm>		
+	</Faction>
+	
+<Faction name="Saxons">
+		<General key="rex_germ_gileibo_g"></General>
+		<Knights key="rex_germ_gisind"></Knights>
+		
+		<Levies porcentage="55" key="rex_germ_band_defenders"></Levies>
+		<Levies porcentage="35" key="rex_germ_band_raiders_sax"></Levies>
+		<Levies porcentage="10" key="rex_germ_hansa_bow"></Levies>
+		
+		<MenAtArm type="light_footmen" key="rex_germ_brachiati_saxons"></MenAtArm>
+		<MenAtArm type="armored_footmen" key="rex_germ_ulfhednar"></MenAtArm>
+		<MenAtArm type="pikemen_unit" key="rex_germ_band_pikemen"></MenAtArm>
+		<MenAtArm type="bowmen" key="rex_germ_band_archers"></MenAtArm>
+		<MenAtArm type="light_horsemen" key="rex_germ_shield_bearers"></MenAtArm>
+		<MenAtArm type="armored_horsemen" key="rex_germ_gisind"></MenAtArm>
+        <MenAtArm type="war_dogs" key="rex_germ_band_hunting_dogs"></MenAtArm>
+        <MenAtArm type="house_guard" key="rex_germ_ulfhednar"></MenAtArm>
+		
+        <MenAtArm type="churls" key="rex_germ_band_defenders_fris"></MenAtArm>
+
+		<MenAtArm type="accolade_maa_archers" key="rex_germ_band_archers"></MenAtArm>
+		<MenAtArm type="accolade_maa_crossbowmen" key="att_merc_rom_ballistarii"></MenAtArm>
+		<MenAtArm type="accolade_maa_lancers" key="rex_germ_gisind"></MenAtArm>
+		<MenAtArm type="accolade_maa_outriders" key="rex_sarm_long_arrows_arcaragantes"></MenAtArm>
+		<MenAtArm type="accolade_maa_pikes" key="rex_germ_band_spearmen_duget"></MenAtArm>
+		<MenAtArm type="accolade_maa_skirmishers" key="rex_germ_hansa_bow"></MenAtArm>
+		<MenAtArm type="accolade_maa_vanguard" key="rex_germ_band_crushers"></MenAtArm>		
+	</Faction>
+	
+<Faction name="Langobards">
+		<General key="rex_germ_gileibo_g"></General>
+		<Knights key="rex_germ_gisind"></Knights>
+		
+		<Levies porcentage="55" key="rex_germ_band_defenders"></Levies>
+		<Levies porcentage="35" key="rex_germ_band_wigman_sueb"></Levies>
+		<Levies porcentage="10" key="rex_germ_hansa_bow"></Levies>
+		
+		<MenAtArm type="light_footmen" key="rex_germ_band_swordsmen_marc"></MenAtArm>
+		<MenAtArm type="armored_footmen" key="rex_germ_ulfhednar"></MenAtArm>
+		<MenAtArm type="pikemen_unit" key="rex_germ_band_pikemen"></MenAtArm>
+		<MenAtArm type="bowmen" key="rex_germ_band_archers"></MenAtArm>
+		<MenAtArm type="light_horsemen" key="rex_germ_shield_bearers"></MenAtArm>
+		<MenAtArm type="armored_horsemen" key="rex_germ_brachiati_horsemen"></MenAtArm>
+        <MenAtArm type="war_dogs" key="rex_germ_band_hunting_dogs"></MenAtArm>
+        <MenAtArm type="house_guard" key="rex_germ_ulfhednar"></MenAtArm>
+		
+		<MenAtArm type="accolade_maa_archers" key="rex_germ_band_archers"></MenAtArm>
+		<MenAtArm type="accolade_maa_crossbowmen" key="att_merc_rom_ballistarii"></MenAtArm>
+		<MenAtArm type="accolade_maa_lancers" key="rex_germ_gisind"></MenAtArm>
+		<MenAtArm type="accolade_maa_outriders" key="rex_sarm_long_arrows_arcaragantes"></MenAtArm>
+		<MenAtArm type="accolade_maa_pikes" key="rex_germ_band_spearmen_duget"></MenAtArm>
+		<MenAtArm type="accolade_maa_skirmishers" key="rex_germ_hansa_bow"></MenAtArm>
+		<MenAtArm type="accolade_maa_vanguard" key="rex_germ_band_raiders_lang"></MenAtArm>		
+	</Faction>
+	
+<Faction name="Suebians">
+		<General key="rex_germ_gileibo_g"></General>
+		<Knights key="rex_germ_gisind"></Knights>
+		
+		<Levies porcentage="55" key="rex_germ_band_defenders_sueb"></Levies>
+		<Levies porcentage="35" key="rex_slav_ven_band_svinfylkings"></Levies>
+		<Levies porcentage="10" key="rex_germ_hansa_bow"></Levies>
+		
+		<MenAtArm type="light_footmen" key="rex_germ_einherjar"></MenAtArm>
+		<MenAtArm type="armored_footmen" key="rex_germ_ulfhednar"></MenAtArm>
+		<MenAtArm type="pikemen_unit" key="rex_germ_band_pikemen"></MenAtArm>
+		<MenAtArm type="bowmen" key="rex_germ_band_archers"></MenAtArm>
+		<MenAtArm type="light_horsemen" key="rex_germ_shield_bearers"></MenAtArm>
+		<MenAtArm type="armored_horsemen" key="rex_germ_brachiati_horsemen"></MenAtArm>
+        <MenAtArm type="war_dogs" key="rex_germ_band_hunting_dogs"></MenAtArm>
+        <MenAtArm type="house_guard" key="rex_germ_ulfhednar"></MenAtArm>
+		
+		<MenAtArm type="accolade_maa_archers" key="rex_germ_band_archers"></MenAtArm>
+		<MenAtArm type="accolade_maa_crossbowmen" key="att_merc_rom_ballistarii"></MenAtArm>
+		<MenAtArm type="accolade_maa_lancers" key="rex_germ_gisind"></MenAtArm>
+		<MenAtArm type="accolade_maa_outriders" key="rex_sarm_long_arrows_arcaragantes"></MenAtArm>
+		<MenAtArm type="accolade_maa_pikes" key="rex_germ_band_spearmen_duget"></MenAtArm>
+		<MenAtArm type="accolade_maa_skirmishers" key="rex_germ_hansa_bow"></MenAtArm>
+		<MenAtArm type="accolade_maa_vanguard" key="rex_slav_ven_band_svinfylkings"></MenAtArm>		
+	</Faction>
+	
+<Faction name="Alamans">
+		<General key="rex_germ_gileibo_g"></General>
+		<Knights key="rex_germ_gisind"></Knights>
+		
+		<Levies porcentage="55" key="rex_germ_band_defenders_sueb"></Levies>
+		<Levies porcentage="35" key="rex_germ_band_raiders_sueb"></Levies>
+		<Levies porcentage="10" key="rex_germ_hansa_bow"></Levies>
+		
+		<MenAtArm type="light_footmen" key="rex_germ_band_wigman_sueb"></MenAtArm>
+		<MenAtArm type="armored_footmen" key="rex_germ_ulfhednar"></MenAtArm>
+		<MenAtArm type="pikemen_unit" key="rex_germ_band_spearmen_sueb"></MenAtArm>
+		<MenAtArm type="bowmen" key="rex_germ_band_archers"></MenAtArm>
+		<MenAtArm type="light_horsemen" key="rex_germ_shield_bearers"></MenAtArm>
+		<MenAtArm type="armored_horsemen" key="rex_germ_brachiati_horsemen"></MenAtArm>
+        <MenAtArm type="war_dogs" key="rex_germ_band_hunting_dogs"></MenAtArm>
+        <MenAtArm type="house_guard" key="rex_germ_ulfhednar"></MenAtArm>
+		
+		<MenAtArm type="accolade_maa_archers" key="rex_germ_band_archers"></MenAtArm>
+		<MenAtArm type="accolade_maa_crossbowmen" key="att_merc_rom_ballistarii"></MenAtArm>
+		<MenAtArm type="accolade_maa_lancers" key="rex_germ_gisind"></MenAtArm>
+		<MenAtArm type="accolade_maa_outriders" key="rex_sarm_long_arrows_arcaragantes"></MenAtArm>
+		<MenAtArm type="accolade_maa_pikes" key="rex_germ_band_spearmen_duget"></MenAtArm>
+		<MenAtArm type="accolade_maa_skirmishers" key="rex_germ_hansa_bow"></MenAtArm>
+		<MenAtArm type="accolade_maa_vanguard" key="rex_slav_ven_band_svinfylkings"></MenAtArm>		
+	</Faction>
+	
+<Faction name="Burgonde">
+		<General key="rex_germ_gileibo_g"></General>
+		<Knights key="rex_germ_gisind"></Knights>
+		
+		<Levies porcentage="55" key="rex_germ_band_defenders_iuti"></Levies>
+		<Levies porcentage="35" key="rex_germ_band_raiders_burg"></Levies>
+		<Levies porcentage="10" key="rex_germ_hansa_bow"></Levies>
+		
+		<MenAtArm type="light_footmen" key="rex_germ_band_swordsmen_duget"></MenAtArm>
+		<MenAtArm type="armored_footmen" key="rex_germ_ulfhednar"></MenAtArm>
+		<MenAtArm type="pikemen_unit" key="rex_germ_band_pikemen"></MenAtArm>
+		<MenAtArm type="bowmen" key="rex_germ_band_archers"></MenAtArm>
+		<MenAtArm type="light_horsemen" key="rex_germ_shield_bearers_franc"></MenAtArm>
+		<MenAtArm type="armored_horsemen" key="rex_germ_brachiati_horsemen"></MenAtArm>
+        <MenAtArm type="war_dogs" key="rex_germ_band_hunting_dogs"></MenAtArm>
+        <MenAtArm type="house_guard" key="rex_germ_ulfhednar"></MenAtArm>
+		
+		<MenAtArm type="accolade_maa_archers" key="rex_germ_band_archers"></MenAtArm>
+		<MenAtArm type="accolade_maa_crossbowmen" key="att_merc_rom_ballistarii"></MenAtArm>
+		<MenAtArm type="accolade_maa_lancers" key="rex_germ_gisind"></MenAtArm>
+		<MenAtArm type="accolade_maa_outriders" key="rex_sarm_long_arrows_arcaragantes"></MenAtArm>
+		<MenAtArm type="accolade_maa_pikes" key="rex_germ_band_spearmen_duget"></MenAtArm>
+		<MenAtArm type="accolade_maa_skirmishers" key="rex_germ_hansa_bow"></MenAtArm>
+		<MenAtArm type="accolade_maa_vanguard" key="rex_germ_band_wigman_sig"></MenAtArm>		
+	</Faction>
+	
+<Faction name="Alans">
+		<General key="rex_sarm_convex_headed"></General>
+		<Knights key="rex_sarm_comrades"></Knights>
+		
+		<Levies porcentage="55" key="rex_sarm_foot_tribesmen"></Levies>
+		<Levies porcentage="35" key="rex_sarm_swords_limicantes"></Levies>
+		<Levies porcentage="10" key="rex_sarm_foot_bows"></Levies>
+		
+		<MenAtArm type="light_footmen" key="rex_sarm_swords_limicantes"></MenAtArm>
+		<MenAtArm type="armored_footmen" key="rex_sarm_gothish_infantry"></MenAtArm>
+		<MenAtArm type="pikemen_unit" key="rex_sarm_spears_limicantes"></MenAtArm>
+		<MenAtArm type="bowmen" key="rex_goth_band_bugjane"></MenAtArm>
+		<MenAtArm type="light_horsemen" key="rex_sarm_allan_bal"></MenAtArm>
+		<MenAtArm type="armored_horsemen" key="rex_sarm_regal_warband_g"></MenAtArm>
+        <MenAtArm type="war_dogs" key="rex_sarm_hunting_dogs"></MenAtArm>
+        <MenAtArm type="house_guard" key="rex_sarm_gothish_infantry"></MenAtArm>
+		
+		<MenAtArm type="horse_archers" key="rex_sarm_long_arrows_arcaragantes"></MenAtArm>
+
+		<MenAtArm type="accolade_maa_archers" key="rex_goth_band_bugjane"></MenAtArm>
+		<MenAtArm type="accolade_maa_crossbowmen" key="att_merc_rom_ballistarii"></MenAtArm>
+		<MenAtArm type="accolade_maa_lancers" key="rex_sarm_comrades"></MenAtArm>
+		<MenAtArm type="accolade_maa_outriders" key="rex_sarm_long_arrows_arcaragantes"></MenAtArm>
+		<MenAtArm type="accolade_maa_pikes" key="att_merc_rom_comitatensis_spears"></MenAtArm>
+		<MenAtArm type="accolade_maa_skirmishers" key="rex_sarm_foot_bows"></MenAtArm>
+		<MenAtArm type="accolade_maa_vanguard" key="rex_sarm_gothish_infantry"></MenAtArm>		
+	</Faction>
+	
+<Faction name="Goth">
+		<General key="rex_goth_gahlaibans"></General>
+		<Knights key="rex_goth_sagjans"></Knights>
+		
+		<Levies porcentage="55" key="rex_goth_band_militon"></Levies>
+		<Levies porcentage="35" key="rex_goth_band_analaugnjai_gadrauhteis"></Levies>
+		<Levies porcentage="10" key="rex_goth_hansa_hunters"></Levies>
+		
+		<MenAtArm type="light_footmen" key="rex_goth_band_gadrauhteis_gepids"></MenAtArm>
+		<MenAtArm type="armored_footmen" key="rex_goth_ingardjans"></MenAtArm>
+		<MenAtArm type="pikemen_unit" key="att_ger_gothic_falxmen"></MenAtArm>
+		<MenAtArm type="bowmen" key="rex_goth_band_bugjane"></MenAtArm>
+		<MenAtArm type="light_horsemen" key="rex_goth_skildjane_sarmatian"></MenAtArm>    
+		<MenAtArm type="armored_horsemen" key="rex_goth_gahlaibans_contofors"></MenAtArm>   
+        <MenAtArm type="war_dogs" key="rex_sarm_hunting_dogs"></MenAtArm>
+        <MenAtArm type="house_guard" key="rex_goth_ingardjans"></MenAtArm>
+		
+		<MenAtArm type="accolade_maa_archers" key="rex_goth_band_bugjane"></MenAtArm>
+		<MenAtArm type="accolade_maa_crossbowmen" key="att_merc_rom_ballistarii"></MenAtArm>
+		<MenAtArm type="accolade_maa_lancers" key="rex_goth_sagjans"></MenAtArm>
+		<MenAtArm type="accolade_maa_outriders" key="rex_goth_band_aihvamanne_bugjane"></MenAtArm>
+		<MenAtArm type="accolade_maa_pikes" key="rex_goth_band_pikemen"></MenAtArm>
+		<MenAtArm type="accolade_maa_skirmishers" key="rex_goth_hansa_hunters"></MenAtArm>
+		<MenAtArm type="accolade_maa_vanguard" key="rex_goth_ingardjans"></MenAtArm>		
+	</Faction>
+	
+<Faction name="Vandal">
+		<General key="rex_goth_gahlaibans"></General>
+		<Knights key="rex_goth_gahlaibans_contofors"></Knights>
+		
+		<Levies porcentage="55" key="rex_goth_band_militon_vandals"></Levies>
+		<Levies porcentage="35" key="rex_goth_band_hairjane_vandals"></Levies>
+		<Levies porcentage="10" key="rex_goth_hansa_hunters"></Levies>
+		
+		<MenAtArm type="light_footmen" key="rex_goth_band_gadrauhteis_vandals"></MenAtArm>
+		<MenAtArm type="armored_footmen" key="rex_germ_ulfhednar"></MenAtArm>
+		<MenAtArm type="pikemen_unit" key="rex_goth_band_pikemen"></MenAtArm>
+		<MenAtArm type="bowmen" key="rex_goth_band_bugjane"></MenAtArm>
+		<MenAtArm type="light_horsemen" key="rex_goth_shield_bearers_warband_arcaragantes"></MenAtArm>
+		<MenAtArm type="armored_horsemen" key="rex_goth_comites"></MenAtArm>
+        <MenAtArm type="war_dogs" key="rex_sarm_hunting_dogs"></MenAtArm>
+        <MenAtArm type="house_guard" key="rex_germ_ulfhednar"></MenAtArm>
+		
+		<MenAtArm type="accolade_maa_archers" key="rex_goth_band_bugjane"></MenAtArm>
+		<MenAtArm type="accolade_maa_crossbowmen" key="att_merc_rom_ballistarii"></MenAtArm>
+		<MenAtArm type="accolade_maa_lancers" key="rex_goth_gahlaibans_contofors"></MenAtArm>
+		<MenAtArm type="accolade_maa_outriders" key="rex_goth_band_aihvamanne_bugjane"></MenAtArm>
+		<MenAtArm type="accolade_maa_pikes" key="rex_goth_band_pikemen"></MenAtArm>
+		<MenAtArm type="accolade_maa_skirmishers" key="rex_goth_hansa_hunters"></MenAtArm>
+		<MenAtArm type="accolade_maa_vanguard" key="rex_slav_ven_band_svinfylkings"></MenAtArm>		
+	</Faction>
+	
+<Faction name="Visigoths">
+		<General key="rex_goth_gahlaibans"></General>
+		<Knights key="rex_goth_sagjans"></Knights>
+		
+		<Levies porcentage="55" key="rex_goth_band_militon"></Levies>
+		<Levies porcentage="35" key="rex_goth_band_analaugnjai_gadrauhteis"></Levies>
+		<Levies porcentage="10" key="rex_goth_hansa_hunters"></Levies>
+		
+		<MenAtArm type="light_footmen" key="rex_goth_band_gadrauhteis_gepids"></MenAtArm>
+		<MenAtArm type="armored_footmen" key="rex_goth_ingardjans"></MenAtArm>
+		<MenAtArm type="pikemen_unit" key="att_ger_gothic_falxmen"></MenAtArm>
+		<MenAtArm type="bowmen" key="rex_goth_band_bugjane"></MenAtArm>
+		<MenAtArm type="light_horsemen" key="rex_goth_skildjane_sarmatian"></MenAtArm>    
+		<MenAtArm type="armored_horsemen" key="rex_goth_gahlaibans_contofors"></MenAtArm>   
+        <MenAtArm type="war_dogs" key="rex_sarm_hunting_dogs"></MenAtArm>
+        <MenAtArm type="house_guard" key="rex_goth_ingardjans"></MenAtArm>
+		
+		<MenAtArm type="accolade_maa_archers" key="rex_goth_band_bugjane"></MenAtArm>
+		<MenAtArm type="accolade_maa_crossbowmen" key="att_merc_rom_ballistarii"></MenAtArm>
+		<MenAtArm type="accolade_maa_lancers" key="rex_goth_sagjans"></MenAtArm>
+		<MenAtArm type="accolade_maa_outriders" key="rex_goth_band_aihvamanne_bugjane"></MenAtArm>
+		<MenAtArm type="accolade_maa_pikes" key="rex_goth_band_pikemen"></MenAtArm>
+		<MenAtArm type="accolade_maa_skirmishers" key="rex_goth_hansa_hunters"></MenAtArm>
+		<MenAtArm type="accolade_maa_vanguard" key="rex_goth_ingardjans"></MenAtArm>		
+	</Faction>
+
+<Faction name="Sassanids">
+		<General key="rex_east_sas_vuzurgan"></General>
+		<Knights key="rex_east_sas_clibanarius"></Knights>
+		
+		<Levies porcentage="55" key="rex_east_sas_paygan"></Levies>
+		<Levies porcentage="35" key="rex_arab_badyia_ambushers"></Levies>
+		<Levies porcentage="10" key="rex_east_albanians"></Levies>
+		
+		<MenAtArm type="light_footmen" key="rex_east_daylamites_infantry"></MenAtArm>
+		<MenAtArm type="armored_footmen" key="rex_east_segestani"></MenAtArm>
+		<MenAtArm type="pikemen_unit" key="rex_east_sas_paygan_gond"></MenAtArm>
+		<MenAtArm type="bowmen" key="rex_east_sas_vastrioshan_bow"></MenAtArm>
+		<MenAtArm type="light_horsemen" key="rex_east_kadisins"></MenAtArm>
+		<MenAtArm type="armored_horsemen" key="rex_east_sas_pushtigban"></MenAtArm>
+		<MenAtArm type="war_dogs" key="rex_sarm_hunting_dogs"></MenAtArm>
+                
+        <MenAtArm type="Kamandaran" key="rex_east_arm_archers"></MenAtArm>
+		<MenAtArm type="Savran" key="rex_east_sas_savaran_archers"></MenAtArm>
+        <MenAtArm type="cataphract" key="rex_east_sas_gyan_avspar"></MenAtArm>
+		<MenAtArm type="horse_archers" key="rex_east_armenian_ayrudzi_archers"></MenAtArm> 
+        <MenAtArm type="house_guard" key="rex_east_segestani"></MenAtArm>
+		
+		<MenAtArm type="accolade_maa_archers" key="rex_east_arm_archers"></MenAtArm>
+		<MenAtArm type="accolade_maa_crossbowmen" key="att_merc_rom_ballistarii"></MenAtArm>
+		<MenAtArm type="accolade_maa_lancers" key="rex_east_sas_clibanarius"></MenAtArm>
+		<MenAtArm type="accolade_maa_outriders" key="rex_east_sas_savaran_camel"></MenAtArm>
+		<MenAtArm type="accolade_maa_pikes" key="rex_east_sas_paygan_gond"></MenAtArm>
+		<MenAtArm type="accolade_maa_skirmishers" key="rex_east_arm_archers"></MenAtArm>
+		<MenAtArm type="accolade_maa_vanguard" key="rex_east_hillman"></MenAtArm>		
+	</Faction>
+	
+<Faction name="Armenia">
+		<General key="rex_east_armenian_ishkhan_g"></General>
+		<Knights key="rex_east_armenian_malkhaz"></Knights>
+		
+		<Levies porcentage="55" key="rex_east_daylamites"></Levies>
+		<Levies porcentage="35" key="rex_east_arm_roman_infantry"></Levies>
+		<Levies porcentage="10" key="rex_east_albanians"></Levies>
+		
+		<MenAtArm type="light_footmen" key="rex_east_daylamites_infantry"></MenAtArm>
+		<MenAtArm type="armored_footmen" key="rex_east_segestani"></MenAtArm>
+		<MenAtArm type="pikemen_unit" key="rex_east_sas_paygan_gond"></MenAtArm>
+		<MenAtArm type="bowmen" key="rex_east_arm_archers"></MenAtArm>
+		<MenAtArm type="light_horsemen" key="rex_east_huns_sabirs"></MenAtArm>
+		<MenAtArm type="armored_horsemen" key="rex_east_sas_clibanarius"></MenAtArm>
+        <MenAtArm type="war_dogs" key="rex_sarm_hunting_dogs"></MenAtArm>		
+		<MenAtArm type="house_guard" key="rex_east_segestani"></MenAtArm>
+		
+		<MenAtArm type="accolade_maa_archers" key="rex_east_arm_archers"></MenAtArm>
+		<MenAtArm type="accolade_maa_crossbowmen" key="att_merc_rom_ballistarii"></MenAtArm>
+		<MenAtArm type="accolade_maa_lancers" key="rex_east_armenian_malkhaz"></MenAtArm>
+		<MenAtArm type="accolade_maa_outriders" key="rex_east_armenian_ayrudzi_archers"></MenAtArm>
+		<MenAtArm type="accolade_maa_pikes" key="rex_east_sas_paygan_gond"></MenAtArm>
+		<MenAtArm type="accolade_maa_skirmishers" key="rex_east_albanians"></MenAtArm>
+		<MenAtArm type="accolade_maa_vanguard" key="rex_east_hillman"></MenAtArm>		
+	</Faction>
+	
+<Faction name="Picts">
+		<General key="rex_celt_warlord_g"></General>
+		<Knights key="rex_celt_brit_chariot"></Knights>
+		
+		<Levies porcentage="55" key="rex_celt_pict_squad_levy"></Levies>
+		<Levies porcentage="35" key="rex_celt_pict_band_raiders"></Levies>
+		<Levies porcentage="10" key="rex_celt_scot_squad_bow"></Levies>
+		
+		<MenAtArm type="light_footmen" key="rex_celt_scot_women_warriors"></MenAtArm>
+		<MenAtArm type="armored_footmen" key="rex_celt_pict_swordsmen"></MenAtArm>
+		<MenAtArm type="pikemen_unit" key="rex_celt_pict_band_pikemen"></MenAtArm>
+		<MenAtArm type="bowmen" key="rex_alan_barb_bowmen_ishoda"></MenAtArm>
+		<MenAtArm type="light_horsemen" key="rex_celt_brit_horseman"></MenAtArm>
+		<MenAtArm type="armored_horsemen" key="rex_celt_warlord"></MenAtArm>
+        <MenAtArm type="war_dogs" key="rex_celt_pict_hunting_dogs"></MenAtArm>
+		<MenAtArm type="house_guard" key="rex_celt_pict_swordsmen"></MenAtArm>
+		
+		<MenAtArm type="accolade_maa_archers" key="rex_alan_barb_bowmen_ishoda"></MenAtArm>
+		<MenAtArm type="accolade_maa_crossbowmen" key="att_merc_rom_ballistarii"></MenAtArm>
+		<MenAtArm type="accolade_maa_lancers" key="rex_celt_brit_chariot"></MenAtArm>
+		<MenAtArm type="accolade_maa_outriders" key="rex_slav_ant_band_horse_archers"></MenAtArm>
+		<MenAtArm type="accolade_maa_pikes" key="rex_celt_pict_band_pikemen"></MenAtArm>
+		<MenAtArm type="accolade_maa_skirmishers" key="rex_celt_pict_band_skirmishers"></MenAtArm>
+		<MenAtArm type="accolade_maa_vanguard" key="rex_celt_brit_infantry"></MenAtArm>		
+	</Faction>
+
+<Faction name="Ebdanians">
+		<General key="rex_celt_warlord_g"></General>
+		<Knights key="rex_celt_brit_chariot"></Knights>
+		
+		<Levies porcentage="55" key="rex_celt_scot_band_defenders"></Levies>
+		<Levies porcentage="35" key="rex_celt_scot_band_raiders"></Levies>
+		<Levies porcentage="10" key="rex_ost_barb_bowmen_ishoda"></Levies>
+		
+		<MenAtArm type="light_footmen" key="rex_celt_scot_women_warriors"></MenAtArm>
+		<MenAtArm type="armored_footmen" key="rex_celt_scot_swordsmen"></MenAtArm>
+		<MenAtArm type="pikemen_unit" key="rex_celt_caled_band_defenders"></MenAtArm>
+		<MenAtArm type="bowmen" key="rex_celt_scot_band_archers"></MenAtArm>
+		<MenAtArm type="light_horsemen" key="rex_celt_brit_horseman"></MenAtArm>
+		<MenAtArm type="armored_horsemen" key="rex_celt_warlord"></MenAtArm>
+        <MenAtArm type="war_dogs" key="rex_celt_pict_hunting_dogs"></MenAtArm>
+		<MenAtArm type="house_guard" key="att_cel_celtic_spearmen"></MenAtArm>
+		
+		<MenAtArm type="accolade_maa_archers" key="rex_celt_scot_band_archers"></MenAtArm>
+		<MenAtArm type="accolade_maa_crossbowmen" key="att_merc_rom_ballistarii"></MenAtArm>
+		<MenAtArm type="accolade_maa_lancers" key="rex_celt_brit_chariot"></MenAtArm>
+		<MenAtArm type="accolade_maa_outriders" key="rex_slav_ant_band_horse_archers"></MenAtArm>
+		<MenAtArm type="accolade_maa_pikes" key="rex_celt_caled_band_defenders"></MenAtArm>
+		<MenAtArm type="accolade_maa_skirmishers" key="rex_celt_scot_band_skirmishers"></MenAtArm>
+		<MenAtArm type="accolade_maa_vanguard" key="rex_celt_brit_infantry"></MenAtArm>		
+	</Faction>
+	
+<Faction name="Caledonians">
+		<General key="rex_celt_warlord_g"></General>
+		<Knights key="rex_celt_brit_chariot"></Knights>
+		
+		<Levies porcentage="55" key="rex_celt_caled_band_defenders"></Levies>
+		<Levies porcentage="35" key="rex_celt_caled_band_raiders"></Levies>
+		<Levies porcentage="10" key="rex_pict_slinger_ishoda"></Levies>
+		
+		<MenAtArm type="light_footmen" key="rex_celt_scot_women_warriors"></MenAtArm>
+		<MenAtArm type="armored_footmen" key="rex_celt_caled_swordsmen"></MenAtArm>
+		<MenAtArm type="pikemen_unit" key="rex_celt_pict_band_pikemen"></MenAtArm>
+		<MenAtArm type="bowmen" key="rex_ost_barb_bowmen_ishoda"></MenAtArm>
+		<MenAtArm type="light_horsemen" key="rex_celt_pict_band_horseman"></MenAtArm>
+		<MenAtArm type="armored_horsemen" key="rex_celt_warlord"></MenAtArm>
+        <MenAtArm type="war_dogs" key="rex_celt_pict_hunting_dogs"></MenAtArm>
+		<MenAtArm type="house_guard" key="rex_celt_caled_swordsmen"></MenAtArm>
+		
+		<MenAtArm type="accolade_maa_archers" key="rex_ost_barb_bowmen_ishoda"></MenAtArm>
+		<MenAtArm type="accolade_maa_crossbowmen" key="att_merc_rom_ballistarii"></MenAtArm>
+		<MenAtArm type="accolade_maa_lancers" key="rex_celt_brit_chariot"></MenAtArm>
+		<MenAtArm type="accolade_maa_outriders" key="rex_slav_ant_band_horse_archers"></MenAtArm>
+		<MenAtArm type="accolade_maa_pikes" key="rex_celt_pict_band_pikemen"></MenAtArm>
+		<MenAtArm type="accolade_maa_skirmishers" key="rex_pict_slinger_ishoda"></MenAtArm>
+		<MenAtArm type="accolade_maa_vanguard" key="rex_celt_caled_band_raiders"></MenAtArm>		
+	</Faction>
+	
+<Faction name="Venedians">
+		<General key="rex_slav_warlords_braves_g"></General>
+		<Knights key="rex_slav_germ_cavalry"></Knights>
+		
+		<Levies porcentage="55" key="rex_slav_ven_band_defenders"></Levies>
+		<Levies porcentage="35" key="rex_slav_ven_band_warsword"></Levies>
+		<Levies porcentage="10" key="rex_slav_ven_band_skirmishers"></Levies>
+		
+		<MenAtArm type="light_footmen" key="rex_slav_ven_band_svinfylkings"></MenAtArm>
+		<MenAtArm type="armored_footmen" key="rex_slav_warlords_braves"></MenAtArm>
+		<MenAtArm type="pikemen_unit" key="rex_slav_ven_band_warspear"></MenAtArm>
+		<MenAtArm type="bowmen" key="rex_slav_squad_hunters"></MenAtArm>
+		<MenAtArm type="light_horsemen" key="rex_pict_horsemen_ishoda"></MenAtArm>
+		<MenAtArm type="armored_horsemen" key="rex_slav_germ_cavalry"></MenAtArm>
+        <MenAtArm type="war_dogs" key="rex_celt_pict_hunting_dogs"></MenAtArm>
+        <MenAtArm type="house_guard" key="rex_slav_warlords_braves_g"></MenAtArm>
+		
+		<MenAtArm type="accolade_maa_archers" key="rex_ost_barb_bowmen_ishoda"></MenAtArm>
+		<MenAtArm type="accolade_maa_crossbowmen" key="att_merc_rom_ballistarii"></MenAtArm>
+		<MenAtArm type="accolade_maa_lancers" key="rex_slav_warlords_braves_g"></MenAtArm>
+		<MenAtArm type="accolade_maa_outriders" key="rex_slav_ant_band_horse_archers"></MenAtArm>
+		<MenAtArm type="accolade_maa_pikes" key="rex_slav_ven_band_warspear"></MenAtArm>
+		<MenAtArm type="accolade_maa_skirmishers" key="rex_slav_ven_band_skirmishers"></MenAtArm>
+		<MenAtArm type="accolade_maa_vanguard" key="rex_slav_ven_band_ferocious"></MenAtArm>		
+	</Faction>
+	
+<Faction name="Anteans">
+		<General key="rex_slav_ant_oathbounds_g"></General>
+		<Knights key="rex_slav_ant_shield_bearers"></Knights>
+		
+		<Levies porcentage="55" key="rex_slav_ant_band_defenders"></Levies>
+		<Levies porcentage="35" key="rex_ost_instigator_ishoda"></Levies>
+		<Levies porcentage="10" key="rex_slav_ant_squad_bow"></Levies>
+		
+		<MenAtArm type="light_footmen" key="rex_slav_ant_band_warsword"></MenAtArm>
+		<MenAtArm type="armored_footmen" key="rex_slav_warlords_braves"></MenAtArm>
+		<MenAtArm type="pikemen_unit" key="rex_slav_ant_band_warspear"></MenAtArm>
+		<MenAtArm type="bowmen" key="rex_slav_ant_band_archers"></MenAtArm>
+		<MenAtArm type="light_horsemen" key="rex_slav_ant_contofors"></MenAtArm>
+		<MenAtArm type="armored_horsemen" key="rex_slav_ant_shield_bearers"></MenAtArm>
+        <MenAtArm type="war_dogs" key="rex_celt_pict_hunting_dogs"></MenAtArm>		
+		<MenAtArm type="house_guard" key="rex_germ_ulfhednar"></MenAtArm>
+		
+		<MenAtArm type="accolade_maa_archers" key="rex_slav_ant_band_archers"></MenAtArm>
+		<MenAtArm type="accolade_maa_crossbowmen" key="att_merc_rom_ballistarii"></MenAtArm>
+		<MenAtArm type="accolade_maa_lancers" key="rex_slav_ant_shield_bearers"></MenAtArm>
+		<MenAtArm type="accolade_maa_outriders" key="rex_slav_ant_band_horse_archers"></MenAtArm>
+		<MenAtArm type="accolade_maa_pikes" key="rex_slav_ant_band_warspear"></MenAtArm>
+		<MenAtArm type="accolade_maa_skirmishers" key="rex_pict_slinger_ishoda"></MenAtArm>
+		<MenAtArm type="accolade_maa_vanguard" key="rex_germ_band_wigman_sig"></MenAtArm>		
+	</Faction>
+
+<Faction name="Jutes">
+		<General key="rex_germ_gileibo_g"></General>
+		<Knights key="rex_germ_gisind"></Knights>
+		
+		<Levies porcentage="55" key="rex_germ_band_defenders_iuti"></Levies>
+		<Levies porcentage="35" key="rex_germ_band_wigman_nord"></Levies>
+		<Levies porcentage="10" key="rex_pict_slinger_ishoda"></Levies>
+		
+		<MenAtArm type="light_footmen" key="rex_germ_berserker"></MenAtArm>
+		<MenAtArm type="armored_footmen" key="rex_germ_brachiati"></MenAtArm>
+		<MenAtArm type="pikemen_unit" key="rex_germ_band_pikemen"></MenAtArm>
+		<MenAtArm type="bowmen" key="rex_germ_band_archers"></MenAtArm>
+		<MenAtArm type="light_horsemen" key="rex_germ_shield_bearers"></MenAtArm>
+		<MenAtArm type="armored_horsemen" key="rex_germ_brachiati_horsemen"></MenAtArm>
+        <MenAtArm type="war_dogs" key="rex_germ_band_hunting_dogs"></MenAtArm>
+		<MenAtArm type="house_guard" key="rex_germ_ulfhednar"></MenAtArm>
+		
+		<MenAtArm type="accolade_maa_archers" key="rex_germ_band_archers"></MenAtArm>
+		<MenAtArm type="accolade_maa_crossbowmen" key="att_merc_rom_ballistarii"></MenAtArm>
+		<MenAtArm type="accolade_maa_lancers" key="rex_germ_gisind"></MenAtArm>
+		<MenAtArm type="accolade_maa_outriders" key="rex_sarm_long_arrows_arcaragantes"></MenAtArm>
+		<MenAtArm type="accolade_maa_pikes" key="rex_germ_band_pikemen"></MenAtArm>
+		<MenAtArm type="accolade_maa_skirmishers" key="rex_pict_slinger_ishoda"></MenAtArm>
+		<MenAtArm type="accolade_maa_vanguard" key="rex_germ_band_wigman_sig"></MenAtArm>		
+	</Faction>
+
+<Faction name="Geats">
+		<General key="rex_germ_gisind"></General>
+		<Knights key="rex_germ_gisind"></Knights>
+		
+		<Levies porcentage="55" key="rex_slav_spear_braves_geats"></Levies>
+		<Levies porcentage="35" key="rex_germ_band_wigman_nord"></Levies>
+		<Levies porcentage="10" key="rex_germ_hansa_hunters"></Levies>
+		
+		<MenAtArm type="light_footmen" key="rex_germ_band_swordsmen_duget"></MenAtArm>
+		<MenAtArm type="armored_footmen" key="rex_germ_ulfhednar"></MenAtArm>
+		<MenAtArm type="pikemen_unit" key="rex_germ_band_pikemen"></MenAtArm>
+		<MenAtArm type="bowmen" key="rex_germ_band_archers"></MenAtArm>
+		<MenAtArm type="light_horsemen" key="rex_germ_band_mounted"></MenAtArm>
+		<MenAtArm type="armored_horsemen" key="rex_germ_gisind"></MenAtArm>
+        <MenAtArm type="war_dogs" key="rex_germ_band_hunting_dogs"></MenAtArm>
+		<MenAtArm type="house_guard" key="rex_germ_berserker"></MenAtArm>
+		
+		<MenAtArm type="accolade_maa_archers" key="rex_germ_band_archers"></MenAtArm>
+		<MenAtArm type="accolade_maa_crossbowmen" key="att_merc_rom_ballistarii"></MenAtArm>
+		<MenAtArm type="accolade_maa_lancers" key="rex_germ_gisind"></MenAtArm>
+		<MenAtArm type="accolade_maa_outriders" key="rex_sarm_long_arrows_arcaragantes"></MenAtArm>
+		<MenAtArm type="accolade_maa_pikes" key="rex_germ_band_pikemen"></MenAtArm>
+		<MenAtArm type="accolade_maa_skirmishers" key="rex_germ_hansa_hunters"></MenAtArm>
+		<MenAtArm type="accolade_maa_vanguard" key="rex_germ_band_svinfylkings"></MenAtArm>		
+	</Faction>
+	
+<Faction name="Saracenians">
+		<General key="rex_arab_mavias_radif_g"></General>
+		<Knights key="rex_rom_cuneus_clibanariorum_palmirenorum"></Knights>
+		
+		<Levies porcentage="55" key="rex_arab_militia"></Levies>
+		<Levies porcentage="35" key="rex_arab_badyia_ambushers"></Levies>
+		<Levies porcentage="10" key="rex_east_kurds"></Levies>
+		
+		<MenAtArm type="light_footmen" key="rex_arab_badyia_ambushers"></MenAtArm>
+		<MenAtArm type="armored_footmen" key="rex_arab_sanai"></MenAtArm>
+		<MenAtArm type="pikemen_unit" key="rex_arab_romanish_rumha"></MenAtArm>
+		<MenAtArm type="bowmen" key="rex_des_axum_elite_kushite_archers1"></MenAtArm>
+		<MenAtArm type="light_horsemen" key="rex_arab_mavias_chosen"></MenAtArm>
+		<MenAtArm type="armored_horsemen" key="rex_rom_cuneus_clibanariorum_palmirenorum"></MenAtArm>
+        <MenAtArm type="war_dogs" key="rex_sarm_hunting_dogs"></MenAtArm>
+		<MenAtArm type="house_guard" key="rex_arab_romanish_rumha"></MenAtArm>
+		
+        <MenAtArm type="mubarizun" key="GHAS_mubarizun"></MenAtArm>
+
+		<MenAtArm type="accolade_maa_archers" key="rex_des_axum_elite_kushite_archers1"></MenAtArm>
+		<MenAtArm type="accolade_maa_crossbowmen" key="att_merc_rom_ballistarii"></MenAtArm>
+		<MenAtArm type="accolade_maa_lancers" key="rex_rom_cuneus_clibanariorum_palmirenorum"></MenAtArm>
+		<MenAtArm type="accolade_maa_outriders" key="rex_arab_badyia_camel"></MenAtArm>
+		<MenAtArm type="accolade_maa_pikes" key="rex_arab_romanish_rumha"></MenAtArm>
+		<MenAtArm type="accolade_maa_skirmishers" key="rex_east_kurds"></MenAtArm>
+		<MenAtArm type="accolade_maa_vanguard" key="rex_arab_sanai"></MenAtArm>		
+	</Faction>
+
+<Faction name="Garamantians">         
+		<General key="rex_des_desert_guard_g"></General>
+		<Knights key="rex_des_desert_guard_g"></Knights>
+		
+		<Levies porcentage="55" key="rex_des_axum_allied_defenders"></Levies>
+		<Levies porcentage="35" key="rex_des_axum_shotelai"></Levies>
+		<Levies porcentage="10" key="rex_des_desert_fast_javelins"></Levies>
+		
+		<MenAtArm type="light_footmen" key="rex_arab_sanai"></MenAtArm>
+		<MenAtArm type="armored_footmen" key="rex_des_axum_maher_warriors"></MenAtArm>       
+		<MenAtArm type="pikemen_unit" key="rex_des_desert_garama_sentinels"></MenAtArm>
+		<MenAtArm type="bowmen" key="rex_des_desert_bowmen"></MenAtArm>
+		<MenAtArm type="light_horsemen" key="rex_des_desert_shield_bearers"></MenAtArm>
+		<MenAtArm type="armored_horsemen" key="rex_des_desert_guard"></MenAtArm>
+        <MenAtArm type="war_dogs" key="rex_sarm_hunting_dogs"></MenAtArm>
+		<MenAtArm type="house_guard" key="rex_des_desert_garama_sentinels"></MenAtArm>
+		
+		<MenAtArm type="horse_archers" key="att_des_es_zodiac_archers"></MenAtArm>
+        <MenAtArm type="servile_soldiers" key="GARAM_amazigh_swords"></MenAtArm>
+        <MenAtArm type="guinea_warrior" key="att_des_es_badyia_skirmishers"></MenAtArm>
+        <MenAtArm type="african_pikemen" key="att_des_es_sons_of_the_invincible_mahrem"></MenAtArm>
+        <MenAtArm type="bush_hunter" key="att_des_es_rumha_warriors"></MenAtArm>
+        <MenAtArm type="sahel_horsemen" key="att_des_desert_raiders"></MenAtArm>
+		<MenAtArm type="camel_rider" key="att_est_camel_clibanarii"></MenAtArm>
+		<MenAtArm type="hussar" key="att_des_es_bet_giorgis_cavalry"></MenAtArm>
+
+        <MenAtArm type="accolade_maa_camel_riders" key="att_est_camel_clibanarii"></MenAtArm>
+        <MenAtArm type="accolade_maa_archers" key="rex_des_desert_bowmen"></MenAtArm>
+		<MenAtArm type="accolade_maa_crossbowmen" key="att_merc_rom_ballistarii"></MenAtArm>
+		<MenAtArm type="accolade_maa_lancers" key="rex_des_desert_guard_g"></MenAtArm>
+		<MenAtArm type="accolade_maa_outriders" key="rex_des_desert_warrior_cavalry"></MenAtArm>
+		<MenAtArm type="accolade_maa_pikes" key="rex_des_desert_garama_sentinels"></MenAtArm>
+		<MenAtArm type="accolade_maa_skirmishers" key="rex_des_desert_fast_javelins"></MenAtArm>
+		<MenAtArm type="accolade_maa_vanguard" key="rex_des_axum_maher_warriors"></MenAtArm>		
+	</Faction>
+
+<Faction name="Aksum">
+		<General key="rex_des_axum_ras_g"></General>
+		<Knights key="rex_des_axum_bet_giorgis_cavalry"></Knights>
+		
+		<Levies porcentage="55" key="rex_des_axum_spears"></Levies>
+		<Levies porcentage="35" key="rex_des_axum_shotelai"></Levies>
+		<Levies porcentage="10" key="rex_des_axum_levy"></Levies>
+		
+		<MenAtArm type="light_footmen" key="rex_des_axum_shotelai"></MenAtArm>
+		<MenAtArm type="armored_footmen" key="rex_des_axum_maher_warriors"></MenAtArm>
+		<MenAtArm type="pikemen_unit" key="rex_des_axum_masqal_sentinels"></MenAtArm>
+		<MenAtArm type="bowmen" key="rex_des_axum_elite_kushite_archers"></MenAtArm>
+		<MenAtArm type="light_horsemen" key="rex_des_axum_bet_giorgis_cavalry"></MenAtArm>
+		<MenAtArm type="armored_horsemen" key="rex_des_axum_ras"></MenAtArm>
+        <MenAtArm type="war_dogs" key="rex_sarm_hunting_dogs"></MenAtArm>
+		<MenAtArm type="house_guard" key="rex_des_axum_masqal_sentinels"></MenAtArm>
+		
+        <MenAtArm type="horn_warrior" key="att_des_kushite_shotelai"></MenAtArm>
+        <MenAtArm type="archers_of_the_nile" key="att_des_garamantian_hunters"></MenAtArm>
+
+		<MenAtArm type="accolade_maa_archers" key="rex_des_axum_elite_kushite_archers"></MenAtArm>
+		<MenAtArm type="accolade_maa_crossbowmen" key="att_merc_rom_ballistarii"></MenAtArm>
+		<MenAtArm type="accolade_maa_lancers" key="rex_des_axum_ras_g"></MenAtArm>
+		<MenAtArm type="accolade_maa_outriders" key="rex_arab_badyia_camel"></MenAtArm>
+		<MenAtArm type="accolade_maa_pikes" key="rex_des_axum_masqal_sentinels"></MenAtArm>
+		<MenAtArm type="accolade_maa_skirmishers" key="rex_des_axum_levy"></MenAtArm>
+		<MenAtArm type="accolade_maa_vanguard" key="rex_des_axum_maher_warriors"></MenAtArm>		
+	</Faction>
+
+<Faction name="Himyar">
+		<General key="rex_arab_radif_g"></General>
+		<Knights key="rex_rom_cuneus_clibanariorum_palmirenorum"></Knights>
+		
+		<Levies porcentage="55" key="rex_arab_zafar_sentinels"></Levies>
+		<Levies porcentage="35" key="rex_arab_badyia_ambushers"></Levies>
+		<Levies porcentage="10" key="rex_des_axum_kushite_archers1"></Levies>
+		
+		<MenAtArm type="light_footmen" key="rex_arab_himyarite_shotelai"></MenAtArm>
+		<MenAtArm type="armored_footmen" key="rex_arab_sanai"></MenAtArm>
+		<MenAtArm type="pikemen_unit" key="rex_arab_athars_chosen"></MenAtArm>
+		<MenAtArm type="bowmen" key="rex_des_axum_elite_kushite_archers1"></MenAtArm>
+		<MenAtArm type="light_horsemen" key="rex_arab_himyar_cavalry"></MenAtArm>
+		<MenAtArm type="armored_horsemen" key="rex_rom_cuneus_clibanariorum_palmirenorum"></MenAtArm>
+        <MenAtArm type="war_dogs" key="rex_sarm_hunting_dogs"></MenAtArm>
+		<MenAtArm type="house_guard" key="rex_arab_athars_chosen"></MenAtArm>
+		
+        <MenAtArm type="abudrar" key="att_des_es_zealot_sicarius"></MenAtArm>
+
+		<MenAtArm type="accolade_maa_archers" key="rex_des_axum_elite_kushite_archers1"></MenAtArm>
+		<MenAtArm type="accolade_maa_crossbowmen" key="att_merc_rom_ballistarii"></MenAtArm>
+		<MenAtArm type="accolade_maa_lancers" key="rex_rom_cuneus_clibanariorum_palmirenorum"></MenAtArm>
+		<MenAtArm type="accolade_maa_outriders" key="rex_arab_badyia_camel"></MenAtArm>
+		<MenAtArm type="accolade_maa_pikes" key="rex_arab_athars_chosen"></MenAtArm>
+		<MenAtArm type="accolade_maa_skirmishers" key="rex_east_kurds"></MenAtArm>
+		<MenAtArm type="accolade_maa_vanguard" key="rex_arab_sanai"></MenAtArm>		
+	</Faction>
+
+<Faction name="Lakhmids">
+		<General key="rex_arab_radif_g"></General>
+		<Knights key="rex_arab_wadai"></Knights>
+		
+		<Levies porcentage="55" key="rex_arab_rumha_watlai"></Levies>
+		<Levies porcentage="35" key="rex_arab_badyia_ambushers"></Levies>
+		<Levies porcentage="10" key="rex_arab_badyia_skirmishers"></Levies>
+		
+		<MenAtArm type="light_footmen" key="rex_arab_sanai"></MenAtArm>
+		<MenAtArm type="armored_footmen" key="rex_arab_sanai"></MenAtArm>
+		<MenAtArm type="pikemen_unit" key="rex_arab_rahain"></MenAtArm>
+		<MenAtArm type="bowmen" key="rex_arab_bowmen_watlai"></MenAtArm>
+		<MenAtArm type="light_horsemen" key="rex_arab_mallia"></MenAtArm>
+		<MenAtArm type="armored_horsemen" key="rex_rom_cuneus_clibanariorum_palmirenorum"></MenAtArm>
+        <MenAtArm type="war_dogs" key="rex_sarm_hunting_dogs"></MenAtArm>
+        <MenAtArm type="house_guard" key="rex_arab_sanai"></MenAtArm>
+		
+		<MenAtArm type="accolade_maa_archers" key="rex_arab_bowmen_watlai"></MenAtArm>
+		<MenAtArm type="accolade_maa_crossbowmen" key="att_merc_rom_ballistarii"></MenAtArm>
+		<MenAtArm type="accolade_maa_lancers" key="rex_arab_wadai"></MenAtArm>
+		<MenAtArm type="accolade_maa_outriders" key="rex_arab_badyia_camel"></MenAtArm>
+		<MenAtArm type="accolade_maa_pikes" key="rex_arab_rahain"></MenAtArm>
+		<MenAtArm type="accolade_maa_skirmishers" key="rex_arab_skirmishers_watlai"></MenAtArm>
+		<MenAtArm type="accolade_maa_vanguard" key="rex_arab_sanai"></MenAtArm>		
+	</Faction>
+	
+<Faction name="Hun">
+		<General key="rex_hun_retinue"></General>
+		<Knights key="rex_hun_sarm_comrades"></Knights>
+		
+		<Levies porcentage="55" key="rex_hun_spears_limicantes"></Levies>
+		<Levies porcentage="35" key="rex_hun_swords_limicantes"></Levies>
+		<Levies porcentage="10" key="rex_slav_ant_band_skirmishers"></Levies>
+		
+		<MenAtArm type="light_footmen" key="rex_slav_warlords_braves_geats"></MenAtArm>
+		<MenAtArm type="armored_footmen" key="rex_goth_band_gadrauhteis_gepids"></MenAtArm>
+		<MenAtArm type="pikemen_unit" key="rex_germ_band_spearmen"></MenAtArm>
+		<MenAtArm type="bowmen" key="rex_goth_hansa_hunters"></MenAtArm>
+		<MenAtArm type="light_horsemen" key="rex_hun_sabirs"></MenAtArm>
+		<MenAtArm type="armored_horsemen" key="rex_germ_gileibo"></MenAtArm>
+		<MenAtArm type="war_dogs" key="rex_sarm_hunting_dogs"></MenAtArm>
+		<MenAtArm type="house_guard" key="rex_germ_gileibo"></MenAtArm>
+		
+		<MenAtArm type="horse_archers" key="rex_hun_long_arrows_arcaragantes"></MenAtArm>
+                
+		<MenAtArm type="accolade_maa_archers" key="rex_goth_hansa_hunters"></MenAtArm>
+		<MenAtArm type="accolade_maa_crossbowmen" key="att_merc_rom_ballistarii"></MenAtArm>
+		<MenAtArm type="accolade_maa_lancers" key="rex_hun_sarm_comrades"></MenAtArm>
+		<MenAtArm type="accolade_maa_outriders" key="rex_hun_long_arrows_arcaragantes"></MenAtArm>
+		<MenAtArm type="accolade_maa_pikes" key="rex_germ_band_spearmen"></MenAtArm>
+		<MenAtArm type="accolade_maa_skirmishers" key="rex_slav_ant_band_skirmishers"></MenAtArm>
+		<MenAtArm type="accolade_maa_vanguard" key="rex_slav_ven_band_ferocious"></MenAtArm>		
+	</Faction>
+	
+</FactionsGroups>
