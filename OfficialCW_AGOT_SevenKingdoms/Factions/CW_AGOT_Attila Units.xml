@@ -3,9 +3,9 @@
     <Faction name="Default">
         <General key="Dorne_Harmen_Uller" />
         <Knights key="Riverlands_Edmure_Tully" />
-        <Levies porcentage="55" key="Stormlands_Renly_MAA_Spearmen" max="LEVY" />
-        <Levies porcentage="35" key="Iron_Islands_Greyjoy_MAA_Axemen" max="LEVY" />
-        <Levies porcentage="10" key="Crownlands_Kings_Landing_Goldcloak_Swordsmen" max="LEVY" />
+        <Levies porcentage="36" key="Stormlands_Renly_MAA_Spearmen" max="LEVY" />
+        <Levies porcentage="48" key="Iron_Islands_Greyjoy_MAA_Axemen" max="LEVY" />
+        <Levies porcentage="16" key="Crownlands_Kings_Landing_Goldcloak_Swordsmen" max="LEVY" />
         <MenAtArm type="Guardians" key="North_Karstark_MAA_Swordsmen" max="INFANTRY" />
         <MenAtArm type="Phalanxes" key="Riverlands_Mallister_MAA_Axemen" max="INFANTRY" />
         <MenAtArm type="Shieldwall Arbalests" key="North_Cerwyn_MAA_Longbowmen" max="RANGED" />
@@ -381,9 +381,16 @@
     <Faction name="The Crownlands">
         <General key="Crownlands_Jaime_Lannister" />
         <Knights key="Vale_Arryn_MAA_Billmen" />
-        <Levies porcentage="2" key="Riverlands_Frey_MAA_Lance_Cavalry" max="LEVY" />
-        <Levies porcentage="1" key="Crownlands_Kings_Landing_Faith_Militant" max="LEVY" />
-        <Levies porcentage="0" key="Iron_Islands_Greyjoy_MAA_Swordsmen" max="LEVY" />
+        <Levies porcentage="9" key="Riverlands_Frey_MAA_Lance_Cavalry" max="LEVY" />
+        <Levies porcentage="17" key="Crownlands_Kings_Landing_Faith_Militant" max="LEVY" />
+        <Levies porcentage="5" key="Iron_Islands_Greyjoy_MAA_Swordsmen" max="LEVY" />
+        <Levies porcentage="7" key="Crownlands_Robert_Baratheon" max="LEVY" />
+        <Levies porcentage="16" key="Westerlands_Crakehall_MAA_Longbowmen" max="LEVY" />
+        <Levies porcentage="7" key="Dorne_Martell_MAA_Halberdiers" max="LEVY" />
+        <Levies porcentage="14" key="BTW_Wildling_MAA_Spearmen" max="LEVY" />
+        <Levies porcentage="10" key="Vale_Arryn_MAA_Swordsmen" max="LEVY" />
+        <Levies porcentage="4" key="North_Hornwood_MAA_Axemen" max="LEVY" />
+        <Levies porcentage="11" key="Crownlands_Kings_Landing_Goldcloak_Mounted_Swordsmen" max="LEVY" />
         <MenAtArm type="light_footmen" key="Essos_Targaryen_Greyworm" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="North_Karstark_Catapult" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="North_Mormont_MAA_Swordsmen" max="INFANTRY" />
@@ -770,61 +777,20 @@
         <MenAtArm type="waw_pirates" key="Stormlands_Dondarrion_Catapult" max="INFANTRY" />
         <MenAtArm type="zeba_outriders" key="Stormlands_Renly_MAA_Halberdiers" max="CAVALRY" />
         <MenAtArm type="zebaback_slavers" key="North_Stark_Catapult" max="INFANTRY" />
-        <Levies porcentage="2" key="Crownlands_Robert_Baratheon" max="LEVY" />
-        <Levies porcentage="1" key="Westerlands_Crakehall_MAA_Longbowmen" max="LEVY" />
-        <Levies porcentage="0" key="Dorne_Martell_MAA_Halberdiers" max="LEVY" />
-        <Levies porcentage="2" key="BTW_Wildling_MAA_Spearmen" max="LEVY" />
-        <Levies porcentage="1" key="Vale_Arryn_MAA_Swordsmen" max="LEVY" />
-        <Levies porcentage="0" key="North_Hornwood_MAA_Axemen" max="LEVY" />
-        <Levies porcentage="2" key="Crownlands_Kings_Landing_Goldcloak_Mounted_Swordsmen" max="LEVY" />
-        <Levies porcentage="1" key="Crownlands_Bronn" max="LEVY" />
-        <Levies porcentage="0" key="Crownlands_Jaime_Lannister" max="LEVY" />
-        <Levies porcentage="2" key="Riverlands_Tully_MAA_Swordsmen" max="LEVY" />
-        <Levies porcentage="1" key="Dorne_Yronwood_MAA_Axemen" max="LEVY" />
-        <Levies porcentage="0" key="Stormlands_Dragonstone_Catapult" max="LEVY" />
-        <Levies porcentage="2" key="Westerlands_Brax_MAA_Billmen" max="LEVY" />
-        <Levies porcentage="1" key="North_Cerwyn_MAA_Pikemen" max="LEVY" />
-        <Levies porcentage="0" key="BTW_Night_King" max="LEVY" />
-        <Levies porcentage="2" key="Iron_Islands_Greyjoy_MAA_Billmen" max="LEVY" />
-        <Levies porcentage="1" key="Stormlands_Dragonstone_MAA_Billmen" max="LEVY" />
-        <Levies porcentage="0" key="Iron_Islands_Harlaw_Catapult" max="LEVY" />
-        <Levies porcentage="2" key="Westerlands_Lannister_MAA_Longbowmen" max="LEVY" />
-        <Levies porcentage="1" key="Iron_Islands_Harlaw_MAA_Bowmen" max="LEVY" />
-        <Levies porcentage="0" key="Westerlands_Lefford_MAA_Lance_Cavalry" max="LEVY" />
-        <Levies porcentage="2" key="Reach_Tarly_Guard_Swordsmen" max="LEVY" />
-        <Levies porcentage="1" key="North_Cerwyn_MAA_Billmen" max="LEVY" />
-        <Levies porcentage="0" key="Riverlands_Tully_MAA_Crossbowmen" max="LEVY" />
-        <Levies porcentage="2" key="Dorne_Edric_Dayne" max="LEVY" />
-        <Levies porcentage="1" key="Crownlands_Robert_Baratheon" max="LEVY" />
-        <Levies porcentage="0" key="Stormlands_Baratheon_MAA_Pikemen" max="LEVY" />
-        <Levies porcentage="2" key="Riverlands_Tully_Catapult" max="LEVY" />
-        <Levies porcentage="1" key="Westerlands_Crakehall_MAA_Lance_Cavalry" max="LEVY" />
-        <Levies porcentage="0" key="Crownlands_Bronn" max="LEVY" />
-        <Levies porcentage="2" key="North_Bolton_MAA_Swordsmen" max="LEVY" />
-        <Levies porcentage="1" key="Stormlands_Stannis_Baratheon" max="LEVY" />
-        <Levies porcentage="0" key="Westerlands_Lannister_MAA_Pikemen" max="LEVY" />
-        <Levies porcentage="2" key="Riverlands_Mallister_Catapult" max="LEVY" />
-        <Levies porcentage="1" key="Essos_Targaryen_Jorah_Mormont" max="LEVY" />
-        <Levies porcentage="0" key="North_Bolton_MAA_Axemen" max="LEVY" />
-        <Levies porcentage="2" key="Reach_Tyrell_Guard_Swordsmen" max="LEVY" />
-        <Levies porcentage="1" key="North_Mormont_MAA_Halberdiers" max="LEVY" />
-        <Levies porcentage="0" key="North_Stark_MAA_Pikemen" max="LEVY" />
-        <Levies porcentage="2" key="Iron_Islands_Greyjoy_MAA_Lance_Cavalry" max="LEVY" />
-        <Levies porcentage="1" key="Iron_Islands_Harlaw_MAA_Halberdiers" max="LEVY" />
-        <Levies porcentage="0" key="Reach_Tarly_MAA_Halberdiers" max="LEVY" />
-        <Levies porcentage="2" key="Dorne_Dayne_MAA_Billmen" max="LEVY" />
-        <Levies porcentage="1" key="Dorne_Martell_MAA_Mounted_Swordsmen" max="LEVY" />
-        <Levies porcentage="2" key="Stormlands_Baratheon_MAA_Lance_Cavalry" max="LEVY" />
-        <Levies porcentage="28" key="Iron_Islands_Greyjoy_MAA_Billmen" max="LEVY" />
-        <Levies porcentage="18" key="Dorne_Uller_MAA_Lance_Cavalry" max="LEVY" />
-        <Levies porcentage="4" key="Riverlands_Edmure_Tully" max="LEVY" />
     </Faction>
     <Faction name="All Factions">
         <General key="Stormlands_Robert_Baratheon" />
         <Knights key="Dorne_Yronwood_MAA_Pikemen" />
-        <Levies porcentage="1" key="North_Cerwyn_MAA_Halberdiers" max="LEVY" />
-        <Levies porcentage="0" key="Westerlands_Lannister_MAA_Mounted_Swordsmen" max="LEVY" />
-        <Levies porcentage="0" key="North_Stark_MAA_Mounted_Swordsmen" max="LEVY" />
+        <Levies porcentage="16" key="North_Cerwyn_MAA_Halberdiers" max="LEVY" />
+        <Levies porcentage="6" key="Westerlands_Lannister_MAA_Mounted_Swordsmen" max="LEVY" />
+        <Levies porcentage="11" key="North_Stark_MAA_Mounted_Swordsmen" max="LEVY" />
+        <Levies porcentage="11" key="North_Bolton_MAA_Lance_Cavalry" max="LEVY" />
+        <Levies porcentage="10" key="BTW_Jon_Snow" max="LEVY" />
+        <Levies porcentage="15" key="North_Bolton_MAA_Axemen" max="LEVY" />
+        <Levies porcentage="10" key="Riverlands_Tully_Guard_Spearmen" max="LEVY" />
+        <Levies porcentage="6" key="North_Glover_MAA_Mounted_Swordsmen" max="LEVY" />
+        <Levies porcentage="10" key="Dorne_Martell_MAA_Mounted_Archers" max="LEVY" />
+        <Levies porcentage="5" key="Crownlands_Joffrey_Baratheon" max="LEVY" />
         <MenAtArm type="light_footmen" key="Stormlands_Dondarrion_MAA_Halberdiers" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="Vale_Royce_MAA_Crossbowmen" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="Essos_Targaryen_Jorah_Mormont" max="INFANTRY" />
@@ -1208,109 +1174,20 @@
         <MenAtArm type="waw_pirates" key="North_Mormont_MAA_Spearmen" max="INFANTRY" />
         <MenAtArm type="zeba_outriders" key="Westerlands_Crakehall_MAA_Crossbowmen" max="CAVALRY" />
         <MenAtArm type="zebaback_slavers" key="Dorne_Uller_Catapult" max="INFANTRY" />
-        <Levies porcentage="1" key="North_Bolton_MAA_Lance_Cavalry" max="LEVY" />
-        <Levies porcentage="0" key="BTW_Jon_Snow" max="LEVY" />
-        <Levies porcentage="0" key="North_Bolton_MAA_Axemen" max="LEVY" />
-        <Levies porcentage="1" key="Riverlands_Tully_Guard_Spearmen" max="LEVY" />
-        <Levies porcentage="0" key="North_Glover_MAA_Mounted_Swordsmen" max="LEVY" />
-        <Levies porcentage="0" key="Dorne_Martell_MAA_Mounted_Archers" max="LEVY" />
-        <Levies porcentage="1" key="Crownlands_Joffrey_Baratheon" max="LEVY" />
-        <Levies porcentage="0" key="Westerlands_Lannister_MAA_Lance_Cavalry" max="LEVY" />
-        <Levies porcentage="0" key="Reach_Tarly_MAA_Crossbowmen" max="LEVY" />
-        <Levies porcentage="1" key="Riverlands_Frey_MAA_Axemen" max="LEVY" />
-        <Levies porcentage="0" key="North_Umber_MAA_Swordsmen" max="LEVY" />
-        <Levies porcentage="0" key="Crownlands_Jaime_Lannister" max="LEVY" />
-        <Levies porcentage="1" key="Crownlands_Kings_Landing_Golden_Company_Elephants" max="LEVY" />
-        <Levies porcentage="0" key="Westerlands_Marbrand_MAA_Axemen" max="LEVY" />
-        <Levies porcentage="0" key="North_Glover_MAA_Mounted_Swordsmen" max="LEVY" />
-        <Levies porcentage="1" key="Reach_Tarly_Guard_Spearmen" max="LEVY" />
-        <Levies porcentage="0" key="Dorne_Dayne_MAA_Longbowmen" max="LEVY" />
-        <Levies porcentage="0" key="North_Cerwyn_MAA_Mounted_Swordsmen" max="LEVY" />
-        <Levies porcentage="1" key="North_Cerwyn_MAA_Longbowmen" max="LEVY" />
-        <Levies porcentage="0" key="Stormlands_Dondarrion_MAA_Halberdiers" max="LEVY" />
-        <Levies porcentage="0" key="North_Cerwyn_MAA_Spearmen" max="LEVY" />
-        <Levies porcentage="1" key="Vale_Arryn_Guard_Spearmen" max="LEVY" />
-        <Levies porcentage="0" key="Stormlands_Stannis_Baratheon" max="LEVY" />
-        <Levies porcentage="0" key="Reach_Tarly_MAA_Longbowmen" max="LEVY" />
-        <Levies porcentage="1" key="Dorne_Dayne_MAA_Billmen" max="LEVY" />
-        <Levies porcentage="0" key="Stormlands_Dondarrion_MAA_Spearmen" max="LEVY" />
-        <Levies porcentage="0" key="BTW_White_Walkers" max="LEVY" />
-        <Levies porcentage="1" key="Riverlands_Blackfish_Tully" max="LEVY" />
-        <Levies porcentage="0" key="BTW_Wildling_MAA_Swordsmen" max="LEVY" />
-        <Levies porcentage="0" key="Vale_Arryn_MAA_Crossbowmen" max="LEVY" />
-        <Levies porcentage="1" key="North_Glover_MAA_Lance_Cavalry" max="LEVY" />
-        <Levies porcentage="0" key="Riverlands_Frey_MAA_Crossbowmen" max="LEVY" />
-        <Levies porcentage="0" key="Riverlands_Frey_MAA_Crossbowmen" max="LEVY" />
-        <Levies porcentage="1" key="North_Karstark_MAA_Axemen" max="LEVY" />
-        <Levies porcentage="0" key="Dorne_Dayne_MAA_Billmen" max="LEVY" />
-        <Levies porcentage="0" key="Crownlands_Robert_Baratheon" max="LEVY" />
-        <Levies porcentage="1" key="Reach_Tyrell_Guard_Spearmen" max="LEVY" />
-        <Levies porcentage="0" key="North_Stark_MAA_Billmen" max="LEVY" />
-        <Levies porcentage="0" key="North_Umber_Catapult" max="LEVY" />
-        <Levies porcentage="1" key="Dorne_Yronwood_MAA_Javelins" max="LEVY" />
-        <Levies porcentage="0" key="Dorne_Dayne_MAA_Axemen" max="LEVY" />
-        <Levies porcentage="0" key="Westerlands_Lefford_MAA_Pikemen" max="LEVY" />
-        <Levies porcentage="1" key="Dorne_Dayne_MAA_Halberdiers" max="LEVY" />
-        <Levies porcentage="0" key="Iron_Islands_Harlaw_Catapult" max="LEVY" />
-        <Levies porcentage="0" key="Stormlands_Dragonstone_MAA_Billmen" max="LEVY" />
-        <Levies porcentage="1" key="North_Umber_MAA_Axemen" max="LEVY" />
-        <Levies porcentage="0" key="Reach_Tyrell_MAA_Pikemen" max="LEVY" />
-        <Levies porcentage="0" key="Dorne_Martell_MAA_Javelins" max="LEVY" />
-        <Levies porcentage="1" key="Reach_Tarly_MAA_Halberdiers" max="LEVY" />
-        <Levies porcentage="0" key="Riverlands_Frey_MAA_Mounted_Swordsmen" max="LEVY" />
-        <Levies porcentage="0" key="Vale_Royce_MAA_Crossbowmen" max="LEVY" />
-        <Levies porcentage="1" key="North_Umber_MAA_Billmen" max="LEVY" />
-        <Levies porcentage="0" key="North_Robb_Stark" max="LEVY" />
-        <Levies porcentage="0" key="Westerlands_Crakehall_MAA_Billmen" max="LEVY" />
-        <Levies porcentage="1" key="Westerlands_Lannister_MAA_Swordsmen" max="LEVY" />
-        <Levies porcentage="0" key="North_Karstark_MAA_Longbowmen" max="LEVY" />
-        <Levies porcentage="0" key="Vale_Royce_MAA_Halberdiers" max="LEVY" />
-        <Levies porcentage="1" key="Stormlands_Renly_MAA_Crossbowmen" max="LEVY" />
-        <Levies porcentage="0" key="Reach_Tyrell_MAA_Spearmen" max="LEVY" />
-        <Levies porcentage="0" key="Vale_Arryn_MAA_Swordsmen" max="LEVY" />
-        <Levies porcentage="1" key="Iron_Islands_Greyjoy_Catapult" max="LEVY" />
-        <Levies porcentage="0" key="Iron_Islands_Greyjoy_MAA_Infantry" max="LEVY" />
-        <Levies porcentage="0" key="Stormlands_Dragonstone_MAA_Pikemen" max="LEVY" />
-        <Levies porcentage="1" key="Stormlands_Dondarrion_MAA_Longbowmen" max="LEVY" />
-        <Levies porcentage="0" key="Iron_Islands_Harlaw_MAA_Lance_Cavalry" max="LEVY" />
-        <Levies porcentage="0" key="North_Bolton_MAA_Swordsmen" max="LEVY" />
-        <Levies porcentage="1" key="BTW_Night_King_Army_Ancient_Wight_Infantry" max="LEVY" />
-        <Levies porcentage="0" key="North_Mormont_MAA_Swordsmen" max="LEVY" />
-        <Levies porcentage="0" key="Vale_Royce_MAA_Crossbowmen" max="LEVY" />
-        <Levies porcentage="1" key="Iron_Islands_Euron_Greyjoy" max="LEVY" />
-        <Levies porcentage="0" key="Dorne_Yronwood_MAA_Spearmen" max="LEVY" />
-        <Levies porcentage="0" key="Vale_Royce_Catapult" max="LEVY" />
-        <Levies porcentage="1" key="Essos_Targaryen_Barristan_Selmy" max="LEVY" />
-        <Levies porcentage="0" key="Westerlands_Brax_MAA_Lance_Cavalry" max="LEVY" />
-        <Levies porcentage="0" key="Stormlands_Dondarrion_MAA_Lance_Cavalry" max="LEVY" />
-        <Levies porcentage="1" key="Crownlands_Kings_Landing_Golden_Company_Longbowmen" max="LEVY" />
-        <Levies porcentage="0" key="North_Karstark_MAA_Lance_Cavalry" max="LEVY" />
-        <Levies porcentage="0" key="Reach_Tyrell_MAA_Lance_Cavalry" max="LEVY" />
-        <Levies porcentage="1" key="Stormlands_Baratheon_MAA_Crossbowmen" max="LEVY" />
-        <Levies porcentage="0" key="North_Bolton_Guard_Spearmen" max="LEVY" />
-        <Levies porcentage="0" key="Riverlands_Frey_MAA_Spearmen" max="LEVY" />
-        <Levies porcentage="1" key="Stormlands_Dondarrion_MAA_Spearmen" max="LEVY" />
-        <Levies porcentage="0" key="Reach_Tarly_MAA_Billmen" max="LEVY" />
-        <Levies porcentage="0" key="North_Hornwood_MAA_Spearmen" max="LEVY" />
-        <Levies porcentage="1" key="Stormlands_Dondarrion_MAA_Halberdiers" max="LEVY" />
-        <Levies porcentage="0" key="North_Karstark_MAA_Crossbowmen" max="LEVY" />
-        <Levies porcentage="0" key="Reach_Tyrell_MAA_Pikemen" max="LEVY" />
-        <Levies porcentage="1" key="Reach_Tarly_MAA_Axemen" max="LEVY" />
-        <Levies porcentage="0" key="Stormlands_Dragonstone_MAA_Pikemen" max="LEVY" />
-        <Levies porcentage="0" key="BTW_Night_King_Army_Wight_Infantry" max="LEVY" />
-        <Levies porcentage="1" key="Reach_Tyrell_MAA_Crossbowmen" max="LEVY" />
-        <Levies porcentage="0" key="North_Stark_MAA_Swordsmen" max="LEVY" />
-        <Levies porcentage="2" key="Iron_Islands_Greyjoy_Guard_Spearmen" max="LEVY" />
-        <Levies porcentage="28" key="Dorne_Dayne_MAA_Pikemen" max="LEVY" />
-        <Levies porcentage="18" key="BTW_Mance_Rayder" max="LEVY" />
-        <Levies porcentage="20" key="BTW_White_Walkers" max="LEVY" />
     </Faction>
     <Faction name="The Westerlands">
         <General key="BTW_Jeor_Mormont" />
         <Knights key="Riverlands_Mallister_Catapult" />
-        <Levies porcentage="9" key="Vale_Arryn_Faction_Specialist_Lance_Cavalry" max="LEVY" />
-        <Levies porcentage="6" key="Westerlands_Crakehall_MAA_Mounted_Swordsmen" max="LEVY" />
-        <Levies porcentage="2" key="Stormlands_Dondarrion_MAA_Crossbowmen" max="LEVY" />
+        <Levies porcentage="13" key="Vale_Arryn_Faction_Specialist_Lance_Cavalry" max="LEVY" />
+        <Levies porcentage="9" key="Westerlands_Crakehall_MAA_Mounted_Swordsmen" max="LEVY" />
+        <Levies porcentage="7" key="Stormlands_Dondarrion_MAA_Crossbowmen" max="LEVY" />
+        <Levies porcentage="7" key="North_Mormont_MAA_Longbowmen" max="LEVY" />
+        <Levies porcentage="18" key="Stormlands_Renly_MAA_Pikemen" max="LEVY" />
+        <Levies porcentage="18" key="North_Umber_MAA_Crossbowmen" max="LEVY" />
+        <Levies porcentage="4" key="Dorne_Yronwood_MAA_Spearmen" max="LEVY" />
+        <Levies porcentage="7" key="North_Stark_Catapult" max="LEVY" />
+        <Levies porcentage="10" key="Crownlands_Kings_Landing_Faith_Militant" max="LEVY" />
+        <Levies porcentage="7" key="Riverlands_Frey_MAA_Crossbowmen" max="LEVY" />
         <MenAtArm type="light_footmen" key="Reach_Tyrell_Guard_Swordsmen" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="BTW_Nights_Watch_MAA_Spearmen" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="North_Karstark_MAA_Longbowmen" max="INFANTRY" />
@@ -1694,28 +1571,13 @@
         <MenAtArm type="waw_pirates" key="Vale_Royce_MAA_Axemen" max="INFANTRY" />
         <MenAtArm type="zeba_outriders" key="Dorne_Dayne_MAA_Halberdiers" max="CAVALRY" />
         <MenAtArm type="zebaback_slavers" key="Westerlands_Lefford_MAA_Spearmen" max="INFANTRY" />
-        <Levies porcentage="9" key="North_Mormont_MAA_Longbowmen" max="LEVY" />
-        <Levies porcentage="6" key="Stormlands_Renly_MAA_Pikemen" max="LEVY" />
-        <Levies porcentage="2" key="North_Umber_MAA_Crossbowmen" max="LEVY" />
-        <Levies porcentage="9" key="Dorne_Yronwood_MAA_Spearmen" max="LEVY" />
-        <Levies porcentage="6" key="North_Stark_Catapult" max="LEVY" />
-        <Levies porcentage="2" key="Crownlands_Kings_Landing_Faith_Militant" max="LEVY" />
-        <Levies porcentage="9" key="Riverlands_Frey_MAA_Crossbowmen" max="LEVY" />
-        <Levies porcentage="6" key="Dorne_Uller_MAA_Spearmen" max="LEVY" />
-        <Levies porcentage="2" key="Riverlands_Frey_MAA_Crossbowmen" max="LEVY" />
-        <Levies porcentage="9" key="Dorne_Yronwood_MAA_Pikemen" max="LEVY" />
-        <Levies porcentage="6" key="Westerlands_Lannister_MAA_Billmen" max="LEVY" />
-        <Levies porcentage="2" key="Riverlands_Jaremy_Mallister" max="LEVY" />
-        <Levies porcentage="9" key="Riverlands_Frey_MAA_Longbowmen" max="LEVY" />
-        <Levies porcentage="6" key="Vale_Arryn_MAA_Crossbowmen" max="LEVY" />
-        <Levies porcentage="0" key="North_Mormont_Catapult" max="LEVY" />
     </Faction>
     <Faction name="The Riverlands">
         <General key="Stormlands_Robert_Baratheon" />
         <Knights key="Westerlands_Crakehall_Catapult" />
-        <Levies porcentage="55" key="Westerlands_Crakehall_MAA_Spearmen" max="LEVY" />
-        <Levies porcentage="35" key="Reach_Tyrell_MAA_Billmen" max="LEVY" />
-        <Levies porcentage="10" key="Westerlands_Lannister_MAA_Swordsmen" max="LEVY" />
+        <Levies porcentage="28" key="Westerlands_Crakehall_MAA_Spearmen" max="LEVY" />
+        <Levies porcentage="59" key="Reach_Tyrell_MAA_Billmen" max="LEVY" />
+        <Levies porcentage="13" key="Westerlands_Lannister_MAA_Swordsmen" max="LEVY" />
         <MenAtArm type="light_footmen" key="North_Glover_MAA_Longbowmen" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="Stormlands_Dondarrion_MAA_Crossbowmen" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="North_Umber_MAA_Pikemen" max="INFANTRY" />
@@ -2103,9 +1965,9 @@
     <Faction name="The Stormlands">
         <General key="North_Greatjon_Umber" />
         <Knights key="North_Umber_MAA_Billmen" />
-        <Levies porcentage="55" key="Stormlands_Davos_Seaworth" max="LEVY" />
-        <Levies porcentage="35" key="North_Umber_MAA_Mounted_Swordsmen" max="LEVY" />
-        <Levies porcentage="10" key="North_Bolton_MAA_Swordsmen" max="LEVY" />
+        <Levies porcentage="39" key="Stormlands_Davos_Seaworth" max="LEVY" />
+        <Levies porcentage="26" key="North_Umber_MAA_Mounted_Swordsmen" max="LEVY" />
+        <Levies porcentage="35" key="North_Bolton_MAA_Swordsmen" max="LEVY" />
         <MenAtArm type="light_footmen" key="Stormlands_Baratheon_MAA_Longbowmen" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="Dorne_Uller_MAA_Longbowmen" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="Riverlands_Walder_Frey" max="INFANTRY" />

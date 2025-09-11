@@ -3,9 +3,9 @@
     <Faction name="Default">
         <General key="mk_fla_t2_countguard" />
         <Knights key="mk_teu_t3_halbbruder" />
-        <Levies porcentage="55" key="mk_hre_t1_fussknecht_spiesser" max="LEVY" />
-        <Levies porcentage="35" key="mk_ghu_t1_ghori_tribesmen" max="LEVY" />
-        <Levies porcentage="10" key="mk_georg_t1_dismounted_monaspa_archers" max="LEVY" />
+        <Levies porcentage="42" key="mk_hre_t1_fussknecht_spiesser" max="LEVY" />
+        <Levies porcentage="23" key="mk_ghu_t1_ghori_tribesmen" max="LEVY" />
+        <Levies porcentage="35" key="mk_georg_t1_dismounted_monaspa_archers" max="LEVY" />
         <MenAtArm type="Guardians" key="att_ger_godansmen" max="INFANTRY" />
         <MenAtArm type="Phalanxes" key="cha_slav_ambushers" max="INFANTRY" />
         <MenAtArm type="Shieldwall Arbalests" key="mk_ara_t1_almogavars" max="RANGED" />
@@ -381,10 +381,16 @@
     <Faction name="Macedonia">
         <General key="mk_epi_t1_oikeioi" />
         <Knights key="mk_epi_t1_pronoiarioi" />
-        <Levies porcentage="4" key="mk_lat_t1_militiai" max="LEVY" />
-        <Levies porcentage="1" key="mk_lat_t1_sergents" max="LEVY" />
-        <Levies porcentage="1" key="mk_lat_t1_slavos_toxotes" max="LEVY" />
-        <Levies porcentage="1" key="mk_bos_t1_frontiersmen" max="LEVY" />
+        <Levies porcentage="7" key="mk_lat_t1_militiai" max="LEVY" />
+        <Levies porcentage="4" key="mk_lat_t1_sergents" max="LEVY" />
+        <Levies porcentage="12" key="mk_lat_t1_slavos_toxotes" max="LEVY" />
+        <Levies porcentage="14" key="mk_bos_t1_frontiersmen" max="LEVY" />
+        <Levies porcentage="16" key="mk_nap_t1_guelph_maa" max="LEVY" />
+        <Levies porcentage="8" key="mk_mak_t1_bukna_warband" max="LEVY" />
+        <Levies porcentage="9" key="mk_mak_t1_nubian_slingers" max="LEVY" />
+        <Levies porcentage="3" key="mk_alm_t1_abid_infantry" max="LEVY" />
+        <Levies porcentage="14" key="mk_alm_t1_tuareg_camel_riders" max="LEVY" />
+        <Levies porcentage="13" key="mk_alm_t1_abid_skirmishers" max="LEVY" />
         <MenAtArm type="light_footmen" key="mk_bos_t1_frontiersmen" max="400" />
         <MenAtArm type="armored_footmen" key="mk_lat_t1_dismounted_chevaliers" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="mk_lat_t1_guisarmiers" max="INFANTRY" />
@@ -474,47 +480,6 @@
         <MenAtArm type="steppe_raiders" key="mk_pap_t1_spearmen" max="CAVALRY" />
         <MenAtArm type="torch_bearers" key="mk_merc_ita_t1_foot_berrovieri" max="INFANTRY" />
         <MenAtArm type="trebuchet" key="mk_ant_t1_canon_knights_dismounted" max="RANGED" />
-        <Levies porcentage="5" key="mk_nap_t1_guelph_maa" max="LEVY" />
-        <Levies porcentage="2" key="mk_mak_t1_bukna_warband" max="LEVY" />
-        <Levies porcentage="1" key="mk_mak_t1_nubian_slingers" max="LEVY" />
-        <Levies porcentage="4" key="mk_alm_t1_abid_infantry" max="LEVY" />
-        <Levies porcentage="2" key="mk_alm_t1_tuareg_camel_riders" max="LEVY" />
-        <Levies porcentage="1" key="mk_alm_t1_abid_skirmishers" max="LEVY" />
-        <Levies porcentage="5" key="mk_cuman_t1_spearmen" max="LEVY" />
-        <Levies porcentage="2" key="mk_ghu_t2_paiks" max="LEVY" />
-        <Levies porcentage="1" key="mk_merc_ind_t1_archers" max="LEVY" />
-        <Levies porcentage="5" key="mk_nic_t1_vigla" max="LEVY" />
-        <Levies porcentage="2" key="mk_tre_t1_spathatoi" max="LEVY" />
-        <Levies porcentage="1" key="mk_nic_t1_toxotai" max="LEVY" />
-        <Levies porcentage="5" key="mk_lor_t1_spearmen" max="LEVY" />
-        <Levies porcentage="2" key="mk_lor_t1_swordsmen" max="LEVY" />
-        <Levies porcentage="1" key="mk_lor_t1_crossbowmen" max="LEVY" />
-        <Levies porcentage="4" key="mk_merc_sco_t1_highlanders" max="LEVY" />
-        <Levies porcentage="2" key="mk_merc_gael_t1_galloglaich" max="LEVY" />
-        <Levies porcentage="1" key="mk_merc_ire_t1_kern" max="LEVY" />
-        <Levies porcentage="4" key="mk_gran_t1_hushud" max="LEVY" />
-        <Levies porcentage="1" key="mk_gran_t1_andalusian_jund" max="LEVY" />
-        <Levies porcentage="1" key="mk_gran_t1_andalusian_crossbowmen" max="LEVY" />
-        <Levies porcentage="1" key="mk_alm_t1_slinger" max="LEVY" />
-        <Levies porcentage="1" key="mk_gran_t1_granadine_spear_cavalry" max="LEVY" />
-        <Levies porcentage="2" key="mk_mold_t1_militia_spearmen" max="LEVY" />
-        <Levies porcentage="2" key="mk_merc_steppe_t1_bulgar_lancers" max="LEVY" />
-        <Levies porcentage="3" key="mk_merc_steppe_t1_horse_archers" max="LEVY" />
-        <Levies porcentage="4" key="mk_volga_t1_light_HA" max="LEVY" />
-        <Levies porcentage="2" key="mk_volga_t1_chirmesh_lancers" max="LEVY" />
-        <Levies porcentage="1" key="mk_merc_steppe_t1_berendei_lancers" max="LEVY" />
-        <Levies porcentage="4" key="mk_aor_per_t1_qarakhanid_tribesmen" max="LEVY" />
-        <Levies porcentage="2" key="mk_merc_transox_t1_qarakhanid_lancers" max="LEVY" />
-        <Levies porcentage="1" key="mk_rum_t1_askeri_horse_archers" max="LEVY" />
-        <Levies porcentage="4" key="mk_rum_t1_ghazi_horse_archers" max="LEVY" />
-        <Levies porcentage="2" key="mk_rum_t1_ghazi_lancers" max="LEVY" />
-        <Levies porcentage="1" key="mk_rum_t1_askeri_nobles" max="LEVY" />
-        <Levies porcentage="4" key="mk_rum_t1_hasher" max="LEVY" />
-        <Levies porcentage="2" key="mk_rum_t1_ecrihor_swordsmen" max="LEVY" />
-        <Levies porcentage="1" key="mk_rum_t1_askeri_horse_archers" max="LEVY" />
-        <Levies porcentage="5" key="mk_bos_t1_militia_spearmen" max="LEVY" />
-        <Levies porcentage="2" key="mk_bos_t1_vojnici_axemen" max="LEVY" />
-        <Levies porcentage="-3" key="mk_bos_t1_levy_archers" max="LEVY" />
         <MenAtArm type="Guardians" key="att_ger_godansmen" max="INFANTRY" />
         <MenAtArm type="Phalanxes" key="cha_slav_ambushers" max="INFANTRY" />
         <MenAtArm type="Shieldwall Arbalests" key="mk_ara_t1_almogavars" max="RANGED" />
@@ -845,10 +810,13 @@
     <Faction name="Egypt">
         <General key="mk_ayy_t1_sultans_bodyguard" />
         <Knights key="mk_ayy_t1_general_bodyguard" />
-        <Levies porcentage="28" key="mk_ayy_t1_ahdath" max="LEVY" />
-        <Levies porcentage="12" key="mk_ayy_t1_jund_swordsmen" max="LEVY" />
-        <Levies porcentage="5" key="mk_ayy_t1_ahdath_archers" max="LEVY" />
-        <Levies porcentage="5" key="mk_ayy_t1_bedouin_lancers" max="LEVY" />
+        <Levies porcentage="13" key="mk_ayy_t1_ahdath" max="LEVY" />
+        <Levies porcentage="18" key="mk_ayy_t1_jund_swordsmen" max="LEVY" />
+        <Levies porcentage="12" key="mk_ayy_t1_ahdath_archers" max="LEVY" />
+        <Levies porcentage="6" key="mk_ayy_t1_bedouin_lancers" max="LEVY" />
+        <Levies porcentage="17" key="mk_ayy_t1_ahdath" max="LEVY" />
+        <Levies porcentage="15" key="mk_rum_t1_ecrihor_swordsmen" max="LEVY" />
+        <Levies porcentage="19" key="mk_ayy_t1_ahdath_archers" max="LEVY" />
         <MenAtArm type="light_footmen" key="mk_ayy_t1_ashair_infantry" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="mk_abb_t1_dismounted_ghulam" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="mk_ayy_t1_jund_spearmen" max="INFANTRY" />
@@ -938,9 +906,6 @@
         <MenAtArm type="war_elephant" key="mk_ghu_t1_indian_elephants" max="CAVALRY" />
         <MenAtArm type="zbrojnosh" key="mk_pol_t2_heavy_axemen" max="INFANTRY" />
         <MenAtArm type="zupin_warrior" key="mk_merc_iran_t1_daylami_infantry" max="INFANTRY" />
-        <Levies porcentage="32" key="mk_ayy_t1_ahdath" max="LEVY" />
-        <Levies porcentage="12" key="mk_rum_t1_ecrihor_swordsmen" max="LEVY" />
-        <Levies porcentage="6" key="mk_ayy_t1_ahdath_archers" max="LEVY" />
         <MenAtArm type="Guardians" key="att_ger_godansmen" max="INFANTRY" />
         <MenAtArm type="Phalanxes" key="cha_slav_ambushers" max="INFANTRY" />
         <MenAtArm type="Shieldwall Arbalests" key="mk_ara_t1_almogavars" max="RANGED" />
@@ -1271,10 +1236,16 @@
     <Faction name="Thuringians">
         <General key="mk_haf_t1_ghuzz_bodyguard" />
         <Knights key="mk_alm_t1_nobat_al_djandariya" />
-        <Levies porcentage="18" key="mk_alm_t1_hushud" max="LEVY" />
-        <Levies porcentage="8" key="mk_haf_t1_irban" max="LEVY" />
-        <Levies porcentage="3" key="mk_alm_t1_hushud_rumat" max="LEVY" />
-        <Levies porcentage="3" key="mk_alm_t1_arab_horsemen" max="LEVY" />
+        <Levies porcentage="15" key="mk_alm_t1_hushud" max="LEVY" />
+        <Levies porcentage="13" key="mk_haf_t1_irban" max="LEVY" />
+        <Levies porcentage="8" key="mk_alm_t1_hushud_rumat" max="LEVY" />
+        <Levies porcentage="12" key="mk_alm_t1_arab_horsemen" max="LEVY" />
+        <Levies porcentage="8" key="mk_lit_t1_militia_spearmen" max="LEVY" />
+        <Levies porcentage="9" key="mk_lit_t1_axemen" max="LEVY" />
+        <Levies porcentage="10" key="mk_lit_t1_militia_crossbowmen" max="LEVY" />
+        <Levies porcentage="9" key="mk_hre_t1_burgerwehr_spiesser" max="LEVY" />
+        <Levies porcentage="11" key="mk_hre_t1_fussknecht_spiesser" max="LEVY" />
+        <Levies porcentage="5" key="mk_hre_t1_landsturms_armbrustschutzen" max="LEVY" />
         <MenAtArm type="light_footmen" key="earl_haf_t1_tunisian_warrior" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="mk_alm_t1_dismounted_jund_al_nasara" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="att_des_es_ras_guard" max="INFANTRY" />
@@ -1364,12 +1335,6 @@
         <MenAtArm type="war_elephant" key="mk_ghu_t1_indian_elephants" max="CAVALRY" />
         <MenAtArm type="zbrojnosh" key="mk_pol_t2_heavy_axemen" max="INFANTRY" />
         <MenAtArm type="zupin_warrior" key="mk_merc_iran_t1_daylami_infantry" max="INFANTRY" />
-        <Levies porcentage="22" key="mk_lit_t1_militia_spearmen" max="LEVY" />
-        <Levies porcentage="8" key="mk_lit_t1_axemen" max="LEVY" />
-        <Levies porcentage="3" key="mk_lit_t1_militia_crossbowmen" max="LEVY" />
-        <Levies porcentage="22" key="mk_hre_t1_burgerwehr_spiesser" max="LEVY" />
-        <Levies porcentage="8" key="mk_hre_t1_fussknecht_spiesser" max="LEVY" />
-        <Levies porcentage="5" key="mk_hre_t1_landsturms_armbrustschutzen" max="LEVY" />
         <MenAtArm type="Guardians" key="att_ger_godansmen" max="INFANTRY" />
         <MenAtArm type="Phalanxes" key="cha_slav_ambushers" max="INFANTRY" />
         <MenAtArm type="Shieldwall Arbalests" key="mk_ara_t1_almogavars" max="RANGED" />
@@ -1700,10 +1665,14 @@
     <Faction name="Africa">
         <General key="mk_abb_t1_caliph_bodyguard" />
         <Knights key="mk_abb_t1_general_bodyguard" />
-        <Levies porcentage="28" key="mk_abb_t1_futuwwa" max="LEVY" />
-        <Levies porcentage="12" key="mk_abb_t1_futuwwa_jund" max="LEVY" />
-        <Levies porcentage="5" key="mk_abb_t1_awam_rumat" max="LEVY" />
-        <Levies porcentage="5" key="mk_abb_t1_bedouin_lancers" max="LEVY" />
+        <Levies porcentage="6" key="mk_abb_t1_futuwwa" max="LEVY" />
+        <Levies porcentage="9" key="mk_abb_t1_futuwwa_jund" max="LEVY" />
+        <Levies porcentage="14" key="mk_abb_t1_awam_rumat" max="LEVY" />
+        <Levies porcentage="14" key="mk_abb_t1_bedouin_lancers" max="LEVY" />
+        <Levies porcentage="15" key="mk_alm_t1_hushud" max="LEVY" />
+        <Levies porcentage="17" key="mk_alm_t1_jund_swordsmen" max="LEVY" />
+        <Levies porcentage="14" key="mk_alm_t1_hushud_rumat" max="LEVY" />
+        <Levies porcentage="11" key="mk_tou_t3_sergeants" max="LEVY" />
         <MenAtArm type="light_footmen" key="mk_abb_t1_ghazi" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="mk_abb_t1_dismounted_ghulam" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="mk_abb_t1_jund_spearmen" max="INFANTRY" />
@@ -1793,10 +1762,6 @@
         <MenAtArm type="war_elephant" key="mk_ghu_t1_indian_elephants" max="CAVALRY" />
         <MenAtArm type="zbrojnosh" key="mk_pol_t2_heavy_axemen" max="INFANTRY" />
         <MenAtArm type="zupin_warrior" key="mk_merc_iran_t1_daylami_infantry" max="INFANTRY" />
-        <Levies porcentage="28" key="mk_alm_t1_hushud" max="LEVY" />
-        <Levies porcentage="12" key="mk_alm_t1_jund_swordsmen" max="LEVY" />
-        <Levies porcentage="5" key="mk_alm_t1_hushud_rumat" max="LEVY" />
-        <Levies porcentage="5" key="mk_tou_t3_sergeants" max="LEVY" />
         <MenAtArm type="Guardians" key="att_ger_godansmen" max="INFANTRY" />
         <MenAtArm type="Phalanxes" key="cha_slav_ambushers" max="INFANTRY" />
         <MenAtArm type="Shieldwall Arbalests" key="mk_ara_t1_almogavars" max="RANGED" />
@@ -2127,9 +2092,9 @@
     <Faction name="Baltic Rebels">
         <General key="mk_lit_t1_grand_duke_bodyguard" />
         <Knights key="mk_lit_t1_general_bodyguard" />
-        <Levies porcentage="65" key="mk_lit_t1_militia_spearmen" max="LEVY" />
-        <Levies porcentage="25" key="mk_lit_t1_axemen" max="LEVY" />
-        <Levies porcentage="10" key="mk_lit_t1_lithuanian_skirmishers" max="LEVY" />
+        <Levies porcentage="12" key="mk_lit_t1_militia_spearmen" max="LEVY" />
+        <Levies porcentage="44" key="mk_lit_t1_axemen" max="LEVY" />
+        <Levies porcentage="44" key="mk_lit_t1_lithuanian_skirmishers" max="LEVY" />
         <MenAtArm type="light_footmen" key="mk_lit_t1_lithuanian_skirmishers" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="mk_lit_t1_noble_swordsmen" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="mk_lit_t1_ducal_spearmen" max="INFANTRY" />
@@ -2549,9 +2514,13 @@
     <Faction name="Angria">
         <General key="mk_lit_t1_grand_duke_bodyguard" />
         <Knights key="mk_lit_t1_general_bodyguard" />
-        <Levies porcentage="32" key="mk_dan_t1_bondir_spear" max="LEVY" />
-        <Levies porcentage="12" key="mk_dan_t1_gotland_peasant_militia" max="LEVY" />
-        <Levies porcentage="5" key="mk_dan_t1_bow_bondir" max="LEVY" />
+        <Levies porcentage="8" key="mk_dan_t1_bondir_spear" max="LEVY" />
+        <Levies porcentage="16" key="mk_dan_t1_gotland_peasant_militia" max="LEVY" />
+        <Levies porcentage="20" key="mk_dan_t1_bow_bondir" max="LEVY" />
+        <Levies porcentage="16" key="mk_alm_t1_hushud" max="LEVY" />
+        <Levies porcentage="9" key="mk_alm_t1_arab_horsemen" max="LEVY" />
+        <Levies porcentage="7" key="mk_alm_t1_hushud_rumat" max="LEVY" />
+        <Levies porcentage="24" key="mk_alm_t1_jund_swordsmen" max="LEVY" />
         <MenAtArm type="light_footmen" key="mk_lit_t1_lithuanian_skirmishers" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="mk_lit_t1_noble_swordsmen" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="mk_lit_t1_ducal_spearmen" max="INFANTRY" />
@@ -2641,10 +2610,6 @@
         <MenAtArm type="war_elephant" key="mk_ghu_t1_indian_elephants" max="CAVALRY" />
         <MenAtArm type="zbrojnosh" key="mk_pol_t2_heavy_axemen" max="INFANTRY" />
         <MenAtArm type="zupin_warrior" key="mk_merc_iran_t1_daylami_infantry" max="INFANTRY" />
-        <Levies porcentage="25" key="mk_alm_t1_hushud" max="LEVY" />
-        <Levies porcentage="12" key="mk_alm_t1_arab_horsemen" max="LEVY" />
-        <Levies porcentage="5" key="mk_alm_t1_hushud_rumat" max="LEVY" />
-        <Levies porcentage="9" key="mk_alm_t1_jund_swordsmen" max="LEVY" />
         <MenAtArm type="Guardians" key="att_ger_godansmen" max="INFANTRY" />
         <MenAtArm type="Phalanxes" key="cha_slav_ambushers" max="INFANTRY" />
         <MenAtArm type="Shieldwall Arbalests" key="mk_ara_t1_almogavars" max="RANGED" />
@@ -2975,10 +2940,13 @@
     <Faction name="Iazyges">
         <General key="mk_alm_t1_qaid_bodyguards" />
         <Knights key="mk_alm_t1_nobat_al_djandariya" />
-        <Levies porcentage="15" key="mk_alm_t1_hushud" max="LEVY" />
-        <Levies porcentage="20" key="mk_mar_t1_zenata_skirmish_cavalry" max="LEVY" />
-        <Levies porcentage="5" key="mk_alm_t1_slinger" max="LEVY" />
-        <Levies porcentage="10" key="mk_alm_t1_arab_horsemen" max="LEVY" />
+        <Levies porcentage="14" key="mk_alm_t1_hushud" max="LEVY" />
+        <Levies porcentage="11" key="mk_mar_t1_zenata_skirmish_cavalry" max="LEVY" />
+        <Levies porcentage="19" key="mk_alm_t1_slinger" max="LEVY" />
+        <Levies porcentage="11" key="mk_alm_t1_arab_horsemen" max="LEVY" />
+        <Levies porcentage="15" key="mk_sic_t1_militia_spearmen" max="LEVY" />
+        <Levies porcentage="15" key="mk_sic_t1_german_swordsmen" max="LEVY" />
+        <Levies porcentage="15" key="mk_sic_t1_militia_crossbowmen" max="LEVY" />
         <MenAtArm type="light_footmen" key="mk_alm_t1_maghrebi_tribesmen" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="mk_haf_t1_irban" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="mk_alm_t1_murabitun" max="INFANTRY" />
@@ -3068,9 +3036,6 @@
         <MenAtArm type="war_elephant" key="mk_ghu_t1_indian_elephants" max="CAVALRY" />
         <MenAtArm type="zbrojnosh" key="mk_pol_t2_heavy_axemen" max="INFANTRY" />
         <MenAtArm type="zupin_warrior" key="mk_merc_iran_t1_daylami_infantry" max="INFANTRY" />
-        <Levies porcentage="28" key="mk_sic_t1_militia_spearmen" max="LEVY" />
-        <Levies porcentage="18" key="mk_sic_t1_german_swordsmen" max="LEVY" />
-        <Levies porcentage="4" key="mk_sic_t1_militia_crossbowmen" max="LEVY" />
         <MenAtArm type="Guardians" key="att_ger_godansmen" max="INFANTRY" />
         <MenAtArm type="Phalanxes" key="cha_slav_ambushers" max="INFANTRY" />
         <MenAtArm type="Shieldwall Arbalests" key="mk_ara_t1_almogavars" max="RANGED" />
@@ -3401,9 +3366,16 @@
     <Faction name="Aria">
         <General key="mk_wel_t1_prince_bodyguard" />
         <Knights key="mk_merc_eur_t1_knights" />
-        <Levies porcentage="16" key="mk_wel_t1_spear_band" max="LEVY" />
-        <Levies porcentage="6" key="mk_wel_t1_rhyfelwyr" max="LEVY" />
-        <Levies porcentage="2" key="mk_merc_wel_t1_longbowmen" max="LEVY" />
+        <Levies porcentage="13" key="mk_wel_t1_spear_band" max="LEVY" />
+        <Levies porcentage="17" key="mk_wel_t1_rhyfelwyr" max="LEVY" />
+        <Levies porcentage="4" key="mk_merc_wel_t1_longbowmen" max="LEVY" />
+        <Levies porcentage="14" key="mk_ayy_t1_ahdath" max="LEVY" />
+        <Levies porcentage="9" key="mk_rum_t1_ecrihor_swordsmen" max="LEVY" />
+        <Levies porcentage="7" key="mk_arm_t1_levy_archers" max="LEVY" />
+        <Levies porcentage="9" key="mk_ghu_t2_paiks" max="LEVY" />
+        <Levies porcentage="11" key="mk_ghu_t1_ghori_tribesmen" max="LEVY" />
+        <Levies porcentage="7" key="mk_merc_ind_t1_archers" max="LEVY" />
+        <Levies porcentage="9" key="mk_aor_per_t1_daylami_skirmishers" max="LEVY" />
         <MenAtArm type="light_footmen" key="mk_wel_t1_ysbeilwyr" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="mk_wel_t1_dismounted_uchelwyr" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="mk_wel_t1_spearmen" max="INFANTRY" />
@@ -3493,15 +3465,6 @@
         <MenAtArm type="war_elephant" key="mk_ghu_t1_indian_elephants" max="CAVALRY" />
         <MenAtArm type="zbrojnosh" key="mk_pol_t2_heavy_axemen" max="INFANTRY" />
         <MenAtArm type="zupin_warrior" key="mk_merc_iran_t1_daylami_infantry" max="INFANTRY" />
-        <Levies porcentage="16" key="mk_ayy_t1_ahdath" max="LEVY" />
-        <Levies porcentage="6" key="mk_rum_t1_ecrihor_swordsmen" max="LEVY" />
-        <Levies porcentage="2" key="mk_arm_t1_levy_archers" max="LEVY" />
-        <Levies porcentage="16" key="mk_ghu_t2_paiks" max="LEVY" />
-        <Levies porcentage="6" key="mk_ghu_t1_ghori_tribesmen" max="LEVY" />
-        <Levies porcentage="2" key="mk_merc_ind_t1_archers" max="LEVY" />
-        <Levies porcentage="15" key="mk_aor_per_t1_daylami_skirmishers" max="LEVY" />
-        <Levies porcentage="8" key="mk_merc_iran_t1_daylami_infantry" max="LEVY" />
-        <Levies porcentage="5" key="mk_aze_t1_highland_slingers" max="LEVY" />
         <MenAtArm type="Guardians" key="att_ger_godansmen" max="INFANTRY" />
         <MenAtArm type="Phalanxes" key="cha_slav_ambushers" max="INFANTRY" />
         <MenAtArm type="Shieldwall Arbalests" key="mk_ara_t1_almogavars" max="RANGED" />
@@ -3832,9 +3795,16 @@
     <Faction name="Western Germanic Rebels">
         <General key="mk_sco_t1_king_bodyguard" />
         <Knights key="mk_sco_t1_knights" />
-        <Levies porcentage="13" key="mk_sco_t1_highlander_spear" max="LEVY" />
-        <Levies porcentage="5" key="mk_sco_t1_sergeants" max="LEVY" />
-        <Levies porcentage="2" key="mk_sco_t1_longbow_militia" max="LEVY" />
+        <Levies porcentage="9" key="mk_sco_t1_highlander_spear" max="LEVY" />
+        <Levies porcentage="14" key="mk_sco_t1_sergeants" max="LEVY" />
+        <Levies porcentage="12" key="mk_sco_t1_longbow_militia" max="LEVY" />
+        <Levies porcentage="7" key="mk_brab_t1_militia_spearmen" max="LEVY" />
+        <Levies porcentage="11" key="mk_brab_t1_sergeants" max="LEVY" />
+        <Levies porcentage="12" key="mk_brab_t1_levy_archer" max="LEVY" />
+        <Levies porcentage="8" key="mk_merc_sco_t1_highlanders" max="LEVY" />
+        <Levies porcentage="7" key="mk_merc_gael_t1_galloglaich" max="LEVY" />
+        <Levies porcentage="10" key="mk_sco_t1_longbow_militia" max="LEVY" />
+        <Levies porcentage="10" key="mk_merc_wel_t1_spearmen" max="LEVY" />
         <MenAtArm type="light_footmen" key="mk_merc_sco_t1_highlanders" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="mk_sco_t1_foot_knights" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="mk_sco_t1_pikemen" max="INFANTRY" />
@@ -3924,18 +3894,6 @@
         <MenAtArm type="war_elephant" key="mk_ghu_t1_indian_elephants" max="CAVALRY" />
         <MenAtArm type="zbrojnosh" key="mk_pol_t2_heavy_axemen" max="INFANTRY" />
         <MenAtArm type="zupin_warrior" key="mk_merc_iran_t1_daylami_infantry" max="INFANTRY" />
-        <Levies porcentage="13" key="mk_brab_t1_militia_spearmen" max="LEVY" />
-        <Levies porcentage="5" key="mk_brab_t1_sergeants" max="LEVY" />
-        <Levies porcentage="2" key="mk_brab_t1_levy_archer" max="LEVY" />
-        <Levies porcentage="11" key="mk_merc_sco_t1_highlanders" max="LEVY" />
-        <Levies porcentage="7" key="mk_merc_gael_t1_galloglaich" max="LEVY" />
-        <Levies porcentage="2" key="mk_sco_t1_longbow_militia" max="LEVY" />
-        <Levies porcentage="10" key="mk_merc_wel_t1_spearmen" max="LEVY" />
-        <Levies porcentage="8" key="mk_dan_t1_landevaern_infantry" max="LEVY" />
-        <Levies porcentage="2" key="mk_dan_t1_bow_bondir" max="LEVY" />
-        <Levies porcentage="13" key="mk_wel_t1_spear_band" max="LEVY" />
-        <Levies porcentage="5" key="mk_wel_t1_dismounted_uchelwyr" max="LEVY" />
-        <Levies porcentage="2" key="mk_merc_wel_t1_longbowmen" max="LEVY" />
         <MenAtArm type="Guardians" key="att_ger_godansmen" max="INFANTRY" />
         <MenAtArm type="Phalanxes" key="cha_slav_ambushers" max="INFANTRY" />
         <MenAtArm type="Shieldwall Arbalests" key="mk_ara_t1_almogavars" max="RANGED" />
@@ -4266,9 +4224,9 @@
     <Faction name="Prussians">
         <General key="mk_cuman_t1_guards" />
         <Knights key="mk_mon_t1_asudai_khisigten" />
-        <Levies porcentage="60" key="mk_merc_alan_t1_horse_archers" max="LEVY" />
-        <Levies porcentage="30" key="mk_merc_alan_t1_light_lancers" max="LEVY" />
-        <Levies porcentage="10" key="mk_hre_t1_fussknecht_spiesser" max="LEVY" />
+        <Levies porcentage="17" key="mk_merc_alan_t1_horse_archers" max="LEVY" />
+        <Levies porcentage="49" key="mk_merc_alan_t1_light_lancers" max="LEVY" />
+        <Levies porcentage="34" key="mk_hre_t1_fussknecht_spiesser" max="LEVY" />
         <MenAtArm type="light_footmen" key="mk_arm_t1_bardzravandak_skirmishers" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="mk_georg_t1_aznauri_swordsmen" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="mk_georg_t1_svanian_spearmen" max="INFANTRY" />
@@ -4688,10 +4646,10 @@
     <Faction name="Armenia">
         <General key="mk_arm_t1_goundesdapel_and_bodyguards" />
         <Knights key="mk_arm_t1_archer_dziaworner" />
-        <Levies porcentage="50" key="mk_arm_t1_bourdjes_militia" max="LEVY" />
-        <Levies porcentage="25" key="mk_arm_t1_foot_serzhantner" max="LEVY" />
-        <Levies porcentage="10" key="mk_arm_t1_bourdjes_archers" max="LEVY" />
-        <Levies porcentage="15" key="mk_arm_t1_bardzravandak_horsemen" max="LEVY" />
+        <Levies porcentage="16" key="mk_arm_t1_bourdjes_militia" max="LEVY" />
+        <Levies porcentage="40" key="mk_arm_t1_foot_serzhantner" max="LEVY" />
+        <Levies porcentage="32" key="mk_arm_t1_bourdjes_archers" max="LEVY" />
+        <Levies porcentage="12" key="mk_arm_t1_bardzravandak_horsemen" max="LEVY" />
         <MenAtArm type="light_footmen" key="mk_arm_t1_bardzraharker" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="mk_arm_t1_dismounted_archer_dziaworner" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="mk_arm_t1_spear_serzhantner" max="INFANTRY" />
@@ -5111,9 +5069,9 @@
     <Faction name="Spahan">
         <General key="mk_georg_t1_monaspa_guard" />
         <Knights key="mk_georg_t1_tadzreuli" />
-        <Levies porcentage="65" key="mk_georg_t1_shubosani_molashqre" max="LEVY" />
-        <Levies porcentage="25" key="mk_georg_t1_khevsur_swordsmen" max="LEVY" />
-        <Levies porcentage="10" key="mk_georg_t1_svanian_hunters" max="LEVY" />
+        <Levies porcentage="26" key="mk_georg_t1_shubosani_molashqre" max="LEVY" />
+        <Levies porcentage="37" key="mk_georg_t1_khevsur_swordsmen" max="LEVY" />
+        <Levies porcentage="37" key="mk_georg_t1_svanian_hunters" max="LEVY" />
         <MenAtArm type="light_footmen" key="mk_arm_t1_bardzraharker" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="mk_georg_t1_aznauri_swordsmen" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="mk_georg_t1_metsikhovne_spearmen" max="INFANTRY" />
@@ -5533,9 +5491,9 @@
     <Faction name="Bastarnians">
         <General key="mk_hre_t1_reichshauptmann_und_gefolge" />
         <Knights key="mk_ger_t1_bav_duke_bodyguard" />
-        <Levies porcentage="65" key="mk_hre_t1_landsturm" max="LEVY" />
-        <Levies porcentage="25" key="mk_aus_t1_fussknecht_spearmen" max="LEVY" />
-        <Levies porcentage="10" key="mk_aus_t1_landsturm_crossbowmen" max="LEVY" />
+        <Levies porcentage="11" key="mk_hre_t1_landsturm" max="LEVY" />
+        <Levies porcentage="45" key="mk_aus_t1_fussknecht_spearmen" max="LEVY" />
+        <Levies porcentage="44" key="mk_aus_t1_landsturm_crossbowmen" max="LEVY" />
         <MenAtArm type="light_footmen" key="mk_hre_t1_burgerwehr_streitaxte" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="mk_aus_t1_foot_ritter" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="mk_hre_t1_fussknecht_spiesser" max="INFANTRY" />
@@ -5955,9 +5913,12 @@
     <Faction name="Eastern Germanic Rebels">
         <General key="mk_ger_t1_sax_general_bodyguard" />
         <Knights key="mk_ger_t1_sax_knights" />
-        <Levies porcentage="32" key="mk_hre_t1_burgerwehr_spiesser" max="LEVY" />
-        <Levies porcentage="12" key="mk_hre_t1_fussknecht_spiesser" max="LEVY" />
-        <Levies porcentage="5" key="mk_hre_t1_landsturms_armbrustschutzen" max="LEVY" />
+        <Levies porcentage="13" key="mk_hre_t1_burgerwehr_spiesser" max="LEVY" />
+        <Levies porcentage="8" key="mk_hre_t1_fussknecht_spiesser" max="LEVY" />
+        <Levies porcentage="22" key="mk_hre_t1_landsturms_armbrustschutzen" max="LEVY" />
+        <Levies porcentage="16" key="mk_teu_t1_levy_spearmen" max="LEVY" />
+        <Levies porcentage="14" key="mk_teu_t1_samlander_swordsmen" max="LEVY" />
+        <Levies porcentage="27" key="mk_teu_t1_levy_crossbowmen" max="LEVY" />
         <MenAtArm type="light_footmen" key="mk_hre_t1_burgerwehr_streitaxte" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="mk_ger_t1_sax_knight_dismounted" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="mk_hre_t1_fussknecht" max="INFANTRY" />
@@ -6047,9 +6008,6 @@
         <MenAtArm type="war_elephant" key="mk_ghu_t1_indian_elephants" max="CAVALRY" />
         <MenAtArm type="zbrojnosh" key="mk_pol_t2_heavy_axemen" max="INFANTRY" />
         <MenAtArm type="zupin_warrior" key="mk_merc_iran_t1_daylami_infantry" max="INFANTRY" />
-        <Levies porcentage="32" key="mk_teu_t1_levy_spearmen" max="LEVY" />
-        <Levies porcentage="12" key="mk_teu_t1_samlander_swordsmen" max="LEVY" />
-        <Levies porcentage="7" key="mk_teu_t1_levy_crossbowmen" max="LEVY" />
         <MenAtArm type="Guardians" key="att_ger_godansmen" max="INFANTRY" />
         <MenAtArm type="Phalanxes" key="cha_slav_ambushers" max="INFANTRY" />
         <MenAtArm type="Shieldwall Arbalests" key="mk_ara_t1_almogavars" max="RANGED" />
@@ -6380,9 +6338,12 @@
     <Faction name="Suebians">
         <General key="mk_hre_t1_reichshauptmann_und_gefolge" />
         <Knights key="mk_swi_t1_feldhauptmann" />
-        <Levies porcentage="32" key="mk_hre_t1_burgerwehr_spiesser" max="LEVY" />
-        <Levies porcentage="12" key="mk_swi_t1_zaehringer_swordsmen" max="LEVY" />
-        <Levies porcentage="5" key="mk_hre_t1_landsturms_armbrustschutzen" max="LEVY" />
+        <Levies porcentage="16" key="mk_hre_t1_burgerwehr_spiesser" max="LEVY" />
+        <Levies porcentage="15" key="mk_swi_t1_zaehringer_swordsmen" max="LEVY" />
+        <Levies porcentage="22" key="mk_hre_t1_landsturms_armbrustschutzen" max="LEVY" />
+        <Levies porcentage="19" key="mk_por_t1_peoes_de_lanca" max="LEVY" />
+        <Levies porcentage="19" key="mk_mold_t3_dismounted_curteni" max="LEVY" />
+        <Levies porcentage="9" key="mk_por_t1_peoes_de_besta" max="LEVY" />
         <MenAtArm type="light_footmen" key="mk_pap_t1_foot_berrovieri" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="mk_dan_t2_gotland_merchant_footmen" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="mk_rus_t3_spearmen" max="INFANTRY" />
@@ -6472,9 +6433,6 @@
         <MenAtArm type="war_elephant" key="mk_ghu_t1_indian_elephants" max="CAVALRY" />
         <MenAtArm type="zbrojnosh" key="mk_pol_t2_heavy_axemen" max="INFANTRY" />
         <MenAtArm type="zupin_warrior" key="mk_merc_iran_t1_daylami_infantry" max="INFANTRY" />
-        <Levies porcentage="40" key="mk_por_t1_peoes_de_lanca" max="LEVY" />
-        <Levies porcentage="5" key="mk_mold_t3_dismounted_curteni" max="LEVY" />
-        <Levies porcentage="6" key="mk_por_t1_peoes_de_besta" max="LEVY" />
         <MenAtArm type="Guardians" key="att_ger_godansmen" max="INFANTRY" />
         <MenAtArm type="Phalanxes" key="cha_slav_ambushers" max="INFANTRY" />
         <MenAtArm type="Shieldwall Arbalests" key="mk_ara_t1_almogavars" max="RANGED" />
@@ -6805,9 +6763,12 @@
     <Faction name="Oriens">
         <General key="mk_nav_t2_kings_bodyguard" />
         <Knights key="mk_vlach_t3_curteni_cavalry" />
-        <Levies porcentage="32" key="mk_cuman_t1_spearmen" max="LEVY" />
-        <Levies porcentage="12" key="mk_volga_t1_tribal_infantry" max="LEVY" />
-        <Levies porcentage="5" key="earl_civ_mon_farm" max="LEVY" />
+        <Levies porcentage="21" key="mk_cuman_t1_spearmen" max="LEVY" />
+        <Levies porcentage="10" key="mk_volga_t1_tribal_infantry" max="LEVY" />
+        <Levies porcentage="27" key="earl_civ_mon_farm" max="LEVY" />
+        <Levies porcentage="15" key="mk_boh_t1_militia_spearmen" max="LEVY" />
+        <Levies porcentage="18" key="mk_boh_t1_sergeants" max="LEVY" />
+        <Levies porcentage="9" key="mk_boh_t1_militia_archers" max="LEVY" />
         <MenAtArm type="light_footmen" key="mk_cuman_t1_skirmishers" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="mk_volga_t1_elite_archers" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="mk_volga_t2_tribal_spearmen" max="INFANTRY" />
@@ -6897,9 +6858,6 @@
         <MenAtArm type="war_elephant" key="mk_ghu_t1_indian_elephants" max="CAVALRY" />
         <MenAtArm type="zbrojnosh" key="mk_pol_t2_heavy_axemen" max="INFANTRY" />
         <MenAtArm type="zupin_warrior" key="mk_merc_iran_t1_daylami_infantry" max="INFANTRY" />
-        <Levies porcentage="32" key="mk_boh_t1_militia_spearmen" max="LEVY" />
-        <Levies porcentage="12" key="mk_boh_t1_sergeants" max="LEVY" />
-        <Levies porcentage="7" key="mk_boh_t1_militia_archers" max="LEVY" />
         <MenAtArm type="Guardians" key="att_ger_godansmen" max="INFANTRY" />
         <MenAtArm type="Phalanxes" key="cha_slav_ambushers" max="INFANTRY" />
         <MenAtArm type="Shieldwall Arbalests" key="mk_ara_t1_almogavars" max="RANGED" />
@@ -7230,9 +7188,13 @@
     <Faction name="Makran">
         <General key="mk_zag_t1_dejazmach_guard" />
         <Knights key="mk_zag_t1_general_bodyguard" />
-        <Levies porcentage="40" key="mk_zag_t1_spear_sarawit" max="LEVY" />
-        <Levies porcentage="5" key="mk_zag_t1_highland_angada" max="LEVY" />
-        <Levies porcentage="5" key="mk_merc_afr_t1_maya_bowmen" max="LEVY" />
+        <Levies porcentage="8" key="mk_zag_t1_spear_sarawit" max="LEVY" />
+        <Levies porcentage="10" key="mk_zag_t1_highland_angada" max="LEVY" />
+        <Levies porcentage="12" key="mk_merc_afr_t1_maya_bowmen" max="LEVY" />
+        <Levies porcentage="25" key="mk_gran_t1_hushud" max="LEVY" />
+        <Levies porcentage="17" key="mk_gran_t1_andalusian_jund" max="LEVY" />
+        <Levies porcentage="18" key="mk_gran_t1_andalusian_crossbowmen" max="LEVY" />
+        <Levies porcentage="10" key="mk_gran_t1_granadine_spear_cavalry" max="LEVY" />
         <MenAtArm type="light_footmen" key="mk_zag_t1_hadar_frontiersmen" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="earl_zag_t1_chief_warrior" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="mk_merc_afr_t1_habesha_spearmen" max="INFANTRY" />
@@ -7322,10 +7284,6 @@
         <MenAtArm type="war_elephant" key="mk_ghu_t1_indian_elephants" max="CAVALRY" />
         <MenAtArm type="zbrojnosh" key="mk_pol_t2_heavy_axemen" max="INFANTRY" />
         <MenAtArm type="zupin_warrior" key="mk_merc_iran_t1_daylami_infantry" max="INFANTRY" />
-        <Levies porcentage="25" key="mk_gran_t1_hushud" max="LEVY" />
-        <Levies porcentage="15" key="mk_gran_t1_andalusian_jund" max="LEVY" />
-        <Levies porcentage="5" key="mk_gran_t1_andalusian_crossbowmen" max="LEVY" />
-        <Levies porcentage="5" key="mk_gran_t1_granadine_spear_cavalry" max="LEVY" />
         <MenAtArm type="Guardians" key="att_ger_godansmen" max="INFANTRY" />
         <MenAtArm type="Phalanxes" key="cha_slav_ambushers" max="INFANTRY" />
         <MenAtArm type="Shieldwall Arbalests" key="mk_ara_t1_almogavars" max="RANGED" />
@@ -7656,10 +7614,16 @@
     <Faction name="Rugians">
         <General key="mk_rus_t1_knyaz_guard" />
         <Knights key="mk_rus_t1_senior_druzina" />
-        <Levies porcentage="17" key="mk_rus_t1_militia_spearmen" max="LEVY" />
-        <Levies porcentage="8" key="mk_rus_t1_militia_heavy_spearmen" max="LEVY" />
-        <Levies porcentage="3" key="mk_rus_t1_militia_archers" max="LEVY" />
-        <Levies porcentage="5" key="mk_rus_t1_militia_infantry" max="LEVY" />
+        <Levies porcentage="13" key="mk_rus_t1_militia_spearmen" max="LEVY" />
+        <Levies porcentage="9" key="mk_rus_t1_militia_heavy_spearmen" max="LEVY" />
+        <Levies porcentage="5" key="mk_rus_t1_militia_archers" max="LEVY" />
+        <Levies porcentage="12" key="mk_rus_t1_militia_infantry" max="LEVY" />
+        <Levies porcentage="11" key="mk_vlach_t1_peasants" max="LEVY" />
+        <Levies porcentage="12" key="mk_hun_t1_szekely_HA" max="LEVY" />
+        <Levies porcentage="17" key="mk_hun_t1_royal_warriors" max="LEVY" />
+        <Levies porcentage="6" key="mk_nor_t1_bondir" max="LEVY" />
+        <Levies porcentage="5" key="mk_nor_t1_hirdmen" max="LEVY" />
+        <Levies porcentage="10" key="mk_nor_t1_bow_bondir" max="LEVY" />
         <MenAtArm type="light_footmen" key="mk_rus_t1_javelinmen" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="mk_rus_t1_swordsmen" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="mk_rus_t1_spearmen" max="INFANTRY" />
@@ -7749,12 +7713,6 @@
         <MenAtArm type="war_elephant" key="mk_ghu_t1_indian_elephants" max="CAVALRY" />
         <MenAtArm type="zbrojnosh" key="mk_pol_t2_heavy_axemen" max="INFANTRY" />
         <MenAtArm type="zupin_warrior" key="mk_merc_iran_t1_daylami_infantry" max="INFANTRY" />
-        <Levies porcentage="13" key="mk_vlach_t1_peasants" max="LEVY" />
-        <Levies porcentage="13" key="mk_hun_t1_szekely_HA" max="LEVY" />
-        <Levies porcentage="7" key="mk_hun_t1_royal_warriors" max="LEVY" />
-        <Levies porcentage="22" key="mk_nor_t1_bondir" max="LEVY" />
-        <Levies porcentage="8" key="mk_nor_t1_hirdmen" max="LEVY" />
-        <Levies porcentage="4" key="mk_nor_t1_bow_bondir" max="LEVY" />
         <MenAtArm type="Guardians" key="att_ger_godansmen" max="INFANTRY" />
         <MenAtArm type="Phalanxes" key="cha_slav_ambushers" max="INFANTRY" />
         <MenAtArm type="Shieldwall Arbalests" key="mk_ara_t1_almogavars" max="RANGED" />
@@ -8085,9 +8043,9 @@
     <Faction name="French Rebels">
         <General key="mk_fre_t1_general_bodyguard" />
         <Knights key="mk_fre_t1_chevaliers_mounted" />
-        <Levies porcentage="65" key="mk_fre_t1_levy_spearmen" max="LEVY" />
-        <Levies porcentage="25" key="mk_fre_t1_sergeants" max="LEVY" />
-        <Levies porcentage="10" key="mk_fre_t1_levy_crossbowmen" max="LEVY" />
+        <Levies porcentage="33" key="mk_fre_t1_levy_spearmen" max="LEVY" />
+        <Levies porcentage="34" key="mk_fre_t1_sergeants" max="LEVY" />
+        <Levies porcentage="33" key="mk_fre_t1_levy_crossbowmen" max="LEVY" />
         <MenAtArm type="light_footmen" key="mk_fre_t1_ribauds" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="mk_fre_t1_chevaliers_dismounted" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="mk_merc_fre_t1_routiers_spearmen" max="INFANTRY" />
@@ -8507,9 +8465,16 @@
     <Faction name="Franks">
         <General key="mk_eng_t1_king_bodyguard" />
         <Knights key="mk_eng_t1_knights" />
-        <Levies porcentage="22" key="mk_eng_t1_spear_militia" max="LEVY" />
-        <Levies porcentage="8" key="mk_eng_t1_axe_sergeant" max="LEVY" />
-        <Levies porcentage="3" key="mk_dan_t1_bow_bondir" max="LEVY" />
+        <Levies porcentage="11" key="mk_eng_t1_spear_militia" max="LEVY" />
+        <Levies porcentage="6" key="mk_eng_t1_axe_sergeant" max="LEVY" />
+        <Levies porcentage="10" key="mk_dan_t1_bow_bondir" max="LEVY" />
+        <Levies porcentage="10" key="mk_vlach_t1_mosneni" max="LEVY" />
+        <Levies porcentage="14" key="mk_fla_t1_sergeants" max="LEVY" />
+        <Levies porcentage="11" key="mk_fla_t1_bowmen" max="LEVY" />
+        <Levies porcentage="12" key="mk_volga_t1_chirmesh_spearmen" max="LEVY" />
+        <Levies porcentage="12" key="mk_tri_t1_elector_spearmen" max="LEVY" />
+        <Levies porcentage="7" key="mk_tri_t1_trier_swordsmen" max="LEVY" />
+        <Levies porcentage="7" key="mk_tri_t1_elector_bowmen" max="LEVY" />
         <MenAtArm type="light_footmen" key="mk_fre_t1_sergeant_axemen" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="mk_eng_t1_foot_knights" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="mk_merc_fre_t1_routiers_spearmen" max="INFANTRY" />
@@ -8599,13 +8564,6 @@
         <MenAtArm type="war_elephant" key="mk_ghu_t1_indian_elephants" max="CAVALRY" />
         <MenAtArm type="zbrojnosh" key="mk_pol_t2_heavy_axemen" max="INFANTRY" />
         <MenAtArm type="zupin_warrior" key="mk_merc_iran_t1_daylami_infantry" max="INFANTRY" />
-        <Levies porcentage="15" key="mk_vlach_t1_mosneni" max="LEVY" />
-        <Levies porcentage="8" key="mk_fla_t1_sergeants" max="LEVY" />
-        <Levies porcentage="3" key="mk_fla_t1_bowmen" max="LEVY" />
-        <Levies porcentage="7" key="mk_volga_t1_chirmesh_spearmen" max="LEVY" />
-        <Levies porcentage="22" key="mk_tri_t1_elector_spearmen" max="LEVY" />
-        <Levies porcentage="8" key="mk_tri_t1_trier_swordsmen" max="LEVY" />
-        <Levies porcentage="4" key="mk_tri_t1_elector_bowmen" max="LEVY" />
         <MenAtArm type="Guardians" key="att_ger_godansmen" max="INFANTRY" />
         <MenAtArm type="Phalanxes" key="cha_slav_ambushers" max="INFANTRY" />
         <MenAtArm type="Shieldwall Arbalests" key="mk_ara_t1_almogavars" max="RANGED" />
@@ -8936,10 +8894,10 @@
     <Faction name="Magyars">
         <General key="mk_zag_t1_negusa_nagast_ras" />
         <Knights key="mk_zag_t1_heroic_horsemen" />
-        <Levies porcentage="45" key="mk_zag_t1_spear_sarawit" max="LEVY" />
-        <Levies porcentage="35" key="mk_mak_t1_beja_tribesmen" max="LEVY" />
-        <Levies porcentage="10" key="mk_mak_t1_beja_bowmen" max="LEVY" />
-        <Levies porcentage="10" key="mk_mak_t1_beja_camelry" max="LEVY" />
+        <Levies porcentage="27" key="mk_zag_t1_spear_sarawit" max="LEVY" />
+        <Levies porcentage="15" key="mk_mak_t1_beja_tribesmen" max="LEVY" />
+        <Levies porcentage="40" key="mk_mak_t1_beja_bowmen" max="LEVY" />
+        <Levies porcentage="18" key="mk_mak_t1_beja_camelry" max="LEVY" />
         <MenAtArm type="light_footmen" key="mk_merc_afr_t1_afar_tribesmen" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="mk_mak_t1_arab_infantry" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="mk_merc_afr_t1_habesha_spearmen" max="INFANTRY" />
@@ -9359,9 +9317,12 @@
     <Faction name="Britain">
         <General key="mk_ara_t1_king_bodyguard" />
         <Knights key="mk_ara_t1_general_bodyguard" />
-        <Levies porcentage="32" key="mk_ara_t1_militia_spearmen" max="LEVY" />
+        <Levies porcentage="11" key="mk_ara_t1_militia_spearmen" max="LEVY" />
         <Levies porcentage="12" key="mk_ara_t1_peones" max="LEVY" />
-        <Levies porcentage="5" key="mk_ara_t1_militia_crossbowmen" max="LEVY" />
+        <Levies porcentage="25" key="mk_ara_t1_militia_crossbowmen" max="LEVY" />
+        <Levies porcentage="19" key="mk_volga_t1_tribal_spearmen" max="LEVY" />
+        <Levies porcentage="23" key="mk_volga_t1_tribal_infantry" max="LEVY" />
+        <Levies porcentage="10" key="mk_volga_t1_tribal_archers" max="LEVY" />
         <MenAtArm type="light_footmen" key="mk_ara_t1_almogavars" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="mk_ara_t1_dismounted_caballeros" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="mk_ara_t1_peones_spearmen" max="INFANTRY" />
@@ -9451,9 +9412,6 @@
         <MenAtArm type="war_elephant" key="mk_ghu_t1_indian_elephants" max="CAVALRY" />
         <MenAtArm type="zbrojnosh" key="mk_pol_t2_heavy_axemen" max="INFANTRY" />
         <MenAtArm type="zupin_warrior" key="mk_merc_iran_t1_daylami_infantry" max="INFANTRY" />
-        <Levies porcentage="30" key="mk_volga_t1_tribal_spearmen" max="LEVY" />
-        <Levies porcentage="15" key="mk_volga_t1_tribal_infantry" max="LEVY" />
-        <Levies porcentage="6" key="mk_volga_t1_tribal_archers" max="LEVY" />
         <MenAtArm type="Guardians" key="att_ger_godansmen" max="INFANTRY" />
         <MenAtArm type="Phalanxes" key="cha_slav_ambushers" max="INFANTRY" />
         <MenAtArm type="Shieldwall Arbalests" key="mk_ara_t1_almogavars" max="RANGED" />
@@ -9784,9 +9742,9 @@
     <Faction name="Visigoths">
         <General key="mk_cas_t1_general_bodyguard" />
         <Knights key="mk_cas_t1_hidalgos" />
-        <Levies porcentage="65" key="mk_cas_t1_spear_militia" max="LEVY" />
-        <Levies porcentage="25" key="mk_cas_t1_peones" max="LEVY" />
-        <Levies porcentage="10" key="mk_cas_t1_crossbow_militia" max="LEVY" />
+        <Levies porcentage="41" key="mk_cas_t1_spear_militia" max="LEVY" />
+        <Levies porcentage="46" key="mk_cas_t1_peones" max="LEVY" />
+        <Levies porcentage="13" key="mk_cas_t1_crossbow_militia" max="LEVY" />
         <MenAtArm type="light_footmen" key="mk_cas_t1_almogavars" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="mk_cas_t1_dismounted_caballeros" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="mk_cas_t1_peones_spearmen" max="INFANTRY" />
@@ -10206,9 +10164,9 @@
     <Faction name="Basques">
         <General key="mk_nav_t1_general_bodyguard" />
         <Knights key="mk_nav_t1_hidalgos" />
-        <Levies porcentage="65" key="mk_nav_t1_militia_spearmen" max="LEVY" />
-        <Levies porcentage="25" key="mk_nav_t1_peones" max="LEVY" />
-        <Levies porcentage="10" key="mk_nav_t1_militia_archers" max="LEVY" />
+        <Levies porcentage="42" key="mk_nav_t1_militia_spearmen" max="LEVY" />
+        <Levies porcentage="31" key="mk_nav_t1_peones" max="LEVY" />
+        <Levies porcentage="27" key="mk_nav_t1_militia_archers" max="LEVY" />
         <MenAtArm type="light_footmen" key="mk_nav_t1_vasque_skirmishers" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="mk_nav_t1_dismounted_hidalgos" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="mk_nav_t1_peones_spearmen" max="INFANTRY" />
@@ -10628,10 +10586,13 @@
     <Faction name="Sardinians">
         <General key="mk_ghu_t1_ghulaman-i-saltan" />
         <Knights key="mk_ghu_t1_ghulam_jandars" />
-        <Levies porcentage="28" key="mk_ghu_t1_tajik_levy" max="LEVY" />
-        <Levies porcentage="12" key="mk_ghu_t1_ghori_infantry" max="LEVY" />
-        <Levies porcentage="5" key="mk_ghu_t1_ghori_tribesmen" max="LEVY" />
-        <Levies porcentage="5" key="mk_ghu_t1_sawar-i_barahna_wa-jarida" max="LEVY" />
+        <Levies porcentage="14" key="mk_ghu_t1_tajik_levy" max="LEVY" />
+        <Levies porcentage="15" key="mk_ghu_t1_ghori_infantry" max="LEVY" />
+        <Levies porcentage="16" key="mk_ghu_t1_ghori_tribesmen" max="LEVY" />
+        <Levies porcentage="18" key="mk_ghu_t1_sawar-i_barahna_wa-jarida" max="LEVY" />
+        <Levies porcentage="10" key="mk_ara_t1_militia_spearmen" max="LEVY" />
+        <Levies porcentage="15" key="mk_ara_t1_almogavars" max="LEVY" />
+        <Levies porcentage="12" key="mk_ara_t1_slingers" max="LEVY" />
         <MenAtArm type="light_footmen" key="mk_merc_afg_t1_afghan_hillmen" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="mk_khw_t1_foot_askari" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="mk_ghu_t1_afghan_spearmen" max="INFANTRY" />
@@ -10721,9 +10682,6 @@
         <MenAtArm type="war_elephant" key="mk_ghu_t1_indian_elephants" max="CAVALRY" />
         <MenAtArm type="zbrojnosh" key="mk_pol_t2_heavy_axemen" max="INFANTRY" />
         <MenAtArm type="zupin_warrior" key="mk_merc_iran_t1_daylami_infantry" max="INFANTRY" />
-        <Levies porcentage="28" key="mk_ara_t1_militia_spearmen" max="LEVY" />
-        <Levies porcentage="18" key="mk_ara_t1_almogavars" max="LEVY" />
-        <Levies porcentage="4" key="mk_ara_t1_slingers" max="LEVY" />
         <MenAtArm type="Guardians" key="att_ger_godansmen" max="INFANTRY" />
         <MenAtArm type="Phalanxes" key="cha_slav_ambushers" max="INFANTRY" />
         <MenAtArm type="Shieldwall Arbalests" key="mk_ara_t1_almogavars" max="RANGED" />
@@ -11054,10 +11012,10 @@
     <Faction name="Khwarazmian Empire">
         <General key="mk_khw_t1_khwarazmshah" />
         <Knights key="mk_khw_t1_sipahsalars_jandars" />
-        <Levies porcentage="40" key="mk_khw_t1_muttawiah" max="LEVY" />
-        <Levies porcentage="20" key="mk_khw_t1_khwarazmian_lancers" max="LEVY" />
-        <Levies porcentage="30" key="mk_khw_t1_khwarazmian_cavalry" max="LEVY" />
-        <Levies porcentage="10" key="mk_khw_t1_ghazi" max="LEVY" />
+        <Levies porcentage="14" key="mk_khw_t1_muttawiah" max="LEVY" />
+        <Levies porcentage="12" key="mk_khw_t1_khwarazmian_lancers" max="LEVY" />
+        <Levies porcentage="45" key="mk_khw_t1_khwarazmian_cavalry" max="LEVY" />
+        <Levies porcentage="29" key="mk_khw_t1_ghazi" max="LEVY" />
         <MenAtArm type="light_footmen" key="mk_khw_t1_rayat" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="mk_khw_t1_foot_askari" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="mk_sal_t1_persian_spearmen" max="INFANTRY" />
@@ -11478,10 +11436,10 @@
     <Faction name="Persia">
         <General key="mk_khw_t1_khwarazmshah" />
         <Knights key="mk_khw_t1_sipahsalars_jandars" />
-        <Levies porcentage="60" key="mk_khw_t1_muttawiah" max="LEVY" />
-        <Levies porcentage="15" key="mk_sal_t1_persian_spearmen" max="LEVY" />
-        <Levies porcentage="15" key="mk_aor_per_t1_persian_archers" max="LEVY" />
-        <Levies porcentage="10" key="mk_khw_t1_muqti" max="LEVY" />
+        <Levies porcentage="26" key="mk_khw_t1_muttawiah" max="LEVY" />
+        <Levies porcentage="35" key="mk_sal_t1_persian_spearmen" max="LEVY" />
+        <Levies porcentage="9" key="mk_aor_per_t1_persian_archers" max="LEVY" />
+        <Levies porcentage="30" key="mk_khw_t1_muqti" max="LEVY" />
         <MenAtArm type="light_footmen" key="mk_haz_t1_shanbakara_tribesmen" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="mk_khw_t1_foot_askari" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="mk_khw_t1_piyadegan" max="INFANTRY" />
@@ -11901,10 +11859,10 @@
     <Faction name="Nobatia">
         <General key="mk_haz_t1_malik_hazarasp" />
         <Knights key="mk_haz_t1_atabegs_bodyguards" />
-        <Levies porcentage="50" key="mk_khw_t1_muttawiah" max="LEVY" />
-        <Levies porcentage="30" key="mk_haz_t1_shanbakara_tribesmen" max="LEVY" />
-        <Levies porcentage="10" key="mk_aor_per_t1_persian_archers" max="LEVY" />
-        <Levies porcentage="10" key="mk_zen_t1_arab_jarida" max="LEVY" />
+        <Levies porcentage="29" key="mk_khw_t1_muttawiah" max="LEVY" />
+        <Levies porcentage="24" key="mk_haz_t1_shanbakara_tribesmen" max="LEVY" />
+        <Levies porcentage="24" key="mk_aor_per_t1_persian_archers" max="LEVY" />
+        <Levies porcentage="23" key="mk_zen_t1_arab_jarida" max="LEVY" />
         <MenAtArm type="light_footmen" key="mk_merc_kurd_t1_kurdish_hillmen" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="mk_zen_t1_jazira_infantry" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="mk_zen_t1_jazira_spearmen" max="INFANTRY" />
@@ -12324,9 +12282,16 @@
     <Faction name="Alans">
         <General key="mk_mil_t1_bodyguard" />
         <Knights key="mk_mil_t1_knights" />
-        <Levies porcentage="11" key="mk_mil_t1_militia_spearmen" max="LEVY" />
-        <Levies porcentage="4" key="mk_mil_t1_foot_berrovieri" max="LEVY" />
-        <Levies porcentage="2" key="mk_mil_t1_militia_crossbowmen" max="LEVY" />
+        <Levies porcentage="12" key="mk_mil_t1_militia_spearmen" max="LEVY" />
+        <Levies porcentage="10" key="mk_mil_t1_foot_berrovieri" max="LEVY" />
+        <Levies porcentage="7" key="mk_mil_t1_militia_crossbowmen" max="LEVY" />
+        <Levies porcentage="4" key="mk_pis_t1_militia_spearmen" max="LEVY" />
+        <Levies porcentage="11" key="mk_pis_t1_swordsmen" max="LEVY" />
+        <Levies porcentage="8" key="mk_pis_t1_militia_archer" max="LEVY" />
+        <Levies porcentage="16" key="mk_gen_t1_militia_spearmen" max="LEVY" />
+        <Levies porcentage="8" key="mk_gen_t1_swordmen" max="LEVY" />
+        <Levies porcentage="11" key="mk_gen_t1_militia_archer" max="LEVY" />
+        <Levies porcentage="13" key="mk_merc_swi_t1_swiss_halberdiers" max="LEVY" />
         <MenAtArm type="light_footmen" key="mk_merc_ara_t1_almogavar" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="mk_mil_t1_foot_knights" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="mk_mil_t1_spearmen" max="INFANTRY" />
@@ -12416,21 +12381,6 @@
         <MenAtArm type="war_elephant" key="mk_ghu_t1_indian_elephants" max="CAVALRY" />
         <MenAtArm type="zbrojnosh" key="mk_pol_t2_heavy_axemen" max="INFANTRY" />
         <MenAtArm type="zupin_warrior" key="mk_merc_iran_t1_daylami_infantry" max="INFANTRY" />
-        <Levies porcentage="11" key="mk_pis_t1_militia_spearmen" max="LEVY" />
-        <Levies porcentage="4" key="mk_pis_t1_swordsmen" max="LEVY" />
-        <Levies porcentage="2" key="mk_pis_t1_militia_archer" max="LEVY" />
-        <Levies porcentage="11" key="mk_gen_t1_militia_spearmen" max="LEVY" />
-        <Levies porcentage="4" key="mk_gen_t1_swordmen" max="LEVY" />
-        <Levies porcentage="2" key="mk_gen_t1_militia_archer" max="LEVY" />
-        <Levies porcentage="11" key="mk_merc_swi_t1_swiss_halberdiers" max="LEVY" />
-        <Levies porcentage="4" key="mk_aus_t1_fussknecht_spearmen" max="LEVY" />
-        <Levies porcentage="2" key="mk_pap_t1_french_merc" max="LEVY" />
-        <Levies porcentage="11" key="mk_nap_t1_spear_militia" max="LEVY" />
-        <Levies porcentage="4" key="mk_nap_t1_swordsmen" max="LEVY" />
-        <Levies porcentage="2" key="mk_nap_t1_archer_militia" max="LEVY" />
-        <Levies porcentage="11" key="mk_ven_t1_militia_spearmen" max="LEVY" />
-        <Levies porcentage="4" key="mk_ven_t1_swordsmen" max="LEVY" />
-        <Levies porcentage="0" key="mk_ven_t1_militia_archer" max="LEVY" />
         <MenAtArm type="Guardians" key="att_ger_godansmen" max="INFANTRY" />
         <MenAtArm type="Phalanxes" key="cha_slav_ambushers" max="INFANTRY" />
         <MenAtArm type="Shieldwall Arbalests" key="mk_ara_t1_almogavars" max="RANGED" />
@@ -12761,9 +12711,12 @@
     <Faction name="Marcomans">
         <General key="mk_epi_t1_oikeioi" />
         <Knights key="mk_epi_t1_pronoiarioi" />
-        <Levies porcentage="32" key="mk_lat_t1_militiai" max="LEVY" />
-        <Levies porcentage="12" key="mk_lat_t1_sergents" max="LEVY" />
-        <Levies porcentage="5" key="mk_lat_t1_thelematarioi_toxotes" max="LEVY" />
+        <Levies porcentage="7" key="mk_lat_t1_militiai" max="LEVY" />
+        <Levies porcentage="22" key="mk_lat_t1_sergents" max="LEVY" />
+        <Levies porcentage="27" key="mk_lat_t1_thelematarioi_toxotes" max="LEVY" />
+        <Levies porcentage="10" key="mk_merc_siberia_t1_spearmen" max="LEVY" />
+        <Levies porcentage="13" key="mk_merc_rus_t1_ushkuiniki" max="LEVY" />
+        <Levies porcentage="21" key="mk_mold_t1_militia_archers" max="LEVY" />
         <MenAtArm type="light_footmen" key="mk_lat_t1_gasmouli" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="mk_epi_t1_vardariotai" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="mk_lat_t1_kastrenoi_burgenses" max="INFANTRY" />
@@ -12853,9 +12806,6 @@
         <MenAtArm type="war_elephant" key="mk_ghu_t1_indian_elephants" max="CAVALRY" />
         <MenAtArm type="zbrojnosh" key="mk_pol_t2_heavy_axemen" max="INFANTRY" />
         <MenAtArm type="zupin_warrior" key="mk_merc_iran_t1_daylami_infantry" max="INFANTRY" />
-        <Levies porcentage="32" key="mk_merc_siberia_t1_spearmen" max="LEVY" />
-        <Levies porcentage="12" key="mk_merc_rus_t1_ushkuiniki" max="LEVY" />
-        <Levies porcentage="7" key="mk_mold_t1_militia_archers" max="LEVY" />
         <MenAtArm type="Guardians" key="att_ger_godansmen" max="INFANTRY" />
         <MenAtArm type="Phalanxes" key="cha_slav_ambushers" max="INFANTRY" />
         <MenAtArm type="Shieldwall Arbalests" key="mk_ara_t1_almogavars" max="RANGED" />
@@ -13186,10 +13136,10 @@
     <Faction name="Hungarian Rebels">
         <General key="mk_hun_t1_king_bodyguard" />
         <Knights key="mk_hun_t1_general_bodyguard" />
-        <Levies porcentage="45" key="mk_hun_t1_militia_spear" max="LEVY" />
-        <Levies porcentage="20" key="mk_hun_t1_sword" max="LEVY" />
-        <Levies porcentage="10" key="mk_hun_t1_militia_crossbowmen" max="LEVY" />
-        <Levies porcentage="25" key="mk_hun_t1_HA" max="LEVY" />
+        <Levies porcentage="27" key="mk_hun_t1_militia_spear" max="LEVY" />
+        <Levies porcentage="13" key="mk_hun_t1_sword" max="LEVY" />
+        <Levies porcentage="45" key="mk_hun_t1_militia_crossbowmen" max="LEVY" />
+        <Levies porcentage="15" key="mk_hun_t1_HA" max="LEVY" />
         <MenAtArm type="light_footmen" key="mk_merc_vlach_t1_skirmishers" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="mk_croat_T1_communal_noble_infantry" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="mk_hun_t1_spearmen" max="INFANTRY" />
@@ -13609,9 +13559,9 @@
     <Faction name="Hunnic Rebels">
         <General key="mk_wel_t3_prince_bodyguard" />
         <Knights key="mk_nav_t1_banneret_caballeros" />
-        <Levies porcentage="60" key="mk_mak_t1_nubian_quilted_spearmen" max="LEVY" />
-        <Levies porcentage="30" key="mk_swi_t3_eidgenossen_swordsmen" max="LEVY" />
-        <Levies porcentage="10" key="mk_mon_t1_qaraghul" max="LEVY" />
+        <Levies porcentage="34" key="mk_mak_t1_nubian_quilted_spearmen" max="LEVY" />
+        <Levies porcentage="38" key="mk_swi_t3_eidgenossen_swordsmen" max="LEVY" />
+        <Levies porcentage="28" key="mk_mon_t1_qaraghul" max="LEVY" />
         <MenAtArm type="light_footmen" key="earl_mon_footmen" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="att_merc_rom_legio" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="earl_mon_foot_soldiers" max="INFANTRY" />
@@ -14031,9 +13981,9 @@
     <Faction name="Danes">
         <General key="mk_dan_t1_king_bodyguard" />
         <Knights key="mk_dan_t1_general_bodyguard" />
-        <Levies porcentage="65" key="mk_dan_t1_landevaern_spearmen" max="LEVY" />
-        <Levies porcentage="25" key="mk_dan_t1_landevaern_infantry" max="LEVY" />
-        <Levies porcentage="10" key="mk_dan_t1_bow_bondir" max="LEVY" />
+        <Levies porcentage="31" key="mk_dan_t1_landevaern_spearmen" max="LEVY" />
+        <Levies porcentage="53" key="mk_dan_t1_landevaern_infantry" max="LEVY" />
+        <Levies porcentage="16" key="mk_dan_t1_bow_bondir" max="LEVY" />
         <MenAtArm type="light_footmen" key="mk_dan_t1_axe_bondir" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="mk_dan_t1_landevaern_infantry" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="mk_dan_t1_huskarls_spear" max="INFANTRY" />
@@ -14453,9 +14403,15 @@
     <Faction name="Northern Germanic Rebels">
         <General key="mk_nor_t1_guest_bodyguard" />
         <Knights key="mk_nor_t1_guest" />
-        <Levies porcentage="22" key="mk_nor_t1_bondir" max="LEVY" />
-        <Levies porcentage="8" key="mk_nor_t1_hirdmen" max="LEVY" />
-        <Levies porcentage="3" key="mk_nor_t1_bow_bondir" max="LEVY" />
+        <Levies porcentage="6" key="mk_nor_t1_bondir" max="LEVY" />
+        <Levies porcentage="9" key="mk_nor_t1_hirdmen" max="LEVY" />
+        <Levies porcentage="11" key="mk_nor_t1_bow_bondir" max="LEVY" />
+        <Levies porcentage="5" key="mk_swd_t1_spear_bondir" max="LEVY" />
+        <Levies porcentage="15" key="mk_dan_t1_landevaern_infantry" max="LEVY" />
+        <Levies porcentage="9" key="mk_dan_t1_bow_bondir" max="LEVY" />
+        <Levies porcentage="16" key="mk_merc_wel_t1_spearmen" max="LEVY" />
+        <Levies porcentage="15" key="mk_aor_sco_t1_galloglaich" max="LEVY" />
+        <Levies porcentage="14" key="mk_nor_t1_bow_bondir" max="LEVY" />
         <MenAtArm type="light_footmen" key="mk_dan_t1_gotland_peasant_militia" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="mk_dan_t1_landevaern_infantry" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="mk_nor_t1_atgeir_bondir" max="INFANTRY" />
@@ -14545,12 +14501,6 @@
         <MenAtArm type="war_elephant" key="mk_ghu_t1_indian_elephants" max="CAVALRY" />
         <MenAtArm type="zbrojnosh" key="mk_pol_t2_heavy_axemen" max="INFANTRY" />
         <MenAtArm type="zupin_warrior" key="mk_merc_iran_t1_daylami_infantry" max="INFANTRY" />
-        <Levies porcentage="22" key="mk_swd_t1_spear_bondir" max="LEVY" />
-        <Levies porcentage="8" key="mk_dan_t1_landevaern_infantry" max="LEVY" />
-        <Levies porcentage="3" key="mk_dan_t1_bow_bondir" max="LEVY" />
-        <Levies porcentage="22" key="mk_merc_wel_t1_spearmen" max="LEVY" />
-        <Levies porcentage="8" key="mk_aor_sco_t1_galloglaich" max="LEVY" />
-        <Levies porcentage="4" key="mk_nor_t1_bow_bondir" max="LEVY" />
         <MenAtArm type="Guardians" key="att_ger_godansmen" max="INFANTRY" />
         <MenAtArm type="Phalanxes" key="cha_slav_ambushers" max="INFANTRY" />
         <MenAtArm type="Shieldwall Arbalests" key="mk_ara_t1_almogavars" max="RANGED" />
@@ -14881,9 +14831,9 @@
     <Faction name="Avars">
         <General key="mk_swd_t1_eric_bodyguard" />
         <Knights key="mk_swd_t1_jarl_bodyguard" />
-        <Levies porcentage="65" key="mk_swd_t1_bondir" max="LEVY" />
-        <Levies porcentage="25" key="mk_swd_t1_hirdmen" max="LEVY" />
-        <Levies porcentage="10" key="mk_dan_t1_bow_bondir" max="LEVY" />
+        <Levies porcentage="17" key="mk_swd_t1_bondir" max="LEVY" />
+        <Levies porcentage="35" key="mk_swd_t1_hirdmen" max="LEVY" />
+        <Levies porcentage="48" key="mk_dan_t1_bow_bondir" max="LEVY" />
         <MenAtArm type="light_footmen" key="mk_dan_t1_gotland_peasant_militia" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="mk_swd_t1_sergeants" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="mk_swd_t1_atgeir_bondir" max="INFANTRY" />
@@ -15303,9 +15253,9 @@
     <Faction name="Illyria">
         <General key="mk_croat_T1_king_bodyguard" />
         <Knights key="mk_croat_t1_general_bodyguard" />
-        <Levies porcentage="65" key="mk_croat_T1_communal_militia" max="LEVY" />
-        <Levies porcentage="25" key="mk_croat_T1_swordsmen" max="LEVY" />
-        <Levies porcentage="10" key="mk_croat_T1_militia_crossbowmen" max="LEVY" />
+        <Levies porcentage="22" key="mk_croat_T1_communal_militia" max="LEVY" />
+        <Levies porcentage="41" key="mk_croat_T1_swordsmen" max="LEVY" />
+        <Levies porcentage="37" key="mk_croat_T1_militia_crossbowmen" max="LEVY" />
         <MenAtArm type="light_footmen" key="mk_croat_T1_javelin_sailors" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="mk_croat_T1_communal_noble_infantry" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="mk_croat_T1_spearmen" max="INFANTRY" />
@@ -15725,9 +15675,12 @@
     <Faction name="Sclavenians">
         <General key="mk_serb_t1_grandprince_bodyguard" />
         <Knights key="mk_serb_t1_bodyguard" />
-        <Levies porcentage="32" key="mk_serb_t1_militia_spearmen" max="LEVY" />
-        <Levies porcentage="12" key="mk_serb_t1_vlastelicici" max="LEVY" />
-        <Levies porcentage="5" key="mk_serb_t1_peasant_bowmen" max="LEVY" />
+        <Levies porcentage="11" key="mk_serb_t1_militia_spearmen" max="LEVY" />
+        <Levies porcentage="25" key="mk_serb_t1_vlastelicici" max="LEVY" />
+        <Levies porcentage="21" key="mk_serb_t1_peasant_bowmen" max="LEVY" />
+        <Levies porcentage="19" key="mk_pol_t1_militia_spearmen" max="LEVY" />
+        <Levies porcentage="11" key="mk_merc_boh_t1_infantry" max="LEVY" />
+        <Levies porcentage="13" key="mk_boh_t1_peasant_archers" max="LEVY" />
         <MenAtArm type="light_footmen" key="mk_serb_t1_frontiersmen" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="mk_bulg_t1_heavy_spearmen" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="mk_serb_t1_vojnici_spearmen" max="INFANTRY" />
@@ -15817,9 +15770,6 @@
         <MenAtArm type="war_elephant" key="mk_ghu_t1_indian_elephants" max="CAVALRY" />
         <MenAtArm type="zbrojnosh" key="mk_pol_t2_heavy_axemen" max="INFANTRY" />
         <MenAtArm type="zupin_warrior" key="mk_merc_iran_t1_daylami_infantry" max="INFANTRY" />
-        <Levies porcentage="32" key="mk_pol_t1_militia_spearmen" max="LEVY" />
-        <Levies porcentage="12" key="mk_merc_boh_t1_infantry" max="LEVY" />
-        <Levies porcentage="7" key="mk_boh_t1_peasant_archers" max="LEVY" />
         <MenAtArm type="Guardians" key="att_ger_godansmen" max="INFANTRY" />
         <MenAtArm type="Phalanxes" key="cha_slav_ambushers" max="INFANTRY" />
         <MenAtArm type="Shieldwall Arbalests" key="mk_ara_t1_almogavars" max="RANGED" />
@@ -16150,9 +16100,9 @@
     <Faction name="Ebdanians">
         <General key="mk_vlach_t1_voievod_bodyguard" />
         <Knights key="mk_vlach_t1_boieri" />
-        <Levies porcentage="65" key="mk_vlach_t1_peasants" max="LEVY" />
-        <Levies porcentage="25" key="mk_vlach_t1_mosneni" max="LEVY" />
-        <Levies porcentage="10" key="mk_vlach_t1_militia_archers" max="LEVY" />
+        <Levies porcentage="30" key="mk_vlach_t1_peasants" max="LEVY" />
+        <Levies porcentage="36" key="mk_vlach_t1_mosneni" max="LEVY" />
+        <Levies porcentage="34" key="mk_vlach_t1_militia_archers" max="LEVY" />
         <MenAtArm type="light_footmen" key="mk_vlach_t1_maciuca_macemen" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="mk_vlach_t1_boieri_archers" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="mk_mold_t1_voinici_spearmen" max="INFANTRY" />
@@ -16572,9 +16522,9 @@
     <Faction name="Saxons">
         <General key="mk_nor_t1_bodyguard" />
         <Knights key="mk_nor_t1_riddere" />
-        <Levies porcentage="50" key="mk_merc_wel_t1_spearmen" max="LEVY" />
-        <Levies porcentage="40" key="mk_dan_t1_landevaern_infantry" max="LEVY" />
-        <Levies porcentage="10" key="mk_merc_wel_t1_longbowmen" max="LEVY" />
+        <Levies porcentage="43" key="mk_merc_wel_t1_spearmen" max="LEVY" />
+        <Levies porcentage="11" key="mk_dan_t1_landevaern_infantry" max="LEVY" />
+        <Levies porcentage="46" key="mk_merc_wel_t1_longbowmen" max="LEVY" />
         <MenAtArm type="light_footmen" key="mk_eng_t1_axe_sergeant" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="mk_eng_t1_foot_knights" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="mk_dan_t1_landevaern_spearmen" max="INFANTRY" />
@@ -16994,9 +16944,9 @@
     <Faction name="English Rebels">
         <General key="mk_eng_t1_king_bodyguard" />
         <Knights key="mk_eng_t1_knights" />
-        <Levies porcentage="65" key="mk_eng_t1_spear_militia" max="LEVY" />
-        <Levies porcentage="25" key="mk_eng_t1_serjeants" max="LEVY" />
-        <Levies porcentage="10" key="mk_dan_t2_gotland_merchant_footmen" max="LEVY" />
+        <Levies porcentage="22" key="mk_eng_t1_spear_militia" max="LEVY" />
+        <Levies porcentage="43" key="mk_eng_t1_serjeants" max="LEVY" />
+        <Levies porcentage="35" key="mk_dan_t2_gotland_merchant_footmen" max="LEVY" />
         <MenAtArm type="light_footmen" key="mk_eng_t1_axe_sergeant" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="mk_eng_t1_foot_knights" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="mk_eng_t1_billmen" max="INFANTRY" />
@@ -17416,9 +17366,12 @@
     <Faction name="West Slavic Rebels">
         <General key="mk_aus_t1_leopold" />
         <Knights key="mk_aus_t1_generals_bodyguard" />
-        <Levies porcentage="32" key="mk_aus_t1_burgerwehr_spearmen" max="LEVY" />
-        <Levies porcentage="12" key="mk_merc_boh_t1_infantry" max="LEVY" />
-        <Levies porcentage="5" key="mk_boh_t1_militia_archers" max="LEVY" />
+        <Levies porcentage="14" key="mk_aus_t1_burgerwehr_spearmen" max="LEVY" />
+        <Levies porcentage="10" key="mk_merc_boh_t1_infantry" max="LEVY" />
+        <Levies porcentage="16" key="mk_boh_t1_militia_archers" max="LEVY" />
+        <Levies porcentage="18" key="mk_pol_t1_militia_spearmen" max="LEVY" />
+        <Levies porcentage="15" key="mk_pol_t1_sergeants" max="LEVY" />
+        <Levies porcentage="27" key="mk_boh_t1_militia_archers" max="LEVY" />
         <MenAtArm type="light_footmen" key="mk_croat_T1_javelin_sailors" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="mk_aus_t1_foot_ritter" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="mk_merc_boh_t1_spearmen" max="INFANTRY" />
@@ -17508,9 +17461,6 @@
         <MenAtArm type="war_elephant" key="mk_ghu_t1_indian_elephants" max="CAVALRY" />
         <MenAtArm type="zbrojnosh" key="mk_pol_t2_heavy_axemen" max="INFANTRY" />
         <MenAtArm type="zupin_warrior" key="mk_merc_iran_t1_daylami_infantry" max="INFANTRY" />
-        <Levies porcentage="32" key="mk_pol_t1_militia_spearmen" max="LEVY" />
-        <Levies porcentage="12" key="mk_pol_t1_sergeants" max="LEVY" />
-        <Levies porcentage="7" key="mk_boh_t1_militia_archers" max="LEVY" />
         <MenAtArm type="Guardians" key="att_ger_godansmen" max="INFANTRY" />
         <MenAtArm type="Phalanxes" key="cha_slav_ambushers" max="INFANTRY" />
         <MenAtArm type="Shieldwall Arbalests" key="mk_ara_t1_almogavars" max="RANGED" />
@@ -17841,9 +17791,9 @@
     <Faction name="Pomeranian Pretenders">
         <General key="mk_pol_t1_general_bodyguard" />
         <Knights key="mk_pol_t1_knight_lesser_poland" />
-        <Levies porcentage="65" key="mk_boh_t1_pacholek_spearmen" max="LEVY" />
-        <Levies porcentage="25" key="mk_merc_boh_t1_infantry" max="LEVY" />
-        <Levies porcentage="10" key="mk_boh_t1_peasant_archers" max="LEVY" />
+        <Levies porcentage="32" key="mk_boh_t1_pacholek_spearmen" max="LEVY" />
+        <Levies porcentage="44" key="mk_merc_boh_t1_infantry" max="LEVY" />
+        <Levies porcentage="24" key="mk_boh_t1_peasant_archers" max="LEVY" />
         <MenAtArm type="light_footmen" key="mk_lit_t1_axemen" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="mk_lit_t1_noble_swordsmen" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="mk_merc_boh_t1_spearmen" max="INFANTRY" />
@@ -18263,9 +18213,9 @@
     <Faction name="Maurians">
         <General key="mk_aus_t1_leopold" />
         <Knights key="mk_aus_t1_generals_bodyguard" />
-        <Levies porcentage="65" key="mk_aus_t1_landsturm_spearmen" max="LEVY" />
-        <Levies porcentage="25" key="mk_aus_t1_fussknecht_spearmen" max="LEVY" />
-        <Levies porcentage="10" key="mk_aus_t1_landsturm_crossbowmen" max="LEVY" />
+        <Levies porcentage="15" key="mk_aus_t1_landsturm_spearmen" max="LEVY" />
+        <Levies porcentage="35" key="mk_aus_t1_fussknecht_spearmen" max="LEVY" />
+        <Levies porcentage="50" key="mk_aus_t1_landsturm_crossbowmen" max="LEVY" />
         <MenAtArm type="light_footmen" key="mk_aus_t1_burgerwehr_spearmen" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="mk_aus_t1_foot_ritter" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="mk_aus_t1_fussknechte_halberdiers" max="INFANTRY" />
@@ -18685,10 +18635,10 @@
     <Faction name="Asia">
         <General key="mk_lor_t1_dukeguard" />
         <Knights key="mk_lor_t1_general_bodyguard" />
-        <Levies porcentage="45" key="mk_lor_t1_spearmen" max="LEVY" />
-        <Levies porcentage="25" key="mk_lor_t1_swordsmen" max="LEVY" />
-        <Levies porcentage="10" key="mk_lor_t1_jager_crossbowmen" max="LEVY" />
-        <Levies porcentage="20" key="mk_lor_t1_pikes" max="LEVY" />
+        <Levies porcentage="24" key="mk_lor_t1_spearmen" max="LEVY" />
+        <Levies porcentage="44" key="mk_lor_t1_swordsmen" max="LEVY" />
+        <Levies porcentage="17" key="mk_lor_t1_jager_crossbowmen" max="LEVY" />
+        <Levies porcentage="15" key="mk_lor_t1_pikes" max="LEVY" />
         <MenAtArm type="light_footmen" key="mk_lor_t1_axemen" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="mk_lor_t1_dismounted_chevaliers" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="mk_lor_t1_dismounted_coutiliers" max="INFANTRY" />
@@ -19108,9 +19058,13 @@
     <Faction name="Atropatene">
         <General key="mk_pis_t1_bodyguard" />
         <Knights key="mk_ita_t1_knights" />
-        <Levies porcentage="32" key="mk_pis_t1_militia_spearmen" max="LEVY" />
-        <Levies porcentage="12" key="mk_bur_t1_sergeants" max="LEVY" />
-        <Levies porcentage="5" key="mk_pis_t1_militia_archer" max="LEVY" />
+        <Levies porcentage="19" key="mk_pis_t1_militia_spearmen" max="LEVY" />
+        <Levies porcentage="20" key="mk_bur_t1_sergeants" max="LEVY" />
+        <Levies porcentage="13" key="mk_pis_t1_militia_archer" max="LEVY" />
+        <Levies porcentage="12" key="mk_mold_t1_militia_spearmen" max="LEVY" />
+        <Levies porcentage="10" key="mk_merc_rus_t1_ushkuiniki" max="LEVY" />
+        <Levies porcentage="17" key="mk_mold_t1_militia_archers" max="LEVY" />
+        <Levies porcentage="9" key="mk_bulg_t1_hooked_pikemen" max="LEVY" />
         <MenAtArm type="light_footmen" key="mk_merc_fre_t1_gascon_bideaux" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="mk_pis_t1_foot_knights" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="mk_merc_fre_t1_routiers_guisarmiers" max="INFANTRY" />
@@ -19200,10 +19154,6 @@
         <MenAtArm type="war_elephant" key="mk_ghu_t1_indian_elephants" max="CAVALRY" />
         <MenAtArm type="zbrojnosh" key="mk_pol_t2_heavy_axemen" max="INFANTRY" />
         <MenAtArm type="zupin_warrior" key="mk_merc_iran_t1_daylami_infantry" max="INFANTRY" />
-        <Levies porcentage="20" key="mk_mold_t1_militia_spearmen" max="LEVY" />
-        <Levies porcentage="15" key="mk_merc_rus_t1_ushkuiniki" max="LEVY" />
-        <Levies porcentage="5" key="mk_mold_t1_militia_archers" max="LEVY" />
-        <Levies porcentage="11" key="mk_bulg_t1_hooked_pikemen" max="LEVY" />
         <MenAtArm type="Guardians" key="att_ger_godansmen" max="INFANTRY" />
         <MenAtArm type="Phalanxes" key="cha_slav_ambushers" max="INFANTRY" />
         <MenAtArm type="Shieldwall Arbalests" key="mk_ara_t1_almogavars" max="RANGED" />
@@ -19534,10 +19484,10 @@
     <Faction name="Italia">
         <General key="mk_sal_t1_sad_ibn_zangi" />
         <Knights key="mk_khw_t1_muqti" />
-        <Levies porcentage="45" key="mk_khw_t1_muttawiah" max="LEVY" />
-        <Levies porcentage="35" key="mk_aze_t1_azerbaijani_infantry" max="LEVY" />
-        <Levies porcentage="10" key="mk_aze_t1_highland_slingers" max="LEVY" />
-        <Levies porcentage="10" key="mk_khw_t1_muqti" max="LEVY" />
+        <Levies porcentage="13" key="mk_khw_t1_muttawiah" max="LEVY" />
+        <Levies porcentage="21" key="mk_aze_t1_azerbaijani_infantry" max="LEVY" />
+        <Levies porcentage="33" key="mk_aze_t1_highland_slingers" max="LEVY" />
+        <Levies porcentage="33" key="mk_khw_t1_muqti" max="LEVY" />
         <MenAtArm type="light_footmen" key="mk_merc_arab_t1_ayyarun" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="mk_sal_t1_daylami_mercenaries" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="mk_sal_t1_persian_spearmen" max="INFANTRY" />
@@ -19957,10 +19907,10 @@
     <Faction name="Abarshahr">
         <General key="mk_epi_t1_oikeioi" />
         <Knights key="mk_epi_t1_pronoiarioi" />
-        <Levies porcentage="50" key="mk_lat_t1_militiai" max="LEVY" />
-        <Levies porcentage="15" key="mk_lat_t1_sergents" max="LEVY" />
-        <Levies porcentage="15" key="mk_lat_t1_slavos_toxotes" max="LEVY" />
-        <Levies porcentage="20" key="mk_bos_t1_frontiersmen" max="LEVY" />
+        <Levies porcentage="38" key="mk_lat_t1_militiai" max="LEVY" />
+        <Levies porcentage="10" key="mk_lat_t1_sergents" max="LEVY" />
+        <Levies porcentage="38" key="mk_lat_t1_slavos_toxotes" max="LEVY" />
+        <Levies porcentage="14" key="mk_bos_t1_frontiersmen" max="LEVY" />
         <MenAtArm type="light_footmen" key="mk_bos_t1_frontiersmen" max="400" />
         <MenAtArm type="armored_footmen" key="mk_lat_t1_dismounted_chevaliers" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="mk_lat_t1_guisarmiers" max="INFANTRY" />
@@ -20380,10 +20330,10 @@
     <Faction name="Aethiopian Rebels">
         <General key="mk_epi_t1_oikeioi" />
         <Knights key="mk_epi_t1_pronoiarioi" />
-        <Levies porcentage="50" key="mk_lat_t1_militiai" max="LEVY" />
-        <Levies porcentage="15" key="mk_lat_t1_sergents" max="LEVY" />
-        <Levies porcentage="15" key="mk_lat_t1_slavos_toxotes" max="LEVY" />
-        <Levies porcentage="20" key="mk_bos_t1_frontiersmen" max="LEVY" />
+        <Levies porcentage="19" key="mk_lat_t1_militiai" max="LEVY" />
+        <Levies porcentage="21" key="mk_lat_t1_sergents" max="LEVY" />
+        <Levies porcentage="32" key="mk_lat_t1_slavos_toxotes" max="LEVY" />
+        <Levies porcentage="28" key="mk_bos_t1_frontiersmen" max="LEVY" />
         <MenAtArm type="light_footmen" key="mk_bos_t1_frontiersmen" max="400" />
         <MenAtArm type="armored_footmen" key="mk_lat_t1_dismounted_chevaliers" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="mk_lat_t1_guisarmiers" max="INFANTRY" />
@@ -20803,10 +20753,10 @@
     <Faction name="Aksum">
         <General key="mk_epi_t1_oikeioi" />
         <Knights key="mk_epi_t1_pronoiarioi" />
-        <Levies porcentage="50" key="mk_lat_t1_militiai" max="LEVY" />
-        <Levies porcentage="15" key="mk_lat_t1_sergents" max="LEVY" />
-        <Levies porcentage="15" key="mk_lat_t1_slavos_toxotes" max="LEVY" />
-        <Levies porcentage="20" key="mk_bos_t1_frontiersmen" max="LEVY" />
+        <Levies porcentage="19" key="mk_lat_t1_militiai" max="LEVY" />
+        <Levies porcentage="40" key="mk_lat_t1_sergents" max="LEVY" />
+        <Levies porcentage="13" key="mk_lat_t1_slavos_toxotes" max="LEVY" />
+        <Levies porcentage="28" key="mk_bos_t1_frontiersmen" max="LEVY" />
         <MenAtArm type="light_footmen" key="mk_bos_t1_frontiersmen" max="400" />
         <MenAtArm type="armored_footmen" key="mk_lat_t1_dismounted_chevaliers" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="mk_lat_t1_guisarmiers" max="INFANTRY" />
@@ -21226,9 +21176,9 @@
     <Faction name="Andalusian Rebels">
         <General key="mk_epi_t1_oikeioi" />
         <Knights key="mk_epi_t1_pronoiarioi" />
-        <Levies porcentage="50" key="mk_lat_t1_militiai" max="LEVY" />
-        <Levies porcentage="15" key="mk_lat_t1_sergents" max="LEVY" />
-        <Levies porcentage="15" key="mk_lat_t1_slavos_toxotes" max="LEVY" />
+        <Levies porcentage="31" key="mk_lat_t1_militiai" max="LEVY" />
+        <Levies porcentage="16" key="mk_lat_t1_sergents" max="LEVY" />
+        <Levies porcentage="33" key="mk_lat_t1_slavos_toxotes" max="LEVY" />
         <Levies porcentage="20" key="mk_bos_t1_frontiersmen" max="LEVY" />
         <MenAtArm type="light_footmen" key="mk_bos_t1_frontiersmen" max="400" />
         <MenAtArm type="armored_footmen" key="mk_lat_t1_dismounted_chevaliers" max="INFANTRY" />
@@ -21649,10 +21599,10 @@
     <Faction name="Aragonese Pretenders">
         <General key="mk_epi_t1_oikeioi" />
         <Knights key="mk_epi_t1_pronoiarioi" />
-        <Levies porcentage="50" key="mk_lat_t1_militiai" max="LEVY" />
-        <Levies porcentage="15" key="mk_lat_t1_sergents" max="LEVY" />
-        <Levies porcentage="15" key="mk_lat_t1_slavos_toxotes" max="LEVY" />
-        <Levies porcentage="20" key="mk_bos_t1_frontiersmen" max="LEVY" />
+        <Levies porcentage="26" key="mk_lat_t1_militiai" max="LEVY" />
+        <Levies porcentage="29" key="mk_lat_t1_sergents" max="LEVY" />
+        <Levies porcentage="12" key="mk_lat_t1_slavos_toxotes" max="LEVY" />
+        <Levies porcentage="33" key="mk_bos_t1_frontiersmen" max="LEVY" />
         <MenAtArm type="light_footmen" key="mk_bos_t1_frontiersmen" max="400" />
         <MenAtArm type="armored_footmen" key="mk_lat_t1_dismounted_chevaliers" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="mk_lat_t1_guisarmiers" max="INFANTRY" />
@@ -22072,10 +22022,10 @@
     <Faction name="Berbers">
         <General key="mk_epi_t1_oikeioi" />
         <Knights key="mk_epi_t1_pronoiarioi" />
-        <Levies porcentage="50" key="mk_lat_t1_militiai" max="LEVY" />
-        <Levies porcentage="15" key="mk_lat_t1_sergents" max="LEVY" />
-        <Levies porcentage="15" key="mk_lat_t1_slavos_toxotes" max="LEVY" />
-        <Levies porcentage="20" key="mk_bos_t1_frontiersmen" max="LEVY" />
+        <Levies porcentage="15" key="mk_lat_t1_militiai" max="LEVY" />
+        <Levies porcentage="18" key="mk_lat_t1_sergents" max="LEVY" />
+        <Levies porcentage="40" key="mk_lat_t1_slavos_toxotes" max="LEVY" />
+        <Levies porcentage="27" key="mk_bos_t1_frontiersmen" max="LEVY" />
         <MenAtArm type="light_footmen" key="mk_bos_t1_frontiersmen" max="400" />
         <MenAtArm type="armored_footmen" key="mk_lat_t1_dismounted_chevaliers" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="mk_lat_t1_guisarmiers" max="INFANTRY" />
@@ -22495,10 +22445,10 @@
     <Faction name="Bretons">
         <General key="mk_epi_t1_oikeioi" />
         <Knights key="mk_epi_t1_pronoiarioi" />
-        <Levies porcentage="50" key="mk_lat_t1_militiai" max="LEVY" />
+        <Levies porcentage="26" key="mk_lat_t1_militiai" max="LEVY" />
         <Levies porcentage="15" key="mk_lat_t1_sergents" max="LEVY" />
-        <Levies porcentage="15" key="mk_lat_t1_slavos_toxotes" max="LEVY" />
-        <Levies porcentage="20" key="mk_bos_t1_frontiersmen" max="LEVY" />
+        <Levies porcentage="25" key="mk_lat_t1_slavos_toxotes" max="LEVY" />
+        <Levies porcentage="34" key="mk_bos_t1_frontiersmen" max="LEVY" />
         <MenAtArm type="light_footmen" key="mk_bos_t1_frontiersmen" max="400" />
         <MenAtArm type="armored_footmen" key="mk_lat_t1_dismounted_chevaliers" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="mk_lat_t1_guisarmiers" max="INFANTRY" />
@@ -22918,10 +22868,10 @@
     <Faction name="Bulgarian Rebels">
         <General key="mk_epi_t1_oikeioi" />
         <Knights key="mk_epi_t1_pronoiarioi" />
-        <Levies porcentage="50" key="mk_lat_t1_militiai" max="LEVY" />
-        <Levies porcentage="15" key="mk_lat_t1_sergents" max="LEVY" />
-        <Levies porcentage="15" key="mk_lat_t1_slavos_toxotes" max="LEVY" />
-        <Levies porcentage="20" key="mk_bos_t1_frontiersmen" max="LEVY" />
+        <Levies porcentage="32" key="mk_lat_t1_militiai" max="LEVY" />
+        <Levies porcentage="30" key="mk_lat_t1_sergents" max="LEVY" />
+        <Levies porcentage="7" key="mk_lat_t1_slavos_toxotes" max="LEVY" />
+        <Levies porcentage="31" key="mk_bos_t1_frontiersmen" max="LEVY" />
         <MenAtArm type="light_footmen" key="mk_bos_t1_frontiersmen" max="400" />
         <MenAtArm type="armored_footmen" key="mk_lat_t1_dismounted_chevaliers" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="mk_lat_t1_guisarmiers" max="INFANTRY" />
@@ -23341,10 +23291,10 @@
     <Faction name="Caucasian Rebels">
         <General key="mk_epi_t1_oikeioi" />
         <Knights key="mk_epi_t1_pronoiarioi" />
-        <Levies porcentage="50" key="mk_lat_t1_militiai" max="LEVY" />
-        <Levies porcentage="15" key="mk_lat_t1_sergents" max="LEVY" />
-        <Levies porcentage="15" key="mk_lat_t1_slavos_toxotes" max="LEVY" />
-        <Levies porcentage="20" key="mk_bos_t1_frontiersmen" max="LEVY" />
+        <Levies porcentage="25" key="mk_lat_t1_militiai" max="LEVY" />
+        <Levies porcentage="21" key="mk_lat_t1_sergents" max="LEVY" />
+        <Levies porcentage="18" key="mk_lat_t1_slavos_toxotes" max="LEVY" />
+        <Levies porcentage="36" key="mk_bos_t1_frontiersmen" max="LEVY" />
         <MenAtArm type="light_footmen" key="mk_bos_t1_frontiersmen" max="400" />
         <MenAtArm type="armored_footmen" key="mk_lat_t1_dismounted_chevaliers" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="mk_lat_t1_guisarmiers" max="INFANTRY" />
@@ -23764,10 +23714,10 @@
     <Faction name="Frisian Freedom">
         <General key="mk_epi_t1_oikeioi" />
         <Knights key="mk_epi_t1_pronoiarioi" />
-        <Levies porcentage="50" key="mk_lat_t1_militiai" max="LEVY" />
-        <Levies porcentage="15" key="mk_lat_t1_sergents" max="LEVY" />
-        <Levies porcentage="15" key="mk_lat_t1_slavos_toxotes" max="LEVY" />
-        <Levies porcentage="20" key="mk_bos_t1_frontiersmen" max="LEVY" />
+        <Levies porcentage="13" key="mk_lat_t1_militiai" max="LEVY" />
+        <Levies porcentage="44" key="mk_lat_t1_sergents" max="LEVY" />
+        <Levies porcentage="32" key="mk_lat_t1_slavos_toxotes" max="LEVY" />
+        <Levies porcentage="11" key="mk_bos_t1_frontiersmen" max="LEVY" />
         <MenAtArm type="light_footmen" key="mk_bos_t1_frontiersmen" max="400" />
         <MenAtArm type="armored_footmen" key="mk_lat_t1_dismounted_chevaliers" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="mk_lat_t1_guisarmiers" max="INFANTRY" />
@@ -24187,10 +24137,10 @@
     <Faction name="Gaelic Rebels">
         <General key="mk_epi_t1_oikeioi" />
         <Knights key="mk_epi_t1_pronoiarioi" />
-        <Levies porcentage="50" key="mk_lat_t1_militiai" max="LEVY" />
-        <Levies porcentage="15" key="mk_lat_t1_sergents" max="LEVY" />
-        <Levies porcentage="15" key="mk_lat_t1_slavos_toxotes" max="LEVY" />
-        <Levies porcentage="20" key="mk_bos_t1_frontiersmen" max="LEVY" />
+        <Levies porcentage="32" key="mk_lat_t1_militiai" max="LEVY" />
+        <Levies porcentage="30" key="mk_lat_t1_sergents" max="LEVY" />
+        <Levies porcentage="22" key="mk_lat_t1_slavos_toxotes" max="LEVY" />
+        <Levies porcentage="16" key="mk_bos_t1_frontiersmen" max="LEVY" />
         <MenAtArm type="light_footmen" key="mk_bos_t1_frontiersmen" max="400" />
         <MenAtArm type="armored_footmen" key="mk_lat_t1_dismounted_chevaliers" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="mk_lat_t1_guisarmiers" max="INFANTRY" />
@@ -24610,10 +24560,10 @@
     <Faction name="Gaetulians">
         <General key="mk_epi_t1_oikeioi" />
         <Knights key="mk_epi_t1_pronoiarioi" />
-        <Levies porcentage="50" key="mk_lat_t1_militiai" max="LEVY" />
-        <Levies porcentage="15" key="mk_lat_t1_sergents" max="LEVY" />
-        <Levies porcentage="15" key="mk_lat_t1_slavos_toxotes" max="LEVY" />
-        <Levies porcentage="20" key="mk_bos_t1_frontiersmen" max="LEVY" />
+        <Levies porcentage="35" key="mk_lat_t1_militiai" max="LEVY" />
+        <Levies porcentage="37" key="mk_lat_t1_sergents" max="LEVY" />
+        <Levies porcentage="18" key="mk_lat_t1_slavos_toxotes" max="LEVY" />
+        <Levies porcentage="10" key="mk_bos_t1_frontiersmen" max="LEVY" />
         <MenAtArm type="light_footmen" key="mk_bos_t1_frontiersmen" max="400" />
         <MenAtArm type="armored_footmen" key="mk_lat_t1_dismounted_chevaliers" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="mk_lat_t1_guisarmiers" max="INFANTRY" />
@@ -25033,10 +24983,10 @@
     <Faction name="Garamantians">
         <General key="mk_epi_t1_oikeioi" />
         <Knights key="mk_epi_t1_pronoiarioi" />
-        <Levies porcentage="50" key="mk_lat_t1_militiai" max="LEVY" />
-        <Levies porcentage="15" key="mk_lat_t1_sergents" max="LEVY" />
-        <Levies porcentage="15" key="mk_lat_t1_slavos_toxotes" max="LEVY" />
-        <Levies porcentage="20" key="mk_bos_t1_frontiersmen" max="LEVY" />
+        <Levies porcentage="30" key="mk_lat_t1_militiai" max="LEVY" />
+        <Levies porcentage="34" key="mk_lat_t1_sergents" max="LEVY" />
+        <Levies porcentage="23" key="mk_lat_t1_slavos_toxotes" max="LEVY" />
+        <Levies porcentage="13" key="mk_bos_t1_frontiersmen" max="LEVY" />
         <MenAtArm type="light_footmen" key="mk_bos_t1_frontiersmen" max="400" />
         <MenAtArm type="armored_footmen" key="mk_lat_t1_dismounted_chevaliers" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="mk_lat_t1_guisarmiers" max="INFANTRY" />
@@ -25456,10 +25406,10 @@
     <Faction name="German Rebels">
         <General key="mk_epi_t1_oikeioi" />
         <Knights key="mk_epi_t1_pronoiarioi" />
-        <Levies porcentage="50" key="mk_lat_t1_militiai" max="LEVY" />
-        <Levies porcentage="15" key="mk_lat_t1_sergents" max="LEVY" />
-        <Levies porcentage="15" key="mk_lat_t1_slavos_toxotes" max="LEVY" />
-        <Levies porcentage="20" key="mk_bos_t1_frontiersmen" max="LEVY" />
+        <Levies porcentage="17" key="mk_lat_t1_militiai" max="LEVY" />
+        <Levies porcentage="29" key="mk_lat_t1_sergents" max="LEVY" />
+        <Levies porcentage="22" key="mk_lat_t1_slavos_toxotes" max="LEVY" />
+        <Levies porcentage="32" key="mk_bos_t1_frontiersmen" max="LEVY" />
         <MenAtArm type="light_footmen" key="mk_bos_t1_frontiersmen" max="400" />
         <MenAtArm type="armored_footmen" key="mk_lat_t1_dismounted_chevaliers" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="mk_lat_t1_guisarmiers" max="INFANTRY" />
@@ -25879,10 +25829,10 @@
     <Faction name="Hispania">
         <General key="mk_epi_t1_oikeioi" />
         <Knights key="mk_epi_t1_pronoiarioi" />
-        <Levies porcentage="50" key="mk_lat_t1_militiai" max="LEVY" />
-        <Levies porcentage="15" key="mk_lat_t1_sergents" max="LEVY" />
-        <Levies porcentage="15" key="mk_lat_t1_slavos_toxotes" max="LEVY" />
-        <Levies porcentage="20" key="mk_bos_t1_frontiersmen" max="LEVY" />
+        <Levies porcentage="28" key="mk_lat_t1_militiai" max="LEVY" />
+        <Levies porcentage="31" key="mk_lat_t1_sergents" max="LEVY" />
+        <Levies porcentage="14" key="mk_lat_t1_slavos_toxotes" max="LEVY" />
+        <Levies porcentage="27" key="mk_bos_t1_frontiersmen" max="LEVY" />
         <MenAtArm type="light_footmen" key="mk_bos_t1_frontiersmen" max="400" />
         <MenAtArm type="armored_footmen" key="mk_lat_t1_dismounted_chevaliers" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="mk_lat_t1_guisarmiers" max="INFANTRY" />
@@ -26302,10 +26252,10 @@
     <Faction name="Ilkhanate">
         <General key="mk_epi_t1_oikeioi" />
         <Knights key="mk_epi_t1_pronoiarioi" />
-        <Levies porcentage="50" key="mk_lat_t1_militiai" max="LEVY" />
-        <Levies porcentage="15" key="mk_lat_t1_sergents" max="LEVY" />
-        <Levies porcentage="15" key="mk_lat_t1_slavos_toxotes" max="LEVY" />
-        <Levies porcentage="20" key="mk_bos_t1_frontiersmen" max="LEVY" />
+        <Levies porcentage="24" key="mk_lat_t1_militiai" max="LEVY" />
+        <Levies porcentage="33" key="mk_lat_t1_sergents" max="LEVY" />
+        <Levies porcentage="24" key="mk_lat_t1_slavos_toxotes" max="LEVY" />
+        <Levies porcentage="19" key="mk_bos_t1_frontiersmen" max="LEVY" />
         <MenAtArm type="light_footmen" key="mk_bos_t1_frontiersmen" max="400" />
         <MenAtArm type="armored_footmen" key="mk_lat_t1_dismounted_chevaliers" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="mk_lat_t1_guisarmiers" max="INFANTRY" />
@@ -26725,10 +26675,10 @@
     <Faction name="Kartli">
         <General key="mk_epi_t1_oikeioi" />
         <Knights key="mk_epi_t1_pronoiarioi" />
-        <Levies porcentage="50" key="mk_lat_t1_militiai" max="LEVY" />
-        <Levies porcentage="15" key="mk_lat_t1_sergents" max="LEVY" />
+        <Levies porcentage="36" key="mk_lat_t1_militiai" max="LEVY" />
+        <Levies porcentage="12" key="mk_lat_t1_sergents" max="LEVY" />
         <Levies porcentage="15" key="mk_lat_t1_slavos_toxotes" max="LEVY" />
-        <Levies porcentage="20" key="mk_bos_t1_frontiersmen" max="LEVY" />
+        <Levies porcentage="37" key="mk_bos_t1_frontiersmen" max="LEVY" />
         <MenAtArm type="light_footmen" key="mk_bos_t1_frontiersmen" max="400" />
         <MenAtArm type="armored_footmen" key="mk_lat_t1_dismounted_chevaliers" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="mk_lat_t1_guisarmiers" max="INFANTRY" />
@@ -27148,10 +27098,10 @@
     <Faction name="Kievan Pretenders">
         <General key="mk_epi_t1_oikeioi" />
         <Knights key="mk_epi_t1_pronoiarioi" />
-        <Levies porcentage="50" key="mk_lat_t1_militiai" max="LEVY" />
-        <Levies porcentage="15" key="mk_lat_t1_sergents" max="LEVY" />
-        <Levies porcentage="15" key="mk_lat_t1_slavos_toxotes" max="LEVY" />
-        <Levies porcentage="20" key="mk_bos_t1_frontiersmen" max="LEVY" />
+        <Levies porcentage="29" key="mk_lat_t1_militiai" max="LEVY" />
+        <Levies porcentage="18" key="mk_lat_t1_sergents" max="LEVY" />
+        <Levies porcentage="22" key="mk_lat_t1_slavos_toxotes" max="LEVY" />
+        <Levies porcentage="31" key="mk_bos_t1_frontiersmen" max="LEVY" />
         <MenAtArm type="light_footmen" key="mk_bos_t1_frontiersmen" max="400" />
         <MenAtArm type="armored_footmen" key="mk_lat_t1_dismounted_chevaliers" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="mk_lat_t1_guisarmiers" max="INFANTRY" />
@@ -27571,10 +27521,10 @@
     <Faction name="Kingdom of Carloman">
         <General key="mk_epi_t1_oikeioi" />
         <Knights key="mk_epi_t1_pronoiarioi" />
-        <Levies porcentage="50" key="mk_lat_t1_militiai" max="LEVY" />
-        <Levies porcentage="15" key="mk_lat_t1_sergents" max="LEVY" />
-        <Levies porcentage="15" key="mk_lat_t1_slavos_toxotes" max="LEVY" />
-        <Levies porcentage="20" key="mk_bos_t1_frontiersmen" max="LEVY" />
+        <Levies porcentage="34" key="mk_lat_t1_militiai" max="LEVY" />
+        <Levies porcentage="19" key="mk_lat_t1_sergents" max="LEVY" />
+        <Levies porcentage="14" key="mk_lat_t1_slavos_toxotes" max="LEVY" />
+        <Levies porcentage="33" key="mk_bos_t1_frontiersmen" max="LEVY" />
         <MenAtArm type="light_footmen" key="mk_bos_t1_frontiersmen" max="400" />
         <MenAtArm type="armored_footmen" key="mk_lat_t1_dismounted_chevaliers" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="mk_lat_t1_guisarmiers" max="INFANTRY" />
@@ -27994,10 +27944,10 @@
     <Faction name="Langobards">
         <General key="mk_epi_t1_oikeioi" />
         <Knights key="mk_epi_t1_pronoiarioi" />
-        <Levies porcentage="50" key="mk_lat_t1_militiai" max="LEVY" />
-        <Levies porcentage="15" key="mk_lat_t1_sergents" max="LEVY" />
-        <Levies porcentage="15" key="mk_lat_t1_slavos_toxotes" max="LEVY" />
-        <Levies porcentage="20" key="mk_bos_t1_frontiersmen" max="LEVY" />
+        <Levies porcentage="26" key="mk_lat_t1_militiai" max="LEVY" />
+        <Levies porcentage="23" key="mk_lat_t1_sergents" max="LEVY" />
+        <Levies porcentage="20" key="mk_lat_t1_slavos_toxotes" max="LEVY" />
+        <Levies porcentage="31" key="mk_bos_t1_frontiersmen" max="LEVY" />
         <MenAtArm type="light_footmen" key="mk_bos_t1_frontiersmen" max="400" />
         <MenAtArm type="armored_footmen" key="mk_lat_t1_dismounted_chevaliers" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="mk_lat_t1_guisarmiers" max="INFANTRY" />
@@ -28417,10 +28367,10 @@
     <Faction name="Levantine Rebels">
         <General key="mk_epi_t1_oikeioi" />
         <Knights key="mk_epi_t1_pronoiarioi" />
-        <Levies porcentage="50" key="mk_lat_t1_militiai" max="LEVY" />
-        <Levies porcentage="15" key="mk_lat_t1_sergents" max="LEVY" />
-        <Levies porcentage="15" key="mk_lat_t1_slavos_toxotes" max="LEVY" />
-        <Levies porcentage="20" key="mk_bos_t1_frontiersmen" max="LEVY" />
+        <Levies porcentage="45" key="mk_lat_t1_militiai" max="LEVY" />
+        <Levies porcentage="24" key="mk_lat_t1_sergents" max="LEVY" />
+        <Levies porcentage="14" key="mk_lat_t1_slavos_toxotes" max="LEVY" />
+        <Levies porcentage="17" key="mk_bos_t1_frontiersmen" max="LEVY" />
         <MenAtArm type="light_footmen" key="mk_bos_t1_frontiersmen" max="400" />
         <MenAtArm type="armored_footmen" key="mk_lat_t1_dismounted_chevaliers" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="mk_lat_t1_guisarmiers" max="INFANTRY" />
@@ -28840,10 +28790,10 @@
     <Faction name="Mazun">
         <General key="mk_epi_t1_oikeioi" />
         <Knights key="mk_epi_t1_pronoiarioi" />
-        <Levies porcentage="50" key="mk_lat_t1_militiai" max="LEVY" />
-        <Levies porcentage="15" key="mk_lat_t1_sergents" max="LEVY" />
-        <Levies porcentage="15" key="mk_lat_t1_slavos_toxotes" max="LEVY" />
-        <Levies porcentage="20" key="mk_bos_t1_frontiersmen" max="LEVY" />
+        <Levies porcentage="26" key="mk_lat_t1_militiai" max="LEVY" />
+        <Levies porcentage="29" key="mk_lat_t1_sergents" max="LEVY" />
+        <Levies porcentage="24" key="mk_lat_t1_slavos_toxotes" max="LEVY" />
+        <Levies porcentage="21" key="mk_bos_t1_frontiersmen" max="LEVY" />
         <MenAtArm type="light_footmen" key="mk_bos_t1_frontiersmen" max="400" />
         <MenAtArm type="armored_footmen" key="mk_lat_t1_dismounted_chevaliers" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="mk_lat_t1_guisarmiers" max="INFANTRY" />
@@ -29263,10 +29213,10 @@
     <Faction name="Moors">
         <General key="mk_epi_t1_oikeioi" />
         <Knights key="mk_epi_t1_pronoiarioi" />
-        <Levies porcentage="50" key="mk_lat_t1_militiai" max="LEVY" />
-        <Levies porcentage="15" key="mk_lat_t1_sergents" max="LEVY" />
-        <Levies porcentage="15" key="mk_lat_t1_slavos_toxotes" max="LEVY" />
-        <Levies porcentage="20" key="mk_bos_t1_frontiersmen" max="LEVY" />
+        <Levies porcentage="28" key="mk_lat_t1_militiai" max="LEVY" />
+        <Levies porcentage="14" key="mk_lat_t1_sergents" max="LEVY" />
+        <Levies porcentage="35" key="mk_lat_t1_slavos_toxotes" max="LEVY" />
+        <Levies porcentage="23" key="mk_bos_t1_frontiersmen" max="LEVY" />
         <MenAtArm type="light_footmen" key="mk_bos_t1_frontiersmen" max="400" />
         <MenAtArm type="armored_footmen" key="mk_lat_t1_dismounted_chevaliers" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="mk_lat_t1_guisarmiers" max="INFANTRY" />
@@ -29686,10 +29636,10 @@
     <Faction name="Occitan Rebels">
         <General key="mk_epi_t1_oikeioi" />
         <Knights key="mk_epi_t1_pronoiarioi" />
-        <Levies porcentage="50" key="mk_lat_t1_militiai" max="LEVY" />
-        <Levies porcentage="15" key="mk_lat_t1_sergents" max="LEVY" />
+        <Levies porcentage="28" key="mk_lat_t1_militiai" max="LEVY" />
+        <Levies porcentage="29" key="mk_lat_t1_sergents" max="LEVY" />
         <Levies porcentage="15" key="mk_lat_t1_slavos_toxotes" max="LEVY" />
-        <Levies porcentage="20" key="mk_bos_t1_frontiersmen" max="LEVY" />
+        <Levies porcentage="28" key="mk_bos_t1_frontiersmen" max="LEVY" />
         <MenAtArm type="light_footmen" key="mk_bos_t1_frontiersmen" max="400" />
         <MenAtArm type="armored_footmen" key="mk_lat_t1_dismounted_chevaliers" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="mk_lat_t1_guisarmiers" max="INFANTRY" />
@@ -30109,10 +30059,10 @@
     <Faction name="Parthia">
         <General key="mk_epi_t1_oikeioi" />
         <Knights key="mk_epi_t1_pronoiarioi" />
-        <Levies porcentage="50" key="mk_lat_t1_militiai" max="LEVY" />
-        <Levies porcentage="15" key="mk_lat_t1_sergents" max="LEVY" />
-        <Levies porcentage="15" key="mk_lat_t1_slavos_toxotes" max="LEVY" />
-        <Levies porcentage="20" key="mk_bos_t1_frontiersmen" max="LEVY" />
+        <Levies porcentage="34" key="mk_lat_t1_militiai" max="LEVY" />
+        <Levies porcentage="34" key="mk_lat_t1_sergents" max="LEVY" />
+        <Levies porcentage="16" key="mk_lat_t1_slavos_toxotes" max="LEVY" />
+        <Levies porcentage="16" key="mk_bos_t1_frontiersmen" max="LEVY" />
         <MenAtArm type="light_footmen" key="mk_bos_t1_frontiersmen" max="400" />
         <MenAtArm type="armored_footmen" key="mk_lat_t1_dismounted_chevaliers" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="mk_lat_t1_guisarmiers" max="INFANTRY" />
@@ -30532,10 +30482,10 @@
     <Faction name="Picts">
         <General key="mk_epi_t1_oikeioi" />
         <Knights key="mk_epi_t1_pronoiarioi" />
-        <Levies porcentage="50" key="mk_lat_t1_militiai" max="LEVY" />
-        <Levies porcentage="15" key="mk_lat_t1_sergents" max="LEVY" />
-        <Levies porcentage="15" key="mk_lat_t1_slavos_toxotes" max="LEVY" />
-        <Levies porcentage="20" key="mk_bos_t1_frontiersmen" max="LEVY" />
+        <Levies porcentage="36" key="mk_lat_t1_militiai" max="LEVY" />
+        <Levies porcentage="27" key="mk_lat_t1_sergents" max="LEVY" />
+        <Levies porcentage="14" key="mk_lat_t1_slavos_toxotes" max="LEVY" />
+        <Levies porcentage="23" key="mk_bos_t1_frontiersmen" max="LEVY" />
         <MenAtArm type="light_footmen" key="mk_bos_t1_frontiersmen" max="400" />
         <MenAtArm type="armored_footmen" key="mk_lat_t1_dismounted_chevaliers" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="mk_lat_t1_guisarmiers" max="INFANTRY" />
@@ -30955,10 +30905,10 @@
     <Faction name="Portuguese Pretenders">
         <General key="mk_epi_t1_oikeioi" />
         <Knights key="mk_epi_t1_pronoiarioi" />
-        <Levies porcentage="50" key="mk_lat_t1_militiai" max="LEVY" />
-        <Levies porcentage="15" key="mk_lat_t1_sergents" max="LEVY" />
-        <Levies porcentage="15" key="mk_lat_t1_slavos_toxotes" max="LEVY" />
-        <Levies porcentage="20" key="mk_bos_t1_frontiersmen" max="LEVY" />
+        <Levies porcentage="30" key="mk_lat_t1_militiai" max="LEVY" />
+        <Levies porcentage="21" key="mk_lat_t1_sergents" max="LEVY" />
+        <Levies porcentage="28" key="mk_lat_t1_slavos_toxotes" max="LEVY" />
+        <Levies porcentage="21" key="mk_bos_t1_frontiersmen" max="LEVY" />
         <MenAtArm type="light_footmen" key="mk_bos_t1_frontiersmen" max="400" />
         <MenAtArm type="armored_footmen" key="mk_lat_t1_dismounted_chevaliers" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="mk_lat_t1_guisarmiers" max="INFANTRY" />
@@ -31378,10 +31328,10 @@
     <Faction name="Quadians">
         <General key="mk_epi_t1_oikeioi" />
         <Knights key="mk_epi_t1_pronoiarioi" />
-        <Levies porcentage="50" key="mk_lat_t1_militiai" max="LEVY" />
-        <Levies porcentage="15" key="mk_lat_t1_sergents" max="LEVY" />
-        <Levies porcentage="15" key="mk_lat_t1_slavos_toxotes" max="LEVY" />
-        <Levies porcentage="20" key="mk_bos_t1_frontiersmen" max="LEVY" />
+        <Levies porcentage="32" key="mk_lat_t1_militiai" max="LEVY" />
+        <Levies porcentage="24" key="mk_lat_t1_sergents" max="LEVY" />
+        <Levies porcentage="30" key="mk_lat_t1_slavos_toxotes" max="LEVY" />
+        <Levies porcentage="14" key="mk_bos_t1_frontiersmen" max="LEVY" />
         <MenAtArm type="light_footmen" key="mk_bos_t1_frontiersmen" max="400" />
         <MenAtArm type="armored_footmen" key="mk_lat_t1_dismounted_chevaliers" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="mk_lat_t1_guisarmiers" max="INFANTRY" />
@@ -31801,10 +31751,10 @@
     <Faction name="Roxolanians">
         <General key="mk_epi_t1_oikeioi" />
         <Knights key="mk_epi_t1_pronoiarioi" />
-        <Levies porcentage="50" key="mk_lat_t1_militiai" max="LEVY" />
-        <Levies porcentage="15" key="mk_lat_t1_sergents" max="LEVY" />
-        <Levies porcentage="15" key="mk_lat_t1_slavos_toxotes" max="LEVY" />
-        <Levies porcentage="20" key="mk_bos_t1_frontiersmen" max="LEVY" />
+        <Levies porcentage="25" key="mk_lat_t1_militiai" max="LEVY" />
+        <Levies porcentage="32" key="mk_lat_t1_sergents" max="LEVY" />
+        <Levies porcentage="17" key="mk_lat_t1_slavos_toxotes" max="LEVY" />
+        <Levies porcentage="26" key="mk_bos_t1_frontiersmen" max="LEVY" />
         <MenAtArm type="light_footmen" key="mk_bos_t1_frontiersmen" max="400" />
         <MenAtArm type="armored_footmen" key="mk_lat_t1_dismounted_chevaliers" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="mk_lat_t1_guisarmiers" max="INFANTRY" />
@@ -32224,10 +32174,10 @@
     <Faction name="Sabirs">
         <General key="mk_epi_t1_oikeioi" />
         <Knights key="mk_epi_t1_pronoiarioi" />
-        <Levies porcentage="50" key="mk_lat_t1_militiai" max="LEVY" />
-        <Levies porcentage="15" key="mk_lat_t1_sergents" max="LEVY" />
-        <Levies porcentage="15" key="mk_lat_t1_slavos_toxotes" max="LEVY" />
-        <Levies porcentage="20" key="mk_bos_t1_frontiersmen" max="LEVY" />
+        <Levies porcentage="14" key="mk_lat_t1_militiai" max="LEVY" />
+        <Levies porcentage="29" key="mk_lat_t1_sergents" max="LEVY" />
+        <Levies porcentage="10" key="mk_lat_t1_slavos_toxotes" max="LEVY" />
+        <Levies porcentage="47" key="mk_bos_t1_frontiersmen" max="LEVY" />
         <MenAtArm type="light_footmen" key="mk_bos_t1_frontiersmen" max="400" />
         <MenAtArm type="armored_footmen" key="mk_lat_t1_dismounted_chevaliers" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="mk_lat_t1_guisarmiers" max="INFANTRY" />
@@ -32647,10 +32597,10 @@
     <Faction name="South Slavic Rebels">
         <General key="mk_epi_t1_oikeioi" />
         <Knights key="mk_epi_t1_pronoiarioi" />
-        <Levies porcentage="50" key="mk_lat_t1_militiai" max="LEVY" />
-        <Levies porcentage="15" key="mk_lat_t1_sergents" max="LEVY" />
-        <Levies porcentage="15" key="mk_lat_t1_slavos_toxotes" max="LEVY" />
-        <Levies porcentage="20" key="mk_bos_t1_frontiersmen" max="LEVY" />
+        <Levies porcentage="22" key="mk_lat_t1_militiai" max="LEVY" />
+        <Levies porcentage="29" key="mk_lat_t1_sergents" max="LEVY" />
+        <Levies porcentage="22" key="mk_lat_t1_slavos_toxotes" max="LEVY" />
+        <Levies porcentage="27" key="mk_bos_t1_frontiersmen" max="LEVY" />
         <MenAtArm type="light_footmen" key="mk_bos_t1_frontiersmen" max="400" />
         <MenAtArm type="armored_footmen" key="mk_lat_t1_dismounted_chevaliers" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="mk_lat_t1_guisarmiers" max="INFANTRY" />
@@ -33070,10 +33020,10 @@
     <Faction name="Turkish Rebels">
         <General key="mk_epi_t1_oikeioi" />
         <Knights key="mk_epi_t1_pronoiarioi" />
-        <Levies porcentage="50" key="mk_lat_t1_militiai" max="LEVY" />
-        <Levies porcentage="15" key="mk_lat_t1_sergents" max="LEVY" />
-        <Levies porcentage="15" key="mk_lat_t1_slavos_toxotes" max="LEVY" />
-        <Levies porcentage="20" key="mk_bos_t1_frontiersmen" max="LEVY" />
+        <Levies porcentage="30" key="mk_lat_t1_militiai" max="LEVY" />
+        <Levies porcentage="10" key="mk_lat_t1_sergents" max="LEVY" />
+        <Levies porcentage="33" key="mk_lat_t1_slavos_toxotes" max="LEVY" />
+        <Levies porcentage="27" key="mk_bos_t1_frontiersmen" max="LEVY" />
         <MenAtArm type="light_footmen" key="mk_bos_t1_frontiersmen" max="400" />
         <MenAtArm type="armored_footmen" key="mk_lat_t1_dismounted_chevaliers" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="mk_lat_t1_guisarmiers" max="INFANTRY" />
@@ -33493,10 +33443,10 @@
     <Faction name="Venedians">
         <General key="mk_epi_t1_oikeioi" />
         <Knights key="mk_epi_t1_pronoiarioi" />
-        <Levies porcentage="50" key="mk_lat_t1_militiai" max="LEVY" />
-        <Levies porcentage="15" key="mk_lat_t1_sergents" max="LEVY" />
-        <Levies porcentage="15" key="mk_lat_t1_slavos_toxotes" max="LEVY" />
-        <Levies porcentage="20" key="mk_bos_t1_frontiersmen" max="LEVY" />
+        <Levies porcentage="25" key="mk_lat_t1_militiai" max="LEVY" />
+        <Levies porcentage="20" key="mk_lat_t1_sergents" max="LEVY" />
+        <Levies porcentage="17" key="mk_lat_t1_slavos_toxotes" max="LEVY" />
+        <Levies porcentage="38" key="mk_bos_t1_frontiersmen" max="LEVY" />
         <MenAtArm type="light_footmen" key="mk_bos_t1_frontiersmen" max="400" />
         <MenAtArm type="armored_footmen" key="mk_lat_t1_dismounted_chevaliers" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="mk_lat_t1_guisarmiers" max="INFANTRY" />
@@ -33916,10 +33866,10 @@
     <Faction name="Westphalia">
         <General key="mk_epi_t1_oikeioi" />
         <Knights key="mk_epi_t1_pronoiarioi" />
-        <Levies porcentage="50" key="mk_lat_t1_militiai" max="LEVY" />
-        <Levies porcentage="15" key="mk_lat_t1_sergents" max="LEVY" />
-        <Levies porcentage="15" key="mk_lat_t1_slavos_toxotes" max="LEVY" />
-        <Levies porcentage="20" key="mk_bos_t1_frontiersmen" max="LEVY" />
+        <Levies porcentage="16" key="mk_lat_t1_militiai" max="LEVY" />
+        <Levies porcentage="33" key="mk_lat_t1_sergents" max="LEVY" />
+        <Levies porcentage="17" key="mk_lat_t1_slavos_toxotes" max="LEVY" />
+        <Levies porcentage="34" key="mk_bos_t1_frontiersmen" max="LEVY" />
         <MenAtArm type="light_footmen" key="mk_bos_t1_frontiersmen" max="400" />
         <MenAtArm type="armored_footmen" key="mk_lat_t1_dismounted_chevaliers" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="mk_lat_t1_guisarmiers" max="INFANTRY" />

@@ -3,9 +3,9 @@
     <Faction name="Default">
         <General key="rex_slav_ant_oathbounds_g" />
         <Knights key="att_des_arabic_horsemen" />
-        <Levies porcentage="55" key="rex_slav_ant_band_defenders" max="LEVY" />
-        <Levies porcentage="35" key="rex_goth_band_sahsjane" max="LEVY" />
-        <Levies porcentage="10" key="rex_germ_band_choice_archers" max="LEVY" />
+        <Levies porcentage="26" key="rex_slav_ant_band_defenders" max="LEVY" />
+        <Levies porcentage="43" key="rex_goth_band_sahsjane" max="LEVY" />
+        <Levies porcentage="31" key="rex_germ_band_choice_archers" max="LEVY" />
         <MenAtArm type="Guardians" key="att_ger_godansmen" max="INFANTRY" />
         <MenAtArm type="Phalanxes" key="rex_hun_spears_limicantes" max="INFANTRY" />
         <MenAtArm type="Shieldwall Arbalests" key="rex_slav_spear_braves_geats" max="RANGED" />
@@ -381,9 +381,15 @@
     <Faction name="Spahan">
         <General key="rex_des_axum_ras_g" />
         <Knights key="cha_avar_lancers" />
-        <Levies porcentage="18" key="rex_praeventores" max="LEVY" />
-        <Levies porcentage="12" key="rex_rom_legionis_romanenses" max="LEVY" />
-        <Levies porcentage="3" key="rex_rom_legionis_mattiarii_iuniores" max="LEVY" />
+        <Levies porcentage="9" key="rex_praeventores" max="LEVY" />
+        <Levies porcentage="8" key="rex_rom_legionis_romanenses" max="LEVY" />
+        <Levies porcentage="13" key="rex_rom_legionis_mattiarii_iuniores" max="LEVY" />
+        <Levies porcentage="10" key="rex_rom_legionis_aegyptiorum" max="LEVY" />
+        <Levies porcentage="12" key="rex_rom_legionis_carthaginensis" max="LEVY" />
+        <Levies porcentage="16" key="rex_rom_legionis_gaetulorum" max="LEVY" />
+        <Levies porcentage="11" key="rex_praeventores" max="LEVY" />
+        <Levies porcentage="5" key="rex_rom_legionis_romanenses" max="LEVY" />
+        <Levies porcentage="16" key="rex_rom_legionis_mattiarii_iuniores" max="LEVY" />
         <MenAtArm type="light_footmen" key="rex_rom_auxiliarii_bructeri" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="rex_rom_legionis_valentinianenses" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="rex_rom_legionis_armigeri_defensores_seniores" max="INFANTRY" />
@@ -462,12 +468,6 @@
         <MenAtArm type="accolade_maa_pikes" key="rex_rom_legionis_lanciarii_seniores" max="INFANTRY" />
         <MenAtArm type="accolade_maa_skirmishers" key="rex_rom_legionis_mattiarii_seniores" max="RANGED" />
         <MenAtArm type="accolade_maa_vanguard" key="rex_rom_legionis_ioviani_seniores" max="INFANTRY" />
-        <Levies porcentage="18" key="rex_rom_legionis_aegyptiorum" max="LEVY" />
-        <Levies porcentage="12" key="rex_rom_legionis_carthaginensis" max="LEVY" />
-        <Levies porcentage="3" key="rex_rom_legionis_gaetulorum" max="LEVY" />
-        <Levies porcentage="18" key="rex_praeventores" max="LEVY" />
-        <Levies porcentage="12" key="rex_rom_legionis_romanenses" max="LEVY" />
-        <Levies porcentage="4" key="rex_rom_legionis_mattiarii_iuniores" max="LEVY" />
         <MenAtArm type="Guardians" key="att_ger_godansmen" max="INFANTRY" />
         <MenAtArm type="Phalanxes" key="rex_hun_spears_limicantes" max="INFANTRY" />
         <MenAtArm type="Shieldwall Arbalests" key="rex_slav_spear_braves_geats" max="RANGED" />
@@ -820,9 +820,12 @@
     <Faction name="Caledonians">
         <General key="rex_sarm_regal_warband_g" />
         <Knights key="rex_hun_cavalry" />
-        <Levies porcentage="28" key="rex_praeventores" max="LEVY" />
-        <Levies porcentage="18" key="rex_rom_legionis_romanenses" max="LEVY" />
-        <Levies porcentage="5" key="rex_rom_legionis_mattiarii_iuniores" max="LEVY" />
+        <Levies porcentage="31" key="rex_praeventores" max="LEVY" />
+        <Levies porcentage="19" key="rex_rom_legionis_romanenses" max="LEVY" />
+        <Levies porcentage="10" key="rex_rom_legionis_mattiarii_iuniores" max="LEVY" />
+        <Levies porcentage="12" key="rex_celt_caled_band_defenders" max="LEVY" />
+        <Levies porcentage="12" key="rex_celt_caled_band_raiders" max="LEVY" />
+        <Levies porcentage="16" key="att_merc_nom_bosphoran_warriors" max="LEVY" />
         <MenAtArm type="light_footmen" key="rex_rom_auxiliarii_bructeri" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="rex_rom_legionis_valentinianenses" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="rex_rom_legionis_armigeri_defensores_seniores" max="INFANTRY" />
@@ -901,9 +904,6 @@
         <MenAtArm type="vigmen" key="rex_slav_ant_band_archers" max="RANGED" />
         <MenAtArm type="war_elephant" key="rex_germ_band_defenders_sueb" max="CAVALRY" />
         <MenAtArm type="zupin_warrior" key="rex_east_daylamites" max="INFANTRY" />
-        <Levies porcentage="28" key="rex_celt_caled_band_defenders" max="LEVY" />
-        <Levies porcentage="18" key="rex_celt_caled_band_raiders" max="LEVY" />
-        <Levies porcentage="3" key="att_merc_nom_bosphoran_warriors" max="LEVY" />
         <MenAtArm type="Guardians" key="att_ger_godansmen" max="INFANTRY" />
         <MenAtArm type="Phalanxes" key="rex_hun_spears_limicantes" max="INFANTRY" />
         <MenAtArm type="Shieldwall Arbalests" key="rex_slav_spear_braves_geats" max="RANGED" />
@@ -1256,9 +1256,9 @@
     <Faction name="Gaetulians">
         <General key="rex_sarm_regal_warband_g" />
         <Knights key="bel_van_vandali_comitatus" />
-        <Levies porcentage="55" key="rex_praeventores" max="LEVY" />
-        <Levies porcentage="35" key="rex_rom_legionis_romanenses" max="LEVY" />
-        <Levies porcentage="10" key="rex_rom_legionis_mattiarii_iuniores" max="LEVY" />
+        <Levies porcentage="46" key="rex_praeventores" max="LEVY" />
+        <Levies porcentage="9" key="rex_rom_legionis_romanenses" max="LEVY" />
+        <Levies porcentage="45" key="rex_rom_legionis_mattiarii_iuniores" max="LEVY" />
         <MenAtArm type="light_footmen" key="rex_rom_auxiliarii_marcomanni_iuniores" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="rex_rom_legionis_flavia_constantia" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="rex_rom_legionis_armigeri_defensores_seniores" max="INFANTRY" />
@@ -1689,9 +1689,9 @@
     <Faction name="Marcomans">
         <General key="rex_des_desert_guard_g" />
         <Knights key="cha_mus_umayyad_guard_cav" />
-        <Levies porcentage="55" key="rex_rom_legionis_aegyptiorum" max="LEVY" />
-        <Levies porcentage="35" key="rex_rom_legionis_carthaginensis" max="LEVY" />
-        <Levies porcentage="10" key="rex_rom_legionis_gaetulorum" max="LEVY" />
+        <Levies porcentage="30" key="rex_rom_legionis_aegyptiorum" max="LEVY" />
+        <Levies porcentage="34" key="rex_rom_legionis_carthaginensis" max="LEVY" />
+        <Levies porcentage="36" key="rex_rom_legionis_gaetulorum" max="LEVY" />
         <MenAtArm type="light_footmen" key="rex_rom_legionis_armigeri_propugnatores_seniores" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="rex_rom_legionis_martii" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="rex_rom_legionis_lanciarii_iuniores" max="INFANTRY" />
@@ -2122,9 +2122,9 @@
     <Faction name="Britain">
         <General key="rex_celt_warlord_g" />
         <Knights key="rex_hun_light_wedge_limicantes" />
-        <Levies porcentage="55" key="rex_praeventores" max="LEVY" />
-        <Levies porcentage="35" key="rex_rom_legionis_hispanorum" max="LEVY" />
-        <Levies porcentage="10" key="rex_rom_millites_maur" max="LEVY" />
+        <Levies porcentage="36" key="rex_praeventores" max="LEVY" />
+        <Levies porcentage="47" key="rex_rom_legionis_hispanorum" max="LEVY" />
+        <Levies porcentage="17" key="rex_rom_millites_maur" max="LEVY" />
         <MenAtArm type="light_footmen" key="rex_rom_auxiliarii_brisigavi_iuniores" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="rex_rom_auxiliarii_brachiati_seniores" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="rex_rom_legionis_armigeri_defensores_seniores" max="INFANTRY" />
@@ -2555,9 +2555,12 @@
     <Faction name="Alans">
         <General key="rex_goth_gahlaibans_g" />
         <Knights key="rex_goth_comites" />
-        <Levies porcentage="28" key="rex_praeventores" max="LEVY" />
-        <Levies porcentage="18" key="rex_rom_legionis_gallorum" max="LEVY" />
-        <Levies porcentage="5" key="rex_rom_legionis_mattiarii_iuniores" max="LEVY" />
+        <Levies porcentage="27" key="rex_praeventores" max="LEVY" />
+        <Levies porcentage="9" key="rex_rom_legionis_gallorum" max="LEVY" />
+        <Levies porcentage="9" key="rex_rom_legionis_mattiarii_iuniores" max="LEVY" />
+        <Levies porcentage="18" key="rex_sarm_foot_tribesmen" max="LEVY" />
+        <Levies porcentage="18" key="rex_sarm_swords_limicantes" max="LEVY" />
+        <Levies porcentage="19" key="rex_sarm_foot_bows" max="LEVY" />
         <MenAtArm type="light_footmen" key="rex_rom_legionis_germaniciani_iuniores" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="rex_rom_legionis_gemina" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="rex_rom_legionis_armigeri_defensores_seniores" max="INFANTRY" />
@@ -2636,9 +2639,6 @@
         <MenAtArm type="vigmen" key="rex_slav_ant_band_archers" max="RANGED" />
         <MenAtArm type="war_elephant" key="rex_germ_band_defenders_sueb" max="CAVALRY" />
         <MenAtArm type="zupin_warrior" key="rex_east_daylamites" max="INFANTRY" />
-        <Levies porcentage="28" key="rex_sarm_foot_tribesmen" max="LEVY" />
-        <Levies porcentage="18" key="rex_sarm_swords_limicantes" max="LEVY" />
-        <Levies porcentage="3" key="rex_sarm_foot_bows" max="LEVY" />
         <MenAtArm type="Guardians" key="att_ger_godansmen" max="INFANTRY" />
         <MenAtArm type="Phalanxes" key="rex_hun_spears_limicantes" max="INFANTRY" />
         <MenAtArm type="Shieldwall Arbalests" key="rex_slav_spear_braves_geats" max="RANGED" />
@@ -2991,9 +2991,9 @@
     <Faction name="Thuringians">
         <General key="rex_sarm_scouts" />
         <Knights key="att_des_es_mavias_bodyguards" />
-        <Levies porcentage="55" key="rex_rom_millites_daci" max="LEVY" />
-        <Levies porcentage="35" key="rex_rom_legionis_scutata_civium_romanorum" max="LEVY" />
-        <Levies porcentage="10" key="rex_exculcatores" max="LEVY" />
+        <Levies porcentage="35" key="rex_rom_millites_daci" max="LEVY" />
+        <Levies porcentage="34" key="rex_rom_legionis_scutata_civium_romanorum" max="LEVY" />
+        <Levies porcentage="31" key="rex_exculcatores" max="LEVY" />
         <MenAtArm type="light_footmen" key="rex_rom_legionis_gothorum" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="rex_rom_legionis_flavia_victrix_constantina" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="rex_rom_legionis_lanciarii_seniores" max="INFANTRY" />
@@ -3424,9 +3424,9 @@
     <Faction name="Sardinians">
         <General key="rex_hun_fast_arrows" />
         <Knights key="bel_rom_scout_equites" />
-        <Levies porcentage="55" key="rex_rom_legionis_palaestinorum" max="LEVY" />
-        <Levies porcentage="35" key="rex_rom_legionis_euphratensis" max="LEVY" />
-        <Levies porcentage="10" key="rex_rom_millites_scyt" max="LEVY" />
+        <Levies porcentage="29" key="rex_rom_legionis_palaestinorum" max="LEVY" />
+        <Levies porcentage="16" key="rex_rom_legionis_euphratensis" max="LEVY" />
+        <Levies porcentage="55" key="rex_rom_millites_scyt" max="LEVY" />
         <MenAtArm type="light_footmen" key="rex_rom_legionis_moesiaci_seniores" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="rex_rom_legionis_scythae" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="rex_rom_legionis_lanciarii_seniores" max="INFANTRY" />
@@ -3857,9 +3857,9 @@
     <Faction name="Maurians">
         <General key="rex_des_desert_guard_g" />
         <Knights key="att_nom_steppe_lancers" />
-        <Levies porcentage="55" key="rex_east_caucasians" max="LEVY" />
-        <Levies porcentage="35" key="rex_rom_legionis_transtigritani" max="LEVY" />
-        <Levies porcentage="10" key="rex_rom_millites_scyt" max="LEVY" />
+        <Levies porcentage="41" key="rex_east_caucasians" max="LEVY" />
+        <Levies porcentage="47" key="rex_rom_legionis_transtigritani" max="LEVY" />
+        <Levies porcentage="12" key="rex_rom_millites_scyt" max="LEVY" />
         <MenAtArm type="light_footmen" key="rex_rom_legionis_moesiaci_seniores" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="rex_rom_legionis_scythae" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="rex_rom_legionis_lanciarii_seniores" max="INFANTRY" />
@@ -4290,9 +4290,9 @@
     <Faction name="Illyria">
         <General key="rex_sarm_nobles_warband_g" />
         <Knights key="att_des_es_dune_lancers" />
-        <Levies porcentage="55" key="rex_rom_millites_dalm" max="LEVY" />
-        <Levies porcentage="35" key="rex_rom_legionis_dalmatarum" max="LEVY" />
-        <Levies porcentage="10" key="rex_exculcatores" max="LEVY" />
+        <Levies porcentage="29" key="rex_rom_millites_dalm" max="LEVY" />
+        <Levies porcentage="48" key="rex_rom_legionis_dalmatarum" max="LEVY" />
+        <Levies porcentage="23" key="rex_exculcatores" max="LEVY" />
         <MenAtArm type="light_footmen" key="rex_rom_legionis_pannoniciani_iuniores" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="rex_rom_legionis_daci" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="rex_rom_legionis_lanciarii_seniores" max="INFANTRY" />
@@ -4723,9 +4723,9 @@
     <Faction name="Dacia">
         <General key="rex_slav_scout" />
         <Knights key="bel_rom_equites_promoti" />
-        <Levies porcentage="55" key="rex_rom_millites_daci" max="LEVY" />
-        <Levies porcentage="35" key="rex_rom_legionis_thracorum" max="LEVY" />
-        <Levies porcentage="10" key="rex_exculcatores" max="LEVY" />
+        <Levies porcentage="26" key="rex_rom_millites_daci" max="LEVY" />
+        <Levies porcentage="37" key="rex_rom_legionis_thracorum" max="LEVY" />
+        <Levies porcentage="37" key="rex_exculcatores" max="LEVY" />
         <MenAtArm type="light_footmen" key="rex_rom_legionis_dacorum" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="rex_rom_legionis_daci" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="rex_rom_legionis_lanciarii_seniores" max="INFANTRY" />
@@ -5156,9 +5156,12 @@
     <Faction name="Kingdom of Carloman">
         <General key="rex_goth_gahlaibans_g" />
         <Knights key="bel_rom_cataphracti" />
-        <Levies porcentage="28" key="rex_rom_millites_daci" max="LEVY" />
-        <Levies porcentage="18" key="rex_rom_legionis_pontinenses" max="LEVY" />
-        <Levies porcentage="5" key="rex_exculcatores" max="LEVY" />
+        <Levies porcentage="10" key="rex_rom_millites_daci" max="LEVY" />
+        <Levies porcentage="14" key="rex_rom_legionis_pontinenses" max="LEVY" />
+        <Levies porcentage="24" key="rex_exculcatores" max="LEVY" />
+        <Levies porcentage="15" key="rex_rom_millites_tung" max="LEVY" />
+        <Levies porcentage="13" key="rex_rom_legionis_britonum" max="LEVY" />
+        <Levies porcentage="24" key="rex_rom_sagittarii_nervii" max="LEVY" />
         <MenAtArm type="light_footmen" key="rex_rom_auxiliarii_visi" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="rex_rom_legionis_minervii" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="rex_rom_legionis_lanciarii_seniores" max="INFANTRY" />
@@ -5237,9 +5240,6 @@
         <MenAtArm type="vigmen" key="rex_slav_ant_band_archers" max="RANGED" />
         <MenAtArm type="war_elephant" key="rex_germ_band_defenders_sueb" max="CAVALRY" />
         <MenAtArm type="zupin_warrior" key="rex_east_daylamites" max="INFANTRY" />
-        <Levies porcentage="28" key="rex_rom_millites_tung" max="LEVY" />
-        <Levies porcentage="18" key="rex_rom_legionis_britonum" max="LEVY" />
-        <Levies porcentage="3" key="rex_rom_sagittarii_nervii" max="LEVY" />
         <MenAtArm type="Guardians" key="att_ger_godansmen" max="INFANTRY" />
         <MenAtArm type="Phalanxes" key="rex_hun_spears_limicantes" max="INFANTRY" />
         <MenAtArm type="Shieldwall Arbalests" key="rex_slav_spear_braves_geats" max="RANGED" />
@@ -5592,9 +5592,9 @@
     <Faction name="Franks">
         <General key="rex_germ_gileibo" />
         <Knights key="rex_germ_gisind" />
-        <Levies porcentage="55" key="rex_germ_band_spearmen_franc" max="LEVY" />
-        <Levies porcentage="35" key="rex_germ_band_swordsmen_franc" max="LEVY" />
-        <Levies porcentage="10" key="rex_germ_band_archers" max="LEVY" />
+        <Levies porcentage="23" key="rex_germ_band_spearmen_franc" max="LEVY" />
+        <Levies porcentage="40" key="rex_germ_band_swordsmen_franc" max="LEVY" />
+        <Levies porcentage="37" key="rex_germ_band_archers" max="LEVY" />
         <MenAtArm type="light_footmen" key="rex_germ_brachiati_franc" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="rex_germ_ulfhednar" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="rex_germ_band_spearmen_duget_franc" max="INFANTRY" />
@@ -6025,9 +6025,9 @@
     <Faction name="Saxons">
         <General key="rex_germ_gileibo_g" />
         <Knights key="rex_germ_gisind" />
-        <Levies porcentage="55" key="rex_germ_band_defenders" max="LEVY" />
-        <Levies porcentage="35" key="rex_germ_band_raiders_sax" max="LEVY" />
-        <Levies porcentage="10" key="rex_germ_hansa_bow" max="LEVY" />
+        <Levies porcentage="16" key="rex_germ_band_defenders" max="LEVY" />
+        <Levies porcentage="46" key="rex_germ_band_raiders_sax" max="LEVY" />
+        <Levies porcentage="38" key="rex_germ_hansa_bow" max="LEVY" />
         <MenAtArm type="light_footmen" key="rex_germ_brachiati_saxons" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="rex_germ_ulfhednar" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="rex_germ_band_pikemen" max="INFANTRY" />
@@ -6458,9 +6458,9 @@
     <Faction name="Langobards">
         <General key="rex_germ_gileibo_g" />
         <Knights key="rex_germ_gisind" />
-        <Levies porcentage="55" key="rex_germ_band_defenders" max="LEVY" />
-        <Levies porcentage="35" key="rex_germ_band_wigman_sueb" max="LEVY" />
-        <Levies porcentage="10" key="rex_germ_hansa_bow" max="LEVY" />
+        <Levies porcentage="31" key="rex_germ_band_defenders" max="LEVY" />
+        <Levies porcentage="29" key="rex_germ_band_wigman_sueb" max="LEVY" />
+        <Levies porcentage="40" key="rex_germ_hansa_bow" max="LEVY" />
         <MenAtArm type="light_footmen" key="rex_germ_band_swordsmen_marc" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="rex_germ_ulfhednar" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="rex_germ_band_pikemen" max="INFANTRY" />
@@ -6891,9 +6891,9 @@
     <Faction name="Suebians">
         <General key="rex_germ_gileibo_g" />
         <Knights key="rex_germ_gisind" />
-        <Levies porcentage="55" key="rex_germ_band_defenders_sueb" max="LEVY" />
-        <Levies porcentage="35" key="rex_slav_ven_band_svinfylkings" max="LEVY" />
-        <Levies porcentage="10" key="rex_germ_hansa_bow" max="LEVY" />
+        <Levies porcentage="17" key="rex_germ_band_defenders_sueb" max="LEVY" />
+        <Levies porcentage="47" key="rex_slav_ven_band_svinfylkings" max="LEVY" />
+        <Levies porcentage="36" key="rex_germ_hansa_bow" max="LEVY" />
         <MenAtArm type="light_footmen" key="rex_germ_einherjar" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="rex_germ_ulfhednar" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="rex_germ_band_pikemen" max="INFANTRY" />
@@ -7324,9 +7324,9 @@
     <Faction name="Alamans">
         <General key="rex_germ_gileibo_g" />
         <Knights key="rex_germ_gisind" />
-        <Levies porcentage="55" key="rex_germ_band_defenders_sueb" max="LEVY" />
-        <Levies porcentage="35" key="rex_germ_band_raiders_sueb" max="LEVY" />
-        <Levies porcentage="10" key="rex_germ_hansa_bow" max="LEVY" />
+        <Levies porcentage="20" key="rex_germ_band_defenders_sueb" max="LEVY" />
+        <Levies porcentage="48" key="rex_germ_band_raiders_sueb" max="LEVY" />
+        <Levies porcentage="32" key="rex_germ_hansa_bow" max="LEVY" />
         <MenAtArm type="light_footmen" key="rex_germ_band_wigman_sueb" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="rex_germ_ulfhednar" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="rex_germ_band_spearmen_sueb" max="INFANTRY" />
@@ -7757,9 +7757,12 @@
     <Faction name="Visigoths">
         <General key="rex_germ_gileibo_g" />
         <Knights key="rex_germ_gisind" />
-        <Levies porcentage="28" key="rex_germ_band_defenders_iuti" max="LEVY" />
-        <Levies porcentage="18" key="rex_germ_band_raiders_burg" max="LEVY" />
-        <Levies porcentage="5" key="rex_germ_hansa_bow" max="LEVY" />
+        <Levies porcentage="6" key="rex_germ_band_defenders_iuti" max="LEVY" />
+        <Levies porcentage="28" key="rex_germ_band_raiders_burg" max="LEVY" />
+        <Levies porcentage="21" key="rex_germ_hansa_bow" max="LEVY" />
+        <Levies porcentage="10" key="rex_goth_band_militon" max="LEVY" />
+        <Levies porcentage="9" key="rex_goth_band_analaugnjai_gadrauhteis" max="LEVY" />
+        <Levies porcentage="26" key="rex_goth_hansa_hunters" max="LEVY" />
         <MenAtArm type="light_footmen" key="rex_germ_band_swordsmen_duget" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="rex_germ_ulfhednar" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="rex_germ_band_pikemen" max="INFANTRY" />
@@ -7838,9 +7841,6 @@
         <MenAtArm type="vigmen" key="rex_slav_ant_band_archers" max="RANGED" />
         <MenAtArm type="war_elephant" key="rex_germ_band_defenders_sueb" max="CAVALRY" />
         <MenAtArm type="zupin_warrior" key="rex_east_daylamites" max="INFANTRY" />
-        <Levies porcentage="28" key="rex_goth_band_militon" max="LEVY" />
-        <Levies porcentage="18" key="rex_goth_band_analaugnjai_gadrauhteis" max="LEVY" />
-        <Levies porcentage="3" key="rex_goth_hansa_hunters" max="LEVY" />
         <MenAtArm type="Guardians" key="att_ger_godansmen" max="INFANTRY" />
         <MenAtArm type="Phalanxes" key="rex_hun_spears_limicantes" max="INFANTRY" />
         <MenAtArm type="Shieldwall Arbalests" key="rex_slav_spear_braves_geats" max="RANGED" />
@@ -8193,9 +8193,9 @@
     <Faction name="Varinians">
         <General key="rex_goth_gahlaibans" />
         <Knights key="rex_goth_sagjans" />
-        <Levies porcentage="55" key="rex_goth_band_militon" max="LEVY" />
-        <Levies porcentage="35" key="rex_goth_band_analaugnjai_gadrauhteis" max="LEVY" />
-        <Levies porcentage="10" key="rex_goth_hansa_hunters" max="LEVY" />
+        <Levies porcentage="37" key="rex_goth_band_militon" max="LEVY" />
+        <Levies porcentage="38" key="rex_goth_band_analaugnjai_gadrauhteis" max="LEVY" />
+        <Levies porcentage="25" key="rex_goth_hansa_hunters" max="LEVY" />
         <MenAtArm type="light_footmen" key="rex_goth_band_gadrauhteis_gepids" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="rex_goth_ingardjans" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="rex_rom_legionis_lanciarii_seniores" max="INFANTRY" />
@@ -8626,9 +8626,9 @@
     <Faction name="Vandals">
         <General key="rex_goth_gahlaibans" />
         <Knights key="rex_goth_gahlaibans_contofors" />
-        <Levies porcentage="55" key="rex_goth_band_militon_vandals" max="LEVY" />
-        <Levies porcentage="35" key="rex_goth_band_hairjane_vandals" max="LEVY" />
-        <Levies porcentage="10" key="rex_goth_hansa_hunters" max="LEVY" />
+        <Levies porcentage="34" key="rex_goth_band_militon_vandals" max="LEVY" />
+        <Levies porcentage="32" key="rex_goth_band_hairjane_vandals" max="LEVY" />
+        <Levies porcentage="34" key="rex_goth_hansa_hunters" max="LEVY" />
         <MenAtArm type="light_footmen" key="rex_goth_band_gadrauhteis_vandals" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="rex_germ_ulfhednar" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="rex_goth_band_pikemen" max="INFANTRY" />
@@ -9059,9 +9059,9 @@
     <Faction name="Aria">
         <General key="rex_east_sas_vuzurgan" />
         <Knights key="rex_east_sas_clibanarius" />
-        <Levies porcentage="55" key="rex_east_sas_paygan" max="LEVY" />
-        <Levies porcentage="35" key="rex_arab_badyia_ambushers" max="LEVY" />
-        <Levies porcentage="10" key="rex_east_albanians" max="LEVY" />
+        <Levies porcentage="46" key="rex_east_sas_paygan" max="LEVY" />
+        <Levies porcentage="29" key="rex_arab_badyia_ambushers" max="LEVY" />
+        <Levies porcentage="25" key="rex_east_albanians" max="LEVY" />
         <MenAtArm type="light_footmen" key="rex_east_daylamites_infantry" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="rex_east_segestani" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="rex_east_sas_paygan_gond" max="INFANTRY" />
@@ -9494,9 +9494,9 @@
     <Faction name="Armenia">
         <General key="rex_east_armenian_ishkhan_g" />
         <Knights key="rex_east_armenian_malkhaz" />
-        <Levies porcentage="55" key="rex_east_daylamites" max="LEVY" />
-        <Levies porcentage="35" key="rex_east_arm_roman_infantry" max="LEVY" />
-        <Levies porcentage="10" key="rex_east_albanians" max="LEVY" />
+        <Levies porcentage="14" key="rex_east_daylamites" max="LEVY" />
+        <Levies porcentage="42" key="rex_east_arm_roman_infantry" max="LEVY" />
+        <Levies porcentage="44" key="rex_east_albanians" max="LEVY" />
         <MenAtArm type="light_footmen" key="rex_east_daylamites_infantry" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="rex_east_segestani" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="rex_east_sas_paygan_gond" max="INFANTRY" />
@@ -9927,9 +9927,9 @@
     <Faction name="Picts">
         <General key="rex_celt_warlord_g" />
         <Knights key="rex_celt_brit_chariot" />
-        <Levies porcentage="55" key="rex_celt_pict_squad_levy" max="LEVY" />
-        <Levies porcentage="35" key="rex_celt_pict_band_raiders" max="LEVY" />
-        <Levies porcentage="10" key="rex_celt_scot_squad_bow" max="LEVY" />
+        <Levies porcentage="35" key="rex_celt_pict_squad_levy" max="LEVY" />
+        <Levies porcentage="31" key="rex_celt_pict_band_raiders" max="LEVY" />
+        <Levies porcentage="34" key="rex_celt_scot_squad_bow" max="LEVY" />
         <MenAtArm type="light_footmen" key="rex_celt_scot_women_warriors" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="rex_celt_pict_swordsmen" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="rex_celt_pict_band_pikemen" max="INFANTRY" />
@@ -10360,9 +10360,9 @@
     <Faction name="Ebdanians">
         <General key="rex_celt_warlord_g" />
         <Knights key="rex_celt_brit_chariot" />
-        <Levies porcentage="55" key="rex_celt_scot_band_defenders" max="LEVY" />
-        <Levies porcentage="35" key="rex_celt_scot_band_raiders" max="LEVY" />
-        <Levies porcentage="10" key="cha_slav_spear" max="LEVY" />
+        <Levies porcentage="45" key="rex_celt_scot_band_defenders" max="LEVY" />
+        <Levies porcentage="31" key="rex_celt_scot_band_raiders" max="LEVY" />
+        <Levies porcentage="24" key="cha_slav_spear" max="LEVY" />
         <MenAtArm type="light_footmen" key="rex_celt_scot_women_warriors" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="rex_celt_scot_swordsmen" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="rex_celt_caled_band_defenders" max="INFANTRY" />
@@ -10793,9 +10793,9 @@
     <Faction name="Venedians">
         <General key="rex_slav_ant_oathbounds_g" />
         <Knights key="rex_slav_germ_cavalry" />
-        <Levies porcentage="55" key="rex_slav_ven_band_defenders" max="LEVY" />
-        <Levies porcentage="35" key="rex_slav_ven_band_warsword" max="LEVY" />
-        <Levies porcentage="10" key="rex_slav_ven_band_skirmishers" max="LEVY" />
+        <Levies porcentage="20" key="rex_slav_ven_band_defenders" max="LEVY" />
+        <Levies porcentage="42" key="rex_slav_ven_band_warsword" max="LEVY" />
+        <Levies porcentage="38" key="rex_slav_ven_band_skirmishers" max="LEVY" />
         <MenAtArm type="light_footmen" key="rex_slav_ven_band_svinfylkings" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="rex_slav_warlords_braves" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="rex_slav_ven_band_warspear" max="INFANTRY" />
@@ -11226,9 +11226,9 @@
     <Faction name="Anteans">
         <General key="rex_slav_ant_oathbounds_g" />
         <Knights key="rex_slav_ant_shield_bearers" />
-        <Levies porcentage="55" key="rex_slav_ant_band_defenders" max="LEVY" />
-        <Levies porcentage="35" key="rex_celt_scot_band_defenders" max="LEVY" />
-        <Levies porcentage="10" key="rex_slav_ant_squad_bow" max="LEVY" />
+        <Levies porcentage="39" key="rex_slav_ant_band_defenders" max="LEVY" />
+        <Levies porcentage="13" key="rex_celt_scot_band_defenders" max="LEVY" />
+        <Levies porcentage="48" key="rex_slav_ant_squad_bow" max="LEVY" />
         <MenAtArm type="light_footmen" key="rex_slav_ant_band_warsword" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="rex_slav_warlords_braves" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="rex_slav_ant_band_warspear" max="INFANTRY" />
@@ -11659,9 +11659,9 @@
     <Faction name="Jutes">
         <General key="rex_germ_gileibo_g" />
         <Knights key="rex_germ_gisind" />
-        <Levies porcentage="55" key="rex_germ_band_defenders_iuti" max="LEVY" />
-        <Levies porcentage="35" key="rex_germ_band_wigman_nord" max="LEVY" />
-        <Levies porcentage="10" key="att_ger_civilian_townsfolk" max="LEVY" />
+        <Levies porcentage="24" key="rex_germ_band_defenders_iuti" max="LEVY" />
+        <Levies porcentage="16" key="rex_germ_band_wigman_nord" max="LEVY" />
+        <Levies porcentage="60" key="att_ger_civilian_townsfolk" max="LEVY" />
         <MenAtArm type="light_footmen" key="rex_germ_berserker" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="rex_germ_brachiati" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="rex_germ_band_pikemen" max="INFANTRY" />
@@ -12092,9 +12092,9 @@
     <Faction name="Geats">
         <General key="rex_germ_gisind" />
         <Knights key="rex_germ_gisind" />
-        <Levies porcentage="55" key="rex_slav_spear_braves_geats" max="LEVY" />
-        <Levies porcentage="35" key="rex_germ_band_wigman_nord" max="LEVY" />
-        <Levies porcentage="10" key="rex_germ_hansa_hunters" max="LEVY" />
+        <Levies porcentage="39" key="rex_slav_spear_braves_geats" max="LEVY" />
+        <Levies porcentage="31" key="rex_germ_band_wigman_nord" max="LEVY" />
+        <Levies porcentage="30" key="rex_germ_hansa_hunters" max="LEVY" />
         <MenAtArm type="light_footmen" key="rex_germ_band_swordsmen_duget" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="rex_germ_ulfhednar" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="rex_germ_band_pikemen" max="INFANTRY" />
@@ -12525,9 +12525,12 @@
     <Faction name="Aksum">
         <General key="rex_arab_mavias_radif_g" />
         <Knights key="rex_rom_cuneus_clibanariorum_palmirenorum" />
-        <Levies porcentage="28" key="rex_arab_militia" max="LEVY" />
-        <Levies porcentage="18" key="rex_arab_badyia_ambushers" max="LEVY" />
-        <Levies porcentage="5" key="rex_east_kurds" max="LEVY" />
+        <Levies porcentage="15" key="rex_arab_militia" max="LEVY" />
+        <Levies porcentage="33" key="rex_arab_badyia_ambushers" max="LEVY" />
+        <Levies porcentage="11" key="rex_east_kurds" max="LEVY" />
+        <Levies porcentage="10" key="rex_des_axum_spears" max="LEVY" />
+        <Levies porcentage="12" key="rex_des_axum_shotelai" max="LEVY" />
+        <Levies porcentage="19" key="rex_des_axum_levy" max="LEVY" />
         <MenAtArm type="light_footmen" key="rex_arab_badyia_ambushers" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="rex_arab_sanai" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="rex_arab_romanish_rumha" max="INFANTRY" />
@@ -12606,9 +12609,6 @@
         <MenAtArm type="vigmen" key="rex_slav_ant_band_archers" max="RANGED" />
         <MenAtArm type="war_elephant" key="rex_germ_band_defenders_sueb" max="CAVALRY" />
         <MenAtArm type="zupin_warrior" key="rex_east_daylamites" max="INFANTRY" />
-        <Levies porcentage="28" key="rex_des_axum_spears" max="LEVY" />
-        <Levies porcentage="18" key="rex_des_axum_shotelai" max="LEVY" />
-        <Levies porcentage="3" key="rex_des_axum_levy" max="LEVY" />
         <MenAtArm type="Guardians" key="att_ger_godansmen" max="INFANTRY" />
         <MenAtArm type="Phalanxes" key="rex_hun_spears_limicantes" max="INFANTRY" />
         <MenAtArm type="Shieldwall Arbalests" key="rex_slav_spear_braves_geats" max="RANGED" />
@@ -12961,9 +12961,9 @@
     <Faction name="Garamantians">
         <General key="rex_des_desert_guard_g" />
         <Knights key="rex_des_desert_guard_g" />
-        <Levies porcentage="55" key="rex_des_axum_allied_defenders" max="LEVY" />
-        <Levies porcentage="35" key="rex_des_axum_shotelai" max="LEVY" />
-        <Levies porcentage="10" key="rex_des_desert_fast_javelins" max="LEVY" />
+        <Levies porcentage="32" key="rex_des_axum_allied_defenders" max="LEVY" />
+        <Levies porcentage="34" key="rex_des_axum_shotelai" max="LEVY" />
+        <Levies porcentage="34" key="rex_des_desert_fast_javelins" max="LEVY" />
         <MenAtArm type="light_footmen" key="rex_arab_sanai" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="rex_des_axum_maher_warriors" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="rex_des_desert_garama_sentinels" max="INFANTRY" />
@@ -13394,9 +13394,9 @@
     <Faction name="Himyar">
         <General key="rex_arab_radif_g" />
         <Knights key="rex_rom_cuneus_clibanariorum_palmirenorum" />
-        <Levies porcentage="55" key="rex_arab_zafar_sentinels" max="LEVY" />
-        <Levies porcentage="35" key="rex_arab_badyia_ambushers" max="LEVY" />
-        <Levies porcentage="10" key="rex_rom_pereb_lanciarii" max="LEVY" />
+        <Levies porcentage="48" key="rex_arab_zafar_sentinels" max="LEVY" />
+        <Levies porcentage="20" key="rex_arab_badyia_ambushers" max="LEVY" />
+        <Levies porcentage="32" key="rex_rom_pereb_lanciarii" max="LEVY" />
         <MenAtArm type="light_footmen" key="rex_arab_himyarite_shotelai" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="rex_arab_sanai" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="rex_arab_athars_chosen" max="INFANTRY" />
@@ -13827,9 +13827,9 @@
     <Faction name="Lakhmids">
         <General key="rex_arab_radif_g" />
         <Knights key="rex_arab_wadai" />
-        <Levies porcentage="55" key="rex_arab_rumha_watlai" max="LEVY" />
-        <Levies porcentage="35" key="rex_arab_badyia_ambushers" max="LEVY" />
-        <Levies porcentage="10" key="rex_arab_badyia_skirmishers" max="LEVY" />
+        <Levies porcentage="24" key="rex_arab_rumha_watlai" max="LEVY" />
+        <Levies porcentage="33" key="rex_arab_badyia_ambushers" max="LEVY" />
+        <Levies porcentage="43" key="rex_arab_badyia_skirmishers" max="LEVY" />
         <MenAtArm type="light_footmen" key="rex_arab_sanai" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="rex_arab_sanai" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="rex_arab_rahain" max="INFANTRY" />
@@ -14260,9 +14260,9 @@
     <Faction name="Gaul">
         <General key="rex_hun_retinue" />
         <Knights key="rex_hun_sarm_comrades" />
-        <Levies porcentage="55" key="rex_hun_spears_limicantes" max="LEVY" />
-        <Levies porcentage="35" key="rex_hun_swords_limicantes" max="LEVY" />
-        <Levies porcentage="10" key="rex_slav_ant_band_skirmishers" max="LEVY" />
+        <Levies porcentage="24" key="rex_hun_spears_limicantes" max="LEVY" />
+        <Levies porcentage="37" key="rex_hun_swords_limicantes" max="LEVY" />
+        <Levies porcentage="39" key="rex_slav_ant_band_skirmishers" max="LEVY" />
         <MenAtArm type="light_footmen" key="rex_slav_warlords_braves_geats" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="rex_goth_band_gadrauhteis_gepids" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="rex_germ_band_spearmen" max="INFANTRY" />
@@ -14693,9 +14693,9 @@
     <Faction name="Abarshahr">
         <General key="rex_east_armenian_ayrudzi" />
         <Knights key="rex_barb_horsemen_ishoda" />
-        <Levies porcentage="55" key="rex_praeventores" max="LEVY" />
-        <Levies porcentage="35" key="rex_rom_legionis_romanenses" max="LEVY" />
-        <Levies porcentage="10" key="rex_rom_legionis_mattiarii_iuniores" max="LEVY" />
+        <Levies porcentage="58" key="rex_praeventores" max="LEVY" />
+        <Levies porcentage="20" key="rex_rom_legionis_romanenses" max="LEVY" />
+        <Levies porcentage="22" key="rex_rom_legionis_mattiarii_iuniores" max="LEVY" />
         <MenAtArm type="light_footmen" key="rex_rom_auxiliarii_bructeri" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="rex_rom_legionis_valentinianenses" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="rex_rom_legionis_armigeri_defensores_seniores" max="INFANTRY" />
@@ -15126,9 +15126,9 @@
     <Faction name="Anatolia">
         <General key="rex_hun_retinue" />
         <Knights key="bel_van_vandal_horsemen" />
-        <Levies porcentage="55" key="rex_praeventores" max="LEVY" />
-        <Levies porcentage="35" key="rex_rom_legionis_romanenses" max="LEVY" />
-        <Levies porcentage="10" key="rex_rom_legionis_mattiarii_iuniores" max="LEVY" />
+        <Levies porcentage="42" key="rex_praeventores" max="LEVY" />
+        <Levies porcentage="25" key="rex_rom_legionis_romanenses" max="LEVY" />
+        <Levies porcentage="33" key="rex_rom_legionis_mattiarii_iuniores" max="LEVY" />
         <MenAtArm type="light_footmen" key="rex_rom_auxiliarii_bructeri" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="rex_rom_legionis_valentinianenses" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="rex_rom_legionis_armigeri_defensores_seniores" max="INFANTRY" />
@@ -15559,9 +15559,9 @@
     <Faction name="Angria">
         <General key="att_alan_alani_nobles_general" />
         <Knights key="rex_slav_sarm_cavalry" />
-        <Levies porcentage="55" key="rex_praeventores" max="LEVY" />
-        <Levies porcentage="35" key="rex_rom_legionis_romanenses" max="LEVY" />
-        <Levies porcentage="10" key="rex_rom_legionis_mattiarii_iuniores" max="LEVY" />
+        <Levies porcentage="15" key="rex_praeventores" max="LEVY" />
+        <Levies porcentage="46" key="rex_rom_legionis_romanenses" max="LEVY" />
+        <Levies porcentage="39" key="rex_rom_legionis_mattiarii_iuniores" max="LEVY" />
         <MenAtArm type="light_footmen" key="rex_rom_auxiliarii_bructeri" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="rex_rom_legionis_valentinianenses" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="rex_rom_legionis_armigeri_defensores_seniores" max="INFANTRY" />
@@ -15992,9 +15992,9 @@
     <Faction name="Aorsi">
         <General key="rex_slav_ant_shield_bearers" />
         <Knights key="rex_arab_dawsar" />
-        <Levies porcentage="55" key="rex_praeventores" max="LEVY" />
-        <Levies porcentage="35" key="rex_rom_legionis_romanenses" max="LEVY" />
-        <Levies porcentage="10" key="rex_rom_legionis_mattiarii_iuniores" max="LEVY" />
+        <Levies porcentage="54" key="rex_praeventores" max="LEVY" />
+        <Levies porcentage="28" key="rex_rom_legionis_romanenses" max="LEVY" />
+        <Levies porcentage="18" key="rex_rom_legionis_mattiarii_iuniores" max="LEVY" />
         <MenAtArm type="light_footmen" key="rex_rom_auxiliarii_bructeri" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="rex_rom_legionis_valentinianenses" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="rex_rom_legionis_armigeri_defensores_seniores" max="INFANTRY" />
@@ -16425,9 +16425,9 @@
     <Faction name="Arran">
         <General key="rex_robbers_warlord" />
         <Knights key="rex_east_sas_pahlavan_savaran" />
-        <Levies porcentage="55" key="rex_praeventores" max="LEVY" />
-        <Levies porcentage="35" key="rex_rom_legionis_romanenses" max="LEVY" />
-        <Levies porcentage="10" key="rex_rom_legionis_mattiarii_iuniores" max="LEVY" />
+        <Levies porcentage="19" key="rex_praeventores" max="LEVY" />
+        <Levies porcentage="39" key="rex_rom_legionis_romanenses" max="LEVY" />
+        <Levies porcentage="42" key="rex_rom_legionis_mattiarii_iuniores" max="LEVY" />
         <MenAtArm type="light_footmen" key="rex_rom_auxiliarii_bructeri" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="rex_rom_legionis_valentinianenses" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="rex_rom_legionis_armigeri_defensores_seniores" max="INFANTRY" />
@@ -16858,9 +16858,9 @@
     <Faction name="Asia">
         <General key="rex_east_scouts" />
         <Knights key="att_nom_steppe_chieftain" />
-        <Levies porcentage="55" key="rex_praeventores" max="LEVY" />
-        <Levies porcentage="35" key="rex_rom_legionis_romanenses" max="LEVY" />
-        <Levies porcentage="10" key="rex_rom_legionis_mattiarii_iuniores" max="LEVY" />
+        <Levies porcentage="36" key="rex_praeventores" max="LEVY" />
+        <Levies porcentage="24" key="rex_rom_legionis_romanenses" max="LEVY" />
+        <Levies porcentage="40" key="rex_rom_legionis_mattiarii_iuniores" max="LEVY" />
         <MenAtArm type="light_footmen" key="rex_rom_auxiliarii_bructeri" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="rex_rom_legionis_valentinianenses" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="rex_rom_legionis_armigeri_defensores_seniores" max="INFANTRY" />
@@ -17291,9 +17291,9 @@
     <Faction name="Atropatene">
         <General key="rex_sarm_regal_warband_g" />
         <Knights key="att_wh_hephthalite_chargers" />
-        <Levies porcentage="55" key="rex_praeventores" max="LEVY" />
-        <Levies porcentage="35" key="rex_rom_legionis_romanenses" max="LEVY" />
-        <Levies porcentage="10" key="rex_rom_legionis_mattiarii_iuniores" max="LEVY" />
+        <Levies porcentage="17" key="rex_praeventores" max="LEVY" />
+        <Levies porcentage="37" key="rex_rom_legionis_romanenses" max="LEVY" />
+        <Levies porcentage="46" key="rex_rom_legionis_mattiarii_iuniores" max="LEVY" />
         <MenAtArm type="light_footmen" key="rex_rom_auxiliarii_bructeri" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="rex_rom_legionis_valentinianenses" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="rex_rom_legionis_armigeri_defensores_seniores" max="INFANTRY" />
@@ -17724,9 +17724,9 @@
     <Faction name="Avars">
         <General key="rex_celt_warlord_g" />
         <Knights key="rex_rom_schola_scutariorum" />
-        <Levies porcentage="55" key="rex_praeventores" max="LEVY" />
-        <Levies porcentage="35" key="rex_rom_legionis_romanenses" max="LEVY" />
-        <Levies porcentage="10" key="rex_rom_legionis_mattiarii_iuniores" max="LEVY" />
+        <Levies porcentage="44" key="rex_praeventores" max="LEVY" />
+        <Levies porcentage="37" key="rex_rom_legionis_romanenses" max="LEVY" />
+        <Levies porcentage="19" key="rex_rom_legionis_mattiarii_iuniores" max="LEVY" />
         <MenAtArm type="light_footmen" key="rex_rom_auxiliarii_bructeri" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="rex_rom_legionis_valentinianenses" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="rex_rom_legionis_armigeri_defensores_seniores" max="INFANTRY" />
@@ -18157,9 +18157,9 @@
     <Faction name="Basques">
         <General key="rex_sarm_scouts" />
         <Knights key="rex_rom_equites_scutarii_illyriciani" />
-        <Levies porcentage="55" key="rex_praeventores" max="LEVY" />
-        <Levies porcentage="35" key="rex_rom_legionis_romanenses" max="LEVY" />
-        <Levies porcentage="10" key="rex_rom_legionis_mattiarii_iuniores" max="LEVY" />
+        <Levies porcentage="20" key="rex_praeventores" max="LEVY" />
+        <Levies porcentage="29" key="rex_rom_legionis_romanenses" max="LEVY" />
+        <Levies porcentage="51" key="rex_rom_legionis_mattiarii_iuniores" max="LEVY" />
         <MenAtArm type="light_footmen" key="rex_rom_auxiliarii_bructeri" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="rex_rom_legionis_valentinianenses" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="rex_rom_legionis_armigeri_defensores_seniores" max="INFANTRY" />
@@ -18590,9 +18590,9 @@
     <Faction name="Bastarnians">
         <General key="rex_goth_gahlaibans_g" />
         <Knights key="rex_des_axum_ras_g" />
-        <Levies porcentage="55" key="rex_praeventores" max="LEVY" />
-        <Levies porcentage="35" key="rex_rom_legionis_romanenses" max="LEVY" />
-        <Levies porcentage="10" key="rex_rom_legionis_mattiarii_iuniores" max="LEVY" />
+        <Levies porcentage="47" key="rex_praeventores" max="LEVY" />
+        <Levies porcentage="12" key="rex_rom_legionis_romanenses" max="LEVY" />
+        <Levies porcentage="41" key="rex_rom_legionis_mattiarii_iuniores" max="LEVY" />
         <MenAtArm type="light_footmen" key="rex_rom_auxiliarii_bructeri" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="rex_rom_legionis_valentinianenses" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="rex_rom_legionis_armigeri_defensores_seniores" max="INFANTRY" />
@@ -19023,9 +19023,9 @@
     <Faction name="Burgundians">
         <General key="rex_sarm_scouts" />
         <Knights key="rex_goth_comites" />
-        <Levies porcentage="55" key="rex_praeventores" max="LEVY" />
-        <Levies porcentage="35" key="rex_rom_legionis_romanenses" max="LEVY" />
-        <Levies porcentage="10" key="rex_rom_legionis_mattiarii_iuniores" max="LEVY" />
+        <Levies porcentage="20" key="rex_praeventores" max="LEVY" />
+        <Levies porcentage="63" key="rex_rom_legionis_romanenses" max="LEVY" />
+        <Levies porcentage="17" key="rex_rom_legionis_mattiarii_iuniores" max="LEVY" />
         <MenAtArm type="light_footmen" key="rex_rom_auxiliarii_bructeri" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="rex_rom_legionis_valentinianenses" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="rex_rom_legionis_armigeri_defensores_seniores" max="INFANTRY" />
@@ -19456,9 +19456,9 @@
     <Faction name="Eastphalia">
         <General key="rex_east_scouts" />
         <Knights key="rex_goth_sagjans" />
-        <Levies porcentage="55" key="rex_praeventores" max="LEVY" />
-        <Levies porcentage="35" key="rex_rom_legionis_romanenses" max="LEVY" />
-        <Levies porcentage="10" key="rex_rom_legionis_mattiarii_iuniores" max="LEVY" />
+        <Levies porcentage="40" key="rex_praeventores" max="LEVY" />
+        <Levies porcentage="20" key="rex_rom_legionis_romanenses" max="LEVY" />
+        <Levies porcentage="40" key="rex_rom_legionis_mattiarii_iuniores" max="LEVY" />
         <MenAtArm type="light_footmen" key="rex_rom_auxiliarii_bructeri" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="rex_rom_legionis_valentinianenses" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="rex_rom_legionis_armigeri_defensores_seniores" max="INFANTRY" />
@@ -19889,9 +19889,9 @@
     <Faction name="Egypt">
         <General key="rex_arab_radif_g" />
         <Knights key="rex_east_sas_clibanarius" />
-        <Levies porcentage="55" key="rex_praeventores" max="LEVY" />
+        <Levies porcentage="26" key="rex_praeventores" max="LEVY" />
         <Levies porcentage="35" key="rex_rom_legionis_romanenses" max="LEVY" />
-        <Levies porcentage="10" key="rex_rom_legionis_mattiarii_iuniores" max="LEVY" />
+        <Levies porcentage="39" key="rex_rom_legionis_mattiarii_iuniores" max="LEVY" />
         <MenAtArm type="light_footmen" key="rex_rom_auxiliarii_bructeri" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="rex_rom_legionis_valentinianenses" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="rex_rom_legionis_armigeri_defensores_seniores" max="INFANTRY" />
@@ -20322,9 +20322,9 @@
     <Faction name="Gepids">
         <General key="rex_sarm_nobles_warband_g" />
         <Knights key="rex_east_arm_azat" />
-        <Levies porcentage="55" key="rex_praeventores" max="LEVY" />
-        <Levies porcentage="35" key="rex_rom_legionis_romanenses" max="LEVY" />
-        <Levies porcentage="10" key="rex_rom_legionis_mattiarii_iuniores" max="LEVY" />
+        <Levies porcentage="37" key="rex_praeventores" max="LEVY" />
+        <Levies porcentage="28" key="rex_rom_legionis_romanenses" max="LEVY" />
+        <Levies porcentage="35" key="rex_rom_legionis_mattiarii_iuniores" max="LEVY" />
         <MenAtArm type="light_footmen" key="rex_rom_auxiliarii_bructeri" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="rex_rom_legionis_valentinianenses" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="rex_rom_legionis_armigeri_defensores_seniores" max="INFANTRY" />
@@ -20755,9 +20755,9 @@
     <Faction name="Heruli">
         <General key="rex_hun_retinue" />
         <Knights key="att_est_persian_scouts" />
-        <Levies porcentage="55" key="rex_praeventores" max="LEVY" />
-        <Levies porcentage="35" key="rex_rom_legionis_romanenses" max="LEVY" />
-        <Levies porcentage="10" key="rex_rom_legionis_mattiarii_iuniores" max="LEVY" />
+        <Levies porcentage="43" key="rex_praeventores" max="LEVY" />
+        <Levies porcentage="41" key="rex_rom_legionis_romanenses" max="LEVY" />
+        <Levies porcentage="16" key="rex_rom_legionis_mattiarii_iuniores" max="LEVY" />
         <MenAtArm type="light_footmen" key="rex_rom_auxiliarii_bructeri" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="rex_rom_legionis_valentinianenses" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="rex_rom_legionis_armigeri_defensores_seniores" max="INFANTRY" />
@@ -21188,9 +21188,9 @@
     <Faction name="Hispania">
         <General key="rex_slav_ant_shield_bearers" />
         <Knights key="rex_rom_equites_clibanarii_parthi" />
-        <Levies porcentage="55" key="rex_praeventores" max="LEVY" />
-        <Levies porcentage="35" key="rex_rom_legionis_romanenses" max="LEVY" />
-        <Levies porcentage="10" key="rex_rom_legionis_mattiarii_iuniores" max="LEVY" />
+        <Levies porcentage="39" key="rex_praeventores" max="LEVY" />
+        <Levies porcentage="20" key="rex_rom_legionis_romanenses" max="LEVY" />
+        <Levies porcentage="41" key="rex_rom_legionis_mattiarii_iuniores" max="LEVY" />
         <MenAtArm type="light_footmen" key="rex_rom_auxiliarii_bructeri" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="rex_rom_legionis_valentinianenses" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="rex_rom_legionis_armigeri_defensores_seniores" max="INFANTRY" />
@@ -21621,9 +21621,9 @@
     <Faction name="Hunnic Rebels">
         <General key="rex_germ_gileibo_g" />
         <Knights key="rex_sarm_tribesmen" />
-        <Levies porcentage="55" key="rex_praeventores" max="LEVY" />
-        <Levies porcentage="35" key="rex_rom_legionis_romanenses" max="LEVY" />
-        <Levies porcentage="10" key="rex_rom_legionis_mattiarii_iuniores" max="LEVY" />
+        <Levies porcentage="26" key="rex_praeventores" max="LEVY" />
+        <Levies porcentage="37" key="rex_rom_legionis_romanenses" max="LEVY" />
+        <Levies porcentage="37" key="rex_rom_legionis_mattiarii_iuniores" max="LEVY" />
         <MenAtArm type="light_footmen" key="rex_rom_auxiliarii_bructeri" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="rex_rom_legionis_valentinianenses" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="rex_rom_legionis_armigeri_defensores_seniores" max="INFANTRY" />
@@ -22054,9 +22054,9 @@
     <Faction name="Italia">
         <General key="rex_slav_ant_oathbounds_g" />
         <Knights key="rex_rom_equites_scutarii_illyriciani" />
-        <Levies porcentage="55" key="rex_praeventores" max="LEVY" />
-        <Levies porcentage="35" key="rex_rom_legionis_romanenses" max="LEVY" />
-        <Levies porcentage="10" key="rex_rom_legionis_mattiarii_iuniores" max="LEVY" />
+        <Levies porcentage="54" key="rex_praeventores" max="LEVY" />
+        <Levies porcentage="22" key="rex_rom_legionis_romanenses" max="LEVY" />
+        <Levies porcentage="24" key="rex_rom_legionis_mattiarii_iuniores" max="LEVY" />
         <MenAtArm type="light_footmen" key="rex_rom_auxiliarii_bructeri" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="rex_rom_legionis_valentinianenses" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="rex_rom_legionis_armigeri_defensores_seniores" max="INFANTRY" />
@@ -22487,9 +22487,9 @@
     <Faction name="Judea">
         <General key="rex_robbers_warlord" />
         <Knights key="rex_merc_est_sas_clibanarius" />
-        <Levies porcentage="55" key="rex_praeventores" max="LEVY" />
-        <Levies porcentage="35" key="rex_rom_legionis_romanenses" max="LEVY" />
-        <Levies porcentage="10" key="rex_rom_legionis_mattiarii_iuniores" max="LEVY" />
+        <Levies porcentage="22" key="rex_praeventores" max="LEVY" />
+        <Levies porcentage="36" key="rex_rom_legionis_romanenses" max="LEVY" />
+        <Levies porcentage="42" key="rex_rom_legionis_mattiarii_iuniores" max="LEVY" />
         <MenAtArm type="light_footmen" key="rex_rom_auxiliarii_bructeri" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="rex_rom_legionis_valentinianenses" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="rex_rom_legionis_armigeri_defensores_seniores" max="INFANTRY" />
@@ -22920,9 +22920,9 @@
     <Faction name="Kartli">
         <General key="rex_sarm_scouts" />
         <Knights key="rex_germ_gisind" />
-        <Levies porcentage="55" key="rex_praeventores" max="LEVY" />
-        <Levies porcentage="35" key="rex_rom_legionis_romanenses" max="LEVY" />
-        <Levies porcentage="10" key="rex_rom_legionis_mattiarii_iuniores" max="LEVY" />
+        <Levies porcentage="38" key="rex_praeventores" max="LEVY" />
+        <Levies porcentage="30" key="rex_rom_legionis_romanenses" max="LEVY" />
+        <Levies porcentage="32" key="rex_rom_legionis_mattiarii_iuniores" max="LEVY" />
         <MenAtArm type="light_footmen" key="rex_rom_auxiliarii_bructeri" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="rex_rom_legionis_valentinianenses" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="rex_rom_legionis_armigeri_defensores_seniores" max="INFANTRY" />
@@ -23353,9 +23353,9 @@
     <Faction name="Lazica">
         <General key="rex_sarm_scouts" />
         <Knights key="att_est_persian_camel_raiders" />
-        <Levies porcentage="55" key="rex_praeventores" max="LEVY" />
-        <Levies porcentage="35" key="rex_rom_legionis_romanenses" max="LEVY" />
-        <Levies porcentage="10" key="rex_rom_legionis_mattiarii_iuniores" max="LEVY" />
+        <Levies porcentage="43" key="rex_praeventores" max="LEVY" />
+        <Levies porcentage="25" key="rex_rom_legionis_romanenses" max="LEVY" />
+        <Levies porcentage="32" key="rex_rom_legionis_mattiarii_iuniores" max="LEVY" />
         <MenAtArm type="light_footmen" key="rex_rom_auxiliarii_bructeri" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="rex_rom_legionis_valentinianenses" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="rex_rom_legionis_armigeri_defensores_seniores" max="INFANTRY" />
@@ -23786,9 +23786,9 @@
     <Faction name="Lugians">
         <General key="rex_east_sas_clibanarius" />
         <Knights key="cha_lom_lancers" />
-        <Levies porcentage="55" key="rex_praeventores" max="LEVY" />
-        <Levies porcentage="35" key="rex_rom_legionis_romanenses" max="LEVY" />
-        <Levies porcentage="10" key="rex_rom_legionis_mattiarii_iuniores" max="LEVY" />
+        <Levies porcentage="21" key="rex_praeventores" max="LEVY" />
+        <Levies porcentage="25" key="rex_rom_legionis_romanenses" max="LEVY" />
+        <Levies porcentage="54" key="rex_rom_legionis_mattiarii_iuniores" max="LEVY" />
         <MenAtArm type="light_footmen" key="rex_rom_auxiliarii_bructeri" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="rex_rom_legionis_valentinianenses" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="rex_rom_legionis_armigeri_defensores_seniores" max="INFANTRY" />
@@ -24219,9 +24219,9 @@
     <Faction name="Macedonia">
         <General key="rex_slav_ant_shield_bearers" />
         <Knights key="att_alan_anti_cav_light_tier_3" />
-        <Levies porcentage="55" key="rex_praeventores" max="LEVY" />
-        <Levies porcentage="35" key="rex_rom_legionis_romanenses" max="LEVY" />
-        <Levies porcentage="10" key="rex_rom_legionis_mattiarii_iuniores" max="LEVY" />
+        <Levies porcentage="45" key="rex_praeventores" max="LEVY" />
+        <Levies porcentage="30" key="rex_rom_legionis_romanenses" max="LEVY" />
+        <Levies porcentage="25" key="rex_rom_legionis_mattiarii_iuniores" max="LEVY" />
         <MenAtArm type="light_footmen" key="rex_rom_auxiliarii_bructeri" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="rex_rom_legionis_valentinianenses" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="rex_rom_legionis_armigeri_defensores_seniores" max="INFANTRY" />
@@ -24652,9 +24652,9 @@
     <Faction name="Makran">
         <General key="rex_arab_mavias_radif_g" />
         <Knights key="att_ger_chnodomar's_entourage" />
-        <Levies porcentage="55" key="rex_praeventores" max="LEVY" />
-        <Levies porcentage="35" key="rex_rom_legionis_romanenses" max="LEVY" />
-        <Levies porcentage="10" key="rex_rom_legionis_mattiarii_iuniores" max="LEVY" />
+        <Levies porcentage="38" key="rex_praeventores" max="LEVY" />
+        <Levies porcentage="44" key="rex_rom_legionis_romanenses" max="LEVY" />
+        <Levies porcentage="18" key="rex_rom_legionis_mattiarii_iuniores" max="LEVY" />
         <MenAtArm type="light_footmen" key="rex_rom_auxiliarii_bructeri" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="rex_rom_legionis_valentinianenses" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="rex_rom_legionis_armigeri_defensores_seniores" max="INFANTRY" />
@@ -25085,9 +25085,9 @@
     <Faction name="Mazun">
         <General key="rex_east_armenian_ayrudzi" />
         <Knights key="rex_rom_schola_scutariorum_clibanariorum" />
-        <Levies porcentage="55" key="rex_praeventores" max="LEVY" />
-        <Levies porcentage="35" key="rex_rom_legionis_romanenses" max="LEVY" />
-        <Levies porcentage="10" key="rex_rom_legionis_mattiarii_iuniores" max="LEVY" />
+        <Levies porcentage="40" key="rex_praeventores" max="LEVY" />
+        <Levies porcentage="27" key="rex_rom_legionis_romanenses" max="LEVY" />
+        <Levies porcentage="33" key="rex_rom_legionis_mattiarii_iuniores" max="LEVY" />
         <MenAtArm type="light_footmen" key="rex_rom_auxiliarii_bructeri" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="rex_rom_legionis_valentinianenses" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="rex_rom_legionis_armigeri_defensores_seniores" max="INFANTRY" />
@@ -25518,9 +25518,9 @@
     <Faction name="Nobatia">
         <General key="rex_sarm_regal_warband_g" />
         <Knights key="cha_merc_eng_horsemen" />
-        <Levies porcentage="55" key="rex_praeventores" max="LEVY" />
-        <Levies porcentage="35" key="rex_rom_legionis_romanenses" max="LEVY" />
-        <Levies porcentage="10" key="rex_rom_legionis_mattiarii_iuniores" max="LEVY" />
+        <Levies porcentage="30" key="rex_praeventores" max="LEVY" />
+        <Levies porcentage="41" key="rex_rom_legionis_romanenses" max="LEVY" />
+        <Levies porcentage="29" key="rex_rom_legionis_mattiarii_iuniores" max="LEVY" />
         <MenAtArm type="light_footmen" key="rex_rom_auxiliarii_bructeri" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="rex_rom_legionis_valentinianenses" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="rex_rom_legionis_armigeri_defensores_seniores" max="INFANTRY" />
@@ -25951,9 +25951,9 @@
     <Faction name="Older Huns">
         <General key="rex_slav_scout" />
         <Knights key="rex_barb_horsemen_ishoda" />
-        <Levies porcentage="55" key="rex_praeventores" max="LEVY" />
-        <Levies porcentage="35" key="rex_rom_legionis_romanenses" max="LEVY" />
-        <Levies porcentage="10" key="rex_rom_legionis_mattiarii_iuniores" max="LEVY" />
+        <Levies porcentage="22" key="rex_praeventores" max="LEVY" />
+        <Levies porcentage="34" key="rex_rom_legionis_romanenses" max="LEVY" />
+        <Levies porcentage="44" key="rex_rom_legionis_mattiarii_iuniores" max="LEVY" />
         <MenAtArm type="light_footmen" key="rex_rom_auxiliarii_bructeri" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="rex_rom_legionis_valentinianenses" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="rex_rom_legionis_armigeri_defensores_seniores" max="INFANTRY" />
@@ -26384,9 +26384,9 @@
     <Faction name="Ostrogoths">
         <General key="rex_sarm_nobles_warband_g" />
         <Knights key="rex_sarm_tuggyntae" />
-        <Levies porcentage="55" key="rex_praeventores" max="LEVY" />
-        <Levies porcentage="35" key="rex_rom_legionis_romanenses" max="LEVY" />
-        <Levies porcentage="10" key="rex_rom_legionis_mattiarii_iuniores" max="LEVY" />
+        <Levies porcentage="19" key="rex_praeventores" max="LEVY" />
+        <Levies porcentage="51" key="rex_rom_legionis_romanenses" max="LEVY" />
+        <Levies porcentage="30" key="rex_rom_legionis_mattiarii_iuniores" max="LEVY" />
         <MenAtArm type="light_footmen" key="rex_rom_auxiliarii_bructeri" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="rex_rom_legionis_valentinianenses" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="rex_rom_legionis_armigeri_defensores_seniores" max="INFANTRY" />
@@ -26817,9 +26817,9 @@
     <Faction name="Parthia">
         <General key="rex_east_armenian_ishkhan_g" />
         <Knights key="rex_barb_horsemen_ishoda" />
-        <Levies porcentage="55" key="rex_praeventores" max="LEVY" />
-        <Levies porcentage="35" key="rex_rom_legionis_romanenses" max="LEVY" />
-        <Levies porcentage="10" key="rex_rom_legionis_mattiarii_iuniores" max="LEVY" />
+        <Levies porcentage="17" key="rex_praeventores" max="LEVY" />
+        <Levies porcentage="58" key="rex_rom_legionis_romanenses" max="LEVY" />
+        <Levies porcentage="25" key="rex_rom_legionis_mattiarii_iuniores" max="LEVY" />
         <MenAtArm type="light_footmen" key="rex_rom_auxiliarii_bructeri" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="rex_rom_legionis_valentinianenses" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="rex_rom_legionis_armigeri_defensores_seniores" max="INFANTRY" />
@@ -27250,9 +27250,9 @@
     <Faction name="Persia">
         <General key="rex_arab_scouts" />
         <Knights key="rex_barb_horsemen_s_ishoda" />
-        <Levies porcentage="55" key="rex_praeventores" max="LEVY" />
-        <Levies porcentage="35" key="rex_rom_legionis_romanenses" max="LEVY" />
-        <Levies porcentage="10" key="rex_rom_legionis_mattiarii_iuniores" max="LEVY" />
+        <Levies porcentage="11" key="rex_praeventores" max="LEVY" />
+        <Levies porcentage="33" key="rex_rom_legionis_romanenses" max="LEVY" />
+        <Levies porcentage="56" key="rex_rom_legionis_mattiarii_iuniores" max="LEVY" />
         <MenAtArm type="light_footmen" key="rex_rom_auxiliarii_bructeri" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="rex_rom_legionis_valentinianenses" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="rex_rom_legionis_armigeri_defensores_seniores" max="INFANTRY" />
@@ -27683,9 +27683,9 @@
     <Faction name="Pontus">
         <General key="rex_hun_retinue" />
         <Knights key="rex_protector_domesticus_equites" />
-        <Levies porcentage="55" key="rex_praeventores" max="LEVY" />
-        <Levies porcentage="35" key="rex_rom_legionis_romanenses" max="LEVY" />
-        <Levies porcentage="10" key="rex_rom_legionis_mattiarii_iuniores" max="LEVY" />
+        <Levies porcentage="35" key="rex_praeventores" max="LEVY" />
+        <Levies porcentage="22" key="rex_rom_legionis_romanenses" max="LEVY" />
+        <Levies porcentage="43" key="rex_rom_legionis_mattiarii_iuniores" max="LEVY" />
         <MenAtArm type="light_footmen" key="rex_rom_auxiliarii_bructeri" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="rex_rom_legionis_valentinianenses" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="rex_rom_legionis_armigeri_defensores_seniores" max="INFANTRY" />
@@ -28116,9 +28116,9 @@
     <Faction name="Quadians">
         <General key="rex_slav_scout" />
         <Knights key="rex_hun_wedge_arcaragantes" />
-        <Levies porcentage="55" key="rex_praeventores" max="LEVY" />
+        <Levies porcentage="36" key="rex_praeventores" max="LEVY" />
         <Levies porcentage="35" key="rex_rom_legionis_romanenses" max="LEVY" />
-        <Levies porcentage="10" key="rex_rom_legionis_mattiarii_iuniores" max="LEVY" />
+        <Levies porcentage="29" key="rex_rom_legionis_mattiarii_iuniores" max="LEVY" />
         <MenAtArm type="light_footmen" key="rex_rom_auxiliarii_bructeri" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="rex_rom_legionis_valentinianenses" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="rex_rom_legionis_armigeri_defensores_seniores" max="INFANTRY" />
@@ -28549,9 +28549,9 @@
     <Faction name="Roxolanians">
         <General key="rex_goth_gahlaibans_g" />
         <Knights key="cha_merc_lom_horsemen" />
-        <Levies porcentage="55" key="rex_praeventores" max="LEVY" />
-        <Levies porcentage="35" key="rex_rom_legionis_romanenses" max="LEVY" />
-        <Levies porcentage="10" key="rex_rom_legionis_mattiarii_iuniores" max="LEVY" />
+        <Levies porcentage="41" key="rex_praeventores" max="LEVY" />
+        <Levies porcentage="15" key="rex_rom_legionis_romanenses" max="LEVY" />
+        <Levies porcentage="44" key="rex_rom_legionis_mattiarii_iuniores" max="LEVY" />
         <MenAtArm type="light_footmen" key="rex_rom_auxiliarii_bructeri" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="rex_rom_legionis_valentinianenses" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="rex_rom_legionis_armigeri_defensores_seniores" max="INFANTRY" />
@@ -28982,9 +28982,9 @@
     <Faction name="Rugians">
         <General key="rex_hun_oathbound" />
         <Knights key="att_ger_sacra_francisca" />
-        <Levies porcentage="55" key="rex_praeventores" max="LEVY" />
-        <Levies porcentage="35" key="rex_rom_legionis_romanenses" max="LEVY" />
-        <Levies porcentage="10" key="rex_rom_legionis_mattiarii_iuniores" max="LEVY" />
+        <Levies porcentage="38" key="rex_praeventores" max="LEVY" />
+        <Levies porcentage="37" key="rex_rom_legionis_romanenses" max="LEVY" />
+        <Levies porcentage="25" key="rex_rom_legionis_mattiarii_iuniores" max="LEVY" />
         <MenAtArm type="light_footmen" key="rex_rom_auxiliarii_bructeri" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="rex_rom_legionis_valentinianenses" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="rex_rom_legionis_armigeri_defensores_seniores" max="INFANTRY" />
@@ -29415,9 +29415,9 @@
     <Faction name="Sabirs">
         <General key="rex_east_armenian_ishkhan_g" />
         <Knights key="rex_barb_horsemen_ishoda" />
-        <Levies porcentage="55" key="rex_praeventores" max="LEVY" />
-        <Levies porcentage="35" key="rex_rom_legionis_romanenses" max="LEVY" />
-        <Levies porcentage="10" key="rex_rom_legionis_mattiarii_iuniores" max="LEVY" />
+        <Levies porcentage="24" key="rex_praeventores" max="LEVY" />
+        <Levies porcentage="32" key="rex_rom_legionis_romanenses" max="LEVY" />
+        <Levies porcentage="44" key="rex_rom_legionis_mattiarii_iuniores" max="LEVY" />
         <MenAtArm type="light_footmen" key="rex_rom_auxiliarii_bructeri" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="rex_rom_legionis_valentinianenses" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="rex_rom_legionis_armigeri_defensores_seniores" max="INFANTRY" />
@@ -29848,9 +29848,9 @@
     <Faction name="Sclavenians">
         <General key="rex_east_armenian_ishkhan_g" />
         <Knights key="rex_goth_shield_bearers_warband_arcaragantes" />
-        <Levies porcentage="55" key="rex_praeventores" max="LEVY" />
-        <Levies porcentage="35" key="rex_rom_legionis_romanenses" max="LEVY" />
-        <Levies porcentage="10" key="rex_rom_legionis_mattiarii_iuniores" max="LEVY" />
+        <Levies porcentage="43" key="rex_praeventores" max="LEVY" />
+        <Levies porcentage="43" key="rex_rom_legionis_romanenses" max="LEVY" />
+        <Levies porcentage="14" key="rex_rom_legionis_mattiarii_iuniores" max="LEVY" />
         <MenAtArm type="light_footmen" key="rex_rom_auxiliarii_bructeri" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="rex_rom_legionis_valentinianenses" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="rex_rom_legionis_armigeri_defensores_seniores" max="INFANTRY" />
@@ -30281,9 +30281,9 @@
     <Faction name="Tanukhids">
         <General key="att_ger_alani_general" />
         <Knights key="att_alan_anti_cav_light_tier_3" />
-        <Levies porcentage="55" key="rex_praeventores" max="LEVY" />
-        <Levies porcentage="35" key="rex_rom_legionis_romanenses" max="LEVY" />
-        <Levies porcentage="10" key="rex_rom_legionis_mattiarii_iuniores" max="LEVY" />
+        <Levies porcentage="22" key="rex_praeventores" max="LEVY" />
+        <Levies porcentage="32" key="rex_rom_legionis_romanenses" max="LEVY" />
+        <Levies porcentage="46" key="rex_rom_legionis_mattiarii_iuniores" max="LEVY" />
         <MenAtArm type="light_footmen" key="rex_rom_auxiliarii_bructeri" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="rex_rom_legionis_valentinianenses" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="rex_rom_legionis_armigeri_defensores_seniores" max="INFANTRY" />

@@ -3,9 +3,9 @@
     <Faction name="Default">
         <General key="cha_cel_teulu" />
         <Knights key="cha_byz_duxs_guard" />
-        <Levies porcentage="55" key="cha_byz_levy_spear" max="LEVY" />
-        <Levies porcentage="35" key="bas_levy_swords" max="LEVY" />
-        <Levies porcentage="10" key="cha_avar_tribesmen" max="LEVY" />
+        <Levies porcentage="28" key="cha_byz_levy_spear" max="LEVY" />
+        <Levies porcentage="22" key="bas_levy_swords" max="LEVY" />
+        <Levies porcentage="50" key="cha_avar_tribesmen" max="LEVY" />
         <MenAtArm type="Guardians" key="GHAS_mubarizun" max="INFANTRY" />
         <MenAtArm type="Phalanxes" key="GHAS_limitanei" max="INFANTRY" />
         <MenAtArm type="Shieldwall Arbalests" key="BAL_shieldwall" max="RANGED" />
@@ -381,10 +381,16 @@
     <Faction name="Sardinians">
         <General key="cha_gen_guard_cav" />
         <Knights key="cha_gen_knights" />
-        <Levies porcentage="2" key="cha_gen_levy_spear" max="LEVY" />
-        <Levies porcentage="1" key="cha_gen_sword" max="LEVY" />
-        <Levies porcentage="1" key="cha_gen_levy_archers" max="LEVY" />
-        <Levies porcentage="1" key="cha_gen_skirm" max="LEVY" />
+        <Levies porcentage="14" key="cha_gen_levy_spear" max="LEVY" />
+        <Levies porcentage="14" key="cha_gen_sword" max="LEVY" />
+        <Levies porcentage="6" key="cha_gen_levy_archers" max="LEVY" />
+        <Levies porcentage="8" key="cha_gen_skirm" max="LEVY" />
+        <Levies porcentage="9" key="GARAM_tribal_spears" max="LEVY" />
+        <Levies porcentage="10" key="GARAM_amazigh_swords" max="LEVY" />
+        <Levies porcentage="11" key="att_des_garamantian_hunters" max="LEVY" />
+        <Levies porcentage="5" key="cha_mus_berber_spearmen" max="LEVY" />
+        <Levies porcentage="11" key="cha_mus_andalusian_infantry" max="LEVY" />
+        <Levies porcentage="12" key="cha_mus_archers" max="LEVY" />
         <MenAtArm type="light_footmen" key="cha_gen_skirm" max="400" />
         <MenAtArm type="armored_footmen" key="cha_gen_armoured_sword" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="cha_gen_armoured_spear" max="INFANTRY" />
@@ -474,81 +480,6 @@
         <MenAtArm type="steppe_raiders" key="att_rom_lanciarii_seniores" max="CAVALRY" />
         <MenAtArm type="torch_bearers" key="att_rom_protectores_domestici" max="INFANTRY" />
         <MenAtArm type="trebuchet" key="att_rom_comitatensis_spears" max="RANGED" />
-        <Levies porcentage="3" key="GARAM_tribal_spears" max="LEVY" />
-        <Levies porcentage="1" key="GARAM_amazigh_swords" max="LEVY" />
-        <Levies porcentage="0" key="att_des_garamantian_hunters" max="LEVY" />
-        <Levies porcentage="2" key="cha_mus_berber_spearmen" max="LEVY" />
-        <Levies porcentage="1" key="cha_mus_andalusian_infantry" max="LEVY" />
-        <Levies porcentage="0" key="cha_mus_archers" max="LEVY" />
-        <Levies porcentage="0" key="cha_mus_slingers" max="LEVY" />
-        <Levies porcentage="0" key="cha_mus_berber_light_cav" max="LEVY" />
-        <Levies porcentage="3" key="mubs_arab_levy_spears" max="LEVY" />
-        <Levies porcentage="1" key="mubs_arab_levy_swords" max="LEVY" />
-        <Levies porcentage="0" key="mubs_maghrebi_levy_bows" max="LEVY" />
-        <Levies porcentage="0" key="mubs_maghrebi_levy_cav" max="LEVY" />
-        <Levies porcentage="2" key="BAL_spears" max="LEVY" />
-        <Levies porcentage="1" key="BAL_kursi" max="LEVY" />
-        <Levies porcentage="0" key="BAL_javelins" max="LEVY" />
-        <Levies porcentage="0" key="BAL_maulers" max="LEVY" />
-        <Levies porcentage="1" key="mubs_maghrebi_levy_spears" max="LEVY" />
-        <Levies porcentage="2" key="mubs_maghrebi_levy_jav_cav" max="LEVY" />
-        <Levies porcentage="0" key="mubs_maghrebi_levy_javs" max="LEVY" />
-        <Levies porcentage="1" key="mubs_maghrebi_levy_cav" max="LEVY" />
-        <Levies porcentage="2" key="GARAM_tribal_spears" max="LEVY" />
-        <Levies porcentage="2" key="att_des_desert_raiders" max="LEVY" />
-        <Levies porcentage="0" key="GARAM_slingers" max="LEVY" />
-        <Levies porcentage="2" key="cha_cel_levy_spear" max="LEVY" />
-        <Levies porcentage="1" key="cha_cel_sword" max="LEVY" />
-        <Levies porcentage="1" key="cha_cel_kerns" max="LEVY" />
-        <Levies porcentage="3" key="att_nom_steppe_levy" max="LEVY" />
-        <Levies porcentage="1" key="HEP_steppe_tribesmen" max="LEVY" />
-        <Levies porcentage="0" key="att_nom_steppe_bows" max="LEVY" />
-        <Levies porcentage="3" key="ERE_limitanei_levy_spears" max="LEVY" />
-        <Levies porcentage="1" key="ERE_limitanei_levy_swords" max="LEVY" />
-        <Levies porcentage="0" key="att_rom_sagittarii" max="LEVY" />
-        <Levies porcentage="3" key="att_slav_spearmen" max="LEVY" />
-        <Levies porcentage="1" key="att_slav_champions" max="LEVY" />
-        <Levies porcentage="0" key="att_slav_archers" max="LEVY" />
-        <Levies porcentage="3" key="cha_vik_spear" max="LEVY" />
-        <Levies porcentage="1" key="cha_fra_sword" max="LEVY" />
-        <Levies porcentage="0" key="cha_fra_levy_archers" max="LEVY" />
-        <Levies porcentage="3" key="att_est_paighan_band" max="LEVY" />
-        <Levies porcentage="1" key="att_des_es_al_rahrain" max="LEVY" />
-        <Levies porcentage="1" key="att_est_persian_bowmen" max="LEVY" />
-        <Levies porcentage="0" key="att_est_persian_camel_archers" max="LEVY" />
-        <Levies porcentage="2" key="att_est_paighan_band" max="LEVY" />
-        <Levies porcentage="1" key="att_est_elite_savaran_cavalry" max="LEVY" />
-        <Levies porcentage="0" key="att_est_persian_bows" max="LEVY" />
-        <Levies porcentage="1" key="att_est_persian_mounted_bowmen" max="LEVY" />
-        <Levies porcentage="3" key="KOK_cha_gen_skirm_cav" max="LEVY" />
-        <Levies porcentage="1" key="att_nom_hunnic_mounted_warband" max="LEVY" />
-        <Levies porcentage="0" key="att_nom_hunnic_devil_cavalry" max="LEVY" />
-        <Levies porcentage="3" key="att_nom_hunnic_ambushers" max="LEVY" />
-        <Levies porcentage="1" key="att_nom_first_wave_lancers" max="LEVY" />
-        <Levies porcentage="0" key="att_nom_steppe_mounted_tribespeople" max="LEVY" />
-        <Levies porcentage="3" key="att_nom_steppe_mounted_bows" max="LEVY" />
-        <Levies porcentage="1" key="att_nom_noble_horse_archers_hun" max="LEVY" />
-        <Levies porcentage="0" key="att_nom_noble_horse_archers" max="LEVY" />
-        <Levies porcentage="2" key="cha_avar_levy_spear" max="LEVY" />
-        <Levies porcentage="2" key="cha_avar_horse_archers" max="LEVY" />
-        <Levies porcentage="0" key="cha_avar_foot_archers" max="LEVY" />
-        <Levies porcentage="3" key="att_nom_steppe_horse_archers" max="LEVY" />
-        <Levies porcentage="1" key="att_nom_unnigarde" max="LEVY" />
-        <Levies porcentage="0" key="att_nom_hunnic_lancers" max="LEVY" />
-        <Levies porcentage="2" key="LOM_fara_spears" max="LEVY" />
-        <Levies porcentage="1" key="att_ger_noble_germanic_swordsmen" max="LEVY" />
-        <Levies porcentage="0" key="att_ger_germanic_hunters" max="LEVY" />
-        <Levies porcentage="0" key="att_nom_hunnic_devil_archers" max="LEVY" />
-        <Levies porcentage="1" key="att_nom_steppe_horse_archers" max="LEVY" />
-        <Levies porcentage="3" key="cha_fra_spear" max="LEVY" />
-        <Levies porcentage="1" key="cha_fra_sword" max="LEVY" />
-        <Levies porcentage="0" key="cha_mus_archers" max="LEVY" />
-        <Levies porcentage="3" key="cha_slav_spear" max="LEVY" />
-        <Levies porcentage="1" key="cha_slav_warriors" max="LEVY" />
-        <Levies porcentage="0" key="cha_slav_skirm" max="LEVY" />
-        <Levies porcentage="3" key="cha_spa_tribesmen" max="LEVY" />
-        <Levies porcentage="1" key="cha_spa_noble_skirm" max="LEVY" />
-        <Levies porcentage="8" key="cha_gen_levy_archers" max="LEVY" />
         <MenAtArm type="Guardians" key="GHAS_mubarizun" max="INFANTRY" />
         <MenAtArm type="Phalanxes" key="GHAS_limitanei" max="INFANTRY" />
         <MenAtArm type="Shieldwall Arbalests" key="BAL_shieldwall" max="RANGED" />
@@ -879,10 +810,16 @@
     <Faction name="Aria">
         <General key="mubs_bedouin_nobles" />
         <Knights key="mubs_bedouin_lesser_nobles" />
-        <Levies porcentage="6" key="mubs_bedouin_levy_spears" max="LEVY" />
-        <Levies porcentage="6" key="mubs_bedouin_levy_cav" max="LEVY" />
-        <Levies porcentage="2" key="mubs_bedouin_levy_bows" max="LEVY" />
-        <Levies porcentage="6" key="mubs_bedouin_levy_camel" max="LEVY" />
+        <Levies porcentage="15" key="mubs_bedouin_levy_spears" max="LEVY" />
+        <Levies porcentage="13" key="mubs_bedouin_levy_cav" max="LEVY" />
+        <Levies porcentage="13" key="mubs_bedouin_levy_bows" max="LEVY" />
+        <Levies porcentage="4" key="mubs_bedouin_levy_camel" max="LEVY" />
+        <Levies porcentage="6" key="att_des_desert_spears" max="LEVY" />
+        <Levies porcentage="5" key="att_des_es_al_rahrain" max="LEVY" />
+        <Levies porcentage="5" key="att_des_desert_bowmen" max="LEVY" />
+        <Levies porcentage="15" key="att_des_arabic_horsemen" max="LEVY" />
+        <Levies porcentage="9" key="cha_cel_levy_spear" max="LEVY" />
+        <Levies porcentage="15" key="cha_cel_sword" max="LEVY" />
         <MenAtArm type="light_footmen" key="mubs_bedouin_light_footmen" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="mubs_bedouin_armored_footmen" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="mubs_bedouin_pikemen" max="INFANTRY" />
@@ -972,20 +909,6 @@
         <MenAtArm type="war_elephant" key="att_est_indian_elephants" max="CAVALRY" />
         <MenAtArm type="zbrojnosh" key="cha_slav_prvaci" max="INFANTRY" />
         <MenAtArm type="zupin_warrior" key="att_est_dailamite_warriors" max="INFANTRY" />
-        <Levies porcentage="11" key="att_des_desert_spears" max="LEVY" />
-        <Levies porcentage="4" key="att_des_es_al_rahrain" max="LEVY" />
-        <Levies porcentage="2" key="att_des_desert_bowmen" max="LEVY" />
-        <Levies porcentage="3" key="att_des_arabic_horsemen" max="LEVY" />
-        <Levies porcentage="13" key="cha_cel_levy_spear" max="LEVY" />
-        <Levies porcentage="5" key="cha_cel_sword" max="LEVY" />
-        <Levies porcentage="2" key="cha_cel_levy_archers" max="LEVY" />
-        <Levies porcentage="13" key="att_wh_yanda_spearmasters" max="LEVY" />
-        <Levies porcentage="5" key="att_ger_elite_agathyrsi_warriors" max="LEVY" />
-        <Levies porcentage="2" key="att_des_desert_bowmen" max="LEVY" />
-        <Levies porcentage="10" key="MAUR_limitanei_spears" max="LEVY" />
-        <Levies porcentage="6" key="att_des_desert_legionary_defectors" max="LEVY" />
-        <Levies porcentage="2" key="MAUR_amazigh_archers" max="LEVY" />
-        <Levies porcentage="2" key="GARAM_limitanei_horsemen" max="LEVY" />
         <MenAtArm type="Guardians" key="GHAS_mubarizun" max="INFANTRY" />
         <MenAtArm type="Phalanxes" key="GHAS_limitanei" max="INFANTRY" />
         <MenAtArm type="Shieldwall Arbalests" key="BAL_shieldwall" max="RANGED" />
@@ -1316,10 +1239,10 @@
     <Faction name="Austrasia">
         <General key="mubs_ghulam_bodyguards" />
         <Knights key="mubs_arab_lesser_nobles" />
-        <Levies porcentage="55" key="mubs_arab_levy_spears" max="LEVY" />
+        <Levies porcentage="32" key="mubs_arab_levy_spears" max="LEVY" />
         <Levies porcentage="20" key="mubs_arab_levy_swords" max="LEVY" />
-        <Levies porcentage="10" key="mubs_arab_levy_bows" max="LEVY" />
-        <Levies porcentage="15" key="mubs_arab_levy_cav" max="LEVY" />
+        <Levies porcentage="30" key="mubs_arab_levy_bows" max="LEVY" />
+        <Levies porcentage="18" key="mubs_arab_levy_cav" max="LEVY" />
         <MenAtArm type="light_footmen" key="mubs_light_footmen" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="mubs_armored_footmen" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="mubs_pikemen" max="INFANTRY" />
@@ -1739,10 +1662,10 @@
     <Faction name="Magiaroi">
         <General key="mubs_arab_nobles" />
         <Knights key="mubs_arab_lesser_nobles" />
-        <Levies porcentage="55" key="mubs_bedouin_levy_spears" max="LEVY" />
-        <Levies porcentage="20" key="mubs_arab_levy_swords" max="LEVY" />
-        <Levies porcentage="10" key="mubs_arab_levy_bows" max="LEVY" />
-        <Levies porcentage="15" key="mubs_bedouin_levy_cav" max="LEVY" />
+        <Levies porcentage="31" key="mubs_bedouin_levy_spears" max="LEVY" />
+        <Levies porcentage="25" key="mubs_arab_levy_swords" max="LEVY" />
+        <Levies porcentage="21" key="mubs_arab_levy_bows" max="LEVY" />
+        <Levies porcentage="23" key="mubs_bedouin_levy_cav" max="LEVY" />
         <MenAtArm type="light_footmen" key="att_des_es_tanukhid_ambushers" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="mubs_armored_footmen" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="mubs_pikemen" max="INFANTRY" />
@@ -2162,10 +2085,13 @@
     <Faction name="Egypt">
         <General key="att_des_desert_warlord" />
         <Knights key="att_des_desert_chieftain" />
-        <Levies porcentage="25" key="att_des_desert_levy" max="LEVY" />
-        <Levies porcentage="15" key="att_des_es_baltha_warriors" max="LEVY" />
-        <Levies porcentage="5" key="att_des_es_ashum" max="LEVY" />
-        <Levies porcentage="5" key="att_des_es_rumha_skirmishers" max="LEVY" />
+        <Levies porcentage="7" key="att_des_desert_levy" max="LEVY" />
+        <Levies porcentage="17" key="att_des_es_baltha_warriors" max="LEVY" />
+        <Levies porcentage="15" key="att_des_es_ashum" max="LEVY" />
+        <Levies porcentage="15" key="att_des_es_rumha_skirmishers" max="LEVY" />
+        <Levies porcentage="22" key="att_des_desert_levy" max="LEVY" />
+        <Levies porcentage="10" key="MAUR_agher_spears" max="LEVY" />
+        <Levies porcentage="14" key="MAUR_slingers" max="LEVY" />
         <MenAtArm type="light_footmen" key="att_des_es_rumha_warriors" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="att_des_es_baltha_defenders" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="HIM_spear" max="INFANTRY" />
@@ -2255,9 +2181,6 @@
         <MenAtArm type="war_elephant" key="att_est_indian_elephants" max="CAVALRY" />
         <MenAtArm type="zbrojnosh" key="cha_slav_prvaci" max="INFANTRY" />
         <MenAtArm type="zupin_warrior" key="att_est_dailamite_warriors" max="INFANTRY" />
-        <Levies porcentage="30" key="att_des_desert_levy" max="LEVY" />
-        <Levies porcentage="15" key="MAUR_agher_spears" max="LEVY" />
-        <Levies porcentage="5" key="MAUR_slingers" max="LEVY" />
         <MenAtArm type="Guardians" key="GHAS_mubarizun" max="INFANTRY" />
         <MenAtArm type="Phalanxes" key="GHAS_limitanei" max="INFANTRY" />
         <MenAtArm type="Shieldwall Arbalests" key="BAL_shieldwall" max="RANGED" />
@@ -2588,10 +2511,16 @@
     <Faction name="Romania">
         <General key="att_slav_warlords_guard" />
         <Knights key="att_slav_champions" />
-        <Levies porcentage="12" key="att_slav_levy_spearmen" max="LEVY" />
-        <Levies porcentage="5" key="att_slav_axemen" max="LEVY" />
-        <Levies porcentage="2" key="att_slav_levy_archers" max="LEVY" />
-        <Levies porcentage="5" key="att_slav_axe_warriors" max="LEVY" />
+        <Levies porcentage="4" key="att_slav_levy_spearmen" max="LEVY" />
+        <Levies porcentage="9" key="att_slav_axemen" max="LEVY" />
+        <Levies porcentage="17" key="att_slav_levy_archers" max="LEVY" />
+        <Levies porcentage="16" key="att_slav_axe_warriors" max="LEVY" />
+        <Levies porcentage="10" key="att_ger_germanic_levy" max="LEVY" />
+        <Levies porcentage="15" key="att_ger_gothic_warband" max="LEVY" />
+        <Levies porcentage="4" key="att_ger_vandal_berserkers" max="LEVY" />
+        <Levies porcentage="4" key="att_ger_germanic_mounted_brigands" max="LEVY" />
+        <Levies porcentage="17" key="att_ger_germanic_levy" max="LEVY" />
+        <Levies porcentage="4" key="att_ger_gothic_palatina_defectors" max="LEVY" />
         <MenAtArm type="light_footmen" key="att_slav_skirmishers" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="att_slav_peruns_axes" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="att_slav_spearmen" max="INFANTRY" />
@@ -2681,16 +2610,6 @@
         <MenAtArm type="war_elephant" key="att_est_indian_elephants" max="CAVALRY" />
         <MenAtArm type="zbrojnosh" key="cha_slav_prvaci" max="INFANTRY" />
         <MenAtArm type="zupin_warrior" key="att_est_dailamite_warriors" max="INFANTRY" />
-        <Levies porcentage="14" key="att_ger_germanic_levy" max="LEVY" />
-        <Levies porcentage="5" key="att_ger_gothic_warband" max="LEVY" />
-        <Levies porcentage="5" key="att_ger_vandal_berserkers" max="LEVY" />
-        <Levies porcentage="1" key="att_ger_germanic_mounted_brigands" max="LEVY" />
-        <Levies porcentage="12" key="att_ger_germanic_levy" max="LEVY" />
-        <Levies porcentage="10" key="att_ger_gothic_palatina_defectors" max="LEVY" />
-        <Levies porcentage="2" key="att_ger_germanic_hunters" max="LEVY" />
-        <Levies porcentage="15" key="att_rom_cohors" max="LEVY" />
-        <Levies porcentage="8" key="ERE_legio" max="LEVY" />
-        <Levies porcentage="4" key="att_rom_sagittarii" max="LEVY" />
         <MenAtArm type="Guardians" key="GHAS_mubarizun" max="INFANTRY" />
         <MenAtArm type="Phalanxes" key="GHAS_limitanei" max="INFANTRY" />
         <MenAtArm type="Shieldwall Arbalests" key="BAL_shieldwall" max="RANGED" />
@@ -3021,10 +2940,10 @@
     <Faction name="Arran">
         <General key="mubs_berber_nobles" />
         <Knights key="mubs_maghrebi_lesser_nobles" />
-        <Levies porcentage="50" key="mubs_maghrebi_levy_spears" max="LEVY" />
-        <Levies porcentage="25" key="mubs_maghrebi_levy_cav" max="LEVY" />
-        <Levies porcentage="10" key="mubs_maghrebi_levy_bows" max="LEVY" />
-        <Levies porcentage="15" key="mubs_maghrebi_levy_swords" max="LEVY" />
+        <Levies porcentage="36" key="mubs_maghrebi_levy_spears" max="LEVY" />
+        <Levies porcentage="30" key="mubs_maghrebi_levy_cav" max="LEVY" />
+        <Levies porcentage="13" key="mubs_maghrebi_levy_bows" max="LEVY" />
+        <Levies porcentage="21" key="mubs_maghrebi_levy_swords" max="LEVY" />
         <MenAtArm type="light_footmen" key="mubs_maghrebi_light_footmen" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="mubs_maghrebi_armored_footmen" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="mubs_maghrebi_pikemen" max="INFANTRY" />
@@ -3444,9 +3363,16 @@
     <Faction name="Western Germanic Rebels">
         <General key="cha_cel_kings_fianna" />
         <Knights key="cha_cel_pictish_nobles" />
-        <Levies porcentage="11" key="cha_cel_levy_spear" max="LEVY" />
-        <Levies porcentage="7" key="cha_cel_sword_band" max="LEVY" />
-        <Levies porcentage="2" key="cha_cel_levy_archers" max="LEVY" />
+        <Levies porcentage="15" key="cha_cel_levy_spear" max="LEVY" />
+        <Levies porcentage="15" key="cha_cel_sword_band" max="LEVY" />
+        <Levies porcentage="9" key="cha_cel_levy_archers" max="LEVY" />
+        <Levies porcentage="5" key="cha_sax_spear_band" max="LEVY" />
+        <Levies porcentage="13" key="cha_sax_seax_warriors" max="LEVY" />
+        <Levies porcentage="7" key="cha_sax_levy_archers" max="LEVY" />
+        <Levies porcentage="5" key="cha_eng_fyrd_spear" max="LEVY" />
+        <Levies porcentage="10" key="cha_eng_select_axemen" max="LEVY" />
+        <Levies porcentage="11" key="cha_eng_fyrd_archers" max="LEVY" />
+        <Levies porcentage="10" key="cha_vik_axemen" max="LEVY" />
         <MenAtArm type="light_footmen" key="cha_cel_gaillmhigh" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="cha_cel_sword_warriors" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="cha_cel_spear" max="INFANTRY" />
@@ -3536,20 +3462,6 @@
         <MenAtArm type="war_elephant" key="att_est_indian_elephants" max="CAVALRY" />
         <MenAtArm type="zbrojnosh" key="cha_slav_prvaci" max="INFANTRY" />
         <MenAtArm type="zupin_warrior" key="att_est_dailamite_warriors" max="INFANTRY" />
-        <Levies porcentage="13" key="cha_sax_spear_band" max="LEVY" />
-        <Levies porcentage="5" key="cha_sax_seax_warriors" max="LEVY" />
-        <Levies porcentage="2" key="cha_sax_levy_archers" max="LEVY" />
-        <Levies porcentage="11" key="cha_eng_fyrd_spear" max="LEVY" />
-        <Levies porcentage="5" key="cha_eng_select_axemen" max="LEVY" />
-        <Levies porcentage="2" key="cha_eng_fyrd_archers" max="LEVY" />
-        <Levies porcentage="2" key="cha_vik_axemen" max="LEVY" />
-        <Levies porcentage="13" key="BAL_spears" max="LEVY" />
-        <Levies porcentage="5" key="BAL_kursi" max="LEVY" />
-        <Levies porcentage="2" key="BAL_archers" max="LEVY" />
-        <Levies porcentage="12" key="BRIT_aulue" max="LEVY" />
-        <Levies porcentage="5" key="BRIT_campwyrau" max="LEVY" />
-        <Levies porcentage="2" key="BRIT_helwyr" max="LEVY" />
-        <Levies porcentage="1" key="BRIT_rhyfelwyr_javelins" max="LEVY" />
         <MenAtArm type="Guardians" key="GHAS_mubarizun" max="INFANTRY" />
         <MenAtArm type="Phalanxes" key="GHAS_limitanei" max="INFANTRY" />
         <MenAtArm type="Shieldwall Arbalests" key="BAL_shieldwall" max="RANGED" />
@@ -3880,10 +3792,10 @@
     <Faction name="Caucasian Rebels">
         <General key="att_ger_alani_general" />
         <Knights key="att_alan_alani_nobles_general" />
-        <Levies porcentage="60" key="att_alan_alani_mounted_bows" max="LEVY" />
-        <Levies porcentage="20" key="att_ger_alani_horsemen" max="LEVY" />
-        <Levies porcentage="10" key="att_alan_anti_cav_light_tier_4" max="LEVY" />
-        <Levies porcentage="10" key="att_alan_alani_chosen_raiders" max="LEVY" />
+        <Levies porcentage="17" key="att_alan_alani_mounted_bows" max="LEVY" />
+        <Levies porcentage="26" key="att_ger_alani_horsemen" max="LEVY" />
+        <Levies porcentage="19" key="att_alan_anti_cav_light_tier_4" max="LEVY" />
+        <Levies porcentage="38" key="att_alan_alani_chosen_raiders" max="LEVY" />
         <MenAtArm type="light_footmen" key="att_alan_alani_swordsmen" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="att_alan_alani_warriors" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="att_ger_alani_spearmen" max="INFANTRY" />
@@ -4303,10 +4215,10 @@
     <Faction name="Armenia">
         <General key="ARM_nakhara" />
         <Knights key="ARM_azats" />
-        <Levies porcentage="50" key="ARM_spear_levy" max="LEVY" />
-        <Levies porcentage="25" key="ARM_town_levy" max="LEVY" />
-        <Levies porcentage="10" key="ARM_mountain_archers" max="LEVY" />
-        <Levies porcentage="15" key="ARM_horseman_levy" max="LEVY" />
+        <Levies porcentage="22" key="ARM_spear_levy" max="LEVY" />
+        <Levies porcentage="29" key="ARM_town_levy" max="LEVY" />
+        <Levies porcentage="13" key="ARM_mountain_archers" max="LEVY" />
+        <Levies porcentage="36" key="ARM_horseman_levy" max="LEVY" />
         <MenAtArm type="light_footmen" key="ARM_skirmishers" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="ARM_heavy_axemen" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="MERC_armenian_spearmen" max="INFANTRY" />
@@ -4726,9 +4638,9 @@
     <Faction name="Spahan">
         <General key="ARM_azats" />
         <Knights key="att_ger_noble_alani_cavalry" />
-        <Levies porcentage="65" key="att_ger_sarmatian_spears" max="LEVY" />
-        <Levies porcentage="25" key="att_alan_alani_swordsmen" max="LEVY" />
-        <Levies porcentage="10" key="ARM_mountain_archers" max="LEVY" />
+        <Levies porcentage="16" key="att_ger_sarmatian_spears" max="LEVY" />
+        <Levies porcentage="32" key="att_alan_alani_swordsmen" max="LEVY" />
+        <Levies porcentage="52" key="ARM_mountain_archers" max="LEVY" />
         <MenAtArm type="light_footmen" key="ARM_skirmishers" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="ARM_heavy_axemen" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="att_nom_scirii_warriors" max="INFANTRY" />
@@ -5148,10 +5060,14 @@
     <Faction name="Asia">
         <General key="GHAS_phylarch" />
         <Knights key="att_des_desert_warlord" />
-        <Levies porcentage="28" key="att_des_desert_levy" max="LEVY" />
-        <Levies porcentage="12" key="ERE_numerus_isaurorum" max="LEVY" />
-        <Levies porcentage="5" key="att_des_desert_bowmen_ERE" max="LEVY" />
-        <Levies porcentage="5" key="att_des_arabic_horsemen_ERE" max="LEVY" />
+        <Levies porcentage="11" key="att_des_desert_levy" max="LEVY" />
+        <Levies porcentage="18" key="ERE_numerus_isaurorum" max="LEVY" />
+        <Levies porcentage="12" key="att_des_desert_bowmen_ERE" max="LEVY" />
+        <Levies porcentage="12" key="att_des_arabic_horsemen_ERE" max="LEVY" />
+        <Levies porcentage="9" key="att_des_desert_levy" max="LEVY" />
+        <Levies porcentage="13" key="REB_heretic_outcasts" max="LEVY" />
+        <Levies porcentage="10" key="att_des_desert_bowmen" max="LEVY" />
+        <Levies porcentage="15" key="att_merc_est_lakhmid_scouts" max="LEVY" />
         <MenAtArm type="light_footmen" key="att_est_persian_skirmishers_ERE" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="att_des_desert_palatina_defectors" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="GHAS_limitanei" max="INFANTRY" />
@@ -5241,10 +5157,6 @@
         <MenAtArm type="war_elephant" key="att_est_indian_elephants" max="CAVALRY" />
         <MenAtArm type="zbrojnosh" key="cha_slav_prvaci" max="INFANTRY" />
         <MenAtArm type="zupin_warrior" key="att_est_dailamite_warriors" max="INFANTRY" />
-        <Levies porcentage="28" key="att_des_desert_levy" max="LEVY" />
-        <Levies porcentage="12" key="REB_heretic_outcasts" max="LEVY" />
-        <Levies porcentage="5" key="att_des_desert_bowmen" max="LEVY" />
-        <Levies porcentage="5" key="att_merc_est_lakhmid_scouts" max="LEVY" />
         <MenAtArm type="Guardians" key="GHAS_mubarizun" max="INFANTRY" />
         <MenAtArm type="Phalanxes" key="GHAS_limitanei" max="INFANTRY" />
         <MenAtArm type="Shieldwall Arbalests" key="BAL_shieldwall" max="RANGED" />
@@ -5575,9 +5487,9 @@
     <Faction name="Thuringia">
         <General key="cha_sax_gasindi" />
         <Knights key="cha_fra_guardsmen" />
-        <Levies porcentage="65" key="cha_fra_levy_spear" max="LEVY" />
-        <Levies porcentage="25" key="cha_sax_seax_warriors" max="LEVY" />
-        <Levies porcentage="10" key="cha_fra_levy_archers" max="LEVY" />
+        <Levies porcentage="25" key="cha_fra_levy_spear" max="LEVY" />
+        <Levies porcentage="29" key="cha_sax_seax_warriors" max="LEVY" />
+        <Levies porcentage="46" key="cha_fra_levy_archers" max="LEVY" />
         <MenAtArm type="light_footmen" key="cha_fra_skirm" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="cha_fra_armoured_sword" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="cha_fra_mounted_spear" max="INFANTRY" />
@@ -5997,9 +5909,9 @@
     <Faction name="Oriens">
         <General key="att_wh_kindred_of_the_sun" />
         <Knights key="att_wh_hephthalite_chargers" />
-        <Levies porcentage="65" key="att_nom_steppe_levy" max="LEVY" />
-        <Levies porcentage="25" key="HEP_steppe_tribesmen" max="LEVY" />
-        <Levies porcentage="10" key="att_nom_steppe_bows" max="LEVY" />
+        <Levies porcentage="41" key="att_nom_steppe_levy" max="LEVY" />
+        <Levies porcentage="30" key="HEP_steppe_tribesmen" max="LEVY" />
+        <Levies porcentage="29" key="att_nom_steppe_bows" max="LEVY" />
         <MenAtArm type="light_footmen" key="att_nom_steppe_tribespeople" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="att_wh_khingilas_khandas" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="att_wh_xionite_spears" max="INFANTRY" />
@@ -6419,10 +6331,16 @@
     <Faction name="Alania">
         <General key="att_des_desert_chieftain" />
         <Knights key="BLEMM_warlord" />
-        <Levies porcentage="15" key="BLEMM_tribal_spears" max="LEVY" />
-        <Levies porcentage="11" key="BLEMM_khanda" max="LEVY" />
-        <Levies porcentage="3" key="BLEMM_archer" max="LEVY" />
-        <Levies porcentage="4" key="att_des_es_afar_camel_riders" max="LEVY" />
+        <Levies porcentage="9" key="BLEMM_tribal_spears" max="LEVY" />
+        <Levies porcentage="5" key="BLEMM_khanda" max="LEVY" />
+        <Levies porcentage="6" key="BLEMM_archer" max="LEVY" />
+        <Levies porcentage="10" key="att_des_es_afar_camel_riders" max="LEVY" />
+        <Levies porcentage="8" key="cha_slav_spear" max="LEVY" />
+        <Levies porcentage="12" key="cha_slav_warriors" max="LEVY" />
+        <Levies porcentage="12" key="cha_avar_horse_archers" max="LEVY" />
+        <Levies porcentage="12" key="cha_avar_levy_archers" max="LEVY" />
+        <Levies porcentage="7" key="cha_slav_spear" max="LEVY" />
+        <Levies porcentage="19" key="cha_slav_tribesmen" max="LEVY" />
         <MenAtArm type="light_footmen" key="BLEMM_skirm" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="BLEMM_heavy_khanda" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="att_des_es_sons_of_the_invincible_mahrem" max="INFANTRY" />
@@ -6512,14 +6430,6 @@
         <MenAtArm type="war_elephant" key="att_est_indian_elephants" max="CAVALRY" />
         <MenAtArm type="zbrojnosh" key="cha_slav_prvaci" max="INFANTRY" />
         <MenAtArm type="zupin_warrior" key="att_est_dailamite_warriors" max="INFANTRY" />
-        <Levies porcentage="17" key="cha_slav_spear" max="LEVY" />
-        <Levies porcentage="8" key="cha_slav_warriors" max="LEVY" />
-        <Levies porcentage="5" key="cha_avar_horse_archers" max="LEVY" />
-        <Levies porcentage="3" key="cha_avar_levy_archers" max="LEVY" />
-        <Levies porcentage="15" key="cha_slav_spear" max="LEVY" />
-        <Levies porcentage="8" key="cha_slav_tribesmen" max="LEVY" />
-        <Levies porcentage="3" key="cha_slav_skirm" max="LEVY" />
-        <Levies porcentage="8" key="cha_slav_warriors" max="LEVY" />
         <MenAtArm type="Guardians" key="GHAS_mubarizun" max="INFANTRY" />
         <MenAtArm type="Phalanxes" key="GHAS_limitanei" max="INFANTRY" />
         <MenAtArm type="Shieldwall Arbalests" key="BAL_shieldwall" max="RANGED" />
@@ -6850,9 +6760,9 @@
     <Faction name="Antai">
         <General key="cha_fra_guardsmen" />
         <Knights key="cha_fra_scola_cav" />
-        <Levies porcentage="65" key="cha_fra_spear" max="LEVY" />
-        <Levies porcentage="25" key="cha_fra_sword" max="LEVY" />
-        <Levies porcentage="10" key="cha_fra_levy_archers" max="LEVY" />
+        <Levies porcentage="38" key="cha_fra_spear" max="LEVY" />
+        <Levies porcentage="18" key="cha_fra_sword" max="LEVY" />
+        <Levies porcentage="44" key="cha_fra_levy_archers" max="LEVY" />
         <MenAtArm type="light_footmen" key="cha_fra_levy_skirm" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="cha_fra_armoured_sword" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="cha_fra_armoured_spear" max="INFANTRY" />
@@ -7272,9 +7182,9 @@
     <Faction name="Italia">
         <General key="att_est_persian_nobles" />
         <Knights key="SAS_frasdaran" />
-        <Levies porcentage="55" key="att_est_persian_levy" max="LEVY" />
-        <Levies porcentage="35" key="att_merc_est_dailamite_warriors" max="LEVY" />
-        <Levies porcentage="10" key="att_est_persian_hurlers" max="LEVY" />
+        <Levies porcentage="31" key="att_est_persian_levy" max="LEVY" />
+        <Levies porcentage="33" key="att_merc_est_dailamite_warriors" max="LEVY" />
+        <Levies porcentage="36" key="att_est_persian_hurlers" max="LEVY" />
         <MenAtArm type="light_footmen" key="att_est_kurdish_javelinmen" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="att_est_elite_dailamite_infantry" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="att_est_armenian_spears" max="INFANTRY" />
@@ -7694,10 +7604,10 @@
     <Faction name="Hispania">
         <General key="GHAS_phylarch" />
         <Knights key="att_des_desert_warlord" />
-        <Levies porcentage="50" key="att_des_desert_levy" max="LEVY" />
-        <Levies porcentage="25" key="att_des_es_al_rahrain" max="LEVY" />
-        <Levies porcentage="10" key="att_est_persian_hurlers" max="LEVY" />
-        <Levies porcentage="15" key="att_est_lakhmid_scouts" max="LEVY" />
+        <Levies porcentage="18" key="att_des_desert_levy" max="LEVY" />
+        <Levies porcentage="19" key="att_des_es_al_rahrain" max="LEVY" />
+        <Levies porcentage="30" key="att_est_persian_hurlers" max="LEVY" />
+        <Levies porcentage="33" key="att_est_lakhmid_scouts" max="LEVY" />
         <MenAtArm type="light_footmen" key="att_est_kurdish_javelinmen" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="att_des_es_sanai" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="GHAS_banu_judham_spears" max="INFANTRY" />
@@ -8117,9 +8027,9 @@
     <Faction name="Dakiai">
         <General key="att_nom_steppe_warlord" />
         <Knights key="att_nom_steppe_chieftain" />
-        <Levies porcentage="60" key="att_est_paighan_band" max="LEVY" />
-        <Levies porcentage="30" key="att_est_savaran_cavalry" max="LEVY" />
-        <Levies porcentage="10" key="att_est_persian_hurlers" max="LEVY" />
+        <Levies porcentage="40" key="att_est_paighan_band" max="LEVY" />
+        <Levies porcentage="42" key="att_est_savaran_cavalry" max="LEVY" />
+        <Levies porcentage="18" key="att_est_persian_hurlers" max="LEVY" />
         <MenAtArm type="light_footmen" key="HEP_tokharistani_spear_throwers" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="KOK_axe_warriors" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="att_est_persian_levy" max="INFANTRY" />
@@ -8539,9 +8449,9 @@
     <Faction name="Britanni">
         <General key="att_est_savaran_sardar" />
         <Knights key="att_est_persian_nobles" />
-        <Levies porcentage="65" key="att_wh_yanda_spearmasters" max="LEVY" />
+        <Levies porcentage="33" key="att_wh_yanda_spearmasters" max="LEVY" />
         <Levies porcentage="25" key="att_ger_elite_agathyrsi_warriors" max="LEVY" />
-        <Levies porcentage="10" key="att_est_persian_hurlers" max="LEVY" />
+        <Levies porcentage="42" key="att_est_persian_hurlers" max="LEVY" />
         <MenAtArm type="light_footmen" key="HEP_tokharistani_spear_throwers" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="att_est_sogdian_warriors" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="att_est_armenian_spears" max="INFANTRY" />
@@ -8961,9 +8871,9 @@
     <Faction name="Avars">
         <General key="cha_vik_warlords_companions" />
         <Knights key="cha_vik_sword_hirdmen" />
-        <Levies porcentage="55" key="cha_vik_spear" max="LEVY" />
-        <Levies porcentage="35" key="cha_vik_axemen" max="LEVY" />
-        <Levies porcentage="10" key="cha_vik_archers" max="LEVY" />
+        <Levies porcentage="46" key="cha_vik_spear" max="LEVY" />
+        <Levies porcentage="30" key="cha_vik_axemen" max="LEVY" />
+        <Levies porcentage="24" key="cha_vik_archers" max="LEVY" />
         <MenAtArm type="light_footmen" key="cha_vik_skirm" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="cha_vik_axe_hirdmen" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="cha_gen_armoured_spear" max="INFANTRY" />
@@ -9383,9 +9293,9 @@
     <Faction name="Suebians">
         <General key="att_nom_steppe_chieftain" />
         <Knights key="att_nom_hunnic_lancers" />
-        <Levies porcentage="65" key="att_nom_steppe_spearmen" max="LEVY" />
-        <Levies porcentage="25" key="att_nom_steppe_warriors" max="LEVY" />
-        <Levies porcentage="10" key="att_nom_steppe_bows" max="LEVY" />
+        <Levies porcentage="41" key="att_nom_steppe_spearmen" max="LEVY" />
+        <Levies porcentage="31" key="att_nom_steppe_warriors" max="LEVY" />
+        <Levies porcentage="28" key="att_nom_steppe_bows" max="LEVY" />
         <MenAtArm type="light_footmen" key="att_slav_levy_skirmishers" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="NOM_swords" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="att_nom_hunnic_spears" max="INFANTRY" />
@@ -9805,9 +9715,9 @@
     <Faction name="Saxonia">
         <General key="cha_eng_royal_companions" />
         <Knights key="cha_eng_royal_thegns" />
-        <Levies porcentage="65" key="cha_eng_fyrd_spear" max="LEVY" />
-        <Levies porcentage="25" key="cha_eng_select_axemen" max="LEVY" />
-        <Levies porcentage="10" key="cha_eng_fyrd_archers" max="LEVY" />
+        <Levies porcentage="35" key="cha_eng_fyrd_spear" max="LEVY" />
+        <Levies porcentage="28" key="cha_eng_select_axemen" max="LEVY" />
+        <Levies porcentage="37" key="cha_eng_fyrd_archers" max="LEVY" />
         <MenAtArm type="light_footmen" key="cha_eng_fyrd_javelinmen" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="cha_eng_thegns" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="cha_eng_thegn_spearmen" max="INFANTRY" />
@@ -10228,9 +10138,9 @@
     <Faction name="English Rebels">
         <General key="cha_nor_chef" />
         <Knights key="cha_nor_noblei_chevalers" />
-        <Levies porcentage="65" key="cha_eng_select_spear" max="LEVY" />
-        <Levies porcentage="25" key="cha_fra_sword" max="LEVY" />
-        <Levies porcentage="10" key="cha_eng_fyrd_archers" max="LEVY" />
+        <Levies porcentage="32" key="cha_eng_select_spear" max="LEVY" />
+        <Levies porcentage="54" key="cha_fra_sword" max="LEVY" />
+        <Levies porcentage="14" key="cha_eng_fyrd_archers" max="LEVY" />
         <MenAtArm type="light_footmen" key="cha_eng_fyrd_javelinmen" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="cha_nor_lancent_armeure" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="cha_nor_lancent" max="INFANTRY" />
@@ -10651,9 +10561,9 @@
     <Faction name="Scoti">
         <General key="cha_eng_royal_companions" />
         <Knights key="cha_eng_royal_thegns" />
-        <Levies porcentage="65" key="cha_cel_spear" max="LEVY" />
-        <Levies porcentage="25" key="cha_cel_sword_band" max="LEVY" />
-        <Levies porcentage="10" key="cha_cel_levy_archers" max="LEVY" />
+        <Levies porcentage="21" key="cha_cel_spear" max="LEVY" />
+        <Levies porcentage="38" key="cha_cel_sword_band" max="LEVY" />
+        <Levies porcentage="41" key="cha_cel_levy_archers" max="LEVY" />
         <MenAtArm type="light_footmen" key="cha_cel_gaillmhigh" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="cha_eng_thegns" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="cha_eng_thegn_spearmen" max="INFANTRY" />
@@ -11074,10 +10984,10 @@
     <Faction name="Northern Germanic Rebels">
         <General key="cha_vik_warlords_companions" />
         <Knights key="cha_vik_sword_hirdmen" />
-        <Levies porcentage="55" key="cha_cel_levy_spear" max="LEVY" />
-        <Levies porcentage="25" key="cha_cel_sword" max="LEVY" />
-        <Levies porcentage="10" key="cha_cel_levy_archers" max="LEVY" />
-        <Levies porcentage="10" key="cha_vik_axemen" max="LEVY" />
+        <Levies porcentage="13" key="cha_cel_levy_spear" max="LEVY" />
+        <Levies porcentage="31" key="cha_cel_sword" max="LEVY" />
+        <Levies porcentage="40" key="cha_cel_levy_archers" max="LEVY" />
+        <Levies porcentage="16" key="cha_vik_axemen" max="LEVY" />
         <MenAtArm type="light_footmen" key="cha_cel_kerns" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="cha_vik_axe_hirdmen" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="cha_cel_spear" max="INFANTRY" />
@@ -11497,10 +11407,10 @@
     <Faction name="Basques">
         <General key="bas_att_ger_suebi_warriors" />
         <Knights key="bas_nobles" />
-        <Levies porcentage="45" key="bas_spear_band" max="LEVY" />
-        <Levies porcentage="25" key="bas_swordsmen" max="LEVY" />
-        <Levies porcentage="10" key="bas_levy_archers" max="LEVY" />
-        <Levies porcentage="20" key="bas_slingers" max="LEVY" />
+        <Levies porcentage="31" key="bas_spear_band" max="LEVY" />
+        <Levies porcentage="33" key="bas_swordsmen" max="LEVY" />
+        <Levies porcentage="15" key="bas_levy_archers" max="LEVY" />
+        <Levies porcentage="21" key="bas_slingers" max="LEVY" />
         <MenAtArm type="light_footmen" key="bas_levy_axemen" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="att_ger_suebi_champions" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="bas_noble_spears" max="INFANTRY" />
@@ -11920,10 +11830,10 @@
     <Faction name="Abarshahr">
         <General key="cha_gen_guard_cav" />
         <Knights key="cha_gen_knights" />
-        <Levies porcentage="50" key="cha_gen_levy_spear" max="LEVY" />
-        <Levies porcentage="15" key="cha_gen_sword" max="LEVY" />
-        <Levies porcentage="15" key="cha_gen_levy_archers" max="LEVY" />
-        <Levies porcentage="20" key="cha_gen_skirm" max="LEVY" />
+        <Levies porcentage="19" key="cha_gen_levy_spear" max="LEVY" />
+        <Levies porcentage="28" key="cha_gen_sword" max="LEVY" />
+        <Levies porcentage="26" key="cha_gen_levy_archers" max="LEVY" />
+        <Levies porcentage="27" key="cha_gen_skirm" max="LEVY" />
         <MenAtArm type="light_footmen" key="cha_gen_skirm" max="400" />
         <MenAtArm type="armored_footmen" key="cha_gen_armoured_sword" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="cha_gen_armoured_spear" max="INFANTRY" />
@@ -12343,9 +12253,9 @@
     <Faction name="Aestii">
         <General key="cha_gen_guard_cav" />
         <Knights key="cha_gen_knights" />
-        <Levies porcentage="50" key="cha_gen_levy_spear" max="LEVY" />
-        <Levies porcentage="15" key="cha_gen_sword" max="LEVY" />
-        <Levies porcentage="15" key="cha_gen_levy_archers" max="LEVY" />
+        <Levies porcentage="34" key="cha_gen_levy_spear" max="LEVY" />
+        <Levies porcentage="18" key="cha_gen_sword" max="LEVY" />
+        <Levies porcentage="28" key="cha_gen_levy_archers" max="LEVY" />
         <Levies porcentage="20" key="cha_gen_skirm" max="LEVY" />
         <MenAtArm type="light_footmen" key="cha_gen_skirm" max="400" />
         <MenAtArm type="armored_footmen" key="cha_gen_armoured_sword" max="INFANTRY" />
@@ -12766,10 +12676,10 @@
     <Faction name="Aethiopian Rebels">
         <General key="cha_gen_guard_cav" />
         <Knights key="cha_gen_knights" />
-        <Levies porcentage="50" key="cha_gen_levy_spear" max="LEVY" />
-        <Levies porcentage="15" key="cha_gen_sword" max="LEVY" />
-        <Levies porcentage="15" key="cha_gen_levy_archers" max="LEVY" />
-        <Levies porcentage="20" key="cha_gen_skirm" max="LEVY" />
+        <Levies porcentage="24" key="cha_gen_levy_spear" max="LEVY" />
+        <Levies porcentage="22" key="cha_gen_sword" max="LEVY" />
+        <Levies porcentage="20" key="cha_gen_levy_archers" max="LEVY" />
+        <Levies porcentage="34" key="cha_gen_skirm" max="LEVY" />
         <MenAtArm type="light_footmen" key="cha_gen_skirm" max="400" />
         <MenAtArm type="armored_footmen" key="cha_gen_armoured_sword" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="cha_gen_armoured_spear" max="INFANTRY" />
@@ -13189,10 +13099,10 @@
     <Faction name="Aksum">
         <General key="cha_gen_guard_cav" />
         <Knights key="cha_gen_knights" />
-        <Levies porcentage="50" key="cha_gen_levy_spear" max="LEVY" />
-        <Levies porcentage="15" key="cha_gen_sword" max="LEVY" />
-        <Levies porcentage="15" key="cha_gen_levy_archers" max="LEVY" />
-        <Levies porcentage="20" key="cha_gen_skirm" max="LEVY" />
+        <Levies porcentage="30" key="cha_gen_levy_spear" max="LEVY" />
+        <Levies porcentage="30" key="cha_gen_sword" max="LEVY" />
+        <Levies porcentage="8" key="cha_gen_levy_archers" max="LEVY" />
+        <Levies porcentage="32" key="cha_gen_skirm" max="LEVY" />
         <MenAtArm type="light_footmen" key="cha_gen_skirm" max="400" />
         <MenAtArm type="armored_footmen" key="cha_gen_armoured_sword" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="cha_gen_armoured_spear" max="INFANTRY" />
@@ -13612,10 +13522,10 @@
     <Faction name="Anatolia">
         <General key="cha_gen_guard_cav" />
         <Knights key="cha_gen_knights" />
-        <Levies porcentage="50" key="cha_gen_levy_spear" max="LEVY" />
-        <Levies porcentage="15" key="cha_gen_sword" max="LEVY" />
-        <Levies porcentage="15" key="cha_gen_levy_archers" max="LEVY" />
-        <Levies porcentage="20" key="cha_gen_skirm" max="LEVY" />
+        <Levies porcentage="26" key="cha_gen_levy_spear" max="LEVY" />
+        <Levies porcentage="18" key="cha_gen_sword" max="LEVY" />
+        <Levies porcentage="23" key="cha_gen_levy_archers" max="LEVY" />
+        <Levies porcentage="33" key="cha_gen_skirm" max="LEVY" />
         <MenAtArm type="light_footmen" key="cha_gen_skirm" max="400" />
         <MenAtArm type="armored_footmen" key="cha_gen_armoured_sword" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="cha_gen_armoured_spear" max="INFANTRY" />
@@ -14035,10 +13945,10 @@
     <Faction name="Angli">
         <General key="cha_gen_guard_cav" />
         <Knights key="cha_gen_knights" />
-        <Levies porcentage="50" key="cha_gen_levy_spear" max="LEVY" />
-        <Levies porcentage="15" key="cha_gen_sword" max="LEVY" />
-        <Levies porcentage="15" key="cha_gen_levy_archers" max="LEVY" />
-        <Levies porcentage="20" key="cha_gen_skirm" max="LEVY" />
+        <Levies porcentage="8" key="cha_gen_levy_spear" max="LEVY" />
+        <Levies porcentage="28" key="cha_gen_sword" max="LEVY" />
+        <Levies porcentage="34" key="cha_gen_levy_archers" max="LEVY" />
+        <Levies porcentage="30" key="cha_gen_skirm" max="LEVY" />
         <MenAtArm type="light_footmen" key="cha_gen_skirm" max="400" />
         <MenAtArm type="armored_footmen" key="cha_gen_armoured_sword" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="cha_gen_armoured_spear" max="INFANTRY" />
@@ -14458,10 +14368,10 @@
     <Faction name="Angria">
         <General key="cha_gen_guard_cav" />
         <Knights key="cha_gen_knights" />
-        <Levies porcentage="50" key="cha_gen_levy_spear" max="LEVY" />
-        <Levies porcentage="15" key="cha_gen_sword" max="LEVY" />
-        <Levies porcentage="15" key="cha_gen_levy_archers" max="LEVY" />
-        <Levies porcentage="20" key="cha_gen_skirm" max="LEVY" />
+        <Levies porcentage="32" key="cha_gen_levy_spear" max="LEVY" />
+        <Levies porcentage="24" key="cha_gen_sword" max="LEVY" />
+        <Levies porcentage="36" key="cha_gen_levy_archers" max="LEVY" />
+        <Levies porcentage="8" key="cha_gen_skirm" max="LEVY" />
         <MenAtArm type="light_footmen" key="cha_gen_skirm" max="400" />
         <MenAtArm type="armored_footmen" key="cha_gen_armoured_sword" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="cha_gen_armoured_spear" max="INFANTRY" />
@@ -14881,10 +14791,10 @@
     <Faction name="Bavaria">
         <General key="cha_gen_guard_cav" />
         <Knights key="cha_gen_knights" />
-        <Levies porcentage="50" key="cha_gen_levy_spear" max="LEVY" />
-        <Levies porcentage="15" key="cha_gen_sword" max="LEVY" />
-        <Levies porcentage="15" key="cha_gen_levy_archers" max="LEVY" />
-        <Levies porcentage="20" key="cha_gen_skirm" max="LEVY" />
+        <Levies porcentage="32" key="cha_gen_levy_spear" max="LEVY" />
+        <Levies porcentage="24" key="cha_gen_sword" max="LEVY" />
+        <Levies porcentage="31" key="cha_gen_levy_archers" max="LEVY" />
+        <Levies porcentage="13" key="cha_gen_skirm" max="LEVY" />
         <MenAtArm type="light_footmen" key="cha_gen_skirm" max="400" />
         <MenAtArm type="armored_footmen" key="cha_gen_armoured_sword" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="cha_gen_armoured_spear" max="INFANTRY" />
@@ -15304,10 +15214,10 @@
     <Faction name="Berbers">
         <General key="cha_gen_guard_cav" />
         <Knights key="cha_gen_knights" />
-        <Levies porcentage="50" key="cha_gen_levy_spear" max="LEVY" />
-        <Levies porcentage="15" key="cha_gen_sword" max="LEVY" />
-        <Levies porcentage="15" key="cha_gen_levy_archers" max="LEVY" />
-        <Levies porcentage="20" key="cha_gen_skirm" max="LEVY" />
+        <Levies porcentage="26" key="cha_gen_levy_spear" max="LEVY" />
+        <Levies porcentage="14" key="cha_gen_sword" max="LEVY" />
+        <Levies porcentage="38" key="cha_gen_levy_archers" max="LEVY" />
+        <Levies porcentage="22" key="cha_gen_skirm" max="LEVY" />
         <MenAtArm type="light_footmen" key="cha_gen_skirm" max="400" />
         <MenAtArm type="armored_footmen" key="cha_gen_armoured_sword" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="cha_gen_armoured_spear" max="INFANTRY" />
@@ -15727,10 +15637,10 @@
     <Faction name="Bretons">
         <General key="cha_gen_guard_cav" />
         <Knights key="cha_gen_knights" />
-        <Levies porcentage="50" key="cha_gen_levy_spear" max="LEVY" />
-        <Levies porcentage="15" key="cha_gen_sword" max="LEVY" />
-        <Levies porcentage="15" key="cha_gen_levy_archers" max="LEVY" />
-        <Levies porcentage="20" key="cha_gen_skirm" max="LEVY" />
+        <Levies porcentage="37" key="cha_gen_levy_spear" max="LEVY" />
+        <Levies porcentage="10" key="cha_gen_sword" max="LEVY" />
+        <Levies porcentage="35" key="cha_gen_levy_archers" max="LEVY" />
+        <Levies porcentage="18" key="cha_gen_skirm" max="LEVY" />
         <MenAtArm type="light_footmen" key="cha_gen_skirm" max="400" />
         <MenAtArm type="armored_footmen" key="cha_gen_armoured_sword" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="cha_gen_armoured_spear" max="INFANTRY" />
@@ -16150,10 +16060,10 @@
     <Faction name="Corduba">
         <General key="cha_gen_guard_cav" />
         <Knights key="cha_gen_knights" />
-        <Levies porcentage="50" key="cha_gen_levy_spear" max="LEVY" />
-        <Levies porcentage="15" key="cha_gen_sword" max="LEVY" />
-        <Levies porcentage="15" key="cha_gen_levy_archers" max="LEVY" />
-        <Levies porcentage="20" key="cha_gen_skirm" max="LEVY" />
+        <Levies porcentage="31" key="cha_gen_levy_spear" max="LEVY" />
+        <Levies porcentage="24" key="cha_gen_sword" max="LEVY" />
+        <Levies porcentage="26" key="cha_gen_levy_archers" max="LEVY" />
+        <Levies porcentage="19" key="cha_gen_skirm" max="LEVY" />
         <MenAtArm type="light_footmen" key="cha_gen_skirm" max="400" />
         <MenAtArm type="armored_footmen" key="cha_gen_armoured_sword" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="cha_gen_armoured_spear" max="INFANTRY" />
@@ -16573,10 +16483,10 @@
     <Faction name="Danir">
         <General key="cha_gen_guard_cav" />
         <Knights key="cha_gen_knights" />
-        <Levies porcentage="50" key="cha_gen_levy_spear" max="LEVY" />
-        <Levies porcentage="15" key="cha_gen_sword" max="LEVY" />
-        <Levies porcentage="15" key="cha_gen_levy_archers" max="LEVY" />
-        <Levies porcentage="20" key="cha_gen_skirm" max="LEVY" />
+        <Levies porcentage="23" key="cha_gen_levy_spear" max="LEVY" />
+        <Levies porcentage="34" key="cha_gen_sword" max="LEVY" />
+        <Levies porcentage="17" key="cha_gen_levy_archers" max="LEVY" />
+        <Levies porcentage="26" key="cha_gen_skirm" max="LEVY" />
         <MenAtArm type="light_footmen" key="cha_gen_skirm" max="400" />
         <MenAtArm type="armored_footmen" key="cha_gen_armoured_sword" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="cha_gen_armoured_spear" max="INFANTRY" />
@@ -16996,10 +16906,10 @@
     <Faction name="Eastern Germanic Rebels">
         <General key="cha_gen_guard_cav" />
         <Knights key="cha_gen_knights" />
-        <Levies porcentage="50" key="cha_gen_levy_spear" max="LEVY" />
-        <Levies porcentage="15" key="cha_gen_sword" max="LEVY" />
-        <Levies porcentage="15" key="cha_gen_levy_archers" max="LEVY" />
-        <Levies porcentage="20" key="cha_gen_skirm" max="LEVY" />
+        <Levies porcentage="17" key="cha_gen_levy_spear" max="LEVY" />
+        <Levies porcentage="21" key="cha_gen_sword" max="LEVY" />
+        <Levies porcentage="28" key="cha_gen_levy_archers" max="LEVY" />
+        <Levies porcentage="34" key="cha_gen_skirm" max="LEVY" />
         <MenAtArm type="light_footmen" key="cha_gen_skirm" max="400" />
         <MenAtArm type="armored_footmen" key="cha_gen_armoured_sword" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="cha_gen_armoured_spear" max="INFANTRY" />
@@ -17419,10 +17329,10 @@
     <Faction name="Eastphalia">
         <General key="cha_gen_guard_cav" />
         <Knights key="cha_gen_knights" />
-        <Levies porcentage="50" key="cha_gen_levy_spear" max="LEVY" />
-        <Levies porcentage="15" key="cha_gen_sword" max="LEVY" />
-        <Levies porcentage="15" key="cha_gen_levy_archers" max="LEVY" />
-        <Levies porcentage="20" key="cha_gen_skirm" max="LEVY" />
+        <Levies porcentage="18" key="cha_gen_levy_spear" max="LEVY" />
+        <Levies porcentage="19" key="cha_gen_sword" max="LEVY" />
+        <Levies porcentage="31" key="cha_gen_levy_archers" max="LEVY" />
+        <Levies porcentage="32" key="cha_gen_skirm" max="LEVY" />
         <MenAtArm type="light_footmen" key="cha_gen_skirm" max="400" />
         <MenAtArm type="armored_footmen" key="cha_gen_armoured_sword" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="cha_gen_armoured_spear" max="INFANTRY" />
@@ -17842,10 +17752,10 @@
     <Faction name="Frankish Rebels">
         <General key="cha_gen_guard_cav" />
         <Knights key="cha_gen_knights" />
-        <Levies porcentage="50" key="cha_gen_levy_spear" max="LEVY" />
-        <Levies porcentage="15" key="cha_gen_sword" max="LEVY" />
-        <Levies porcentage="15" key="cha_gen_levy_archers" max="LEVY" />
-        <Levies porcentage="20" key="cha_gen_skirm" max="LEVY" />
+        <Levies porcentage="18" key="cha_gen_levy_spear" max="LEVY" />
+        <Levies porcentage="37" key="cha_gen_sword" max="LEVY" />
+        <Levies porcentage="24" key="cha_gen_levy_archers" max="LEVY" />
+        <Levies porcentage="21" key="cha_gen_skirm" max="LEVY" />
         <MenAtArm type="light_footmen" key="cha_gen_skirm" max="400" />
         <MenAtArm type="armored_footmen" key="cha_gen_armoured_sword" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="cha_gen_armoured_spear" max="INFANTRY" />
@@ -18265,10 +18175,10 @@
     <Faction name="Frisia">
         <General key="cha_gen_guard_cav" />
         <Knights key="cha_gen_knights" />
-        <Levies porcentage="50" key="cha_gen_levy_spear" max="LEVY" />
-        <Levies porcentage="15" key="cha_gen_sword" max="LEVY" />
-        <Levies porcentage="15" key="cha_gen_levy_archers" max="LEVY" />
-        <Levies porcentage="20" key="cha_gen_skirm" max="LEVY" />
+        <Levies porcentage="23" key="cha_gen_levy_spear" max="LEVY" />
+        <Levies porcentage="23" key="cha_gen_sword" max="LEVY" />
+        <Levies porcentage="21" key="cha_gen_levy_archers" max="LEVY" />
+        <Levies porcentage="33" key="cha_gen_skirm" max="LEVY" />
         <MenAtArm type="light_footmen" key="cha_gen_skirm" max="400" />
         <MenAtArm type="armored_footmen" key="cha_gen_armoured_sword" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="cha_gen_armoured_spear" max="INFANTRY" />
@@ -18688,10 +18598,10 @@
     <Faction name="Gaetuli">
         <General key="cha_gen_guard_cav" />
         <Knights key="cha_gen_knights" />
-        <Levies porcentage="50" key="cha_gen_levy_spear" max="LEVY" />
-        <Levies porcentage="15" key="cha_gen_sword" max="LEVY" />
-        <Levies porcentage="15" key="cha_gen_levy_archers" max="LEVY" />
-        <Levies porcentage="20" key="cha_gen_skirm" max="LEVY" />
+        <Levies porcentage="22" key="cha_gen_levy_spear" max="LEVY" />
+        <Levies porcentage="24" key="cha_gen_sword" max="LEVY" />
+        <Levies porcentage="21" key="cha_gen_levy_archers" max="LEVY" />
+        <Levies porcentage="33" key="cha_gen_skirm" max="LEVY" />
         <MenAtArm type="light_footmen" key="cha_gen_skirm" max="400" />
         <MenAtArm type="armored_footmen" key="cha_gen_armoured_sword" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="cha_gen_armoured_spear" max="INFANTRY" />
@@ -19111,10 +19021,10 @@
     <Faction name="Garamantes">
         <General key="cha_gen_guard_cav" />
         <Knights key="cha_gen_knights" />
-        <Levies porcentage="50" key="cha_gen_levy_spear" max="LEVY" />
-        <Levies porcentage="15" key="cha_gen_sword" max="LEVY" />
-        <Levies porcentage="15" key="cha_gen_levy_archers" max="LEVY" />
-        <Levies porcentage="20" key="cha_gen_skirm" max="LEVY" />
+        <Levies porcentage="42" key="cha_gen_levy_spear" max="LEVY" />
+        <Levies porcentage="27" key="cha_gen_sword" max="LEVY" />
+        <Levies porcentage="16" key="cha_gen_levy_archers" max="LEVY" />
+        <Levies porcentage="15" key="cha_gen_skirm" max="LEVY" />
         <MenAtArm type="light_footmen" key="cha_gen_skirm" max="400" />
         <MenAtArm type="armored_footmen" key="cha_gen_armoured_sword" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="cha_gen_armoured_spear" max="INFANTRY" />
@@ -19534,10 +19444,10 @@
     <Faction name="Gautar">
         <General key="cha_gen_guard_cav" />
         <Knights key="cha_gen_knights" />
-        <Levies porcentage="50" key="cha_gen_levy_spear" max="LEVY" />
-        <Levies porcentage="15" key="cha_gen_sword" max="LEVY" />
-        <Levies porcentage="15" key="cha_gen_levy_archers" max="LEVY" />
-        <Levies porcentage="20" key="cha_gen_skirm" max="LEVY" />
+        <Levies porcentage="21" key="cha_gen_levy_spear" max="LEVY" />
+        <Levies porcentage="20" key="cha_gen_sword" max="LEVY" />
+        <Levies porcentage="27" key="cha_gen_levy_archers" max="LEVY" />
+        <Levies porcentage="32" key="cha_gen_skirm" max="LEVY" />
         <MenAtArm type="light_footmen" key="cha_gen_skirm" max="400" />
         <MenAtArm type="armored_footmen" key="cha_gen_armoured_sword" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="cha_gen_armoured_spear" max="INFANTRY" />
@@ -19957,10 +19867,10 @@
     <Faction name="Gothoi">
         <General key="cha_gen_guard_cav" />
         <Knights key="cha_gen_knights" />
-        <Levies porcentage="50" key="cha_gen_levy_spear" max="LEVY" />
-        <Levies porcentage="15" key="cha_gen_sword" max="LEVY" />
-        <Levies porcentage="15" key="cha_gen_levy_archers" max="LEVY" />
-        <Levies porcentage="20" key="cha_gen_skirm" max="LEVY" />
+        <Levies porcentage="15" key="cha_gen_levy_spear" max="LEVY" />
+        <Levies porcentage="26" key="cha_gen_sword" max="LEVY" />
+        <Levies porcentage="27" key="cha_gen_levy_archers" max="LEVY" />
+        <Levies porcentage="32" key="cha_gen_skirm" max="LEVY" />
         <MenAtArm type="light_footmen" key="cha_gen_skirm" max="400" />
         <MenAtArm type="armored_footmen" key="cha_gen_armoured_sword" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="cha_gen_armoured_spear" max="INFANTRY" />
@@ -20380,10 +20290,10 @@
     <Faction name="Kartli">
         <General key="cha_gen_guard_cav" />
         <Knights key="cha_gen_knights" />
-        <Levies porcentage="50" key="cha_gen_levy_spear" max="LEVY" />
-        <Levies porcentage="15" key="cha_gen_sword" max="LEVY" />
-        <Levies porcentage="15" key="cha_gen_levy_archers" max="LEVY" />
-        <Levies porcentage="20" key="cha_gen_skirm" max="LEVY" />
+        <Levies porcentage="23" key="cha_gen_levy_spear" max="LEVY" />
+        <Levies porcentage="30" key="cha_gen_sword" max="LEVY" />
+        <Levies porcentage="24" key="cha_gen_levy_archers" max="LEVY" />
+        <Levies porcentage="23" key="cha_gen_skirm" max="LEVY" />
         <MenAtArm type="light_footmen" key="cha_gen_skirm" max="400" />
         <MenAtArm type="armored_footmen" key="cha_gen_armoured_sword" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="cha_gen_armoured_spear" max="INFANTRY" />
@@ -20803,10 +20713,10 @@
     <Faction name="Kingdom of Carloman">
         <General key="cha_gen_guard_cav" />
         <Knights key="cha_gen_knights" />
-        <Levies porcentage="50" key="cha_gen_levy_spear" max="LEVY" />
-        <Levies porcentage="15" key="cha_gen_sword" max="LEVY" />
-        <Levies porcentage="15" key="cha_gen_levy_archers" max="LEVY" />
-        <Levies porcentage="20" key="cha_gen_skirm" max="LEVY" />
+        <Levies porcentage="36" key="cha_gen_levy_spear" max="LEVY" />
+        <Levies porcentage="13" key="cha_gen_sword" max="LEVY" />
+        <Levies porcentage="42" key="cha_gen_levy_archers" max="LEVY" />
+        <Levies porcentage="9" key="cha_gen_skirm" max="LEVY" />
         <MenAtArm type="light_footmen" key="cha_gen_skirm" max="400" />
         <MenAtArm type="armored_footmen" key="cha_gen_armoured_sword" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="cha_gen_armoured_spear" max="INFANTRY" />
@@ -21226,10 +21136,10 @@
     <Faction name="Langobards">
         <General key="cha_gen_guard_cav" />
         <Knights key="cha_gen_knights" />
-        <Levies porcentage="50" key="cha_gen_levy_spear" max="LEVY" />
-        <Levies porcentage="15" key="cha_gen_sword" max="LEVY" />
-        <Levies porcentage="15" key="cha_gen_levy_archers" max="LEVY" />
-        <Levies porcentage="20" key="cha_gen_skirm" max="LEVY" />
+        <Levies porcentage="32" key="cha_gen_levy_spear" max="LEVY" />
+        <Levies porcentage="22" key="cha_gen_sword" max="LEVY" />
+        <Levies porcentage="18" key="cha_gen_levy_archers" max="LEVY" />
+        <Levies porcentage="28" key="cha_gen_skirm" max="LEVY" />
         <MenAtArm type="light_footmen" key="cha_gen_skirm" max="400" />
         <MenAtArm type="armored_footmen" key="cha_gen_armoured_sword" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="cha_gen_armoured_spear" max="INFANTRY" />
@@ -21649,10 +21559,10 @@
     <Faction name="Mauri">
         <General key="cha_gen_guard_cav" />
         <Knights key="cha_gen_knights" />
-        <Levies porcentage="50" key="cha_gen_levy_spear" max="LEVY" />
-        <Levies porcentage="15" key="cha_gen_sword" max="LEVY" />
-        <Levies porcentage="15" key="cha_gen_levy_archers" max="LEVY" />
-        <Levies porcentage="20" key="cha_gen_skirm" max="LEVY" />
+        <Levies porcentage="36" key="cha_gen_levy_spear" max="LEVY" />
+        <Levies porcentage="32" key="cha_gen_sword" max="LEVY" />
+        <Levies porcentage="11" key="cha_gen_levy_archers" max="LEVY" />
+        <Levies porcentage="21" key="cha_gen_skirm" max="LEVY" />
         <MenAtArm type="light_footmen" key="cha_gen_skirm" max="400" />
         <MenAtArm type="armored_footmen" key="cha_gen_armoured_sword" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="cha_gen_armoured_spear" max="INFANTRY" />
@@ -22072,10 +21982,10 @@
     <Faction name="Moors">
         <General key="cha_gen_guard_cav" />
         <Knights key="cha_gen_knights" />
-        <Levies porcentage="50" key="cha_gen_levy_spear" max="LEVY" />
-        <Levies porcentage="15" key="cha_gen_sword" max="LEVY" />
-        <Levies porcentage="15" key="cha_gen_levy_archers" max="LEVY" />
-        <Levies porcentage="20" key="cha_gen_skirm" max="LEVY" />
+        <Levies porcentage="36" key="cha_gen_levy_spear" max="LEVY" />
+        <Levies porcentage="16" key="cha_gen_sword" max="LEVY" />
+        <Levies porcentage="38" key="cha_gen_levy_archers" max="LEVY" />
+        <Levies porcentage="10" key="cha_gen_skirm" max="LEVY" />
         <MenAtArm type="light_footmen" key="cha_gen_skirm" max="400" />
         <MenAtArm type="armored_footmen" key="cha_gen_armoured_sword" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="cha_gen_armoured_spear" max="INFANTRY" />
@@ -22495,10 +22405,10 @@
     <Faction name="Nasamounes">
         <General key="cha_gen_guard_cav" />
         <Knights key="cha_gen_knights" />
-        <Levies porcentage="50" key="cha_gen_levy_spear" max="LEVY" />
-        <Levies porcentage="15" key="cha_gen_sword" max="LEVY" />
-        <Levies porcentage="15" key="cha_gen_levy_archers" max="LEVY" />
-        <Levies porcentage="20" key="cha_gen_skirm" max="LEVY" />
+        <Levies porcentage="30" key="cha_gen_levy_spear" max="LEVY" />
+        <Levies porcentage="14" key="cha_gen_sword" max="LEVY" />
+        <Levies porcentage="35" key="cha_gen_levy_archers" max="LEVY" />
+        <Levies porcentage="21" key="cha_gen_skirm" max="LEVY" />
         <MenAtArm type="light_footmen" key="cha_gen_skirm" max="400" />
         <MenAtArm type="armored_footmen" key="cha_gen_armoured_sword" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="cha_gen_armoured_spear" max="INFANTRY" />
@@ -22918,10 +22828,10 @@
     <Faction name="Nobatia">
         <General key="cha_gen_guard_cav" />
         <Knights key="cha_gen_knights" />
-        <Levies porcentage="50" key="cha_gen_levy_spear" max="LEVY" />
-        <Levies porcentage="15" key="cha_gen_sword" max="LEVY" />
-        <Levies porcentage="15" key="cha_gen_levy_archers" max="LEVY" />
-        <Levies porcentage="20" key="cha_gen_skirm" max="LEVY" />
+        <Levies porcentage="30" key="cha_gen_levy_spear" max="LEVY" />
+        <Levies porcentage="25" key="cha_gen_sword" max="LEVY" />
+        <Levies porcentage="26" key="cha_gen_levy_archers" max="LEVY" />
+        <Levies porcentage="19" key="cha_gen_skirm" max="LEVY" />
         <MenAtArm type="light_footmen" key="cha_gen_skirm" max="400" />
         <MenAtArm type="armored_footmen" key="cha_gen_armoured_sword" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="cha_gen_armoured_spear" max="INFANTRY" />
@@ -23341,10 +23251,10 @@
     <Faction name="Persia">
         <General key="cha_gen_guard_cav" />
         <Knights key="cha_gen_knights" />
-        <Levies porcentage="50" key="cha_gen_levy_spear" max="LEVY" />
-        <Levies porcentage="15" key="cha_gen_sword" max="LEVY" />
-        <Levies porcentage="15" key="cha_gen_levy_archers" max="LEVY" />
-        <Levies porcentage="20" key="cha_gen_skirm" max="LEVY" />
+        <Levies porcentage="16" key="cha_gen_levy_spear" max="LEVY" />
+        <Levies porcentage="33" key="cha_gen_sword" max="LEVY" />
+        <Levies porcentage="26" key="cha_gen_levy_archers" max="LEVY" />
+        <Levies porcentage="25" key="cha_gen_skirm" max="LEVY" />
         <MenAtArm type="light_footmen" key="cha_gen_skirm" max="400" />
         <MenAtArm type="armored_footmen" key="cha_gen_armoured_sword" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="cha_gen_armoured_spear" max="INFANTRY" />
@@ -23764,10 +23674,10 @@
     <Faction name="Picti">
         <General key="cha_gen_guard_cav" />
         <Knights key="cha_gen_knights" />
-        <Levies porcentage="50" key="cha_gen_levy_spear" max="LEVY" />
-        <Levies porcentage="15" key="cha_gen_sword" max="LEVY" />
-        <Levies porcentage="15" key="cha_gen_levy_archers" max="LEVY" />
-        <Levies porcentage="20" key="cha_gen_skirm" max="LEVY" />
+        <Levies porcentage="34" key="cha_gen_levy_spear" max="LEVY" />
+        <Levies porcentage="23" key="cha_gen_sword" max="LEVY" />
+        <Levies porcentage="9" key="cha_gen_levy_archers" max="LEVY" />
+        <Levies porcentage="34" key="cha_gen_skirm" max="LEVY" />
         <MenAtArm type="light_footmen" key="cha_gen_skirm" max="400" />
         <MenAtArm type="armored_footmen" key="cha_gen_armoured_sword" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="cha_gen_armoured_spear" max="INFANTRY" />
@@ -24187,10 +24097,10 @@
     <Faction name="Pontus">
         <General key="cha_gen_guard_cav" />
         <Knights key="cha_gen_knights" />
-        <Levies porcentage="50" key="cha_gen_levy_spear" max="LEVY" />
-        <Levies porcentage="15" key="cha_gen_sword" max="LEVY" />
+        <Levies porcentage="32" key="cha_gen_levy_spear" max="LEVY" />
+        <Levies porcentage="21" key="cha_gen_sword" max="LEVY" />
         <Levies porcentage="15" key="cha_gen_levy_archers" max="LEVY" />
-        <Levies porcentage="20" key="cha_gen_skirm" max="LEVY" />
+        <Levies porcentage="32" key="cha_gen_skirm" max="LEVY" />
         <MenAtArm type="light_footmen" key="cha_gen_skirm" max="400" />
         <MenAtArm type="armored_footmen" key="cha_gen_armoured_sword" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="cha_gen_armoured_spear" max="INFANTRY" />
@@ -24610,10 +24520,10 @@
     <Faction name="Sclavenoi">
         <General key="cha_gen_guard_cav" />
         <Knights key="cha_gen_knights" />
-        <Levies porcentage="50" key="cha_gen_levy_spear" max="LEVY" />
-        <Levies porcentage="15" key="cha_gen_sword" max="LEVY" />
-        <Levies porcentage="15" key="cha_gen_levy_archers" max="LEVY" />
-        <Levies porcentage="20" key="cha_gen_skirm" max="LEVY" />
+        <Levies porcentage="39" key="cha_gen_levy_spear" max="LEVY" />
+        <Levies porcentage="21" key="cha_gen_sword" max="LEVY" />
+        <Levies porcentage="30" key="cha_gen_levy_archers" max="LEVY" />
+        <Levies porcentage="10" key="cha_gen_skirm" max="LEVY" />
         <MenAtArm type="light_footmen" key="cha_gen_skirm" max="400" />
         <MenAtArm type="armored_footmen" key="cha_gen_armoured_sword" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="cha_gen_armoured_spear" max="INFANTRY" />
@@ -25033,10 +24943,10 @@
     <Faction name="Vascones">
         <General key="cha_gen_guard_cav" />
         <Knights key="cha_gen_knights" />
-        <Levies porcentage="50" key="cha_gen_levy_spear" max="LEVY" />
-        <Levies porcentage="15" key="cha_gen_sword" max="LEVY" />
-        <Levies porcentage="15" key="cha_gen_levy_archers" max="LEVY" />
-        <Levies porcentage="20" key="cha_gen_skirm" max="LEVY" />
+        <Levies porcentage="17" key="cha_gen_levy_spear" max="LEVY" />
+        <Levies porcentage="13" key="cha_gen_sword" max="LEVY" />
+        <Levies porcentage="25" key="cha_gen_levy_archers" max="LEVY" />
+        <Levies porcentage="45" key="cha_gen_skirm" max="LEVY" />
         <MenAtArm type="light_footmen" key="cha_gen_skirm" max="400" />
         <MenAtArm type="armored_footmen" key="cha_gen_armoured_sword" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="cha_gen_armoured_spear" max="INFANTRY" />
@@ -25456,10 +25366,10 @@
     <Faction name="Visigothic Kingdom">
         <General key="cha_gen_guard_cav" />
         <Knights key="cha_gen_knights" />
-        <Levies porcentage="50" key="cha_gen_levy_spear" max="LEVY" />
-        <Levies porcentage="15" key="cha_gen_sword" max="LEVY" />
-        <Levies porcentage="15" key="cha_gen_levy_archers" max="LEVY" />
-        <Levies porcentage="20" key="cha_gen_skirm" max="LEVY" />
+        <Levies porcentage="17" key="cha_gen_levy_spear" max="LEVY" />
+        <Levies porcentage="27" key="cha_gen_sword" max="LEVY" />
+        <Levies porcentage="30" key="cha_gen_levy_archers" max="LEVY" />
+        <Levies porcentage="26" key="cha_gen_skirm" max="LEVY" />
         <MenAtArm type="light_footmen" key="cha_gen_skirm" max="400" />
         <MenAtArm type="armored_footmen" key="cha_gen_armoured_sword" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="cha_gen_armoured_spear" max="INFANTRY" />
@@ -25879,10 +25789,10 @@
     <Faction name="Westphalia">
         <General key="cha_gen_guard_cav" />
         <Knights key="cha_gen_knights" />
-        <Levies porcentage="50" key="cha_gen_levy_spear" max="LEVY" />
-        <Levies porcentage="15" key="cha_gen_sword" max="LEVY" />
-        <Levies porcentage="15" key="cha_gen_levy_archers" max="LEVY" />
-        <Levies porcentage="20" key="cha_gen_skirm" max="LEVY" />
+        <Levies porcentage="14" key="cha_gen_levy_spear" max="LEVY" />
+        <Levies porcentage="45" key="cha_gen_sword" max="LEVY" />
+        <Levies porcentage="19" key="cha_gen_levy_archers" max="LEVY" />
+        <Levies porcentage="22" key="cha_gen_skirm" max="LEVY" />
         <MenAtArm type="light_footmen" key="cha_gen_skirm" max="400" />
         <MenAtArm type="armored_footmen" key="cha_gen_armoured_sword" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="cha_gen_armoured_spear" max="INFANTRY" />
