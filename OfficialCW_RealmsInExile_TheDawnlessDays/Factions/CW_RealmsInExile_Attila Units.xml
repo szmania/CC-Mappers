@@ -3,9 +3,9 @@
     <Faction name="Default">
         <General key="gon_silver_swan_knights" />
         <Knights key="gon_citadel_guard" />
-        <Levies porcentage="55" key="gon_spear_militia" max="LEVY" />
-        <Levies porcentage="35" key="gon_sword_militia" max="LEVY" />
-        <Levies porcentage="10" key="gon_bow_militia" max="LEVY" />
+        <Levies porcentage="17" key="gon_spear_militia" max="LEVY" />
+        <Levies porcentage="58" key="gon_sword_militia" max="LEVY" />
+        <Levies porcentage="25" key="gon_bow_militia" max="LEVY" />
         <MenAtArm type="light_footmen" key="gon_ringlo_vale_footmen" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="gon_sword_infantry" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="gon_spear_infantry" max="INFANTRY" />
@@ -392,13 +392,20 @@
         <MenAtArm type="waw_pirates" key="leb_heavysword" max="INFANTRY" />
         <MenAtArm type="zeba_outriders" key="leb_marinesword" max="CAVALRY" />
         <MenAtArm type="zebaback_slavers" key="anf_levyspear" max="INFANTRY" />
+        <MenAtArm type="shorewardens" key="gon_archers" max="RANGED" />
     </Faction>
     <Faction name="Gondor">
         <General key="stan_citadel" />
         <Knights key="gon_citadel_guard" />
-        <Levies porcentage="18" key="gon_spear_militia" max="LEVY" />
-        <Levies porcentage="12" key="gon_sword_militia" max="LEVY" />
-        <Levies porcentage="3" key="gon_bow_militia" max="LEVY" />
+        <Levies porcentage="12" key="gon_spear_militia" max="LEVY" />
+        <Levies porcentage="8" key="gon_sword_militia" max="LEVY" />
+        <Levies porcentage="9" key="gon_bow_militia" max="LEVY" />
+        <Levies porcentage="20" key="brv_mediumspear" max="LEVY" />
+        <Levies porcentage="10" key="brv_levysword" max="LEVY" />
+        <Levies porcentage="7" key="brv_skirm" max="LEVY" />
+        <Levies porcentage="5" key="gon_spear_militia" max="LEVY" />
+        <Levies porcentage="13" key="gon_sword_militia" max="LEVY" />
+        <Levies porcentage="16" key="gon_bow_militia" max="LEVY" />
         <MenAtArm type="light_footmen" key="gon_ringlo_vale_footmen" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="gon_sword_infantry" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="gon_spear_infantry" max="INFANTRY" />
@@ -782,19 +789,14 @@
         <MenAtArm type="waw_pirates" key="leb_heavysword" max="INFANTRY" />
         <MenAtArm type="zeba_outriders" key="leb_marinesword" max="CAVALRY" />
         <MenAtArm type="zebaback_slavers" key="anf_levyspear" max="INFANTRY" />
-        <Levies porcentage="18" key="brv_mediumspear" max="LEVY" />
-        <Levies porcentage="12" key="brv_levysword" max="LEVY" />
-        <Levies porcentage="3" key="brv_skirm" max="LEVY" />
-        <Levies porcentage="18" key="gon_spear_militia" max="LEVY" />
-        <Levies porcentage="12" key="gon_sword_militia" max="LEVY" />
-        <Levies porcentage="4" key="gon_bow_militia" max="LEVY" />
+        <MenAtArm type="shorewardens" key="gon_archers" max="RANGED" />
     </Faction>
     <Faction name="Dol Amroth">
         <General key="gon_imrahil" />
         <Knights key="gon_silver_swan_knights" />
-        <Levies porcentage="55" key="dol_levyspear" max="LEVY" />
-        <Levies porcentage="35" key="dol_levysword" max="LEVY" />
-        <Levies porcentage="10" key="dol_skirm" max="LEVY" />
+        <Levies porcentage="30" key="dol_levyspear" max="LEVY" />
+        <Levies porcentage="32" key="dol_levysword" max="LEVY" />
+        <Levies porcentage="38" key="dol_skirm" max="LEVY" />
         <MenAtArm type="light_footmen" key="dol_heavysword" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="dol_swansword" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="dol_heavyspear" max="INFANTRY" />
@@ -1178,13 +1180,17 @@
         <MenAtArm type="waw_pirates" key="leb_heavysword" max="INFANTRY" />
         <MenAtArm type="zeba_outriders" key="leb_marinesword" max="CAVALRY" />
         <MenAtArm type="zebaback_slavers" key="anf_levyspear" max="INFANTRY" />
+        <MenAtArm type="shorewardens" key="gon_archers" max="RANGED" />
     </Faction>
     <Faction name="anorien">
         <General key="stan_citadel" />
         <Knights key="stan_cav" />
-        <Levies porcentage="28" key="stan_levyspear" max="LEVY" />
-        <Levies porcentage="18" key="stan_levysword" max="LEVY" />
-        <Levies porcentage="5" key="gon_bow_militia" max="LEVY" />
+        <Levies porcentage="9" key="stan_levyspear" max="LEVY" />
+        <Levies porcentage="21" key="stan_levysword" max="LEVY" />
+        <Levies porcentage="18" key="gon_bow_militia" max="LEVY" />
+        <Levies porcentage="11" key="gon_spear_militia" max="LEVY" />
+        <Levies porcentage="13" key="gon_sword_militia" max="LEVY" />
+        <Levies porcentage="28" key="gon_bow_militia" max="LEVY" />
         <MenAtArm type="light_footmen" key="stan_mediumsword" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="stan_heavysword" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="stan_heavyspear" max="INFANTRY" />
@@ -1568,16 +1574,17 @@
         <MenAtArm type="waw_pirates" key="leb_heavysword" max="INFANTRY" />
         <MenAtArm type="zeba_outriders" key="leb_marinesword" max="CAVALRY" />
         <MenAtArm type="zebaback_slavers" key="anf_levyspear" max="INFANTRY" />
-        <Levies porcentage="28" key="gon_spear_militia" max="LEVY" />
-        <Levies porcentage="18" key="gon_sword_militia" max="LEVY" />
-        <Levies porcentage="3" key="gon_bow_militia" max="LEVY" />
+        <MenAtArm type="shorewardens" key="gon_archers" max="RANGED" />
     </Faction>
     <Faction name="harondor">
         <General key="hor_guardsword" />
         <Knights key="hor_heavycav" />
-        <Levies porcentage="28" key="hor_levyspear" max="LEVY" />
-        <Levies porcentage="18" key="hor_levysword" max="LEVY" />
-        <Levies porcentage="5" key="hor_skirm" max="LEVY" />
+        <Levies porcentage="15" key="hor_levyspear" max="LEVY" />
+        <Levies porcentage="6" key="hor_levysword" max="LEVY" />
+        <Levies porcentage="19" key="hor_skirm" max="LEVY" />
+        <Levies porcentage="24" key="gon_spear_militia" max="LEVY" />
+        <Levies porcentage="22" key="gon_sword_militia" max="LEVY" />
+        <Levies porcentage="14" key="gon_bow_militia" max="LEVY" />
         <MenAtArm type="light_footmen" key="hor_mediumsword" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="hor_heavysword" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="hor_heavyspear" max="INFANTRY" />
@@ -1961,16 +1968,20 @@
         <MenAtArm type="waw_pirates" key="leb_heavysword" max="INFANTRY" />
         <MenAtArm type="zeba_outriders" key="leb_marinesword" max="CAVALRY" />
         <MenAtArm type="zebaback_slavers" key="anf_levyspear" max="INFANTRY" />
-        <Levies porcentage="28" key="gon_spear_militia" max="LEVY" />
-        <Levies porcentage="18" key="gon_sword_militia" max="LEVY" />
-        <Levies porcentage="3" key="gon_bow_militia" max="LEVY" />
+        <MenAtArm type="shorewardens" key="gon_archers" max="RANGED" />
     </Faction>
     <Faction name="pinnath">
         <General key="pin_hirluin" />
         <Knights key="pin_cav" />
-        <Levies porcentage="18" key="pin_levyspear" max="LEVY" />
-        <Levies porcentage="12" key="pin_levysword" max="LEVY" />
-        <Levies porcentage="3" key="pin_skirm" max="LEVY" />
+        <Levies porcentage="5" key="pin_levyspear" max="LEVY" />
+        <Levies porcentage="10" key="pin_levysword" max="LEVY" />
+        <Levies porcentage="17" key="pin_skirm" max="LEVY" />
+        <Levies porcentage="7" key="pin_levyspear" max="LEVY" />
+        <Levies porcentage="7" key="pin_levysword" max="LEVY" />
+        <Levies porcentage="16" key="pin_skirm" max="LEVY" />
+        <Levies porcentage="12" key="gon_spear_militia" max="LEVY" />
+        <Levies porcentage="16" key="gon_sword_militia" max="LEVY" />
+        <Levies porcentage="10" key="gon_bow_militia" max="LEVY" />
         <MenAtArm type="light_footmen" key="pin_mediumsword" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="pin_heavysword" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="pin_heavyspear" max="INFANTRY" />
@@ -2354,19 +2365,21 @@
         <MenAtArm type="waw_pirates" key="leb_heavysword" max="INFANTRY" />
         <MenAtArm type="zeba_outriders" key="leb_marinesword" max="CAVALRY" />
         <MenAtArm type="zebaback_slavers" key="anf_levyspear" max="INFANTRY" />
-        <Levies porcentage="18" key="pin_levyspear" max="LEVY" />
-        <Levies porcentage="12" key="pin_levysword" max="LEVY" />
-        <Levies porcentage="3" key="pin_skirm" max="LEVY" />
-        <Levies porcentage="18" key="gon_spear_militia" max="LEVY" />
-        <Levies porcentage="12" key="gon_sword_militia" max="LEVY" />
-        <Levies porcentage="4" key="gon_bow_militia" max="LEVY" />
+        <MenAtArm type="shorewardens" key="gon_archers" max="RANGED" />
     </Faction>
     <Faction name="Haradrim">
         <General key="rv_sentinalsword" />
         <Knights key="rv_cav" />
-        <Levies porcentage="14" key="rv_levyspear" max="LEVY" />
-        <Levies porcentage="9" key="rv_levysword" max="LEVY" />
-        <Levies porcentage="2" key="rv_skirm" max="LEVY" />
+        <Levies porcentage="12" key="rv_levyspear" max="LEVY" />
+        <Levies porcentage="11" key="rv_levysword" max="LEVY" />
+        <Levies porcentage="15" key="rv_skirm" max="LEVY" />
+        <Levies porcentage="7" key="har_mahud_spearmen" max="LEVY" />
+        <Levies porcentage="11" key="har_mahud_clubmen" max="LEVY" />
+        <Levies porcentage="6" key="har_desert_bowmen" max="LEVY" />
+        <Levies porcentage="16" key="Galadhrim_Spear_Infantry" max="LEVY" />
+        <Levies porcentage="4" key="Galadhrim_Sword_Infantry" max="LEVY" />
+        <Levies porcentage="6" key="loth_galad_bow_warriors" max="LEVY" />
+        <Levies porcentage="12" key="dol_levyspear" max="LEVY" />
         <MenAtArm type="light_footmen" key="rv_mediumsword" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="rv_heavysword" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="brv_guardians" max="INFANTRY" />
@@ -2750,22 +2763,17 @@
         <MenAtArm type="waw_pirates" key="leb_heavysword" max="INFANTRY" />
         <MenAtArm type="zeba_outriders" key="leb_marinesword" max="CAVALRY" />
         <MenAtArm type="zebaback_slavers" key="anf_levyspear" max="INFANTRY" />
-        <Levies porcentage="14" key="har_mahud_spearmen" max="LEVY" />
-        <Levies porcentage="9" key="har_mahud_clubmen" max="LEVY" />
-        <Levies porcentage="2" key="har_desert_bowmen" max="LEVY" />
-        <Levies porcentage="14" key="Galadhrim_Spear_Infantry" max="LEVY" />
-        <Levies porcentage="9" key="Galadhrim_Sword_Infantry" max="LEVY" />
-        <Levies porcentage="2" key="loth_galad_bow_warriors" max="LEVY" />
-        <Levies porcentage="14" key="dol_levyspear" max="LEVY" />
-        <Levies porcentage="9" key="dol_levysword" max="LEVY" />
-        <Levies porcentage="2" key="dol_skirm" max="LEVY" />
+        <MenAtArm type="shorewardens" key="gon_archers" max="RANGED" />
     </Faction>
     <Faction name="Rohan">
         <General key="roh_household_knights" />
         <Knights key="roh_eorling_knights" />
-        <Levies porcentage="28" key="roh_mustered_spears" max="LEVY" />
-        <Levies porcentage="18" key="roh_mustered_axes" max="LEVY" />
-        <Levies porcentage="5" key="roh_mustered_archers" max="LEVY" />
+        <Levies porcentage="14" key="roh_mustered_spears" max="LEVY" />
+        <Levies porcentage="25" key="roh_mustered_axes" max="LEVY" />
+        <Levies porcentage="14" key="roh_mustered_archers" max="LEVY" />
+        <Levies porcentage="16" key="hor_levyspear" max="LEVY" />
+        <Levies porcentage="10" key="gon_trained_sword_militia" max="LEVY" />
+        <Levies porcentage="21" key="oroc_ironfist_guards" max="LEVY" />
         <MenAtArm type="light_footmen" key="roh_sword_theigns" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="roh_eorling_retainers" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="roh_eorling_men_at_arms" max="INFANTRY" />
@@ -3149,16 +3157,21 @@
         <MenAtArm type="waw_pirates" key="leb_heavysword" max="INFANTRY" />
         <MenAtArm type="zeba_outriders" key="leb_marinesword" max="CAVALRY" />
         <MenAtArm type="zebaback_slavers" key="anf_levyspear" max="INFANTRY" />
-        <Levies porcentage="28" key="hor_levyspear" max="LEVY" />
-        <Levies porcentage="18" key="gon_trained_sword_militia" max="LEVY" />
-        <Levies porcentage="3" key="oroc_ironfist_guards" max="LEVY" />
+        <MenAtArm type="shorewardens" key="gon_archers" max="RANGED" />
     </Faction>
     <Faction name="Mordor">
         <General key="mor_the_nine" />
         <Knights key="mor_servants_of_the_eyes" />
-        <Levies porcentage="14" key="mor_orc_rabble" max="LEVY" />
-        <Levies porcentage="9" key="mor_orc_warband" max="LEVY" />
-        <Levies porcentage="2" key="mor_orc_rabble_bowmen" max="LEVY" />
+        <Levies porcentage="13" key="mor_orc_rabble" max="LEVY" />
+        <Levies porcentage="14" key="mor_orc_warband" max="LEVY" />
+        <Levies porcentage="9" key="mor_orc_rabble_bowmen" max="LEVY" />
+        <Levies porcentage="10" key="mor_orc_rabble" max="LEVY" />
+        <Levies porcentage="6" key="mor_orc_warband" max="LEVY" />
+        <Levies porcentage="5" key="mor_orc_rabble_bowmen" max="LEVY" />
+        <Levies porcentage="12" key="mor_orc_rabble" max="LEVY" />
+        <Levies porcentage="13" key="mor_orc_warband" max="LEVY" />
+        <Levies porcentage="6" key="mor_orc_rabble_bowmen" max="LEVY" />
+        <Levies porcentage="12" key="merc_dale_watchpost_sentries" max="LEVY" />
         <MenAtArm type="light_footmen" key="mor_orc_warriors" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="mor_uruk_throng" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="mor_orc_spears" max="INFANTRY" />
@@ -3542,22 +3555,17 @@
         <MenAtArm type="waw_pirates" key="leb_heavysword" max="INFANTRY" />
         <MenAtArm type="zeba_outriders" key="leb_marinesword" max="CAVALRY" />
         <MenAtArm type="zebaback_slavers" key="anf_levyspear" max="INFANTRY" />
-        <Levies porcentage="14" key="mor_orc_rabble" max="LEVY" />
-        <Levies porcentage="9" key="mor_orc_warband" max="LEVY" />
-        <Levies porcentage="2" key="mor_orc_rabble_bowmen" max="LEVY" />
-        <Levies porcentage="14" key="mor_orc_rabble" max="LEVY" />
-        <Levies porcentage="9" key="mor_orc_warband" max="LEVY" />
-        <Levies porcentage="2" key="mor_orc_rabble_bowmen" max="LEVY" />
-        <Levies porcentage="14" key="merc_dale_watchpost_sentries" max="LEVY" />
-        <Levies porcentage="9" key="ere_dwarven_spearmen" max="LEVY" />
-        <Levies porcentage="2" key="stan_levyspear" max="LEVY" />
+        <MenAtArm type="shorewardens" key="gon_archers" max="RANGED" />
     </Faction>
     <Faction name="Dol Guldur">
         <General key="dg_servants_of_the_eyes" />
         <Knights key="dg_chieftain" />
-        <Levies porcentage="28" key="dg_phantoms" max="LEVY" />
-        <Levies porcentage="18" key="mor_orc_warband" max="LEVY" />
-        <Levies porcentage="5" key="dg_mirkwood_trackers" max="LEVY" />
+        <Levies porcentage="22" key="dg_phantoms" max="LEVY" />
+        <Levies porcentage="21" key="mor_orc_warband" max="LEVY" />
+        <Levies porcentage="19" key="dg_mirkwood_trackers" max="LEVY" />
+        <Levies porcentage="16" key="dg_phantoms" max="LEVY" />
+        <Levies porcentage="11" key="mor_orc_warband" max="LEVY" />
+        <Levies porcentage="11" key="dg_mirkwood_trackers" max="LEVY" />
         <MenAtArm type="light_footmen" key="dg_guldur_blades" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="dg_chieftain" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="dg_guldur_pikes" max="INFANTRY" />
@@ -3941,16 +3949,14 @@
         <MenAtArm type="waw_pirates" key="leb_heavysword" max="INFANTRY" />
         <MenAtArm type="zeba_outriders" key="leb_marinesword" max="CAVALRY" />
         <MenAtArm type="zebaback_slavers" key="anf_levyspear" max="INFANTRY" />
-        <Levies porcentage="28" key="dg_phantoms" max="LEVY" />
-        <Levies porcentage="18" key="mor_orc_warband" max="LEVY" />
-        <Levies porcentage="3" key="dg_mirkwood_trackers" max="LEVY" />
+        <MenAtArm type="shorewardens" key="gon_archers" max="RANGED" />
     </Faction>
     <Faction name="Isengard">
         <General key="ise_lurtz" />
         <Knights key="ise_white_hand_stormer" />
-        <Levies porcentage="55" key="ise_mordor_rabble" max="LEVY" />
-        <Levies porcentage="35" key="ise_goblinmen_ruffians" max="LEVY" />
-        <Levies porcentage="10" key="ise_goblinmen_bows" max="LEVY" />
+        <Levies porcentage="41" key="ise_mordor_rabble" max="LEVY" />
+        <Levies porcentage="16" key="ise_goblinmen_ruffians" max="LEVY" />
+        <Levies porcentage="43" key="ise_goblinmen_bows" max="LEVY" />
         <MenAtArm type="light_footmen" key="ise_uruk_hai_raiders" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="ise_uruk_hai_infantry" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="ise_uruk_hai_pikemen" max="INFANTRY" />
@@ -4334,13 +4340,20 @@
         <MenAtArm type="waw_pirates" key="leb_heavysword" max="INFANTRY" />
         <MenAtArm type="zeba_outriders" key="leb_marinesword" max="CAVALRY" />
         <MenAtArm type="zebaback_slavers" key="anf_levyspear" max="INFANTRY" />
+        <MenAtArm type="shorewardens" key="gon_archers" max="RANGED" />
     </Faction>
     <Faction name="Dunlending Tribes">
         <General key="leb_guardspear" />
         <Knights key="dale_merchant_escorts" />
-        <Levies porcentage="18" key="dol_heavysword" max="LEVY" />
-        <Levies porcentage="12" key="dun_tribal_warriors" max="LEVY" />
-        <Levies porcentage="3" key="stan_cairandros" max="LEVY" />
+        <Levies porcentage="7" key="dol_heavysword" max="LEVY" />
+        <Levies porcentage="6" key="dun_tribal_warriors" max="LEVY" />
+        <Levies porcentage="14" key="stan_cairandros" max="LEVY" />
+        <Levies porcentage="16" key="dun_hill_wardens" max="LEVY" />
+        <Levies porcentage="5" key="dun_tribal_warriors" max="LEVY" />
+        <Levies porcentage="7" key="el_merchant_wardens" max="LEVY" />
+        <Levies porcentage="21" key="gon_spear_militia" max="LEVY" />
+        <Levies porcentage="12" key="gon_sword_militia" max="LEVY" />
+        <Levies porcentage="12" key="gon_bow_militia" max="LEVY" />
         <MenAtArm type="light_footmen" key="dun_bloodsworn" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="ere_gloin" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="dun_elder_spears" max="INFANTRY" />
@@ -4724,19 +4737,14 @@
         <MenAtArm type="waw_pirates" key="leb_heavysword" max="INFANTRY" />
         <MenAtArm type="zeba_outriders" key="leb_marinesword" max="CAVALRY" />
         <MenAtArm type="zebaback_slavers" key="anf_levyspear" max="INFANTRY" />
-        <Levies porcentage="18" key="dun_hill_wardens" max="LEVY" />
-        <Levies porcentage="12" key="dun_tribal_warriors" max="LEVY" />
-        <Levies porcentage="3" key="el_merchant_wardens" max="LEVY" />
-        <Levies porcentage="18" key="gon_spear_militia" max="LEVY" />
-        <Levies porcentage="12" key="gon_sword_militia" max="LEVY" />
-        <Levies porcentage="4" key="gon_bow_militia" max="LEVY" />
+        <MenAtArm type="shorewardens" key="gon_archers" max="RANGED" />
     </Faction>
     <Faction name="Gundabad">
         <General key="brv_heavysword" />
         <Knights key="roh_eored_eastfold" />
-        <Levies porcentage="55" key="bal_clan_spearmen" max="LEVY" />
-        <Levies porcentage="35" key="mor_gothmog" max="LEVY" />
-        <Levies porcentage="10" key="exe_lin_sword_infantry" max="LEVY" />
+        <Levies porcentage="44" key="bal_clan_spearmen" max="LEVY" />
+        <Levies porcentage="24" key="mor_gothmog" max="LEVY" />
+        <Levies porcentage="32" key="exe_lin_sword_infantry" max="LEVY" />
         <MenAtArm type="light_footmen" key="levied_roh_mustered_axes" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="anf_heavysword" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="brv_guardians" max="INFANTRY" />
@@ -5120,13 +5128,14 @@
         <MenAtArm type="waw_pirates" key="leb_heavysword" max="INFANTRY" />
         <MenAtArm type="zeba_outriders" key="leb_marinesword" max="CAVALRY" />
         <MenAtArm type="zebaback_slavers" key="anf_levyspear" max="INFANTRY" />
+        <MenAtArm type="shorewardens" key="gon_archers" max="RANGED" />
     </Faction>
     <Faction name="Goblins">
         <General key="gob_goblin_king" />
         <Knights key="gob_chieftan_guard" />
-        <Levies porcentage="55" key="gob_goblin_warband" max="LEVY" />
-        <Levies porcentage="35" key="gob_goblin_light_inf" max="LEVY" />
-        <Levies porcentage="10" key="gob_mountain_pass_scout" max="LEVY" />
+        <Levies porcentage="17" key="gob_goblin_warband" max="LEVY" />
+        <Levies porcentage="63" key="gob_goblin_light_inf" max="LEVY" />
+        <Levies porcentage="20" key="gob_mountain_pass_scout" max="LEVY" />
         <MenAtArm type="light_footmen" key="gob_goblin_blade_warriors" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="gob_goblin_bodyguards" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="gob_goblin_spear_warriors" max="INFANTRY" />
@@ -5510,13 +5519,14 @@
         <MenAtArm type="waw_pirates" key="leb_heavysword" max="INFANTRY" />
         <MenAtArm type="zeba_outriders" key="leb_marinesword" max="CAVALRY" />
         <MenAtArm type="zebaback_slavers" key="anf_levyspear" max="INFANTRY" />
+        <MenAtArm type="shorewardens" key="gon_archers" max="RANGED" />
     </Faction>
     <Faction name="Easterlings">
         <General key="bal_bane_of_the_steppes" />
         <Knights key="har_harad_lancers" />
-        <Levies porcentage="55" key="bal_clan_spearmen" max="LEVY" />
-        <Levies porcentage="35" key="bal_clan_axemen" max="LEVY" />
-        <Levies porcentage="10" key="bal_clan_huntsmen" max="LEVY" />
+        <Levies porcentage="50" key="bal_clan_spearmen" max="LEVY" />
+        <Levies porcentage="33" key="bal_clan_axemen" max="LEVY" />
+        <Levies porcentage="17" key="bal_clan_huntsmen" max="LEVY" />
         <MenAtArm type="light_footmen" key="bal_khandish_sentries" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="iml_swordsmen" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="bal_clan_guards" max="INFANTRY" />
@@ -5900,13 +5910,14 @@
         <MenAtArm type="waw_pirates" key="leb_heavysword" max="INFANTRY" />
         <MenAtArm type="zeba_outriders" key="leb_marinesword" max="CAVALRY" />
         <MenAtArm type="zebaback_slavers" key="anf_levyspear" max="INFANTRY" />
+        <MenAtArm type="shorewardens" key="gon_archers" max="RANGED" />
     </Faction>
     <Faction name="Umbar">
         <General key="umb_bakulmagan" />
         <Knights key="umb_agannalo" />
-        <Levies porcentage="55" key="har_desert_spears" max="LEVY" />
-        <Levies porcentage="35" key="umb_corsair_blades" max="LEVY" />
-        <Levies porcentage="10" key="umb_balik_bowmen" max="LEVY" />
+        <Levies porcentage="40" key="har_desert_spears" max="LEVY" />
+        <Levies porcentage="34" key="umb_corsair_blades" max="LEVY" />
+        <Levies porcentage="26" key="umb_balik_bowmen" max="LEVY" />
         <MenAtArm type="light_footmen" key="umb_balik_axemen" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="umb_ar_pharazon_azgar" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="umb_black_haven_sentries" max="INFANTRY" />
@@ -6290,13 +6301,14 @@
         <MenAtArm type="waw_pirates" key="leb_heavysword" max="INFANTRY" />
         <MenAtArm type="zeba_outriders" key="leb_marinesword" max="CAVALRY" />
         <MenAtArm type="zebaback_slavers" key="anf_levyspear" max="INFANTRY" />
+        <MenAtArm type="shorewardens" key="gon_archers" max="RANGED" />
     </Faction>
     <Faction name="Khand">
         <General key="kha_bane_of_the_steppes" />
         <Knights key="kha_wainrider_nobles" />
-        <Levies porcentage="55" key="kha_akha_spearfishers" max="LEVY" />
-        <Levies porcentage="35" key="kha_akha_tribalists" max="LEVY" />
-        <Levies porcentage="10" key="kha_akha_hunters" max="LEVY" />
+        <Levies porcentage="39" key="kha_akha_spearfishers" max="LEVY" />
+        <Levies porcentage="23" key="kha_akha_tribalists" max="LEVY" />
+        <Levies porcentage="38" key="kha_akha_hunters" max="LEVY" />
         <MenAtArm type="light_footmen" key="kha_khandish_berserkers" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="kha_eastern_legion" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="kha_wainrider_spear_warriors" max="INFANTRY" />
@@ -6680,13 +6692,14 @@
         <MenAtArm type="waw_pirates" key="leb_heavysword" max="INFANTRY" />
         <MenAtArm type="zeba_outriders" key="leb_marinesword" max="CAVALRY" />
         <MenAtArm type="zebaback_slavers" key="anf_levyspear" max="INFANTRY" />
+        <MenAtArm type="shorewardens" key="gon_archers" max="RANGED" />
     </Faction>
     <Faction name="Dale">
         <General key="dale_rhovanion_regent" />
         <Knights key="dale_cavalry_regiment" />
-        <Levies porcentage="55" key="dale_shipmen" max="LEVY" />
+        <Levies porcentage="53" key="dale_shipmen" max="LEVY" />
         <Levies porcentage="35" key="dale_spear_militia" max="LEVY" />
-        <Levies porcentage="10" key="dale_yeomen" max="LEVY" />
+        <Levies porcentage="12" key="dale_yeomen" max="LEVY" />
         <MenAtArm type="light_footmen" key="dale_swordsmen" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="dale_vineland_guard_sword" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="dale_watchpost_sentries" max="INFANTRY" />
@@ -7070,13 +7083,21 @@
         <MenAtArm type="waw_pirates" key="leb_heavysword" max="INFANTRY" />
         <MenAtArm type="zeba_outriders" key="leb_marinesword" max="CAVALRY" />
         <MenAtArm type="zebaback_slavers" key="anf_levyspear" max="INFANTRY" />
+        <MenAtArm type="shorewardens" key="gon_archers" max="RANGED" />
     </Faction>
     <Faction name="Erebor">
         <General key="ere_sons_of_mountain_alt_officer" />
         <Knights key="ere_iron_guardians" />
-        <Levies porcentage="14" key="ere_spearguards" max="LEVY" />
-        <Levies porcentage="9" key="ere_dwarven_warriors" max="LEVY" />
-        <Levies porcentage="2" key="ere_axe_throwers" max="LEVY" />
+        <Levies porcentage="10" key="ere_spearguards" max="LEVY" />
+        <Levies porcentage="10" key="ere_dwarven_warriors" max="LEVY" />
+        <Levies porcentage="5" key="ere_axe_throwers" max="LEVY" />
+        <Levies porcentage="15" key="iro_carnen_spearguard" max="LEVY" />
+        <Levies porcentage="9" key="iro_mattock_warriors" max="LEVY" />
+        <Levies porcentage="15" key="iro_iron_crossbowmen" max="LEVY" />
+        <Levies porcentage="9" key="gun_goblin_mercenaries" max="LEVY" />
+        <Levies porcentage="15" key="lam_guardsword" max="LEVY" />
+        <Levies porcentage="6" key="gun_stalkers" max="LEVY" />
+        <Levies porcentage="6" key="los_swords" max="LEVY" />
         <MenAtArm type="light_footmen" key="ere_dwarven_warriors" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="ere_axe_guards" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="ere_spearguards" max="INFANTRY" />
@@ -7460,22 +7481,14 @@
         <MenAtArm type="waw_pirates" key="leb_heavysword" max="INFANTRY" />
         <MenAtArm type="zeba_outriders" key="leb_marinesword" max="CAVALRY" />
         <MenAtArm type="zebaback_slavers" key="anf_levyspear" max="INFANTRY" />
-        <Levies porcentage="14" key="iro_carnen_spearguard" max="LEVY" />
-        <Levies porcentage="9" key="iro_mattock_warriors" max="LEVY" />
-        <Levies porcentage="2" key="iro_iron_crossbowmen" max="LEVY" />
-        <Levies porcentage="14" key="gun_goblin_mercenaries" max="LEVY" />
-        <Levies porcentage="9" key="lam_guardsword" max="LEVY" />
-        <Levies porcentage="2" key="gun_stalkers" max="LEVY" />
-        <Levies porcentage="14" key="los_swords" max="LEVY" />
-        <Levies porcentage="9" key="iro_dwarven_spearguard" max="LEVY" />
-        <Levies porcentage="2" key="dor_vineland_men_at_arms" max="LEVY" />
+        <MenAtArm type="shorewardens" key="gon_archers" max="RANGED" />
     </Faction>
     <Faction name="Dorwinion">
         <General key="dor_riders_of_the_vinter_court" />
         <Knights key="dor_avari_warriors" />
-        <Levies porcentage="55" key="dor_vineland_spear_militia" max="LEVY" />
-        <Levies porcentage="35" key="dor_vineland_spear_militia" max="LEVY" />
-        <Levies porcentage="10" key="dor_vineland_seafarers" max="LEVY" />
+        <Levies porcentage="17" key="dor_vineland_spear_militia" max="LEVY" />
+        <Levies porcentage="40" key="dor_vineland_spear_militia" max="LEVY" />
+        <Levies porcentage="43" key="dor_vineland_seafarers" max="LEVY" />
         <MenAtArm type="light_footmen" key="dor_vineland_men_at_arms" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="dor_vineland_guard_sword" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="dor_warden" max="INFANTRY" />
@@ -7859,13 +7872,14 @@
         <MenAtArm type="waw_pirates" key="leb_heavysword" max="INFANTRY" />
         <MenAtArm type="zeba_outriders" key="leb_marinesword" max="CAVALRY" />
         <MenAtArm type="zebaback_slavers" key="anf_levyspear" max="INFANTRY" />
+        <MenAtArm type="shorewardens" key="gon_archers" max="RANGED" />
     </Faction>
     <Faction name="Woodland Realm">
         <General key="wr_thranduil" />
         <Knights key="wr_elvenking_riders" />
-        <Levies porcentage="55" key="wr_lasgalen_spears" max="LEVY" />
-        <Levies porcentage="35" key="wr_lasgalen_swords" max="LEVY" />
-        <Levies porcentage="10" key="wr_lasgalen_bows" max="LEVY" />
+        <Levies porcentage="14" key="wr_lasgalen_spears" max="LEVY" />
+        <Levies porcentage="43" key="wr_lasgalen_swords" max="LEVY" />
+        <Levies porcentage="43" key="wr_lasgalen_bows" max="LEVY" />
         <MenAtArm type="light_footmen" key="wr_lasgalen_swords" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="exe_wr_border_guards" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="wr_hall_guardians" max="INFANTRY" />
@@ -8249,13 +8263,14 @@
         <MenAtArm type="waw_pirates" key="leb_heavysword" max="INFANTRY" />
         <MenAtArm type="zeba_outriders" key="leb_marinesword" max="CAVALRY" />
         <MenAtArm type="zebaback_slavers" key="anf_levyspear" max="INFANTRY" />
+        <MenAtArm type="shorewardens" key="gon_archers" max="RANGED" />
     </Faction>
     <Faction name="Imladris">
         <General key="iml_guards" />
         <Knights key="iml_horse_rangers" />
-        <Levies porcentage="55" key="exe_iml_spearmen" max="LEVY" />
-        <Levies porcentage="35" key="iml_swordsmen" max="LEVY" />
-        <Levies porcentage="10" key="exe_iml_warriors" max="LEVY" />
+        <Levies porcentage="45" key="exe_iml_spearmen" max="LEVY" />
+        <Levies porcentage="24" key="iml_swordsmen" max="LEVY" />
+        <Levies porcentage="31" key="exe_iml_warriors" max="LEVY" />
         <MenAtArm type="light_footmen" key="iml_swordsmen" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="iml_guards" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="iml_pikemen" max="INFANTRY" />
@@ -8639,13 +8654,14 @@
         <MenAtArm type="waw_pirates" key="leb_heavysword" max="INFANTRY" />
         <MenAtArm type="zeba_outriders" key="leb_marinesword" max="CAVALRY" />
         <MenAtArm type="zebaback_slavers" key="anf_levyspear" max="INFANTRY" />
+        <MenAtArm type="shorewardens" key="gon_archers" max="RANGED" />
     </Faction>
     <Faction name="Lindon">
         <General key="lin_nobles" />
         <Knights key="lin_cavalry" />
-        <Levies porcentage="55" key="lin_spearmen" max="LEVY" />
-        <Levies porcentage="35" key="exe_lin_sword_infantry" max="LEVY" />
-        <Levies porcentage="10" key="lin_archers" max="LEVY" />
+        <Levies porcentage="17" key="lin_spearmen" max="LEVY" />
+        <Levies porcentage="49" key="exe_lin_sword_infantry" max="LEVY" />
+        <Levies porcentage="34" key="lin_archers" max="LEVY" />
         <MenAtArm type="light_footmen" key="lin_swordsmen" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="lin_nobles" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="lin_spearmen" max="INFANTRY" />
@@ -9029,13 +9045,14 @@
         <MenAtArm type="waw_pirates" key="leb_heavysword" max="INFANTRY" />
         <MenAtArm type="zeba_outriders" key="leb_marinesword" max="CAVALRY" />
         <MenAtArm type="zebaback_slavers" key="anf_levyspear" max="INFANTRY" />
+        <MenAtArm type="shorewardens" key="gon_archers" max="RANGED" />
     </Faction>
     <Faction name="Eregion">
         <General key="ler_ost-in-edhil_mounted_guard" />
         <Knights key="ler_hollin_cavalry" />
-        <Levies porcentage="55" key="ler_eregion_spear_infantry" max="LEVY" />
-        <Levies porcentage="35" key="ler_eregion_swordsmen" max="LEVY" />
-        <Levies porcentage="10" key="ler_eregion_archers" max="LEVY" />
+        <Levies porcentage="32" key="ler_eregion_spear_infantry" max="LEVY" />
+        <Levies porcentage="34" key="ler_eregion_swordsmen" max="LEVY" />
+        <Levies porcentage="34" key="ler_eregion_archers" max="LEVY" />
         <MenAtArm type="light_footmen" key="lin_swordsmen" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="lin_nobles" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="lin_spearmen" max="INFANTRY" />
@@ -9419,13 +9436,14 @@
         <MenAtArm type="waw_pirates" key="leb_heavysword" max="INFANTRY" />
         <MenAtArm type="zeba_outriders" key="leb_marinesword" max="CAVALRY" />
         <MenAtArm type="zebaback_slavers" key="anf_levyspear" max="INFANTRY" />
+        <MenAtArm type="shorewardens" key="gon_archers" max="RANGED" />
     </Faction>
     <Faction name="Rhudaur">
         <General key="rhu_trev_duvardain_reavers" />
         <Knights key="rhu_crrothean_hill_riders" />
-        <Levies porcentage="55" key="rhu_bondi_spears" max="LEVY" />
-        <Levies porcentage="35" key="rhu_bondi_axes" max="LEVY" />
-        <Levies porcentage="10" key="rhu_hillman_hunters" max="LEVY" />
+        <Levies porcentage="52" key="rhu_bondi_spears" max="LEVY" />
+        <Levies porcentage="32" key="rhu_bondi_axes" max="LEVY" />
+        <Levies porcentage="16" key="rhu_hillman_hunters" max="LEVY" />
         <MenAtArm type="light_footmen" key="rhu_corcurian_axe_hird" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="rhu_creothean_raiders" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="rhu_coldfell_spearband" max="INFANTRY" />
@@ -9809,13 +9827,14 @@
         <MenAtArm type="waw_pirates" key="leb_heavysword" max="INFANTRY" />
         <MenAtArm type="zeba_outriders" key="leb_marinesword" max="CAVALRY" />
         <MenAtArm type="zebaback_slavers" key="anf_levyspear" max="INFANTRY" />
+        <MenAtArm type="shorewardens" key="gon_archers" max="RANGED" />
     </Faction>
     <Faction name="Iron Hills">
         <General key="gon_silver_swan_knights" />
         <Knights key="gon_citadel_guard" />
-        <Levies porcentage="55" key="gon_spear_militia" max="LEVY" />
-        <Levies porcentage="35" key="gon_sword_militia" max="LEVY" />
-        <Levies porcentage="10" key="gon_bow_militia" max="LEVY" />
+        <Levies porcentage="26" key="gon_spear_militia" max="LEVY" />
+        <Levies porcentage="38" key="gon_sword_militia" max="LEVY" />
+        <Levies porcentage="36" key="gon_bow_militia" max="LEVY" />
         <MenAtArm type="light_footmen" key="gon_ringlo_vale_footmen" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="gon_sword_infantry" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="gon_spear_infantry" max="INFANTRY" />
@@ -10202,13 +10221,14 @@
         <MenAtArm type="waw_pirates" key="leb_heavysword" max="INFANTRY" />
         <MenAtArm type="zeba_outriders" key="leb_marinesword" max="CAVALRY" />
         <MenAtArm type="zebaback_slavers" key="anf_levyspear" max="INFANTRY" />
+        <MenAtArm type="shorewardens" key="gon_archers" max="RANGED" />
     </Faction>
     <Faction name="blackroot">
         <General key="gon_silver_swan_knights" />
         <Knights key="gon_citadel_guard" />
-        <Levies porcentage="55" key="gon_spear_militia" max="LEVY" />
+        <Levies porcentage="45" key="gon_spear_militia" max="LEVY" />
         <Levies porcentage="35" key="gon_sword_militia" max="LEVY" />
-        <Levies porcentage="10" key="gon_bow_militia" max="LEVY" />
+        <Levies porcentage="20" key="gon_bow_militia" max="LEVY" />
         <MenAtArm type="light_footmen" key="gon_ringlo_vale_footmen" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="gon_sword_infantry" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="gon_spear_infantry" max="INFANTRY" />
@@ -10595,5 +10615,6 @@
         <MenAtArm type="waw_pirates" key="leb_heavysword" max="INFANTRY" />
         <MenAtArm type="zeba_outriders" key="leb_marinesword" max="CAVALRY" />
         <MenAtArm type="zebaback_slavers" key="anf_levyspear" max="INFANTRY" />
+        <MenAtArm type="shorewardens" key="gon_archers" max="RANGED" />
     </Faction>
 </FactionsGroups>

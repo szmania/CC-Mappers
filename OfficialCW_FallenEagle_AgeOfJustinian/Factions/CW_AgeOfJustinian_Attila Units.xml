@@ -3,9 +3,9 @@
     <Faction name="Default">
         <General key="cha_fra_guardsmen" />
         <Knights key="att_ger_germanic_lancers_ERE" />
-        <Levies porcentage="30" key="att_nom_chosen_uar_warriors" max="LEVY" />
-        <Levies porcentage="29" key="parabol_ERE" max="LEVY" />
-        <Levies porcentage="41" key="BRIT_saethwyr" max="LEVY" />
+        <Levies porcentage="36" key="att_nom_chosen_uar_warriors" max="LEVY" />
+        <Levies porcentage="34" key="parabol_ERE" max="LEVY" />
+        <Levies porcentage="30" key="BRIT_saethwyr" max="LEVY" />
         <MenAtArm type="Guardians" key="GHAS_mubarizun" max="INFANTRY" />
         <MenAtArm type="Phalanxes" key="GHAS_limitanei" max="INFANTRY" />
         <MenAtArm type="Shieldwall Arbalests" key="BAL_shieldwall" max="RANGED" />
@@ -377,19 +377,44 @@
         <MenAtArm type="zagar_an_adunai" key="att_ger_bagaudae" max="INFANTRY" />
         <MenAtArm type="zeba_outriders" key="BAL_kursi_swords" max="CAVALRY" />
         <MenAtArm type="zebaback_slavers" key="att_cel_black_blades" max="INFANTRY" />
+        <MenAtArm type="african_cattle_riders" key="ARM_light_cavalry" max="CAVALRY" />
+        <MenAtArm type="african_pikemen" key="cha_spa_tribesmen" max="INFANTRY" />
+        <MenAtArm type="chakar" key="SAS_elite_heavy_dailamite_infantry" max="INFANTRY" />
+        <MenAtArm type="churls" key="cha_spa_tribesmen" max="INFANTRY" />
+        <MenAtArm type="comitatenses" key="SAS_elite_heavy_dailamite_infantry" max="INFANTRY" />
+        <MenAtArm type="cymbrogi" key="ARM_skirmishers" max="RANGED" />
+        <MenAtArm type="daylami" key="SAS_elite_heavy_dailamite_infantry" max="INFANTRY" />
+        <MenAtArm type="desert_hussar" key="ARM_light_cavalry" max="CAVALRY" />
+        <MenAtArm type="illyrian_pirates" key="ARM_skirmishers" max="RANGED" />
+        <MenAtArm type="kamandaran" key="BAL_archers" max="RANGED" />
+        <MenAtArm type="koursons" key="ARM_skirmishers" max="RANGED" />
+        <MenAtArm type="legion_cataphract" key="HEP_hindi_cavalry" max="CAVALRY" />
+        <MenAtArm type="legions" key="SAS_elite_heavy_dailamite_infantry" max="INFANTRY" />
+        <MenAtArm type="palatinae" key="SAS_elite_heavy_dailamite_infantry" max="INFANTRY" />
+        <MenAtArm type="prae_cataphract" key="HEP_hindi_cavalry" max="CAVALRY" />
+        <MenAtArm type="prae_legions" key="SAS_elite_heavy_dailamite_infantry" max="INFANTRY" />
+        <MenAtArm type="pushtigban" key="HEP_hindi_cavalry" max="CAVALRY" />
+        <MenAtArm type="reindeer_cavalry" key="ARM_light_cavalry" max="CAVALRY" />
+        <MenAtArm type="scorpio" key="att_des_desert_bowmen" max="RANGED" />
+        <MenAtArm type="servile_soldiers" key="ARM_skirmishers" max="RANGED" />
+        <MenAtArm type="siege_towers" key="att_des_desert_bowmen" max="RANGED" />
+        <MenAtArm type="tfe_maa_byz_archers" key="BAL_archers" max="RANGED" />
+        <MenAtArm type="tfe_maa_protostates" key="cha_spa_tribesmen" max="INFANTRY" />
+        <MenAtArm type="war_dogs" key="ARM_skirmishers" max="RANGED" />
+        <MenAtArm type="zupin_warrior" key="cha_spa_tribesmen" max="INFANTRY" />
     </Faction>
     <Faction name="Spahan">
         <General key="att_rom_comes" />
         <Knights key="att_ger_noble_germanic_horsemen" />
-        <Levies porcentage="3" key="ERE_limitanei_levy_spears" max="LEVY" />
-        <Levies porcentage="3" key="ERE_limitanei_levy_swords" max="LEVY" />
-        <Levies porcentage="4" key="att_rom_sagittarii" max="LEVY" />
-        <Levies porcentage="14" key="ERE_limitanei_levy_spears" max="LEVY" />
-        <Levies porcentage="13" key="ERE_limitanei_levy_swords" max="LEVY" />
+        <Levies porcentage="13" key="ERE_limitanei_levy_spears" max="LEVY" />
+        <Levies porcentage="9" key="ERE_limitanei_levy_swords" max="LEVY" />
         <Levies porcentage="15" key="att_rom_sagittarii" max="LEVY" />
-        <Levies porcentage="14" key="ERE_limitanei_levy_spears" max="LEVY" />
-        <Levies porcentage="12" key="ERE_limitanei_levy_swords" max="LEVY" />
-        <Levies porcentage="14" key="att_rom_sagittarii" max="LEVY" />
+        <Levies porcentage="12" key="ERE_limitanei_levy_spears" max="LEVY" />
+        <Levies porcentage="10" key="ERE_limitanei_levy_swords" max="LEVY" />
+        <Levies porcentage="4" key="att_rom_sagittarii" max="LEVY" />
+        <Levies porcentage="8" key="ERE_limitanei_levy_spears" max="LEVY" />
+        <Levies porcentage="5" key="ERE_limitanei_levy_swords" max="LEVY" />
+        <Levies porcentage="16" key="att_rom_sagittarii" max="LEVY" />
         <Levies porcentage="8" key="att_cel_celtic_levy" max="LEVY" />
         <MenAtArm type="light_footmen" key="att_rom_exploratores" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="ERE_legio" max="INFANTRY" />
@@ -817,13 +842,21 @@
         <MenAtArm type="zagar_an_adunai" key="att_ger_bagaudae" max="INFANTRY" />
         <MenAtArm type="zeba_outriders" key="BAL_kursi_swords" max="CAVALRY" />
         <MenAtArm type="zebaback_slavers" key="att_cel_black_blades" max="INFANTRY" />
+        <MenAtArm type="african_cattle_riders" key="ARM_light_cavalry" max="CAVALRY" />
+        <MenAtArm type="koursons" key="ARM_skirmishers" max="RANGED" />
+        <MenAtArm type="legions" key="SAS_elite_heavy_dailamite_infantry" max="INFANTRY" />
+        <MenAtArm type="prae_legions" key="SAS_elite_heavy_dailamite_infantry" max="INFANTRY" />
+        <MenAtArm type="pushtigban" key="HEP_hindi_cavalry" max="CAVALRY" />
+        <MenAtArm type="reindeer_cavalry" key="ARM_light_cavalry" max="CAVALRY" />
+        <MenAtArm type="scorpio" key="att_des_desert_bowmen" max="RANGED" />
+        <MenAtArm type="siege_towers" key="att_des_desert_bowmen" max="RANGED" />
     </Faction>
     <Faction name="Garamantes">
         <General key="att_rom_tagmata_cavalry" />
         <Knights key="MERC_bucellarii_german" />
-        <Levies porcentage="23" key="ERE_limitanei_levy_spears" max="LEVY" />
-        <Levies porcentage="15" key="ERE_limitanei_levy_swords" max="LEVY" />
-        <Levies porcentage="62" key="att_rom_sagittarii" max="LEVY" />
+        <Levies porcentage="55" key="ERE_limitanei_levy_spears" max="LEVY" />
+        <Levies porcentage="22" key="ERE_limitanei_levy_swords" max="LEVY" />
+        <Levies porcentage="23" key="att_rom_sagittarii" max="LEVY" />
         <MenAtArm type="light_footmen" key="att_rom_levis_armaturae" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="att_rom_cohors" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="att_rom_limitanei_borderguards" max="INFANTRY" />
@@ -831,11 +864,11 @@
         <MenAtArm type="crossbowmen" key="att_rom_ballistarii" max="RANGED" />
         <MenAtArm type="light_horsemen" key="ERE_limitanei_levy_lancers" max="CAVALRY" />
         <MenAtArm type="armored_horsemen" key="ERE_early_optimatoi" max="CAVALRY" />
-        <MenAtArm type="comitatenses" key="ERE_numerus_invictorum_spears" />
-        <MenAtArm type="palatinae" key="ERE_protectores_palatina" />
+        <MenAtArm type="comitatenses" key="ERE_numerus_invictorum_spears" max="INFANTRY" />
+        <MenAtArm type="palatinae" key="ERE_protectores_palatina" max="INFANTRY" />
         <MenAtArm type="legionaries" key="att_rom_numeroi" />
         <MenAtArm type="clibanarius" key="ERE_leones_clib" />
-        <MenAtArm type="war_dogs" key="att_cel_wolfhound_spearmen" />
+        <MenAtArm type="war_dogs" key="att_cel_wolfhound_spearmen" max="RANGED" />
         <MenAtArm type="house_guard" key="ERE_patrikos_obsequium" max="INFANTRY" />
         <MenAtArm type="cataphract" key="att_rom_catafractarii" />
         <MenAtArm type="accolade_maa_archers" key="att_rom_armoured_sagittarii" max="RANGED" />
@@ -1250,13 +1283,21 @@
         <MenAtArm type="zagar_an_adunai" key="att_ger_bagaudae" max="INFANTRY" />
         <MenAtArm type="zeba_outriders" key="BAL_kursi_swords" max="CAVALRY" />
         <MenAtArm type="zebaback_slavers" key="att_cel_black_blades" max="INFANTRY" />
+        <MenAtArm type="african_cattle_riders" key="ARM_light_cavalry" max="CAVALRY" />
+        <MenAtArm type="koursons" key="ARM_skirmishers" max="RANGED" />
+        <MenAtArm type="legions" key="SAS_elite_heavy_dailamite_infantry" max="INFANTRY" />
+        <MenAtArm type="prae_legions" key="SAS_elite_heavy_dailamite_infantry" max="INFANTRY" />
+        <MenAtArm type="pushtigban" key="HEP_hindi_cavalry" max="CAVALRY" />
+        <MenAtArm type="reindeer_cavalry" key="ARM_light_cavalry" max="CAVALRY" />
+        <MenAtArm type="scorpio" key="att_des_desert_bowmen" max="RANGED" />
+        <MenAtArm type="siege_towers" key="att_des_desert_bowmen" max="RANGED" />
     </Faction>
     <Faction name="Italia">
         <General key="att_rom_comes" />
         <Knights key="MERC_bucellarii_german" />
-        <Levies porcentage="27" key="ERE_limitanei_levy_spears" max="LEVY" />
-        <Levies porcentage="50" key="ERE_limitanei_levy_swords" max="LEVY" />
-        <Levies porcentage="23" key="att_rom_sagittarii" max="LEVY" />
+        <Levies porcentage="43" key="ERE_limitanei_levy_spears" max="LEVY" />
+        <Levies porcentage="21" key="ERE_limitanei_levy_swords" max="LEVY" />
+        <Levies porcentage="36" key="att_rom_sagittarii" max="LEVY" />
         <MenAtArm type="light_footmen" key="VISI_iuvenes_javelinmen" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="att_rom_cohors" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="ERE_ravennates_swords" max="INFANTRY" />
@@ -1264,11 +1305,11 @@
         <MenAtArm type="crossbowmen" key="att_rom_ballistarii" max="RANGED" />
         <MenAtArm type="light_horsemen" key="ERE_limitanei_levy_lancers" max="CAVALRY" />
         <MenAtArm type="armored_horsemen" key="ERE_early_optimatoi" max="CAVALRY" />
-        <MenAtArm type="comitatenses" key="ERE_numerus_invictorum_spears" />
-        <MenAtArm type="palatinae" key="ERE_protectores_palatina" />
+        <MenAtArm type="comitatenses" key="ERE_numerus_invictorum_spears" max="INFANTRY" />
+        <MenAtArm type="palatinae" key="ERE_protectores_palatina" max="INFANTRY" />
         <MenAtArm type="legionaries" key="att_rom_numeroi" />
         <MenAtArm type="clibanarius" key="ERE_leones_clib" />
-        <MenAtArm type="war_dogs" key="att_cel_wolfhound_spearmen" />
+        <MenAtArm type="war_dogs" key="att_cel_wolfhound_spearmen" max="RANGED" />
         <MenAtArm type="house_guard" key="ERE_bucellarii_pedites" max="INFANTRY" />
         <MenAtArm type="cataphract" key="att_ger_germanic_lancers" />
         <MenAtArm type="accolade_maa_archers" key="att_rom_armoured_sagittarii" max="RANGED" />
@@ -1683,13 +1724,21 @@
         <MenAtArm type="zagar_an_adunai" key="att_ger_bagaudae" max="INFANTRY" />
         <MenAtArm type="zeba_outriders" key="BAL_kursi_swords" max="CAVALRY" />
         <MenAtArm type="zebaback_slavers" key="att_cel_black_blades" max="INFANTRY" />
+        <MenAtArm type="african_cattle_riders" key="ARM_light_cavalry" max="CAVALRY" />
+        <MenAtArm type="koursons" key="ARM_skirmishers" max="RANGED" />
+        <MenAtArm type="legions" key="SAS_elite_heavy_dailamite_infantry" max="INFANTRY" />
+        <MenAtArm type="prae_legions" key="SAS_elite_heavy_dailamite_infantry" max="INFANTRY" />
+        <MenAtArm type="pushtigban" key="HEP_hindi_cavalry" max="CAVALRY" />
+        <MenAtArm type="reindeer_cavalry" key="ARM_light_cavalry" max="CAVALRY" />
+        <MenAtArm type="scorpio" key="att_des_desert_bowmen" max="RANGED" />
+        <MenAtArm type="siege_towers" key="att_des_desert_bowmen" max="RANGED" />
     </Faction>
     <Faction name="Arran">
         <General key="att_rom_comes" />
         <Knights key="MERC_bucellarii_persian" />
-        <Levies porcentage="26" key="ERE_limitanei_levy_spears" max="LEVY" />
-        <Levies porcentage="43" key="ERE_limitanei_levy_swords" max="LEVY" />
-        <Levies porcentage="31" key="att_rom_sagittarii" max="LEVY" />
+        <Levies porcentage="39" key="ERE_limitanei_levy_spears" max="LEVY" />
+        <Levies porcentage="46" key="ERE_limitanei_levy_swords" max="LEVY" />
+        <Levies porcentage="15" key="att_rom_sagittarii" max="LEVY" />
         <MenAtArm type="light_footmen" key="att_rom_levis_armaturae" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="att_rom_cohors" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="ERE_ravennates_swords" max="INFANTRY" />
@@ -1697,11 +1746,11 @@
         <MenAtArm type="crossbowmen" key="att_rom_ballistarii" max="RANGED" />
         <MenAtArm type="light_horsemen" key="ERE_limitanei_levy_lancers" max="CAVALRY" />
         <MenAtArm type="armored_horsemen" key="ERE_early_optimatoi" max="CAVALRY" />
-        <MenAtArm type="comitatenses" key="ERE_quinta_macedonica" />
-        <MenAtArm type="palatinae" key="ERE_protectores_palatina" />
+        <MenAtArm type="comitatenses" key="ERE_quinta_macedonica" max="INFANTRY" />
+        <MenAtArm type="palatinae" key="ERE_protectores_palatina" max="INFANTRY" />
         <MenAtArm type="legionaries" key="att_rom_numeroi" />
         <MenAtArm type="clibanarius" key="ERE_leones_clib" />
-        <MenAtArm type="war_dogs" key="att_cel_wolfhound_spearmen" />
+        <MenAtArm type="war_dogs" key="att_cel_wolfhound_spearmen" max="RANGED" />
         <MenAtArm type="house_guard" key="ERE_bucellarii_pedites" max="INFANTRY" />
         <MenAtArm type="cataphract" key="att_rom_catafractarii" />
         <MenAtArm type="accolade_maa_archers" key="att_rom_armoured_sagittarii" max="RANGED" />
@@ -2116,13 +2165,21 @@
         <MenAtArm type="zagar_an_adunai" key="att_ger_bagaudae" max="INFANTRY" />
         <MenAtArm type="zeba_outriders" key="BAL_kursi_swords" max="CAVALRY" />
         <MenAtArm type="zebaback_slavers" key="att_cel_black_blades" max="INFANTRY" />
+        <MenAtArm type="african_cattle_riders" key="ARM_light_cavalry" max="CAVALRY" />
+        <MenAtArm type="koursons" key="ARM_skirmishers" max="RANGED" />
+        <MenAtArm type="legions" key="SAS_elite_heavy_dailamite_infantry" max="INFANTRY" />
+        <MenAtArm type="prae_legions" key="SAS_elite_heavy_dailamite_infantry" max="INFANTRY" />
+        <MenAtArm type="pushtigban" key="HEP_hindi_cavalry" max="CAVALRY" />
+        <MenAtArm type="reindeer_cavalry" key="ARM_light_cavalry" max="CAVALRY" />
+        <MenAtArm type="scorpio" key="att_des_desert_bowmen" max="RANGED" />
+        <MenAtArm type="siege_towers" key="att_des_desert_bowmen" max="RANGED" />
     </Faction>
     <Faction name="Britanni">
         <General key="att_rom_comes" />
         <Knights key="MERC_bucellarii_german" />
-        <Levies porcentage="41" key="ERE_limitanei_levy_spears" max="LEVY" />
-        <Levies porcentage="45" key="ERE_limitanei_levy_swords" max="LEVY" />
-        <Levies porcentage="14" key="att_rom_sagittarii" max="LEVY" />
+        <Levies porcentage="33" key="ERE_limitanei_levy_spears" max="LEVY" />
+        <Levies porcentage="27" key="ERE_limitanei_levy_swords" max="LEVY" />
+        <Levies porcentage="40" key="att_rom_sagittarii" max="LEVY" />
         <MenAtArm type="light_footmen" key="att_rom_praeventores" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="att_rom_cohors" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="ERE_ravennates_swords" max="INFANTRY" />
@@ -2130,11 +2187,11 @@
         <MenAtArm type="crossbowmen" key="att_rom_ballistarii" max="RANGED" />
         <MenAtArm type="light_horsemen" key="att_ger_gothic_lancers" max="CAVALRY" />
         <MenAtArm type="armored_horsemen" key="ERE_early_optimatoi" max="CAVALRY" />
-        <MenAtArm type="comitatenses" key="ERE_numerus_invictorum_spears" />
-        <MenAtArm type="palatinae" key="ERE_protectores_palatina" />
+        <MenAtArm type="comitatenses" key="ERE_numerus_invictorum_spears" max="INFANTRY" />
+        <MenAtArm type="palatinae" key="ERE_protectores_palatina" max="INFANTRY" />
         <MenAtArm type="legionaries" key="att_rom_numeroi" />
         <MenAtArm type="clibanarius" key="ERE_leones_clib" />
-        <MenAtArm type="war_dogs" key="att_cel_wolfhound_spearmen" />
+        <MenAtArm type="war_dogs" key="att_cel_wolfhound_spearmen" max="RANGED" />
         <MenAtArm type="house_guard" key="att_ger_suebi_warriors" max="INFANTRY" />
         <MenAtArm type="cataphract" key="att_rom_catafractarii" />
         <MenAtArm type="accolade_maa_archers" key="att_rom_armoured_sagittarii" max="RANGED" />
@@ -2549,13 +2606,21 @@
         <MenAtArm type="zagar_an_adunai" key="att_ger_bagaudae" max="INFANTRY" />
         <MenAtArm type="zeba_outriders" key="BAL_kursi_swords" max="CAVALRY" />
         <MenAtArm type="zebaback_slavers" key="att_cel_black_blades" max="INFANTRY" />
+        <MenAtArm type="african_cattle_riders" key="ARM_light_cavalry" max="CAVALRY" />
+        <MenAtArm type="koursons" key="ARM_skirmishers" max="RANGED" />
+        <MenAtArm type="legions" key="SAS_elite_heavy_dailamite_infantry" max="INFANTRY" />
+        <MenAtArm type="prae_legions" key="SAS_elite_heavy_dailamite_infantry" max="INFANTRY" />
+        <MenAtArm type="pushtigban" key="HEP_hindi_cavalry" max="CAVALRY" />
+        <MenAtArm type="reindeer_cavalry" key="ARM_light_cavalry" max="CAVALRY" />
+        <MenAtArm type="scorpio" key="att_des_desert_bowmen" max="RANGED" />
+        <MenAtArm type="siege_towers" key="att_des_desert_bowmen" max="RANGED" />
     </Faction>
     <Faction name="Tyrannos Rhomaios">
         <General key="att_rom_comes" />
         <Knights key="MERC_bucellarii_german" />
-        <Levies porcentage="23" key="fra_milites_romani" max="LEVY" />
-        <Levies porcentage="42" key="ERE_limitanei_levy_swords" max="LEVY" />
-        <Levies porcentage="35" key="FRA_arcuarii" max="LEVY" />
+        <Levies porcentage="40" key="fra_milites_romani" max="LEVY" />
+        <Levies porcentage="39" key="ERE_limitanei_levy_swords" max="LEVY" />
+        <Levies porcentage="21" key="FRA_arcuarii" max="LEVY" />
         <MenAtArm type="light_footmen" key="att_ger_barbed_skirmishers" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="att_rom_cohors" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="ERE_ravennates_swords" max="INFANTRY" />
@@ -2563,11 +2628,11 @@
         <MenAtArm type="crossbowmen" key="att_rom_ballistarii" max="RANGED" />
         <MenAtArm type="light_horsemen" key="att_ger_salian_frankish_lancers" max="CAVALRY" />
         <MenAtArm type="armored_horsemen" key="ERE_early_optimatoi" max="CAVALRY" />
-        <MenAtArm type="comitatenses" key="ERE_numerus_invictorum_spears" />
-        <MenAtArm type="palatinae" key="ERE_protectores_palatina" />
+        <MenAtArm type="comitatenses" key="ERE_numerus_invictorum_spears" max="INFANTRY" />
+        <MenAtArm type="palatinae" key="ERE_protectores_palatina" max="INFANTRY" />
         <MenAtArm type="legionaries" key="att_rom_numeroi" />
         <MenAtArm type="clibanarius" key="ERE_leones_clib" />
-        <MenAtArm type="war_dogs" key="att_cel_wolfhound_spearmen" />
+        <MenAtArm type="war_dogs" key="att_cel_wolfhound_spearmen" max="RANGED" />
         <MenAtArm type="house_guard" key="ERE_patrikos_obsequium" max="INFANTRY" />
         <MenAtArm type="cataphract" key="att_ger_taifali_cavalry" />
         <MenAtArm type="accolade_maa_archers" key="att_rom_armoured_sagittarii" max="RANGED" />
@@ -2982,19 +3047,27 @@
         <MenAtArm type="zagar_an_adunai" key="att_ger_bagaudae" max="INFANTRY" />
         <MenAtArm type="zeba_outriders" key="BAL_kursi_swords" max="CAVALRY" />
         <MenAtArm type="zebaback_slavers" key="att_cel_black_blades" max="INFANTRY" />
+        <MenAtArm type="african_cattle_riders" key="ARM_light_cavalry" max="CAVALRY" />
+        <MenAtArm type="koursons" key="ARM_skirmishers" max="RANGED" />
+        <MenAtArm type="legions" key="SAS_elite_heavy_dailamite_infantry" max="INFANTRY" />
+        <MenAtArm type="prae_legions" key="SAS_elite_heavy_dailamite_infantry" max="INFANTRY" />
+        <MenAtArm type="pushtigban" key="HEP_hindi_cavalry" max="CAVALRY" />
+        <MenAtArm type="reindeer_cavalry" key="ARM_light_cavalry" max="CAVALRY" />
+        <MenAtArm type="scorpio" key="att_des_desert_bowmen" max="RANGED" />
+        <MenAtArm type="siege_towers" key="att_des_desert_bowmen" max="RANGED" />
     </Faction>
     <Faction name="Sardinians">
         <General key="att_rom_comes" />
         <Knights key="MERC_bucellarii_persian" />
-        <Levies porcentage="6" key="ERE_limitanei_levy_spears" max="LEVY" />
-        <Levies porcentage="8" key="ERE_limitanei_levy_swords" max="LEVY" />
-        <Levies porcentage="9" key="att_rom_sagittarii" max="LEVY" />
-        <Levies porcentage="9" key="ARM_spear_levy" max="LEVY" />
-        <Levies porcentage="19" key="ERE_numerus_isaurorum" max="LEVY" />
-        <Levies porcentage="11" key="ARM_mountain_archers" max="LEVY" />
-        <Levies porcentage="10" key="att_ger_germanic_levy" max="LEVY" />
-        <Levies porcentage="16" key="att_ger_germanic_warband" max="LEVY" />
-        <Levies porcentage="12" key="att_ger_germanic_bows" max="LEVY" />
+        <Levies porcentage="10" key="ERE_limitanei_levy_spears" max="LEVY" />
+        <Levies porcentage="6" key="ERE_limitanei_levy_swords" max="LEVY" />
+        <Levies porcentage="14" key="att_rom_sagittarii" max="LEVY" />
+        <Levies porcentage="7" key="ARM_spear_levy" max="LEVY" />
+        <Levies porcentage="14" key="ERE_numerus_isaurorum" max="LEVY" />
+        <Levies porcentage="9" key="ARM_mountain_archers" max="LEVY" />
+        <Levies porcentage="6" key="att_ger_germanic_levy" max="LEVY" />
+        <Levies porcentage="19" key="att_ger_germanic_warband" max="LEVY" />
+        <Levies porcentage="15" key="att_ger_germanic_bows" max="LEVY" />
         <MenAtArm type="light_footmen" key="att_rom_levis_armaturae" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="att_rom_cohors" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="ERE_quartoparthoi_swords" max="INFANTRY" />
@@ -3002,11 +3075,11 @@
         <MenAtArm type="crossbowmen" key="att_rom_ballistarii" max="RANGED" />
         <MenAtArm type="light_horsemen" key="GHAS_equites_promoti" max="CAVALRY" />
         <MenAtArm type="armored_horsemen" key="ERE_early_optimatoi" max="CAVALRY" />
-        <MenAtArm type="comitatenses" key="bel_rom_skutatoi_spears_1" />
-        <MenAtArm type="palatinae" key="ERE_lanciarii_praesentales" />
+        <MenAtArm type="comitatenses" key="bel_rom_skutatoi_spears_1" max="INFANTRY" />
+        <MenAtArm type="palatinae" key="ERE_lanciarii_praesentales" max="INFANTRY" />
         <MenAtArm type="legionaries" key="att_rom_numeroi" />
         <MenAtArm type="clibanarius" key="ERE_leones_clib" />
-        <MenAtArm type="war_dogs" key="att_cel_wolfhound_spearmen" />
+        <MenAtArm type="war_dogs" key="att_cel_wolfhound_spearmen" max="RANGED" />
         <MenAtArm type="house_guard" key="ERE_patrikos_obsequium" max="INFANTRY" />
         <MenAtArm type="cataphract" key="att_rom_clibanarii" />
         <MenAtArm type="accolade_maa_archers" key="att_rom_armoured_sagittarii" max="RANGED" />
@@ -3421,16 +3494,24 @@
         <MenAtArm type="zagar_an_adunai" key="att_ger_bagaudae" max="INFANTRY" />
         <MenAtArm type="zeba_outriders" key="BAL_kursi_swords" max="CAVALRY" />
         <MenAtArm type="zebaback_slavers" key="att_cel_black_blades" max="INFANTRY" />
+        <MenAtArm type="african_cattle_riders" key="ARM_light_cavalry" max="CAVALRY" />
+        <MenAtArm type="koursons" key="ARM_skirmishers" max="RANGED" />
+        <MenAtArm type="legions" key="SAS_elite_heavy_dailamite_infantry" max="INFANTRY" />
+        <MenAtArm type="prae_legions" key="SAS_elite_heavy_dailamite_infantry" max="INFANTRY" />
+        <MenAtArm type="pushtigban" key="HEP_hindi_cavalry" max="CAVALRY" />
+        <MenAtArm type="reindeer_cavalry" key="ARM_light_cavalry" max="CAVALRY" />
+        <MenAtArm type="scorpio" key="att_des_desert_bowmen" max="RANGED" />
+        <MenAtArm type="siege_towers" key="att_des_desert_bowmen" max="RANGED" />
     </Faction>
     <Faction name="Antai">
         <General key="att_rom_comes" />
         <Knights key="MERC_bucellarii_german" />
-        <Levies porcentage="21" key="ERE_limitanei_levy_spears" max="LEVY" />
-        <Levies porcentage="13" key="ERE_limitanei_levy_swords" max="LEVY" />
-        <Levies porcentage="9" key="att_rom_sagittarii" max="LEVY" />
-        <Levies porcentage="26" key="ERE_limitanei_levy_spears" max="LEVY" />
-        <Levies porcentage="19" key="ERE_limitanei_levy_swords" max="LEVY" />
-        <Levies porcentage="12" key="att_rom_sagittarii" max="LEVY" />
+        <Levies porcentage="24" key="ERE_limitanei_levy_spears" max="LEVY" />
+        <Levies porcentage="12" key="ERE_limitanei_levy_swords" max="LEVY" />
+        <Levies porcentage="15" key="att_rom_sagittarii" max="LEVY" />
+        <Levies porcentage="19" key="ERE_limitanei_levy_spears" max="LEVY" />
+        <Levies porcentage="23" key="ERE_limitanei_levy_swords" max="LEVY" />
+        <Levies porcentage="7" key="att_rom_sagittarii" max="LEVY" />
         <MenAtArm type="light_footmen" key="att_rom_levis_armaturae" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="att_rom_cohors" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="ERE_quarta_scythica_swords" max="INFANTRY" />
@@ -3438,11 +3519,11 @@
         <MenAtArm type="crossbowmen" key="att_rom_ballistarii" max="RANGED" />
         <MenAtArm type="light_horsemen" key="ERE_avar_horse_archers" max="CAVALRY" />
         <MenAtArm type="armored_horsemen" key="ERE_early_optimatoi" max="CAVALRY" />
-        <MenAtArm type="comitatenses" key="ERE_numerus_daci" />
-        <MenAtArm type="palatinae" key="ERE_lanciarii_praesentales" />
+        <MenAtArm type="comitatenses" key="ERE_numerus_daci" max="INFANTRY" />
+        <MenAtArm type="palatinae" key="ERE_lanciarii_praesentales" max="INFANTRY" />
         <MenAtArm type="legionaries" key="att_rom_numeroi" />
         <MenAtArm type="clibanarius" key="ERE_leones_clib" />
-        <MenAtArm type="war_dogs" key="att_cel_wolfhound_spearmen" />
+        <MenAtArm type="war_dogs" key="att_cel_wolfhound_spearmen" max="RANGED" />
         <MenAtArm type="house_guard" key="ERE_bucellarii_pedites" max="INFANTRY" />
         <MenAtArm type="cataphract" key="att_rom_catafractarii" />
         <MenAtArm type="accolade_maa_archers" key="att_rom_armoured_sagittarii" max="RANGED" />
@@ -3857,16 +3938,24 @@
         <MenAtArm type="zagar_an_adunai" key="att_ger_bagaudae" max="INFANTRY" />
         <MenAtArm type="zeba_outriders" key="BAL_kursi_swords" max="CAVALRY" />
         <MenAtArm type="zebaback_slavers" key="att_cel_black_blades" max="INFANTRY" />
+        <MenAtArm type="african_cattle_riders" key="ARM_light_cavalry" max="CAVALRY" />
+        <MenAtArm type="koursons" key="ARM_skirmishers" max="RANGED" />
+        <MenAtArm type="legions" key="SAS_elite_heavy_dailamite_infantry" max="INFANTRY" />
+        <MenAtArm type="prae_legions" key="SAS_elite_heavy_dailamite_infantry" max="INFANTRY" />
+        <MenAtArm type="pushtigban" key="HEP_hindi_cavalry" max="CAVALRY" />
+        <MenAtArm type="reindeer_cavalry" key="ARM_light_cavalry" max="CAVALRY" />
+        <MenAtArm type="scorpio" key="att_des_desert_bowmen" max="RANGED" />
+        <MenAtArm type="siege_towers" key="att_des_desert_bowmen" max="RANGED" />
     </Faction>
     <Faction name="Romania">
         <General key="att_rom_comes" />
         <Knights key="MERC_bucellarii_persian" />
         <Levies porcentage="12" key="ARM_spear_levy" max="LEVY" />
-        <Levies porcentage="12" key="ERE_numerus_isaurorum" max="LEVY" />
-        <Levies porcentage="11" key="ARM_mountain_archers" max="LEVY" />
-        <Levies porcentage="23" key="ERE_limitanei_levy_spears" max="LEVY" />
-        <Levies porcentage="23" key="ERE_limitanei_levy_swords" max="LEVY" />
-        <Levies porcentage="19" key="att_rom_sagittarii" max="LEVY" />
+        <Levies porcentage="20" key="ERE_numerus_isaurorum" max="LEVY" />
+        <Levies porcentage="6" key="ARM_mountain_archers" max="LEVY" />
+        <Levies porcentage="22" key="ERE_limitanei_levy_spears" max="LEVY" />
+        <Levies porcentage="20" key="ERE_limitanei_levy_swords" max="LEVY" />
+        <Levies porcentage="20" key="att_rom_sagittarii" max="LEVY" />
         <MenAtArm type="light_footmen" key="ARM_skirmishers" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="att_rom_cohors" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="ERE_lykokranitai_spears" max="INFANTRY" />
@@ -3874,11 +3963,11 @@
         <MenAtArm type="crossbowmen" key="att_rom_ballistarii" max="RANGED" />
         <MenAtArm type="light_horsemen" key="ARM_mountain_horsemen" max="CAVALRY" />
         <MenAtArm type="armored_horsemen" key="ERE_early_optimatoi" max="CAVALRY" />
-        <MenAtArm type="comitatenses" key="ERE_regii_swords" />
-        <MenAtArm type="palatinae" key="ERE_lanciarii_praesentales" />
+        <MenAtArm type="comitatenses" key="ERE_regii_swords" max="INFANTRY" />
+        <MenAtArm type="palatinae" key="ERE_lanciarii_praesentales" max="INFANTRY" />
         <MenAtArm type="legionaries" key="att_rom_numeroi" />
         <MenAtArm type="clibanarius" key="ERE_leones_clib" />
-        <MenAtArm type="war_dogs" key="att_cel_wolfhound_spearmen" />
+        <MenAtArm type="war_dogs" key="att_cel_wolfhound_spearmen" max="RANGED" />
         <MenAtArm type="house_guard" key="ERE_patrikos_obsequium" max="INFANTRY" />
         <MenAtArm type="cataphract" key="bel_rom_clibanarii_1" />
         <MenAtArm type="accolade_maa_archers" key="att_rom_armoured_sagittarii" max="RANGED" />
@@ -4293,16 +4382,24 @@
         <MenAtArm type="zagar_an_adunai" key="att_ger_bagaudae" max="INFANTRY" />
         <MenAtArm type="zeba_outriders" key="BAL_kursi_swords" max="CAVALRY" />
         <MenAtArm type="zebaback_slavers" key="att_cel_black_blades" max="INFANTRY" />
+        <MenAtArm type="african_cattle_riders" key="ARM_light_cavalry" max="CAVALRY" />
+        <MenAtArm type="koursons" key="ARM_skirmishers" max="RANGED" />
+        <MenAtArm type="legions" key="SAS_elite_heavy_dailamite_infantry" max="INFANTRY" />
+        <MenAtArm type="prae_legions" key="SAS_elite_heavy_dailamite_infantry" max="INFANTRY" />
+        <MenAtArm type="pushtigban" key="HEP_hindi_cavalry" max="CAVALRY" />
+        <MenAtArm type="reindeer_cavalry" key="ARM_light_cavalry" max="CAVALRY" />
+        <MenAtArm type="scorpio" key="att_des_desert_bowmen" max="RANGED" />
+        <MenAtArm type="siege_towers" key="att_des_desert_bowmen" max="RANGED" />
     </Faction>
     <Faction name="Kingdom of Carloman">
         <General key="att_rom_comes" />
         <Knights key="att_est_zhayedan_immortal_cavalry" />
-        <Levies porcentage="25" key="ARM_spear_levy" max="LEVY" />
-        <Levies porcentage="22" key="ERE_numerus_isaurorum" max="LEVY" />
-        <Levies porcentage="16" key="ARM_mountain_archers" max="LEVY" />
-        <Levies porcentage="22" key="BRIT_aulue" max="LEVY" />
-        <Levies porcentage="7" key="att_rom_herculiani_seniores" max="LEVY" />
-        <Levies porcentage="8" key="BRIT_saethwyr" max="LEVY" />
+        <Levies porcentage="8" key="ARM_spear_levy" max="LEVY" />
+        <Levies porcentage="28" key="ERE_numerus_isaurorum" max="LEVY" />
+        <Levies porcentage="6" key="ARM_mountain_archers" max="LEVY" />
+        <Levies porcentage="13" key="BRIT_aulue" max="LEVY" />
+        <Levies porcentage="24" key="att_rom_herculiani_seniores" max="LEVY" />
+        <Levies porcentage="21" key="BRIT_saethwyr" max="LEVY" />
         <MenAtArm type="light_footmen" key="ARM_skirmishers" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="att_rom_cohors" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="ERE_quartoparthoi_swords" max="INFANTRY" />
@@ -4310,11 +4407,11 @@
         <MenAtArm type="crossbowmen" key="att_rom_ballistarii" max="RANGED" />
         <MenAtArm type="light_horsemen" key="ARM_mountain_horsemen" max="CAVALRY" />
         <MenAtArm type="armored_horsemen" key="ERE_early_optimatoi" max="CAVALRY" />
-        <MenAtArm type="comitatenses" key="ERE_regii_swords" />
-        <MenAtArm type="palatinae" key="ERE_lanciarii_praesentales" />
+        <MenAtArm type="comitatenses" key="ERE_regii_swords" max="INFANTRY" />
+        <MenAtArm type="palatinae" key="ERE_lanciarii_praesentales" max="INFANTRY" />
         <MenAtArm type="legionaries" key="att_rom_numeroi" />
         <MenAtArm type="clibanarius" key="ERE_leones_clib" />
-        <MenAtArm type="war_dogs" key="att_cel_wolfhound_spearmen" />
+        <MenAtArm type="war_dogs" key="att_cel_wolfhound_spearmen" max="RANGED" />
         <MenAtArm type="house_guard" key="ERE_patrikos_obsequium" max="INFANTRY" />
         <MenAtArm type="cataphract" key="bel_rom_clibanarii_1" />
         <MenAtArm type="accolade_maa_archers" key="SAS_syrian_archers" max="RANGED" />
@@ -4729,20 +4826,28 @@
         <MenAtArm type="zagar_an_adunai" key="att_ger_bagaudae" max="INFANTRY" />
         <MenAtArm type="zeba_outriders" key="BAL_kursi_swords" max="CAVALRY" />
         <MenAtArm type="zebaback_slavers" key="att_cel_black_blades" max="INFANTRY" />
+        <MenAtArm type="african_cattle_riders" key="ARM_light_cavalry" max="CAVALRY" />
+        <MenAtArm type="koursons" key="ARM_skirmishers" max="RANGED" />
+        <MenAtArm type="legions" key="SAS_elite_heavy_dailamite_infantry" max="INFANTRY" />
+        <MenAtArm type="prae_legions" key="SAS_elite_heavy_dailamite_infantry" max="INFANTRY" />
+        <MenAtArm type="pushtigban" key="HEP_hindi_cavalry" max="CAVALRY" />
+        <MenAtArm type="reindeer_cavalry" key="ARM_light_cavalry" max="CAVALRY" />
+        <MenAtArm type="scorpio" key="att_des_desert_bowmen" max="RANGED" />
+        <MenAtArm type="siege_towers" key="att_des_desert_bowmen" max="RANGED" />
     </Faction>
     <Faction name="Domain of Soissons">
         <General key="att_ger_frankish_general" />
         <Knights key="att_ger_germanic_nobles" />
-        <Levies porcentage="21" key="FRA_angon_spearmen" max="LEVY" />
-        <Levies porcentage="38" key="FRA_francisca_heriban" max="LEVY" />
-        <Levies porcentage="41" key="FRA_arcuarii" max="LEVY" />
+        <Levies porcentage="47" key="FRA_angon_spearmen" max="LEVY" />
+        <Levies porcentage="20" key="FRA_francisca_heriban" max="LEVY" />
+        <Levies porcentage="33" key="FRA_arcuarii" max="LEVY" />
         <MenAtArm type="light_footmen" key="FRA_pueri_javelins" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="att_ger_sword_heerbann" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="MERC_saxon_spears" max="INFANTRY" />
         <MenAtArm type="bowmen" key="MERC_massed_archers_germanic" max="RANGED" />
         <MenAtArm type="light_horsemen" key="FRA_centana" max="CAVALRY" />
         <MenAtArm type="armored_horsemen" key="att_ger_antrustriones_cavalry_guard" max="CAVALRY" />
-        <MenAtArm type="war_dogs" key="att_cel_wolfhound_spearmen" />
+        <MenAtArm type="war_dogs" key="att_cel_wolfhound_spearmen" max="RANGED" />
         <MenAtArm type="house_guard" key="att_ger_francisca_heerbann" max="INFANTRY" />
         <MenAtArm type="accolade_maa_archers" key="MERC_massed_archers_germanic" max="RANGED" />
         <MenAtArm type="accolade_maa_crossbowmen" key="att_rom_ballistarii" max="RANGED" />
@@ -5162,15 +5267,23 @@
         <MenAtArm type="zagar_an_adunai" key="att_ger_bagaudae" max="INFANTRY" />
         <MenAtArm type="zeba_outriders" key="BAL_kursi_swords" max="CAVALRY" />
         <MenAtArm type="zebaback_slavers" key="att_cel_black_blades" max="INFANTRY" />
+        <MenAtArm type="african_cattle_riders" key="ARM_light_cavalry" max="CAVALRY" />
+        <MenAtArm type="koursons" key="ARM_skirmishers" max="RANGED" />
+        <MenAtArm type="legions" key="SAS_elite_heavy_dailamite_infantry" max="INFANTRY" />
+        <MenAtArm type="prae_legions" key="SAS_elite_heavy_dailamite_infantry" max="INFANTRY" />
+        <MenAtArm type="pushtigban" key="HEP_hindi_cavalry" max="CAVALRY" />
+        <MenAtArm type="reindeer_cavalry" key="ARM_light_cavalry" max="CAVALRY" />
+        <MenAtArm type="scorpio" key="att_des_desert_bowmen" max="RANGED" />
+        <MenAtArm type="siege_towers" key="att_des_desert_bowmen" max="RANGED" />
     </Faction>
     <Faction name="Alania">
         <General key="att_nor_chieftain_with_gedriht" />
         <Knights key="att_nor_nordic_warlord" />
-        <Levies porcentage="9" key="att_nor_saxon_spears" max="LEVY" />
-        <Levies porcentage="8" key="att_nor_nordic_band" max="LEVY" />
-        <Levies porcentage="25" key="att_nor_nordic_bows" max="LEVY" />
-        <Levies porcentage="20" key="att_ger_germanic_levy" max="LEVY" />
-        <Levies porcentage="10" key="att_ger_burgundian_warhounds" max="LEVY" />
+        <Levies porcentage="13" key="att_nor_saxon_spears" max="LEVY" />
+        <Levies porcentage="16" key="att_nor_nordic_band" max="LEVY" />
+        <Levies porcentage="7" key="att_nor_nordic_bows" max="LEVY" />
+        <Levies porcentage="9" key="att_ger_germanic_levy" max="LEVY" />
+        <Levies porcentage="27" key="att_ger_burgundian_warhounds" max="LEVY" />
         <Levies porcentage="28" key="att_ger_germanic_bows" max="LEVY" />
         <MenAtArm type="light_footmen" key="att_nor_nordic_brigands" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="SAX_gesith_swordsmen" max="INFANTRY" />
@@ -5178,9 +5291,9 @@
         <MenAtArm type="bowmen" key="SAX_juguth_bows" max="RANGED" />
         <MenAtArm type="light_horsemen" key="att_nor_heroic_cavalry" max="CAVALRY" />
         <MenAtArm type="armored_horsemen" key="att_nor_saxon_mounted_warband" max="CAVALRY" />
-        <MenAtArm type="war_dogs" key="att_cel_wolfhound_spearmen" />
+        <MenAtArm type="war_dogs" key="att_cel_wolfhound_spearmen" max="RANGED" />
         <MenAtArm type="house_guard" key="att_nor_nordic_axe_warband" max="INFANTRY" />
-        <MenAtArm type="churls" key="att_nor_elite_saxon_javelinmen" />
+        <MenAtArm type="churls" key="att_nor_elite_saxon_javelinmen" max="INFANTRY" />
         <MenAtArm type="accolade_maa_archers" key="att_est_sogdian_warriors" max="RANGED" />
         <MenAtArm type="accolade_maa_crossbowmen" key="att_rom_ballistarii" max="RANGED" />
         <MenAtArm type="accolade_maa_lancers" key="att_nor_saxon_lancers" max="CAVALRY" />
@@ -5598,20 +5711,28 @@
         <MenAtArm type="zagar_an_adunai" key="att_ger_bagaudae" max="INFANTRY" />
         <MenAtArm type="zeba_outriders" key="BAL_kursi_swords" max="CAVALRY" />
         <MenAtArm type="zebaback_slavers" key="att_cel_black_blades" max="INFANTRY" />
+        <MenAtArm type="african_cattle_riders" key="ARM_light_cavalry" max="CAVALRY" />
+        <MenAtArm type="koursons" key="ARM_skirmishers" max="RANGED" />
+        <MenAtArm type="legions" key="SAS_elite_heavy_dailamite_infantry" max="INFANTRY" />
+        <MenAtArm type="prae_legions" key="SAS_elite_heavy_dailamite_infantry" max="INFANTRY" />
+        <MenAtArm type="pushtigban" key="HEP_hindi_cavalry" max="CAVALRY" />
+        <MenAtArm type="reindeer_cavalry" key="ARM_light_cavalry" max="CAVALRY" />
+        <MenAtArm type="scorpio" key="att_des_desert_bowmen" max="RANGED" />
+        <MenAtArm type="siege_towers" key="att_des_desert_bowmen" max="RANGED" />
     </Faction>
     <Faction name="Langobards">
         <General key="att_ger_germanic_nobles" />
         <Knights key="att_ger_noble_germanic_horsemen" />
-        <Levies porcentage="36" key="LOM_fara_spears" max="LEVY" />
-        <Levies porcentage="39" key="att_ger_young_wolves" max="LEVY" />
-        <Levies porcentage="25" key="att_ger_germanic_bows" max="LEVY" />
+        <Levies porcentage="42" key="LOM_fara_spears" max="LEVY" />
+        <Levies porcentage="14" key="att_ger_young_wolves" max="LEVY" />
+        <Levies porcentage="44" key="att_ger_germanic_bows" max="LEVY" />
         <MenAtArm type="light_footmen" key="LOM_fara_skirm" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="att_ger_langobard_clubmen" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="LOM_gasindii_spearmen" max="INFANTRY" />
         <MenAtArm type="bowmen" key="att_ger_germanic_hunters" max="RANGED" />
         <MenAtArm type="light_horsemen" key="LOM_viri_devoti" max="CAVALRY" />
         <MenAtArm type="armored_horsemen" key="LOM_lancers" max="CAVALRY" />
-        <MenAtArm type="war_dogs" key="att_cel_wolfhound_spearmen" />
+        <MenAtArm type="war_dogs" key="att_cel_wolfhound_spearmen" max="RANGED" />
         <MenAtArm type="house_guard" key="ERE_langobard_lancers" max="INFANTRY" />
         <MenAtArm type="accolade_maa_archers" key="att_ger_germanic_archers" max="RANGED" />
         <MenAtArm type="accolade_maa_crossbowmen" key="att_rom_ballistarii" max="RANGED" />
@@ -6031,20 +6152,28 @@
         <MenAtArm type="zagar_an_adunai" key="att_ger_bagaudae" max="INFANTRY" />
         <MenAtArm type="zeba_outriders" key="BAL_kursi_swords" max="CAVALRY" />
         <MenAtArm type="zebaback_slavers" key="att_cel_black_blades" max="INFANTRY" />
+        <MenAtArm type="african_cattle_riders" key="ARM_light_cavalry" max="CAVALRY" />
+        <MenAtArm type="koursons" key="ARM_skirmishers" max="RANGED" />
+        <MenAtArm type="legions" key="SAS_elite_heavy_dailamite_infantry" max="INFANTRY" />
+        <MenAtArm type="prae_legions" key="SAS_elite_heavy_dailamite_infantry" max="INFANTRY" />
+        <MenAtArm type="pushtigban" key="HEP_hindi_cavalry" max="CAVALRY" />
+        <MenAtArm type="reindeer_cavalry" key="ARM_light_cavalry" max="CAVALRY" />
+        <MenAtArm type="scorpio" key="att_des_desert_bowmen" max="RANGED" />
+        <MenAtArm type="siege_towers" key="att_des_desert_bowmen" max="RANGED" />
     </Faction>
     <Faction name="Suebians">
         <General key="att_ger_germanic_nobles" />
         <Knights key="att_ger_suebi_nobles" />
-        <Levies porcentage="51" key="SUEB_levy_spears" max="LEVY" />
-        <Levies porcentage="23" key="SUEB_sword_levy" max="LEVY" />
-        <Levies porcentage="26" key="att_ger_germanic_bows" max="LEVY" />
+        <Levies porcentage="14" key="SUEB_levy_spears" max="LEVY" />
+        <Levies porcentage="35" key="SUEB_sword_levy" max="LEVY" />
+        <Levies porcentage="51" key="att_ger_germanic_bows" max="LEVY" />
         <MenAtArm type="light_footmen" key="att_ger_germanic_brigands" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="SUEB_skiltfolk_sword" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="att_ger_germanic_spearmen" max="INFANTRY" />
         <MenAtArm type="bowmen" key="att_ger_germanic_archers" max="RANGED" />
         <MenAtArm type="light_horsemen" key="att_ger_germanic_night_raiders" max="CAVALRY" />
         <MenAtArm type="armored_horsemen" key="att_ger_germanic_lancers" max="CAVALRY" />
-        <MenAtArm type="war_dogs" key="att_cel_wolfhound_spearmen" />
+        <MenAtArm type="war_dogs" key="att_cel_wolfhound_spearmen" max="RANGED" />
         <MenAtArm type="house_guard" key="att_ger_suebi_champions" max="INFANTRY" />
         <MenAtArm type="accolade_maa_archers" key="att_ger_elite_germanic_archers" max="RANGED" />
         <MenAtArm type="accolade_maa_crossbowmen" key="att_rom_ballistarii" max="RANGED" />
@@ -6464,23 +6593,31 @@
         <MenAtArm type="zagar_an_adunai" key="att_ger_bagaudae" max="INFANTRY" />
         <MenAtArm type="zeba_outriders" key="BAL_kursi_swords" max="CAVALRY" />
         <MenAtArm type="zebaback_slavers" key="att_cel_black_blades" max="INFANTRY" />
+        <MenAtArm type="african_cattle_riders" key="ARM_light_cavalry" max="CAVALRY" />
+        <MenAtArm type="koursons" key="ARM_skirmishers" max="RANGED" />
+        <MenAtArm type="legions" key="SAS_elite_heavy_dailamite_infantry" max="INFANTRY" />
+        <MenAtArm type="prae_legions" key="SAS_elite_heavy_dailamite_infantry" max="INFANTRY" />
+        <MenAtArm type="pushtigban" key="HEP_hindi_cavalry" max="CAVALRY" />
+        <MenAtArm type="reindeer_cavalry" key="ARM_light_cavalry" max="CAVALRY" />
+        <MenAtArm type="scorpio" key="att_des_desert_bowmen" max="RANGED" />
+        <MenAtArm type="siege_towers" key="att_des_desert_bowmen" max="RANGED" />
     </Faction>
     <Faction name="Eastern Germanic Rebels">
         <General key="att_ger_frankish_general" />
         <Knights key="att_ger_germanic_nobles" />
-        <Levies porcentage="13" key="FRA_angon_spearmen" max="LEVY" />
-        <Levies porcentage="19" key="FRA_francisca_heriban" max="LEVY" />
-        <Levies porcentage="19" key="FRA_arcuarii" max="LEVY" />
-        <Levies porcentage="18" key="att_ger_germanic_levy" max="LEVY" />
-        <Levies porcentage="23" key="att_ger_germanic_warband" max="LEVY" />
-        <Levies porcentage="8" key="att_ger_germanic_bows" max="LEVY" />
+        <Levies porcentage="18" key="FRA_angon_spearmen" max="LEVY" />
+        <Levies porcentage="21" key="FRA_francisca_heriban" max="LEVY" />
+        <Levies porcentage="15" key="FRA_arcuarii" max="LEVY" />
+        <Levies porcentage="22" key="att_ger_germanic_levy" max="LEVY" />
+        <Levies porcentage="17" key="att_ger_germanic_warband" max="LEVY" />
+        <Levies porcentage="7" key="att_ger_germanic_bows" max="LEVY" />
         <MenAtArm type="light_footmen" key="FRA_pueri_javelins" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="att_ger_sword_heerbann" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="MERC_saxon_spears" max="INFANTRY" />
         <MenAtArm type="bowmen" key="MERC_massed_archers_germanic" max="RANGED" />
         <MenAtArm type="light_horsemen" key="FRA_centana" max="CAVALRY" />
         <MenAtArm type="armored_horsemen" key="att_ger_noble_germanic_horsemen_fra" max="CAVALRY" />
-        <MenAtArm type="war_dogs" key="att_cel_wolfhound_spearmen" />
+        <MenAtArm type="war_dogs" key="att_cel_wolfhound_spearmen" max="RANGED" />
         <MenAtArm type="house_guard" key="att_ger_francisca_heerbann" max="INFANTRY" />
         <MenAtArm type="accolade_maa_archers" key="MERC_massed_archers_germanic" max="RANGED" />
         <MenAtArm type="accolade_maa_crossbowmen" key="att_rom_ballistarii" max="RANGED" />
@@ -6900,20 +7037,28 @@
         <MenAtArm type="zagar_an_adunai" key="att_ger_bagaudae" max="INFANTRY" />
         <MenAtArm type="zeba_outriders" key="BAL_kursi_swords" max="CAVALRY" />
         <MenAtArm type="zebaback_slavers" key="att_cel_black_blades" max="INFANTRY" />
+        <MenAtArm type="african_cattle_riders" key="ARM_light_cavalry" max="CAVALRY" />
+        <MenAtArm type="koursons" key="ARM_skirmishers" max="RANGED" />
+        <MenAtArm type="legions" key="SAS_elite_heavy_dailamite_infantry" max="INFANTRY" />
+        <MenAtArm type="prae_legions" key="SAS_elite_heavy_dailamite_infantry" max="INFANTRY" />
+        <MenAtArm type="pushtigban" key="HEP_hindi_cavalry" max="CAVALRY" />
+        <MenAtArm type="reindeer_cavalry" key="ARM_light_cavalry" max="CAVALRY" />
+        <MenAtArm type="scorpio" key="att_des_desert_bowmen" max="RANGED" />
+        <MenAtArm type="siege_towers" key="att_des_desert_bowmen" max="RANGED" />
     </Faction>
     <Faction name="Caucasian Rebels">
         <General key="att_alan_alani_nobles_general" />
         <Knights key="att_ger_noble_alani_cavalry" />
-        <Levies porcentage="36" key="att_ger_sarmatian_spears" max="LEVY" />
-        <Levies porcentage="39" key="att_alan_alani_swordsmen" max="LEVY" />
-        <Levies porcentage="25" key="ALAN_alanoi_archers" max="LEVY" />
+        <Levies porcentage="41" key="att_ger_sarmatian_spears" max="LEVY" />
+        <Levies porcentage="14" key="att_alan_alani_swordsmen" max="LEVY" />
+        <Levies porcentage="45" key="ALAN_alanoi_archers" max="LEVY" />
         <MenAtArm type="light_footmen" key="att_alan_sarmatian_band" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="att_ger_agathyrsi_warriors" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="att_ger_alani_spearmen" max="INFANTRY" />
         <MenAtArm type="bowmen" key="ALAN_alanoi_archers" max="RANGED" />
         <MenAtArm type="light_horsemen" key="att_ger_alani_horsemen" max="CAVALRY" />
         <MenAtArm type="armored_horsemen" key="att_des_es_wadai" max="CAVALRY" />
-        <MenAtArm type="war_dogs" key="att_cel_wolfhound_spearmen" />
+        <MenAtArm type="war_dogs" key="att_cel_wolfhound_spearmen" max="RANGED" />
         <MenAtArm type="house_guard" key="att_alan_tank" max="INFANTRY" />
         <MenAtArm type="horse_archers" key="att_alan_alani_horse_archers" max="CAVALRY" />
         <MenAtArm type="accolade_maa_archers" key="ALAN_alanoi_archers" max="RANGED" />
@@ -7333,20 +7478,28 @@
         <MenAtArm type="zagar_an_adunai" key="att_ger_bagaudae" max="INFANTRY" />
         <MenAtArm type="zeba_outriders" key="BAL_kursi_swords" max="CAVALRY" />
         <MenAtArm type="zebaback_slavers" key="att_cel_black_blades" max="INFANTRY" />
+        <MenAtArm type="african_cattle_riders" key="ARM_light_cavalry" max="CAVALRY" />
+        <MenAtArm type="koursons" key="ARM_skirmishers" max="RANGED" />
+        <MenAtArm type="legions" key="SAS_elite_heavy_dailamite_infantry" max="INFANTRY" />
+        <MenAtArm type="prae_legions" key="SAS_elite_heavy_dailamite_infantry" max="INFANTRY" />
+        <MenAtArm type="pushtigban" key="HEP_hindi_cavalry" max="CAVALRY" />
+        <MenAtArm type="reindeer_cavalry" key="ARM_light_cavalry" max="CAVALRY" />
+        <MenAtArm type="scorpio" key="att_des_desert_bowmen" max="RANGED" />
+        <MenAtArm type="siege_towers" key="att_des_desert_bowmen" max="RANGED" />
     </Faction>
     <Faction name="Visigothic Kingdom">
         <General key="att_rom_comes" />
         <Knights key="att_ger_noble_germanic_horsemen" />
-        <Levies porcentage="49" key="att_ger_gothic_levy" max="LEVY" />
-        <Levies porcentage="27" key="att_ger_gothic_falxmen" max="LEVY" />
-        <Levies porcentage="24" key="att_ger_germanic_bows" max="LEVY" />
+        <Levies porcentage="34" key="att_ger_gothic_levy" max="LEVY" />
+        <Levies porcentage="38" key="att_ger_gothic_falxmen" max="LEVY" />
+        <Levies porcentage="28" key="att_ger_germanic_bows" max="LEVY" />
         <MenAtArm type="light_footmen" key="VISI_iuvenes_javelinmen" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="att_ger_thracian_oathsworns" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="VISI_gardingi_spears" max="INFANTRY" />
         <MenAtArm type="bowmen" key="att_ger_germanic_archers" max="RANGED" />
         <MenAtArm type="light_horsemen" key="VISI_cab_iuvenes" max="CAVALRY" />
         <MenAtArm type="armored_horsemen" key="att_ger_noble_gothic_lancers" max="CAVALRY" />
-        <MenAtArm type="war_dogs" key="att_cel_wolfhound_spearmen" />
+        <MenAtArm type="war_dogs" key="att_cel_wolfhound_spearmen" max="RANGED" />
         <MenAtArm type="house_guard" key="MERC_hirelings" max="INFANTRY" />
         <MenAtArm type="accolade_maa_archers" key="att_ger_germanic_archers" max="RANGED" />
         <MenAtArm type="accolade_maa_crossbowmen" key="att_rom_ballistarii" max="RANGED" />
@@ -7766,20 +7919,28 @@
         <MenAtArm type="zagar_an_adunai" key="att_ger_bagaudae" max="INFANTRY" />
         <MenAtArm type="zeba_outriders" key="BAL_kursi_swords" max="CAVALRY" />
         <MenAtArm type="zebaback_slavers" key="att_cel_black_blades" max="INFANTRY" />
+        <MenAtArm type="african_cattle_riders" key="ARM_light_cavalry" max="CAVALRY" />
+        <MenAtArm type="koursons" key="ARM_skirmishers" max="RANGED" />
+        <MenAtArm type="legions" key="SAS_elite_heavy_dailamite_infantry" max="INFANTRY" />
+        <MenAtArm type="prae_legions" key="SAS_elite_heavy_dailamite_infantry" max="INFANTRY" />
+        <MenAtArm type="pushtigban" key="HEP_hindi_cavalry" max="CAVALRY" />
+        <MenAtArm type="reindeer_cavalry" key="ARM_light_cavalry" max="CAVALRY" />
+        <MenAtArm type="scorpio" key="att_des_desert_bowmen" max="RANGED" />
+        <MenAtArm type="siege_towers" key="att_des_desert_bowmen" max="RANGED" />
     </Faction>
     <Faction name="Aria">
         <General key="att_est_spahbed" />
         <Knights key="att_est_persian_nobles" />
-        <Levies porcentage="17" key="att_est_persian_levy" max="LEVY" />
-        <Levies porcentage="42" key="att_est_persian_brigade" max="LEVY" />
-        <Levies porcentage="41" key="att_est_persian_bows" max="LEVY" />
+        <Levies porcentage="38" key="att_est_persian_levy" max="LEVY" />
+        <Levies porcentage="38" key="att_est_persian_brigade" max="LEVY" />
+        <Levies porcentage="24" key="att_est_persian_bows" max="LEVY" />
         <MenAtArm type="light_footmen" key="att_est_kurdish_javelinmen" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="att_est_elite_dailamite_infantry" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="att_est_armenian_spears" max="INFANTRY" />
         <MenAtArm type="bowmen" key="att_est_persian_bowmen" max="RANGED" />
         <MenAtArm type="light_horsemen" key="SAS_frasdaran" max="CAVALRY" />
         <MenAtArm type="armored_horsemen" key="att_est_grivpanvar_cataphracts" max="CAVALRY" />
-        <MenAtArm type="war_dogs" key="att_cel_wolfhound_spearmen" />
+        <MenAtArm type="war_dogs" key="att_cel_wolfhound_spearmen" max="RANGED" />
         <MenAtArm type="Kamandaran" key="att_est_kurdish_archers" />
         <MenAtArm type="Savran" key="att_est_savaran_cataphracts" />
         <MenAtArm type="cataphract" key="att_est_pushtighban_cataphracts" />
@@ -8201,23 +8362,31 @@
         <MenAtArm type="zagar_an_adunai" key="att_ger_bagaudae" max="INFANTRY" />
         <MenAtArm type="zeba_outriders" key="BAL_kursi_swords" max="CAVALRY" />
         <MenAtArm type="zebaback_slavers" key="att_cel_black_blades" max="INFANTRY" />
+        <MenAtArm type="african_cattle_riders" key="ARM_light_cavalry" max="CAVALRY" />
+        <MenAtArm type="koursons" key="ARM_skirmishers" max="RANGED" />
+        <MenAtArm type="legions" key="SAS_elite_heavy_dailamite_infantry" max="INFANTRY" />
+        <MenAtArm type="prae_legions" key="SAS_elite_heavy_dailamite_infantry" max="INFANTRY" />
+        <MenAtArm type="pushtigban" key="HEP_hindi_cavalry" max="CAVALRY" />
+        <MenAtArm type="reindeer_cavalry" key="ARM_light_cavalry" max="CAVALRY" />
+        <MenAtArm type="scorpio" key="att_des_desert_bowmen" max="RANGED" />
+        <MenAtArm type="siege_towers" key="att_des_desert_bowmen" max="RANGED" />
     </Faction>
     <Faction name="Armenia">
         <General key="ARM_nakhara" />
         <Knights key="ARM_azats" />
-        <Levies porcentage="28" key="ARM_spear_levy" max="LEVY" />
-        <Levies porcentage="15" key="ARM_town_levy" max="LEVY" />
-        <Levies porcentage="19" key="ARM_mountain_archers" max="LEVY" />
-        <Levies porcentage="12" key="att_des_desert_levy" max="LEVY" />
-        <Levies porcentage="10" key="att_des_desert_tribesmen" max="LEVY" />
-        <Levies porcentage="16" key="att_des_desert_bowmen" max="LEVY" />
+        <Levies porcentage="18" key="ARM_spear_levy" max="LEVY" />
+        <Levies porcentage="21" key="ARM_town_levy" max="LEVY" />
+        <Levies porcentage="20" key="ARM_mountain_archers" max="LEVY" />
+        <Levies porcentage="17" key="att_des_desert_levy" max="LEVY" />
+        <Levies porcentage="14" key="att_des_desert_tribesmen" max="LEVY" />
+        <Levies porcentage="10" key="att_des_desert_bowmen" max="LEVY" />
         <MenAtArm type="light_footmen" key="ARM_skirmishers" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="ARM_heavy_axemen" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="ARM_spear_heavy" max="INFANTRY" />
         <MenAtArm type="bowmen" key="SAS_syrian_archers" max="RANGED" />
         <MenAtArm type="light_horsemen" key="ARM_light_cavalry" max="CAVALRY" />
         <MenAtArm type="armored_horsemen" key="ARM_ayriudzi" max="CAVALRY" />
-        <MenAtArm type="war_dogs" key="att_cel_wolfhound_spearmen" />
+        <MenAtArm type="war_dogs" key="att_cel_wolfhound_spearmen" max="RANGED" />
         <MenAtArm type="house_guard" key="ARM_foot_guards" max="INFANTRY" />
         <MenAtArm type="accolade_maa_archers" key="ARM_heavy_archers" max="RANGED" />
         <MenAtArm type="accolade_maa_crossbowmen" key="att_rom_ballistarii" max="RANGED" />
@@ -8637,23 +8806,31 @@
         <MenAtArm type="zagar_an_adunai" key="att_ger_bagaudae" max="INFANTRY" />
         <MenAtArm type="zeba_outriders" key="BAL_kursi_swords" max="CAVALRY" />
         <MenAtArm type="zebaback_slavers" key="att_cel_black_blades" max="INFANTRY" />
+        <MenAtArm type="african_cattle_riders" key="ARM_light_cavalry" max="CAVALRY" />
+        <MenAtArm type="koursons" key="ARM_skirmishers" max="RANGED" />
+        <MenAtArm type="legions" key="SAS_elite_heavy_dailamite_infantry" max="INFANTRY" />
+        <MenAtArm type="prae_legions" key="SAS_elite_heavy_dailamite_infantry" max="INFANTRY" />
+        <MenAtArm type="pushtigban" key="HEP_hindi_cavalry" max="CAVALRY" />
+        <MenAtArm type="reindeer_cavalry" key="ARM_light_cavalry" max="CAVALRY" />
+        <MenAtArm type="scorpio" key="att_des_desert_bowmen" max="RANGED" />
+        <MenAtArm type="siege_towers" key="att_des_desert_bowmen" max="RANGED" />
     </Faction>
     <Faction name="Picti">
         <General key="att_cel_followers_of_morrigan" />
         <Knights key="att_cel_black_blades" />
-        <Levies porcentage="9" key="att_ger_gothic_levy_pict" max="LEVY" />
-        <Levies porcentage="29" key="att_cel_celtic_berserkers" max="LEVY" />
-        <Levies porcentage="6" key="att_cel_celtic_bows" max="LEVY" />
-        <Levies porcentage="8" key="GARAM_tribal_spears" max="LEVY" />
-        <Levies porcentage="22" key="MERC_MAURI_tribal_warriors" max="LEVY" />
-        <Levies porcentage="26" key="MAUR_slingers" max="LEVY" />
+        <Levies porcentage="15" key="att_ger_gothic_levy_pict" max="LEVY" />
+        <Levies porcentage="9" key="att_cel_celtic_berserkers" max="LEVY" />
+        <Levies porcentage="13" key="att_cel_celtic_bows" max="LEVY" />
+        <Levies porcentage="18" key="GARAM_tribal_spears" max="LEVY" />
+        <Levies porcentage="16" key="MERC_MAURI_tribal_warriors" max="LEVY" />
+        <Levies porcentage="29" key="MAUR_slingers" max="LEVY" />
         <MenAtArm type="light_footmen" key="FRA_francisca_pueri" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="att_cel_pictish_swordsmen" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="pict_gairmorlom" max="INFANTRY" />
         <MenAtArm type="bowmen" key="att_cel_highland_archers" max="RANGED" />
         <MenAtArm type="light_horsemen" key="att_cel_celtic_cavalry_raiders" max="CAVALRY" />
         <MenAtArm type="armored_horsemen" key="att_cel_mounted_spear_raiders" max="CAVALRY" />
-        <MenAtArm type="war_dogs" key="att_cel_sighthound_spears" />
+        <MenAtArm type="war_dogs" key="att_cel_sighthound_spears" max="RANGED" />
         <MenAtArm type="house_guard" key="att_cel_pictish_berserkers" max="INFANTRY" />
         <MenAtArm type="accolade_maa_archers" key="att_cel_highland_archers" max="RANGED" />
         <MenAtArm type="accolade_maa_crossbowmen" key="att_rom_ballistarii" max="RANGED" />
@@ -9073,20 +9250,28 @@
         <MenAtArm type="zagar_an_adunai" key="att_ger_bagaudae" max="INFANTRY" />
         <MenAtArm type="zeba_outriders" key="BAL_kursi_swords" max="CAVALRY" />
         <MenAtArm type="zebaback_slavers" key="att_cel_black_blades" max="INFANTRY" />
+        <MenAtArm type="african_cattle_riders" key="ARM_light_cavalry" max="CAVALRY" />
+        <MenAtArm type="koursons" key="ARM_skirmishers" max="RANGED" />
+        <MenAtArm type="legions" key="SAS_elite_heavy_dailamite_infantry" max="INFANTRY" />
+        <MenAtArm type="prae_legions" key="SAS_elite_heavy_dailamite_infantry" max="INFANTRY" />
+        <MenAtArm type="pushtigban" key="HEP_hindi_cavalry" max="CAVALRY" />
+        <MenAtArm type="reindeer_cavalry" key="ARM_light_cavalry" max="CAVALRY" />
+        <MenAtArm type="scorpio" key="att_des_desert_bowmen" max="RANGED" />
+        <MenAtArm type="siege_towers" key="att_des_desert_bowmen" max="RANGED" />
     </Faction>
     <Faction name="Persia">
         <General key="att_slav_warlords_guard" />
         <Knights key="att_slav_chosen_shields" />
-        <Levies porcentage="41" key="att_slav_levy_spearmen" max="LEVY" />
-        <Levies porcentage="45" key="att_slav_axe_levy" max="LEVY" />
-        <Levies porcentage="14" key="att_slav_levy_skirmishers" max="LEVY" />
+        <Levies porcentage="63" key="att_slav_levy_spearmen" max="LEVY" />
+        <Levies porcentage="19" key="att_slav_axe_levy" max="LEVY" />
+        <Levies porcentage="18" key="att_slav_levy_skirmishers" max="LEVY" />
         <MenAtArm type="light_footmen" key="att_slav_skirmishers" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="att_slav_axemen" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="att_slav_spearmen" max="INFANTRY" />
         <MenAtArm type="bowmen" key="att_slav_levy_archers" max="RANGED" />
         <MenAtArm type="light_horsemen" key="att_nom_steppe_horse_archers" max="CAVALRY" />
         <MenAtArm type="armored_horsemen" key="LOM_att_nom_hunnic_lancers" max="CAVALRY" />
-        <MenAtArm type="war_dogs" key="att_cel_wolfhound_spearmen" />
+        <MenAtArm type="war_dogs" key="att_cel_wolfhound_spearmen" max="RANGED" />
         <MenAtArm type="house_guard" key="att_slav_peruns_champions" max="INFANTRY" />
         <MenAtArm type="accolade_maa_archers" key="att_slav_archers" max="RANGED" />
         <MenAtArm type="accolade_maa_crossbowmen" key="att_rom_ballistarii" max="RANGED" />
@@ -9506,20 +9691,28 @@
         <MenAtArm type="zagar_an_adunai" key="att_ger_bagaudae" max="INFANTRY" />
         <MenAtArm type="zeba_outriders" key="BAL_kursi_swords" max="CAVALRY" />
         <MenAtArm type="zebaback_slavers" key="att_cel_black_blades" max="INFANTRY" />
+        <MenAtArm type="african_cattle_riders" key="ARM_light_cavalry" max="CAVALRY" />
+        <MenAtArm type="koursons" key="ARM_skirmishers" max="RANGED" />
+        <MenAtArm type="legions" key="SAS_elite_heavy_dailamite_infantry" max="INFANTRY" />
+        <MenAtArm type="prae_legions" key="SAS_elite_heavy_dailamite_infantry" max="INFANTRY" />
+        <MenAtArm type="pushtigban" key="HEP_hindi_cavalry" max="CAVALRY" />
+        <MenAtArm type="reindeer_cavalry" key="ARM_light_cavalry" max="CAVALRY" />
+        <MenAtArm type="scorpio" key="att_des_desert_bowmen" max="RANGED" />
+        <MenAtArm type="siege_towers" key="att_des_desert_bowmen" max="RANGED" />
     </Faction>
     <Faction name="Lazica">
         <General key="att_slav_warlords_guard" />
         <Knights key="att_slav_chosen_shields" />
-        <Levies porcentage="28" key="att_slav_levy_spearmen" max="LEVY" />
-        <Levies porcentage="31" key="att_slav_axe_levy" max="LEVY" />
-        <Levies porcentage="41" key="att_slav_levy_skirmishers" max="LEVY" />
+        <Levies porcentage="31" key="att_slav_levy_spearmen" max="LEVY" />
+        <Levies porcentage="20" key="att_slav_axe_levy" max="LEVY" />
+        <Levies porcentage="49" key="att_slav_levy_skirmishers" max="LEVY" />
         <MenAtArm type="light_footmen" key="att_slav_skirmishers" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="att_slav_axemen" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="att_slav_spearmen" max="INFANTRY" />
         <MenAtArm type="bowmen" key="att_slav_levy_archers" max="RANGED" />
         <MenAtArm type="light_horsemen" key="att_nom_steppe_horse_archers" max="CAVALRY" />
         <MenAtArm type="armored_horsemen" key="MERC_sarmatae" max="CAVALRY" />
-        <MenAtArm type="war_dogs" key="att_cel_wolfhound_spearmen" />
+        <MenAtArm type="war_dogs" key="att_cel_wolfhound_spearmen" max="RANGED" />
         <MenAtArm type="house_guard" key="att_slav_peruns_champions" max="INFANTRY" />
         <MenAtArm type="accolade_maa_archers" key="att_slav_archers" max="RANGED" />
         <MenAtArm type="accolade_maa_crossbowmen" key="att_rom_ballistarii" max="RANGED" />
@@ -9939,20 +10132,28 @@
         <MenAtArm type="zagar_an_adunai" key="att_ger_bagaudae" max="INFANTRY" />
         <MenAtArm type="zeba_outriders" key="BAL_kursi_swords" max="CAVALRY" />
         <MenAtArm type="zebaback_slavers" key="att_cel_black_blades" max="INFANTRY" />
+        <MenAtArm type="african_cattle_riders" key="ARM_light_cavalry" max="CAVALRY" />
+        <MenAtArm type="koursons" key="ARM_skirmishers" max="RANGED" />
+        <MenAtArm type="legions" key="SAS_elite_heavy_dailamite_infantry" max="INFANTRY" />
+        <MenAtArm type="prae_legions" key="SAS_elite_heavy_dailamite_infantry" max="INFANTRY" />
+        <MenAtArm type="pushtigban" key="HEP_hindi_cavalry" max="CAVALRY" />
+        <MenAtArm type="reindeer_cavalry" key="ARM_light_cavalry" max="CAVALRY" />
+        <MenAtArm type="scorpio" key="att_des_desert_bowmen" max="RANGED" />
+        <MenAtArm type="siege_towers" key="att_des_desert_bowmen" max="RANGED" />
     </Faction>
     <Faction name="Frisia">
         <General key="att_nor_viking_captain" />
         <Knights key="att_nor_nordic_raid_leader" />
-        <Levies porcentage="39" key="att_nor_thrall_spears" max="LEVY" />
-        <Levies porcentage="40" key="att_nor_nordic_axe_warriors" max="LEVY" />
-        <Levies porcentage="21" key="att_nor_nordic_hurlers" max="LEVY" />
+        <Levies porcentage="28" key="att_nor_thrall_spears" max="LEVY" />
+        <Levies porcentage="37" key="att_nor_nordic_axe_warriors" max="LEVY" />
+        <Levies porcentage="35" key="att_nor_nordic_hurlers" max="LEVY" />
         <MenAtArm type="light_footmen" key="att_nor_norse_berserkers" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="att_nor_hirdmen" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="att_nor_thrall_spearmen" max="INFANTRY" />
         <MenAtArm type="bowmen" key="att_nor_nordic_bows" max="RANGED" />
         <MenAtArm type="light_horsemen" key="att_nor_nordic_mounted_raiders" max="CAVALRY" />
         <MenAtArm type="armored_horsemen" key="att_nor_viking_raider_cavalry" max="CAVALRY" />
-        <MenAtArm type="war_dogs" key="att_cel_wolfhound_spearmen" />
+        <MenAtArm type="war_dogs" key="att_cel_wolfhound_spearmen" max="RANGED" />
         <MenAtArm type="house_guard" key="att_nor_chosen_warriors" max="INFANTRY" />
         <MenAtArm type="accolade_maa_archers" key="att_nor_nordic_bows" max="RANGED" />
         <MenAtArm type="accolade_maa_crossbowmen" key="att_rom_ballistarii" max="RANGED" />
@@ -10372,20 +10573,28 @@
         <MenAtArm type="zagar_an_adunai" key="att_ger_bagaudae" max="INFANTRY" />
         <MenAtArm type="zeba_outriders" key="BAL_kursi_swords" max="CAVALRY" />
         <MenAtArm type="zebaback_slavers" key="att_cel_black_blades" max="INFANTRY" />
+        <MenAtArm type="african_cattle_riders" key="ARM_light_cavalry" max="CAVALRY" />
+        <MenAtArm type="koursons" key="ARM_skirmishers" max="RANGED" />
+        <MenAtArm type="legions" key="SAS_elite_heavy_dailamite_infantry" max="INFANTRY" />
+        <MenAtArm type="prae_legions" key="SAS_elite_heavy_dailamite_infantry" max="INFANTRY" />
+        <MenAtArm type="pushtigban" key="HEP_hindi_cavalry" max="CAVALRY" />
+        <MenAtArm type="reindeer_cavalry" key="ARM_light_cavalry" max="CAVALRY" />
+        <MenAtArm type="scorpio" key="att_des_desert_bowmen" max="RANGED" />
+        <MenAtArm type="siege_towers" key="att_des_desert_bowmen" max="RANGED" />
     </Faction>
     <Faction name="Northern Germanic Rebels">
         <General key="att_nor_viking_captain" />
         <Knights key="att_nor_nordic_raid_leader" />
-        <Levies porcentage="35" key="att_nor_thrall_spears" max="LEVY" />
-        <Levies porcentage="32" key="att_nor_nordic_axe_warriors" max="LEVY" />
-        <Levies porcentage="33" key="att_nor_nordic_hurlers" max="LEVY" />
+        <Levies porcentage="17" key="att_nor_thrall_spears" max="LEVY" />
+        <Levies porcentage="38" key="att_nor_nordic_axe_warriors" max="LEVY" />
+        <Levies porcentage="45" key="att_nor_nordic_hurlers" max="LEVY" />
         <MenAtArm type="light_footmen" key="att_nor_norse_berserkers" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="att_nor_hirdmen" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="att_nor_thrall_spearmen" max="INFANTRY" />
         <MenAtArm type="bowmen" key="att_nor_nordic_bows" max="RANGED" />
         <MenAtArm type="light_horsemen" key="att_nor_nordic_mounted_raiders" max="CAVALRY" />
         <MenAtArm type="armored_horsemen" key="att_nor_viking_raider_cavalry" max="CAVALRY" />
-        <MenAtArm type="war_dogs" key="att_cel_wolfhound_spearmen" />
+        <MenAtArm type="war_dogs" key="att_cel_wolfhound_spearmen" max="RANGED" />
         <MenAtArm type="house_guard" key="att_nor_viking_raiders" max="INFANTRY" />
         <MenAtArm type="accolade_maa_archers" key="att_nor_nordic_bows" max="RANGED" />
         <MenAtArm type="accolade_maa_crossbowmen" key="att_rom_ballistarii" max="RANGED" />
@@ -10805,20 +11014,28 @@
         <MenAtArm type="zagar_an_adunai" key="att_ger_bagaudae" max="INFANTRY" />
         <MenAtArm type="zeba_outriders" key="BAL_kursi_swords" max="CAVALRY" />
         <MenAtArm type="zebaback_slavers" key="att_cel_black_blades" max="INFANTRY" />
+        <MenAtArm type="african_cattle_riders" key="ARM_light_cavalry" max="CAVALRY" />
+        <MenAtArm type="koursons" key="ARM_skirmishers" max="RANGED" />
+        <MenAtArm type="legions" key="SAS_elite_heavy_dailamite_infantry" max="INFANTRY" />
+        <MenAtArm type="prae_legions" key="SAS_elite_heavy_dailamite_infantry" max="INFANTRY" />
+        <MenAtArm type="pushtigban" key="HEP_hindi_cavalry" max="CAVALRY" />
+        <MenAtArm type="reindeer_cavalry" key="ARM_light_cavalry" max="CAVALRY" />
+        <MenAtArm type="scorpio" key="att_des_desert_bowmen" max="RANGED" />
+        <MenAtArm type="siege_towers" key="att_des_desert_bowmen" max="RANGED" />
     </Faction>
     <Faction name="Magiaroi">
         <General key="GHAS_phylarch" />
         <Knights key="att_des_desert_warlord" />
-        <Levies porcentage="51" key="QUR_rijal_spears" max="LEVY" />
-        <Levies porcentage="15" key="att_des_es_rebellion_militia" max="LEVY" />
-        <Levies porcentage="34" key="att_des_desert_hurlers" max="LEVY" />
+        <Levies porcentage="28" key="QUR_rijal_spears" max="LEVY" />
+        <Levies porcentage="37" key="att_des_es_rebellion_militia" max="LEVY" />
+        <Levies porcentage="35" key="att_des_desert_hurlers" max="LEVY" />
         <MenAtArm type="light_footmen" key="att_des_es_badyia_skirmishers" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="att_des_desert_tribesmen" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="att_des_desert_levy" max="INFANTRY" />
         <MenAtArm type="bowmen" key="att_des_desert_bowmen" max="RANGED" />
         <MenAtArm type="light_horsemen" key="att_des_es_mavias_chosen" max="CAVALRY" />
         <MenAtArm type="armored_horsemen" key="att_des_arabic_horsemen" max="CAVALRY" />
-        <MenAtArm type="war_dogs" key="att_cel_wolfhound_spearmen" />
+        <MenAtArm type="war_dogs" key="att_cel_wolfhound_spearmen" max="RANGED" />
         <MenAtArm type="house_guard" key="att_des_kushite_shotelai" max="INFANTRY" />
         <MenAtArm type="mubarizun" key="att_des_es_athars_chosen" />
         <MenAtArm type="accolade_maa_archers" key="att_des_elite_nubian_archers" max="RANGED" />
@@ -11238,20 +11455,28 @@
         <MenAtArm type="zagar_an_adunai" key="att_ger_bagaudae" max="INFANTRY" />
         <MenAtArm type="zeba_outriders" key="BAL_kursi_swords" max="CAVALRY" />
         <MenAtArm type="zebaback_slavers" key="att_cel_black_blades" max="INFANTRY" />
+        <MenAtArm type="african_cattle_riders" key="ARM_light_cavalry" max="CAVALRY" />
+        <MenAtArm type="koursons" key="ARM_skirmishers" max="RANGED" />
+        <MenAtArm type="legions" key="SAS_elite_heavy_dailamite_infantry" max="INFANTRY" />
+        <MenAtArm type="prae_legions" key="SAS_elite_heavy_dailamite_infantry" max="INFANTRY" />
+        <MenAtArm type="pushtigban" key="HEP_hindi_cavalry" max="CAVALRY" />
+        <MenAtArm type="reindeer_cavalry" key="ARM_light_cavalry" max="CAVALRY" />
+        <MenAtArm type="scorpio" key="att_des_desert_bowmen" max="RANGED" />
+        <MenAtArm type="siege_towers" key="att_des_desert_bowmen" max="RANGED" />
     </Faction>
     <Faction name="Aksum">
         <General key="att_des_desert_chieftain" />
         <Knights key="att_des_es_ras_guard" />
-        <Levies porcentage="37" key="AKS_tribal_spears" max="LEVY" />
-        <Levies porcentage="39" key="att_des_es_afar_swordsmen" max="LEVY" />
-        <Levies porcentage="24" key="att_des_desert_bowmen" max="LEVY" />
+        <Levies porcentage="41" key="AKS_tribal_spears" max="LEVY" />
+        <Levies porcentage="34" key="att_des_es_afar_swordsmen" max="LEVY" />
+        <Levies porcentage="25" key="att_des_desert_bowmen" max="LEVY" />
         <MenAtArm type="light_footmen" key="att_des_es_spice_warriors" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="att_des_es_spice_guard" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="att_des_es_tor_warriors" max="INFANTRY" />
         <MenAtArm type="bowmen" key="att_des_es_marz_archers" max="RANGED" />
         <MenAtArm type="light_horsemen" key="AKS_himyarite_horsemen" max="CAVALRY" />
         <MenAtArm type="armored_horsemen" key="att_est_sogdian_camel_raiders" max="CAVALRY" />
-        <MenAtArm type="war_dogs" key="att_des_es_adana_trackers" />
+        <MenAtArm type="war_dogs" key="att_des_es_adana_trackers" max="RANGED" />
         <MenAtArm type="house_guard" key="att_des_es_masqal_spearmen" max="INFANTRY" />
         <MenAtArm type="horn_warrior" key="att_des_kushite_shotelai" />
         <MenAtArm type="archers_of_the_nile" key="att_des_es_adana_marksmen" />
@@ -11671,20 +11896,28 @@
         <MenAtArm type="zagar_an_adunai" key="att_ger_bagaudae" max="INFANTRY" />
         <MenAtArm type="zeba_outriders" key="BAL_kursi_swords" max="CAVALRY" />
         <MenAtArm type="zebaback_slavers" key="att_cel_black_blades" max="INFANTRY" />
+        <MenAtArm type="african_cattle_riders" key="ARM_light_cavalry" max="CAVALRY" />
+        <MenAtArm type="koursons" key="ARM_skirmishers" max="RANGED" />
+        <MenAtArm type="legions" key="SAS_elite_heavy_dailamite_infantry" max="INFANTRY" />
+        <MenAtArm type="prae_legions" key="SAS_elite_heavy_dailamite_infantry" max="INFANTRY" />
+        <MenAtArm type="pushtigban" key="HEP_hindi_cavalry" max="CAVALRY" />
+        <MenAtArm type="reindeer_cavalry" key="ARM_light_cavalry" max="CAVALRY" />
+        <MenAtArm type="scorpio" key="att_des_desert_bowmen" max="RANGED" />
+        <MenAtArm type="siege_towers" key="att_des_desert_bowmen" max="RANGED" />
     </Faction>
     <Faction name="Himyar">
         <General key="att_des_desert_chieftain" />
         <Knights key="att_des_desert_warlord" />
-        <Levies porcentage="37" key="att_des_desert_levy" max="LEVY" />
-        <Levies porcentage="32" key="att_des_desert_tribesmen" max="LEVY" />
-        <Levies porcentage="31" key="att_des_desert_bowmen" max="LEVY" />
+        <Levies porcentage="16" key="att_des_desert_levy" max="LEVY" />
+        <Levies porcentage="62" key="att_des_desert_tribesmen" max="LEVY" />
+        <Levies porcentage="22" key="att_des_desert_bowmen" max="LEVY" />
         <MenAtArm type="light_footmen" key="att_des_es_rumha_skirmishers" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="att_des_kushite_shotelai" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="att_des_desert_spears" max="INFANTRY" />
         <MenAtArm type="bowmen" key="att_des_es_ashum" max="RANGED" />
         <MenAtArm type="light_horsemen" key="att_des_camel_lancers" max="CAVALRY" />
         <MenAtArm type="armored_horsemen" key="att_des_kushite_mounted_shotelai" max="CAVALRY" />
-        <MenAtArm type="war_dogs" key="att_des_es_adana_trackers" />
+        <MenAtArm type="war_dogs" key="att_des_es_adana_trackers" max="RANGED" />
         <MenAtArm type="house_guard" key="att_des_es_zafar_sentinels" max="INFANTRY" />
         <MenAtArm type="abudrar" key="att_des_es_zealot_sicarius" />
         <MenAtArm type="accolade_maa_archers" key="att_des_elite_nubian_archers" max="RANGED" />
@@ -12104,20 +12337,28 @@
         <MenAtArm type="zagar_an_adunai" key="att_ger_bagaudae" max="INFANTRY" />
         <MenAtArm type="zeba_outriders" key="BAL_kursi_swords" max="CAVALRY" />
         <MenAtArm type="zebaback_slavers" key="att_cel_black_blades" max="INFANTRY" />
+        <MenAtArm type="african_cattle_riders" key="ARM_light_cavalry" max="CAVALRY" />
+        <MenAtArm type="koursons" key="ARM_skirmishers" max="RANGED" />
+        <MenAtArm type="legions" key="SAS_elite_heavy_dailamite_infantry" max="INFANTRY" />
+        <MenAtArm type="prae_legions" key="SAS_elite_heavy_dailamite_infantry" max="INFANTRY" />
+        <MenAtArm type="pushtigban" key="HEP_hindi_cavalry" max="CAVALRY" />
+        <MenAtArm type="reindeer_cavalry" key="ARM_light_cavalry" max="CAVALRY" />
+        <MenAtArm type="scorpio" key="att_des_desert_bowmen" max="RANGED" />
+        <MenAtArm type="siege_towers" key="att_des_desert_bowmen" max="RANGED" />
     </Faction>
     <Faction name="Gaul">
         <General key="att_nom_hunnic_warlord" />
         <Knights key="att_nom_steppe_chieftain" />
-        <Levies porcentage="42" key="att_slav_levy_spearmen" max="LEVY" />
-        <Levies porcentage="40" key="att_slav_axe_levy" max="LEVY" />
-        <Levies porcentage="18" key="att_slav_levy_skirmishers" max="LEVY" />
+        <Levies porcentage="26" key="att_slav_levy_spearmen" max="LEVY" />
+        <Levies porcentage="49" key="att_slav_axe_levy" max="LEVY" />
+        <Levies porcentage="25" key="att_slav_levy_skirmishers" max="LEVY" />
         <MenAtArm type="light_footmen" key="NOM_axes" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="ERE_gepids" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="att_nom_scirii_warriors" max="INFANTRY" />
         <MenAtArm type="bowmen" key="att_nom_steppe_bows" max="RANGED" />
         <MenAtArm type="light_horsemen" key="att_nom_hunnic_horsemen" max="CAVALRY" />
         <MenAtArm type="armored_horsemen" key="att_nom_hunnic_lancers" max="CAVALRY" />
-        <MenAtArm type="war_dogs" key="att_des_es_adana_trackers" />
+        <MenAtArm type="war_dogs" key="att_des_es_adana_trackers" max="RANGED" />
         <MenAtArm type="house_guard" key="att_nom_hunnic_devil_cavalry" max="INFANTRY" />
         <MenAtArm type="horse_archers" key="kok_oq_horse_archers" max="CAVALRY" />
         <MenAtArm type="accolade_maa_archers" key="KOK_steppe_bows" max="RANGED" />
@@ -12537,12 +12778,20 @@
         <MenAtArm type="zagar_an_adunai" key="att_ger_bagaudae" max="INFANTRY" />
         <MenAtArm type="zeba_outriders" key="BAL_kursi_swords" max="CAVALRY" />
         <MenAtArm type="zebaback_slavers" key="att_cel_black_blades" max="INFANTRY" />
+        <MenAtArm type="african_cattle_riders" key="ARM_light_cavalry" max="CAVALRY" />
+        <MenAtArm type="koursons" key="ARM_skirmishers" max="RANGED" />
+        <MenAtArm type="legions" key="SAS_elite_heavy_dailamite_infantry" max="INFANTRY" />
+        <MenAtArm type="prae_legions" key="SAS_elite_heavy_dailamite_infantry" max="INFANTRY" />
+        <MenAtArm type="pushtigban" key="HEP_hindi_cavalry" max="CAVALRY" />
+        <MenAtArm type="reindeer_cavalry" key="ARM_light_cavalry" max="CAVALRY" />
+        <MenAtArm type="scorpio" key="att_des_desert_bowmen" max="RANGED" />
+        <MenAtArm type="siege_towers" key="att_des_desert_bowmen" max="RANGED" />
     </Faction>
     <Faction name="Abarshahr">
         <General key="att_rom_comes" />
         <Knights key="att_ger_noble_germanic_horsemen" />
-        <Levies porcentage="38" key="ERE_limitanei_levy_spears" max="LEVY" />
-        <Levies porcentage="30" key="ERE_limitanei_levy_swords" max="LEVY" />
+        <Levies porcentage="40" key="ERE_limitanei_levy_spears" max="LEVY" />
+        <Levies porcentage="28" key="ERE_limitanei_levy_swords" max="LEVY" />
         <Levies porcentage="32" key="att_rom_sagittarii" max="LEVY" />
         <MenAtArm type="light_footmen" key="att_rom_exploratores" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="ERE_legio" max="INFANTRY" />
@@ -12970,13 +13219,21 @@
         <MenAtArm type="zagar_an_adunai" key="att_ger_bagaudae" max="INFANTRY" />
         <MenAtArm type="zeba_outriders" key="BAL_kursi_swords" max="CAVALRY" />
         <MenAtArm type="zebaback_slavers" key="att_cel_black_blades" max="INFANTRY" />
+        <MenAtArm type="african_cattle_riders" key="ARM_light_cavalry" max="CAVALRY" />
+        <MenAtArm type="koursons" key="ARM_skirmishers" max="RANGED" />
+        <MenAtArm type="legions" key="SAS_elite_heavy_dailamite_infantry" max="INFANTRY" />
+        <MenAtArm type="prae_legions" key="SAS_elite_heavy_dailamite_infantry" max="INFANTRY" />
+        <MenAtArm type="pushtigban" key="HEP_hindi_cavalry" max="CAVALRY" />
+        <MenAtArm type="reindeer_cavalry" key="ARM_light_cavalry" max="CAVALRY" />
+        <MenAtArm type="scorpio" key="att_des_desert_bowmen" max="RANGED" />
+        <MenAtArm type="siege_towers" key="att_des_desert_bowmen" max="RANGED" />
     </Faction>
     <Faction name="Aestii">
         <General key="att_rom_comes" />
         <Knights key="att_ger_noble_germanic_horsemen" />
-        <Levies porcentage="19" key="ERE_limitanei_levy_spears" max="LEVY" />
-        <Levies porcentage="26" key="ERE_limitanei_levy_swords" max="LEVY" />
-        <Levies porcentage="55" key="att_rom_sagittarii" max="LEVY" />
+        <Levies porcentage="45" key="ERE_limitanei_levy_spears" max="LEVY" />
+        <Levies porcentage="9" key="ERE_limitanei_levy_swords" max="LEVY" />
+        <Levies porcentage="46" key="att_rom_sagittarii" max="LEVY" />
         <MenAtArm type="light_footmen" key="att_rom_exploratores" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="ERE_legio" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="att_rom_western_auxilia_palatina" max="INFANTRY" />
@@ -13403,13 +13660,21 @@
         <MenAtArm type="zagar_an_adunai" key="att_ger_bagaudae" max="INFANTRY" />
         <MenAtArm type="zeba_outriders" key="BAL_kursi_swords" max="CAVALRY" />
         <MenAtArm type="zebaback_slavers" key="att_cel_black_blades" max="INFANTRY" />
+        <MenAtArm type="african_cattle_riders" key="ARM_light_cavalry" max="CAVALRY" />
+        <MenAtArm type="koursons" key="ARM_skirmishers" max="RANGED" />
+        <MenAtArm type="legions" key="SAS_elite_heavy_dailamite_infantry" max="INFANTRY" />
+        <MenAtArm type="prae_legions" key="SAS_elite_heavy_dailamite_infantry" max="INFANTRY" />
+        <MenAtArm type="pushtigban" key="HEP_hindi_cavalry" max="CAVALRY" />
+        <MenAtArm type="reindeer_cavalry" key="ARM_light_cavalry" max="CAVALRY" />
+        <MenAtArm type="scorpio" key="att_des_desert_bowmen" max="RANGED" />
+        <MenAtArm type="siege_towers" key="att_des_desert_bowmen" max="RANGED" />
     </Faction>
     <Faction name="Angli">
         <General key="att_rom_comes" />
         <Knights key="att_ger_noble_germanic_horsemen" />
-        <Levies porcentage="21" key="ERE_limitanei_levy_spears" max="LEVY" />
-        <Levies porcentage="51" key="ERE_limitanei_levy_swords" max="LEVY" />
-        <Levies porcentage="28" key="att_rom_sagittarii" max="LEVY" />
+        <Levies porcentage="42" key="ERE_limitanei_levy_spears" max="LEVY" />
+        <Levies porcentage="26" key="ERE_limitanei_levy_swords" max="LEVY" />
+        <Levies porcentage="32" key="att_rom_sagittarii" max="LEVY" />
         <MenAtArm type="light_footmen" key="att_rom_exploratores" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="ERE_legio" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="att_rom_western_auxilia_palatina" max="INFANTRY" />
@@ -13836,13 +14101,21 @@
         <MenAtArm type="zagar_an_adunai" key="att_ger_bagaudae" max="INFANTRY" />
         <MenAtArm type="zeba_outriders" key="BAL_kursi_swords" max="CAVALRY" />
         <MenAtArm type="zebaback_slavers" key="att_cel_black_blades" max="INFANTRY" />
+        <MenAtArm type="african_cattle_riders" key="ARM_light_cavalry" max="CAVALRY" />
+        <MenAtArm type="koursons" key="ARM_skirmishers" max="RANGED" />
+        <MenAtArm type="legions" key="SAS_elite_heavy_dailamite_infantry" max="INFANTRY" />
+        <MenAtArm type="prae_legions" key="SAS_elite_heavy_dailamite_infantry" max="INFANTRY" />
+        <MenAtArm type="pushtigban" key="HEP_hindi_cavalry" max="CAVALRY" />
+        <MenAtArm type="reindeer_cavalry" key="ARM_light_cavalry" max="CAVALRY" />
+        <MenAtArm type="scorpio" key="att_des_desert_bowmen" max="RANGED" />
+        <MenAtArm type="siege_towers" key="att_des_desert_bowmen" max="RANGED" />
     </Faction>
     <Faction name="Angria">
         <General key="att_rom_comes" />
         <Knights key="att_ger_noble_germanic_horsemen" />
-        <Levies porcentage="18" key="ERE_limitanei_levy_spears" max="LEVY" />
-        <Levies porcentage="26" key="ERE_limitanei_levy_swords" max="LEVY" />
-        <Levies porcentage="56" key="att_rom_sagittarii" max="LEVY" />
+        <Levies porcentage="43" key="ERE_limitanei_levy_spears" max="LEVY" />
+        <Levies porcentage="17" key="ERE_limitanei_levy_swords" max="LEVY" />
+        <Levies porcentage="40" key="att_rom_sagittarii" max="LEVY" />
         <MenAtArm type="light_footmen" key="att_rom_exploratores" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="ERE_legio" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="att_rom_western_auxilia_palatina" max="INFANTRY" />
@@ -14269,13 +14542,21 @@
         <MenAtArm type="zagar_an_adunai" key="att_ger_bagaudae" max="INFANTRY" />
         <MenAtArm type="zeba_outriders" key="BAL_kursi_swords" max="CAVALRY" />
         <MenAtArm type="zebaback_slavers" key="att_cel_black_blades" max="INFANTRY" />
+        <MenAtArm type="african_cattle_riders" key="ARM_light_cavalry" max="CAVALRY" />
+        <MenAtArm type="koursons" key="ARM_skirmishers" max="RANGED" />
+        <MenAtArm type="legions" key="SAS_elite_heavy_dailamite_infantry" max="INFANTRY" />
+        <MenAtArm type="prae_legions" key="SAS_elite_heavy_dailamite_infantry" max="INFANTRY" />
+        <MenAtArm type="pushtigban" key="HEP_hindi_cavalry" max="CAVALRY" />
+        <MenAtArm type="reindeer_cavalry" key="ARM_light_cavalry" max="CAVALRY" />
+        <MenAtArm type="scorpio" key="att_des_desert_bowmen" max="RANGED" />
+        <MenAtArm type="siege_towers" key="att_des_desert_bowmen" max="RANGED" />
     </Faction>
     <Faction name="Aquitainia">
         <General key="att_rom_comes" />
         <Knights key="att_ger_noble_germanic_horsemen" />
-        <Levies porcentage="27" key="ERE_limitanei_levy_spears" max="LEVY" />
-        <Levies porcentage="49" key="ERE_limitanei_levy_swords" max="LEVY" />
-        <Levies porcentage="24" key="att_rom_sagittarii" max="LEVY" />
+        <Levies porcentage="26" key="ERE_limitanei_levy_spears" max="LEVY" />
+        <Levies porcentage="53" key="ERE_limitanei_levy_swords" max="LEVY" />
+        <Levies porcentage="21" key="att_rom_sagittarii" max="LEVY" />
         <MenAtArm type="light_footmen" key="att_rom_exploratores" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="ERE_legio" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="att_rom_western_auxilia_palatina" max="INFANTRY" />
@@ -14702,13 +14983,21 @@
         <MenAtArm type="zagar_an_adunai" key="att_ger_bagaudae" max="INFANTRY" />
         <MenAtArm type="zeba_outriders" key="BAL_kursi_swords" max="CAVALRY" />
         <MenAtArm type="zebaback_slavers" key="att_cel_black_blades" max="INFANTRY" />
+        <MenAtArm type="african_cattle_riders" key="ARM_light_cavalry" max="CAVALRY" />
+        <MenAtArm type="koursons" key="ARM_skirmishers" max="RANGED" />
+        <MenAtArm type="legions" key="SAS_elite_heavy_dailamite_infantry" max="INFANTRY" />
+        <MenAtArm type="prae_legions" key="SAS_elite_heavy_dailamite_infantry" max="INFANTRY" />
+        <MenAtArm type="pushtigban" key="HEP_hindi_cavalry" max="CAVALRY" />
+        <MenAtArm type="reindeer_cavalry" key="ARM_light_cavalry" max="CAVALRY" />
+        <MenAtArm type="scorpio" key="att_des_desert_bowmen" max="RANGED" />
+        <MenAtArm type="siege_towers" key="att_des_desert_bowmen" max="RANGED" />
     </Faction>
     <Faction name="Asia">
         <General key="att_rom_comes" />
         <Knights key="att_ger_noble_germanic_horsemen" />
-        <Levies porcentage="34" key="ERE_limitanei_levy_spears" max="LEVY" />
-        <Levies porcentage="22" key="ERE_limitanei_levy_swords" max="LEVY" />
-        <Levies porcentage="44" key="att_rom_sagittarii" max="LEVY" />
+        <Levies porcentage="56" key="ERE_limitanei_levy_spears" max="LEVY" />
+        <Levies porcentage="17" key="ERE_limitanei_levy_swords" max="LEVY" />
+        <Levies porcentage="27" key="att_rom_sagittarii" max="LEVY" />
         <MenAtArm type="light_footmen" key="att_rom_exploratores" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="ERE_legio" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="att_rom_western_auxilia_palatina" max="INFANTRY" />
@@ -15135,13 +15424,21 @@
         <MenAtArm type="zagar_an_adunai" key="att_ger_bagaudae" max="INFANTRY" />
         <MenAtArm type="zeba_outriders" key="BAL_kursi_swords" max="CAVALRY" />
         <MenAtArm type="zebaback_slavers" key="att_cel_black_blades" max="INFANTRY" />
+        <MenAtArm type="african_cattle_riders" key="ARM_light_cavalry" max="CAVALRY" />
+        <MenAtArm type="koursons" key="ARM_skirmishers" max="RANGED" />
+        <MenAtArm type="legions" key="SAS_elite_heavy_dailamite_infantry" max="INFANTRY" />
+        <MenAtArm type="prae_legions" key="SAS_elite_heavy_dailamite_infantry" max="INFANTRY" />
+        <MenAtArm type="pushtigban" key="HEP_hindi_cavalry" max="CAVALRY" />
+        <MenAtArm type="reindeer_cavalry" key="ARM_light_cavalry" max="CAVALRY" />
+        <MenAtArm type="scorpio" key="att_des_desert_bowmen" max="RANGED" />
+        <MenAtArm type="siege_towers" key="att_des_desert_bowmen" max="RANGED" />
     </Faction>
     <Faction name="Austrasia">
         <General key="att_rom_comes" />
         <Knights key="att_ger_noble_germanic_horsemen" />
-        <Levies porcentage="21" key="ERE_limitanei_levy_spears" max="LEVY" />
-        <Levies porcentage="45" key="ERE_limitanei_levy_swords" max="LEVY" />
-        <Levies porcentage="34" key="att_rom_sagittarii" max="LEVY" />
+        <Levies porcentage="18" key="ERE_limitanei_levy_spears" max="LEVY" />
+        <Levies porcentage="41" key="ERE_limitanei_levy_swords" max="LEVY" />
+        <Levies porcentage="41" key="att_rom_sagittarii" max="LEVY" />
         <MenAtArm type="light_footmen" key="att_rom_exploratores" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="ERE_legio" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="att_rom_western_auxilia_palatina" max="INFANTRY" />
@@ -15568,13 +15865,21 @@
         <MenAtArm type="zagar_an_adunai" key="att_ger_bagaudae" max="INFANTRY" />
         <MenAtArm type="zeba_outriders" key="BAL_kursi_swords" max="CAVALRY" />
         <MenAtArm type="zebaback_slavers" key="att_cel_black_blades" max="INFANTRY" />
+        <MenAtArm type="african_cattle_riders" key="ARM_light_cavalry" max="CAVALRY" />
+        <MenAtArm type="koursons" key="ARM_skirmishers" max="RANGED" />
+        <MenAtArm type="legions" key="SAS_elite_heavy_dailamite_infantry" max="INFANTRY" />
+        <MenAtArm type="prae_legions" key="SAS_elite_heavy_dailamite_infantry" max="INFANTRY" />
+        <MenAtArm type="pushtigban" key="HEP_hindi_cavalry" max="CAVALRY" />
+        <MenAtArm type="reindeer_cavalry" key="ARM_light_cavalry" max="CAVALRY" />
+        <MenAtArm type="scorpio" key="att_des_desert_bowmen" max="RANGED" />
+        <MenAtArm type="siege_towers" key="att_des_desert_bowmen" max="RANGED" />
     </Faction>
     <Faction name="Avaroi">
         <General key="att_rom_comes" />
         <Knights key="att_ger_noble_germanic_horsemen" />
-        <Levies porcentage="27" key="ERE_limitanei_levy_spears" max="LEVY" />
-        <Levies porcentage="50" key="ERE_limitanei_levy_swords" max="LEVY" />
-        <Levies porcentage="23" key="att_rom_sagittarii" max="LEVY" />
+        <Levies porcentage="32" key="ERE_limitanei_levy_spears" max="LEVY" />
+        <Levies porcentage="23" key="ERE_limitanei_levy_swords" max="LEVY" />
+        <Levies porcentage="45" key="att_rom_sagittarii" max="LEVY" />
         <MenAtArm type="light_footmen" key="att_rom_exploratores" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="ERE_legio" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="att_rom_western_auxilia_palatina" max="INFANTRY" />
@@ -16001,13 +16306,21 @@
         <MenAtArm type="zagar_an_adunai" key="att_ger_bagaudae" max="INFANTRY" />
         <MenAtArm type="zeba_outriders" key="BAL_kursi_swords" max="CAVALRY" />
         <MenAtArm type="zebaback_slavers" key="att_cel_black_blades" max="INFANTRY" />
+        <MenAtArm type="african_cattle_riders" key="ARM_light_cavalry" max="CAVALRY" />
+        <MenAtArm type="koursons" key="ARM_skirmishers" max="RANGED" />
+        <MenAtArm type="legions" key="SAS_elite_heavy_dailamite_infantry" max="INFANTRY" />
+        <MenAtArm type="prae_legions" key="SAS_elite_heavy_dailamite_infantry" max="INFANTRY" />
+        <MenAtArm type="pushtigban" key="HEP_hindi_cavalry" max="CAVALRY" />
+        <MenAtArm type="reindeer_cavalry" key="ARM_light_cavalry" max="CAVALRY" />
+        <MenAtArm type="scorpio" key="att_des_desert_bowmen" max="RANGED" />
+        <MenAtArm type="siege_towers" key="att_des_desert_bowmen" max="RANGED" />
     </Faction>
     <Faction name="Avars">
         <General key="att_rom_comes" />
         <Knights key="att_ger_noble_germanic_horsemen" />
-        <Levies porcentage="56" key="ERE_limitanei_levy_spears" max="LEVY" />
-        <Levies porcentage="14" key="ERE_limitanei_levy_swords" max="LEVY" />
-        <Levies porcentage="30" key="att_rom_sagittarii" max="LEVY" />
+        <Levies porcentage="37" key="ERE_limitanei_levy_spears" max="LEVY" />
+        <Levies porcentage="50" key="ERE_limitanei_levy_swords" max="LEVY" />
+        <Levies porcentage="13" key="att_rom_sagittarii" max="LEVY" />
         <MenAtArm type="light_footmen" key="att_rom_exploratores" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="ERE_legio" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="att_rom_western_auxilia_palatina" max="INFANTRY" />
@@ -16434,13 +16747,21 @@
         <MenAtArm type="zagar_an_adunai" key="att_ger_bagaudae" max="INFANTRY" />
         <MenAtArm type="zeba_outriders" key="BAL_kursi_swords" max="CAVALRY" />
         <MenAtArm type="zebaback_slavers" key="att_cel_black_blades" max="INFANTRY" />
+        <MenAtArm type="african_cattle_riders" key="ARM_light_cavalry" max="CAVALRY" />
+        <MenAtArm type="koursons" key="ARM_skirmishers" max="RANGED" />
+        <MenAtArm type="legions" key="SAS_elite_heavy_dailamite_infantry" max="INFANTRY" />
+        <MenAtArm type="prae_legions" key="SAS_elite_heavy_dailamite_infantry" max="INFANTRY" />
+        <MenAtArm type="pushtigban" key="HEP_hindi_cavalry" max="CAVALRY" />
+        <MenAtArm type="reindeer_cavalry" key="ARM_light_cavalry" max="CAVALRY" />
+        <MenAtArm type="scorpio" key="att_des_desert_bowmen" max="RANGED" />
+        <MenAtArm type="siege_towers" key="att_des_desert_bowmen" max="RANGED" />
     </Faction>
     <Faction name="Basques">
         <General key="att_rom_comes" />
         <Knights key="att_ger_noble_germanic_horsemen" />
-        <Levies porcentage="43" key="ERE_limitanei_levy_spears" max="LEVY" />
-        <Levies porcentage="31" key="ERE_limitanei_levy_swords" max="LEVY" />
-        <Levies porcentage="26" key="att_rom_sagittarii" max="LEVY" />
+        <Levies porcentage="20" key="ERE_limitanei_levy_spears" max="LEVY" />
+        <Levies porcentage="36" key="ERE_limitanei_levy_swords" max="LEVY" />
+        <Levies porcentage="44" key="att_rom_sagittarii" max="LEVY" />
         <MenAtArm type="light_footmen" key="att_rom_exploratores" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="ERE_legio" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="att_rom_western_auxilia_palatina" max="INFANTRY" />
@@ -16867,13 +17188,21 @@
         <MenAtArm type="zagar_an_adunai" key="att_ger_bagaudae" max="INFANTRY" />
         <MenAtArm type="zeba_outriders" key="BAL_kursi_swords" max="CAVALRY" />
         <MenAtArm type="zebaback_slavers" key="att_cel_black_blades" max="INFANTRY" />
+        <MenAtArm type="african_cattle_riders" key="ARM_light_cavalry" max="CAVALRY" />
+        <MenAtArm type="koursons" key="ARM_skirmishers" max="RANGED" />
+        <MenAtArm type="legions" key="SAS_elite_heavy_dailamite_infantry" max="INFANTRY" />
+        <MenAtArm type="prae_legions" key="SAS_elite_heavy_dailamite_infantry" max="INFANTRY" />
+        <MenAtArm type="pushtigban" key="HEP_hindi_cavalry" max="CAVALRY" />
+        <MenAtArm type="reindeer_cavalry" key="ARM_light_cavalry" max="CAVALRY" />
+        <MenAtArm type="scorpio" key="att_des_desert_bowmen" max="RANGED" />
+        <MenAtArm type="siege_towers" key="att_des_desert_bowmen" max="RANGED" />
     </Faction>
     <Faction name="Bavaria">
         <General key="att_rom_comes" />
         <Knights key="att_ger_noble_germanic_horsemen" />
-        <Levies porcentage="34" key="ERE_limitanei_levy_spears" max="LEVY" />
-        <Levies porcentage="26" key="ERE_limitanei_levy_swords" max="LEVY" />
-        <Levies porcentage="40" key="att_rom_sagittarii" max="LEVY" />
+        <Levies porcentage="33" key="ERE_limitanei_levy_spears" max="LEVY" />
+        <Levies porcentage="15" key="ERE_limitanei_levy_swords" max="LEVY" />
+        <Levies porcentage="52" key="att_rom_sagittarii" max="LEVY" />
         <MenAtArm type="light_footmen" key="att_rom_exploratores" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="ERE_legio" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="att_rom_western_auxilia_palatina" max="INFANTRY" />
@@ -17300,13 +17629,21 @@
         <MenAtArm type="zagar_an_adunai" key="att_ger_bagaudae" max="INFANTRY" />
         <MenAtArm type="zeba_outriders" key="BAL_kursi_swords" max="CAVALRY" />
         <MenAtArm type="zebaback_slavers" key="att_cel_black_blades" max="INFANTRY" />
+        <MenAtArm type="african_cattle_riders" key="ARM_light_cavalry" max="CAVALRY" />
+        <MenAtArm type="koursons" key="ARM_skirmishers" max="RANGED" />
+        <MenAtArm type="legions" key="SAS_elite_heavy_dailamite_infantry" max="INFANTRY" />
+        <MenAtArm type="prae_legions" key="SAS_elite_heavy_dailamite_infantry" max="INFANTRY" />
+        <MenAtArm type="pushtigban" key="HEP_hindi_cavalry" max="CAVALRY" />
+        <MenAtArm type="reindeer_cavalry" key="ARM_light_cavalry" max="CAVALRY" />
+        <MenAtArm type="scorpio" key="att_des_desert_bowmen" max="RANGED" />
+        <MenAtArm type="siege_towers" key="att_des_desert_bowmen" max="RANGED" />
     </Faction>
     <Faction name="Berbers">
         <General key="att_rom_comes" />
         <Knights key="att_ger_noble_germanic_horsemen" />
-        <Levies porcentage="23" key="ERE_limitanei_levy_spears" max="LEVY" />
-        <Levies porcentage="61" key="ERE_limitanei_levy_swords" max="LEVY" />
-        <Levies porcentage="16" key="att_rom_sagittarii" max="LEVY" />
+        <Levies porcentage="30" key="ERE_limitanei_levy_spears" max="LEVY" />
+        <Levies porcentage="29" key="ERE_limitanei_levy_swords" max="LEVY" />
+        <Levies porcentage="41" key="att_rom_sagittarii" max="LEVY" />
         <MenAtArm type="light_footmen" key="att_rom_exploratores" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="ERE_legio" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="att_rom_western_auxilia_palatina" max="INFANTRY" />
@@ -17733,13 +18070,21 @@
         <MenAtArm type="zagar_an_adunai" key="att_ger_bagaudae" max="INFANTRY" />
         <MenAtArm type="zeba_outriders" key="BAL_kursi_swords" max="CAVALRY" />
         <MenAtArm type="zebaback_slavers" key="att_cel_black_blades" max="INFANTRY" />
+        <MenAtArm type="african_cattle_riders" key="ARM_light_cavalry" max="CAVALRY" />
+        <MenAtArm type="koursons" key="ARM_skirmishers" max="RANGED" />
+        <MenAtArm type="legions" key="SAS_elite_heavy_dailamite_infantry" max="INFANTRY" />
+        <MenAtArm type="prae_legions" key="SAS_elite_heavy_dailamite_infantry" max="INFANTRY" />
+        <MenAtArm type="pushtigban" key="HEP_hindi_cavalry" max="CAVALRY" />
+        <MenAtArm type="reindeer_cavalry" key="ARM_light_cavalry" max="CAVALRY" />
+        <MenAtArm type="scorpio" key="att_des_desert_bowmen" max="RANGED" />
+        <MenAtArm type="siege_towers" key="att_des_desert_bowmen" max="RANGED" />
     </Faction>
     <Faction name="Bretons">
         <General key="att_rom_comes" />
         <Knights key="att_ger_noble_germanic_horsemen" />
-        <Levies porcentage="46" key="ERE_limitanei_levy_spears" max="LEVY" />
-        <Levies porcentage="37" key="ERE_limitanei_levy_swords" max="LEVY" />
-        <Levies porcentage="17" key="att_rom_sagittarii" max="LEVY" />
+        <Levies porcentage="19" key="ERE_limitanei_levy_spears" max="LEVY" />
+        <Levies porcentage="44" key="ERE_limitanei_levy_swords" max="LEVY" />
+        <Levies porcentage="37" key="att_rom_sagittarii" max="LEVY" />
         <MenAtArm type="light_footmen" key="att_rom_exploratores" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="ERE_legio" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="att_rom_western_auxilia_palatina" max="INFANTRY" />
@@ -18166,13 +18511,21 @@
         <MenAtArm type="zagar_an_adunai" key="att_ger_bagaudae" max="INFANTRY" />
         <MenAtArm type="zeba_outriders" key="BAL_kursi_swords" max="CAVALRY" />
         <MenAtArm type="zebaback_slavers" key="att_cel_black_blades" max="INFANTRY" />
+        <MenAtArm type="african_cattle_riders" key="ARM_light_cavalry" max="CAVALRY" />
+        <MenAtArm type="koursons" key="ARM_skirmishers" max="RANGED" />
+        <MenAtArm type="legions" key="SAS_elite_heavy_dailamite_infantry" max="INFANTRY" />
+        <MenAtArm type="prae_legions" key="SAS_elite_heavy_dailamite_infantry" max="INFANTRY" />
+        <MenAtArm type="pushtigban" key="HEP_hindi_cavalry" max="CAVALRY" />
+        <MenAtArm type="reindeer_cavalry" key="ARM_light_cavalry" max="CAVALRY" />
+        <MenAtArm type="scorpio" key="att_des_desert_bowmen" max="RANGED" />
+        <MenAtArm type="siege_towers" key="att_des_desert_bowmen" max="RANGED" />
     </Faction>
     <Faction name="Burgundians">
         <General key="att_rom_comes" />
         <Knights key="att_ger_noble_germanic_horsemen" />
-        <Levies porcentage="30" key="ERE_limitanei_levy_spears" max="LEVY" />
-        <Levies porcentage="29" key="ERE_limitanei_levy_swords" max="LEVY" />
-        <Levies porcentage="41" key="att_rom_sagittarii" max="LEVY" />
+        <Levies porcentage="60" key="ERE_limitanei_levy_spears" max="LEVY" />
+        <Levies porcentage="21" key="ERE_limitanei_levy_swords" max="LEVY" />
+        <Levies porcentage="19" key="att_rom_sagittarii" max="LEVY" />
         <MenAtArm type="light_footmen" key="att_rom_exploratores" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="ERE_legio" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="att_rom_western_auxilia_palatina" max="INFANTRY" />
@@ -18599,13 +18952,21 @@
         <MenAtArm type="zagar_an_adunai" key="att_ger_bagaudae" max="INFANTRY" />
         <MenAtArm type="zeba_outriders" key="BAL_kursi_swords" max="CAVALRY" />
         <MenAtArm type="zebaback_slavers" key="att_cel_black_blades" max="INFANTRY" />
+        <MenAtArm type="african_cattle_riders" key="ARM_light_cavalry" max="CAVALRY" />
+        <MenAtArm type="koursons" key="ARM_skirmishers" max="RANGED" />
+        <MenAtArm type="legions" key="SAS_elite_heavy_dailamite_infantry" max="INFANTRY" />
+        <MenAtArm type="prae_legions" key="SAS_elite_heavy_dailamite_infantry" max="INFANTRY" />
+        <MenAtArm type="pushtigban" key="HEP_hindi_cavalry" max="CAVALRY" />
+        <MenAtArm type="reindeer_cavalry" key="ARM_light_cavalry" max="CAVALRY" />
+        <MenAtArm type="scorpio" key="att_des_desert_bowmen" max="RANGED" />
+        <MenAtArm type="siege_towers" key="att_des_desert_bowmen" max="RANGED" />
     </Faction>
     <Faction name="Celtic Rebels">
         <General key="att_rom_comes" />
         <Knights key="att_ger_noble_germanic_horsemen" />
-        <Levies porcentage="26" key="ERE_limitanei_levy_spears" max="LEVY" />
-        <Levies porcentage="25" key="ERE_limitanei_levy_swords" max="LEVY" />
-        <Levies porcentage="49" key="att_rom_sagittarii" max="LEVY" />
+        <Levies porcentage="20" key="ERE_limitanei_levy_spears" max="LEVY" />
+        <Levies porcentage="50" key="ERE_limitanei_levy_swords" max="LEVY" />
+        <Levies porcentage="30" key="att_rom_sagittarii" max="LEVY" />
         <MenAtArm type="light_footmen" key="att_rom_exploratores" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="ERE_legio" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="att_rom_western_auxilia_palatina" max="INFANTRY" />
@@ -19032,13 +19393,21 @@
         <MenAtArm type="zagar_an_adunai" key="att_ger_bagaudae" max="INFANTRY" />
         <MenAtArm type="zeba_outriders" key="BAL_kursi_swords" max="CAVALRY" />
         <MenAtArm type="zebaback_slavers" key="att_cel_black_blades" max="INFANTRY" />
+        <MenAtArm type="african_cattle_riders" key="ARM_light_cavalry" max="CAVALRY" />
+        <MenAtArm type="koursons" key="ARM_skirmishers" max="RANGED" />
+        <MenAtArm type="legions" key="SAS_elite_heavy_dailamite_infantry" max="INFANTRY" />
+        <MenAtArm type="prae_legions" key="SAS_elite_heavy_dailamite_infantry" max="INFANTRY" />
+        <MenAtArm type="pushtigban" key="HEP_hindi_cavalry" max="CAVALRY" />
+        <MenAtArm type="reindeer_cavalry" key="ARM_light_cavalry" max="CAVALRY" />
+        <MenAtArm type="scorpio" key="att_des_desert_bowmen" max="RANGED" />
+        <MenAtArm type="siege_towers" key="att_des_desert_bowmen" max="RANGED" />
     </Faction>
     <Faction name="Dakiai">
         <General key="att_rom_comes" />
         <Knights key="att_ger_noble_germanic_horsemen" />
-        <Levies porcentage="23" key="ERE_limitanei_levy_spears" max="LEVY" />
-        <Levies porcentage="18" key="ERE_limitanei_levy_swords" max="LEVY" />
-        <Levies porcentage="59" key="att_rom_sagittarii" max="LEVY" />
+        <Levies porcentage="67" key="ERE_limitanei_levy_spears" max="LEVY" />
+        <Levies porcentage="15" key="ERE_limitanei_levy_swords" max="LEVY" />
+        <Levies porcentage="18" key="att_rom_sagittarii" max="LEVY" />
         <MenAtArm type="light_footmen" key="att_rom_exploratores" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="ERE_legio" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="att_rom_western_auxilia_palatina" max="INFANTRY" />
@@ -19465,13 +19834,21 @@
         <MenAtArm type="zagar_an_adunai" key="att_ger_bagaudae" max="INFANTRY" />
         <MenAtArm type="zeba_outriders" key="BAL_kursi_swords" max="CAVALRY" />
         <MenAtArm type="zebaback_slavers" key="att_cel_black_blades" max="INFANTRY" />
+        <MenAtArm type="african_cattle_riders" key="ARM_light_cavalry" max="CAVALRY" />
+        <MenAtArm type="koursons" key="ARM_skirmishers" max="RANGED" />
+        <MenAtArm type="legions" key="SAS_elite_heavy_dailamite_infantry" max="INFANTRY" />
+        <MenAtArm type="prae_legions" key="SAS_elite_heavy_dailamite_infantry" max="INFANTRY" />
+        <MenAtArm type="pushtigban" key="HEP_hindi_cavalry" max="CAVALRY" />
+        <MenAtArm type="reindeer_cavalry" key="ARM_light_cavalry" max="CAVALRY" />
+        <MenAtArm type="scorpio" key="att_des_desert_bowmen" max="RANGED" />
+        <MenAtArm type="siege_towers" key="att_des_desert_bowmen" max="RANGED" />
     </Faction>
     <Faction name="Danir">
         <General key="att_rom_comes" />
         <Knights key="att_ger_noble_germanic_horsemen" />
-        <Levies porcentage="13" key="ERE_limitanei_levy_spears" max="LEVY" />
-        <Levies porcentage="46" key="ERE_limitanei_levy_swords" max="LEVY" />
-        <Levies porcentage="41" key="att_rom_sagittarii" max="LEVY" />
+        <Levies porcentage="47" key="ERE_limitanei_levy_spears" max="LEVY" />
+        <Levies porcentage="18" key="ERE_limitanei_levy_swords" max="LEVY" />
+        <Levies porcentage="35" key="att_rom_sagittarii" max="LEVY" />
         <MenAtArm type="light_footmen" key="att_rom_exploratores" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="ERE_legio" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="att_rom_western_auxilia_palatina" max="INFANTRY" />
@@ -19898,13 +20275,21 @@
         <MenAtArm type="zagar_an_adunai" key="att_ger_bagaudae" max="INFANTRY" />
         <MenAtArm type="zeba_outriders" key="BAL_kursi_swords" max="CAVALRY" />
         <MenAtArm type="zebaback_slavers" key="att_cel_black_blades" max="INFANTRY" />
+        <MenAtArm type="african_cattle_riders" key="ARM_light_cavalry" max="CAVALRY" />
+        <MenAtArm type="koursons" key="ARM_skirmishers" max="RANGED" />
+        <MenAtArm type="legions" key="SAS_elite_heavy_dailamite_infantry" max="INFANTRY" />
+        <MenAtArm type="prae_legions" key="SAS_elite_heavy_dailamite_infantry" max="INFANTRY" />
+        <MenAtArm type="pushtigban" key="HEP_hindi_cavalry" max="CAVALRY" />
+        <MenAtArm type="reindeer_cavalry" key="ARM_light_cavalry" max="CAVALRY" />
+        <MenAtArm type="scorpio" key="att_des_desert_bowmen" max="RANGED" />
+        <MenAtArm type="siege_towers" key="att_des_desert_bowmen" max="RANGED" />
     </Faction>
     <Faction name="Eastern Rebels">
         <General key="att_rom_comes" />
         <Knights key="att_ger_noble_germanic_horsemen" />
-        <Levies porcentage="17" key="ERE_limitanei_levy_spears" max="LEVY" />
-        <Levies porcentage="36" key="ERE_limitanei_levy_swords" max="LEVY" />
-        <Levies porcentage="47" key="att_rom_sagittarii" max="LEVY" />
+        <Levies porcentage="18" key="ERE_limitanei_levy_spears" max="LEVY" />
+        <Levies porcentage="31" key="ERE_limitanei_levy_swords" max="LEVY" />
+        <Levies porcentage="51" key="att_rom_sagittarii" max="LEVY" />
         <MenAtArm type="light_footmen" key="att_rom_exploratores" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="ERE_legio" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="att_rom_western_auxilia_palatina" max="INFANTRY" />
@@ -20331,13 +20716,21 @@
         <MenAtArm type="zagar_an_adunai" key="att_ger_bagaudae" max="INFANTRY" />
         <MenAtArm type="zeba_outriders" key="BAL_kursi_swords" max="CAVALRY" />
         <MenAtArm type="zebaback_slavers" key="att_cel_black_blades" max="INFANTRY" />
+        <MenAtArm type="african_cattle_riders" key="ARM_light_cavalry" max="CAVALRY" />
+        <MenAtArm type="koursons" key="ARM_skirmishers" max="RANGED" />
+        <MenAtArm type="legions" key="SAS_elite_heavy_dailamite_infantry" max="INFANTRY" />
+        <MenAtArm type="prae_legions" key="SAS_elite_heavy_dailamite_infantry" max="INFANTRY" />
+        <MenAtArm type="pushtigban" key="HEP_hindi_cavalry" max="CAVALRY" />
+        <MenAtArm type="reindeer_cavalry" key="ARM_light_cavalry" max="CAVALRY" />
+        <MenAtArm type="scorpio" key="att_des_desert_bowmen" max="RANGED" />
+        <MenAtArm type="siege_towers" key="att_des_desert_bowmen" max="RANGED" />
     </Faction>
     <Faction name="Eastphalia">
         <General key="att_rom_comes" />
         <Knights key="att_ger_noble_germanic_horsemen" />
-        <Levies porcentage="46" key="ERE_limitanei_levy_spears" max="LEVY" />
-        <Levies porcentage="31" key="ERE_limitanei_levy_swords" max="LEVY" />
-        <Levies porcentage="23" key="att_rom_sagittarii" max="LEVY" />
+        <Levies porcentage="16" key="ERE_limitanei_levy_spears" max="LEVY" />
+        <Levies porcentage="70" key="ERE_limitanei_levy_swords" max="LEVY" />
+        <Levies porcentage="14" key="att_rom_sagittarii" max="LEVY" />
         <MenAtArm type="light_footmen" key="att_rom_exploratores" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="ERE_legio" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="att_rom_western_auxilia_palatina" max="INFANTRY" />
@@ -20764,13 +21157,21 @@
         <MenAtArm type="zagar_an_adunai" key="att_ger_bagaudae" max="INFANTRY" />
         <MenAtArm type="zeba_outriders" key="BAL_kursi_swords" max="CAVALRY" />
         <MenAtArm type="zebaback_slavers" key="att_cel_black_blades" max="INFANTRY" />
+        <MenAtArm type="african_cattle_riders" key="ARM_light_cavalry" max="CAVALRY" />
+        <MenAtArm type="koursons" key="ARM_skirmishers" max="RANGED" />
+        <MenAtArm type="legions" key="SAS_elite_heavy_dailamite_infantry" max="INFANTRY" />
+        <MenAtArm type="prae_legions" key="SAS_elite_heavy_dailamite_infantry" max="INFANTRY" />
+        <MenAtArm type="pushtigban" key="HEP_hindi_cavalry" max="CAVALRY" />
+        <MenAtArm type="reindeer_cavalry" key="ARM_light_cavalry" max="CAVALRY" />
+        <MenAtArm type="scorpio" key="att_des_desert_bowmen" max="RANGED" />
+        <MenAtArm type="siege_towers" key="att_des_desert_bowmen" max="RANGED" />
     </Faction>
     <Faction name="Egypt">
         <General key="att_rom_comes" />
         <Knights key="att_ger_noble_germanic_horsemen" />
         <Levies porcentage="22" key="ERE_limitanei_levy_spears" max="LEVY" />
-        <Levies porcentage="26" key="ERE_limitanei_levy_swords" max="LEVY" />
-        <Levies porcentage="52" key="att_rom_sagittarii" max="LEVY" />
+        <Levies porcentage="32" key="ERE_limitanei_levy_swords" max="LEVY" />
+        <Levies porcentage="46" key="att_rom_sagittarii" max="LEVY" />
         <MenAtArm type="light_footmen" key="att_rom_exploratores" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="ERE_legio" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="att_rom_western_auxilia_palatina" max="INFANTRY" />
@@ -21197,13 +21598,21 @@
         <MenAtArm type="zagar_an_adunai" key="att_ger_bagaudae" max="INFANTRY" />
         <MenAtArm type="zeba_outriders" key="BAL_kursi_swords" max="CAVALRY" />
         <MenAtArm type="zebaback_slavers" key="att_cel_black_blades" max="INFANTRY" />
+        <MenAtArm type="african_cattle_riders" key="ARM_light_cavalry" max="CAVALRY" />
+        <MenAtArm type="koursons" key="ARM_skirmishers" max="RANGED" />
+        <MenAtArm type="legions" key="SAS_elite_heavy_dailamite_infantry" max="INFANTRY" />
+        <MenAtArm type="prae_legions" key="SAS_elite_heavy_dailamite_infantry" max="INFANTRY" />
+        <MenAtArm type="pushtigban" key="HEP_hindi_cavalry" max="CAVALRY" />
+        <MenAtArm type="reindeer_cavalry" key="ARM_light_cavalry" max="CAVALRY" />
+        <MenAtArm type="scorpio" key="att_des_desert_bowmen" max="RANGED" />
+        <MenAtArm type="siege_towers" key="att_des_desert_bowmen" max="RANGED" />
     </Faction>
     <Faction name="Frankish Rebels">
         <General key="att_rom_comes" />
         <Knights key="att_ger_noble_germanic_horsemen" />
-        <Levies porcentage="24" key="ERE_limitanei_levy_spears" max="LEVY" />
-        <Levies porcentage="52" key="ERE_limitanei_levy_swords" max="LEVY" />
-        <Levies porcentage="24" key="att_rom_sagittarii" max="LEVY" />
+        <Levies porcentage="38" key="ERE_limitanei_levy_spears" max="LEVY" />
+        <Levies porcentage="33" key="ERE_limitanei_levy_swords" max="LEVY" />
+        <Levies porcentage="29" key="att_rom_sagittarii" max="LEVY" />
         <MenAtArm type="light_footmen" key="att_rom_exploratores" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="ERE_legio" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="att_rom_western_auxilia_palatina" max="INFANTRY" />
@@ -21630,13 +22039,21 @@
         <MenAtArm type="zagar_an_adunai" key="att_ger_bagaudae" max="INFANTRY" />
         <MenAtArm type="zeba_outriders" key="BAL_kursi_swords" max="CAVALRY" />
         <MenAtArm type="zebaback_slavers" key="att_cel_black_blades" max="INFANTRY" />
+        <MenAtArm type="african_cattle_riders" key="ARM_light_cavalry" max="CAVALRY" />
+        <MenAtArm type="koursons" key="ARM_skirmishers" max="RANGED" />
+        <MenAtArm type="legions" key="SAS_elite_heavy_dailamite_infantry" max="INFANTRY" />
+        <MenAtArm type="prae_legions" key="SAS_elite_heavy_dailamite_infantry" max="INFANTRY" />
+        <MenAtArm type="pushtigban" key="HEP_hindi_cavalry" max="CAVALRY" />
+        <MenAtArm type="reindeer_cavalry" key="ARM_light_cavalry" max="CAVALRY" />
+        <MenAtArm type="scorpio" key="att_des_desert_bowmen" max="RANGED" />
+        <MenAtArm type="siege_towers" key="att_des_desert_bowmen" max="RANGED" />
     </Faction>
     <Faction name="Gaetuli">
         <General key="att_rom_comes" />
         <Knights key="att_ger_noble_germanic_horsemen" />
-        <Levies porcentage="27" key="ERE_limitanei_levy_spears" max="LEVY" />
-        <Levies porcentage="50" key="ERE_limitanei_levy_swords" max="LEVY" />
-        <Levies porcentage="23" key="att_rom_sagittarii" max="LEVY" />
+        <Levies porcentage="35" key="ERE_limitanei_levy_spears" max="LEVY" />
+        <Levies porcentage="17" key="ERE_limitanei_levy_swords" max="LEVY" />
+        <Levies porcentage="48" key="att_rom_sagittarii" max="LEVY" />
         <MenAtArm type="light_footmen" key="att_rom_exploratores" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="ERE_legio" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="att_rom_western_auxilia_palatina" max="INFANTRY" />
@@ -22063,13 +22480,21 @@
         <MenAtArm type="zagar_an_adunai" key="att_ger_bagaudae" max="INFANTRY" />
         <MenAtArm type="zeba_outriders" key="BAL_kursi_swords" max="CAVALRY" />
         <MenAtArm type="zebaback_slavers" key="att_cel_black_blades" max="INFANTRY" />
+        <MenAtArm type="african_cattle_riders" key="ARM_light_cavalry" max="CAVALRY" />
+        <MenAtArm type="koursons" key="ARM_skirmishers" max="RANGED" />
+        <MenAtArm type="legions" key="SAS_elite_heavy_dailamite_infantry" max="INFANTRY" />
+        <MenAtArm type="prae_legions" key="SAS_elite_heavy_dailamite_infantry" max="INFANTRY" />
+        <MenAtArm type="pushtigban" key="HEP_hindi_cavalry" max="CAVALRY" />
+        <MenAtArm type="reindeer_cavalry" key="ARM_light_cavalry" max="CAVALRY" />
+        <MenAtArm type="scorpio" key="att_des_desert_bowmen" max="RANGED" />
+        <MenAtArm type="siege_towers" key="att_des_desert_bowmen" max="RANGED" />
     </Faction>
     <Faction name="Gautar">
         <General key="att_rom_comes" />
         <Knights key="att_ger_noble_germanic_horsemen" />
         <Levies porcentage="25" key="ERE_limitanei_levy_spears" max="LEVY" />
-        <Levies porcentage="16" key="ERE_limitanei_levy_swords" max="LEVY" />
-        <Levies porcentage="59" key="att_rom_sagittarii" max="LEVY" />
+        <Levies porcentage="18" key="ERE_limitanei_levy_swords" max="LEVY" />
+        <Levies porcentage="57" key="att_rom_sagittarii" max="LEVY" />
         <MenAtArm type="light_footmen" key="att_rom_exploratores" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="ERE_legio" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="att_rom_western_auxilia_palatina" max="INFANTRY" />
@@ -22496,13 +22921,21 @@
         <MenAtArm type="zagar_an_adunai" key="att_ger_bagaudae" max="INFANTRY" />
         <MenAtArm type="zeba_outriders" key="BAL_kursi_swords" max="CAVALRY" />
         <MenAtArm type="zebaback_slavers" key="att_cel_black_blades" max="INFANTRY" />
+        <MenAtArm type="african_cattle_riders" key="ARM_light_cavalry" max="CAVALRY" />
+        <MenAtArm type="koursons" key="ARM_skirmishers" max="RANGED" />
+        <MenAtArm type="legions" key="SAS_elite_heavy_dailamite_infantry" max="INFANTRY" />
+        <MenAtArm type="prae_legions" key="SAS_elite_heavy_dailamite_infantry" max="INFANTRY" />
+        <MenAtArm type="pushtigban" key="HEP_hindi_cavalry" max="CAVALRY" />
+        <MenAtArm type="reindeer_cavalry" key="ARM_light_cavalry" max="CAVALRY" />
+        <MenAtArm type="scorpio" key="att_des_desert_bowmen" max="RANGED" />
+        <MenAtArm type="siege_towers" key="att_des_desert_bowmen" max="RANGED" />
     </Faction>
     <Faction name="Gepidae">
         <General key="att_rom_comes" />
         <Knights key="att_ger_noble_germanic_horsemen" />
-        <Levies porcentage="53" key="ERE_limitanei_levy_spears" max="LEVY" />
-        <Levies porcentage="24" key="ERE_limitanei_levy_swords" max="LEVY" />
-        <Levies porcentage="23" key="att_rom_sagittarii" max="LEVY" />
+        <Levies porcentage="39" key="ERE_limitanei_levy_spears" max="LEVY" />
+        <Levies porcentage="31" key="ERE_limitanei_levy_swords" max="LEVY" />
+        <Levies porcentage="30" key="att_rom_sagittarii" max="LEVY" />
         <MenAtArm type="light_footmen" key="att_rom_exploratores" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="ERE_legio" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="att_rom_western_auxilia_palatina" max="INFANTRY" />
@@ -22929,13 +23362,21 @@
         <MenAtArm type="zagar_an_adunai" key="att_ger_bagaudae" max="INFANTRY" />
         <MenAtArm type="zeba_outriders" key="BAL_kursi_swords" max="CAVALRY" />
         <MenAtArm type="zebaback_slavers" key="att_cel_black_blades" max="INFANTRY" />
+        <MenAtArm type="african_cattle_riders" key="ARM_light_cavalry" max="CAVALRY" />
+        <MenAtArm type="koursons" key="ARM_skirmishers" max="RANGED" />
+        <MenAtArm type="legions" key="SAS_elite_heavy_dailamite_infantry" max="INFANTRY" />
+        <MenAtArm type="prae_legions" key="SAS_elite_heavy_dailamite_infantry" max="INFANTRY" />
+        <MenAtArm type="pushtigban" key="HEP_hindi_cavalry" max="CAVALRY" />
+        <MenAtArm type="reindeer_cavalry" key="ARM_light_cavalry" max="CAVALRY" />
+        <MenAtArm type="scorpio" key="att_des_desert_bowmen" max="RANGED" />
+        <MenAtArm type="siege_towers" key="att_des_desert_bowmen" max="RANGED" />
     </Faction>
     <Faction name="Gothoi">
         <General key="att_rom_comes" />
         <Knights key="att_ger_noble_germanic_horsemen" />
-        <Levies porcentage="18" key="ERE_limitanei_levy_spears" max="LEVY" />
-        <Levies porcentage="18" key="ERE_limitanei_levy_swords" max="LEVY" />
-        <Levies porcentage="64" key="att_rom_sagittarii" max="LEVY" />
+        <Levies porcentage="40" key="ERE_limitanei_levy_spears" max="LEVY" />
+        <Levies porcentage="21" key="ERE_limitanei_levy_swords" max="LEVY" />
+        <Levies porcentage="39" key="att_rom_sagittarii" max="LEVY" />
         <MenAtArm type="light_footmen" key="att_rom_exploratores" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="ERE_legio" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="att_rom_western_auxilia_palatina" max="INFANTRY" />
@@ -23362,13 +23803,21 @@
         <MenAtArm type="zagar_an_adunai" key="att_ger_bagaudae" max="INFANTRY" />
         <MenAtArm type="zeba_outriders" key="BAL_kursi_swords" max="CAVALRY" />
         <MenAtArm type="zebaback_slavers" key="att_cel_black_blades" max="INFANTRY" />
+        <MenAtArm type="african_cattle_riders" key="ARM_light_cavalry" max="CAVALRY" />
+        <MenAtArm type="koursons" key="ARM_skirmishers" max="RANGED" />
+        <MenAtArm type="legions" key="SAS_elite_heavy_dailamite_infantry" max="INFANTRY" />
+        <MenAtArm type="prae_legions" key="SAS_elite_heavy_dailamite_infantry" max="INFANTRY" />
+        <MenAtArm type="pushtigban" key="HEP_hindi_cavalry" max="CAVALRY" />
+        <MenAtArm type="reindeer_cavalry" key="ARM_light_cavalry" max="CAVALRY" />
+        <MenAtArm type="scorpio" key="att_des_desert_bowmen" max="RANGED" />
+        <MenAtArm type="siege_towers" key="att_des_desert_bowmen" max="RANGED" />
     </Faction>
     <Faction name="Hepthalites">
         <General key="att_rom_comes" />
         <Knights key="att_ger_noble_germanic_horsemen" />
-        <Levies porcentage="34" key="ERE_limitanei_levy_spears" max="LEVY" />
-        <Levies porcentage="27" key="ERE_limitanei_levy_swords" max="LEVY" />
-        <Levies porcentage="39" key="att_rom_sagittarii" max="LEVY" />
+        <Levies porcentage="26" key="ERE_limitanei_levy_spears" max="LEVY" />
+        <Levies porcentage="53" key="ERE_limitanei_levy_swords" max="LEVY" />
+        <Levies porcentage="21" key="att_rom_sagittarii" max="LEVY" />
         <MenAtArm type="light_footmen" key="att_rom_exploratores" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="ERE_legio" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="att_rom_western_auxilia_palatina" max="INFANTRY" />
@@ -23795,13 +24244,21 @@
         <MenAtArm type="zagar_an_adunai" key="att_ger_bagaudae" max="INFANTRY" />
         <MenAtArm type="zeba_outriders" key="BAL_kursi_swords" max="CAVALRY" />
         <MenAtArm type="zebaback_slavers" key="att_cel_black_blades" max="INFANTRY" />
+        <MenAtArm type="african_cattle_riders" key="ARM_light_cavalry" max="CAVALRY" />
+        <MenAtArm type="koursons" key="ARM_skirmishers" max="RANGED" />
+        <MenAtArm type="legions" key="SAS_elite_heavy_dailamite_infantry" max="INFANTRY" />
+        <MenAtArm type="prae_legions" key="SAS_elite_heavy_dailamite_infantry" max="INFANTRY" />
+        <MenAtArm type="pushtigban" key="HEP_hindi_cavalry" max="CAVALRY" />
+        <MenAtArm type="reindeer_cavalry" key="ARM_light_cavalry" max="CAVALRY" />
+        <MenAtArm type="scorpio" key="att_des_desert_bowmen" max="RANGED" />
+        <MenAtArm type="siege_towers" key="att_des_desert_bowmen" max="RANGED" />
     </Faction>
     <Faction name="Hispania">
         <General key="att_rom_comes" />
         <Knights key="att_ger_noble_germanic_horsemen" />
-        <Levies porcentage="27" key="ERE_limitanei_levy_spears" max="LEVY" />
-        <Levies porcentage="38" key="ERE_limitanei_levy_swords" max="LEVY" />
-        <Levies porcentage="35" key="att_rom_sagittarii" max="LEVY" />
+        <Levies porcentage="16" key="ERE_limitanei_levy_spears" max="LEVY" />
+        <Levies porcentage="46" key="ERE_limitanei_levy_swords" max="LEVY" />
+        <Levies porcentage="38" key="att_rom_sagittarii" max="LEVY" />
         <MenAtArm type="light_footmen" key="att_rom_exploratores" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="ERE_legio" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="att_rom_western_auxilia_palatina" max="INFANTRY" />
@@ -24228,13 +24685,21 @@
         <MenAtArm type="zagar_an_adunai" key="att_ger_bagaudae" max="INFANTRY" />
         <MenAtArm type="zeba_outriders" key="BAL_kursi_swords" max="CAVALRY" />
         <MenAtArm type="zebaback_slavers" key="att_cel_black_blades" max="INFANTRY" />
+        <MenAtArm type="african_cattle_riders" key="ARM_light_cavalry" max="CAVALRY" />
+        <MenAtArm type="koursons" key="ARM_skirmishers" max="RANGED" />
+        <MenAtArm type="legions" key="SAS_elite_heavy_dailamite_infantry" max="INFANTRY" />
+        <MenAtArm type="prae_legions" key="SAS_elite_heavy_dailamite_infantry" max="INFANTRY" />
+        <MenAtArm type="pushtigban" key="HEP_hindi_cavalry" max="CAVALRY" />
+        <MenAtArm type="reindeer_cavalry" key="ARM_light_cavalry" max="CAVALRY" />
+        <MenAtArm type="scorpio" key="att_des_desert_bowmen" max="RANGED" />
+        <MenAtArm type="siege_towers" key="att_des_desert_bowmen" max="RANGED" />
     </Faction>
     <Faction name="Kartli">
         <General key="att_rom_comes" />
         <Knights key="att_ger_noble_germanic_horsemen" />
-        <Levies porcentage="21" key="ERE_limitanei_levy_spears" max="LEVY" />
-        <Levies porcentage="40" key="ERE_limitanei_levy_swords" max="LEVY" />
-        <Levies porcentage="39" key="att_rom_sagittarii" max="LEVY" />
+        <Levies porcentage="41" key="ERE_limitanei_levy_spears" max="LEVY" />
+        <Levies porcentage="30" key="ERE_limitanei_levy_swords" max="LEVY" />
+        <Levies porcentage="29" key="att_rom_sagittarii" max="LEVY" />
         <MenAtArm type="light_footmen" key="att_rom_exploratores" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="ERE_legio" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="att_rom_western_auxilia_palatina" max="INFANTRY" />
@@ -24661,12 +25126,20 @@
         <MenAtArm type="zagar_an_adunai" key="att_ger_bagaudae" max="INFANTRY" />
         <MenAtArm type="zeba_outriders" key="BAL_kursi_swords" max="CAVALRY" />
         <MenAtArm type="zebaback_slavers" key="att_cel_black_blades" max="INFANTRY" />
+        <MenAtArm type="african_cattle_riders" key="ARM_light_cavalry" max="CAVALRY" />
+        <MenAtArm type="koursons" key="ARM_skirmishers" max="RANGED" />
+        <MenAtArm type="legions" key="SAS_elite_heavy_dailamite_infantry" max="INFANTRY" />
+        <MenAtArm type="prae_legions" key="SAS_elite_heavy_dailamite_infantry" max="INFANTRY" />
+        <MenAtArm type="pushtigban" key="HEP_hindi_cavalry" max="CAVALRY" />
+        <MenAtArm type="reindeer_cavalry" key="ARM_light_cavalry" max="CAVALRY" />
+        <MenAtArm type="scorpio" key="att_des_desert_bowmen" max="RANGED" />
+        <MenAtArm type="siege_towers" key="att_des_desert_bowmen" max="RANGED" />
     </Faction>
     <Faction name="Mauri">
         <General key="att_rom_comes" />
         <Knights key="att_ger_noble_germanic_horsemen" />
-        <Levies porcentage="56" key="ERE_limitanei_levy_spears" max="LEVY" />
-        <Levies porcentage="11" key="ERE_limitanei_levy_swords" max="LEVY" />
+        <Levies porcentage="40" key="ERE_limitanei_levy_spears" max="LEVY" />
+        <Levies porcentage="27" key="ERE_limitanei_levy_swords" max="LEVY" />
         <Levies porcentage="33" key="att_rom_sagittarii" max="LEVY" />
         <MenAtArm type="light_footmen" key="att_rom_exploratores" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="ERE_legio" max="INFANTRY" />
@@ -25094,13 +25567,21 @@
         <MenAtArm type="zagar_an_adunai" key="att_ger_bagaudae" max="INFANTRY" />
         <MenAtArm type="zeba_outriders" key="BAL_kursi_swords" max="CAVALRY" />
         <MenAtArm type="zebaback_slavers" key="att_cel_black_blades" max="INFANTRY" />
+        <MenAtArm type="african_cattle_riders" key="ARM_light_cavalry" max="CAVALRY" />
+        <MenAtArm type="koursons" key="ARM_skirmishers" max="RANGED" />
+        <MenAtArm type="legions" key="SAS_elite_heavy_dailamite_infantry" max="INFANTRY" />
+        <MenAtArm type="prae_legions" key="SAS_elite_heavy_dailamite_infantry" max="INFANTRY" />
+        <MenAtArm type="pushtigban" key="HEP_hindi_cavalry" max="CAVALRY" />
+        <MenAtArm type="reindeer_cavalry" key="ARM_light_cavalry" max="CAVALRY" />
+        <MenAtArm type="scorpio" key="att_des_desert_bowmen" max="RANGED" />
+        <MenAtArm type="siege_towers" key="att_des_desert_bowmen" max="RANGED" />
     </Faction>
     <Faction name="Moors">
         <General key="att_rom_comes" />
         <Knights key="att_ger_noble_germanic_horsemen" />
-        <Levies porcentage="42" key="ERE_limitanei_levy_spears" max="LEVY" />
-        <Levies porcentage="11" key="ERE_limitanei_levy_swords" max="LEVY" />
-        <Levies porcentage="47" key="att_rom_sagittarii" max="LEVY" />
+        <Levies porcentage="36" key="ERE_limitanei_levy_spears" max="LEVY" />
+        <Levies porcentage="23" key="ERE_limitanei_levy_swords" max="LEVY" />
+        <Levies porcentage="41" key="att_rom_sagittarii" max="LEVY" />
         <MenAtArm type="light_footmen" key="att_rom_exploratores" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="ERE_legio" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="att_rom_western_auxilia_palatina" max="INFANTRY" />
@@ -25527,13 +26008,21 @@
         <MenAtArm type="zagar_an_adunai" key="att_ger_bagaudae" max="INFANTRY" />
         <MenAtArm type="zeba_outriders" key="BAL_kursi_swords" max="CAVALRY" />
         <MenAtArm type="zebaback_slavers" key="att_cel_black_blades" max="INFANTRY" />
+        <MenAtArm type="african_cattle_riders" key="ARM_light_cavalry" max="CAVALRY" />
+        <MenAtArm type="koursons" key="ARM_skirmishers" max="RANGED" />
+        <MenAtArm type="legions" key="SAS_elite_heavy_dailamite_infantry" max="INFANTRY" />
+        <MenAtArm type="prae_legions" key="SAS_elite_heavy_dailamite_infantry" max="INFANTRY" />
+        <MenAtArm type="pushtigban" key="HEP_hindi_cavalry" max="CAVALRY" />
+        <MenAtArm type="reindeer_cavalry" key="ARM_light_cavalry" max="CAVALRY" />
+        <MenAtArm type="scorpio" key="att_des_desert_bowmen" max="RANGED" />
+        <MenAtArm type="siege_towers" key="att_des_desert_bowmen" max="RANGED" />
     </Faction>
     <Faction name="Nobatia">
         <General key="att_rom_comes" />
         <Knights key="att_ger_noble_germanic_horsemen" />
-        <Levies porcentage="15" key="ERE_limitanei_levy_spears" max="LEVY" />
-        <Levies porcentage="37" key="ERE_limitanei_levy_swords" max="LEVY" />
-        <Levies porcentage="48" key="att_rom_sagittarii" max="LEVY" />
+        <Levies porcentage="20" key="ERE_limitanei_levy_spears" max="LEVY" />
+        <Levies porcentage="58" key="ERE_limitanei_levy_swords" max="LEVY" />
+        <Levies porcentage="22" key="att_rom_sagittarii" max="LEVY" />
         <MenAtArm type="light_footmen" key="att_rom_exploratores" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="ERE_legio" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="att_rom_western_auxilia_palatina" max="INFANTRY" />
@@ -25960,13 +26449,21 @@
         <MenAtArm type="zagar_an_adunai" key="att_ger_bagaudae" max="INFANTRY" />
         <MenAtArm type="zeba_outriders" key="BAL_kursi_swords" max="CAVALRY" />
         <MenAtArm type="zebaback_slavers" key="att_cel_black_blades" max="INFANTRY" />
+        <MenAtArm type="african_cattle_riders" key="ARM_light_cavalry" max="CAVALRY" />
+        <MenAtArm type="koursons" key="ARM_skirmishers" max="RANGED" />
+        <MenAtArm type="legions" key="SAS_elite_heavy_dailamite_infantry" max="INFANTRY" />
+        <MenAtArm type="prae_legions" key="SAS_elite_heavy_dailamite_infantry" max="INFANTRY" />
+        <MenAtArm type="pushtigban" key="HEP_hindi_cavalry" max="CAVALRY" />
+        <MenAtArm type="reindeer_cavalry" key="ARM_light_cavalry" max="CAVALRY" />
+        <MenAtArm type="scorpio" key="att_des_desert_bowmen" max="RANGED" />
+        <MenAtArm type="siege_towers" key="att_des_desert_bowmen" max="RANGED" />
     </Faction>
     <Faction name="Oriens">
         <General key="att_rom_comes" />
         <Knights key="att_ger_noble_germanic_horsemen" />
-        <Levies porcentage="36" key="ERE_limitanei_levy_spears" max="LEVY" />
-        <Levies porcentage="32" key="ERE_limitanei_levy_swords" max="LEVY" />
-        <Levies porcentage="32" key="att_rom_sagittarii" max="LEVY" />
+        <Levies porcentage="45" key="ERE_limitanei_levy_spears" max="LEVY" />
+        <Levies porcentage="37" key="ERE_limitanei_levy_swords" max="LEVY" />
+        <Levies porcentage="18" key="att_rom_sagittarii" max="LEVY" />
         <MenAtArm type="light_footmen" key="att_rom_exploratores" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="ERE_legio" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="att_rom_western_auxilia_palatina" max="INFANTRY" />
@@ -26393,13 +26890,21 @@
         <MenAtArm type="zagar_an_adunai" key="att_ger_bagaudae" max="INFANTRY" />
         <MenAtArm type="zeba_outriders" key="BAL_kursi_swords" max="CAVALRY" />
         <MenAtArm type="zebaback_slavers" key="att_cel_black_blades" max="INFANTRY" />
+        <MenAtArm type="african_cattle_riders" key="ARM_light_cavalry" max="CAVALRY" />
+        <MenAtArm type="koursons" key="ARM_skirmishers" max="RANGED" />
+        <MenAtArm type="legions" key="SAS_elite_heavy_dailamite_infantry" max="INFANTRY" />
+        <MenAtArm type="prae_legions" key="SAS_elite_heavy_dailamite_infantry" max="INFANTRY" />
+        <MenAtArm type="pushtigban" key="HEP_hindi_cavalry" max="CAVALRY" />
+        <MenAtArm type="reindeer_cavalry" key="ARM_light_cavalry" max="CAVALRY" />
+        <MenAtArm type="scorpio" key="att_des_desert_bowmen" max="RANGED" />
+        <MenAtArm type="siege_towers" key="att_des_desert_bowmen" max="RANGED" />
     </Faction>
     <Faction name="Ostrogothic Kingdom">
         <General key="att_rom_comes" />
         <Knights key="att_ger_noble_germanic_horsemen" />
-        <Levies porcentage="49" key="ERE_limitanei_levy_spears" max="LEVY" />
-        <Levies porcentage="40" key="ERE_limitanei_levy_swords" max="LEVY" />
-        <Levies porcentage="11" key="att_rom_sagittarii" max="LEVY" />
+        <Levies porcentage="41" key="ERE_limitanei_levy_spears" max="LEVY" />
+        <Levies porcentage="35" key="ERE_limitanei_levy_swords" max="LEVY" />
+        <Levies porcentage="24" key="att_rom_sagittarii" max="LEVY" />
         <MenAtArm type="light_footmen" key="att_rom_exploratores" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="ERE_legio" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="att_rom_western_auxilia_palatina" max="INFANTRY" />
@@ -26826,13 +27331,21 @@
         <MenAtArm type="zagar_an_adunai" key="att_ger_bagaudae" max="INFANTRY" />
         <MenAtArm type="zeba_outriders" key="BAL_kursi_swords" max="CAVALRY" />
         <MenAtArm type="zebaback_slavers" key="att_cel_black_blades" max="INFANTRY" />
+        <MenAtArm type="african_cattle_riders" key="ARM_light_cavalry" max="CAVALRY" />
+        <MenAtArm type="koursons" key="ARM_skirmishers" max="RANGED" />
+        <MenAtArm type="legions" key="SAS_elite_heavy_dailamite_infantry" max="INFANTRY" />
+        <MenAtArm type="prae_legions" key="SAS_elite_heavy_dailamite_infantry" max="INFANTRY" />
+        <MenAtArm type="pushtigban" key="HEP_hindi_cavalry" max="CAVALRY" />
+        <MenAtArm type="reindeer_cavalry" key="ARM_light_cavalry" max="CAVALRY" />
+        <MenAtArm type="scorpio" key="att_des_desert_bowmen" max="RANGED" />
+        <MenAtArm type="siege_towers" key="att_des_desert_bowmen" max="RANGED" />
     </Faction>
     <Faction name="Palmyra">
         <General key="att_rom_comes" />
         <Knights key="att_ger_noble_germanic_horsemen" />
-        <Levies porcentage="55" key="ERE_limitanei_levy_spears" max="LEVY" />
-        <Levies porcentage="20" key="ERE_limitanei_levy_swords" max="LEVY" />
-        <Levies porcentage="25" key="att_rom_sagittarii" max="LEVY" />
+        <Levies porcentage="46" key="ERE_limitanei_levy_spears" max="LEVY" />
+        <Levies porcentage="42" key="ERE_limitanei_levy_swords" max="LEVY" />
+        <Levies porcentage="12" key="att_rom_sagittarii" max="LEVY" />
         <MenAtArm type="light_footmen" key="att_rom_exploratores" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="ERE_legio" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="att_rom_western_auxilia_palatina" max="INFANTRY" />
@@ -27259,13 +27772,21 @@
         <MenAtArm type="zagar_an_adunai" key="att_ger_bagaudae" max="INFANTRY" />
         <MenAtArm type="zeba_outriders" key="BAL_kursi_swords" max="CAVALRY" />
         <MenAtArm type="zebaback_slavers" key="att_cel_black_blades" max="INFANTRY" />
+        <MenAtArm type="african_cattle_riders" key="ARM_light_cavalry" max="CAVALRY" />
+        <MenAtArm type="koursons" key="ARM_skirmishers" max="RANGED" />
+        <MenAtArm type="legions" key="SAS_elite_heavy_dailamite_infantry" max="INFANTRY" />
+        <MenAtArm type="prae_legions" key="SAS_elite_heavy_dailamite_infantry" max="INFANTRY" />
+        <MenAtArm type="pushtigban" key="HEP_hindi_cavalry" max="CAVALRY" />
+        <MenAtArm type="reindeer_cavalry" key="ARM_light_cavalry" max="CAVALRY" />
+        <MenAtArm type="scorpio" key="att_des_desert_bowmen" max="RANGED" />
+        <MenAtArm type="siege_towers" key="att_des_desert_bowmen" max="RANGED" />
     </Faction>
     <Faction name="Pontus">
         <General key="att_rom_comes" />
         <Knights key="att_ger_noble_germanic_horsemen" />
-        <Levies porcentage="31" key="ERE_limitanei_levy_spears" max="LEVY" />
-        <Levies porcentage="31" key="ERE_limitanei_levy_swords" max="LEVY" />
-        <Levies porcentage="38" key="att_rom_sagittarii" max="LEVY" />
+        <Levies porcentage="33" key="ERE_limitanei_levy_spears" max="LEVY" />
+        <Levies porcentage="44" key="ERE_limitanei_levy_swords" max="LEVY" />
+        <Levies porcentage="23" key="att_rom_sagittarii" max="LEVY" />
         <MenAtArm type="light_footmen" key="att_rom_exploratores" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="ERE_legio" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="att_rom_western_auxilia_palatina" max="INFANTRY" />
@@ -27692,13 +28213,21 @@
         <MenAtArm type="zagar_an_adunai" key="att_ger_bagaudae" max="INFANTRY" />
         <MenAtArm type="zeba_outriders" key="BAL_kursi_swords" max="CAVALRY" />
         <MenAtArm type="zebaback_slavers" key="att_cel_black_blades" max="INFANTRY" />
+        <MenAtArm type="african_cattle_riders" key="ARM_light_cavalry" max="CAVALRY" />
+        <MenAtArm type="koursons" key="ARM_skirmishers" max="RANGED" />
+        <MenAtArm type="legions" key="SAS_elite_heavy_dailamite_infantry" max="INFANTRY" />
+        <MenAtArm type="prae_legions" key="SAS_elite_heavy_dailamite_infantry" max="INFANTRY" />
+        <MenAtArm type="pushtigban" key="HEP_hindi_cavalry" max="CAVALRY" />
+        <MenAtArm type="reindeer_cavalry" key="ARM_light_cavalry" max="CAVALRY" />
+        <MenAtArm type="scorpio" key="att_des_desert_bowmen" max="RANGED" />
+        <MenAtArm type="siege_towers" key="att_des_desert_bowmen" max="RANGED" />
     </Faction>
     <Faction name="Sabiroi">
         <General key="att_rom_comes" />
         <Knights key="att_ger_noble_germanic_horsemen" />
-        <Levies porcentage="21" key="ERE_limitanei_levy_spears" max="LEVY" />
-        <Levies porcentage="51" key="ERE_limitanei_levy_swords" max="LEVY" />
-        <Levies porcentage="28" key="att_rom_sagittarii" max="LEVY" />
+        <Levies porcentage="39" key="ERE_limitanei_levy_spears" max="LEVY" />
+        <Levies porcentage="36" key="ERE_limitanei_levy_swords" max="LEVY" />
+        <Levies porcentage="25" key="att_rom_sagittarii" max="LEVY" />
         <MenAtArm type="light_footmen" key="att_rom_exploratores" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="ERE_legio" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="att_rom_western_auxilia_palatina" max="INFANTRY" />
@@ -28125,13 +28654,21 @@
         <MenAtArm type="zagar_an_adunai" key="att_ger_bagaudae" max="INFANTRY" />
         <MenAtArm type="zeba_outriders" key="BAL_kursi_swords" max="CAVALRY" />
         <MenAtArm type="zebaback_slavers" key="att_cel_black_blades" max="INFANTRY" />
+        <MenAtArm type="african_cattle_riders" key="ARM_light_cavalry" max="CAVALRY" />
+        <MenAtArm type="koursons" key="ARM_skirmishers" max="RANGED" />
+        <MenAtArm type="legions" key="SAS_elite_heavy_dailamite_infantry" max="INFANTRY" />
+        <MenAtArm type="prae_legions" key="SAS_elite_heavy_dailamite_infantry" max="INFANTRY" />
+        <MenAtArm type="pushtigban" key="HEP_hindi_cavalry" max="CAVALRY" />
+        <MenAtArm type="reindeer_cavalry" key="ARM_light_cavalry" max="CAVALRY" />
+        <MenAtArm type="scorpio" key="att_des_desert_bowmen" max="RANGED" />
+        <MenAtArm type="siege_towers" key="att_des_desert_bowmen" max="RANGED" />
     </Faction>
     <Faction name="Sarmatian Rebels">
         <General key="att_rom_comes" />
         <Knights key="att_ger_noble_germanic_horsemen" />
-        <Levies porcentage="27" key="ERE_limitanei_levy_spears" max="LEVY" />
-        <Levies porcentage="34" key="ERE_limitanei_levy_swords" max="LEVY" />
-        <Levies porcentage="39" key="att_rom_sagittarii" max="LEVY" />
+        <Levies porcentage="36" key="ERE_limitanei_levy_spears" max="LEVY" />
+        <Levies porcentage="29" key="ERE_limitanei_levy_swords" max="LEVY" />
+        <Levies porcentage="35" key="att_rom_sagittarii" max="LEVY" />
         <MenAtArm type="light_footmen" key="att_rom_exploratores" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="ERE_legio" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="att_rom_western_auxilia_palatina" max="INFANTRY" />
@@ -28558,13 +29095,21 @@
         <MenAtArm type="zagar_an_adunai" key="att_ger_bagaudae" max="INFANTRY" />
         <MenAtArm type="zeba_outriders" key="BAL_kursi_swords" max="CAVALRY" />
         <MenAtArm type="zebaback_slavers" key="att_cel_black_blades" max="INFANTRY" />
+        <MenAtArm type="african_cattle_riders" key="ARM_light_cavalry" max="CAVALRY" />
+        <MenAtArm type="koursons" key="ARM_skirmishers" max="RANGED" />
+        <MenAtArm type="legions" key="SAS_elite_heavy_dailamite_infantry" max="INFANTRY" />
+        <MenAtArm type="prae_legions" key="SAS_elite_heavy_dailamite_infantry" max="INFANTRY" />
+        <MenAtArm type="pushtigban" key="HEP_hindi_cavalry" max="CAVALRY" />
+        <MenAtArm type="reindeer_cavalry" key="ARM_light_cavalry" max="CAVALRY" />
+        <MenAtArm type="scorpio" key="att_des_desert_bowmen" max="RANGED" />
+        <MenAtArm type="siege_towers" key="att_des_desert_bowmen" max="RANGED" />
     </Faction>
     <Faction name="Saxonia">
         <General key="att_rom_comes" />
         <Knights key="att_ger_noble_germanic_horsemen" />
         <Levies porcentage="37" key="ERE_limitanei_levy_spears" max="LEVY" />
-        <Levies porcentage="30" key="ERE_limitanei_levy_swords" max="LEVY" />
-        <Levies porcentage="33" key="att_rom_sagittarii" max="LEVY" />
+        <Levies porcentage="23" key="ERE_limitanei_levy_swords" max="LEVY" />
+        <Levies porcentage="40" key="att_rom_sagittarii" max="LEVY" />
         <MenAtArm type="light_footmen" key="att_rom_exploratores" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="ERE_legio" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="att_rom_western_auxilia_palatina" max="INFANTRY" />
@@ -28991,13 +29536,21 @@
         <MenAtArm type="zagar_an_adunai" key="att_ger_bagaudae" max="INFANTRY" />
         <MenAtArm type="zeba_outriders" key="BAL_kursi_swords" max="CAVALRY" />
         <MenAtArm type="zebaback_slavers" key="att_cel_black_blades" max="INFANTRY" />
+        <MenAtArm type="african_cattle_riders" key="ARM_light_cavalry" max="CAVALRY" />
+        <MenAtArm type="koursons" key="ARM_skirmishers" max="RANGED" />
+        <MenAtArm type="legions" key="SAS_elite_heavy_dailamite_infantry" max="INFANTRY" />
+        <MenAtArm type="prae_legions" key="SAS_elite_heavy_dailamite_infantry" max="INFANTRY" />
+        <MenAtArm type="pushtigban" key="HEP_hindi_cavalry" max="CAVALRY" />
+        <MenAtArm type="reindeer_cavalry" key="ARM_light_cavalry" max="CAVALRY" />
+        <MenAtArm type="scorpio" key="att_des_desert_bowmen" max="RANGED" />
+        <MenAtArm type="siege_towers" key="att_des_desert_bowmen" max="RANGED" />
     </Faction>
     <Faction name="Sclavenoi">
         <General key="att_rom_comes" />
         <Knights key="att_ger_noble_germanic_horsemen" />
-        <Levies porcentage="31" key="ERE_limitanei_levy_spears" max="LEVY" />
-        <Levies porcentage="41" key="ERE_limitanei_levy_swords" max="LEVY" />
-        <Levies porcentage="28" key="att_rom_sagittarii" max="LEVY" />
+        <Levies porcentage="41" key="ERE_limitanei_levy_spears" max="LEVY" />
+        <Levies porcentage="46" key="ERE_limitanei_levy_swords" max="LEVY" />
+        <Levies porcentage="13" key="att_rom_sagittarii" max="LEVY" />
         <MenAtArm type="light_footmen" key="att_rom_exploratores" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="ERE_legio" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="att_rom_western_auxilia_palatina" max="INFANTRY" />
@@ -29424,13 +29977,21 @@
         <MenAtArm type="zagar_an_adunai" key="att_ger_bagaudae" max="INFANTRY" />
         <MenAtArm type="zeba_outriders" key="BAL_kursi_swords" max="CAVALRY" />
         <MenAtArm type="zebaback_slavers" key="att_cel_black_blades" max="INFANTRY" />
+        <MenAtArm type="african_cattle_riders" key="ARM_light_cavalry" max="CAVALRY" />
+        <MenAtArm type="koursons" key="ARM_skirmishers" max="RANGED" />
+        <MenAtArm type="legions" key="SAS_elite_heavy_dailamite_infantry" max="INFANTRY" />
+        <MenAtArm type="prae_legions" key="SAS_elite_heavy_dailamite_infantry" max="INFANTRY" />
+        <MenAtArm type="pushtigban" key="HEP_hindi_cavalry" max="CAVALRY" />
+        <MenAtArm type="reindeer_cavalry" key="ARM_light_cavalry" max="CAVALRY" />
+        <MenAtArm type="scorpio" key="att_des_desert_bowmen" max="RANGED" />
+        <MenAtArm type="siege_towers" key="att_des_desert_bowmen" max="RANGED" />
     </Faction>
     <Faction name="Thuringia">
         <General key="att_rom_comes" />
         <Knights key="att_ger_noble_germanic_horsemen" />
-        <Levies porcentage="33" key="ERE_limitanei_levy_spears" max="LEVY" />
-        <Levies porcentage="41" key="ERE_limitanei_levy_swords" max="LEVY" />
-        <Levies porcentage="26" key="att_rom_sagittarii" max="LEVY" />
+        <Levies porcentage="24" key="ERE_limitanei_levy_spears" max="LEVY" />
+        <Levies porcentage="26" key="ERE_limitanei_levy_swords" max="LEVY" />
+        <Levies porcentage="50" key="att_rom_sagittarii" max="LEVY" />
         <MenAtArm type="light_footmen" key="att_rom_exploratores" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="ERE_legio" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="att_rom_western_auxilia_palatina" max="INFANTRY" />
@@ -29857,13 +30418,21 @@
         <MenAtArm type="zagar_an_adunai" key="att_ger_bagaudae" max="INFANTRY" />
         <MenAtArm type="zeba_outriders" key="BAL_kursi_swords" max="CAVALRY" />
         <MenAtArm type="zebaback_slavers" key="att_cel_black_blades" max="INFANTRY" />
+        <MenAtArm type="african_cattle_riders" key="ARM_light_cavalry" max="CAVALRY" />
+        <MenAtArm type="koursons" key="ARM_skirmishers" max="RANGED" />
+        <MenAtArm type="legions" key="SAS_elite_heavy_dailamite_infantry" max="INFANTRY" />
+        <MenAtArm type="prae_legions" key="SAS_elite_heavy_dailamite_infantry" max="INFANTRY" />
+        <MenAtArm type="pushtigban" key="HEP_hindi_cavalry" max="CAVALRY" />
+        <MenAtArm type="reindeer_cavalry" key="ARM_light_cavalry" max="CAVALRY" />
+        <MenAtArm type="scorpio" key="att_des_desert_bowmen" max="RANGED" />
+        <MenAtArm type="siege_towers" key="att_des_desert_bowmen" max="RANGED" />
     </Faction>
     <Faction name="Wenden">
         <General key="att_rom_comes" />
         <Knights key="att_ger_noble_germanic_horsemen" />
-        <Levies porcentage="19" key="ERE_limitanei_levy_spears" max="LEVY" />
-        <Levies porcentage="32" key="ERE_limitanei_levy_swords" max="LEVY" />
-        <Levies porcentage="49" key="att_rom_sagittarii" max="LEVY" />
+        <Levies porcentage="28" key="ERE_limitanei_levy_spears" max="LEVY" />
+        <Levies porcentage="30" key="ERE_limitanei_levy_swords" max="LEVY" />
+        <Levies porcentage="42" key="att_rom_sagittarii" max="LEVY" />
         <MenAtArm type="light_footmen" key="att_rom_exploratores" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="ERE_legio" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="att_rom_western_auxilia_palatina" max="INFANTRY" />
@@ -30290,13 +30859,21 @@
         <MenAtArm type="zagar_an_adunai" key="att_ger_bagaudae" max="INFANTRY" />
         <MenAtArm type="zeba_outriders" key="BAL_kursi_swords" max="CAVALRY" />
         <MenAtArm type="zebaback_slavers" key="att_cel_black_blades" max="INFANTRY" />
+        <MenAtArm type="african_cattle_riders" key="ARM_light_cavalry" max="CAVALRY" />
+        <MenAtArm type="koursons" key="ARM_skirmishers" max="RANGED" />
+        <MenAtArm type="legions" key="SAS_elite_heavy_dailamite_infantry" max="INFANTRY" />
+        <MenAtArm type="prae_legions" key="SAS_elite_heavy_dailamite_infantry" max="INFANTRY" />
+        <MenAtArm type="pushtigban" key="HEP_hindi_cavalry" max="CAVALRY" />
+        <MenAtArm type="reindeer_cavalry" key="ARM_light_cavalry" max="CAVALRY" />
+        <MenAtArm type="scorpio" key="att_des_desert_bowmen" max="RANGED" />
+        <MenAtArm type="siege_towers" key="att_des_desert_bowmen" max="RANGED" />
     </Faction>
     <Faction name="Western Germanic Rebels">
         <General key="att_rom_comes" />
         <Knights key="att_ger_noble_germanic_horsemen" />
-        <Levies porcentage="21" key="ERE_limitanei_levy_spears" max="LEVY" />
-        <Levies porcentage="15" key="ERE_limitanei_levy_swords" max="LEVY" />
-        <Levies porcentage="64" key="att_rom_sagittarii" max="LEVY" />
+        <Levies porcentage="35" key="ERE_limitanei_levy_spears" max="LEVY" />
+        <Levies porcentage="23" key="ERE_limitanei_levy_swords" max="LEVY" />
+        <Levies porcentage="42" key="att_rom_sagittarii" max="LEVY" />
         <MenAtArm type="light_footmen" key="att_rom_exploratores" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="ERE_legio" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="att_rom_western_auxilia_palatina" max="INFANTRY" />
@@ -30723,5 +31300,13 @@
         <MenAtArm type="zagar_an_adunai" key="att_ger_bagaudae" max="INFANTRY" />
         <MenAtArm type="zeba_outriders" key="BAL_kursi_swords" max="CAVALRY" />
         <MenAtArm type="zebaback_slavers" key="att_cel_black_blades" max="INFANTRY" />
+        <MenAtArm type="african_cattle_riders" key="ARM_light_cavalry" max="CAVALRY" />
+        <MenAtArm type="koursons" key="ARM_skirmishers" max="RANGED" />
+        <MenAtArm type="legions" key="SAS_elite_heavy_dailamite_infantry" max="INFANTRY" />
+        <MenAtArm type="prae_legions" key="SAS_elite_heavy_dailamite_infantry" max="INFANTRY" />
+        <MenAtArm type="pushtigban" key="HEP_hindi_cavalry" max="CAVALRY" />
+        <MenAtArm type="reindeer_cavalry" key="ARM_light_cavalry" max="CAVALRY" />
+        <MenAtArm type="scorpio" key="att_des_desert_bowmen" max="RANGED" />
+        <MenAtArm type="siege_towers" key="att_des_desert_bowmen" max="RANGED" />
     </Faction>
 </FactionsGroups>
