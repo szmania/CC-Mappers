@@ -1,5 +1,5 @@
 # CC-Mappers
-Mappers for Crusader Conflicts, Community Successor for Crusader Wars mod.
+Mappers for Crusader Conflicts [https://github.com/szmania/Crusader-Wars/releases/latest], Community Successor for Crusader Wars mod.
 
 ## Mapper Loading Order
 
