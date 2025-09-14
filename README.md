@@ -1,5 +1,5 @@
 # CC-Mappers
-Mappers for Crusader Conflicts [https://github.com/szmania/Crusader-Wars/releases/latest], Community Successor for Crusader Wars mod.
+Mappers for [Crusader Conflicts](https://github.com/szmania/Crusader-Wars/releases/latest), Community Successor for Crusader Wars mod.
 
 ## Mapper Loading Order
 
@@ -12,4 +12,3 @@ This loading order means that any mapping defined in a submod mapper will overwr
 
 ## License
 The original source code and all further edits of this repository fall under the GNU GENERAL PUBLIC LICENSE Version 3 license of distribution, and it was copied from the v1.2.2 version of the CW-Mappers distributed here inside the Crusader-Wars release (which is GPL3 licensed) https://github.com/farayC/Crusader-Wars/releases/tag/v1.0.14 and can be found in the `crusader-wars.zip` file within that Crusader-Wars v1.0.14 release.
-
