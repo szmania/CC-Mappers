@@ -1,4 +1,139 @@
 {
-  "profiles": {},
-  "faction_rosters": {}
+    "profiles": {
+        "northman_base": {
+            "cultures": [
+                "northman",
+                "skagosi",
+                "harborman",
+                "krakenman",
+                "crannogman",
+                "barrowman",
+                "northern_clan"
+            ],
+            "maa": {
+                "light_infantry": "Stark Swordsmen",
+                "light_cavalry": "Stark Cavalry",
+                "spear_infantry": "Stark Halberdiers",
+                "pikemen": "Stark Pikemen",
+                "heavy_cavalry": "Stark Lance Cavalry",
+                "heavy_infantry": "Stark House Guard Spearmen",
+                "archers": "Stark Archers",
+                "siege_weapon": null,
+                "crossbowmen": "Stark Crossbowmen"
+            },
+            "levies": {
+                "low_tier": [
+                    "Stark Spearmen",
+                    "Stark Billmen"
+                ],
+                "mid_tier": [
+                    "Stark Swordsmen"
+                ],
+                "archers": [
+                    "Stark Archers"
+                ]
+            },
+            "characters": {
+                "general": "Stark Lance Cavalry",
+                "knight": "Stark House Guard Spearmen"
+            },
+            "special_maa": {
+                "crannogman": {
+                    "frog_spears": "Mormont Spearmen"
+                },
+                "barrowman": {
+                    "barrow_knights": "Stark Lance Cavalry"
+                },
+                "harborman": {
+                    "knights_of_the_green_hand": "Stark Lance Cavalry",
+                    "crossbowmen": "Stark Crossbowmen"
+                },
+                "wolfswood_clansman": {
+                    "wolfswood_hunters": "Glover Crossbowmen"
+                },
+                "bearman": {
+                    "she_bears": "Mormont Axemen"
+                },
+                "scagosi": {
+                    "unicorn_riders": "Glover Lance Cavalry"
+                },
+                "northman": {
+                    "winter_wolves": "Stark House Guard",
+                    "cailin_archers": "Cerwyn Archers"
+                },
+                "all": {
+                    "house_guard": "Stark House Guard Spearmen"
+                }
+            }
+        },
+        "wolfswood_clansmen": {
+            "cultures": [
+                "wolfswood_clansmen"
+            ],
+            "maa": {
+                "light_infantry": "Glover Swordsmen",
+                "light_cavalry": "Glover Cavalry",
+                "spear_infantry": "Glover Halberdiers",
+                "pikemen": "Glover Pikemen",
+                "heavy_cavalry": "Glover Lance Cavalry",
+                "heavy_infantry": "Glover Axemen",
+                "archers": "Glover Archers",
+                "siege_weapon": null,
+                "crossbowmen": "Glover Crossbowmen"
+            },
+            "levies": {
+                "low_tier": [
+                    "Glover Spearmen",
+                    "Glover Billmen"
+                ],
+                "mid_tier": [
+                    "Glover Swordsmen"
+                ],
+                "archers": [
+                    "Glover Archers"
+                ]
+            },
+            "characters": {
+                "general": "Glover Lance Cavalry",
+                "knight": "Glover Axemen"
+            },
+            "special_maa": {
+                "wolfswood_clansmen": {
+                    "wolfswood_hunters": "Glover Crossbowmen"
+                }
+            }
+        },
+        "bearman": {
+            "cultures": [
+                "bearman"
+            ],
+            "maa": {
+                "light_infantry": "Mormont Swordsmen",
+                "light_cavalry": "Mormont Cavalry",
+                "spear_infantry": "Mormont Halberdiers",
+                "pikemen": "Mormont Pikemen",
+                "heavy_cavalry": "Mormont Lance Cavalry",
+                "heavy_infantry": "Mormont Axemen",
+                "archers": "Mormont Archers",
+                "siege_weapon": null,
+                "crossbowmen": "Mormont Crossbowmen"
+            },
+            "levies": {
+                "low_tier": [
+                    "Mormont Spearmen",
+                    "Mormont Billmen"
+                ],
+                "mid_tier": [
+                    "Mormont Swordsmen"
+                ],
+                "archers": "Mormont Archers"
+            },
+            "characters": {
+                "general": "Mormont Lance Cavalry",
+                "knight": "Mormont Axemen"
+            },
+            "special_maa": {}
+        }
+    },
+    "faction_rosters": {}
 }
