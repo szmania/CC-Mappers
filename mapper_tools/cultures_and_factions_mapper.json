@@ -22,19 +22,19 @@
                 "crossbowmen": "Stark Crossbowmen"
             },
             "levies": {
-                "low_tier": [
+                "infantry_spearmen": [
                     "Stark Spearmen",
                     "Stark Billmen"
                 ],
-                "mid_tier": [
+                "infantry_melee": [
                     "Stark Swordsmen"
                 ],
-                "archers": [
+                "ranged": [
                     "Stark Archers"
                 ]
             },
             "general": "Stark Lance Cavalry",
-            "knight": "Stark House Guard Spearmen",
+            "knights": "Stark House Guard Spearmen",
             "special_maa": {
                 "crannogman": {
                     "frog_spears": "Mormont Spearmen"
@@ -80,19 +80,19 @@
                 "crossbowmen": "Glover Crossbowmen"
             },
             "levies": {
-                "low_tier": [
+                "infantry_spearmen": [
                     "Glover Spearmen",
                     "Glover Billmen"
                 ],
-                "mid_tier": [
+                "infantry_melee": [
                     "Glover Swordsmen"
                 ],
-                "archers": [
+                "ranged": [
                     "Glover Archers"
                 ]
             },
             "general": "Glover Lance Cavalry",
-            "knight": "Glover Axemen",
+            "knights": "Glover Axemen",
             "special_maa": {
                 "wolfswood_clansman": {
                     "wolfswood_hunters": "Glover Crossbowmen"
@@ -115,19 +115,19 @@
                 "crossbowmen": "Mormont Crossbowmen"
             },
             "levies": {
-                "low_tier": [
+                "infantry_spearmen": [
                     "Mormont Spearmen",
                     "Mormont Billmen"
                 ],
-                "mid_tier": [
+                "infantry_melee": [
                     "Mormont Swordsmen"
                 ],
-                "archers": [
+                "ranged": [
                     "Mormont Archers"
                 ]
             },
             "general": "Mormont Lance Cavalry",
-            "knight": "Mormont Axemen",
+            "knights": "Mormont Axemen",
             "special_maa": {}
         },
         "riverlander_base": {
@@ -150,19 +150,19 @@
                 "crossbowmen": "Tully Crossbowmen"
             },
             "levies": {
-                "low_tier": [
+                "infantry_spearmen": [
                     "Tully Spearmen",
                     "Tully Billmen"
                 ],
-                "mid_tier": [
+                "infantry_melee": [
                     "Tully Swordsmen"
                 ],
-                "archers": [
+                "ranged": [
                     "Tully Archers"
                 ]
             },
             "general": "Tully Lance Cavalry",
-            "knight": "Tully House Guard Spearmen",
+            "knights": "Tully House Guard Spearmen",
             "special_maa": {
                 "riverlander": {
                     "river_bows": "Tully Archers",
@@ -186,20 +186,22 @@
                 "crossbowmen": "Arryn Crossbowmen"
             },
             "levies": {
-                "low_tier": [
+                "infantry_spearmen": [
                     "Arryn Spearmen",
-                    "Arryn Swordsmen",
                     "Arryn Halberdiers"
                 ],
-                "mid_tier": [
+                "infantry_melee": [
+                    "Arryn Swordsmen"
+                ],
+                "cavalry": [
                     "Arryn Lance Cavalry"
                 ],
-                "archers": [
+                "ranged": [
                     "Arryn Crossbowmen"
                 ]
             },
             "general": "Arryn Lance Cavalry",
-            "knight": "Arryn Lance Cavalry",
+            "knights": "Arryn Lance Cavalry",
             "special_maa": {
                 "upper_valeman": {
                     "winged_knights": "Arryn Lance Cavalry",
@@ -225,20 +227,22 @@
                 "crossbowmen": "Royce Crossbowmen"
             },
             "levies": {
-                "low_tier": [
-                    "Royce Spearmen",
+                "infantry_spearmen": [
+                    "Royce Spearmen"
+                ],
+                "infantry_melee": [
                     "Royce Swordsmen",
                     "Royce Axemen"
                 ],
-                "mid_tier": [
+                "cavalry": [
                     "Royce Cavalry"
                 ],
-                "archers": [
+                "ranged": [
                     "Royce Longbowmen"
                 ]
             },
             "general": "Royce Lance Cavalry",
-            "knight": "Royce Axemen",
+            "knights": "Royce Axemen",
             "special_maa": {
                 "lower_valeman": {
                     "winged_knights": "Royce Lance Cavalry",
@@ -261,19 +265,19 @@
                 "crossbowmen": "Lannister Crossbowmen"
             },
             "levies": {
-                "low_tier": [
+                "infantry_spearmen": [
                     "Lannister Spearmen",
-                    "Lannister Swordsmen"
-                ],
-                "mid_tier": [
                     "Lannister Billmen"
                 ],
-                "archers": [
+                "infantry_melee": [
+                    "Lannister Swordsmen"
+                ],
+                "ranged": [
                     "Lannister Archers"
                 ]
             },
             "general": "Lannister Lance Cavalry",
-            "knight": "Lannister Lance Cavalry",
+            "knights": "Lannister Lance Cavalry",
             "special_maa": {
                 "westerman": {
                     "lion_knights": "Lannister House Guard"
@@ -295,19 +299,19 @@
                 "crossbowmen": "Baratheon Crossbowmen"
             },
             "levies": {
-                "low_tier": [
+                "infantry_melee": [
                     "Peasants of King's Landing",
                     "The Faith Militant"
                 ],
-                "mid_tier": [
+                "infantry_spearmen": [
                     "Goldcloak Spearmen"
                 ],
-                "archers": [
+                "ranged": [
                     "Goldcloak Crossbowmen"
                 ]
             },
             "general": "Baratheon Lance Cavalry",
-            "knight": "Goldcloak Cavalry",
+            "knights": "Goldcloak Cavalry",
             "special_maa": {
                 "crownlander": {
                     "sea_watch": "Goldcloak Spearmen",
@@ -332,19 +336,19 @@
                 "crossbowmen": "Crakehall Crossbowmen"
             },
             "levies": {
-                "low_tier": [
+                "infantry_melee": [
                     "Peasants of King's Landing",
                     "Goldcloak Swordsmen"
                 ],
-                "mid_tier": [
+                "infantry_spearmen": [
                     "Goldcloak Spearmen"
                 ],
-                "archers": [
+                "ranged": [
                     "Goldcloak Crossbowmen"
                 ]
             },
             "general": "Goldcloak Cavalry",
-            "knight": "Goldcloak Cavalry",
+            "knights": "Goldcloak Cavalry",
             "special_maa": {}
         },
         "stormlander_base": {
@@ -362,20 +366,22 @@
                 "crossbowmen": "Baratheon Crossbowmen"
             },
             "levies": {
-                "low_tier": [
-                    "Baratheon Axemen",
-                    "Baratheon Spearmen",
-                    "Baratheon Cavalry"
+                "infantry_melee": [
+                    "Baratheon Axemen"
                 ],
-                "mid_tier": [
+                "infantry_spearmen": [
+                    "Baratheon Spearmen"
+                ],
+                "cavalry": [
+                    "Baratheon Cavalry",
                     "Baratheon Lance Cavalry"
                 ],
-                "archers": [
+                "ranged": [
                     "Baratheon Crossbowmen"
                 ]
             },
             "general": "Baratheon Lance Cavalry",
-            "knight": "Baratheon Lance Cavalry",
+            "knights": "Baratheon Lance Cavalry",
             "special_maa": {
                 "stormlander": {
                     "antlermen": "Baratheon House Guard",
@@ -400,19 +406,19 @@
                 "crossbowmen": "Tyrell Crossbowmen"
             },
             "levies": {
-                "low_tier": [
-                    "Tyrell Swordsmen",
-                    "Tyrell Spearmen"
+                "infantry_melee": [
+                    "Tyrell Swordsmen"
                 ],
-                "mid_tier": [
+                "infantry_spearmen": [
+                    "Tyrell Spearmen",
                     "Tyrell Halberdiers"
                 ],
-                "archers": [
+                "ranged": [
                     "Tyrell Archers"
                 ]
             },
             "general": "Tyrell Lance Cavalry",
-            "knight": "Tyrell House Guard Spearmen",
+            "knights": "Tyrell House Guard Spearmen",
             "special_maa": {
                 "reachman": {
                     "hand_messengers": "Tyrell Billmen",
@@ -439,19 +445,19 @@
                 "crossbowmen": "Tarly Crossbowmen"
             },
             "levies": {
-                "low_tier": [
-                    "Tarly Swordsmen",
-                    "Tarly Spearmen"
+                "infantry_melee": [
+                    "Tarly Swordsmen"
                 ],
-                "mid_tier": [
+                "infantry_spearmen": [
+                    "Tarly Spearmen",
                     "Tarly Halberdiers"
                 ],
-                "archers": [
+                "ranged": [
                     "Tarly Archers"
                 ]
             },
             "general": "Tarly Lance Cavalry",
-            "knight": "Tarly Lance Cavalry",
+            "knights": "Tarly Lance Cavalry",
             "special_maa": {}
         },
         "salt_dornish_base": {
@@ -469,20 +475,22 @@
                 "crossbowmen": "Martell Archers"
             },
             "levies": {
-                "low_tier": [
+                "ranged": [
                     "Martell Javelin Men",
-                    "Martell Swordsmen",
+                    "Martell Archers"
+                ],
+                "infantry_melee": [
+                    "Martell Swordsmen"
+                ],
+                "infantry_spearmen": [
                     "Martell Spearmen"
                 ],
-                "mid_tier": [
+                "cavalry": [
                     "Martell Mounted Archers"
-                ],
-                "archers": [
-                    "Martell Archers"
                 ]
             },
             "general": "Martell Lance Cavalry",
-            "knight": "Martell Lance Cavalry",
+            "knights": "Martell Lance Cavalry",
             "special_maa": {
                 "salt_dornish": {
                     "sun_spears": "Martell Spearmen",
@@ -513,20 +521,22 @@
                 "crossbowmen": "Uller Archers"
             },
             "levies": {
-                "low_tier": [
+                "ranged": [
                     "Uller Javelin Men",
-                    "Uller Swordsmen",
+                    "Uller Archers"
+                ],
+                "infantry_melee": [
+                    "Uller Swordsmen"
+                ],
+                "infantry_spearmen": [
                     "Uller Spearmen"
                 ],
-                "mid_tier": [
+                "cavalry": [
                     "Uller Cavalry"
-                ],
-                "archers": [
-                    "Uller Archers"
                 ]
             },
             "general": "Uller Lance Cavalry",
-            "knight": "Uller Cavalry",
+            "knights": "Uller Cavalry",
             "special_maa": {}
         },
         "stone_dornish_base": {
@@ -544,19 +554,21 @@
                 "crossbowmen": "Dayne Archers"
             },
             "levies": {
-                "low_tier": [
-                    "Dayne Spearmen",
+                "infantry_spearmen": [
+                    "Dayne Spearmen"
+                ],
+                "infantry_melee": [
                     "Dayne Axemen"
                 ],
-                "mid_tier": [
+                "cavalry": [
                     "Dayne Lance Cavalry"
                 ],
-                "archers": [
+                "ranged": [
                     "Dayne Archers"
                 ]
             },
             "general": "Dayne Lance Cavalry",
-            "knight": "Dayne Lance Cavalry",
+            "knights": "Dayne Lance Cavalry",
             "special_maa": {}
         },
         "ironborn_base": {
@@ -574,19 +586,19 @@
                 "crossbowmen": "Greyjoy Crossbowmen"
             },
             "levies": {
-                "low_tier": [
+                "infantry_spearmen": [
                     "Greyjoy Billmen",
                     "Greyjoy Spearmen"
                 ],
-                "mid_tier": [
+                "infantry_melee": [
                     "Greyjoy Axemen"
                 ],
-                "archers": [
+                "ranged": [
                     "Greyjoy Archers"
                 ]
             },
             "general": "Greyjoy House Guard",
-            "knight": "Greyjoy House Guard Spearmen",
+            "knights": "Greyjoy House Guard Spearmen",
             "special_maa": {
                 "ironborn": {
                     "ironwood_spears": "Greyjoy House Guard Spearmen",
@@ -625,19 +637,19 @@
                 "crossbowmen": "Crakehall Crossbowmen"
             },
             "levies": {
-                "low_tier": [
+                "infantry_spearmen": [
                     "Crakehall Spearmen",
-                    "Crakehall Swordsmen"
-                ],
-                "mid_tier": [
                     "Crakehall Billmen"
                 ],
-                "archers": [
+                "infantry_melee": [
+                    "Crakehall Swordsmen"
+                ],
+                "ranged": [
                     "Crakehall Archers"
                 ]
             },
             "general": "Crakehall Lance Cavalry",
-            "knight": "Crakehall Lance Cavalry",
+            "knights": "Crakehall Lance Cavalry",
             "special_maa": {}
         },
         "valyrian_dragonstone_base": {
@@ -656,19 +668,19 @@
                 "crossbowmen": "Baratheon Crossbowmen"
             },
             "levies": {
-                "low_tier": [
+                "infantry_spearmen": [
                     "Baratheon Spearmen",
-                    "Baratheon Swordsmen"
-                ],
-                "mid_tier": [
                     "Baratheon Billmen"
                 ],
-                "archers": [
+                "infantry_melee": [
+                    "Baratheon Swordsmen"
+                ],
+                "ranged": [
                     "Baratheon Archers"
                 ]
             },
             "general": "Baratheon Lance Cavalry",
-            "knight": "Baratheon Lance Cavalry",
+            "knights": "Baratheon Lance Cavalry",
             "special_maa": {}
         },
         "essos_base": {
@@ -710,18 +722,18 @@
                 "crossbowmen": "Marbrand Crossbowmen"
             },
             "levies": {
-                "low_tier": [
+                "infantry_spearmen": [
                     "Marbrand Spearmen"
                 ],
-                "mid_tier": [
+                "infantry_melee": [
                     "Marbrand Swordsmen"
                 ],
-                "archers": [
+                "ranged": [
                     "Marbrand Archers"
                 ]
             },
             "general": "Golden Company Swordsmen",
-            "knight": "Golden Company Spearmen",
+            "knights": "Golden Company Spearmen",
             "special_maa": {}
         },
         "wildling_base": {
@@ -745,18 +757,16 @@
                 "crossbowmen": "Wildling Hunters"
             },
             "levies": {
-                "low_tier": [
-                    "Wildling Warband"
-                ],
-                "mid_tier": [
+                "infantry_melee": [
+                    "Wildling Warband",
                     "Wildling Scouts"
                 ],
-                "archers": [
+                "ranged": [
                     "Wildling Hunters"
                 ]
             },
             "general": "Thenns",
-            "knight": "Thenn Spearmen",
+            "knights": "Thenn Spearmen",
             "special_maa": {}
         },
         "nights_watch_base": {
@@ -776,18 +786,18 @@
                 "crossbowmen": "Night's Watch Crossbowmen"
             },
             "levies": {
-                "low_tier": [
+                "infantry_spearmen": [
                     "Night's Watch Spearmen"
                 ],
-                "mid_tier": [
+                "infantry_melee": [
                     "Night's Watch Swordsmen"
                 ],
-                "archers": [
+                "ranged": [
                     "Night's Watch Archers"
                 ]
             },
             "general": "Night's Watch Rangers",
-            "knight": "Night's Watch Rangers"
+            "knights": "Night's Watch Rangers"
             },
             "special_maa": {}
         }
