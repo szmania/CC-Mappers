@@ -177,6 +177,86 @@
                     "bargemen": "Tully Halberdiers"
                 }
             }
+        },
+        "valeman_base": {
+            "cultures": [
+                "upper_valeman",
+                "fingers_valeman"
+            ],
+            "maa": {
+                "light_infantry": "Arryn Billmen",
+                "light_cavalry": "Arryn Cavalry",
+                "pikemen": "Arryn Pikemen",
+                "heavy_cavalry": "Arryn Lance Cavalry",
+                "heavy_infantry": "Arryn House Guard Spearmen",
+                "archers": "Arryn Archers",
+                "siege_weapon": null,
+                "crossbowmen": "Arryn Crossbowmen"
+            },
+            "levies": {
+                "low_tier": [
+                    "Arryn Spearmen",
+                    "Arryn Swordsmen",
+                    "Arryn Halberdiers"
+                ],
+                "mid_tier": [
+                    "Arryn Lance Cavalry"
+                ],
+                "archers": [
+                    "Arryn Crossbowmen"
+                ]
+            },
+            "characters": {
+                "general": "Arryn Lance Cavalry",
+                "knight": "Arryn Lance Cavalry"
+            },
+            "special_maa": {
+                "upper_valeman": {
+                    "winged_knights": "Arryn Lance Cavalry",
+                    "bloody_guard": "Arryn House Guard"
+                },
+                "fingers_valeman": {
+                    "bloody_guard": "Arryn House Guard"
+                }
+            }
+        },
+        "lower_valemen": {
+            "cultures": [
+                "lower_valemen"
+            ],
+            "maa": {
+                "light_infantry": "Royce Billmen",
+                "light_cavalry": "Royce Cavalry",
+                "pikemen": "Royce Pikemen",
+                "heavy_cavalry": "Royce Lance Cavalry",
+                "heavy_infantry": "Royce Halberdiers",
+                "archers": "Royce Longbowmen",
+                "siege_weapon": null,
+                "crossbowmen": "Royce Crossbowmen"
+            },
+            "levies": {
+                "low_tier": [
+                    "Royce Spearmen",
+                    "Royce Swordsmen",
+                    "Royce Axemen"
+                ],
+                "mid_tier": [
+                    "Royce Cavalry"
+                ],
+                "archers": [
+                    "Royce Longbowmen"
+                ]
+            },
+            "characters": {
+                "general": "Royce Lance Cavalry",
+                "knight": "Royce Axemen"
+            },
+            "special_maa": {
+                "lower_valeman": {
+                    "winged_knights": "Royce Lance Cavalry",
+                    "bloody_guard": "Royce Swordsmen"
+                }
+            }
         }
     },
     "faction_rosters": {}
