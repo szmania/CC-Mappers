@@ -19,7 +19,35 @@
                 "heavy_infantry": "Stark House Guard Spearmen",
                 "archers": "Stark Archers",
                 "siege_weapon": null,
-                "crossbowmen": "Stark Crossbowmen"
+                "crossbowmen": "Stark Crossbowmen",
+                "special_maa": {
+                    "crannogman": {
+                        "frog_spears": "Mormont Spearmen"
+                    },
+                    "barrowman": {
+                        "barrow_knights": "Stark Lance Cavalry"
+                    },
+                    "harborman": {
+                        "knights_of_the_green_hand": "Stark Lance Cavalry",
+                        "crossbowmen": "Stark Crossbowmen"
+                    },
+                    "wolfswood_clansman": {
+                        "wolfswood_hunters": "Glover Crossbowmen"
+                    },
+                    "bearman": {
+                        "she_bears": "Mormont Axemen"
+                    },
+                    "skagosi": {
+                        "unicorn_riders": "Glover Lance Cavalry"
+                    },
+                    "northman": {
+                        "winter_wolves": "Stark House Guard",
+                        "cailin_archers": "Cerwyn Archers"
+                    },
+                    "all": {
+                        "house_guard": "Stark House Guard Spearmen"
+                    }
+                }
             },
             "levies": {
                 "infantry_spearmen": [
@@ -34,35 +62,7 @@
                 ]
             },
             "general": "Stark Lance Cavalry",
-            "knights": "Stark House Guard Spearmen",
-            "special_maa": {
-                "crannogman": {
-                    "frog_spears": "Mormont Spearmen"
-                },
-                "barrowman": {
-                    "barrow_knights": "Stark Lance Cavalry"
-                },
-                "harborman": {
-                    "knights_of_the_green_hand": "Stark Lance Cavalry",
-                    "crossbowmen": "Stark Crossbowmen"
-                },
-                "wolfswood_clansman": {
-                    "wolfswood_hunters": "Glover Crossbowmen"
-                },
-                "bearman": {
-                    "she_bears": "Mormont Axemen"
-                },
-                "skagosi": {
-                    "unicorn_riders": "Glover Lance Cavalry"
-                },
-                "northman": {
-                    "winter_wolves": "Stark House Guard",
-                    "cailin_archers": "Cerwyn Archers"
-                },
-                "all": {
-                    "house_guard": "Stark House Guard Spearmen"
-                }
-            }
+            "knights": "Stark House Guard Spearmen"
         },
         "wolfswood_clansman": {
             "cultures": [
@@ -77,7 +77,12 @@
                 "heavy_infantry": "Glover Axemen",
                 "archers": "Glover Archers",
                 "siege_weapon": null,
-                "crossbowmen": "Glover Crossbowmen"
+                "crossbowmen": "Glover Crossbowmen",
+                "special_maa": {
+                    "wolfswood_clansman": {
+                        "wolfswood_hunters": "Glover Crossbowmen"
+                    }
+                }
             },
             "levies": {
                 "infantry_spearmen": [
@@ -92,12 +97,7 @@
                 ]
             },
             "general": "Glover Lance Cavalry",
-            "knights": "Glover Axemen",
-            "special_maa": {
-                "wolfswood_clansman": {
-                    "wolfswood_hunters": "Glover Crossbowmen"
-                }
-            }
+            "knights": "Glover Axemen"
         },
         "bearman": {
             "cultures": [
@@ -112,7 +112,8 @@
                 "heavy_infantry": "Mormont Axemen",
                 "archers": "Mormont Archers",
                 "siege_weapon": null,
-                "crossbowmen": "Mormont Crossbowmen"
+                "crossbowmen": "Mormont Crossbowmen",
+                "special_maa": {}
             },
             "levies": {
                 "infantry_spearmen": [
@@ -127,8 +128,7 @@
                 ]
             },
             "general": "Mormont Lance Cavalry",
-            "knights": "Mormont Axemen",
-            "special_maa": {}
+            "knights": "Mormont Axemen"
         },
         "riverlander_base": {
             "cultures": [
@@ -147,7 +147,13 @@
                 "heavy_infantry": "Tully House Guard",
                 "archers": "Tully Archers",
                 "siege_weapon": null,
-                "crossbowmen": "Tully Crossbowmen"
+                "crossbowmen": "Tully Crossbowmen",
+                "special_maa": {
+                    "riverlander": {
+                        "river_bows": "Tully Archers",
+                        "bargemen": "Tully Halberdiers"
+                    }
+                }
             },
             "levies": {
                 "infantry_spearmen": [
@@ -162,13 +168,7 @@
                 ]
             },
             "general": "Tully Lance Cavalry",
-            "knights": "Tully House Guard Spearmen",
-            "special_maa": {
-                "riverlander": {
-                    "river_bows": "Tully Archers",
-                    "bargemen": "Tully Halberdiers"
-                }
-            }
+            "knights": "Tully House Guard Spearmen"
         },
         "valeman_base": {
             "cultures": [
@@ -183,7 +183,16 @@
                 "heavy_infantry": "Arryn House Guard Spearmen",
                 "archers": "Arryn Archers",
                 "siege_weapon": null,
-                "crossbowmen": "Arryn Crossbowmen"
+                "crossbowmen": "Arryn Crossbowmen",
+                "special_maa": {
+                    "upper_valeman": {
+                        "winged_knights": "Arryn Lance Cavalry",
+                        "bloody_guard": "Arryn House Guard"
+                    },
+                    "fingerman": {
+                        "bloody_guard": "Arryn House Guard"
+                    }
+                }
             },
             "levies": {
                 "infantry_spearmen": [
@@ -201,16 +210,7 @@
                 ]
             },
             "general": "Arryn Lance Cavalry",
-            "knights": "Arryn Lance Cavalry",
-            "special_maa": {
-                "upper_valeman": {
-                    "winged_knights": "Arryn Lance Cavalry",
-                    "bloody_guard": "Arryn House Guard"
-                },
-                "fingerman": {
-                    "bloody_guard": "Arryn House Guard"
-                }
-            }
+            "knights": "Arryn Lance Cavalry"
         },
         "lower_valemen": {
             "cultures": [
@@ -224,7 +224,13 @@
                 "heavy_infantry": "Royce Halberdiers",
                 "archers": "Royce Longbowmen",
                 "siege_weapon": null,
-                "crossbowmen": "Royce Crossbowmen"
+                "crossbowmen": "Royce Crossbowmen",
+                "special_maa": {
+                    "lower_valeman": {
+                        "winged_knights": "Royce Lance Cavalry",
+                        "bloody_guard": "Royce Swordsmen"
+                    }
+                }
             },
             "levies": {
                 "infantry_spearmen": [
@@ -242,13 +248,7 @@
                 ]
             },
             "general": "Royce Lance Cavalry",
-            "knights": "Royce Axemen",
-            "special_maa": {
-                "lower_valeman": {
-                    "winged_knights": "Royce Lance Cavalry",
-                    "bloody_guard": "Royce Swordsmen"
-                }
-            }
+            "knights": "Royce Axemen"
         },
         "westerman_base": {
             "cultures": [
@@ -262,7 +262,12 @@
                 "heavy_infantry": "Lannister House Guard Spearmen",
                 "archers": "Lannister Archers",
                 "siege_weapon": null,
-                "crossbowmen": "Lannister Crossbowmen"
+                "crossbowmen": "Lannister Crossbowmen",
+                "special_maa": {
+                    "westerman": {
+                        "lion_knights": "Lannister House Guard"
+                    }
+                }
             },
             "levies": {
                 "infantry_spearmen": [
@@ -277,12 +282,7 @@
                 ]
             },
             "general": "Lannister Lance Cavalry",
-            "knights": "Lannister Lance Cavalry",
-            "special_maa": {
-                "westerman": {
-                    "lion_knights": "Lannister House Guard"
-                }
-            }
+            "knights": "Lannister Lance Cavalry"
         },
         "crownlander_baratheon": {
             "cultures": [
@@ -296,7 +296,15 @@
                 "heavy_infantry": "Baratheon House Guard",
                 "archers": "Baratheon Archers",
                 "siege_weapon": null,
-                "crossbowmen": "Baratheon Crossbowmen"
+                "crossbowmen": "Baratheon Crossbowmen",
+                "special_maa": {
+                    "crownlander": {
+                        "sea_watch": "Goldcloak Spearmen",
+                        "storm_knights": "Baratheon Lance Cavalry",
+                        "gold_cloaks": "Goldcloak Swordsmen",
+                        "antlermen": "Baratheon House Guard"
+                    }
+                }
             },
             "levies": {
                 "infantry_melee": [
@@ -311,15 +319,7 @@
                 ]
             },
             "general": "Baratheon Lance Cavalry",
-            "knights": "Goldcloak Cavalry",
-            "special_maa": {
-                "crownlander": {
-                    "sea_watch": "Goldcloak Spearmen",
-                    "storm_knights": "Baratheon Lance Cavalry",
-                    "gold_cloaks": "Goldcloak Swordsmen",
-                    "antlermen": "Baratheon House Guard"
-                }
-            }
+            "knights": "Goldcloak Cavalry"
         },
         "crownlander_targaryen": {
             "cultures": [
@@ -333,7 +333,8 @@
                 "heavy_infantry": "Unsullied Spearmen",
                 "archers": "Crakehall Archers",
                 "siege_weapon": null,
-                "crossbowmen": "Crakehall Crossbowmen"
+                "crossbowmen": "Crakehall Crossbowmen",
+                "special_maa": {}
             },
             "levies": {
                 "infantry_melee": [
@@ -348,8 +349,7 @@
                 ]
             },
             "general": "Goldcloak Cavalry",
-            "knights": "Goldcloak Cavalry",
-            "special_maa": {}
+            "knights": "Goldcloak Cavalry"
         },
         "stormlander_base": {
             "cultures": [
@@ -363,7 +363,13 @@
                 "heavy_infantry": "Baratheon House Guard Spearmen",
                 "archers": "Baratheon Archers",
                 "siege_weapon": null,
-                "crossbowmen": "Baratheon Crossbowmen"
+                "crossbowmen": "Baratheon Crossbowmen",
+                "special_maa": {
+                    "stormlander": {
+                        "antlermen": "Baratheon House Guard",
+                        "storm_knights": "Baratheon Lance Cavalry"
+                    }
+                }
             },
             "levies": {
                 "infantry_melee": [
@@ -381,13 +387,7 @@
                 ]
             },
             "general": "Baratheon Lance Cavalry",
-            "knights": "Baratheon Lance Cavalry",
-            "special_maa": {
-                "stormlander": {
-                    "antlermen": "Baratheon House Guard",
-                    "storm_knights": "Baratheon Lance Cavalry"
-                }
-            }
+            "knights": "Baratheon Lance Cavalry"
         },
         "reachman_base": {
             "cultures": [
@@ -403,7 +403,17 @@
                 "heavy_infantry": "Tyrell House Guard Spearmen",
                 "archers": "Tyrell Archers",
                 "siege_weapon": null,
-                "crossbowmen": "Tyrell Crossbowmen"
+                "crossbowmen": "Tyrell Crossbowmen",
+                "special_maa": {
+                    "reachman": {
+                        "hand_messengers": "Tyrell Billmen",
+                        "summer_knights": "Tyrell House Guard"
+                    },
+                    "marcher": {
+                        "hand_messengers": "Tarly Billmen",
+                        "marcher_longbowmen": "Tarly Archers"
+                    }
+                }
             },
             "levies": {
                 "infantry_melee": [
@@ -418,17 +428,7 @@
                 ]
             },
             "general": "Tyrell Lance Cavalry",
-            "knights": "Tyrell House Guard Spearmen",
-            "special_maa": {
-                "reachman": {
-                    "hand_messengers": "Tyrell Billmen",
-                    "summer_knights": "Tyrell House Guard"
-                },
-                "marcher": {
-                    "hand_messengers": "Tarly Billmen",
-                    "marcher_longbowmen": "Tarly Archers"
-                }
-            }
+            "knights": "Tyrell House Guard Spearmen"
         },
         "marcher_base": {
             "cultures": [
@@ -442,7 +442,8 @@
                 "heavy_infantry": "Tarly Axemen",
                 "archers": "Tarly Archers",
                 "siege_weapon": null,
-                "crossbowmen": "Tarly Crossbowmen"
+                "crossbowmen": "Tarly Crossbowmen",
+                "special_maa": {}
             },
             "levies": {
                 "infantry_melee": [
@@ -457,8 +458,7 @@
                 ]
             },
             "general": "Tarly Lance Cavalry",
-            "knights": "Tarly Lance Cavalry",
-            "special_maa": {}
+            "knights": "Tarly Lance Cavalry"
         },
         "salt_dornish_base": {
             "cultures": [
@@ -472,7 +472,21 @@
                 "heavy_infantry": "Martell Axemen",
                 "archers": "Martell Archers",
                 "siege_weapon": null,
-                "crossbowmen": "Martell Archers"
+                "crossbowmen": "Martell Archers",
+                "special_maa": {
+                    "salt_dornish": {
+                        "sun_spears": "Martell Spearmen",
+                        "dornish_vipers": "Martell Mounted Archers"
+                    },
+                    "stone_dornish": {
+                        "pass_pikes": "Yronwood Pikemen",
+                        "dornish_vipers": "Yronwood Javelin Men"
+                    },
+                    "sand_dornish": {
+                        "sand_steeds": "Uller Lance Cavalry",
+                        "dornish_vipers": "Uller Javelin Men"
+                    }
+                }
             },
             "levies": {
                 "ranged": [
@@ -490,21 +504,7 @@
                 ]
             },
             "general": "Martell Lance Cavalry",
-            "knights": "Martell Lance Cavalry",
-            "special_maa": {
-                "salt_dornish": {
-                    "sun_spears": "Martell Spearmen",
-                    "dornish_vipers": "Martell Mounted Archers"
-                },
-                "stone_dornish": {
-                    "pass_pikes": "Yronwood Pikemen",
-                    "dornish_vipers": "Yronwood Javelin Men"
-                },
-                "sand_dornish": {
-                    "sand_steeds": "Uller Lance Cavalry",
-                    "dornish_vipers": "Uller Javelin Men"
-                }
-            }
+            "knights": "Martell Lance Cavalry"
         },
         "sand_dornish_base": {
             "cultures": [
@@ -518,7 +518,8 @@
                 "heavy_infantry": "Uller Axemen",
                 "archers": "Uller Archers",
                 "siege_weapon": null,
-                "crossbowmen": "Uller Archers"
+                "crossbowmen": "Uller Archers",
+                "special_maa": {}
             },
             "levies": {
                 "ranged": [
@@ -536,8 +537,7 @@
                 ]
             },
             "general": "Uller Lance Cavalry",
-            "knights": "Uller Cavalry",
-            "special_maa": {}
+            "knights": "Uller Cavalry"
         },
         "stone_dornish_base": {
             "cultures": [
@@ -551,7 +551,8 @@
                 "heavy_infantry": "Dayne Axemen",
                 "archers": "Dayne Archers",
                 "siege_weapon": null,
-                "crossbowmen": "Dayne Archers"
+                "crossbowmen": "Dayne Archers",
+                "special_maa": {}
             },
             "levies": {
                 "infantry_spearmen": [
@@ -568,8 +569,7 @@
                 ]
             },
             "general": "Dayne Lance Cavalry",
-            "knights": "Dayne Lance Cavalry",
-            "special_maa": {}
+            "knights": "Dayne Lance Cavalry"
         },
         "ironborn_base": {
             "cultures": [
@@ -583,7 +583,13 @@
                 "heavy_infantry": "Greyjoy House Guard",
                 "archers": "Greyjoy Archers",
                 "siege_weapon": null,
-                "crossbowmen": "Greyjoy Crossbowmen"
+                "crossbowmen": "Greyjoy Crossbowmen",
+                "special_maa": {
+                    "ironborn": {
+                        "ironwood_spears": "Greyjoy House Guard Spearmen",
+                        "reavers": "Greyjoy Axemen"
+                    }
+                }
             },
             "levies": {
                 "infantry_spearmen": [
@@ -598,13 +604,7 @@
                 ]
             },
             "general": "Greyjoy House Guard",
-            "knights": "Greyjoy House Guard Spearmen",
-            "special_maa": {
-                "ironborn": {
-                    "ironwood_spears": "Greyjoy House Guard Spearmen",
-                    "reavers": "Greyjoy Axemen"
-                }
-            }
+            "knights": "Greyjoy House Guard Spearmen"
         },
         "valyrian_targaryen_base": {
             "cultures": [
@@ -634,7 +634,8 @@
                 "heavy_infantry": "Unsullied Spearmen",
                 "archers": "Crakehall Archers",
                 "siege_weapon": null,
-                "crossbowmen": "Crakehall Crossbowmen"
+                "crossbowmen": "Crakehall Crossbowmen",
+                "special_maa": {}
             },
             "levies": {
                 "infantry_spearmen": [
@@ -649,8 +650,7 @@
                 ]
             },
             "general": "Crakehall Lance Cavalry",
-            "knights": "Crakehall Lance Cavalry",
-            "special_maa": {}
+            "knights": "Crakehall Lance Cavalry"
         },
         "valyrian_dragonstone_base": {
             "cultures": [
@@ -665,7 +665,8 @@
                 "heavy_infantry": "Baratheon Axemen",
                 "archers": "Baratheon Archers",
                 "siege_weapon": null,
-                "crossbowmen": "Baratheon Crossbowmen"
+                "crossbowmen": "Baratheon Crossbowmen",
+                "special_maa": {}
             },
             "levies": {
                 "infantry_spearmen": [
@@ -680,8 +681,7 @@
                 ]
             },
             "general": "Baratheon Lance Cavalry",
-            "knights": "Baratheon Lance Cavalry",
-            "special_maa": {}
+            "knights": "Baratheon Lance Cavalry"
         },
         "essos_base": {
             "cultures": [
@@ -719,7 +719,8 @@
                 "heavy_infantry": "Golden Company Swordsmen",
                 "archers": "Golden Company Longbowmen",
                 "siege_weapon": null,
-                "crossbowmen": "Marbrand Crossbowmen"
+                "crossbowmen": "Marbrand Crossbowmen",
+                "special_maa": {}
             },
             "levies": {
                 "infantry_spearmen": [
@@ -733,8 +734,7 @@
                 ]
             },
             "general": "Golden Company Swordsmen",
-            "knights": "Golden Company Spearmen",
-            "special_maa": {}
+            "knights": "Golden Company Spearmen"
         },
         "wildling_base": {
             "cultures": [
@@ -754,7 +754,8 @@
                 "heavy_infantry": "Thenns",
                 "archers": "Wildling Hunters",
                 "siege_weapon": null,
-                "crossbowmen": "Wildling Hunters"
+                "crossbowmen": "Wildling Hunters",
+                "special_maa": {}
             },
             "levies": {
                 "infantry_melee": [
@@ -766,8 +767,7 @@
                 ]
             },
             "general": "Thenns",
-            "knights": "Thenn Spearmen",
-            "special_maa": {}
+            "knights": "Thenn Spearmen"
         },
         "nights_watch_base": {
             "cultures": [
@@ -783,7 +783,8 @@
                 "heavy_infantry": "Night's Watch Rangers",
                 "archers": "Night's Watch Archers",
                 "siege_weapon": null,
-                "crossbowmen": "Night's Watch Crossbowmen"
+                "crossbowmen": "Night's Watch Crossbowmen",
+                "special_maa": {}
             },
             "levies": {
                 "infantry_spearmen": [
@@ -798,8 +799,6 @@
             },
             "general": "Night's Watch Rangers",
             "knights": "Night's Watch Rangers"
-            },
-            "special_maa": {}
         }
     },
     "faction_rosters": {}
