@@ -20,32 +20,16 @@
                 "archers": "Stark Archers",
                 "siege_weapon": null,
                 "crossbowmen": "Stark Crossbowmen",
-                "crannogman": {
-                    "frog_spears": "Mormont Spearmen"
-                },
-                "barrowman": {
-                    "barrow_knights": "Stark Lance Cavalry"
-                },
-                "harborman": {
-                    "knights_of_the_green_hand": "Stark Lance Cavalry",
-                    "crossbowmen": "Stark Crossbowmen"
-                },
-                "wolfswood_clansman": {
-                    "wolfswood_hunters": "Glover Crossbowmen"
-                },
-                "bearman": {
-                    "she_bears": "Mormont Axemen"
-                },
-                "skagosi": {
-                    "unicorn_riders": "Glover Lance Cavalry"
-                },
-                "northman": {
-                    "winter_wolves": "Stark House Guard",
-                    "cailin_archers": "Cerwyn Archers"
-                },
-                "all": {
-                    "house_guard": "Stark House Guard Spearmen"
-                }
+                "crannogman_frog_spears": "Mormont Spearmen",
+                "barrowman_barrow_knights": "Stark Lance Cavalry",
+                "harborman_knights_of_the_green_hand": "Stark Lance Cavalry",
+                "harborman_crossbowmen": "Stark Crossbowmen",
+                "wolfswood_clansman_wolfswood_hunters": "Glover Crossbowmen",
+                "bearman_she_bears": "Mormont Axemen",
+                "skagosi_unicorn_riders": "Glover Lance Cavalry",
+                "northman_winter_wolves": "Stark House Guard",
+                "northman_cailin_archers": "Cerwyn Archers",
+                "all_house_guard": "Stark House Guard Spearmen"
             },
             "levies": {
                 "infantry_spearmen": [
@@ -76,9 +60,7 @@
                 "archers": "Glover Archers",
                 "siege_weapon": null,
                 "crossbowmen": "Glover Crossbowmen",
-                "wolfswood_clansman": {
-                    "wolfswood_hunters": "Glover Crossbowmen"
-                }
+                "wolfswood_clansman_wolfswood_hunters": "Glover Crossbowmen"
             },
             "levies": {
                 "infantry_spearmen": [
@@ -143,10 +125,8 @@
                 "archers": "Tully Archers",
                 "siege_weapon": null,
                 "crossbowmen": "Tully Crossbowmen",
-                "riverlander": {
-                    "river_bows": "Tully Archers",
-                    "bargemen": "Tully Halberdiers"
-                }
+                "riverlander_river_bows": "Tully Archers",
+                "riverlander_bargemen": "Tully Halberdiers"
             },
             "levies": {
                 "infantry_spearmen": [
@@ -177,13 +157,9 @@
                 "archers": "Arryn Archers",
                 "siege_weapon": null,
                 "crossbowmen": "Arryn Crossbowmen",
-                "upper_valeman": {
-                    "winged_knights": "Arryn Lance Cavalry",
-                    "bloody_guard": "Arryn House Guard"
-                },
-                "fingerman": {
-                    "bloody_guard": "Arryn House Guard"
-                }
+                "upper_valeman_winged_knights": "Arryn Lance Cavalry",
+                "upper_valeman_bloody_guard": "Arryn House Guard",
+                "fingerman_bloody_guard": "Arryn House Guard"
             },
             "levies": {
                 "infantry_spearmen": [
@@ -216,10 +192,8 @@
                 "archers": "Royce Longbowmen",
                 "siege_weapon": null,
                 "crossbowmen": "Royce Crossbowmen",
-                "lower_valeman": {
-                    "winged_knights": "Royce Lance Cavalry",
-                    "bloody_guard": "Royce Swordsmen"
-                }
+                "lower_valeman_winged_knights": "Royce Lance Cavalry",
+                "lower_valeman_bloody_guard": "Royce Swordsmen"
             },
             "levies": {
                 "infantry_spearmen": [
@@ -252,9 +226,7 @@
                 "archers": "Lannister Archers",
                 "siege_weapon": null,
                 "crossbowmen": "Lannister Crossbowmen",
-                "westerman": {
-                    "lion_knights": "Lannister House Guard"
-                }
+                "westerman_lion_knights": "Lannister House Guard"
             },
             "levies": {
                 "infantry_spearmen": [
@@ -284,12 +256,10 @@
                 "archers": "Baratheon Archers",
                 "siege_weapon": null,
                 "crossbowmen": "Baratheon Crossbowmen",
-                "crownlander": {
-                    "sea_watch": "Goldcloak Spearmen",
-                    "storm_knights": "Baratheon Lance Cavalry",
-                    "gold_cloaks": "Goldcloak Swordsmen",
-                    "antlermen": "Baratheon House Guard"
-                }
+                "crownlander_sea_watch": "Goldcloak Spearmen",
+                "crownlander_storm_knights": "Baratheon Lance Cavalry",
+                "crownlander_gold_cloaks": "Goldcloak Swordsmen",
+                "crownlander_antlermen": "Baratheon House Guard"
             },
             "levies": {
                 "infantry_melee": [
@@ -348,10 +318,8 @@
                 "archers": "Baratheon Archers",
                 "siege_weapon": null,
                 "crossbowmen": "Baratheon Crossbowmen",
-                "stormlander": {
-                    "antlermen": "Baratheon House Guard",
-                    "storm_knights": "Baratheon Lance Cavalry"
-                }
+                "stormlander_antlermen": "Baratheon House Guard",
+                "stormlander_storm_knights": "Baratheon Lance Cavalry"
             },
             "levies": {
                 "infantry_melee": [
@@ -386,14 +354,10 @@
                 "archers": "Tyrell Archers",
                 "siege_weapon": null,
                 "crossbowmen": "Tyrell Crossbowmen",
-                "reachman": {
-                    "hand_messengers": "Tyrell Billmen",
-                    "summer_knights": "Tyrell House Guard"
-                },
-                "marcher": {
-                    "hand_messengers": "Tarly Billmen",
-                    "marcher_longbowmen": "Tarly Archers"
-                }
+                "reachman_hand_messengers": "Tyrell Billmen",
+                "reachman_summer_knights": "Tyrell House Guard",
+                "marcher_hand_messengers": "Tarly Billmen",
+                "marcher_marcher_longbowmen": "Tarly Archers"
             },
             "levies": {
                 "infantry_melee": [
@@ -452,18 +416,12 @@
                 "archers": "Martell Archers",
                 "siege_weapon": null,
                 "crossbowmen": "Martell Archers",
-                "salt_dornish": {
-                    "sun_spears": "Martell Spearmen",
-                    "dornish_vipers": "Martell Mounted Archers"
-                },
-                "stone_dornish": {
-                    "pass_pikes": "Yronwood Pikemen",
-                    "dornish_vipers": "Yronwood Javelin Men"
-                },
-                "sand_dornish": {
-                    "sand_steeds": "Uller Lance Cavalry",
-                    "dornish_vipers": "Uller Javelin Men"
-                }
+                "salt_dornish_sun_spears": "Martell Spearmen",
+                "salt_dornish_dornish_vipers": "Martell Mounted Archers",
+                "stone_dornish_pass_pikes": "Yronwood Pikemen",
+                "stone_dornish_dornish_vipers": "Yronwood Javelin Men",
+                "sand_dornish_sand_steeds": "Uller Lance Cavalry",
+                "sand_dornish_dornish_vipers": "Uller Javelin Men"
             },
             "levies": {
                 "ranged": [
@@ -559,10 +517,8 @@
                 "archers": "Greyjoy Archers",
                 "siege_weapon": null,
                 "crossbowmen": "Greyjoy Crossbowmen",
-                "ironborn": {
-                    "ironwood_spears": "Greyjoy House Guard Spearmen",
-                    "reavers": "Greyjoy Axemen"
-                }
+                "ironborn_ironwood_spears": "Greyjoy House Guard Spearmen",
+                "ironborn_reavers": "Greyjoy Axemen"
             },
             "levies": {
                 "infantry_spearmen": [
