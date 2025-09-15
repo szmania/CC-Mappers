@@ -126,13 +126,57 @@
                 "mid_tier": [
                     "Mormont Swordsmen"
                 ],
-                "archers": "Mormont Archers"
+                "archers": [
+                    "Mormont Archers"
+                ]
             },
             "characters": {
                 "general": "Mormont Lance Cavalry",
                 "knight": "Mormont Axemen"
             },
             "special_maa": {}
+        },
+        "riverlander_base": {
+            "cultures": [
+                "riverlander",
+                "riverman",
+                "blackwood",
+                "bracken",
+                "mallister"
+            ],
+            "maa": {
+                "light_infantry": "Tully Swordsmen",
+                "light_cavalry": "Tully Cavalry",
+                "spear_infantry": "Tully Halberdiers",
+                "pikemen": "Tully Pikemen",
+                "heavy_cavalry": "Tully Lance Cavalry",
+                "heavy_infantry": "Tully House Guard",
+                "archers": "Tully Archers",
+                "siege_weapon": null,
+                "crossbowmen": "Tully Crossbowmen"
+            },
+            "levies": {
+                "low_tier": [
+                    "Tully Spearmen",
+                    "Tully Billmen"
+                ],
+                "mid_tier": [
+                    "Tully Swordsmen"
+                ],
+                "archers": [
+                    "Tully Archers"
+                ]
+            },
+            "characters": {
+                "general": "Tully Lance Cavalry",
+                "knight": "Tully House Guard Spearmen"
+            },
+            "special_maa": {
+                "riverlander": {
+                    "river_bows": "Tully Archers",
+                    "bargemen": "Tully Halberdiers"
+                }
+            }
         }
     },
     "faction_rosters": {}
