@@ -46,25 +46,28 @@
     </Heritage>
     <Heritage name="heritage_akan" faction="Arran">
         <Culture name="akan" faction="Arran" />
-        <Culture name="guan" faction="Gautar" />
         <Culture name="kru" faction="Arran" />
+        <Culture name="baranis" faction="Arran" />
     </Heritage>
     <Heritage name="heritage_bantu" faction="Antai">
         <Culture name="east_bantu" faction="Antai" />
+        <Culture name="tajik" faction="Antai" />
     </Heritage>
     <Heritage name="heritage_arabic" faction="Aria">
         <Culture name="bedouin" faction="Aria" />
-        <Culture name="egyptian" faction="Egypt" />
-        <Culture name="maghrebi" faction="Magiaroi" />
-        <Culture name="yemeni" faction="Armenia" />
         <Culture name="levantine" faction="Aria" />
         <Culture name="Default" faction="Septimania" />
+        <Culture name="marka" faction="Aria" />
+        <Culture name="oriya" faction="Aria" />
+        <Culture name="assyrian" faction="Aria" />
     </Heritage>
     <Heritage name="heritage_baltic" faction="Nobatia">
         <Culture name="latgalian" faction="Italia" />
         <Culture name="lithuanian" faction="Thuringia" />
         <Culture name="prussian" faction="Persia" />
         <Culture name="Default" faction="Aquitainia" />
+        <Culture name="naiman" faction="Nobatia" />
+        <Culture name="croatian" faction="Nobatia" />
     </Heritage>
     <Heritage name="heritage_balto_finnic" faction="Saxonia">
         <Culture name="estonian" faction="Saxonia" />
@@ -76,16 +79,14 @@
         <Culture name="Default" faction="Venedian Separatists" />
     </Heritage>
     <Heritage name="heritage_berber" faction="Berbers">
-        <Culture name="baranis" faction="Arran" />
-        <Culture name="butr" faction="Gautar" />
         <Culture name="zaghawa" faction="Berbers" />
         <Culture name="guanches" faction="Berbers" />
         <Culture name="Default" faction="Saracenoi" />
+        <Culture name="serer" faction="Berbers" />
     </Heritage>
     <Heritage name="heritage_brythonic" faction="Bretons">
         <Culture name="breton" faction="Bretons" />
         <Culture name="cornish" faction="Oriens" />
-        <Culture name="cumbrian" faction="Britanni" />
         <Culture name="pictish" faction="Pictish Rebels" />
         <Culture name="welsh" faction="Welsh Rebels" />
         <Culture name="Default" faction="Ben Sabar Revolt" />
@@ -101,36 +102,36 @@
     <Heritage name="heritage_briton" faction="Bretons">
         <Culture name="breton" faction="Bretons" />
         <Culture name="cornish" faction="Oriens" />
-        <Culture name="cumbrian" faction="Britanni" />
         <Culture name="pictish" faction="Pictish Rebels" />
     </Heritage>
     <Heritage name="heritage_burman" faction="Romania">
         <Culture name="burmese" faction="Romania" />
         <Culture name="mon" faction="Romania" />
+        <Culture name="norman" faction="Romania" />
+        <Culture name="muroma" faction="Romania" />
+        <Culture name="pommeranian" faction="Romania" />
+        <Culture name="trojan" faction="Romania" />
     </Heritage>
     <Heritage name="heritage_byzantine" faction="Alania">
         <Culture name="alan" faction="Alania" />
-        <Culture name="armenian" faction="Armenia" />
         <Culture name="georgian" faction="Alania" />
         <Culture name="greek" faction="Alania" />
+        <Culture name="catalan" faction="Alania" />
     </Heritage>
     <Heritage name="heritage_central_african" faction="Asia">
         <Culture name="hausa" faction="Asia" />
-        <Culture name="kanuri" faction="Mauri" />
         <Culture name="nupe" faction="Asia" />
         <Culture name="sao" faction="Sabiroi" />
         <Culture name="Default" faction="Sabiroi" />
         <Culture name="Default" faction="Sclaboi" />
     </Heritage>
     <Heritage name="heritage_central_germanic" faction="Western Germanic Rebels">
-        <Culture name="bavarian" faction="Bavaria" />
         <Culture name="dutch" faction="Western Germanic Rebels" />
         <Culture name="franconian" faction="Western Germanic Rebels" />
         <Culture name="frisian" faction="Frisian Separatists" />
         <Culture name="german" faction="Germanic Rebels" />
         <Culture name="langobard" faction="Langobards" />
         <Culture name="saxon" faction="Saxon Rebels" />
-        <Culture name="swabian" faction="Suebians" />
         <Culture name="Default" faction="African Rebels" />
         <Culture name="Default" faction="African Separatists" />
         <Culture name="Default" faction="Arabian Rebels" />
@@ -161,6 +162,7 @@
         <Culture name="han" faction="Spahan" />
         <Culture name="Default" faction="White Hun Rebels" />
         <Culture name="Default" faction="White Hun Separatists" />
+        <Culture name="afghan" faction="Spahan" />
     </Heritage>
     <Heritage name="heritage_dravidian" faction="Antai">
         <Culture name="gond" faction="Antai" />
@@ -173,25 +175,23 @@
     <Heritage name="heritage_east_african" faction="Eastphalia">
         <Culture name="daju" faction="Eastphalia" />
         <Culture name="ethiopian" faction="Aethiopian Rebels" />
-        <Culture name="nubian" faction="Suebians" />
         <Culture name="welayta" faction="Eastphalia" />
         <Culture name="beja" faction="Eastphalia" />
         <Culture name="Default" faction="Aethiopian Separatists" />
+        <Culture name="nepali" faction="Eastphalia" />
     </Heritage>
     <Heritage name="heritage_east_slavic" faction="Armenia">
         <Culture name="ilmenian" faction="Armenia" />
         <Culture name="russian" faction="Austrasia" />
-        <Culture name="severian" faction="Suebians" />
         <Culture name="volhynian" faction="Armenia" />
-        <Culture name="ilmenian" faction="Armenia" />
-        <Culture name="severian" faction="Suebians" />
         <Culture name="Default" faction="Austrasian Separatists" />
         <Culture name="Default" faction="Taifa of Sevilla" />
+        <Culture name="yemeni" faction="Armenia" />
+        <Culture name="armenian" faction="Armenia" />
     </Heritage>
     <Heritage name="heritage_frankish" faction="Frankish Rebels">
         <Culture name="frankish" faction="Frankish Rebels" />
         <Culture name="french" faction="Frankish Rebels" />
-        <Culture name="norman" faction="Romania" />
         <Culture name="occitan" faction="Frankish Rebels" />
         <Culture name="Default" faction="Frankish Kingdom" />
         <Culture name="Default" faction="Frankish Separatists" />
@@ -209,8 +209,9 @@
         <Culture name="bobo" faction="Gautar" />
         <Culture name="gur" faction="Gautar" />
         <Culture name="malinke" faction="Gautar" />
-        <Culture name="marka" faction="Aria" />
         <Culture name="mel" faction="Gautar" />
+        <Culture name="guan" faction="Gautar" />
+        <Culture name="butr" faction="Gautar" />
     </Heritage>
     <Heritage name="heritage_yoruba" faction="Corduba">
         <Culture name="edo" faction="Taifa of Toledo" />
@@ -219,7 +220,6 @@
         <Culture name="yoruba" faction="Corduba" />
     </Heritage>
     <Heritage name="heritage_somalian" faction="Romania">
-        <Culture name="afar" faction="Avars" />
         <Culture name="beja" faction="Romania" />
         <Culture name="somali" faction="Romania" />
     </Heritage>
@@ -229,10 +229,8 @@
         <Culture name="asturleonese" faction="Vascones" />
         <Culture name="basque" faction="Basques" />
         <Culture name="castilian" faction="Aestii" />
-        <Culture name="catalan" faction="Alania" />
         <Culture name="galician" faction="Britanni" />
         <Culture name="portuguese" faction="Pontus" />
-        <Culture name="suebi" faction="Suebians" />
         <Culture name="visigothic" faction="Visigothic Kingdom" />
         <Culture name="Default" faction="Caucasian Separatists" />
         <Culture name="Default" faction="Gallacian Separatists" />
@@ -240,6 +238,7 @@
         <Culture name="Default" faction="Vandalic Kingdom" />
         <Culture name="Default" faction="Vandalic Separatists" />
         <Culture name="Default" faction="Visigothic Separatists" />
+        <Culture name="cumbrian" faction="Britanni" />
     </Heritage>
     <Heritage name="heritage_israelite" faction="Bavaria">
         <Culture name="ashkenazi" faction="Bavaria" />
@@ -265,35 +264,27 @@
         <Culture name="Default" faction="Viking Separatists" />
         <Culture name="Default" faction="Western Separatists" />
         <Culture name="Default" faction="Ystrad Clut Separatists" />
+        <Culture name="bavarian" faction="Bavaria" />
     </Heritage>
     <Heritage name="heritage_indo_aryan" faction="Kingdom of Carloman">
-        <Culture name="bengali" faction="Angli" />
         <Culture name="assamese" faction="Nasamounes" />
         <Culture name="hindustani" faction="Hispania" />
-        <Culture name="malvi" faction="Angli" />
         <Culture name="gujarati" faction="Kingdom of Carloman" />
         <Culture name="punjabi" faction="Kingdom of Carloman" />
         <Culture name="rajput" faction="Kingdom of Carloman" />
         <Culture name="sindhi" faction="Kingdom of Carloman" />
-        <Culture name="marathi" faction="Mauri" />
         <Culture name="sinhala" faction="Italia" />
-        <Culture name="nepali" faction="Eastphalia" />
         <Culture name="kashmiri" faction="Kingdom of Carloman" />
         <Culture name="brahui" faction="Kingdom of Carloman" />
-        <Culture name="oriya" faction="Aria" />
         <Culture name="Default" faction="Angli Separatists" />
     </Heritage>
     <Heritage name="heritage_iranian" faction="Romania">
-        <Culture name="afghan" faction="Spahan" />
         <Culture name="baloch" faction="Romania" />
         <Culture name="daylamite" faction="Romania" />
         <Culture name="khwarezmian" faction="Romania" />
         <Culture name="kurdish" faction="Romania" />
         <Culture name="persian" faction="Persia" />
-        <Culture name="saka" faction="Dakiai" />
         <Culture name="sogdian" faction="Romania" />
-        <Culture name="tajik" faction="Antai" />
-        <Culture name="alan" faction="Alania" />
         <Culture name="Default" faction="Alanic Separatists" />
         <Culture name="Default" faction="Kingdom of Ailech" />
         <Culture name="Default" faction="Kingdom of Charlemagne" />
@@ -304,7 +295,6 @@
         <Culture name="italian" faction="Italian Rebels" />
         <Culture name="lombard" faction="Lombard Separatists" />
         <Culture name="roman" faction="Roman Empire" />
-        <Culture name="sardinian" faction="Sardinians" />
         <Culture name="sicilian" faction="Antai" />
         <Culture name="Default" faction="Domain of Soissons" />
         <Culture name="Default" faction="Italian Rebels" />
@@ -329,12 +319,13 @@
         <Culture name="Default" faction="Westphalian Separatists" />
     </Heritage>
     <Heritage name="heritage_magyar" faction="Magiaroi">
-        <Culture name="hungarian" faction="Angria" />
         <Culture name="mogyer" faction="Magiaroi" />
+        <Culture name="maghrebi" faction="Magiaroi" />
     </Heritage>
     <Heritage name="heritage_yugrian" faction="Angria">
         <Culture name="hungarian" faction="Angria" />
         <Culture name="mogyer" faction="Angria" />
+        <Culture name="tsangpa" faction="Angria" />
     </Heritage>
     <Heritage name="heritage_mongolic" faction="Angli">
         <Culture name="buryat" faction="Angli" />
@@ -342,11 +333,12 @@
         <Culture name="kerait" faction="Angli" />
         <Culture name="khitan" faction="Angli" />
         <Culture name="mongol" faction="Angli" />
-        <Culture name="naiman" faction="Nobatia" />
         <Culture name="oirat" faction="Angli" />
         <Culture name="tuyuhun" faction="Angli" />
         <Culture name="Default" faction="Emirate of Cordoba" />
         <Culture name="Default" faction="Kingdom of Kent" />
+        <Culture name="bengali" faction="Angli" />
+        <Culture name="malvi" faction="Angli" />
     </Heritage>
     <Heritage name="heritage_north_germanic" faction="Northern Germanic Rebels">
         <Culture name="danish" faction="Danish Separatists" />
@@ -380,14 +372,16 @@
     </Heritage>
     <Heritage name="heritage_senegambian" faction="Suebians">
         <Culture name="pulaar" faction="Suebians" />
-        <Culture name="serer" faction="Berbers" />
         <Culture name="wolof" faction="Suebians" />
+        <Culture name="swabian" faction="Suebians" />
+        <Culture name="nubian" faction="Suebians" />
+        <Culture name="severian" faction="Suebians" />
+        <Culture name="suebi" faction="Suebians" />
+        <Culture name="serbian" faction="Suebians" />
     </Heritage>
     <Heritage name="heritage_south_slavic" faction="Bavaria">
         <Culture name="bosnian" faction="Bavaria" />
         <Culture name="bulgarian" faction="Bavaria" />
-        <Culture name="croatian" faction="Nobatia" />
-        <Culture name="serbian" faction="Suebians" />
         <Culture name="vlach" faction="Bavaria" />
         <Culture name="Default" faction="Burgundian Separatists" />
         <Culture name="Default" faction="Burgundians" />
@@ -400,8 +394,8 @@
         <Culture name="kirati" faction="Dakiai" />
         <Culture name="lhomon" faction="Dakiai" />
         <Culture name="sumpa" faction="Aksum" />
-        <Culture name="tsangpa" faction="Angria" />
         <Culture name="zhangzhung" faction="Dakiai" />
+        <Culture name="saka" faction="Dakiai" />
     </Heritage>
     <Heritage name="heritage_tocharian" faction="Aria">
         <Culture name="tocharian" faction="Aria" />
@@ -432,6 +426,7 @@
         <Culture name="Default" faction="Avaroi" />
         <Culture name="Default" faction="Avaroi Rebels" />
         <Culture name="Default" faction="Kingdom of Asturias" />
+        <Culture name="afar" faction="Avars" />
     </Heritage>
     <Heritage name="heritage_ugro_permian" faction="Default">
         <Culture name="khanty" faction="Default" />
@@ -443,10 +438,11 @@
         <Culture name="merya" faction="Mauri" />
         <Culture name="meshchera" faction="Mauri" />
         <Culture name="mordvin" faction="Oriens" />
-        <Culture name="muroma" faction="Romania" />
         <Culture name="Default" faction="Himyar" />
         <Culture name="Default" faction="Kingdom of Mercia" />
         <Culture name="Default" faction="Nordic Rebels" />
+        <Culture name="kanuri" faction="Mauri" />
+        <Culture name="marathi" faction="Mauri" />
     </Heritage>
     <Heritage name="heritage_west_germanic" faction="Western Germanic Rebels">
         <Culture name="anglo_saxon" faction="Western Germanic Rebels" />
@@ -464,12 +460,10 @@
         <Culture name="polabian" faction="Antai" />
         <Culture name="polish" faction="Antai" />
         <Culture name="slovien" faction="Sclavenoi" />
-        <Culture name="pommeranian" faction="Romania" />
         <Culture name="Default" faction="Slavic Rebels" />
         <Culture name="Default" faction="Slavic Rebels " />
     </Heritage>
     <Heritage name="heritage_caucasian" faction="Caucasian Rebels">
-        <Culture name="armenian" faction="Armenia" />
         <Culture name="georgian" faction="Caucasian Rebels" />
         <Culture name="Default" faction="Garamantian Separatists" />
         <Culture name="Default" faction="Sarmatian Rebels" />
@@ -478,6 +472,7 @@
     </Heritage>
     <Heritage name="heritage_egyptian" faction="Egypt">
         <Culture name="ancient_egyptian" faction="Egypt" />
+        <Culture name="egyptian" faction="Egypt" />
     </Heritage>
     <Heritage name="heritage_east_germanic" faction="Eastern Germanic Rebels">
         <Culture name="gothic" faction="Visigothic Kingdom" />
@@ -489,12 +484,10 @@
         <Culture name="Default" faction="Nordalbingia" />
     </Heritage>
     <Heritage name="heritage_syriac" faction="Asia">
-        <Culture name="assyrian" faction="Aria" />
         <Culture name="Default" faction="Asturian Separatists" />
     </Heritage>
     <Heritage name="heritage_imazigen" faction="Arran">
         <Culture name="baranis" faction="Arran" />
-        <Culture name="butr" faction="Gautar" />
         <Culture name="zaghawa" faction="Arran" />
     </Heritage>
     <Heritage name="heritage_hunnic" faction="Hunnic Separatists">
@@ -503,6 +496,6 @@
     </Heritage>
     <Heritage name="heritage_ancient_greek" faction="Sardinians">
         <Culture name="macedonian" faction="Sardinians" />
-        <Culture name="trojan" faction="Romania" />
+        <Culture name="sardinian" faction="Sardinians" />
     </Heritage>
 </Cultures>
