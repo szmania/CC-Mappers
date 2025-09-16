@@ -1,14 +1,16 @@
 <?xml version='1.0' encoding='utf-8'?>
 <FactionsGroups>
     <Faction name="Default">
-        <General key="Riverlands_Jaremy_Mallister" rank="1" />
-        <General key="Essos_Targaryen_Qhono" rank="2" />
-        <General key="North_Ramsay_Bolton" rank="3" />
-        <Levies percentage="37" key="North_Stark_MAA_Longbowmen" max="LEVY" />
-        <Levies percentage="14" key="Dorne_Dayne_MAA_Lance_Cavalry" max="LEVY" />
-        <Levies percentage="12" key="North_Umber_MAA_Pikemen" max="LEVY" />
-        <Levies percentage="18" key="Westerlands_Crakehall_MAA_Swordsmen" max="LEVY" />
-        <Levies percentage="19" key="Reach_Tarly_MAA_Axemen" max="LEVY" />
+        <General key="BTW_Tormund" rank="1" />
+        <General key="Reach_Randyll_Tarly" rank="2" />
+        <General key="Riverlands_Walder_Frey" rank="3" />
+        <Knights key="North_Glover_MAA_Mounted_Swordsmen" rank="1" />
+        <Knights key="Iron_Islands_Harlaw_MAA_Lance_Cavalry" rank="2" />
+        <Knights key="Riverlands_Blackfish_Tully" rank="3" />
+        <Levies percentage="20" key="Vale_Royce_MAA_Crossbowmen" max="LEVY" />
+        <Levies percentage="38" key="North_Ramsay_Bolton" max="LEVY" />
+        <Levies percentage="13" key="Westerlands_Lannister_MAA_Pikemen" max="LEVY" />
+        <Levies percentage="29" key="North_Umber_MAA_Billmen" max="LEVY" />
         <MenAtArm type="accolade_maa_archers" key="BTW_Wildling_MAA_Archers" max="RANGED" />
         <MenAtArm type="accolade_maa_cameliers" key="Reach_Tarly_MAA_Lance_Cavalry" />
         <MenAtArm type="accolade_maa_crossbowers" key="BTW_Wildling_MAA_Archers" max="RANGED" />
@@ -154,14 +156,17 @@
         <MenAtArm type="wolfswood_hunters" key="BTW_Wildling_MAA_Archers" max="RANGED" />
     </Faction>
     <Faction name="The Crownlands">
-        <General key="Westerlands_Kevan_Lannister" rank="1" />
-        <General key="Crownlands_Jaime_Lannister" rank="2" />
-        <General key="Westerlands_Gregor_Clegane" rank="3" />
-        <Levies percentage="26" key="Stormlands_Baratheon_MAA_Crossbowmen" max="LEVY" />
-        <Levies percentage="17" key="Crownlands_Joffrey_Baratheon" max="LEVY" />
-        <Levies percentage="20" key="Stormlands_Baratheon_Guard_Spearmen" max="LEVY" />
-        <Levies percentage="24" key="Westerlands_Lannister_Guard_Spearmen" max="LEVY" />
-        <Levies percentage="13" key="Stormlands_Baratheon_MAA_Swordsmen" max="LEVY" />
+        <General key="Crownlands_Kings_Landing_Golden_Company_Harry_Strickland" rank="1" />
+        <General key="Westerlands_Kevan_Lannister" rank="2" />
+        <General key="Crownlands_Tommen_Baratheon" rank="3" />
+        <Knights key="Westerlands_Lannister_MAA_Mounted_Swordsmen" rank="1" />
+        <Knights key="Stormlands_Baratheon_MAA_Lance_Cavalry" rank="2" />
+        <Knights key="Westerlands_Lannister_MAA_Lance_Cavalry" rank="3" />
+        <Levies percentage="12" key="Westerlands_Lannister_MAA_Longbowmen" max="LEVY" />
+        <Levies percentage="32" key="Westerlands_Kevan_Lannister" max="LEVY" />
+        <Levies percentage="30" key="Crownlands_Kings_Landing_Peasants" max="LEVY" />
+        <Levies percentage="19" key="Crownlands_Kings_Landing_Golden_Company_Spearmen" max="LEVY" />
+        <Levies percentage="7" key="Crownlands_Kings_Landing_Faith_Militant" max="LEVY" />
         <MenAtArm type="Guardians" key="Stormlands_Baratheon_MAA_Swordsmen" max="INFANTRY" />
         <MenAtArm type="Phalanxes" key="Crownlands_Kings_Landing_Goldcloak_Spearmen" max="INFANTRY" />
         <MenAtArm type="Shieldwall Arbalests" key="Stormlands_Baratheon_MAA_Crossbowmen" max="RANGED" />
@@ -656,12 +661,15 @@
         <MenAtArm type="zebaback_slavers" key="Stormlands_Baratheon_MAA_Billmen" max="INFANTRY" />
     </Faction>
     <Faction name="The Westerlands">
-        <General key="Westerlands_Kevan_Lannister" rank="1" />
-        <General key="Westerlands_Roland_Crakehall" rank="2" />
-        <General key="Westerlands_Gregor_Clegane" rank="3" />
-        <Levies percentage="63" key="Westerlands_Marbrand_MAA_Crossbowmen" max="LEVY" />
-        <Levies percentage="16" key="Westerlands_Gregor_Clegane" max="LEVY" />
-        <Levies percentage="21" key="Westerlands_Lannister_Guard_Spearmen" max="LEVY" />
+        <General key="Westerlands_Gregor_Clegane" rank="1" />
+        <General key="Westerlands_Addam_Marbrand" rank="2" />
+        <General key="Westerlands_Roland_Crakehall" rank="3" />
+        <Knights key="Westerlands_Lannister_MAA_Mounted_Swordsmen" rank="1" />
+        <Knights key="Westerlands_Brax_MAA_Lance_Cavalry" rank="2" />
+        <Knights key="Westerlands_Crakehall_MAA_Lance_Cavalry" rank="3" />
+        <Levies percentage="20" key="Westerlands_Crakehall_MAA_Longbowmen" max="LEVY" />
+        <Levies percentage="56" key="Westerlands_Marbrand_MAA_Lance_Cavalry" max="LEVY" />
+        <Levies percentage="24" key="Westerlands_Lannister_MAA_Pikemen" max="LEVY" />
         <MenAtArm type="Guardians" key="Westerlands_Marbrand_MAA_Billmen" max="INFANTRY" />
         <MenAtArm type="Phalanxes" key="Westerlands_Lannister_MAA_Pikemen" max="INFANTRY" />
         <MenAtArm type="Shieldwall Arbalests" key="Westerlands_Lannister_MAA_Longbowmen" max="RANGED" />
@@ -1153,12 +1161,16 @@
         <MenAtArm type="zebaback_slavers" key="Westerlands_Crakehall_MAA_Billmen" max="INFANTRY" />
     </Faction>
     <Faction name="The Riverlands">
-        <General key="Riverlands_Walder_Frey" rank="1" />
-        <General key="Riverlands_Blackfish_Tully" rank="2" />
-        <General key="Riverlands_Edmure_Tully" rank="3" />
-        <Levies percentage="32" key="Riverlands_Mallister_MAA_Crossbowmen" max="LEVY" />
-        <Levies percentage="24" key="Riverlands_Frey_MAA_Lance_Cavalry" max="LEVY" />
-        <Levies percentage="44" key="Riverlands_Frey_MAA_Pikemen" max="LEVY" />
+        <General key="Riverlands_Edmure_Tully" rank="1" />
+        <General key="Riverlands_Walder_Frey" rank="2" />
+        <General key="Riverlands_Blackfish_Tully" rank="3" />
+        <Knights key="Riverlands_Mallister_MAA_Mounted_Swordsmen" rank="1" />
+        <Knights key="Riverlands_Tully_MAA_Lance_Cavalry" rank="2" />
+        <Knights key="Riverlands_Jaremy_Mallister" rank="3" />
+        <Levies percentage="35" key="Riverlands_Mallister_MAA_Crossbowmen" max="LEVY" />
+        <Levies percentage="23" key="Riverlands_Mallister_MAA_Mounted_Swordsmen" max="LEVY" />
+        <Levies percentage="19" key="Riverlands_Mallister_MAA_Spearmen" max="LEVY" />
+        <Levies percentage="23" key="Riverlands_Tully_MAA_Pikemen" max="LEVY" />
         <MenAtArm type="Guardians" key="Riverlands_Mallister_MAA_Billmen" max="INFANTRY" />
         <MenAtArm type="Phalanxes" key="Riverlands_Mallister_MAA_Mounted_Swordsmen" max="INFANTRY" />
         <MenAtArm type="Shieldwall Arbalests" key="Riverlands_Tully_MAA_Axemen" max="RANGED" />
@@ -1650,12 +1662,17 @@
         <MenAtArm type="zebaback_slavers" key="Riverlands_Frey_MAA_Billmen" max="INFANTRY" />
     </Faction>
     <Faction name="The Stormlands">
-        <General key="Stormlands_Robert_Baratheon" rank="1" />
-        <General key="Stormlands_Renly_Baratheon" rank="2" />
-        <General key="Stormlands_Stannis_Baratheon" rank="3" />
-        <Levies percentage="35" key="Stormlands_Dondarrion_MAA_Longbowmen" max="LEVY" />
-        <Levies percentage="46" key="Stormlands_Renly_Baratheon" max="LEVY" />
-        <Levies percentage="19" key="Stormlands_Baratheon_Guard_Spearmen" max="LEVY" />
+        <General key="Stormlands_Stannis_Baratheon" rank="1" />
+        <General key="Stormlands_Beric_Dondarrion" rank="2" />
+        <General key="Stormlands_Renly_Baratheon" rank="3" />
+        <Knights key="Stormlands_Dondarrion_MAA_Mounted_Swordsmen" rank="1" />
+        <Knights key="Stormlands_Renly_Baratheon" rank="2" />
+        <Knights key="Stormlands_Dondarrion_MAA_Lance_Cavalry" rank="3" />
+        <Levies percentage="18" key="Stormlands_Dondarrion_MAA_Crossbowmen" max="LEVY" />
+        <Levies percentage="21" key="Stormlands_Renly_Baratheon" max="LEVY" />
+        <Levies percentage="21" key="Stormlands_Baratheon_MAA_Pikemen" max="LEVY" />
+        <Levies percentage="14" key="Stormlands_Dondarrion_MAA_Swordsmen" max="LEVY" />
+        <Levies percentage="26" key="Stormlands_Baratheon_Guard_Swordsmen" max="LEVY" />
         <MenAtArm type="Guardians" key="Stormlands_Dondarrion_MAA_Pikemen" max="INFANTRY" />
         <MenAtArm type="Phalanxes" key="Stormlands_Baratheon_Guard_Spearmen" max="INFANTRY" />
         <MenAtArm type="Shieldwall Arbalests" key="Stormlands_Baratheon_MAA_Crossbowmen" max="RANGED" />
@@ -2150,9 +2167,14 @@
         <General key="BTW_Tormund" rank="1" />
         <General key="BTW_Mance_Rayder" rank="2" />
         <General key="BTW_Jon_Snow" rank="3" />
-        <Levies percentage="30" key="BTW_Nights_Watch_MAA_Crossbowmen" max="LEVY" />
-        <Levies percentage="14" key="BTW_Night_King" max="LEVY" />
-        <Levies percentage="56" key="BTW_Wildling_MAA_Spearmen" max="LEVY" />
+        <Knights key="BTW_Nights_Watch_MAA_Mounted_Swordsmen" rank="1" />
+        <Knights key="BTW_Alliser_Thorne" rank="2" />
+        <Knights key="BTW_Night_King" rank="3" />
+        <Levies percentage="23" key="BTW_Nights_Watch_MAA_Longbowmen" max="LEVY" />
+        <Levies percentage="38" key="BTW_Night_King" max="LEVY" />
+        <Levies percentage="17" key="BTW_Wildling_Guard_Spearmen" max="LEVY" />
+        <Levies percentage="10" key="BTW_Wildling_MAA_Axemen" max="LEVY" />
+        <Levies percentage="12" key="BTW_Tormund" max="LEVY" />
         <MenAtArm type="Guardians" key="BTW_Nights_Watch_MAA_Spearmen" max="INFANTRY" />
         <MenAtArm type="Phalanxes" key="BTW_Night_King_Army_Wight_Infantry" max="INFANTRY" />
         <MenAtArm type="Shieldwall Arbalests" key="BTW_Nights_Watch_MAA_Longbowmen" max="RANGED" />
@@ -2646,9 +2668,9 @@
     <Faction name="Dorne">
         <General key="Dorne_Martell_MAA_Lance_Cavalry" />
         <Knights key="Dorne_Martell_MAA_Lance_Cavalry" />
-        <Levies percentage="10" key="Dorne_Martell_MAA_Mounted_Archers" max="LEVY" />
-        <Levies percentage="43" key="Dorne_Martell_MAA_Mounted_Archers" max="LEVY" />
+        <Levies percentage="11" key="Dorne_Martell_MAA_Mounted_Archers" max="LEVY" />
         <Levies percentage="47" key="Dorne_Martell_MAA_Mounted_Archers" max="LEVY" />
+        <Levies percentage="42" key="Dorne_Martell_MAA_Mounted_Archers" max="LEVY" />
         <MenAtArm type="Guardians" key="Dorne_Martell_MAA_Halberdiers" max="INFANTRY" />
         <MenAtArm type="Phalanxes" key="Dorne_Dayne_MAA_Javelins" max="INFANTRY" />
         <MenAtArm type="Shieldwall Arbalests" key="Dorne_Dayne_MAA_Longbowmen" max="RANGED" />
@@ -3141,11 +3163,16 @@
     </Faction>
     <Faction name="Essos">
         <General key="Essos_Targaryen_Greyworm" rank="1" />
-        <General key="Essos_Targaryen_Barristan_Selmy" rank="2" />
-        <General key="Essos_Targaryen_Jorah_Mormont" rank="3" />
-        <Levies percentage="56" key="Essos_Targaryen_Barristan_Selmy" max="LEVY" />
-        <Levies percentage="17" key="Essos_Targaryen_Greyworm" max="LEVY" />
-        <Levies percentage="27" key="Essos_Targaryen_Unsullied_Pikemen" max="LEVY" />
+        <General key="Essos_Targaryen_Qhono" rank="2" />
+        <General key="Essos_Targaryen_Barristan_Selmy" rank="3" />
+        <Knights key="Essos_Targaryen_Dothraki_Bloodriders" rank="1" />
+        <Knights key="Essos_Targaryen_Barristan_Selmy" rank="2" />
+        <Knights key="Essos_Targaryen_Jorah_Mormont" rank="3" />
+        <Levies percentage="15" key="Essos_Targaryen_Dothraki_Mounted_Archers" max="LEVY" />
+        <Levies percentage="14" key="Essos_Targaryen_Unsullied_Spearmen" max="LEVY" />
+        <Levies percentage="35" key="Essos_Targaryen_Greyworm" max="LEVY" />
+        <Levies percentage="26" key="Essos_Targaryen_Unsullied_Pikemen" max="LEVY" />
+        <Levies percentage="10" key="Essos_Targaryen_Unsullied_Swordsmen" max="LEVY" />
         <MenAtArm type="Guardians" key="Essos_Targaryen_Unsullied_Spearmen" max="INFANTRY" />
         <MenAtArm type="Phalanxes" key="Essos_Targaryen_Greyworm" max="INFANTRY" />
         <MenAtArm type="Shieldwall Arbalests" key="Essos_Targaryen_Jorah_Mormont" max="RANGED" />
@@ -3637,13 +3664,17 @@
         <MenAtArm type="zebaback_slavers" key="Essos_Targaryen_Greyworm" max="INFANTRY" />
     </Faction>
     <Faction name="The Iron Islands">
-        <General key="Iron_Islands_Theon_Greyjoy" rank="1" />
+        <General key="Iron_Islands_Yara_Greyjoy" rank="1" />
         <General key="Iron_Islands_Euron_Greyjoy" rank="2" />
-        <General key="Iron_Islands_Rodrick_Harlaw" rank="3" />
-        <Levies percentage="34" key="Iron_Islands_Harlaw_MAA_Crossbowmen" max="LEVY" />
-        <Levies percentage="27" key="Iron_Islands_Yara_Greyjoy" max="LEVY" />
-        <Levies percentage="14" key="Iron_Islands_Harlaw_MAA_Pikemen" max="LEVY" />
-        <Levies percentage="25" key="Iron_Islands_Harlaw_MAA_Infantry" max="LEVY" />
+        <General key="Iron_Islands_Theon_Greyjoy" rank="3" />
+        <Knights key="Iron_Islands_Harlaw_MAA_Mounted_Swordsmen" rank="1" />
+        <Knights key="Iron_Islands_Theon_Greyjoy" rank="2" />
+        <Knights key="Iron_Islands_Greyjoy_MAA_Lance_Cavalry" rank="3" />
+        <Levies percentage="23" key="Iron_Islands_Greyjoy_MAA_Crossbowmen" max="LEVY" />
+        <Levies percentage="17" key="Iron_Islands_Rodrick_Harlaw" max="LEVY" />
+        <Levies percentage="26" key="Iron_Islands_Harlaw_MAA_Spearmen" max="LEVY" />
+        <Levies percentage="9" key="Iron_Islands_Harlaw_MAA_Swordsmen" max="LEVY" />
+        <Levies percentage="25" key="Iron_Islands_Greyjoy_MAA_Spearmen" max="LEVY" />
         <MenAtArm type="Guardians" key="Iron_Islands_Harlaw_MAA_Axemen" max="INFANTRY" />
         <MenAtArm type="Phalanxes" key="Iron_Islands_Harlaw_MAA_Spearmen" max="INFANTRY" />
         <MenAtArm type="Shieldwall Arbalests" key="Iron_Islands_Harlaw_MAA_Bowmen" max="RANGED" />
@@ -4135,12 +4166,15 @@
         <MenAtArm type="zebaback_slavers" key="Iron_Islands_Harlaw_MAA_Billmen" max="INFANTRY" />
     </Faction>
     <Faction name="The North">
-        <General key="North_Greatjon_Umber" rank="1" />
-        <General key="North_Robb_Stark" rank="2" />
-        <General key="North_Smalljon_Umber" rank="3" />
-        <Levies percentage="23" key="North_Hornwood_MAA_Longbowmen" max="LEVY" />
-        <Levies percentage="34" key="North_Jon_Snow" max="LEVY" />
-        <Levies percentage="43" key="North_Stark_Guard_Spearmen" max="LEVY" />
+        <General key="North_Ramsay_Bolton" rank="1" />
+        <General key="North_Larence_Snow" rank="2" />
+        <General key="North_Cley_Cerwyn" rank="3" />
+        <Knights key="North_Ramsay_Bolton" rank="1" />
+        <Knights key="North_Maege_Mormont" rank="2" />
+        <Knights key="North_Larence_Snow" rank="3" />
+        <Levies percentage="39" key="North_Umber_MAA_Longbowmen" max="LEVY" />
+        <Levies percentage="44" key="North_Hornwood_MAA_Lance_Cavalry" max="LEVY" />
+        <Levies percentage="17" key="North_Bolton_MAA_Spearmen" max="LEVY" />
         <MenAtArm type="Guardians" key="North_Karstark_MAA_Swordsmen" max="INFANTRY" />
         <MenAtArm type="Phalanxes" key="North_Glover_MAA_Halberdiers" max="INFANTRY" />
         <MenAtArm type="Shieldwall Arbalests" key="North_Cerwyn_MAA_Longbowmen" max="RANGED" />
@@ -4633,9 +4667,12 @@
     </Faction>
     <Faction name="The Reach">
         <General key="Reach_Tyrell_MAA_Lance_Cavalry" />
-        <Levies percentage="33" key="Reach_Tyrell_MAA_Crossbowmen" max="LEVY" />
-        <Levies percentage="19" key="Reach_Tyrell_MAA_Mounted_Swordsmen" max="LEVY" />
-        <Levies percentage="48" key="Reach_Tarly_MAA_Pikemen" max="LEVY" />
+        <Knights key="Reach_Tarly_MAA_Mounted_Swordsmen" rank="1" />
+        <Knights key="Reach_Mace_Tyrell" rank="2" />
+        <Knights key="Reach_Tarly_MAA_Lance_Cavalry" rank="3" />
+        <Levies percentage="20" key="Reach_Tyrell_MAA_Crossbowmen" max="LEVY" />
+        <Levies percentage="38" key="Reach_Dickon_Tarly" max="LEVY" />
+        <Levies percentage="42" key="Reach_Tyrell_MAA_Pikemen" max="LEVY" />
         <MenAtArm type="Guardians" key="Reach_Tyrell_MAA_Halberdiers" max="INFANTRY" />
         <MenAtArm type="Phalanxes" key="Reach_Tyrell_Guard_Spearmen" max="INFANTRY" />
         <MenAtArm type="Shieldwall Arbalests" key="Reach_Tarly_MAA_Longbowmen" max="RANGED" />
@@ -5127,12 +5164,16 @@
         <MenAtArm type="zebaback_slavers" key="Reach_Tyrell_MAA_Swordsmen" max="INFANTRY" />
     </Faction>
     <Faction name="The Vale">
-        <General key="Vale_Yohn_Royce" rank="1" />
-        <General key="Vale_Vardis_Egen" rank="2" />
-        <Levies percentage="28" key="Vale_Royce_MAA_Crossbowmen" max="LEVY" />
-        <Levies percentage="23" key="Vale_Vardis_Egen" max="LEVY" />
-        <Levies percentage="27" key="Vale_Arryn_MAA_Pikemen" max="LEVY" />
-        <Levies percentage="22" key="Vale_Royce_MAA_Swordsmen" max="LEVY" />
+        <General key="Vale_Vardis_Egen" rank="1" />
+        <General key="Vale_Yohn_Royce" rank="2" />
+        <Knights key="Vale_Royce_MAA_Mounted_Swordsmen" rank="1" />
+        <Knights key="Vale_Arryn_Faction_Specialist_Lance_Cavalry" rank="2" />
+        <Knights key="Vale_Vardis_Egen" rank="3" />
+        <Levies percentage="21" key="Vale_Royce_MAA_Longbowmen" max="LEVY" />
+        <Levies percentage="26" key="Vale_Arryn_Faction_Specialist_Lance_Cavalry" max="LEVY" />
+        <Levies percentage="25" key="Vale_Arryn_Guard_Spearmen" max="LEVY" />
+        <Levies percentage="18" key="Vale_Arryn_MAA_Spearmen" max="LEVY" />
+        <Levies percentage="10" key="Vale_Arryn_MAA_Billmen" max="LEVY" />
         <MenAtArm type="Guardians" key="Vale_Arryn_MAA_Spearmen" max="INFANTRY" />
         <MenAtArm type="Phalanxes" key="Vale_Arryn_Guard_Swordsmen" max="INFANTRY" />
         <MenAtArm type="Shieldwall Arbalests" key="Vale_Royce_MAA_Longbowmen" max="RANGED" />

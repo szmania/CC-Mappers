@@ -1,15 +1,15 @@
 <?xml version='1.0' encoding='utf-8'?>
 <Factions>
     <Faction name="Default">
-        <General key="stan_veteransword" rank="1" />
-        <General key="brv_heavyspear" rank="2" />
-        <General key="stan_citadel" rank="3" />
+        <General key="los_swords" rank="1" />
+        <General key="brv_duinhir" rank="2" />
+        <General key="dol_sergeantcav" rank="3" />
         <Knights key="leb_retainercav" rank="1" />
-        <Knights key="pin_riders" rank="2" />
-        <Knights key="dol_swancav" rank="3" />
-        <Levies percentage="36" key="brv_skirm" max="LEVY" />
-        <Levies percentage="47" key="anf_skirmcav" max="LEVY" />
-        <Levies percentage="17" key="pin_levyspear" max="LEVY" />
+        <Knights key="pin_cavsword" rank="2" />
+        <Knights key="hor_immortals" rank="3" />
+        <Levies percentage="32" key="leb_skirm" max="LEVY" />
+        <Levies percentage="35" key="anf_skirmcav" max="LEVY" />
+        <Levies percentage="33" key="rv_levyspear" max="LEVY" />
         <MenAtArm type="abrazanim_halberdiers" key="rv_pike" max="INFANTRY" />
         <MenAtArm type="abrazanim_legion" key="los_heavyaxe" max="INFANTRY" />
         <MenAtArm type="abrazanim_warbows" key="rv_archer" max="RANGED" />
@@ -327,11 +327,12 @@
         <General key="har_mumakil" rank="3" />
         <Knights key="har_ar_belzagar" rank="1" />
         <Knights key="har_harad_lancers" rank="2" />
-        <Knights key="har_serpent_guards" rank="3" />
-        <Levies percentage="22" key="har_desert_bowmen" max="LEVY" />
-        <Levies percentage="17" key="har_desert_raiders" max="LEVY" />
-        <Levies percentage="33" key="har_desert_spears" max="LEVY" />
-        <Levies percentage="28" key="har_harad_glaives" max="LEVY" />
+        <Knights key="har_harad_camel_riders" rank="3" />
+        <Levies percentage="13" key="har_desert_bowmen" max="LEVY" />
+        <Levies percentage="28" key="har_desert_raiders" max="LEVY" />
+        <Levies percentage="17" key="har_desert_spears" max="LEVY" />
+        <Levies percentage="20" key="har_mahud_spearmen" max="LEVY" />
+        <Levies percentage="22" key="har_mahud_clubmen" max="LEVY" />
         <MenAtArm type="abrazanim_halberdiers" key="har_mahud_spearmen" max="INFANTRY" />
         <MenAtArm type="abrazanim_legion" key="har_adunakhori" max="INFANTRY" />
         <MenAtArm type="abrazanim_warbows" key="har_harad_archers" max="RANGED" />
@@ -647,9 +648,10 @@
         <General key="av_beorning_warriors" rank="1" />
         <General key="av_eotheod_nobles" rank="2" />
         <Knights key="av_eotheod_lancers" rank="1" />
-        <Levies percentage="22" key="av_valesmen_archer_levy" max="LEVY" />
-        <Levies percentage="61" key="av_eotheod_outriders" max="LEVY" />
-        <Levies percentage="17" key="av_valesmen_levy" max="LEVY" />
+        <Levies percentage="27" key="av_valesmen_archer_levy" max="LEVY" />
+        <Levies percentage="34" key="av_eotheod_outriders" max="LEVY" />
+        <Levies percentage="20" key="av_valesmen_levy" max="LEVY" />
+        <Levies percentage="19" key="av_woodland_axemen" max="LEVY" />
         <MenAtArm type="abrazanim_halberdiers" key="av_carrock_wardens" max="INFANTRY" />
         <MenAtArm type="abrazanim_legion" key="av_pass_sentries" max="INFANTRY" />
         <MenAtArm type="abrazanim_warbows" key="av_valesmen_archer_levy" max="RANGED" />
@@ -968,11 +970,9 @@
         <Knights key="kha_khandish_outriders" rank="1" />
         <Knights key="kha_akha_chosen" rank="2" />
         <Knights key="kha_khandish_cataphracts" rank="3" />
-        <Levies percentage="12" key="kha_akha_hunters" max="LEVY" />
-        <Levies percentage="23" key="kha_khandish_horse_archers" max="LEVY" />
-        <Levies percentage="22" key="kha_wainrider_spear_warriors" max="LEVY" />
-        <Levies percentage="28" key="kha_akha_tribalists" max="LEVY" />
-        <Levies percentage="15" key="kha_akha_spearfishers" max="LEVY" />
+        <Levies percentage="36" key="kha_akha_raiders" max="LEVY" />
+        <Levies percentage="34" key="kha_khandish_outriders" max="LEVY" />
+        <Levies percentage="30" key="kha_wainrider_spear_warriors" max="LEVY" />
         <MenAtArm type="abrazanim_halberdiers" key="kha_wainrider_spear_warriors" max="INFANTRY" />
         <MenAtArm type="abrazanim_legion" key="kha_khandish_sentries" max="INFANTRY" />
         <MenAtArm type="abrazanim_warbows" key="kha_akha_hunters" max="RANGED" />
@@ -1287,14 +1287,14 @@
     <Faction name="Easterlings">
         <General key="bal_bane_of_the_steppes" rank="1" />
         <General key="bal_khavar" rank="2" />
-        <General key="bal_wainrider_chiefs" rank="3" />
+        <General key="bal_khahar" rank="3" />
         <Knights key="bal_clan_raiders" rank="1" />
-        <Knights key="bal_loke_rim_cataphracts" rank="2" />
-        <Knights key="bal_khahar" rank="3" />
-        <Levies percentage="27" key="bal_clan_huntsmen" max="LEVY" />
-        <Levies percentage="13" key="bal_clan_raiders" max="LEVY" />
-        <Levies percentage="30" key="bal_clan_spearmen" max="LEVY" />
-        <Levies percentage="30" key="bal_clan_axemen" max="LEVY" />
+        <Knights key="bal_bane_of_the_steppes" rank="2" />
+        <Knights key="bal_khavar" rank="3" />
+        <Levies percentage="42" key="bal_clan_huntsmen" max="LEVY" />
+        <Levies percentage="20" key="bal_clan_raiders" max="LEVY" />
+        <Levies percentage="21" key="bal_clan_spearmen" max="LEVY" />
+        <Levies percentage="17" key="bal_clan_axemen" max="LEVY" />
         <MenAtArm type="abrazanim_halberdiers" key="bal_loke_rim_halberdiers" max="INFANTRY" />
         <MenAtArm type="abrazanim_legion" key="bal_clan_axemen" max="INFANTRY" />
         <MenAtArm type="abrazanim_warbows" key="bal_rhunic_archers" max="RANGED" />
@@ -1607,16 +1607,16 @@
         <MenAtArm type="zebaback_slavers" key="bal_clan_raiders" max="CAVALRY" />
     </Faction>
     <Faction name="Rohan">
-        <General key="roh_king_company" rank="1" />
-        <General key="roh_retinue_house_eorl" rank="2" />
-        <General key="roh_household_knights_theodred" rank="3" />
+        <General key="roh_meduseld_guard" rank="1" />
+        <General key="roh_household_knights_theoden" rank="2" />
+        <General key="roh_eored_king_mark_eomer" rank="3" />
         <Knights key="roh_eored_westfold" rank="1" />
-        <Knights key="roh_king_company" rank="2" />
-        <Knights key="roh_household_knights" rank="3" />
-        <Levies percentage="25" key="roh_mustered_archers" max="LEVY" />
-        <Levies percentage="27" key="roh_scouts_of_rohan" max="LEVY" />
-        <Levies percentage="24" key="roh_mustered_spears" max="LEVY" />
-        <Levies percentage="24" key="roh_mustered_axes" max="LEVY" />
+        <Knights key="roh_eored_king_mark" rank="2" />
+        <Knights key="roh_winfried" rank="3" />
+        <Levies percentage="18" key="roh_mustered_archers" max="LEVY" />
+        <Levies percentage="30" key="roh_scouts_of_rohan" max="LEVY" />
+        <Levies percentage="42" key="roh_mustered_spears" max="LEVY" />
+        <Levies percentage="10" key="roh_mustered_axes" max="LEVY" />
         <MenAtArm type="abrazanim_halberdiers" key="roh_eorling_men_at_arms" max="INFANTRY" />
         <MenAtArm type="abrazanim_legion" key="roh_eorling_retainers" max="INFANTRY" />
         <MenAtArm type="abrazanim_warbows" key="roh_mustered_archers" max="RANGED" />
@@ -1931,12 +1931,13 @@
     <Faction name="Lindon">
         <General key="lin_noldor_nobles" rank="1" />
         <General key="lin_nobles" rank="2" />
-        <General key="exe_lin_noldorin_rangers" rank="3" />
-        <Levies percentage="6" key="exe_lin_noldorin_rangers" max="LEVY" />
+        <General key="exe_lin_remnants_golden_flower" rank="3" />
+        <Knights key="lin_lindon_scouts" rank="1" />
+        <Knights key="lin_cavalry" rank="2" />
+        <Levies percentage="30" key="exe_lin_telerin_bows" max="LEVY" />
         <Levies percentage="24" key="lin_cavalry" max="LEVY" />
-        <Levies percentage="18" key="lin_spearmen" max="LEVY" />
-        <Levies percentage="25" key="lin_swordsmen" max="LEVY" />
-        <Levies percentage="27" key="exe_lin_telerin_longspears" max="LEVY" />
+        <Levies percentage="13" key="lin_noldor_nobles" max="LEVY" />
+        <Levies percentage="33" key="lin_swordsmen" max="LEVY" />
         <MenAtArm type="abrazanim_halberdiers" key="lin_spearmen" max="INFANTRY" />
         <MenAtArm type="abrazanim_legion" key="exe_lin_sword_infantry" max="INFANTRY" />
         <MenAtArm type="abrazanim_warbows" key="lin_archers" max="RANGED" />
@@ -2255,10 +2256,10 @@
         <Knights key="dale_northmen_scouts" rank="1" />
         <Knights key="dale_merchant_escorts" rank="2" />
         <Knights key="dale_cavalry_regiment" rank="3" />
-        <Levies percentage="24" key="dale_rivermen" max="LEVY" />
-        <Levies percentage="23" key="dale_northmen_scouts" max="LEVY" />
-        <Levies percentage="25" key="dale_spear_militia" max="LEVY" />
-        <Levies percentage="28" key="dale_vineland_guard_sword" max="LEVY" />
+        <Levies percentage="18" key="dale_yeomen" max="LEVY" />
+        <Levies percentage="16" key="dale_northmen_scouts" max="LEVY" />
+        <Levies percentage="34" key="dale_spear_militia" max="LEVY" />
+        <Levies percentage="32" key="dale_laketown_guards" max="LEVY" />
         <MenAtArm type="abrazanim_halberdiers" key="dale_vineland_watchmen" max="INFANTRY" />
         <MenAtArm type="abrazanim_legion" key="dale_vineland_guard_sword" max="INFANTRY" />
         <MenAtArm type="abrazanim_warbows" key="dale_rhovanion_rangers" max="RANGED" />
@@ -2577,10 +2578,10 @@
         <Knights key="dol_amorthian_squires" rank="1" />
         <Knights key="dol_patrollers_of_belfalas" rank="2" />
         <Knights key="dol_prince_imrahil_swan" rank="3" />
-        <Levies percentage="30" key="dol_amorthian_squires" max="LEVY" />
-        <Levies percentage="28" key="dol_sentinels" max="LEVY" />
-        <Levies percentage="19" key="dol_princes_coastguard" max="LEVY" />
-        <Levies percentage="23" key="dol_amrothian_watchmen" max="LEVY" />
+        <Levies percentage="14" key="dol_amorthian_squires" max="LEVY" />
+        <Levies percentage="38" key="dol_sentinels" max="LEVY" />
+        <Levies percentage="17" key="dol_amrothian_watchmen" max="LEVY" />
+        <Levies percentage="31" key="dol_princes_coastguard" max="LEVY" />
         <MenAtArm type="abrazanim_halberdiers" key="dol_princes_coastguard" max="INFANTRY" />
         <MenAtArm type="abrazanim_legion" key="dol_amroth_knights" max="INFANTRY" />
         <MenAtArm type="abrazanim_warbows" key="dol_prince_marksmen" max="RANGED" />
@@ -2898,10 +2899,11 @@
         <General key="dg_chieftain" rank="3" />
         <Knights key="mor_servants_of_the_eyes" rank="1" />
         <Knights key="dg_nazgul" rank="2" />
-        <Levies percentage="33" key="dg_mirkwood_trackers" max="LEVY" />
-        <Levies percentage="30" key="mor_warg_riders" max="LEVY" />
-        <Levies percentage="25" key="dg_guldur_pikes" max="LEVY" />
-        <Levies percentage="12" key="dg_guldur_glaives" max="LEVY" />
+        <Levies percentage="10" key="dg_mirkwood_raiders" max="LEVY" />
+        <Levies percentage="15" key="mor_warg_riders" max="LEVY" />
+        <Levies percentage="28" key="dg_phantoms" max="LEVY" />
+        <Levies percentage="21" key="dg_chieftain" max="LEVY" />
+        <Levies percentage="26" key="gun_barrow_wights" max="LEVY" />
         <MenAtArm type="abrazanim_halberdiers" key="dg_guldur_pikes" max="INFANTRY" />
         <MenAtArm type="abrazanim_legion" key="dg_chieftain" max="INFANTRY" />
         <MenAtArm type="abrazanim_warbows" key="dg_mirkwood_trackers" max="RANGED" />
@@ -3220,9 +3222,10 @@
         <Knights key="dor_merchant_escorts" rank="1" />
         <Knights key="dor_vineland_vanguard" rank="2" />
         <Knights key="dor_riders_of_the_vinter_court" rank="3" />
-        <Levies percentage="25" key="dor_vineland_seafarers" max="LEVY" />
-        <Levies percentage="31" key="dor_riders_of_the_vinter_court" max="LEVY" />
-        <Levies percentage="44" key="dor_vineland_spear_militia" max="LEVY" />
+        <Levies percentage="31" key="dor_vineland_seafarers" max="LEVY" />
+        <Levies percentage="16" key="dor_riders_of_the_vinter_court" max="LEVY" />
+        <Levies percentage="16" key="dor_vineland_spear_militia" max="LEVY" />
+        <Levies percentage="37" key="dor_dorwinion_sword_milita" max="LEVY" />
         <MenAtArm type="abrazanim_halberdiers" key="dor_vineland_watchmen" max="INFANTRY" />
         <MenAtArm type="abrazanim_legion" key="dor_dorwinion_Infantry" max="INFANTRY" />
         <MenAtArm type="abrazanim_warbows" key="dale_avari_wanderers" max="RANGED" />
@@ -3537,14 +3540,13 @@
     <Faction name="pinnath">
         <General key="pin_guardspear" rank="1" />
         <General key="pin_heavypike" rank="2" />
-        <General key="pin_sergeantcav" rank="3" />
-        <Knights key="pin_mountedswords" rank="1" />
-        <Knights key="pin_riders" rank="2" />
-        <Levies percentage="10" key="pin_skirm" max="LEVY" />
-        <Levies percentage="21" key="pin_riders" max="LEVY" />
-        <Levies percentage="20" key="pin_levyspear" max="LEVY" />
-        <Levies percentage="21" key="pin_levysword" max="LEVY" />
-        <Levies percentage="28" key="pin_axe" max="LEVY" />
+        <General key="pin_hirluin" rank="3" />
+        <Knights key="pin_riders" rank="1" />
+        <Knights key="pin_mountedswords" rank="2" />
+        <Levies percentage="25" key="pin_skirm" max="LEVY" />
+        <Levies percentage="36" key="pin_hirluin" max="LEVY" />
+        <Levies percentage="14" key="pin_levyspear" max="LEVY" />
+        <Levies percentage="25" key="pin_levysword" max="LEVY" />
         <MenAtArm type="abrazanim_halberdiers" key="pin_pike" max="INFANTRY" />
         <MenAtArm type="abrazanim_legion" key="pin_heavymace" max="INFANTRY" />
         <MenAtArm type="abrazanim_warbows" key="pin_archer" max="RANGED" />
@@ -3857,15 +3859,16 @@
         <MenAtArm type="zebaback_slavers" key="pin_sergeantcav" max="CAVALRY" />
     </Faction>
     <Faction name="Elves">
-        <General key="iml_elrond" rank="1" />
-        <General key="exe_wr_border_guards" rank="2" />
-        <General key="ler_ost-in-edhil_mounted_guard" rank="3" />
-        <Knights key="exe_iml_rivendell_riders" rank="1" />
-        <Knights key="iml_horse_rangers" rank="2" />
-        <Knights key="exe_iml_lords_golden_flower" rank="3" />
-        <Levies percentage="27" key="ler_volunteer_archers" max="LEVY" />
-        <Levies percentage="40" key="exe_wr_thranduil_elk" max="LEVY" />
-        <Levies percentage="33" key="ler_volunteer_spears" max="LEVY" />
+        <General key="Marchwarden" rank="1" />
+        <General key="wr_legolas" rank="2" />
+        <General key="exe_wr_thranduil_elk" rank="3" />
+        <Knights key="loth_lor_outriders" rank="1" />
+        <Knights key="wr_thranduil" rank="2" />
+        <Knights key="exe_iml_glorfindel" rank="3" />
+        <Levies percentage="22" key="ler_volunteer_archers" max="LEVY" />
+        <Levies percentage="41" key="loth_lor_outriders" max="LEVY" />
+        <Levies percentage="22" key="ler_volunteer_spears" max="LEVY" />
+        <Levies percentage="15" key="exe_lin_sword_infantry" max="LEVY" />
         <MenAtArm type="abrazanim_halberdiers" key="iml_pikemen" max="INFANTRY" />
         <MenAtArm type="abrazanim_legion" key="exe_iml_sword_infantry" max="INFANTRY" />
         <MenAtArm type="abrazanim_warbows" key="iml_archers" max="RANGED" />
@@ -4179,13 +4182,13 @@
     </Faction>
     <Faction name="Erebor">
         <General key="ere_iron_guardians" rank="1" />
-        <General key="ere_thorin" rank="2" />
-        <General key="ere_sons_of_mountain_alt_officer" rank="3" />
+        <General key="ere_gimli" rank="2" />
+        <General key="ere_sons_of_mountain" rank="3" />
         <Knights key="ere_merc_cav" rank="1" />
-        <Levies percentage="35" key="ere_axe_throwers" max="LEVY" />
-        <Levies percentage="12" key="ere_merc_cav" max="LEVY" />
-        <Levies percentage="28" key="ere_spearguards" max="LEVY" />
-        <Levies percentage="25" key="ere_miners" max="LEVY" />
+        <Levies percentage="26" key="ere_dwarven_ranged_travellers" max="LEVY" />
+        <Levies percentage="26" key="ere_merc_cav" max="LEVY" />
+        <Levies percentage="26" key="ere_spearguards" max="LEVY" />
+        <Levies percentage="22" key="ere_tomb_wardens" max="LEVY" />
         <MenAtArm type="abrazanim_halberdiers" key="ere_tomb_wardens" max="INFANTRY" />
         <MenAtArm type="abrazanim_legion" key="ere_dwarven_company" max="INFANTRY" />
         <MenAtArm type="abrazanim_warbows" key="ere_axe_throwers" max="RANGED" />
@@ -4500,10 +4503,13 @@
     <Faction name="Ered Luin">
         <General key="el_tomb_protectors" rank="1" />
         <General key="el_gabligathol_wardens" rank="2" />
-        <Levies percentage="17" key="el_firebeared_scouts" max="LEVY" />
-        <Levies percentage="26" key="el_broadbeam_pikes" max="LEVY" />
-        <Levies percentage="20" key="el_bridge_wardens" max="LEVY" />
-        <Levies percentage="37" key="el_merchant_wardens" max="LEVY" />
+        <Knights key="el_merchant_wardens" rank="1" />
+        <Knights key="el_broadbeam_shielders" rank="2" />
+        <Knights key="el_firebeared_hammers" rank="3" />
+        <Levies percentage="32" key="el_dwarven_shooters" max="LEVY" />
+        <Levies percentage="10" key="el_broadbeam_pikes" max="LEVY" />
+        <Levies percentage="33" key="el_merchant_wardens" max="LEVY" />
+        <Levies percentage="25" key="el_bridge_wardens" max="LEVY" />
         <MenAtArm type="abrazanim_halberdiers" key="el_broadbeam_pikes" max="INFANTRY" />
         <MenAtArm type="abrazanim_legion" key="el_merchant_wardens" max="INFANTRY" />
         <MenAtArm type="abrazanim_warbows" key="el_dwarven_shooters" max="RANGED" />
@@ -4821,11 +4827,11 @@
         <General key="ler_celebrimbor_guard_vestige" rank="3" />
         <Knights key="ler_hollin_cavalry" rank="1" />
         <Knights key="ler_ost-in-edhil_mounted_guard" rank="2" />
-        <Levies percentage="19" key="ler_volunteer_archers" max="LEVY" />
-        <Levies percentage="28" key="ler_ost-in-edhil_mounted_guard" max="LEVY" />
-        <Levies percentage="23" key="ler_volunteer_spears" max="LEVY" />
-        <Levies percentage="23" key="ler_eregion_swordsmen" max="LEVY" />
-        <Levies percentage="7" key="ler_eregion_hammer_infantry" max="LEVY" />
+        <Levies percentage="7" key="ler_volunteer_archers" max="LEVY" />
+        <Levies percentage="27" key="ler_ost-in-edhil_mounted_guard" max="LEVY" />
+        <Levies percentage="21" key="ler_volunteer_spears" max="LEVY" />
+        <Levies percentage="14" key="ler_eregion_hammer_infantry" max="LEVY" />
+        <Levies percentage="31" key="ler_redhorn_pass_protectors" max="LEVY" />
         <MenAtArm type="abrazanim_halberdiers" key="ler_hollin_pike_infantry" max="INFANTRY" />
         <MenAtArm type="abrazanim_legion" key="ler_eregion_hammer_infantry" max="INFANTRY" />
         <MenAtArm type="abrazanim_warbows" key="ler_eregion_archers" max="RANGED" />
@@ -5141,11 +5147,11 @@
         <General key="gob_chieftan_guard" rank="1" />
         <General key="gob_goblin_bodyguards" rank="2" />
         <General key="gob_goblin_king" rank="3" />
-        <Levies percentage="17" key="gob_snaga_javelin" max="LEVY" />
-        <Levies percentage="28" key="gun_warg_scouts" max="LEVY" />
-        <Levies percentage="29" key="gob_goblin_warband" max="LEVY" />
-        <Levies percentage="10" key="gob_goblin_light_inf" max="LEVY" />
-        <Levies percentage="16" key="gob_goblin_scrappers" max="LEVY" />
+        <Knights key="gun_warg_riders" rank="1" />
+        <Knights key="gun_warg_scouts" rank="2" />
+        <Levies percentage="28" key="gob_snaga_javelin" max="LEVY" />
+        <Levies percentage="34" key="gun_warg_riders" max="LEVY" />
+        <Levies percentage="38" key="gob_goblin_warband" max="LEVY" />
         <MenAtArm type="abrazanim_halberdiers" key="gob_goblin_blackshield_spears" max="INFANTRY" />
         <MenAtArm type="abrazanim_legion" key="gob_chieftan_guard" max="INFANTRY" />
         <MenAtArm type="abrazanim_warbows" key="gob_goblin_heavy_archers" max="RANGED" />
@@ -5458,16 +5464,15 @@
         <MenAtArm type="zebaback_slavers" key="gun_warg_riders" max="CAVALRY" />
     </Faction>
     <Faction name="Gondor">
-        <General key="gon_citadel_guard" rank="1" />
-        <General key="gon_denethor" rank="2" />
-        <General key="gon_boromir" rank="3" />
+        <General key="gon_fountain_guard" rank="1" />
+        <General key="gon_faramir" rank="2" />
+        <General key="gon_silver_swan_knights" rank="3" />
         <Knights key="gon_silver_swan_knights" rank="1" />
         <Knights key="gon_cavalry_sword" rank="2" />
         <Knights key="gon_imrahil" rank="3" />
-        <Levies percentage="37" key="gon_bow_militia" max="LEVY" />
-        <Levies percentage="23" key="gon_anorien_patrollers" max="LEVY" />
-        <Levies percentage="28" key="gon_spear_militia" max="LEVY" />
-        <Levies percentage="12" key="gon_hillmen_of_lamedon" max="LEVY" />
+        <Levies percentage="45" key="gon_anfalas_coastlevies" max="LEVY" />
+        <Levies percentage="14" key="gon_anorien_patrollers" max="LEVY" />
+        <Levies percentage="41" key="gon_spear_militia" max="LEVY" />
         <MenAtArm type="abrazanim_halberdiers" key="gon_fountain_guard" max="INFANTRY" />
         <MenAtArm type="abrazanim_legion" key="gon_sword_infantry" max="INFANTRY" />
         <MenAtArm type="abrazanim_warbows" key="gon_archers" max="RANGED" />
@@ -5782,15 +5787,15 @@
     <Faction name="High Elves">
         <General key="iml_guards" rank="1" />
         <General key="exe_lin_noldorin_rangers" rank="2" />
-        <General key="exe_iml_glorfindel" rank="3" />
+        <General key="exe_iml_elrond" rank="3" />
         <Knights key="exe_iml_rivendell_riders" rank="1" />
         <Knights key="iml_horse_rangers" rank="2" />
-        <Knights key="exe_iml_lords_golden_flower" rank="3" />
-        <Levies percentage="23" key="lin_haven_watchers" max="LEVY" />
-        <Levies percentage="26" key="iml_cavalry" max="LEVY" />
-        <Levies percentage="23" key="exe_iml_rivendell_longspears" max="LEVY" />
-        <Levies percentage="22" key="exe_iml_spearmen" max="LEVY" />
-        <Levies percentage="6" key="exe_iml_eregion_veterans" max="LEVY" />
+        <Knights key="exe_iml_glorfindel" rank="3" />
+        <Levies percentage="15" key="lin_haven_watchers" max="LEVY" />
+        <Levies percentage="19" key="lin_cavalry" max="LEVY" />
+        <Levies percentage="13" key="lin_noldor_nobles" max="LEVY" />
+        <Levies percentage="34" key="exe_lin_telerin_longspears" max="LEVY" />
+        <Levies percentage="19" key="exe_iml_rivendell_longspears" max="LEVY" />
         <MenAtArm type="abrazanim_halberdiers" key="iml_pikemen" max="INFANTRY" />
         <MenAtArm type="abrazanim_legion" key="exe_iml_sword_infantry" max="INFANTRY" />
         <MenAtArm type="abrazanim_warbows" key="iml_archers" max="RANGED" />
@@ -6104,13 +6109,12 @@
     </Faction>
     <Faction name="Iron Hills">
         <General key="ere_iron_guardians" rank="1" />
-        <General key="iro_fortress_guardians" rank="2" />
-        <General key="ere_sons_of_mountain_alt_officer" rank="3" />
-        <Levies percentage="28" key="iro_fortress_guardians" max="LEVY" />
-        <Levies percentage="12" key="tlb_ere_goat_riders" max="LEVY" />
-        <Levies percentage="11" key="iro_dwarven_spearguard" max="LEVY" />
-        <Levies percentage="15" key="iro_dwarven_volunteers" max="LEVY" />
-        <Levies percentage="34" key="ere_dwarven_company" max="LEVY" />
+        <General key="iro_dain_ironfoot" rank="2" />
+        <General key="tlb_ere_goat_riders" rank="3" />
+        <Knights key="tlb_ere_goat_riders" rank="1" />
+        <Levies percentage="19" key="iro_carnen_axe_throwers" max="LEVY" />
+        <Levies percentage="44" key="tlb_ere_goat_riders" max="LEVY" />
+        <Levies percentage="37" key="iro_dwarven_spearguard" max="LEVY" />
         <MenAtArm type="abrazanim_halberdiers" key="iro_iron_pikemen" max="INFANTRY" />
         <MenAtArm type="abrazanim_legion" key="iro_dwarven_infantry" max="INFANTRY" />
         <MenAtArm type="abrazanim_warbows" key="iro_carnen_axe_throwers" max="RANGED" />
@@ -6423,13 +6427,15 @@
         <MenAtArm type="zebaback_slavers" key="tlb_ere_goat_riders" max="CAVALRY" />
     </Faction>
     <Faction name="Isengard">
-        <General key="ise_mog" rank="1" />
-        <General key="ise_ugluk" rank="2" />
+        <General key="ise_ugluk" rank="1" />
+        <General key="ise_mog" rank="2" />
         <General key="ise_lurtz" rank="3" />
-        <Levies percentage="31" key="ise_goblinmen_bows" max="LEVY" />
-        <Levies percentage="15" key="ise_dunland_horse_raider" max="LEVY" />
-        <Levies percentage="33" key="ise_uruk_hai_pikemen" max="LEVY" />
-        <Levies percentage="21" key="ise_goblinmen_ruffians" max="LEVY" />
+        <Knights key="ise_warg_riders" rank="1" />
+        <Knights key="ise_dunland_horse_raider" rank="2" />
+        <Levies percentage="16" key="ise_goblinmen_bows" max="LEVY" />
+        <Levies percentage="26" key="ise_dunland_horse_raider" max="LEVY" />
+        <Levies percentage="24" key="ise_uruk_hai_pikemen" max="LEVY" />
+        <Levies percentage="34" key="ise_mordor_rabble" max="LEVY" />
         <MenAtArm type="abrazanim_halberdiers" key="ise_uruk_hai_pikemen" max="INFANTRY" />
         <MenAtArm type="abrazanim_legion" key="ise_uruk_hai_infantry" max="INFANTRY" />
         <MenAtArm type="abrazanim_warbows" key="ise_uruk_hai_archers" max="RANGED" />
@@ -6745,9 +6751,12 @@
         <General key="khz_durins_gate_guard" rank="1" />
         <General key="khz_durins_mithril_guard" rank="2" />
         <General key="ere_balin" rank="3" />
-        <Levies percentage="36" key="khz_hunters" max="LEVY" />
-        <Levies percentage="48" key="khz_longbeard_spears" max="LEVY" />
-        <Levies percentage="16" key="ere_miners" max="LEVY" />
+        <Knights key="khz_longbeard_spears" rank="1" />
+        <Knights key="khz_legionaries" rank="2" />
+        <Knights key="khz_mansion_reclaimers" rank="3" />
+        <Levies percentage="39" key="khz_hunters" max="LEVY" />
+        <Levies percentage="36" key="khz_longbeard_spears" max="LEVY" />
+        <Levies percentage="25" key="ere_miners" max="LEVY" />
         <MenAtArm type="abrazanim_halberdiers" key="khz_watchers_mirrormere" max="INFANTRY" />
         <MenAtArm type="abrazanim_legion" key="ere_miners" max="INFANTRY" />
         <MenAtArm type="abrazanim_warbows" key="khz_hunters" max="RANGED" />
@@ -7060,14 +7069,15 @@
         <MenAtArm type="zebaback_slavers" key="khz_halberds" max="CAVALRY" />
     </Faction>
     <Faction name="Orcs Of The North">
-        <General key="tomb_gundabad_berserker" rank="1" />
+        <General key="tomb_gundabad_warlord" rank="1" />
         <General key="tomb_gundabad_raiders" rank="2" />
-        <General key="gob_chieftan_guard" rank="3" />
+        <General key="gob_goblin_king" rank="3" />
         <Knights key="dg_servants_of_the_eyes" rank="1" />
         <Knights key="dg_nazgul" rank="2" />
-        <Levies percentage="37" key="gob_snaga_javelin" max="LEVY" />
-        <Levies percentage="21" key="dg_servants_of_the_eyes" max="LEVY" />
-        <Levies percentage="42" key="gob_goblin_warband" max="LEVY" />
+        <Levies percentage="29" key="gob_snaga_javelin" max="LEVY" />
+        <Levies percentage="11" key="dg_servants_of_the_eyes" max="LEVY" />
+        <Levies percentage="27" key="gob_goblin_warband" max="LEVY" />
+        <Levies percentage="33" key="gob_goblin_light_inf" max="LEVY" />
         <MenAtArm type="abrazanim_halberdiers" key="dg_guldur_pikes" max="INFANTRY" />
         <MenAtArm type="abrazanim_legion" key="dg_chieftain" max="INFANTRY" />
         <MenAtArm type="abrazanim_warbows" key="gob_goblin_heavy_archers" max="RANGED" />
@@ -7382,9 +7392,13 @@
     <Faction name="Orocarni North">
         <General key="oroc_stonefoot_guards" rank="1" />
         <General key="oroc_blacklock_nobles" rank="2" />
-        <Levies percentage="22" key="oroc_skirmishers" max="LEVY" />
-        <Levies percentage="40" key="oroc_spears" max="LEVY" />
-        <Levies percentage="38" key="oroc_axes" max="LEVY" />
+        <Knights key="oroc_axes" rank="1" />
+        <Knights key="oroc_stonefoot_heavy_pikes" rank="2" />
+        <Knights key="oroc_blacklock_heavy_infantry" rank="3" />
+        <Levies percentage="28" key="oroc_skirmishers" max="LEVY" />
+        <Levies percentage="28" key="oroc_halberds" max="LEVY" />
+        <Levies percentage="30" key="oroc_spears" max="LEVY" />
+        <Levies percentage="14" key="oroc_axes" max="LEVY" />
         <MenAtArm type="abrazanim_halberdiers" key="oroc_stonefoot_pikes" max="INFANTRY" />
         <MenAtArm type="abrazanim_legion" key="oroc_blacklock_heavy_infantry" max="INFANTRY" />
         <MenAtArm type="abrazanim_warbows" key="oroc_skirmishers" max="RANGED" />
@@ -7699,10 +7713,12 @@
     <Faction name="Orocarni South">
         <General key="oroc_ironfist_guards" rank="1" />
         <General key="oroc_stiffbeard_nobles" rank="2" />
-        <Levies percentage="33" key="oroc_skirmishers" max="LEVY" />
-        <Levies percentage="16" key="oroc_halberds" max="LEVY" />
-        <Levies percentage="31" key="oroc_spears" max="LEVY" />
-        <Levies percentage="20" key="oroc_axes" max="LEVY" />
+        <Knights key="oroc_axes" rank="1" />
+        <Knights key="oroc_halberds" rank="2" />
+        <Knights key="oroc_ironfist_guards" rank="3" />
+        <Levies percentage="13" key="oroc_bows" max="LEVY" />
+        <Levies percentage="53" key="oroc_halberds" max="LEVY" />
+        <Levies percentage="34" key="oroc_spears" max="LEVY" />
         <MenAtArm type="abrazanim_halberdiers" key="oroc_halberds" max="INFANTRY" />
         <MenAtArm type="abrazanim_legion" key="oroc_ironfist_warriors" max="INFANTRY" />
         <MenAtArm type="abrazanim_warbows" key="oroc_skirmishers" max="RANGED" />
@@ -8020,10 +8036,10 @@
         <General key="rhu_crrothean_hill_riders" rank="3" />
         <Knights key="rhu_corcurian_raiders" rank="1" />
         <Knights key="rhu_crrothean_hill_riders" rank="2" />
-        <Levies percentage="22" key="rhu_hillman_hunters" max="LEVY" />
-        <Levies percentage="27" key="rhu_corcurian_raiders" max="LEVY" />
-        <Levies percentage="24" key="rhu_bondi_spears" max="LEVY" />
-        <Levies percentage="27" key="rhu_bondi_axes" max="LEVY" />
+        <Levies percentage="31" key="rhu_hillman_hunters" max="LEVY" />
+        <Levies percentage="28" key="rhu_crrothean_hill_riders" max="LEVY" />
+        <Levies percentage="23" key="rhu_bondi_spears" max="LEVY" />
+        <Levies percentage="18" key="rhu_bondi_axes" max="LEVY" />
         <MenAtArm type="abrazanim_halberdiers" key="rhu_coldfell_spearband" max="INFANTRY" />
         <MenAtArm type="abrazanim_legion" key="rhu_trev_duvardain_reavers" max="INFANTRY" />
         <MenAtArm type="abrazanim_warbows" key="rhu_hillman_hunters" max="RANGED" />
@@ -8336,15 +8352,16 @@
         <MenAtArm type="zebaback_slavers" key="rhu_corcurian_raiders" max="CAVALRY" />
     </Faction>
     <Faction name="Silvan Elves">
-        <General key="wr_hall_guardians" rank="1" />
-        <General key="Marchwarden_Of_The_Golden_Wood" rank="2" />
-        <General key="exe_wr_thranduil_elk" rank="3" />
+        <General key="wr_gate_wardens" rank="1" />
+        <General key="loth_haldirs_bodyguards" rank="2" />
+        <General key="wr_elvenking_riders" rank="3" />
         <Knights key="loth_lor_outriders" rank="1" />
         <Knights key="exe_wr_lasgalen_riders" rank="2" />
         <Knights key="exe_wr_thranduil_elk" rank="3" />
-        <Levies percentage="36" key="wr_lasgalen_lords" max="LEVY" />
-        <Levies percentage="28" key="loth_nimrodel_patrollers" max="LEVY" />
-        <Levies percentage="36" key="wr_forest_spears" max="LEVY" />
+        <Levies percentage="26" key="Marchwarden" max="LEVY" />
+        <Levies percentage="20" key="exe_wr_lasgalen_riders" max="LEVY" />
+        <Levies percentage="24" key="loth_heroes_amon_lanc" max="LEVY" />
+        <Levies percentage="30" key="Lorien_Swords" max="LEVY" />
         <MenAtArm type="abrazanim_halberdiers" key="loth_lor_spear_company" max="INFANTRY" />
         <MenAtArm type="abrazanim_legion" key="Galadhrim_Sword_Infantry" max="INFANTRY" />
         <MenAtArm type="abrazanim_warbows" key="wr_forest_archers" max="RANGED" />
@@ -8657,16 +8674,16 @@
         <MenAtArm type="zebaback_slavers" key="Lorien_Bow_Cav" max="CAVALRY" />
     </Faction>
     <Faction name="all">
-        <General key="leb_heavysword" rank="1" />
-        <General key="brv_guardians" rank="2" />
-        <General key="dol_sergeantcav" rank="3" />
-        <Knights key="pin_mountedswords" rank="1" />
+        <General key="stan_fountain" rank="1" />
+        <General key="hor_heavyshock_rev" rank="2" />
+        <General key="lam_cav" rank="3" />
+        <Knights key="pin_cavshock" rank="1" />
         <Knights key="los_axecav" rank="2" />
         <Knights key="dol_adrahil" rank="3" />
-        <Levies percentage="38" key="leb_skirm" max="LEVY" />
-        <Levies percentage="18" key="anf_skirmcav" max="LEVY" />
-        <Levies percentage="19" key="lam_levyspear" max="LEVY" />
-        <Levies percentage="25" key="brv_levysword" max="LEVY" />
+        <Levies percentage="18" key="brv_skirm" max="LEVY" />
+        <Levies percentage="23" key="anf_skirmcav" max="LEVY" />
+        <Levies percentage="34" key="pin_levyspear" max="LEVY" />
+        <Levies percentage="25" key="rv_levysword" max="LEVY" />
         <MenAtArm type="abrazanim_halberdiers" key="rv_pike" max="INFANTRY" />
         <MenAtArm type="abrazanim_legion" key="los_heavyaxe" max="INFANTRY" />
         <MenAtArm type="abrazanim_warbows" key="rv_archer" max="RANGED" />
@@ -8979,12 +8996,15 @@
         <MenAtArm type="zebaback_slavers" key="pin_cavsword" max="CAVALRY" />
     </Faction>
     <Faction name="anfalas">
-        <General key="anf_golasgil" rank="1" />
-        <General key="anf_heavysword" rank="2" />
+        <General key="anf_heavysword" rank="1" />
+        <General key="anf_golasgil" rank="2" />
         <General key="anf_hammers_rev" rank="3" />
+        <Knights key="anf_skirmcav" rank="1" />
+        <Knights key="anf_marshals" rank="2" />
         <Levies percentage="21" key="anf_skirm" max="LEVY" />
-        <Levies percentage="34" key="anf_skirmcav" max="LEVY" />
-        <Levies percentage="45" key="anf_levyspear" max="LEVY" />
+        <Levies percentage="26" key="anf_skirmcav" max="LEVY" />
+        <Levies percentage="27" key="anf_levyspear" max="LEVY" />
+        <Levies percentage="26" key="anf_levysword" max="LEVY" />
         <MenAtArm type="abrazanim_halberdiers" key="anf_pike" max="INFANTRY" />
         <MenAtArm type="abrazanim_legion" key="anf_heavysword" max="INFANTRY" />
         <MenAtArm type="abrazanim_warbows" key="anf_archer" max="RANGED" />
@@ -9297,13 +9317,15 @@
         <MenAtArm type="zebaback_slavers" key="anf_skirmcav" max="CAVALRY" />
     </Faction>
     <Faction name="anorien">
-        <General key="stan_faramir" rank="1" />
+        <General key="stan_fountainpike" rank="1" />
         <General key="stan_denethor" rank="2" />
-        <General key="stan_boromir" rank="3" />
-        <Levies percentage="36" key="stan_faramir" max="LEVY" />
-        <Levies percentage="36" key="stan_cav" max="LEVY" />
-        <Levies percentage="10" key="stan_levyspear" max="LEVY" />
-        <Levies percentage="18" key="stan_levysword" max="LEVY" />
+        <General key="stan_cav" rank="3" />
+        <Knights key="stan_sergeantcav" rank="1" />
+        <Knights key="stan_cav" rank="2" />
+        <Levies percentage="23" key="stan_faramir" max="LEVY" />
+        <Levies percentage="30" key="stan_sergeantcav" max="LEVY" />
+        <Levies percentage="22" key="stan_levyspear" max="LEVY" />
+        <Levies percentage="25" key="stan_levysword" max="LEVY" />
         <MenAtArm type="abrazanim_halberdiers" key="stan_fountainpike" max="INFANTRY" />
         <MenAtArm type="abrazanim_legion" key="stan_cairandros" max="INFANTRY" />
         <MenAtArm type="abrazanim_warbows" key="stan_archer" max="RANGED" />
@@ -9616,12 +9638,15 @@
         <MenAtArm type="zebaback_slavers" key="stan_sergeantcav" max="CAVALRY" />
     </Faction>
     <Faction name="blackroot">
-        <General key="brv_mediumsword" rank="1" />
+        <General key="brv_heavysword" rank="1" />
         <General key="brv_guardians" rank="2" />
         <General key="brv_heavyarcher" rank="3" />
-        <Levies percentage="21" key="brv_levyarcher" max="LEVY" />
-        <Levies percentage="44" key="brv_levyspear" max="LEVY" />
-        <Levies percentage="35" key="brv_levysword" max="LEVY" />
+        <Knights key="brv_heavysword" rank="1" />
+        <Knights key="brv_heavyspear" rank="2" />
+        <Knights key="brv_guardians" rank="3" />
+        <Levies percentage="44" key="brv_levyarcher" max="LEVY" />
+        <Levies percentage="30" key="brv_levyspear" max="LEVY" />
+        <Levies percentage="26" key="brv_levysword" max="LEVY" />
         <MenAtArm type="abrazanim_halberdiers" key="brv_mediumspear" max="INFANTRY" />
         <MenAtArm type="abrazanim_legion" key="brv_heavysword" max="INFANTRY" />
         <MenAtArm type="abrazanim_warbows" key="brv_archer" max="RANGED" />
@@ -9934,15 +9959,14 @@
         <MenAtArm type="zebaback_slavers" key="brv_heavyspear" max="CAVALRY" />
     </Faction>
     <Faction name="dolamroth">
-        <General key="dol_marinesword" rank="1" />
-        <General key="dol_wardens" rank="2" />
+        <General key="dol_princeguard" rank="1" />
+        <General key="dol_sergeantcav" rank="2" />
         <General key="dol_swancav" rank="3" />
-        <Knights key="dol_swancav" rank="1" />
-        <Knights key="dol_adrahil" rank="2" />
-        <Levies percentage="18" key="dol_skirm" max="LEVY" />
-        <Levies percentage="15" key="dol_adrahil" max="LEVY" />
-        <Levies percentage="53" key="dol_levyspear" max="LEVY" />
-        <Levies percentage="14" key="dol_levysword" max="LEVY" />
+        <Knights key="dol_adrahil" rank="1" />
+        <Knights key="dol_swancav" rank="2" />
+        <Levies percentage="24" key="dol_skirm" max="LEVY" />
+        <Levies percentage="47" key="dol_adrahil" max="LEVY" />
+        <Levies percentage="29" key="dol_levyspear" max="LEVY" />
         <MenAtArm type="abrazanim_halberdiers" key="dol_swanpike" max="INFANTRY" />
         <MenAtArm type="abrazanim_legion" key="dol_heavysword" max="INFANTRY" />
         <MenAtArm type="abrazanim_warbows" key="dol_archer" max="RANGED" />
@@ -10261,9 +10285,10 @@
         <Knights key="hor_immortals_officer" rank="1" />
         <Knights key="hor_heavycav" rank="2" />
         <Knights key="hor_immortals" rank="3" />
-        <Levies percentage="39" key="hor_skirm" max="LEVY" />
-        <Levies percentage="33" key="hor_immortals_officer" max="LEVY" />
-        <Levies percentage="28" key="hor_levyspear" max="LEVY" />
+        <Levies percentage="15" key="hor_skirm" max="LEVY" />
+        <Levies percentage="22" key="hor_cav" max="LEVY" />
+        <Levies percentage="22" key="hor_levyspear" max="LEVY" />
+        <Levies percentage="41" key="hor_levysword" max="LEVY" />
         <MenAtArm type="abrazanim_halberdiers" key="hor_mediumspear" max="INFANTRY" />
         <MenAtArm type="abrazanim_legion" key="hor_heavyshock_rev" max="INFANTRY" />
         <MenAtArm type="abrazanim_warbows" key="hor_archer" max="RANGED" />
@@ -10576,12 +10601,15 @@
         <MenAtArm type="zebaback_slavers" key="hor_horsearcher" max="CAVALRY" />
     </Faction>
     <Faction name="lamedon">
-        <General key="lam_guardsword" rank="1" />
+        <General key="lam_guardspear" rank="1" />
         <General key="lam_chevaliers" rank="2" />
-        <General key="lam_sergeantcav" rank="3" />
-        <Levies percentage="22" key="lam_skirm" max="LEVY" />
-        <Levies percentage="24" key="lam_angbor" max="LEVY" />
-        <Levies percentage="23" key="lam_levyspear" max="LEVY" />
+        <General key="lam_cav" rank="3" />
+        <Knights key="lam_angbor" rank="1" />
+        <Knights key="lam_sergeantcav" rank="2" />
+        <Knights key="lam_cav" rank="3" />
+        <Levies percentage="28" key="lam_skirm" max="LEVY" />
+        <Levies percentage="27" key="lam_cav" max="LEVY" />
+        <Levies percentage="14" key="lam_levyspear" max="LEVY" />
         <Levies percentage="31" key="lam_levysword" max="LEVY" />
         <MenAtArm type="abrazanim_halberdiers" key="lam_heavypike" max="INFANTRY" />
         <MenAtArm type="abrazanim_legion" key="lam_heavysword" max="INFANTRY" />
@@ -10899,9 +10927,11 @@
         <General key="leb_marinesword" rank="2" />
         <General key="leb_guardspear" rank="3" />
         <Knights key="leb_retainercav" rank="1" />
-        <Levies percentage="37" key="leb_skirm" max="LEVY" />
-        <Levies percentage="30" key="leb_mediumcav" max="LEVY" />
-        <Levies percentage="33" key="leb_marinespear" max="LEVY" />
+        <Levies percentage="18" key="leb_skirm" max="LEVY" />
+        <Levies percentage="14" key="leb_retainercav" max="LEVY" />
+        <Levies percentage="13" key="leb_marinespear" max="LEVY" />
+        <Levies percentage="32" key="leb_marineraider" max="LEVY" />
+        <Levies percentage="23" key="leb_marinesword" max="LEVY" />
         <MenAtArm type="abrazanim_halberdiers" key="leb_marinespear" max="INFANTRY" />
         <MenAtArm type="abrazanim_legion" key="leb_heavysword" max="INFANTRY" />
         <MenAtArm type="abrazanim_warbows" key="leb_archer" max="RANGED" />
@@ -11217,12 +11247,11 @@
         <General key="los_swords" rank="1" />
         <General key="los_heavy2axe" rank="2" />
         <General key="los_forlong" rank="3" />
-        <Knights key="los_flowercav" rank="1" />
-        <Knights key="los_axecav" rank="2" />
-        <Levies percentage="23" key="los_archer" max="LEVY" />
-        <Levies percentage="15" key="los_axecav" max="LEVY" />
-        <Levies percentage="46" key="los_levyspear" max="LEVY" />
-        <Levies percentage="16" key="los_levymace" max="LEVY" />
+        <Knights key="los_axecav" rank="1" />
+        <Knights key="los_flowercav" rank="2" />
+        <Levies percentage="38" key="los_axethrowers" max="LEVY" />
+        <Levies percentage="35" key="los_axecav" max="LEVY" />
+        <Levies percentage="27" key="los_levyspear" max="LEVY" />
         <MenAtArm type="abrazanim_halberdiers" key="los_pike" max="INFANTRY" />
         <MenAtArm type="abrazanim_legion" key="los_heavyaxe" max="INFANTRY" />
         <MenAtArm type="abrazanim_warbows" key="los_archer" max="RANGED" />
@@ -11538,9 +11567,12 @@
         <General key="rv_sentinalsword" rank="1" />
         <General key="rv_sentinalspear" rank="2" />
         <General key="rv_cav" rank="3" />
-        <Levies percentage="22" key="rv_skirm" max="LEVY" />
-        <Levies percentage="59" key="rv_sergeantcav" max="LEVY" />
-        <Levies percentage="19" key="rv_levyspear" max="LEVY" />
+        <Knights key="rv_sergeantcav" rank="1" />
+        <Knights key="rv_cav" rank="2" />
+        <Levies percentage="13" key="rv_skirm" max="LEVY" />
+        <Levies percentage="33" key="rv_cav" max="LEVY" />
+        <Levies percentage="31" key="rv_levyspear" max="LEVY" />
+        <Levies percentage="23" key="rv_levysword" max="LEVY" />
         <MenAtArm type="abrazanim_halberdiers" key="rv_pike" max="INFANTRY" />
         <MenAtArm type="abrazanim_legion" key="rv_heavysword" max="INFANTRY" />
         <MenAtArm type="abrazanim_warbows" key="rv_archer" max="RANGED" />
@@ -11858,11 +11890,10 @@
         <General key="har_ar_belzagar" rank="3" />
         <Knights key="har_ar_belzagar" rank="1" />
         <Knights key="umb_haradrim_auxillaries" rank="2" />
-        <Levies percentage="14" key="umb_balik_bowmen" max="LEVY" />
-        <Levies percentage="25" key="umb_haradrim_auxillaries" max="LEVY" />
-        <Levies percentage="22" key="umb_black_haven_sentries" max="LEVY" />
-        <Levies percentage="27" key="umb_corsair_blades" max="LEVY" />
-        <Levies percentage="12" key="umb_bakulmagan" max="LEVY" />
+        <Levies percentage="26" key="umb_balik_bowmen" max="LEVY" />
+        <Levies percentage="17" key="umb_haradrim_auxillaries" max="LEVY" />
+        <Levies percentage="36" key="umb_black_haven_sentries" max="LEVY" />
+        <Levies percentage="21" key="umb_black_haven_guard" max="LEVY" />
         <MenAtArm type="abrazanim_halberdiers" key="umb_bakulmagan" max="INFANTRY" />
         <MenAtArm type="abrazanim_legion" key="har_adunakhori" max="INFANTRY" />
         <MenAtArm type="abrazanim_warbows" key="umb_lb_corsair_archers" max="RANGED" />
@@ -12180,10 +12211,10 @@
         <General key="arn_aragorn" rank="3" />
         <Knights key="arn_marshals_annuminas" rank="1" />
         <Knights key="arn_aragorn" rank="2" />
-        <Levies percentage="30" key="arn_hobbit_shirrifs" max="LEVY" />
-        <Levies percentage="18" key="arn_mounted_scouts" max="LEVY" />
-        <Levies percentage="18" key="arn_spear_militia" max="LEVY" />
-        <Levies percentage="34" key="arn_sword_militia" max="LEVY" />
+        <Levies percentage="13" key="arn_hobbit_shirrifs" max="LEVY" />
+        <Levies percentage="35" key="arn_mounted_scouts" max="LEVY" />
+        <Levies percentage="25" key="arn_spear_militia" max="LEVY" />
+        <Levies percentage="27" key="arn_sword_militia" max="LEVY" />
         <MenAtArm type="abrazanim_halberdiers" key="arn_royal_wardens" max="INFANTRY" />
         <MenAtArm type="abrazanim_legion" key="arn_royal_infantry" max="INFANTRY" />
         <MenAtArm type="abrazanim_warbows" key="arn_eriador_hunters" max="RANGED" />
@@ -12500,9 +12531,10 @@
         <General key="dun_hill_wardens" rank="2" />
         <General key="dun_huscarls" rank="3" />
         <Knights key="dun_elder_riders" rank="1" />
-        <Levies percentage="22" key="dun_tribal_youth" max="LEVY" />
-        <Levies percentage="44" key="dun_tribal_raiders" max="LEVY" />
-        <Levies percentage="34" key="dun_tribal_spearmen" max="LEVY" />
+        <Levies percentage="40" key="dun_tribal_youth" max="LEVY" />
+        <Levies percentage="9" key="dun_tribal_raiders" max="LEVY" />
+        <Levies percentage="21" key="dun_tribal_spearmen" max="LEVY" />
+        <Levies percentage="30" key="dun_tribal_warriors" max="LEVY" />
         <MenAtArm type="abrazanim_halberdiers" key="dun_pikemen" max="INFANTRY" />
         <MenAtArm type="abrazanim_legion" key="dun_axe_heerbann" max="INFANTRY" />
         <MenAtArm type="abrazanim_warbows" key="dun_archer_heerban" max="RANGED" />
@@ -12818,11 +12850,12 @@
         <General key="em_dragon_trackers" rank="1" />
         <General key="em_dragon_slayers" rank="2" />
         <General key="em_frostguard" rank="3" />
-        <Levies percentage="34" key="em_grey_mountain_scouts" max="LEVY" />
-        <Levies percentage="17" key="em_ered_mithrin_pikes" max="LEVY" />
-        <Levies percentage="21" key="em_frostguard" max="LEVY" />
-        <Levies percentage="13" key="em_snow_axes" max="LEVY" />
-        <Levies percentage="15" key="em_dwarven_conscripts" max="LEVY" />
+        <Knights key="em_dwarven_conscripts" rank="1" />
+        <Knights key="em_nobles" rank="2" />
+        <Knights key="em_frostguard" rank="3" />
+        <Levies percentage="51" key="em_grey_mountain_scouts" max="LEVY" />
+        <Levies percentage="39" key="em_bronzewatch_spearmen" max="LEVY" />
+        <Levies percentage="10" key="em_ered_mithrin_pikes" max="LEVY" />
         <MenAtArm type="abrazanim_halberdiers" key="em_bronzewatch_spearmen" max="INFANTRY" />
         <MenAtArm type="abrazanim_legion" key="em_fist_mountain" max="INFANTRY" />
         <MenAtArm type="abrazanim_warbows" key="em_dragon_trackers" max="RANGED" />
@@ -13135,17 +13168,15 @@
         <MenAtArm type="zebaback_slavers" key="em_ballista" max="CAVALRY" />
     </Faction>
     <Faction name="Mordor">
-        <General key="mor_guards_of_the_teeth" rank="1" />
-        <General key="mor_nazgul" rank="2" />
-        <General key="mor_othrod" rank="3" />
+        <General key="mor_gothmog" rank="1" />
+        <General key="mor_the_nine" rank="2" />
+        <General key="mor_uruk_bodyguards" rank="3" />
         <Knights key="mor_the_nine" rank="1" />
         <Knights key="mor_servants_of_the_eyes" rank="2" />
         <Knights key="mor_nazgul" rank="3" />
-        <Levies percentage="29" key="mor_orc_archers" max="LEVY" />
-        <Levies percentage="11" key="mor_warg_sentries" max="LEVY" />
-        <Levies percentage="7" key="mor_orc_rabble" max="LEVY" />
-        <Levies percentage="32" key="mor_morgul_legion" max="LEVY" />
-        <Levies percentage="21" key="mor_guards_of_the_teeth" max="LEVY" />
+        <Levies percentage="18" key="mor_orc_archers" max="LEVY" />
+        <Levies percentage="46" key="mor_warg_sentries" max="LEVY" />
+        <Levies percentage="36" key="mor_guards_of_the_teeth" max="LEVY" />
         <MenAtArm type="abrazanim_halberdiers" key="mor_orc_pikes" max="INFANTRY" />
         <MenAtArm type="abrazanim_legion" key="gob_mordor_uruks" max="INFANTRY" />
         <MenAtArm type="abrazanim_warbows" key="mor_orc_archers" max="RANGED" />
@@ -13460,11 +13491,13 @@
     <Faction name="Gundabad">
         <General key="gun_warlords" rank="1" />
         <General key="gun_citadel_guards" rank="2" />
-        <Levies percentage="16" key="gun_tunnel_slaves" max="LEVY" />
-        <Levies percentage="23" key="gun_armoured_blade_wargs" max="LEVY" />
-        <Levies percentage="27" key="gun_orc_warband" max="LEVY" />
-        <Levies percentage="23" key="gun_orc_marauders" max="LEVY" />
-        <Levies percentage="11" key="gun_goblin_mercenaries" max="LEVY" />
+        <Knights key="gun_warg_riders" rank="1" />
+        <Knights key="gun_armoured_blade_wargs" rank="2" />
+        <Knights key="gun_armoured_spear_wargs" rank="3" />
+        <Levies percentage="39" key="gun_tunnel_slaves" max="LEVY" />
+        <Levies percentage="15" key="gun_armoured_spear_wargs" max="LEVY" />
+        <Levies percentage="25" key="gun_orc_warband" max="LEVY" />
+        <Levies percentage="21" key="gun_orc_marauders" max="LEVY" />
         <MenAtArm type="abrazanim_halberdiers" key="gun_heavy_halberds" max="INFANTRY" />
         <MenAtArm type="abrazanim_legion" key="gun_heavy_blades" max="INFANTRY" />
         <MenAtArm type="abrazanim_warbows" key="gun_traversers" max="RANGED" />
@@ -13778,15 +13811,16 @@
     </Faction>
     <Faction name="Imladris">
         <General key="iml_guards" rank="1" />
-        <General key="iml_elrond" rank="2" />
+        <General key="exe_iml_loremasters" rank="2" />
         <General key="exe_iml_glorfindel" rank="3" />
         <Knights key="exe_iml_rivendell_riders" rank="1" />
         <Knights key="iml_horse_rangers" rank="2" />
         <Knights key="exe_iml_glorfindel" rank="3" />
-        <Levies percentage="18" key="exe_iml_rivendell_bows" max="LEVY" />
-        <Levies percentage="44" key="exe_iml_lords_golden_flower" max="LEVY" />
-        <Levies percentage="24" key="iml_pikemen" max="LEVY" />
-        <Levies percentage="14" key="iml_swordsmen" max="LEVY" />
+        <Levies percentage="20" key="exe_iml_warriors" max="LEVY" />
+        <Levies percentage="31" key="iml_horse_rangers" max="LEVY" />
+        <Levies percentage="13" key="iml_pikemen" max="LEVY" />
+        <Levies percentage="14" key="iml_guards" max="LEVY" />
+        <Levies percentage="22" key="exe_iml_spears" max="LEVY" />
         <MenAtArm type="abrazanim_halberdiers" key="iml_pikemen" max="INFANTRY" />
         <MenAtArm type="abrazanim_legion" key="exe_iml_sword_infantry" max="INFANTRY" />
         <MenAtArm type="abrazanim_warbows" key="iml_archers" max="RANGED" />
@@ -14099,13 +14133,15 @@
         <MenAtArm type="zebaback_slavers" key="iml_horse_rangers" max="CAVALRY" />
     </Faction>
     <Faction name="Lothlórien">
-        <General key="koh_celin_amroth_sentinels" rank="1" />
-        <General key="Marchwarden" rank="2" />
-        <General key="Marchwarden_Of_The_Golden_Wood" rank="3" />
+        <General key="Defenders_Of_Lorien" rank="1" />
+        <General key="loth_heroes_amon_lanc" rank="2" />
+        <General key="loth_haldir" rank="3" />
         <Knights key="loth_lor_outriders" rank="1" />
-        <Levies percentage="37" key="Marchwarden" max="LEVY" />
-        <Levies percentage="27" key="Lorien_Bow_Cav" max="LEVY" />
-        <Levies percentage="36" key="loth_lor_spear_company" max="LEVY" />
+        <Levies percentage="10" key="loth_twilight_guard" max="LEVY" />
+        <Levies percentage="25" key="Lorien_Bow_Cav" max="LEVY" />
+        <Levies percentage="13" key="loth_galad_spear_warriors" max="LEVY" />
+        <Levies percentage="21" key="loth_lor_sword_company" max="LEVY" />
+        <Levies percentage="31" key="koh_celin_amroth_sentinels" max="LEVY" />
         <MenAtArm type="abrazanim_halberdiers" key="loth_lor_spear_company" max="INFANTRY" />
         <MenAtArm type="abrazanim_legion" key="Galadhrim_Sword_Infantry" max="INFANTRY" />
         <MenAtArm type="abrazanim_warbows" key="Marchwarden" max="RANGED" />
@@ -14419,15 +14455,16 @@
     </Faction>
     <Faction name="Woodland Realm">
         <General key="wr_gate_wardens" rank="1" />
-        <General key="wr_lasgalen_lords" rank="2" />
-        <General key="wr_elvenking_riders" rank="3" />
+        <General key="exe_wr_border_guards" rank="2" />
+        <General key="wr_thranduil" rank="3" />
         <Knights key="exe_wr_lasgalen_riders" rank="1" />
         <Knights key="wr_elvenking_riders" rank="2" />
-        <Knights key="wr_thranduil" rank="3" />
-        <Levies percentage="29" key="wr_forest_rangers" max="LEVY" />
-        <Levies percentage="27" key="exe_wr_thranduil_elk" max="LEVY" />
-        <Levies percentage="26" key="exe_wr_warriors_kinn-lai" max="LEVY" />
-        <Levies percentage="18" key="wr_lasgalen_spears" max="LEVY" />
+        <Knights key="exe_wr_thranduil_elk" rank="3" />
+        <Levies percentage="23" key="wr_forest_archers" max="LEVY" />
+        <Levies percentage="8" key="wr_gurthlagor" max="LEVY" />
+        <Levies percentage="13" key="wr_forest_spears" max="LEVY" />
+        <Levies percentage="39" key="wr_silvan_axes" max="LEVY" />
+        <Levies percentage="17" key="exe_wr_forest_assassins" max="LEVY" />
         <MenAtArm type="abrazanim_halberdiers" key="wr_hall_guardians" max="INFANTRY" />
         <MenAtArm type="abrazanim_legion" key="exe_wr_border_guards" max="INFANTRY" />
         <MenAtArm type="abrazanim_warbows" key="wr_forest_archers" max="RANGED" />
