@@ -8,6 +8,27 @@ def find_maa_in_txt_files(directory):
     maa_units = set()
     # Regex to find patterns like 'unit_name = {'
     maa_pattern = re.compile(r'^\s*([a-zA-Z0-9_]+)\s*=\s*\{', re.MULTILINE)
+    
+    # Set of keywords and non-unit identifiers to ignore
+    ignore_list = {
+        # Variables
+        'terrain_bonus', 'winter_bonus', 'counters', 'buy_cost', 'low_maintenance_cost', 
+        'high_maintenance_cost', 'ai_quality', 'limit', 'can_recruit', 
+        'should_show_when_unavailable', 'access_through_subject', 'holding_bonus',
+        # Scripting keywords
+        'AND', 'NOR', 'NOT', 'OR', 'Or', 'if', 'else_if', 'trigger_if',
+        # Scopes and triggers
+        'any_county_province', 'any_directly_owned_province', 'any_held_county', 
+        'any_held_title', 'any_liege_or_above', 'any_parent_culture_or_above', 
+        'any_vassal_or_below', 'is_target_in_global_variable_list', 
+        'valid_for_maa_trigger', 'culture', 'dynasty', 'domicile',
+        # Terrain types
+        'arctic', 'deep_forest', 'desert', 'desert_mountains', 'drylands', 'dune_sea', 
+        'farmlands', 'floodplains', 'forest', 'halls', 'harsh_winter', 'hills', 
+        'jungle', 'mallorn_forest', 'mountains', 'nomad_holding', 'normal_winter', 
+        'oasis', 'plains', 'red_desert', 'saltflats', 'savanna', 'steppe', 'taiga', 
+        'tribal_holding', 'volcanic_plains', 'wetlands'
+    }
 
     if not os.path.isdir(directory):
         print(f"Error: Directory not found: {directory}")
@@ -21,8 +42,8 @@ def find_maa_in_txt_files(directory):
                     content = f.read()
                     matches = maa_pattern.findall(content)
                     for match in matches:
-                        # These are variables, not units, so ignore them
-                        if match.startswith('@') or match in ['terrain_bonus', 'winter_bonus', 'counters', 'buy_cost', 'low_maintenance_cost', 'high_maintenance_cost', 'ai_quality', 'limit', 'can_recruit', 'should_show_when_unavailable', 'access_through_subject', 'holding_bonus']:
+                        # Ignore variables and keywords
+                        if match.startswith('@') or match in ignore_list:
                             continue
                         maa_units.add(match)
             except Exception as e:
