@@ -1,12 +1,11 @@
 <?xml version='1.0' encoding='utf-8'?>
 <Cultures>
     <Heritage name="Default" faction="Anduin-Vale">
-        <Culture name="angmarrim" faction="Rhudaur" />
-        <Culture name="balsharim" faction="Rhudaur" />
         <Culture name="Default" faction="Ered-Mithrin" />
         <Culture name="Default" faction="Eregion" />
         <Culture name="Default" faction="all" />
         <Culture name="Default" faction="Elves" />
+        <Culture name="Default" faction="Orocarni South" />
     </Heritage>
     <Heritage name="heritage_thani_native" faction="Dunlending Tribes">
         <Culture name="adena" faction="Dunlending Tribes" />
@@ -14,13 +13,13 @@
         <Culture name="pel" faction="Dunlending Tribes" />
         <Culture name="mejhanian" faction="Dunlending Tribes" />
     </Heritage>
-    <Heritage name="heritage_daen_lintis" faction="Dunlending Tribes">
-        <Culture name="adornaen" faction="Dunlending Tribes" />
+    <Heritage name="heritage_daen_lintis" faction="Dunlending">
+        <Culture name="adornaen" faction="Dunlending" />
         <Culture name="daen_lintis" faction="Dunlending Tribes" />
-        <Culture name="dunlending" faction="Dunlending Tribes" />
+        <Culture name="dunlending" faction="Dunlending" />
         <Culture name="dunmen" faction="Dunlending Tribes" />
-        <Culture name="enedhwaithrim" faction="Dunlending Tribes" />
-        <Culture name="saralain" faction="Dunlending Tribes" />
+        <Culture name="enedhwaithrim" faction="Dunlending" />
+        <Culture name="saralain" faction="Dunlending" />
         <Culture name="Default" faction="Dunlending Tribes" />
         <Culture name="clyan" faction="Dunlending Tribes" />
     </Heritage>
@@ -43,7 +42,7 @@
         <Culture name="kharadunaim" faction="Umbar" />
         <Culture name="south_adunai_colonial" faction="Umbar" />
         <Culture name="andrastrim" faction="Gondor" />
-        <Culture name="eredrim" faction="Dunlending Tribes" />
+        <Culture name="eredrim" faction="Dunlending" />
         <Culture name="arani" faction="Umbar" />
         <Culture name="avari" faction="Umbar" />
         <Culture name="hadorim" faction="Umbar" />
@@ -63,10 +62,12 @@
     </Heritage>
     <Heritage name="heritage_baradhrim" faction="Mordor">
         <Culture name="baradhrim" faction="Mordor" />
-        <Culture name="lossoth" faction="Dunlending Tribes" />
+        <Culture name="lossoth" faction="Dunlending" />
         <Culture name="Default" faction="Mordor" />
         <Culture name="ringwraith" faction="Mordor" />
         <Culture name="utumno_orcs" faction="Gundabad" />
+        <Culture name="angmarrim" faction="Angmar" />
+        <Culture name="balsharim" faction="Rhudaur" />
     </Heritage>
     <Heritage name="heritage_middle_apysaic" faction="Khand">
         <Culture name="apysaic" faction="Khand" />
@@ -82,14 +83,14 @@
         <Culture name="tanturaki" faction="Khand" />
         <Culture name="variag" faction="Khand" />
     </Heritage>
-    <Heritage name="heritage_dunedain" faction="Arnor">
-        <Culture name="arnorian" faction="Arnor" />
+    <Heritage name="heritage_dunedain" faction="Northern Dunedain">
+        <Culture name="arnorian" faction="Northern Dunedain" />
         <Culture name="dunedain" faction="Arnor" />
-        <Culture name="dunedain_ranger" faction="Arnor" />
-        <Culture name="gondorian" faction="Ringlo" />
+        <Culture name="dunedain_ranger" faction="Northern Dunedain" />
+        <Culture name="gondorian" faction="Ringló Vale" />
         <Culture name="harondorim" faction="Harondor" />
-        <Culture name="numenorean" faction="Gondor" />
-        <Culture name="orodbedhrim" faction="Pinnath" />
+        <Culture name="numenorean" faction="Numenorean" />
+        <Culture name="orodbedhrim" faction="Pinnath Gelin" />
         <Culture name="Default" faction="anfalas" />
         <Culture name="Default" faction="dolamroth" />
         <Culture name="Default" faction="lamedon" />
@@ -144,7 +145,7 @@
         <Culture name="Default" faction="Lothlórien" />
         <Culture name="caledhrim" faction="Lothlórien" />
         <Culture name="istari" faction="Gondor" />
-        <Culture name="galadhrim" faction="Lothlórien" />
+        <Culture name="galadhrim" faction="Lothlorien" />
         <Culture name="lasgalendrim" faction="Woodland Realm" />
         <Culture name="nandor" faction="Silvan Elves" />
     </Heritage>
@@ -179,7 +180,7 @@
         <Culture name="sootscraper_goblin" faction="Goblins" />
         <Culture name="towndweller_goblin" faction="Goblins" />
         <Culture name="stonefoots" faction="Goblins" />
-        <Culture name="stoors" faction="Goblins" />
+        <Culture name="stoors" faction="Northern Dunedain" />
         <Culture name="danak" faction="Goblins" />
         <Culture name="lynerian" faction="Goblins" />
         <Culture name="kuyumag" faction="Goblins" />
@@ -225,17 +226,17 @@
         <Culture name="isengard_urukhai" faction="Isengard" />
         <Culture name="uruk_ongmair" faction="Isengard" />
     </Heritage>
-    <Heritage name="heritage_periannath" faction="Anduin-Vale">
-        <Culture name="breelander" faction="Anduin-Vale" />
-        <Culture name="bucklander" faction="Anduin-Vale" />
-        <Culture name="fallohides" faction="Anduin-Vale" />
-        <Culture name="harfoots" faction="Anduin-Vale" />
-        <Culture name="hobbit" faction="Anduin-Vale" />
+    <Heritage name="heritage_periannath" faction="Northern Dunedain">
+        <Culture name="breelander" faction="Bree Land" />
+        <Culture name="bucklander" faction="Northern Dunedain" />
+        <Culture name="fallohides" faction="Northern Dunedain" />
+        <Culture name="harfoots" faction="Northern Dunedain" />
+        <Culture name="hobbit" faction="Northern Dunedain" />
         <Culture name="Default" faction="Anduin-Vale" />
         <Culture name="Default" faction="pinnath" />
     </Heritage>
-    <Heritage name="heritage_eriadorim" faction="Arnor">
-        <Culture name="breemen" faction="Arnor" />
+    <Heritage name="heritage_eriadorim" faction="Northern Dunedain">
+        <Culture name="breemen" faction="Northern Dunedain" />
         <Culture name="eriadorim" faction="Arnor" />
         <Culture name="hithaeglirim" faction="Anduin-Vale" />
     </Heritage>
@@ -290,7 +291,7 @@
         <Culture name="donan" faction="Dunlending Tribes" />
         <Culture name="Default" faction="Dunlending Tribes" />
     </Heritage>
-    <Heritage name="heritage_shayn" faction="Orocarni South">
+    <Heritage name="heritage_shayn" faction="Khand">
         </Heritage>
     <Heritage name="heritage_eastern_adunaic" faction="Umbar">
         <Culture name="east_adunai_colonial" faction="Umbar" />
@@ -335,7 +336,7 @@
     </Heritage>
     <Heritage name="heritage_ainur" faction="Mordor">
         <Culture name="maiar" faction="Mordor" />
-        <Culture name="uialedain" faction="Arnor" />
+        <Culture name="uialedain" faction="Northern Dunedain" />
     </Heritage>
     <Heritage name="heritage_fallen_ainur" faction="Isengard">
         <Culture name="istari_evil" faction="Isengard" />
