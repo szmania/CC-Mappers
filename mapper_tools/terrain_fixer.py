@@ -56,6 +56,25 @@ def indent_xml(elem, level=0):
         if level and (not elem.tail or not elem.tail.strip()):
             elem.tail = i
 
+def _get_architectural_base_from_key(key):
+    """
+    Extracts the architectural base name from a preset key by stripping variant suffixes.
+    e.g., 'att_western_city_a_minor' -> 'att_western_city'
+    """
+    base = key
+    # Order matters: strip more specific suffixes first
+    if base.endswith('_minor'):
+        base = base[:-6]
+    elif base.endswith('_major'):
+        base = base[:-6]
+
+    # Strip single-letter variants like '_a', '_b', etc.
+    # Check if the last two characters are '_X' where X is a letter
+    if len(base) >= 2 and base[-2] == '_' and base[-1].isalpha():
+        base = base[:-2]
+
+    return base
+
 # --- New Data Loading Functions ---
 
 def get_faction_key_to_screen_name_map(tsv_dir):
@@ -457,6 +476,13 @@ def process_settlement_maps(root, settlement_presets, all_valid_factions, screen
 
     print(f"Found {len(all_valid_factions)} valid factions and {len(settlement_presets)} settlement presets.")
 
+    # NEW: Group settlement presets by architectural base
+    architectural_base_groups = defaultdict(list)
+    for preset in settlement_presets:
+        base = _get_architectural_base_from_key(preset['key'])
+        architectural_base_groups[base].append(preset)
+    print(f"Grouped {len(settlement_presets)} settlement presets into {len(architectural_base_groups)} architectural styles.")
+
     # --- Stage 1: Procedural Matching ---
     print("\nRunning procedural pass for settlement assignments...")
     for faction_screen_name in sorted(list(all_valid_factions)):
@@ -468,39 +494,57 @@ def process_settlement_maps(root, settlement_presets, all_valid_factions, screen
                     'id': faction_screen_name,
                     'faction_name': faction_screen_name,
                     'subculture': faction_to_subculture_map.get(faction_key), # May be None
-                    'preset_pool': all_attila_keys # MODIFIED: Changed key to 'preset_pool'
+                    'preset_pool': all_attila_keys
                 })
             continue
 
         faction_subculture = faction_to_subculture_map.get(faction_key)
-        current_procedural_matches = defaultdict(list) # {battle_type: [preset1, preset2, ...]}
-
+        
         # Generate keywords for faction and subculture names
         faction_keywords = _generate_keywords(_normalize_name_for_match(faction_screen_name))
         subculture_keywords = _generate_keywords(_normalize_name_for_match(faction_subculture, prefixes_to_remove=['subculture_'])) if faction_subculture else set()
 
-        for preset in settlement_presets:
-            key_normalized = _normalize_name_for_match(preset['key'])
-            key_keywords = _generate_keywords(key_normalized)
+        best_architectural_base = None
+        highest_score = -1
 
-            # Check for keyword intersection
-            intersection_faction = faction_keywords.intersection(key_keywords)
-            intersection_subculture = subculture_keywords.intersection(key_keywords)
+        # Iterate through architectural base groups to find the best match
+        for base_name, presets_in_group in architectural_base_groups.items():
+            base_normalized = _normalize_name_for_match(base_name, prefixes_to_remove=['att_']) # Strip 'att_' for better keyword matching
+            base_keywords = _generate_keywords(base_normalized)
 
-            # A match is considered if there's at least one common keyword
-            if len(intersection_faction) >= 1 or len(intersection_subculture) >= 1:
-                current_procedural_matches[preset['battle_type']].append(preset)
+            current_score = 0
+            # Score based on keyword intersection
+            current_score += len(faction_keywords.intersection(base_keywords)) * 2 # Faction name matches weighted higher
+            current_score += len(subculture_keywords.intersection(base_keywords))
 
-        if current_procedural_matches:
-            all_faction_matches[faction_screen_name].update(current_procedural_matches)
-            # print(f"  -> Procedural match found for faction '{faction_screen_name}'.")
+            # Also consider Levenshtein ratio for a more nuanced score
+            lev_ratio_faction = Levenshtein.ratio(_normalize_name_for_match(faction_screen_name), base_normalized)
+            lev_ratio_subculture = Levenshtein.ratio(_normalize_name_for_match(faction_subculture, prefixes_to_remove=['subculture_']), base_normalized) if faction_subculture else 0
+            current_score += (lev_ratio_faction + lev_ratio_subculture) * 5 # Weight Levenshtein heavily
+
+            if current_score > highest_score:
+                highest_score = current_score
+                best_architectural_base = base_name
+            elif current_score == highest_score and best_architectural_base:
+                # Tie-breaking: prefer shorter, more general names, or alphabetical
+                if len(base_name) < len(best_architectural_base):
+                    best_architectural_base = base_name
+                elif len(base_name) == len(best_architectural_base) and base_name < best_architectural_base:
+                    best_architectural_base = base_name
+
+
+        if best_architectural_base and highest_score > 0: # Only consider if a positive score was achieved
+            # Add all presets from the best architectural group to all_faction_matches
+            for preset in architectural_base_groups[best_architectural_base]:
+                all_faction_matches[faction_screen_name][preset['battle_type']].append(preset)
+            print(f"  -> Procedural match found for faction '{faction_screen_name}': Architectural Style '{best_architectural_base}' (Score: {highest_score:.2f}).")
         else:
-            print(f"  -> INFO: No procedural settlement presets found for faction '{faction_screen_name}'. Queued for LLM.")
+            print(f"  -> INFO: No strong procedural settlement presets found for faction '{faction_screen_name}'. Queued for LLM.")
             procedural_failures.append({
                 'id': faction_screen_name,
                 'faction_name': faction_screen_name,
                 'subculture': faction_subculture,
-                'preset_pool': all_attila_keys # MODIFIED: Changed key to 'preset_pool'
+                'preset_pool': all_attila_keys
             })
 
     print(f"Procedural pass complete. Matched {len(all_faction_matches)} factions. {len(procedural_failures)} failures.")
@@ -542,16 +586,20 @@ def process_settlement_maps(root, settlement_presets, all_valid_factions, screen
                     chosen_key = llm_suggestion.get("chosen_preset")
 
                     if chosen_key:
-                        # Find all presets matching this chosen_key
-                        llm_matched_presets = [p for p in settlement_presets if p['key'] == chosen_key]
+                        # NEW LOGIC: Get the architectural base from the chosen key
+                        architectural_base = _get_architectural_base_from_key(chosen_key)
+                        
+                        # Find all presets belonging to this architectural base
+                        llm_matched_presets = [p for p in settlement_presets if _get_architectural_base_from_key(p['key']) == architectural_base]
+
                         if llm_matched_presets:
                             # Group by battle_type and add to all_faction_matches
                             for preset in llm_matched_presets:
                                 all_faction_matches[req_id][preset['battle_type']].append(preset)
                             llm_settlement_replacements_made += 1
-                            print(f"  -> LLM SUCCESS: Faction '{req_id}' -> Tile Upgrade '{chosen_key}'.")
+                            print(f"  -> LLM SUCCESS: Faction '{req_id}' -> Architectural Style '{architectural_base}' ({len(llm_matched_presets)} variants found).")
                         else:
-                            print(f"  -> LLM WARNING: Chosen settlement variant key '{chosen_key}' for faction '{req_id}' has no corresponding presets. Skipping.")
+                            print(f"  -> LLM WARNING: Chosen settlement variant key '{chosen_key}' for faction '{req_id}' has no corresponding presets in its architectural style. Skipping.")
                     else:
                         print(f"  -> LLM WARNING: No chosen settlement variant key for faction '{req_id}'.")
             else:
@@ -578,16 +626,24 @@ def process_settlement_maps(root, settlement_presets, all_valid_factions, screen
             if faction_screen_name not in all_faction_matches:
                 if fallback_pool:
                     chosen_fallback_preset = random.choice(fallback_pool)
-                    # Add to all_faction_matches for both battle types
-                    all_faction_matches[faction_screen_name]['settlement_standard'].append(chosen_fallback_preset)
-                    all_faction_matches[faction_screen_name]['settlement_unfortified'].append(chosen_fallback_preset)
-                    fallback_count += 1
-                    print(f"  -> Fallback: Assigned generic preset '{chosen_fallback_preset['key']}' to unmatched faction '{faction_screen_name}'.")
+                    # NEW LOGIC: Get the architectural base from the chosen fallback key
+                    architectural_base = _get_architectural_base_from_key(chosen_fallback_preset['key'])
+                    
+                    # Add all presets belonging to this architectural base
+                    fallback_matched_presets = [p for p in settlement_presets if _get_architectural_base_from_key(p['key']) == architectural_base]
+
+                    if fallback_matched_presets:
+                        for preset in fallback_matched_presets:
+                            all_faction_matches[faction_screen_name][preset['battle_type']].append(preset)
+                        fallback_count += 1
+                        print(f"  -> Fallback: Assigned generic architectural style '{architectural_base}' ({len(fallback_matched_presets)} variants found) to unmatched faction '{faction_screen_name}'.")
+                    else:
+                        print(f"  -> WARNING: Fallback preset '{chosen_fallback_preset['key']}' for faction '{faction_screen_name}' has no corresponding presets in its architectural style. Skipping.")
                 else:
                     print(f"  -> WARNING: Faction '{faction_screen_name}' remains unmapped as no fallback presets are available.")
     if fallback_count > 0:
         print(f"Applied fallback for {fallback_count} factions.")
-        settlement_changes += fallback_count * 2 # Each fallback adds 2 entries (standard + unfortified)
+        # The count for settlement_changes will be updated during XML generation based on actual elements added.
 
     # --- Stage 4: XML Generation from all_faction_matches ---
     print("\nGenerating XML for all matched settlement maps...")
@@ -616,6 +672,17 @@ def process_settlement_maps(root, settlement_presets, all_valid_factions, screen
             # Combine, with unique ones first, and limit to a max of 10
             combined_presets = unique_presets + non_unique_presets
             selected_variants = combined_presets[:10]
+
+            # NEW LOGIC: Ensure at least one non-unique settlement if only unique ones are present
+            if selected_variants and all(p['is_unique_settlement'].lower() == 'true' for p in selected_variants):
+                if non_unique_presets:
+                    # Add a random non-unique preset if available
+                    generic_preset = random.choice(non_unique_presets)
+                    selected_variants.append(generic_preset)
+                    print(f"    -> INFO: Added a generic non-unique settlement '{generic_preset['key']}' for faction '{faction_screen_name}' (battle_type: '{battle_type}') to ensure variety.")
+                else:
+                    print(f"    -> WARNING: Faction '{faction_screen_name}' (battle_type: '{battle_type}') has only unique settlements selected, but no non-unique presets are available to add for variety.")
+
 
             if not selected_variants:
                 print(f"    -> WARNING: No suitable variants selected for battle_type '{battle_type}' for faction '{faction_screen_name}'. Removing empty <Settlement> tag.")
@@ -845,7 +912,7 @@ def process_terrains_xml(terrains_xml_path, ck3_building_keys, attila_preset_coo
                 print(f"Removed {removed_terrains_count} existing <Terrain> tags from the XML.")
                 normal_maps_changes += removed_terrains_count
 
-            print(f"Found {len(ck3_terrain_types)} CK3 terrain types.")
+            print(f"Found {len(ck3_terrain_types)} CK3 terrain types and {len(attila_preset_keys)} Attila battle presets.")
 
             matched_terrains = {} # {ck3_terrain_type: attila_preset_key}
             high_confidence_terrain_failures = []
@@ -1001,7 +1068,7 @@ if __name__ == "__main__":
     parser.add_argument("--llm-cache-dir", default="mapper_tools/llm_cache", help="Directory for LLM cache files.")
     parser.add_argument("--llm-cache-tag", help="A unique tag for partitioning the LLM cache (e.g., 'AGOT').")
     parser.add_argument("--llm-batch-size", type=int, default=50, help="The maximum number of building assignment requests to send to the LLM in a single batch.")
-    parser.add_argument("--clear-llm-cache", action='store_true', help="If set, clears the LLM cache for the specified --llm-cache-tag before processing.")
+    parser.add_argument("--clear-llm-cache", action='store_true', help="If set, ignores existing cache values and re-queries the LLM, overwriting the cache with new values.")
     # New arguments for skipping map types
     parser.add_argument("--no-historic-maps", action='store_true', help="If set, skips processing historic maps (buildings).")
     parser.add_argument("--no-normal-maps", action='store_true', help="If set, skips processing normal maps (terrains).")
@@ -1033,13 +1100,10 @@ if __name__ == "__main__":
                 cache_dir=args.llm_cache_dir,
                 api_base=args.llm_api_base,
                 api_key=args.llm_api_key,
-                cache_tag=args.llm_cache_tag
+                cache_tag=args.llm_cache_tag,
+                force_refresh=args.clear_llm_cache
             )
             print("LLM Helper initialized.")
-            if args.clear_llm_cache:
-                print(f"Clearing LLM cache for tag '{args.llm_cache_tag}'...")
-                llm_helper.clear_cache()
-                print("LLM cache cleared.")
         except ImportError:
             print("Warning: 'litellm' library not found. Please run 'pip install litellm' to use the LLM feature.")
             llm_helper = None
