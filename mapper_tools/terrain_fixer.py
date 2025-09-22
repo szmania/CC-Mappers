@@ -473,12 +473,69 @@ def _generate_nearby_coords(base_x_str, base_y_str, count=NORMAL_MAP_COORDS_COUN
 
 # --- Core Processing Function ---
 
+def process_unique_settlement_maps(root, unique_settlement_presets):
+    """
+    Processes unique settlement map configurations and generates the XML structure
+    under a new <Settlement_Maps_Unique> element.
+    """
+    print("\n--- Processing Unique Settlement Maps ---")
+    unique_settlement_changes = 0
+
+    # 1. Find or create <Settlement_Maps_Unique> element
+    unique_settlement_maps_element = root.find('Settlement_Maps_Unique')
+    if unique_settlement_maps_element is None:
+        unique_settlement_maps_element = ET.SubElement(root, 'Settlement_Maps_Unique')
+        unique_settlement_changes += 1
+        print("Created new <Settlement_Maps_Unique> element.")
+    else:
+        # Remove existing children to ensure a clean build
+        removed_count = 0
+        for child in list(unique_settlement_maps_element):
+            unique_settlement_maps_element.remove(child)
+            removed_count += 1
+        if removed_count > 0:
+            print(f"Removed {removed_count} existing child elements from <Settlement_Maps_Unique>.")
+            unique_settlement_changes += removed_count
+
+    if not unique_settlement_presets:
+        print("Warning: No unique Attila settlement presets found. Skipping unique settlement map generation.")
+        return unique_settlement_changes
+
+    print(f"Found {len(unique_settlement_presets)} unique settlement presets.")
+
+    for preset in sorted(unique_settlement_presets, key=lambda x: x['key']): # Sort for deterministic output
+        settlement_unique_element = ET.SubElement(unique_settlement_maps_element, 'Settlement_Unique', {
+            'battle_type': preset['battle_type']
+        })
+        unique_settlement_changes += 1
+
+        variant_element = ET.SubElement(settlement_unique_element, 'Variant', {
+            'key': preset['key'],
+            'is_unique_settlement': preset['is_unique_settlement']
+        })
+        unique_settlement_changes += 1
+
+        map_element = ET.SubElement(variant_element, 'Map', {
+            'x': preset['x'],
+            'y': preset['y']
+        })
+        unique_settlement_changes += 1
+        # print(f"  - Added unique settlement '{preset['key']}' (battle_type: '{preset['battle_type']}').")
+
+    if unique_settlement_changes > 0:
+        print(f"Successfully generated unique settlement maps. Total changes: {unique_settlement_changes}.")
+    else:
+        print("No unique settlement maps generated or updated.")
+
+    return unique_settlement_changes
+
+
 def process_settlement_maps(root, settlement_presets, all_valid_factions, screen_name_to_key_map, faction_to_subculture_map, llm_helper=None, llm_batch_size=50):
     """
-    Processes settlement map configurations, matching factions to settlement presets
+    Processes settlement map configurations for NON-UNIQUE settlements, matching factions to settlement presets
     and generating the XML structure.
     """
-    print("\n--- Processing Settlement Maps ---")
+    print("\n--- Processing Non-Unique Settlement Maps ---")
     settlement_changes = 0
 
     # 1. Find or create <Settlement_Maps> element
@@ -498,7 +555,7 @@ def process_settlement_maps(root, settlement_presets, all_valid_factions, screen
             settlement_changes += removed_count
 
     if not settlement_presets:
-        print("Warning: No Attila settlement presets found. Skipping settlement map generation.")
+        print("Warning: No Attila non-unique settlement presets found. Skipping settlement map generation.")
         return settlement_changes
 
     if not all_valid_factions:
@@ -510,15 +567,12 @@ def process_settlement_maps(root, settlement_presets, all_valid_factions, screen
     if not all_attila_keys:
         print("Warning: No unique variant 'key' values found in settlement presets. LLM fallback will be limited.")
 
-    # NEW: Create a global fallback pool for non-unique presets
-    global_non_unique_presets = [p for p in settlement_presets if p['is_unique_settlement'].lower() != 'true']
-
-    # NEW: Group settlement presets by architectural base (moved from inside the loop)
+    # Group settlement presets by architectural base (moved from inside the loop)
     architectural_base_groups = defaultdict(list)
     for preset in settlement_presets:
         base = _get_architectural_base_from_key(preset['key'])
         architectural_base_groups[base].append(preset)
-    print(f"Grouped {len(settlement_presets)} settlement presets into {len(architectural_base_groups)} architectural styles.")
+    print(f"Grouped {len(settlement_presets)} non-unique settlement presets into {len(architectural_base_groups)} architectural styles.")
 
     # Data structures to store matches and failures
     all_faction_matches = defaultdict(lambda: defaultdict(list)) # {faction_screen_name: {battle_type: [preset1, preset2, ...]}}
@@ -527,7 +581,7 @@ def process_settlement_maps(root, settlement_presets, all_valid_factions, screen
     # Create reverse map for screen names to faction keys
     key_to_screen_name_map = {v: k for k, v in screen_name_to_key_map.items()}
 
-    print(f"Found {len(all_valid_factions)} valid factions and {len(settlement_presets)} settlement presets.")
+    print(f"Found {len(all_valid_factions)} valid factions and {len(settlement_presets)} non-unique settlement presets.")
 
     # --- Stage 1: Procedural Matching ---
     print("\nRunning procedural pass for settlement assignments...")
@@ -629,10 +683,8 @@ def process_settlement_maps(root, settlement_presets, all_valid_factions, screen
     fallback_count = 0
 
     # Identify generic non-unique presets for fallback
-    non_unique_presets = [p for p in settlement_presets if p['is_unique_settlement'].lower() != 'true']
-    generic_town_presets = [p for p in non_unique_presets if "town" in p['key'].lower()]
-
-    fallback_pool = generic_town_presets if generic_town_presets else non_unique_presets
+    generic_town_presets = [p for p in settlement_presets if "town" in p['key'].lower()]
+    fallback_pool = generic_town_presets if generic_town_presets else settlement_presets
 
     if not fallback_pool:
         print("  -> WARNING: No suitable generic fallback presets found. Some factions may remain unmapped.")
@@ -692,65 +744,10 @@ def process_settlement_maps(root, settlement_presets, all_valid_factions, screen
             })
             settlement_changes += 1
 
-            # Select up to 10 variants, prioritizing unique settlements
-            unique_presets = [p for p in presets_for_battle_type if p['is_unique_settlement'].lower() == 'true']
-            non_unique_presets = [p for p in presets_for_battle_type if p['is_unique_settlement'].lower() != 'true']
-
             # Shuffle to get variety in selections if there are more than 10 matches
-            random.shuffle(unique_presets)
+            non_unique_presets = list(presets_for_battle_type) # Create a mutable copy
             random.shuffle(non_unique_presets)
-
-            # Combine, with unique ones first, and limit to a max of 10
-            combined_presets = unique_presets + non_unique_presets
-            selected_variants = combined_presets[:10]
-
-            # NEW LOGIC: Ensure at least one non-unique settlement if only unique ones are present
-            if selected_variants and all(p['is_unique_settlement'].lower() == 'true' for p in selected_variants):
-
-                # Try to find a non-unique preset from the current architectural style first.
-                non_unique_in_style = [p for p in presets_for_battle_type if p['is_unique_settlement'].lower() != 'true']
-
-                fallback_preset = None
-                if non_unique_in_style:
-                    fallback_preset = random.choice(non_unique_in_style)
-                else:
-                    # If the current style has no non-unique presets, fall back to the global pool.
-                    # Filter the global pool by the current battle_type for thematic consistency.
-                    global_fallback_pool = [p for p in global_non_unique_presets if p['battle_type'] == battle_type]
-
-                    fallback_preset = None
-                    if global_fallback_pool:
-                        # Look up the current faction's key and subculture.
-                        faction_key = screen_name_to_key_map.get(faction_screen_name)
-                        faction_subculture = faction_to_subculture_map.get(faction_key) if faction_key else None
-
-                        # Create architectural_base_groups for the global_fallback_pool
-                        global_fallback_base_groups = defaultdict(list)
-                        for preset in global_fallback_pool:
-                            base = _get_architectural_base_from_key(preset['key'])
-                            global_fallback_base_groups[base].append(preset)
-
-                        best_fallback_style = _find_best_architectural_style(faction_screen_name, faction_subculture, global_fallback_base_groups)
-
-                        if best_fallback_style:
-                            # Create a themed pool containing only presets from that style.
-                            themed_fallback_pool = [p for p in global_fallback_pool if _get_architectural_base_from_key(p['key']) == best_fallback_style]
-
-                            if themed_fallback_pool:
-                                fallback_preset = random.choice(themed_fallback_pool)
-                            else:
-                                print(f"    -> INFO: Themed fallback pool for style '{best_fallback_style}' was empty. Selecting from global pool for faction '{faction_screen_name}'.")
-                                fallback_preset = random.choice(global_fallback_pool) # Fallback to random from global if themed is empty
-                        else:
-                            print(f"    -> INFO: No specific architectural style found for fallback. Selecting from global pool for faction '{faction_screen_name}'.")
-                            fallback_preset = random.choice(global_fallback_pool) # Fallback to random from global if no best style
-
-                if fallback_preset:
-                    selected_variants.append(fallback_preset)
-                    print(f"    -> INFO: Added a non-unique settlement '{fallback_preset['key']}' for faction '{faction_screen_name}' (battle_type: '{battle_type}') to ensure variety.")
-                else:
-                    print(f"    -> WARNING: Faction '{faction_screen_name}' (battle_type: '{battle_type}') has only unique settlements selected, but no non-unique presets are available in any pool to add for variety.")
-
+            selected_variants = non_unique_presets[:10]
 
             if not selected_variants:
                 print(f"    -> WARNING: No suitable variants selected for battle_type '{battle_type}' for faction '{faction_screen_name}'. Removing empty <Settlement> tag.")
@@ -806,6 +803,8 @@ def process_terrains_xml(terrains_xml_path, ck3_building_keys, attila_preset_coo
     matched_terrains = {}
     llm_terrain_replacements_made = 0
     unmatchable_terrains = []
+    unique_settlement_maps_changes = 0
+    non_unique_settlement_maps_changes = 0
 
     # NEW: Create or update the top-level <Map> tag for the campaign map name
     top_level_map_element = root.find('Map')
@@ -1091,8 +1090,15 @@ def process_terrains_xml(terrains_xml_path, ck3_building_keys, attila_preset_coo
     total_changes += normal_maps_changes
 
     # --- Settlement Maps Processing ---
-    settlement_maps_changes = process_settlement_maps(root, settlement_presets, all_valid_factions, screen_name_to_key_map, faction_to_subculture_map, llm_helper, llm_batch_size)
-    total_changes += settlement_maps_changes
+    # Split settlement presets into unique and non-unique
+    unique_settlement_presets = [p for p in settlement_presets if p['is_unique_settlement'].lower() == 'true']
+    non_unique_settlement_presets = [p for p in settlement_presets if p['is_unique_settlement'].lower() != 'true']
+
+    unique_settlement_maps_changes = process_unique_settlement_maps(root, unique_settlement_presets)
+    total_changes += unique_settlement_maps_changes
+
+    non_unique_settlement_maps_changes = process_settlement_maps(root, non_unique_settlement_presets, all_valid_factions, screen_name_to_key_map, faction_to_subculture_map, llm_helper, llm_batch_size)
+    total_changes += non_unique_settlement_maps_changes
 
     if total_changes > 0:
         summary_parts = []
@@ -1107,7 +1113,8 @@ def process_terrains_xml(terrains_xml_path, ck3_building_keys, attila_preset_coo
             if llm_terrain_replacements_made > 0: summary_parts.append(f"LLM resolved {llm_terrain_replacements_made} terrain assignments")
             if len(unmatchable_terrains) > 0: summary_parts.append(f"{len(unmatchable_terrains)} terrains unmatchable")
 
-        if settlement_maps_changes > 0: summary_parts.append(f"generated {settlement_maps_changes} settlement map elements")
+        if unique_settlement_maps_changes > 0: summary_parts.append(f"generated {unique_settlement_maps_changes} unique settlement map elements")
+        if non_unique_settlement_maps_changes > 0: summary_parts.append(f"generated {non_unique_settlement_maps_changes} non-unique settlement map elements")
 
 
         print(f"Finished processing {terrains_xml_path}. Summary: {', '.join(summary_parts)}.")
