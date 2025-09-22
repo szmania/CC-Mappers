@@ -75,6 +75,68 @@ def _get_architectural_base_from_key(key):
 
     return base
 
+def _normalize_name_for_match(name, prefixes_to_remove=None):
+    """Normalizes a string for Levenshtein comparison."""
+    if not name:
+        return ""
+    normalized = name.lower().replace("_", " ")
+    if prefixes_to_remove:
+        for prefix in prefixes_to_remove:
+            if normalized.startswith(prefix):
+                normalized = normalized[len(prefix):].strip()
+                break
+    return normalized
+
+def _generate_keywords(name):
+    """Generates a set of keywords from a normalized name."""
+    if not name:
+        return set()
+    # Split by space, filter out short common words, and return as a set
+    return {word for word in name.split() if len(word) > 2}
+
+def _find_best_architectural_style(faction_screen_name, faction_subculture, architectural_base_groups):
+    """
+    Finds the best matching architectural style from a pre-grouped pool of presets for a given faction.
+    Returns the name of the best-matching architectural base (e.g., 'att_western_city') or None.
+    """
+    if not architectural_base_groups:
+        return None
+
+    faction_keywords = _generate_keywords(_normalize_name_for_match(faction_screen_name))
+    subculture_keywords = _generate_keywords(_normalize_name_for_match(faction_subculture, prefixes_to_remove=['subculture_'])) if faction_subculture else set()
+
+    best_architectural_base = None
+    highest_score = -1
+
+    # Iterate through architectural base groups to find the best match
+    for base_name, presets_in_group in architectural_base_groups.items():
+        base_normalized = _normalize_name_for_match(base_name, prefixes_to_remove=['att_']) # Strip 'att_' for better keyword matching
+        base_keywords = _generate_keywords(base_normalized)
+
+        current_score = 0
+        # Score based on keyword intersection
+        current_score += len(faction_keywords.intersection(base_keywords)) * 2 # Faction name matches weighted higher
+        current_score += len(subculture_keywords.intersection(base_keywords))
+
+        # Also consider Levenshtein ratio for a more nuanced score
+        lev_ratio_faction = Levenshtein.ratio(_normalize_name_for_match(faction_screen_name), base_normalized)
+        lev_ratio_subculture = Levenshtein.ratio(_normalize_name_for_match(faction_subculture, prefixes_to_remove=['subculture_']), base_normalized) if faction_subculture else 0
+        current_score += (lev_ratio_faction * 10) + (lev_ratio_subculture * 2) # Heavily weight faction name match
+
+        if current_score > highest_score:
+            highest_score = current_score
+            best_architectural_base = base_name
+        elif current_score == highest_score and best_architectural_base:
+            # Tie-breaking: prefer shorter, more general names, or alphabetical
+            if len(base_name) < len(best_architectural_base):
+                best_architectural_base = base_name
+            elif len(base_name) == len(best_architectural_base) and base_name < best_architectural_base:
+                best_architectural_base = base_name
+
+    if best_architectural_base and highest_score > 0:
+        return best_architectural_base
+    return None
+
 # --- New Data Loading Functions ---
 
 def get_faction_key_to_screen_name_map(tsv_dir):
@@ -358,25 +420,6 @@ def get_attila_settlement_presets(directory, required_map_index):
 
 # --- Matching Logic ---
 
-def _normalize_name_for_match(name, prefixes_to_remove=None):
-    """Normalizes a string for Levenshtein comparison."""
-    if not name:
-        return ""
-    normalized = name.lower().replace("_", " ")
-    if prefixes_to_remove:
-        for prefix in prefixes_to_remove:
-            if normalized.startswith(prefix):
-                normalized = normalized[len(prefix):].strip()
-                break
-    return normalized
-
-def _generate_keywords(name):
-    """Generates a set of keywords from a normalized name."""
-    if not name:
-        return set()
-    # Split by space, filter out short common words, and return as a set
-    return {word for word in name.split() if len(word) > 2}
-
 def _find_best_preset_match(ck3_key, attila_preset_keys, threshold=0.85):
     """
     Finds the best matching Attila preset key for a given CK3 building key or terrain type
@@ -470,6 +513,13 @@ def process_settlement_maps(root, settlement_presets, all_valid_factions, screen
     # NEW: Create a global fallback pool for non-unique presets
     global_non_unique_presets = [p for p in settlement_presets if p['is_unique_settlement'].lower() != 'true']
 
+    # NEW: Group settlement presets by architectural base (moved from inside the loop)
+    architectural_base_groups = defaultdict(list)
+    for preset in settlement_presets:
+        base = _get_architectural_base_from_key(preset['key'])
+        architectural_base_groups[base].append(preset)
+    print(f"Grouped {len(settlement_presets)} settlement presets into {len(architectural_base_groups)} architectural styles.")
+
     # Data structures to store matches and failures
     all_faction_matches = defaultdict(lambda: defaultdict(list)) # {faction_screen_name: {battle_type: [preset1, preset2, ...]}}
     procedural_failures = [] # List of factions that failed procedural matching
@@ -478,13 +528,6 @@ def process_settlement_maps(root, settlement_presets, all_valid_factions, screen
     key_to_screen_name_map = {v: k for k, v in screen_name_to_key_map.items()}
 
     print(f"Found {len(all_valid_factions)} valid factions and {len(settlement_presets)} settlement presets.")
-
-    # NEW: Group settlement presets by architectural base
-    architectural_base_groups = defaultdict(list)
-    for preset in settlement_presets:
-        base = _get_architectural_base_from_key(preset['key'])
-        architectural_base_groups[base].append(preset)
-    print(f"Grouped {len(settlement_presets)} settlement presets into {len(architectural_base_groups)} architectural styles.")
 
     # --- Stage 1: Procedural Matching ---
     print("\nRunning procedural pass for settlement assignments...")
@@ -502,45 +545,14 @@ def process_settlement_maps(root, settlement_presets, all_valid_factions, screen
             continue
 
         faction_subculture = faction_to_subculture_map.get(faction_key)
-        
-        # Generate keywords for faction and subculture names
-        faction_keywords = _generate_keywords(_normalize_name_for_match(faction_screen_name))
-        subculture_keywords = _generate_keywords(_normalize_name_for_match(faction_subculture, prefixes_to_remove=['subculture_'])) if faction_subculture else set()
 
-        best_architectural_base = None
-        highest_score = -1
+        best_architectural_base = _find_best_architectural_style(faction_screen_name, faction_subculture, architectural_base_groups)
 
-        # Iterate through architectural base groups to find the best match
-        for base_name, presets_in_group in architectural_base_groups.items():
-            base_normalized = _normalize_name_for_match(base_name, prefixes_to_remove=['att_']) # Strip 'att_' for better keyword matching
-            base_keywords = _generate_keywords(base_normalized)
-
-            current_score = 0
-            # Score based on keyword intersection
-            current_score += len(faction_keywords.intersection(base_keywords)) * 2 # Faction name matches weighted higher
-            current_score += len(subculture_keywords.intersection(base_keywords))
-
-            # Also consider Levenshtein ratio for a more nuanced score
-            lev_ratio_faction = Levenshtein.ratio(_normalize_name_for_match(faction_screen_name), base_normalized)
-            lev_ratio_subculture = Levenshtein.ratio(_normalize_name_for_match(faction_subculture, prefixes_to_remove=['subculture_']), base_normalized) if faction_subculture else 0
-            current_score += (lev_ratio_faction * 10) + (lev_ratio_subculture * 2) # Heavily weight faction name match
-
-            if current_score > highest_score:
-                highest_score = current_score
-                best_architectural_base = base_name
-            elif current_score == highest_score and best_architectural_base:
-                # Tie-breaking: prefer shorter, more general names, or alphabetical
-                if len(base_name) < len(best_architectural_base):
-                    best_architectural_base = base_name
-                elif len(base_name) == len(best_architectural_base) and base_name < best_architectural_base:
-                    best_architectural_base = base_name
-
-
-        if best_architectural_base and highest_score > 0: # Only consider if a positive score was achieved
+        if best_architectural_base:
             # Add all presets from the best architectural group to all_faction_matches
             for preset in architectural_base_groups[best_architectural_base]:
                 all_faction_matches[faction_screen_name][preset['battle_type']].append(preset)
-            print(f"  -> Procedural match found for faction '{faction_screen_name}': Architectural Style '{best_architectural_base}' (Score: {highest_score:.2f}).")
+            print(f"  -> Procedural match found for faction '{faction_screen_name}': Architectural Style '{best_architectural_base}'.")
         else:
             print(f"  -> INFO: No strong procedural settlement presets found for faction '{faction_screen_name}'. Queued for LLM.")
             procedural_failures.append({
@@ -705,8 +717,33 @@ def process_settlement_maps(root, settlement_presets, all_valid_factions, screen
                     # If the current style has no non-unique presets, fall back to the global pool.
                     # Filter the global pool by the current battle_type for thematic consistency.
                     global_fallback_pool = [p for p in global_non_unique_presets if p['battle_type'] == battle_type]
+                    
+                    fallback_preset = None
                     if global_fallback_pool:
-                        fallback_preset = random.choice(global_fallback_pool)
+                        # Look up the current faction's key and subculture.
+                        faction_key = screen_name_to_key_map.get(faction_screen_name)
+                        faction_subculture = faction_to_subculture_map.get(faction_key) if faction_key else None
+                        
+                        # Create architectural_base_groups for the global_fallback_pool
+                        global_fallback_base_groups = defaultdict(list)
+                        for preset in global_fallback_pool:
+                            base = _get_architectural_base_from_key(preset['key'])
+                            global_fallback_base_groups[base].append(preset)
+
+                        best_fallback_style = _find_best_architectural_style(faction_screen_name, faction_subculture, global_fallback_base_groups)
+                        
+                        if best_fallback_style:
+                            # Create a themed pool containing only presets from that style.
+                            themed_fallback_pool = [p for p in global_fallback_pool if _get_architectural_base_from_key(p['key']) == best_fallback_style]
+                            
+                            if themed_fallback_pool:
+                                fallback_preset = random.choice(themed_fallback_pool)
+                            else:
+                                print(f"    -> INFO: Themed fallback pool for style '{best_fallback_style}' was empty. Selecting from global pool for faction '{faction_screen_name}'.")
+                                fallback_preset = random.choice(global_fallback_pool) # Fallback to random from global if themed is empty
+                        else:
+                            print(f"    -> INFO: No specific architectural style found for fallback. Selecting from global pool for faction '{faction_screen_name}'.")
+                            fallback_preset = random.choice(global_fallback_pool) # Fallback to random from global if no best style
 
                 if fallback_preset:
                     selected_variants.append(fallback_preset)
@@ -930,7 +967,7 @@ def process_terrains_xml(terrains_xml_path, ck3_building_keys, attila_preset_coo
         if ck3_terrain_types:
             print("\n--- Processing Normal Maps (Terrains) ---")
             normal_maps_element = root.find('Normal_Maps')
-            if normal_maps_element is None:
+            if normal_maps_element === None:
                 normal_maps_element = ET.SubElement(root, 'Normal_Maps')
                 normal_maps_changes += 1
 
