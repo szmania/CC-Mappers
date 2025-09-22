@@ -153,7 +153,7 @@ def get_ck3_building_keys(directory):
     """
     building_keys = set()
     # This regex finds potential building definition starts: `building_key = {`
-    building_start_pattern = re.compile(r'^\s*([a-zA-Z0-9_]+)\s*=\s*\{', re.MULTILINE)
+    building_start_pattern = re.compile(r'^([a-zA-Z0-9_]+)\s*=\s*\{', re.MULTILINE) # MODIFIED REGEX
 
     if not os.path.isdir(directory):
         print(f"Error: CK3 buildings directory not found: {directory}")
@@ -178,7 +178,7 @@ def get_ck3_terrain_types(directory):
     """
     terrain_keys = set()
     # This regex finds potential terrain definition starts: `terrain_key = {`
-    terrain_start_pattern = re.compile(r'^\s*([a-zA-Z0-9_]+)\s*=\s*\{', re.MULTILINE)
+    terrain_start_pattern = re.compile(r'^([a-zA-Z0-9_]+)\s*=\s*\{', re.MULTILINE) # MODIFIED REGEX
 
     if not os.path.isdir(directory):
         print(f"Error: CK3 terrain types directory not found: {directory}")
@@ -549,34 +549,43 @@ def process_terrains_xml(terrains_xml_path, ck3_building_keys, attila_preset_coo
 
     total_changes = 0
 
-    # --- Historic Maps (Buildings) Processing ---
-    # Ensure <Terrains><Historic_maps><Map> structure
-    historic_maps = root.find('Historic_maps')
-    if historic_maps is None:
-        historic_maps = ET.SubElement(root, 'Historic_maps')
-        total_changes += 1 # Count creation of new element
-
-    map_element = historic_maps.find('Map')
-    if map_element is None:
-        map_element = ET.SubElement(historic_maps, 'Map')
-        total_changes += 1 # Count creation of new element
+    # NEW: Create or update the top-level <Map> tag for the campaign map name
+    top_level_map_element = root.find('Map')
+    if top_level_map_element is None:
+        top_level_map_element = ET.SubElement(root, 'Map')
+        total_changes += 1
+        print("Created new top-level <Map> element for campaign map name.")
 
     if attila_map_name:
-        if map_element.get('name') != attila_map_name:
-            map_element.set('name', attila_map_name)
-            print(f"Set <Map> name attribute to '{attila_map_name}'.")
+        if top_level_map_element.get('name') != attila_map_name:
+            top_level_map_element.set('name', attila_map_name)
+            print(f"Set top-level <Map> name attribute to '{attila_map_name}'.")
             total_changes += 1
-    elif 'name' not in map_element.attrib:
-        print("Warning: No --attila-map specified and <Map> has no existing name. Consider adding one.")
+    elif 'name' not in top_level_map_element.attrib:
+        print("Warning: No --attila-map specified and top-level <Map> has no existing name. Consider adding one.")
 
-    # Remove all existing <Building> tags to start fresh
-    removed_buildings_count = 0
-    for building_element in list(map_element.findall('Building')):
-        map_element.remove(building_element)
-        removed_buildings_count += 1
-    if removed_buildings_count > 0:
-        print(f"Removed {removed_buildings_count} existing <Building> tags from the XML.")
-        total_changes += removed_buildings_count
+
+    # --- Historic Maps (Buildings) Processing ---
+    # Ensure <Terrains><Historic_maps> structure
+    historic_maps_container = root.find('Historic_maps')
+    if historic_maps_container is None:
+        historic_maps_container = ET.SubElement(root, 'Historic_maps')
+        total_changes += 1 # Count creation of new element
+
+    # Remove all existing <Map> tags from within <Historic_maps> to start fresh
+    removed_maps_count = 0
+    for map_element_to_remove in list(historic_maps_container.findall('Map')):
+        historic_maps_container.remove(map_element_to_remove)
+        removed_maps_count += 1
+    if removed_maps_count > 0:
+        print(f"Removed {removed_maps_count} existing historic map tags from the XML.")
+        total_changes += removed_maps_count
+
+    if attila_map_name:
+        # The old logic for setting map_element name is removed as it's now handled by top_level_map_element
+        pass
+    elif 'name' not in historic_maps_container.attrib: # Check if historic_maps_container itself needs a name if no top-level map
+        pass # No longer setting name here, handled by top-level map
 
     # Get all available Attila preset keys
     attila_preset_keys = set(attila_preset_coords.keys())
@@ -677,12 +686,13 @@ def process_terrains_xml(terrains_xml_path, ck3_building_keys, attila_preset_coo
         for ck3_key, attila_preset_key in sorted(matched_buildings.items()): # Sort for deterministic output
             coords = attila_preset_coords.get(attila_preset_key)
             if coords:
-                building_element = ET.SubElement(map_element, 'Building', {
+                # MODIFIED: Create <Map> tag directly under historic_maps_container
+                map_element_for_building = ET.SubElement(historic_maps_container, 'Map', {
                     'ck3_building_key': ck3_key,
                     'x': coords['x'],
                     'y': coords['y']
                 })
-                # print(f"  - Added <Building ck3_building_key='{ck3_key}' x='{coords['x']}' y='{coords['y']}'/>")
+                # print(f"  - Added <Map ck3_building_key='{ck3_key}' x='{coords['x']}' y='{coords['y']}'/>")
             else:
                 print(f"  -> ERROR: Coordinates not found for Attila preset '{attila_preset_key}' (matched from CK3 '{ck3_key}'). Skipping.")
                 total_changes -= 1 # Decrement if we couldn't add it
@@ -819,8 +829,8 @@ def process_terrains_xml(terrains_xml_path, ck3_building_keys, attila_preset_coo
 
     if total_changes > 0:
         summary_parts = []
-        if removed_buildings_count > 0: summary_parts.append(f"removed {removed_buildings_count} old building tags")
-        if len(matched_buildings) > 0: summary_parts.append(f"added {len(matched_buildings)} new building tags")
+        if removed_maps_count > 0: summary_parts.append(f"removed {removed_maps_count} old historic map tags") # MODIFIED LOGGING
+        if len(matched_buildings) > 0: summary_parts.append(f"added {len(matched_buildings)} new historic map tags") # MODIFIED LOGGING
         if llm_building_replacements_made > 0: summary_parts.append(f"LLM resolved {llm_building_replacements_made} building assignments")
         if len(unmatchable_buildings) > 0: summary_parts.append(f"{len(unmatchable_buildings)} buildings unmatchable")
 
@@ -912,7 +922,7 @@ if __name__ == "__main__":
     # NEW: Get map index
     map_index = get_map_index(attila_playable_areas_dir, args.attila_map)
     if map_index is None:
-        print(f"Error: The specified --attila-map '{args.attila_map}' could not be found in the campaign_map_playable_areas_tables. Aborting.")
+        print(f"Error: The specified --attila-map '{args.attila_map}' could not be found in the_campaign_map_playable_areas_tables. Aborting.")
         exit()
     print(f"Found map index '{map_index}' for Attila map '{args.attila_map}'.")
 
