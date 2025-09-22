@@ -603,7 +603,7 @@ def process_settlement_maps(root, settlement_presets, all_valid_factions, screen
                     if chosen_key:
                         # NEW LOGIC: Get the architectural base from the chosen key
                         architectural_base = _get_architectural_base_from_key(chosen_key)
-                        
+
                         # Find all presets belonging to this architectural base
                         llm_matched_presets = [p for p in settlement_presets if _get_architectural_base_from_key(p['key']) == architectural_base]
 
@@ -643,7 +643,7 @@ def process_settlement_maps(root, settlement_presets, all_valid_factions, screen
                     chosen_fallback_preset = random.choice(fallback_pool)
                     # NEW LOGIC: Get the architectural base from the chosen fallback key
                     architectural_base = _get_architectural_base_from_key(chosen_fallback_preset['key'])
-                    
+
                     # Add all presets belonging to this architectural base
                     fallback_matched_presets = [p for p in settlement_presets if _get_architectural_base_from_key(p['key']) == architectural_base]
 
@@ -662,7 +662,7 @@ def process_settlement_maps(root, settlement_presets, all_valid_factions, screen
 
     # --- Stage 4: XML Generation from all_faction_matches ---
     print("\nGenerating XML for all matched settlement maps...")
-    
+
     # 1. Define Canonical Battle Types
     BATTLE_TYPES = ['settlement_standard', 'settlement_unfortified']
 
@@ -676,7 +676,7 @@ def process_settlement_maps(root, settlement_presets, all_valid_factions, screen
             if not presets_for_battle_type:
                 other_battle_type = 'settlement_unfortified' if battle_type == 'settlement_standard' else 'settlement_standard'
                 fallback_source_presets = battle_type_matches.get(other_battle_type, [])
-                
+
                 if fallback_source_presets:
                     presets_for_battle_type = fallback_source_presets
                     print(f"  -> INFO: Faction '{faction_screen_name}' has no presets for '{battle_type}'. Using presets from '{other_battle_type}' as a fallback.")
@@ -706,10 +706,10 @@ def process_settlement_maps(root, settlement_presets, all_valid_factions, screen
 
             # NEW LOGIC: Ensure at least one non-unique settlement if only unique ones are present
             if selected_variants and all(p['is_unique_settlement'].lower() == 'true' for p in selected_variants):
-                
+
                 # Try to find a non-unique preset from the current architectural style first.
                 non_unique_in_style = [p for p in presets_for_battle_type if p['is_unique_settlement'].lower() != 'true']
-                
+
                 fallback_preset = None
                 if non_unique_in_style:
                     fallback_preset = random.choice(non_unique_in_style)
@@ -717,13 +717,13 @@ def process_settlement_maps(root, settlement_presets, all_valid_factions, screen
                     # If the current style has no non-unique presets, fall back to the global pool.
                     # Filter the global pool by the current battle_type for thematic consistency.
                     global_fallback_pool = [p for p in global_non_unique_presets if p['battle_type'] == battle_type]
-                    
+
                     fallback_preset = None
                     if global_fallback_pool:
                         # Look up the current faction's key and subculture.
                         faction_key = screen_name_to_key_map.get(faction_screen_name)
                         faction_subculture = faction_to_subculture_map.get(faction_key) if faction_key else None
-                        
+
                         # Create architectural_base_groups for the global_fallback_pool
                         global_fallback_base_groups = defaultdict(list)
                         for preset in global_fallback_pool:
@@ -731,11 +731,11 @@ def process_settlement_maps(root, settlement_presets, all_valid_factions, screen
                             global_fallback_base_groups[base].append(preset)
 
                         best_fallback_style = _find_best_architectural_style(faction_screen_name, faction_subculture, global_fallback_base_groups)
-                        
+
                         if best_fallback_style:
                             # Create a themed pool containing only presets from that style.
                             themed_fallback_pool = [p for p in global_fallback_pool if _get_architectural_base_from_key(p['key']) == best_fallback_style]
-                            
+
                             if themed_fallback_pool:
                                 fallback_preset = random.choice(themed_fallback_pool)
                             else:
@@ -967,7 +967,7 @@ def process_terrains_xml(terrains_xml_path, ck3_building_keys, attila_preset_coo
         if ck3_terrain_types:
             print("\n--- Processing Normal Maps (Terrains) ---")
             normal_maps_element = root.find('Normal_Maps')
-            if normal_maps_element === None:
+            if normal_maps_element == None:
                 normal_maps_element = ET.SubElement(root, 'Normal_Maps')
                 normal_maps_changes += 1
 
