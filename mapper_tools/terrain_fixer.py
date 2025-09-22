@@ -105,11 +105,49 @@ def get_ck3_terrain_types(directory):
 
     return terrain_keys
 
-def get_attila_preset_coords(directory):
+def get_map_index(directory, terrain_folder_name):
     """
-    Extracts all Attila battle preset keys and their coordinates.
+    Extracts the map index for a given terrain folder name from campaign_map_playable_areas_tables.
+    """
+    if not os.path.isdir(directory):
+        print(f"Error: Attila playable areas directory not found: {directory}")
+        return None
+
+    lower_terrain_folder_name = terrain_folder_name.lower()
+
+    for filename in os.listdir(directory):
+        if filename.endswith(".tsv"):
+            file_path = os.path.join(directory, filename)
+            try:
+                with open(file_path, 'r', encoding='utf-8', errors='ignore') as f:
+                    reader = csv.reader(f, delimiter='\t')
+                    next(reader, None); next(reader, None) # Skip metadata
+                    header = next(reader, None)
+                    if not header: continue
+
+                    try:
+                        terrain_folder_idx = header.index("terrain_folder")
+                        index_idx = header.index("index")
+                    except ValueError:
+                        continue # Skip files without the required columns
+
+                    for row in reader:
+                        if len(row) > terrain_folder_idx and len(row) > index_idx and row[terrain_folder_idx]:
+                            if row[terrain_folder_idx].lower() == lower_terrain_folder_name:
+                                return row[index_idx] # Return the index as a string
+            except Exception as e:
+                print(f"Error processing playable areas TSV file {filename}: {e}")
+    return None
+
+def get_attila_preset_coords(directory, required_map_index):
+    """
+    Extracts all Attila battle preset keys and their coordinates, filtered by a specific campaign map index.
     """
     preset_coords = {}
+
+    if required_map_index is None:
+        print("Warning: No required_map_index provided. Returning empty preset coordinates.")
+        return {}
 
     if not os.path.isdir(directory):
         print(f"Error: Attila campaign_battle_presets_tables directory not found: {directory}")
@@ -129,15 +167,21 @@ def get_attila_preset_coords(directory):
                         key_idx = header.index("key")
                         coord_x_idx = header.index("coord_x")
                         coord_y_idx = header.index("coord_y")
+                        campaign_map_idx = header.index("campaign_map")
                     except ValueError:
                         continue # Skip files without the required columns
 
                     for row in reader:
-                        if len(row) > key_idx and len(row) > coord_x_idx and len(row) > coord_y_idx and row[key_idx]:
-                            preset_key = row[key_idx]
-                            coord_x = row[coord_x_idx]
-                            coord_y = row[coord_y_idx]
-                            preset_coords[preset_key] = {'x': coord_x, 'y': coord_y}
+                        if (len(row) > key_idx and len(row) > coord_x_idx and
+                            len(row) > coord_y_idx and len(row) > campaign_map_idx and
+                            row[key_idx]):
+                            
+                            # Filter by campaign_map index
+                            if row[campaign_map_idx] == required_map_index:
+                                preset_key = row[key_idx]
+                                coord_x = row[coord_x_idx]
+                                coord_y = row[coord_y_idx]
+                                preset_coords[preset_key] = {'x': coord_x, 'y': coord_y}
             except Exception as e:
                 print(f"Error processing preset TSV file {filename}: {e}")
     return preset_coords
@@ -541,6 +585,7 @@ if __name__ == "__main__":
     ck3_buildings_dir = os.path.join(args.ck3_common_path, "buildings")
     attila_presets_dir = os.path.join(args.attila_db_path, "campaign_battle_presets_tables")
     ck3_terrain_types_dir = os.path.join(args.ck3_common_path, "terrain_types") # NEW: Add terrain types dir
+    attila_playable_areas_dir = os.path.join(args.attila_db_path, "campaign_map_playable_areas_tables") # NEW: Add playable areas directory
 
     print("Starting terrain building mapping process...")
 
@@ -575,11 +620,18 @@ if __name__ == "__main__":
         exit()
     print(f"Loaded {len(ck3_building_keys)} CK3 building keys.")
 
-    attila_preset_coords = get_attila_preset_coords(attila_presets_dir)
-    if not attila_preset_coords:
-        print("No Attila battle presets found. Aborting.")
+    # NEW: Get map index
+    map_index = get_map_index(attila_playable_areas_dir, args.attila_map)
+    if map_index is None:
+        print(f"Error: The specified --attila-map '{args.attila_map}' could not be found in the campaign_map_playable_areas_tables. Aborting.")
         exit()
-    print(f"Loaded {len(attila_preset_coords)} Attila battle presets with coordinates.")
+    print(f"Found map index '{map_index}' for Attila map '{args.attila_map}'.")
+
+    attila_preset_coords = get_attila_preset_coords(attila_presets_dir, map_index) # Modified call
+    if not attila_preset_coords:
+        print(f"No Attila battle presets found for map '{args.attila_map}'. Aborting.") # Updated log message
+        exit()
+    print(f"Loaded {len(attila_preset_coords)} Attila battle presets for map '{args.attila_map}' with coordinates.") # Updated log message
 
     # NEW: Load CK3 terrain types
     ck3_terrain_types = get_ck3_terrain_types(ck3_terrain_types_dir)
