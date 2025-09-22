@@ -605,15 +605,17 @@ def process_settlement_maps(root, settlement_presets, all_valid_factions, screen
             })
             settlement_changes += 1
 
-            # Variant Selection: Select only one variant, prioritizing unique
+            # Select up to 10 variants, prioritizing unique settlements
             unique_presets = [p for p in presets_for_battle_type if p['is_unique_settlement'].lower() == 'true']
             non_unique_presets = [p for p in presets_for_battle_type if p['is_unique_settlement'].lower() != 'true']
-            
-            selected_variants = []
-            if unique_presets:
-                selected_variants.append(random.choice(unique_presets))
-            elif non_unique_presets:
-                selected_variants.append(random.choice(non_unique_presets))
+
+            # Shuffle to get variety in selections if there are more than 10 matches
+            random.shuffle(unique_presets)
+            random.shuffle(non_unique_presets)
+
+            # Combine, with unique ones first, and limit to a max of 10
+            combined_presets = unique_presets + non_unique_presets
+            selected_variants = combined_presets[:10]
 
             if not selected_variants:
                 print(f"    -> WARNING: No suitable variants selected for battle_type '{battle_type}' for faction '{faction_screen_name}'. Removing empty <Settlement> tag.")
