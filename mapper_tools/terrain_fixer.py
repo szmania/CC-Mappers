@@ -58,6 +58,95 @@ def indent_xml(elem, level=0):
 
 # --- New Data Loading Functions ---
 
+def get_faction_key_to_screen_name_map(tsv_dir):
+    """Parses the faction_tables TSV files to get a map of faction key to screen name."""
+    faction_map = {}
+    if not os.path.isdir(tsv_dir):
+        print(f"Error: Faction tables directory not found at {tsv_dir}")
+        return faction_map
+
+    for filename in os.listdir(tsv_dir):
+        if filename.endswith(".tsv"):
+            file_path = os.path.join(tsv_dir, filename)
+            try:
+                with open(file_path, 'r', encoding='utf-8', errors='ignore') as f:
+                    reader = csv.reader(f, delimiter='\t')
+                    next(reader, None); next(reader, None) # Skip metadata
+                    header = next(reader, None)
+                    if not header: continue
+
+                    try:
+                        key_idx = header.index("key")
+                        screen_name_idx = header.index("screen_name")
+                    except ValueError:
+                        continue
+
+                    for row in reader:
+                        if len(row) > key_idx and len(row) > screen_name_idx and row[key_idx]:
+                            faction_map[row[key_idx]] = row[screen_name_idx]
+            except Exception as e:
+                print(f"Error processing faction table TSV file {filename}: {e}")
+    return faction_map
+
+def get_faction_to_subculture_map(tsv_dir):
+    """
+    Parses the faction_tables TSV files to get maps between faction keys and subcultures.
+    Returns {faction_key: subculture_key}
+    """
+    faction_to_subculture_map = {}
+
+    if not os.path.isdir(tsv_dir):
+        print(f"Error: Faction tables directory not found at {tsv_dir}")
+        return faction_to_subculture_map
+
+    for filename in os.listdir(tsv_dir):
+        if filename.endswith(".tsv"):
+            file_path = os.path.join(tsv_dir, filename)
+            try:
+                with open(file_path, 'r', encoding='utf-8', errors='ignore') as f:
+                    reader = csv.reader(f, delimiter='\t')
+                    next(reader, None); next(reader, None) # Skip metadata
+                    header = next(reader, None)
+                    if not header: continue
+
+                    try:
+                        key_idx = header.index("key")
+                        subculture_idx = header.index("subculture")
+                    except ValueError:
+                        continue
+
+                    for row in reader:
+                        if len(row) > key_idx and len(row) > subculture_idx and row[key_idx]:
+                            faction_key = row[key_idx]
+                            subculture_key = row[subculture_idx]
+                            if faction_key and subculture_key:
+                                faction_to_subculture_map[faction_key] = subculture_key
+            except Exception as e:
+                print(f"Error processing faction table TSV file {filename}: {e}")
+    return faction_to_subculture_map
+
+def get_all_factions_from_units_xml(xml_file_path):
+    """
+    Parses the Attila Factions XML to get a set of all faction names.
+    """
+    try:
+        tree = ET.parse(xml_file_path)
+        root = tree.getroot()
+
+        factions = {
+            faction.get('name')
+            for faction in root.findall('.//Faction')
+            if faction.get('name')
+        }
+        return factions
+    except ET.ParseError as e:
+        print(f"Error parsing Attila Factions XML file {xml_file_path}: {e}")
+        return set()
+    except FileNotFoundError:
+        print(f"Error: Attila Factions XML file not found at {xml_file_path}")
+        return set()
+
+
 def get_ck3_building_keys(directory):
     """
     Extracts all building definition keys from CK3 game files.
@@ -189,6 +278,65 @@ def get_attila_preset_coords(directory, required_map_index):
                 print(f"Error processing preset TSV file {filename}: {e}")
     return preset_coords
 
+def get_attila_settlement_presets(directory, required_map_index):
+    """
+    Extracts Attila settlement battle presets, filtered by battle_type and campaign_map index.
+    """
+    settlement_presets = []
+
+    if required_map_index is None:
+        print("Warning: No required_map_index provided. Returning empty settlement presets.")
+        return []
+
+    if not os.path.isdir(directory):
+        print(f"Error: Attila campaign_battle_presets_tables directory not found: {directory}")
+        return []
+
+    for filename in os.listdir(directory):
+        if filename.endswith(".tsv"):
+            file_path = os.path.join(directory, filename)
+            try:
+                with open(file_path, 'r', encoding='utf-8', errors='ignore') as f:
+                    reader = csv.reader(f, delimiter='\t')
+                    next(reader, None); next(reader, None) # Skip metadata
+                    header = next(reader, None)
+                    if not header: continue
+
+                    try:
+                        key_idx = header.index("key")
+                        battle_type_idx = header.index("battle_type")
+                        tile_upgrade_idx = header.index("tile_upgrade")
+                        is_unique_settlement_idx = header.index("is_unique_settlement")
+                        coord_x_idx = header.index("coord_x")
+                        coord_y_idx = header.index("coord_y")
+                        campaign_map_idx = header.index("campaign_map")
+                    except ValueError:
+                        continue # Skip files without the required columns
+
+                    for row in reader:
+                        if (len(row) > key_idx and len(row) > battle_type_idx and
+                            len(row) > tile_upgrade_idx and len(row) > is_unique_settlement_idx and
+                            len(row) > coord_x_idx and len(row) > coord_y_idx and
+                            len(row) > campaign_map_idx and row[key_idx]):
+                            
+                            # Filter by campaign_map index and battle_type
+                            if row[campaign_map_idx] == required_map_index and \
+                               (row[battle_type_idx] == 'settlement_standard' or row[battle_type_idx] == 'settlement_unfortified'):
+                                
+                                preset_data = {
+                                    'key': row[key_idx],
+                                    'battle_type': row[battle_type_idx],
+                                    'tile_upgrade': row[tile_upgrade_idx],
+                                    'is_unique_settlement': row[is_unique_settlement_idx],
+                                    'x': row[coord_x_idx],
+                                    'y': row[coord_y_idx]
+                                }
+                                settlement_presets.append(preset_data)
+            except Exception as e:
+                print(f"Error processing settlement preset TSV file {filename}: {e}")
+    return settlement_presets
+
+
 # --- Matching Logic ---
 
 def _normalize_name_for_match(name, prefixes_to_remove=None):
@@ -256,10 +404,139 @@ def _generate_nearby_coords(base_x_str, base_y_str, count=NORMAL_MAP_COORDS_COUN
 
 # --- Core Processing Function ---
 
-def process_terrains_xml(terrains_xml_path, ck3_building_keys, attila_preset_coords, attila_map_name, llm_helper=None, llm_batch_size=50, ck3_terrain_types=None):
+def process_settlement_maps(root, settlement_presets, all_valid_factions, screen_name_to_key_map, faction_to_subculture_map):
+    """
+    Processes settlement map configurations, matching factions to settlement presets
+    and generating the XML structure.
+    """
+    print("\n--- Processing Settlement Maps ---")
+    settlement_changes = 0
+
+    # 1. Find or create <Settlement_Maps> element
+    settlement_maps_element = root.find('Settlement_Maps')
+    if settlement_maps_element is None:
+        settlement_maps_element = ET.SubElement(root, 'Settlement_Maps')
+        settlement_changes += 1
+        print("Created new <Settlement_Maps> element.")
+    else:
+        # Remove existing children to ensure a clean build
+        removed_count = 0
+        for child in list(settlement_maps_element):
+            settlement_maps_element.remove(child)
+            removed_count += 1
+        if removed_count > 0:
+            print(f"Removed {removed_count} existing child elements from <Settlement_Maps>.")
+            settlement_changes += removed_count
+
+    if not settlement_presets:
+        print("Warning: No Attila settlement presets found. Skipping settlement map generation.")
+        return settlement_changes
+
+    if not all_valid_factions:
+        print("Warning: No valid factions found. Skipping settlement map generation.")
+        return settlement_changes
+
+    # Create reverse map for screen names to faction keys
+    key_to_screen_name_map = {v: k for k, v in screen_name_to_key_map.items()}
+
+    print(f"Found {len(all_valid_factions)} valid factions and {len(settlement_presets)} settlement presets.")
+
+    # Iterate through each faction
+    for faction_screen_name in sorted(list(all_valid_factions)):
+        faction_key = screen_name_to_key_map.get(faction_screen_name)
+        if not faction_key:
+            print(f"  -> WARNING: Could not find faction key for screen name '{faction_screen_name}'. Skipping.")
+            continue
+
+        faction_subculture = faction_to_subculture_map.get(faction_key)
+        
+        matched_presets_for_faction = defaultdict(list) # {battle_type: [preset1, preset2, ...]}
+
+        # Filter settlement presets for the current faction
+        for preset in settlement_presets:
+            tile_upgrade_normalized = _normalize_name_for_match(preset['tile_upgrade'])
+            faction_screen_normalized = _normalize_name_for_match(faction_screen_name)
+            
+            # Check against faction screen name
+            ratio_screen = Levenshtein.ratio(tile_upgrade_normalized, faction_screen_normalized)
+            
+            # Check against subculture if available
+            ratio_subculture = 0
+            if faction_subculture:
+                faction_subculture_normalized = _normalize_name_for_match(faction_subculture, prefixes_to_remove=['subculture_'])
+                ratio_subculture = Levenshtein.ratio(tile_upgrade_normalized, faction_subculture_normalized)
+
+            # Use the higher ratio for matching
+            if max(ratio_screen, ratio_subculture) >= 0.7: # Threshold for matching
+                matched_presets_for_faction[preset['battle_type']].append(preset)
+        
+        if not matched_presets_for_faction:
+            # print(f"  -> INFO: No settlement presets found for faction '{faction_screen_name}'.")
+            continue
+
+        print(f"  - Processing settlement maps for faction '{faction_screen_name}' (key: {faction_key}).")
+
+        # XML Generation for each battle_type
+        for battle_type in sorted(matched_presets_for_faction.keys()):
+            presets_for_battle_type = matched_presets_for_faction[battle_type]
+            
+            # Create <Settlement> element
+            settlement_element = ET.SubElement(settlement_maps_element, 'Settlement', {
+                'faction': faction_screen_name,
+                'battle_type': battle_type
+            })
+            settlement_changes += 1
+
+            # Variant Selection: Max 10 variants, prioritize unique, then random
+            unique_presets = [p for p in presets_for_battle_type if p['is_unique_settlement'].lower() == 'true']
+            non_unique_presets = [p for p in presets_for_battle_type if p['is_unique_settlement'].lower() != 'true']
+
+            selected_variants = []
+            selected_variants.extend(unique_presets)
+
+            remaining_slots = 10 - len(selected_variants)
+            if remaining_slots > 0:
+                # Randomly sample from non-unique presets if needed
+                if len(non_unique_presets) > remaining_slots:
+                    selected_variants.extend(random.sample(non_unique_presets, remaining_slots))
+                else:
+                    selected_variants.extend(non_unique_presets)
+            
+            # If still more than 10 (e.g., many unique presets), trim to 10
+            selected_variants = selected_variants[:10]
+
+            if not selected_variants:
+                print(f"    -> WARNING: No suitable variants selected for battle_type '{battle_type}' for faction '{faction_screen_name}'. Removing empty <Settlement> tag.")
+                settlement_maps_element.remove(settlement_element)
+                settlement_changes -= 1
+                continue
+
+            for variant_preset in selected_variants:
+                variant_element = ET.SubElement(settlement_element, 'Variant', {
+                    'tile_upgrade': variant_preset['tile_upgrade'],
+                    'is_unique_settlement': variant_preset['is_unique_settlement']
+                })
+                settlement_changes += 1
+
+                map_element = ET.SubElement(variant_element, 'Map', {
+                    'x': variant_preset['x'],
+                    'y': variant_preset['y']
+                })
+                settlement_changes += 1
+    
+    if settlement_changes > 0:
+        print(f"Successfully generated settlement maps. Total changes: {settlement_changes}.")
+    else:
+        print("No settlement maps generated or updated.")
+
+    return settlement_changes
+
+
+def process_terrains_xml(terrains_xml_path, ck3_building_keys, attila_preset_coords, attila_map_name, llm_helper=None, llm_batch_size=50, ck3_terrain_types=None,
+                         settlement_presets=None, all_valid_factions=None, screen_name_to_key_map=None, faction_to_subculture_map=None):
     """
     Processes the terrains XML file to map CK3 buildings to Attila battle presets
-    and CK3 terrain types to Attila normal map presets.
+    and CK3 terrain types to Attila normal map presets, and generates settlement maps.
     """
     print(f"\nProcessing file: {terrains_xml_path}")
 
@@ -369,10 +646,8 @@ def process_terrains_xml(terrains_xml_path, ck3_building_keys, attila_preset_coo
                 print("LLM did not provide any valid replacements.")
                 llm_building_failures.extend(high_confidence_building_failures)
         else:
-            print("No building assignment failures suitable for LLM processing.")
-    else:
-        print("\nLLM integration is disabled or no buildings required LLM intervention.")
-        llm_building_failures.extend(high_confidence_building_failures)
+            print("\nLLM integration is disabled or no buildings required LLM intervention.")
+            llm_building_failures.extend(high_confidence_building_failures)
 
     print(f"LLM pass complete. Matched {llm_building_replacements_made} buildings. {len(llm_building_failures)} remaining failures.")
 
@@ -538,6 +813,10 @@ def process_terrains_xml(terrains_xml_path, ck3_building_keys, attila_preset_coo
 
     total_changes += normal_maps_changes
 
+    # --- Settlement Maps Processing ---
+    settlement_maps_changes = process_settlement_maps(root, settlement_presets, all_valid_factions, screen_name_to_key_map, faction_to_subculture_map)
+    total_changes += settlement_maps_changes
+
     if total_changes > 0:
         summary_parts = []
         if removed_buildings_count > 0: summary_parts.append(f"removed {removed_buildings_count} old building tags")
@@ -550,6 +829,8 @@ def process_terrains_xml(terrains_xml_path, ck3_building_keys, attila_preset_coo
             if len(matched_terrains) > 0: summary_parts.append(f"added {len(matched_terrains)} new terrain tags")
             if llm_terrain_replacements_made > 0: summary_parts.append(f"LLM resolved {llm_terrain_replacements_made} terrain assignments")
             if len(unmatchable_terrains) > 0: summary_parts.append(f"{len(unmatchable_terrains)} terrains unmatchable")
+
+        if settlement_maps_changes > 0: summary_parts.append(f"generated {settlement_maps_changes} settlement map elements")
 
 
         print(f"Finished processing {terrains_xml_path}. Summary: {', '.join(summary_parts)}.")
@@ -566,6 +847,7 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Intelligently map CK3 buildings to Attila battle preset coordinates in terrains.xml.")
     parser.add_argument("--cultures-xml-path", required=True, help="Path to the target Cultures XML file (for context, not modified).")
     parser.add_argument("--terrains-xml-path", required=True, help="Path to the target Terrains XML file to be modified.")
+    parser.add_argument("--factions-xml-path", required=True, help="Path to the Attila Factions XML file for faction reconciliation.") # NEW ARG
     parser.add_argument("--ck3-common-path", required=True, help="Path to the Crusader Kings III 'common' directory.")
     parser.add_argument("--attila-db-path", required=True, help="Path to the Attila debug database directory (e.g., 'debug/919ad/attila/db').")
     parser.add_argument("--attila-map", required=True, help="Name to set for the <Map> element in terrains.xml (e.g., 'campaign_map').")
@@ -592,6 +874,7 @@ if __name__ == "__main__":
     attila_presets_dir = os.path.join(args.attila_db_path, "campaign_battle_presets_tables")
     ck3_terrain_types_dir = os.path.join(args.ck3_common_path, "terrain_types") # NEW: Add terrain types dir
     attila_playable_areas_dir = os.path.join(args.attila_db_path, "campaign_map_playable_areas_tables") # NEW: Add playable areas directory
+    factions_tables_dir = os.path.join(args.attila_db_path, "factions_tables") # NEW: Add factions tables dir
 
     print("Starting terrain building mapping process...")
 
@@ -646,6 +929,24 @@ if __name__ == "__main__":
     else:
         print(f"Loaded {len(ck3_terrain_types)} CK3 terrain types.")
 
+    # NEW: Load data for settlement maps
+    faction_key_to_screen_name_map = get_faction_key_to_screen_name_map(factions_tables_dir)
+    screen_name_to_key_map = {v: k for k, v in faction_key_to_screen_name_map.items()}
+    faction_to_subculture_map = get_faction_to_subculture_map(factions_tables_dir)
+    all_valid_factions = get_all_factions_from_units_xml(args.factions_xml_path)
+    settlement_presets = get_attila_settlement_presets(attila_presets_dir, map_index)
+
+    if not all_valid_factions:
+        print("Warning: No valid factions loaded from Factions XML. Settlement maps will be limited.")
+    else:
+        print(f"Loaded {len(all_valid_factions)} valid factions from '{args.factions_xml_path}'.")
+
+    if not settlement_presets:
+        print("Warning: No Attila settlement presets loaded. Settlement maps will not be generated.")
+    else:
+        print(f"Loaded {len(settlement_presets)} Attila settlement presets.")
+
+
     # Process the XML
     process_terrains_xml(
         args.terrains_xml_path,
@@ -654,5 +955,9 @@ if __name__ == "__main__":
         args.attila_map,
         llm_helper,
         llm_batch_size=args.llm_batch_size,
-        ck3_terrain_types=ck3_terrain_types # NEW: Pass terrain types
+        ck3_terrain_types=ck3_terrain_types, # NEW: Pass terrain types
+        settlement_presets=settlement_presets, # NEW: Pass settlement presets
+        all_valid_factions=all_valid_factions, # NEW: Pass all valid factions
+        screen_name_to_key_map=screen_name_to_key_map, # NEW: Pass screen name to key map
+        faction_to_subculture_map=faction_to_subculture_map # NEW: Pass faction to subculture map
     )
