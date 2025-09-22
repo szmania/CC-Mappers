@@ -650,12 +650,28 @@ def process_settlement_maps(root, settlement_presets, all_valid_factions, screen
 
     # --- Stage 4: XML Generation from all_faction_matches ---
     print("\nGenerating XML for all matched settlement maps...")
-    for faction_screen_name, battle_type_matches in sorted(all_faction_matches.items()):
-        # print(f"  - Generating settlement maps for faction '{faction_screen_name}'.")
+    
+    # 1. Define Canonical Battle Types
+    BATTLE_TYPES = ['settlement_standard', 'settlement_unfortified']
 
-        # XML Generation for each battle_type
-        for battle_type in sorted(battle_type_matches.keys()):
-            presets_for_battle_type = battle_type_matches[battle_type]
+    for faction_screen_name, battle_type_matches in sorted(all_faction_matches.items()):
+        # 2. Modify XML Generation Loop to iterate over BATTLE_TYPES
+        for battle_type in BATTLE_TYPES:
+            # 3. Implement Fallback Logic
+            presets_for_battle_type = battle_type_matches.get(battle_type, [])
+
+            # If no presets exist for this battle_type, use the other as a fallback
+            if not presets_for_battle_type:
+                other_battle_type = 'settlement_unfortified' if battle_type == 'settlement_standard' else 'settlement_standard'
+                fallback_source_presets = battle_type_matches.get(other_battle_type, [])
+                
+                if fallback_source_presets:
+                    presets_for_battle_type = fallback_source_presets
+                    print(f"  -> INFO: Faction '{faction_screen_name}' has no presets for '{battle_type}'. Using presets from '{other_battle_type}' as a fallback.")
+                else:
+                    # This is a safeguard; if a faction has no presets for either type, it shouldn't be in all_faction_matches.
+                    print(f"  -> WARNING: Faction '{faction_screen_name}' has no presets for '{battle_type}' and no fallback presets. Skipping tag generation for this battle type.")
+                    continue # Skip to the next battle_type
 
             # Create <Settlement> element
             settlement_element = ET.SubElement(settlement_maps_element, 'Settlement', {
@@ -774,7 +790,7 @@ def process_terrains_xml(terrains_xml_path, ck3_building_keys, attila_preset_coo
     if not no_historic_maps:
         # Ensure <Terrains><Historic_Maps> structure
         historic_maps_container = root.find('Historic_Maps')
-        if historic_maps_container === None:
+        if historic_maps_container is None:
             historic_maps_container = ET.SubElement(root, 'Historic_Maps')
             total_changes += 1 # Count creation of new element
 
