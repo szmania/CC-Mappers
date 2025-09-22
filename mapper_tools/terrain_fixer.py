@@ -467,6 +467,9 @@ def process_settlement_maps(root, settlement_presets, all_valid_factions, screen
     if not all_attila_keys:
         print("Warning: No unique variant 'key' values found in settlement presets. LLM fallback will be limited.")
 
+    # NEW: Create a global fallback pool for non-unique presets
+    global_non_unique_presets = [p for p in settlement_presets if p['is_unique_settlement'].lower() != 'true']
+
     # Data structures to store matches and failures
     all_faction_matches = defaultdict(lambda: defaultdict(list)) # {faction_screen_name: {battle_type: [preset1, preset2, ...]}}
     procedural_failures = [] # List of factions that failed procedural matching
@@ -520,7 +523,7 @@ def process_settlement_maps(root, settlement_presets, all_valid_factions, screen
             # Also consider Levenshtein ratio for a more nuanced score
             lev_ratio_faction = Levenshtein.ratio(_normalize_name_for_match(faction_screen_name), base_normalized)
             lev_ratio_subculture = Levenshtein.ratio(_normalize_name_for_match(faction_subculture, prefixes_to_remove=['subculture_']), base_normalized) if faction_subculture else 0
-            current_score += (lev_ratio_faction + lev_ratio_subculture) * 5 # Weight Levenshtein heavily
+            current_score += (lev_ratio_faction * 10) + (lev_ratio_subculture * 2) # Heavily weight faction name match
 
             if current_score > highest_score:
                 highest_score = current_score
@@ -675,13 +678,25 @@ def process_settlement_maps(root, settlement_presets, all_valid_factions, screen
 
             # NEW LOGIC: Ensure at least one non-unique settlement if only unique ones are present
             if selected_variants and all(p['is_unique_settlement'].lower() == 'true' for p in selected_variants):
-                if non_unique_presets:
-                    # Add a random non-unique preset if available
-                    generic_preset = random.choice(non_unique_presets)
-                    selected_variants.append(generic_preset)
-                    print(f"    -> INFO: Added a generic non-unique settlement '{generic_preset['key']}' for faction '{faction_screen_name}' (battle_type: '{battle_type}') to ensure variety.")
+                
+                # Try to find a non-unique preset from the current architectural style first.
+                non_unique_in_style = [p for p in presets_for_battle_type if p['is_unique_settlement'].lower() != 'true']
+                
+                fallback_preset = None
+                if non_unique_in_style:
+                    fallback_preset = random.choice(non_unique_in_style)
                 else:
-                    print(f"    -> WARNING: Faction '{faction_screen_name}' (battle_type: '{battle_type}') has only unique settlements selected, but no non-unique presets are available to add for variety.")
+                    # If the current style has no non-unique presets, fall back to the global pool.
+                    # Filter the global pool by the current battle_type for thematic consistency.
+                    global_fallback_pool = [p for p in global_non_unique_presets if p['battle_type'] == battle_type]
+                    if global_fallback_pool:
+                        fallback_preset = random.choice(global_fallback_pool)
+
+                if fallback_preset:
+                    selected_variants.append(fallback_preset)
+                    print(f"    -> INFO: Added a non-unique settlement '{fallback_preset['key']}' for faction '{faction_screen_name}' (battle_type: '{battle_type}') to ensure variety.")
+                else:
+                    print(f"    -> WARNING: Faction '{faction_screen_name}' (battle_type: '{battle_type}') has only unique settlements selected, but no non-unique presets are available in any pool to add for variety.")
 
 
             if not selected_variants:
@@ -759,7 +774,7 @@ def process_terrains_xml(terrains_xml_path, ck3_building_keys, attila_preset_coo
     if not no_historic_maps:
         # Ensure <Terrains><Historic_Maps> structure
         historic_maps_container = root.find('Historic_Maps')
-        if historic_maps_container is None:
+        if historic_maps_container === None:
             historic_maps_container = ET.SubElement(root, 'Historic_Maps')
             total_changes += 1 # Count creation of new element
 
