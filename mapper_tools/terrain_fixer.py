@@ -351,6 +351,13 @@ def _normalize_name_for_match(name, prefixes_to_remove=None):
                 break
     return normalized
 
+def _generate_keywords(name):
+    """Generates a set of keywords from a normalized name."""
+    if not name:
+        return set()
+    # Split by space, filter out short common words, and return as a set
+    return {word for word in name.split() if len(word) > 2}
+
 def _find_best_preset_match(ck3_key, attila_preset_keys, threshold=0.85):
     """
     Finds the best matching Attila preset key for a given CK3 building key or terrain type
@@ -455,7 +462,6 @@ def process_settlement_maps(root, settlement_presets, all_valid_factions, screen
     for faction_screen_name in sorted(list(all_valid_factions)):
         faction_key = screen_name_to_key_map.get(faction_screen_name)
         if not faction_key:
-            # print(f"  -> WARNING: Could not find faction key for screen name '{faction_screen_name}'. Skipping procedural match.")
             # Still add to failures if LLM is enabled, as LLM might find a match
             if llm_helper:
                 procedural_failures.append({
@@ -469,22 +475,20 @@ def process_settlement_maps(root, settlement_presets, all_valid_factions, screen
         faction_subculture = faction_to_subculture_map.get(faction_key)
         current_procedural_matches = defaultdict(list) # {battle_type: [preset1, preset2, ...]}
 
-        # Filter settlement presets for the current faction
+        # Generate keywords for faction and subculture names
+        faction_keywords = _generate_keywords(_normalize_name_for_match(faction_screen_name))
+        subculture_keywords = _generate_keywords(_normalize_name_for_match(faction_subculture, prefixes_to_remove=['subculture_'])) if faction_subculture else set()
+
         for preset in settlement_presets:
             tile_upgrade_normalized = _normalize_name_for_match(preset['tile_upgrade'])
-            faction_screen_normalized = _normalize_name_for_match(faction_screen_name)
+            tile_upgrade_keywords = _generate_keywords(tile_upgrade_normalized)
 
-            # Check against faction screen name
-            ratio_screen = Levenshtein.ratio(tile_upgrade_normalized, faction_screen_normalized)
+            # Check for keyword intersection
+            intersection_faction = faction_keywords.intersection(tile_upgrade_keywords)
+            intersection_subculture = subculture_keywords.intersection(tile_upgrade_keywords)
 
-            # Check against subculture if available
-            ratio_subculture = 0
-            if faction_subculture:
-                faction_subculture_normalized = _normalize_name_for_match(faction_subculture, prefixes_to_remove=['subculture_'])
-                ratio_subculture = Levenshtein.ratio(tile_upgrade_normalized, faction_subculture_normalized)
-
-            # Use the higher ratio for matching
-            if max(ratio_screen, ratio_subculture) >= 0.7: # Threshold for matching
+            # A match is considered if there's at least one common keyword
+            if len(intersection_faction) >= 1 or len(intersection_subculture) >= 1:
                 current_procedural_matches[preset['battle_type']].append(preset)
 
         if current_procedural_matches:
