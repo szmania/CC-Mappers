@@ -509,9 +509,9 @@ def process_unique_settlement_maps(root, unique_settlement_presets):
         })
         unique_settlement_changes += 1
 
+        # Removed the redundant 'is_unique_settlement' attribute
         variant_element = ET.SubElement(settlement_unique_element, 'Variant', {
-            'key': preset['key'],
-            'is_unique_settlement': preset['is_unique_settlement']
+            'key': preset['key']
         })
         unique_settlement_changes += 1
 
