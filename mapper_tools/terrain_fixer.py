@@ -121,6 +121,7 @@ def get_faction_to_subculture_map(tsv_dir):
                             subculture_key = row[subculture_idx]
                             if faction_key and subculture_key:
                                 faction_to_subculture_map[faction_key] = subculture_key
+                                faction_to_subculture_map[faction_key] = subculture_key
             except Exception as e:
                 print(f"Error processing faction table TSV file {filename}: {e}")
     return faction_to_subculture_map
@@ -305,7 +306,7 @@ def get_attila_settlement_presets(directory, required_map_index):
                     try:
                         key_idx = header.index("key")
                         battle_type_idx = header.index("battle_type")
-                        tile_upgrade_idx = header.index("tile_upgrade")
+                        # tile_upgrade_idx = header.index("key") # DELETED: This column does not exist
                         is_unique_settlement_idx = header.index("is_unique_settlement")
                         coord_x_idx = header.index("coord_x")
                         coord_y_idx = header.index("coord_y")
@@ -315,7 +316,7 @@ def get_attila_settlement_presets(directory, required_map_index):
 
                     for row in reader:
                         if (len(row) > key_idx and len(row) > battle_type_idx and
-                            len(row) > tile_upgrade_idx and len(row) > is_unique_settlement_idx and
+                            len(row) > is_unique_settlement_idx and
                             len(row) > coord_x_idx and len(row) > coord_y_idx and
                             len(row) > campaign_map_idx and row[key_idx]):
 
@@ -324,9 +325,8 @@ def get_attila_settlement_presets(directory, required_map_index):
                                (row[battle_type_idx] == 'settlement_standard' or row[battle_type_idx] == 'settlement_unfortified'):
 
                                 preset_data = {
-                                    'key': row[key_idx],
                                     'battle_type': row[battle_type_idx],
-                                    'tile_upgrade': row[tile_upgrade_idx],
+                                    'key': row[key_idx], # MODIFIED: Use key_idx for tile_upgrade
                                     'is_unique_settlement': row[is_unique_settlement_idx],
                                     'x': row[coord_x_idx],
                                     'y': row[coord_y_idx]
@@ -444,9 +444,9 @@ def process_settlement_maps(root, settlement_presets, all_valid_factions, screen
         return settlement_changes
 
     # Collect all unique tile_upgrade values from settlement_presets for LLM pool
-    all_attila_tile_upgrades = sorted(list(set(p['tile_upgrade'] for p in settlement_presets)))
-    if not all_attila_tile_upgrades:
-        print("Warning: No unique 'tile_upgrade' values found in settlement presets. LLM fallback will be limited.")
+    all_attila_keys = sorted(list(set(p['key'] for p in settlement_presets)))
+    if not all_attila_keys:
+        print("Warning: No unique variant 'key' values found in settlement presets. LLM fallback will be limited.")
 
     # Data structures to store matches and failures
     all_faction_matches = defaultdict(lambda: defaultdict(list)) # {faction_screen_name: {battle_type: [preset1, preset2, ...]}}
@@ -468,7 +468,7 @@ def process_settlement_maps(root, settlement_presets, all_valid_factions, screen
                     'id': faction_screen_name,
                     'faction_name': faction_screen_name,
                     'subculture': faction_to_subculture_map.get(faction_key), # May be None
-                    'tile_upgrade_pool': all_attila_tile_upgrades
+                    'preset_pool': all_attila_keys # MODIFIED: Changed key to 'preset_pool'
                 })
             continue
 
@@ -480,12 +480,12 @@ def process_settlement_maps(root, settlement_presets, all_valid_factions, screen
         subculture_keywords = _generate_keywords(_normalize_name_for_match(faction_subculture, prefixes_to_remove=['subculture_'])) if faction_subculture else set()
 
         for preset in settlement_presets:
-            tile_upgrade_normalized = _normalize_name_for_match(preset['tile_upgrade'])
-            tile_upgrade_keywords = _generate_keywords(tile_upgrade_normalized)
+            key_normalized = _normalize_name_for_match(preset['key'])
+            key_keywords = _generate_keywords(key_normalized)
 
             # Check for keyword intersection
-            intersection_faction = faction_keywords.intersection(tile_upgrade_keywords)
-            intersection_subculture = subculture_keywords.intersection(tile_upgrade_keywords)
+            intersection_faction = faction_keywords.intersection(key_keywords)
+            intersection_subculture = subculture_keywords.intersection(key_keywords)
 
             # A match is considered if there's at least one common keyword
             if len(intersection_faction) >= 1 or len(intersection_subculture) >= 1:
@@ -500,7 +500,7 @@ def process_settlement_maps(root, settlement_presets, all_valid_factions, screen
                 'id': faction_screen_name,
                 'faction_name': faction_screen_name,
                 'subculture': faction_subculture,
-                'tile_upgrade_pool': all_attila_tile_upgrades
+                'preset_pool': all_attila_keys # MODIFIED: Changed key to 'preset_pool'
             })
 
     print(f"Procedural pass complete. Matched {len(all_faction_matches)} factions. {len(procedural_failures)} failures.")
@@ -530,20 +530,30 @@ def process_settlement_maps(root, settlement_presets, all_valid_factions, screen
 
             if all_llm_results:
                 print(f"Applying LLM suggestions from {len(all_llm_results)} total resolved requests...")
-                for req_id, chosen_tile_upgrade in all_llm_results.items():
-                    if chosen_tile_upgrade:
-                        # Find all presets matching this chosen_tile_upgrade
-                        llm_matched_presets = [p for p in settlement_presets if p['tile_upgrade'] == chosen_tile_upgrade]
+                for req_id, llm_suggestion in all_llm_results.items():
+                    if not isinstance(llm_suggestion, dict) or "chosen_preset" not in llm_suggestion:
+                        print(f"  -> LLM WARNING: Invalid LLM suggestion format for faction '{req_id}'. Skipping.")
+                        continue
+
+                    confidence = llm_suggestion.get("confidence_score", 0)
+                    if confidence < 3:
+                        print(f"  -> LLM WARNING: Discarding low-confidence ({confidence}/5) match for faction '{req_id}'.")
+                        continue
+                    chosen_key = llm_suggestion.get("chosen_preset")
+
+                    if chosen_key:
+                        # Find all presets matching this chosen_key
+                        llm_matched_presets = [p for p in settlement_presets if p['key'] == chosen_key]
                         if llm_matched_presets:
                             # Group by battle_type and add to all_faction_matches
                             for preset in llm_matched_presets:
                                 all_faction_matches[req_id][preset['battle_type']].append(preset)
                             llm_settlement_replacements_made += 1
-                            print(f"  -> LLM SUCCESS: Faction '{req_id}' -> Tile Upgrade '{chosen_tile_upgrade}'.")
+                            print(f"  -> LLM SUCCESS: Faction '{req_id}' -> Tile Upgrade '{chosen_key}'.")
                         else:
-                            print(f"  -> LLM WARNING: Chosen tile_upgrade '{chosen_tile_upgrade}' for faction '{req_id}' has no corresponding presets. Skipping.")
+                            print(f"  -> LLM WARNING: Chosen settlement variant key '{chosen_key}' for faction '{req_id}' has no corresponding presets. Skipping.")
                     else:
-                        print(f"  -> LLM WARNING: No chosen tile_upgrade for faction '{req_id}'.")
+                        print(f"  -> LLM WARNING: No chosen settlement variant key for faction '{req_id}'.")
             else:
                 print("LLM did not provide any valid replacements for settlement assignments.")
         else:
@@ -551,7 +561,35 @@ def process_settlement_maps(root, settlement_presets, all_valid_factions, screen
 
     print(f"LLM pass complete. Matched {llm_settlement_replacements_made} factions.")
 
-    # --- Stage 3: XML Generation from all_faction_matches ---
+    # --- Stage 3: Fallback for Unmatched Factions ---
+    print("\nApplying fallback for any factions that still have no settlement matches...")
+    fallback_count = 0
+
+    # Identify generic non-unique presets for fallback
+    non_unique_presets = [p for p in settlement_presets if p['is_unique_settlement'].lower() != 'true']
+    generic_town_presets = [p for p in non_unique_presets if "town" in p['key'].lower()]
+
+    fallback_pool = generic_town_presets if generic_town_presets else non_unique_presets
+
+    if not fallback_pool:
+        print("  -> WARNING: No suitable generic fallback presets found. Some factions may remain unmapped.")
+    else:
+        for faction_screen_name in sorted(list(all_valid_factions)):
+            if faction_screen_name not in all_faction_matches:
+                if fallback_pool:
+                    chosen_fallback_preset = random.choice(fallback_pool)
+                    # Add to all_faction_matches for both battle types
+                    all_faction_matches[faction_screen_name]['settlement_standard'].append(chosen_fallback_preset)
+                    all_faction_matches[faction_screen_name]['settlement_unfortified'].append(chosen_fallback_preset)
+                    fallback_count += 1
+                    print(f"  -> Fallback: Assigned generic preset '{chosen_fallback_preset['key']}' to unmatched faction '{faction_screen_name}'.")
+                else:
+                    print(f"  -> WARNING: Faction '{faction_screen_name}' remains unmapped as no fallback presets are available.")
+    if fallback_count > 0:
+        print(f"Applied fallback for {fallback_count} factions.")
+        settlement_changes += fallback_count * 2 # Each fallback adds 2 entries (standard + unfortified)
+
+    # --- Stage 4: XML Generation from all_faction_matches ---
     print("\nGenerating XML for all matched settlement maps...")
     for faction_screen_name, battle_type_matches in sorted(all_faction_matches.items()):
         # print(f"  - Generating settlement maps for faction '{faction_screen_name}'.")
@@ -567,23 +605,15 @@ def process_settlement_maps(root, settlement_presets, all_valid_factions, screen
             })
             settlement_changes += 1
 
-            # Variant Selection: Max 10 variants, prioritize unique, then random
+            # Variant Selection: Select only one variant, prioritizing unique
             unique_presets = [p for p in presets_for_battle_type if p['is_unique_settlement'].lower() == 'true']
             non_unique_presets = [p for p in presets_for_battle_type if p['is_unique_settlement'].lower() != 'true']
-
+            
             selected_variants = []
-            selected_variants.extend(unique_presets)
-
-            remaining_slots = 10 - len(selected_variants)
-            if remaining_slots > 0:
-                # Randomly sample from non-unique presets if needed
-                if len(non_unique_presets) > remaining_slots:
-                    selected_variants.extend(random.sample(non_unique_presets, remaining_slots))
-                else:
-                    selected_variants.extend(non_unique_presets)
-
-            # If still more than 10 (e.g., many unique presets), trim to 10
-            selected_variants = selected_variants[:10]
+            if unique_presets:
+                selected_variants.append(random.choice(unique_presets))
+            elif non_unique_presets:
+                selected_variants.append(random.choice(non_unique_presets))
 
             if not selected_variants:
                 print(f"    -> WARNING: No suitable variants selected for battle_type '{battle_type}' for faction '{faction_screen_name}'. Removing empty <Settlement> tag.")
@@ -593,7 +623,7 @@ def process_settlement_maps(root, settlement_presets, all_valid_factions, screen
 
             for variant_preset in selected_variants:
                 variant_element = ET.SubElement(settlement_element, 'Variant', {
-                    'tile_upgrade': variant_preset['tile_upgrade'],
+                    'key': variant_preset['key'],
                     'is_unique_settlement': variant_preset['is_unique_settlement']
                 })
                 settlement_changes += 1
