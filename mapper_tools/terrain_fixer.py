@@ -237,7 +237,7 @@ def get_attila_preset_coords(directory, required_map_index):
     """
     preset_coords = {}
 
-    if required_map_index is None:
+    if required_map_index == None:
         print("Warning: No required_map_index provided. Returning empty preset coordinates.")
         return {}
 
@@ -267,7 +267,7 @@ def get_attila_preset_coords(directory, required_map_index):
                         if (len(row) > key_idx and len(row) > coord_x_idx and
                             len(row) > coord_y_idx and len(row) > campaign_map_idx and
                             row[key_idx]):
-                            
+
                             # Filter by campaign_map index
                             if row[campaign_map_idx] == required_map_index:
                                 preset_key = row[key_idx]
@@ -284,7 +284,7 @@ def get_attila_settlement_presets(directory, required_map_index):
     """
     settlement_presets = []
 
-    if required_map_index is None:
+    if required_map_index == None:
         print("Warning: No required_map_index provided. Returning empty settlement presets.")
         return []
 
@@ -318,11 +318,11 @@ def get_attila_settlement_presets(directory, required_map_index):
                             len(row) > tile_upgrade_idx and len(row) > is_unique_settlement_idx and
                             len(row) > coord_x_idx and len(row) > coord_y_idx and
                             len(row) > campaign_map_idx and row[key_idx]):
-                            
+
                             # Filter by campaign_map index and battle_type
                             if row[campaign_map_idx] == required_map_index and \
                                (row[battle_type_idx] == 'settlement_standard' or row[battle_type_idx] == 'settlement_unfortified'):
-                                
+
                                 preset_data = {
                                     'key': row[key_idx],
                                     'battle_type': row[battle_type_idx],
@@ -404,7 +404,7 @@ def _generate_nearby_coords(base_x_str, base_y_str, count=NORMAL_MAP_COORDS_COUN
 
 # --- Core Processing Function ---
 
-def process_settlement_maps(root, settlement_presets, all_valid_factions, screen_name_to_key_map, faction_to_subculture_map):
+def process_settlement_maps(root, settlement_presets, all_valid_factions, screen_name_to_key_map, faction_to_subculture_map, llm_helper=None, llm_batch_size=50):
     """
     Processes settlement map configurations, matching factions to settlement presets
     and generating the XML structure.
@@ -436,30 +436,47 @@ def process_settlement_maps(root, settlement_presets, all_valid_factions, screen
         print("Warning: No valid factions found. Skipping settlement map generation.")
         return settlement_changes
 
+    # Collect all unique tile_upgrade values from settlement_presets for LLM pool
+    all_attila_tile_upgrades = sorted(list(set(p['tile_upgrade'] for p in settlement_presets)))
+    if not all_attila_tile_upgrades:
+        print("Warning: No unique 'tile_upgrade' values found in settlement presets. LLM fallback will be limited.")
+
+    # Data structures to store matches and failures
+    all_faction_matches = defaultdict(lambda: defaultdict(list)) # {faction_screen_name: {battle_type: [preset1, preset2, ...]}}
+    procedural_failures = [] # List of factions that failed procedural matching
+
     # Create reverse map for screen names to faction keys
     key_to_screen_name_map = {v: k for k, v in screen_name_to_key_map.items()}
 
     print(f"Found {len(all_valid_factions)} valid factions and {len(settlement_presets)} settlement presets.")
 
-    # Iterate through each faction
+    # --- Stage 1: Procedural Matching ---
+    print("\nRunning procedural pass for settlement assignments...")
     for faction_screen_name in sorted(list(all_valid_factions)):
         faction_key = screen_name_to_key_map.get(faction_screen_name)
         if not faction_key:
-            print(f"  -> WARNING: Could not find faction key for screen name '{faction_screen_name}'. Skipping.")
+            # print(f"  -> WARNING: Could not find faction key for screen name '{faction_screen_name}'. Skipping procedural match.")
+            # Still add to failures if LLM is enabled, as LLM might find a match
+            if llm_helper:
+                procedural_failures.append({
+                    'id': faction_screen_name,
+                    'faction_name': faction_screen_name,
+                    'subculture': faction_to_subculture_map.get(faction_key), # May be None
+                    'tile_upgrade_pool': all_attila_tile_upgrades
+                })
             continue
 
         faction_subculture = faction_to_subculture_map.get(faction_key)
-        
-        matched_presets_for_faction = defaultdict(list) # {battle_type: [preset1, preset2, ...]}
+        current_procedural_matches = defaultdict(list) # {battle_type: [preset1, preset2, ...]}
 
         # Filter settlement presets for the current faction
         for preset in settlement_presets:
             tile_upgrade_normalized = _normalize_name_for_match(preset['tile_upgrade'])
             faction_screen_normalized = _normalize_name_for_match(faction_screen_name)
-            
+
             # Check against faction screen name
             ratio_screen = Levenshtein.ratio(tile_upgrade_normalized, faction_screen_normalized)
-            
+
             # Check against subculture if available
             ratio_subculture = 0
             if faction_subculture:
@@ -468,18 +485,77 @@ def process_settlement_maps(root, settlement_presets, all_valid_factions, screen
 
             # Use the higher ratio for matching
             if max(ratio_screen, ratio_subculture) >= 0.7: # Threshold for matching
-                matched_presets_for_faction[preset['battle_type']].append(preset)
-        
-        if not matched_presets_for_faction:
-            # print(f"  -> INFO: No settlement presets found for faction '{faction_screen_name}'.")
-            continue
+                current_procedural_matches[preset['battle_type']].append(preset)
 
-        print(f"  - Processing settlement maps for faction '{faction_screen_name}' (key: {faction_key}).")
+        if current_procedural_matches:
+            all_faction_matches[faction_screen_name].update(current_procedural_matches)
+            # print(f"  -> Procedural match found for faction '{faction_screen_name}'.")
+        else:
+            print(f"  -> INFO: No procedural settlement presets found for faction '{faction_screen_name}'. Queued for LLM.")
+            procedural_failures.append({
+                'id': faction_screen_name,
+                'faction_name': faction_screen_name,
+                'subculture': faction_subculture,
+                'tile_upgrade_pool': all_attila_tile_upgrades
+            })
+
+    print(f"Procedural pass complete. Matched {len(all_faction_matches)} factions. {len(procedural_failures)} failures.")
+
+    # --- Stage 2: LLM Fallback for Failures ---
+    llm_settlement_replacements_made = 0
+    if llm_helper and procedural_failures:
+        print(f"\nAttempting to resolve {len(procedural_failures)} missing settlement assignments with LLM...")
+
+        llm_requests = procedural_failures # Already in the correct format
+
+        if llm_requests:
+            all_llm_results = {}
+            num_batches = (len(llm_requests) + llm_batch_size - 1) // llm_batch_size
+
+            for i in range(num_batches):
+                start_index = i * llm_batch_size
+                end_index = min((i + 1) * llm_batch_size, len(llm_requests))
+                current_batch = llm_requests[start_index:end_index]
+                print(f"  -> Sending LLM batch {i+1}/{num_batches} with {len(current_batch)} requests...")
+
+                batch_llm_results = llm_helper.get_batch_settlement_assignments(current_batch)
+                if batch_llm_results:
+                    all_llm_results.update(batch_llm_results)
+                else:
+                    print(f"  -> WARNING: LLM did not provide any valid replacements for batch {i+1}.")
+
+            if all_llm_results:
+                print(f"Applying LLM suggestions from {len(all_llm_results)} total resolved requests...")
+                for req_id, chosen_tile_upgrade in all_llm_results.items():
+                    if chosen_tile_upgrade:
+                        # Find all presets matching this chosen_tile_upgrade
+                        llm_matched_presets = [p for p in settlement_presets if p['tile_upgrade'] == chosen_tile_upgrade]
+                        if llm_matched_presets:
+                            # Group by battle_type and add to all_faction_matches
+                            for preset in llm_matched_presets:
+                                all_faction_matches[req_id][preset['battle_type']].append(preset)
+                            llm_settlement_replacements_made += 1
+                            print(f"  -> LLM SUCCESS: Faction '{req_id}' -> Tile Upgrade '{chosen_tile_upgrade}'.")
+                        else:
+                            print(f"  -> LLM WARNING: Chosen tile_upgrade '{chosen_tile_upgrade}' for faction '{req_id}' has no corresponding presets. Skipping.")
+                    else:
+                        print(f"  -> LLM WARNING: No chosen tile_upgrade for faction '{req_id}'.")
+            else:
+                print("LLM did not provide any valid replacements for settlement assignments.")
+        else:
+            print("\nLLM integration is disabled or no settlement assignments required LLM intervention.")
+
+    print(f"LLM pass complete. Matched {llm_settlement_replacements_made} factions.")
+
+    # --- Stage 3: XML Generation from all_faction_matches ---
+    print("\nGenerating XML for all matched settlement maps...")
+    for faction_screen_name, battle_type_matches in sorted(all_faction_matches.items()):
+        # print(f"  - Generating settlement maps for faction '{faction_screen_name}'.")
 
         # XML Generation for each battle_type
-        for battle_type in sorted(matched_presets_for_faction.keys()):
-            presets_for_battle_type = matched_presets_for_faction[battle_type]
-            
+        for battle_type in sorted(battle_type_matches.keys()):
+            presets_for_battle_type = battle_type_matches[battle_type]
+
             # Create <Settlement> element
             settlement_element = ET.SubElement(settlement_maps_element, 'Settlement', {
                 'faction': faction_screen_name,
@@ -501,7 +577,7 @@ def process_settlement_maps(root, settlement_presets, all_valid_factions, screen
                     selected_variants.extend(random.sample(non_unique_presets, remaining_slots))
                 else:
                     selected_variants.extend(non_unique_presets)
-            
+
             # If still more than 10 (e.g., many unique presets), trim to 10
             selected_variants = selected_variants[:10]
 
@@ -523,7 +599,7 @@ def process_settlement_maps(root, settlement_presets, all_valid_factions, screen
                     'y': variant_preset['y']
                 })
                 settlement_changes += 1
-    
+
     if settlement_changes > 0:
         print(f"Successfully generated settlement maps. Total changes: {settlement_changes}.")
     else:
@@ -824,7 +900,7 @@ def process_terrains_xml(terrains_xml_path, ck3_building_keys, attila_preset_coo
     total_changes += normal_maps_changes
 
     # --- Settlement Maps Processing ---
-    settlement_maps_changes = process_settlement_maps(root, settlement_presets, all_valid_factions, screen_name_to_key_map, faction_to_subculture_map)
+    settlement_maps_changes = process_settlement_maps(root, settlement_presets, all_valid_factions, screen_name_to_key_map, faction_to_subculture_map, llm_helper, llm_batch_size)
     total_changes += settlement_maps_changes
 
     if total_changes > 0:
