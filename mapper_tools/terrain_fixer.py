@@ -8,6 +8,9 @@ import json
 from collections import defaultdict
 import random
 
+# --- Constants ---
+NORMAL_MAP_COORDS_COUNT = 50
+
 # --- Helper functions (copied from faction_fixer.py) ---
 
 def prompt_to_create_xml(file_path, root_tag_name):
@@ -224,7 +227,7 @@ def _find_best_preset_match(ck3_key, attila_preset_keys, threshold=0.85):
         return best_match_preset
     return None
 
-def _generate_nearby_coords(base_x_str, base_y_str, count=20, max_delta=0.1):
+def _generate_nearby_coords(base_x_str, base_y_str, count=NORMAL_MAP_COORDS_COUNT, max_delta=0.1):
     """
     Generates a list of randomized coordinate pairs around a central point.
     Coordinates are clamped to [0.0, 0.999] and formatted to 3 decimal places.
@@ -514,7 +517,7 @@ def process_terrains_xml(terrains_xml_path, ck3_building_keys, attila_preset_coo
 
         print(f"Low-confidence pass complete. Matched {low_confidence_terrain_replacements} terrains. {len(unmatchable_terrains)} unmatchable terrains.")
 
-        normal_maps_changes += len(matched_terrains) * (1 + 20) # 1 Terrain tag + 20 Map tags per terrain
+        normal_maps_changes += len(matched_terrains) * (1 + NORMAL_MAP_COORDS_COUNT) # 1 Terrain tag + NORMAL_MAP_COORDS_COUNT Map tags per terrain
 
         # --- Final XML Population for Terrains ---
         if matched_terrains:
@@ -531,7 +534,7 @@ def process_terrains_xml(terrains_xml_path, ck3_building_keys, attila_preset_coo
                     # print(f"  - Added <Terrain ck3_name='{ck3_terrain_key}'> with {len(nearby_coords)} map points.")
                 else:
                     print(f"  -> ERROR: Coordinates not found for Attila preset '{attila_preset_key}' (matched from CK3 Terrain '{ck3_terrain_key}'). Skipping.")
-                    normal_maps_changes -= (1 + 20) # Decrement if we couldn't add it
+                    normal_maps_changes -= (1 + NORMAL_MAP_COORDS_COUNT) # Decrement if we couldn't add it
 
     total_changes += normal_maps_changes
 
