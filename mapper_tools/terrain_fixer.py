@@ -609,7 +609,8 @@ def process_settlement_maps(root, settlement_presets, all_valid_factions, screen
 
 
 def process_terrains_xml(terrains_xml_path, ck3_building_keys, attila_preset_coords, attila_map_name, llm_helper=None, llm_batch_size=50, ck3_terrain_types=None,
-                         settlement_presets=None, all_valid_factions=None, screen_name_to_key_map=None, faction_to_subculture_map=None):
+                         settlement_presets=None, all_valid_factions=None, screen_name_to_key_map=None, faction_to_subculture_map=None,
+                         no_historic_maps=False, no_normal_maps=False):
     """
     Processes the terrains XML file to map CK3 buildings to Attila battle presets
     and CK3 terrain types to Attila normal map presets, and generates settlement maps.
@@ -623,7 +624,17 @@ def process_terrains_xml(terrains_xml_path, ck3_building_keys, attila_preset_coo
         print(f"Error parsing XML file {terrains_xml_path}: {e}. Skipping.")
         return 0
 
+    # Initialize summary variables to prevent NameError if blocks are skipped
     total_changes = 0
+    removed_maps_count = 0
+    matched_buildings = {}
+    llm_building_replacements_made = 0
+    unmatchable_buildings = []
+    normal_maps_changes = 0
+    removed_terrains_count = 0
+    matched_terrains = {}
+    llm_terrain_replacements_made = 0
+    unmatchable_terrains = []
 
     # NEW: Create or update the top-level <Map> tag for the campaign map name
     top_level_map_element = root.find('Map')
@@ -642,181 +653,60 @@ def process_terrains_xml(terrains_xml_path, ck3_building_keys, attila_preset_coo
 
 
     # --- Historic Maps (Buildings) Processing ---
-    # Ensure <Terrains><Historic_maps> structure
-    historic_maps_container = root.find('Historic_maps')
-    if historic_maps_container is None:
-        historic_maps_container = ET.SubElement(root, 'Historic_maps')
-        total_changes += 1 # Count creation of new element
+    if not no_historic_maps:
+        # Ensure <Terrains><Historic_Maps> structure
+        historic_maps_container = root.find('Historic_Maps')
+        if historic_maps_container is None:
+            historic_maps_container = ET.SubElement(root, 'Historic_Maps')
+            total_changes += 1 # Count creation of new element
 
-    # Remove all existing <Map> tags from within <Historic_maps> to start fresh
-    removed_maps_count = 0
-    for map_element_to_remove in list(historic_maps_container.findall('Map')):
-        historic_maps_container.remove(map_element_to_remove)
-        removed_maps_count += 1
-    if removed_maps_count > 0:
-        print(f"Removed {removed_maps_count} existing historic map tags from the XML.")
-        total_changes += removed_maps_count
+        # Remove all existing <Map> tags from within <Historic_Maps> to start fresh
+        removed_maps_count = 0
+        for map_element_to_remove in list(historic_maps_container.findall('Map')):
+            historic_maps_container.remove(map_element_to_remove)
+            removed_maps_count += 1
+        if removed_maps_count > 0:
+            print(f"Removed {removed_maps_count} existing historic map tags from the XML.")
+            total_changes += removed_maps_count
 
-    if attila_map_name:
-        # The old logic for setting map_element name is removed as it's now handled by top_level_map_element
-        pass
-    elif 'name' not in historic_maps_container.attrib: # Check if historic_maps_container itself needs a name if no top-level map
-        pass # No longer setting name here, handled by top-level map
+        if attila_map_name:
+            # The old logic for setting map_element name is removed as it's now handled by top_level_map_element
+            pass
+        elif 'name' not in historic_maps_container.attrib: # Check if historic_maps_container itself needs a name if no top-level map
+            pass # No longer setting name here, handled by top-level map
 
-    # Get all available Attila preset keys
-    attila_preset_keys = set(attila_preset_coords.keys())
-    if not attila_preset_keys:
-        print("Error: No Attila battle presets found. Cannot map buildings or terrains. Aborting.")
-        return 0
+        # Get all available Attila preset keys
+        attila_preset_keys = set(attila_preset_coords.keys())
+        if not attila_preset_keys:
+            print("Error: No Attila battle presets found. Cannot map buildings or terrains. Aborting.")
+            return 0
 
-    print(f"Found {len(ck3_building_keys)} CK3 building keys and {len(attila_preset_keys)} Attila battle presets.")
+        print(f"Found {len(ck3_building_keys)} CK3 building keys and {len(attila_preset_keys)} Attila battle presets.")
 
-    matched_buildings = {} # {ck3_key: attila_preset_key}
-    high_confidence_building_failures = []
+        matched_buildings = {} # {ck3_key: attila_preset_key}
+        high_confidence_building_failures = []
 
-    # --- Stage 1: High-Confidence Procedural Pass for Buildings ---
-    print("\nRunning high-confidence procedural pass for building assignments...")
-    for ck3_key in sorted(list(ck3_building_keys)): # Sort for deterministic output
-        best_match = _find_best_preset_match(ck3_key, attila_preset_keys, threshold=0.85)
-        if best_match:
-            matched_buildings[ck3_key] = best_match
-            print(f"  -> High-confidence match: CK3 '{ck3_key}' -> Attila '{best_match}'.")
-        else:
-            high_confidence_building_failures.append({'id': ck3_key, 'preset_pool': sorted(list(attila_preset_keys))})
-            print(f"  -> No high-confidence match for CK3 '{ck3_key}'. Queued for LLM/low-confidence processing.")
-
-    print(f"High-confidence pass complete. Matched {len(matched_buildings)} buildings. {len(high_confidence_building_failures)} failures.")
-
-    # --- Stage 2: LLM Pass for Buildings ---
-    llm_building_replacements_made = 0
-    llm_building_failures = []
-    if llm_helper and high_confidence_building_failures:
-        print(f"\nAttempting to resolve {len(high_confidence_building_failures)} missing building assignments with LLM...")
-
-        requests_for_llm = high_confidence_building_failures # Already in the correct format
-        element_map = {req['id']: req for req in high_confidence_building_failures} # Map ID back to original request data
-
-        if requests_for_llm:
-            all_llm_results = {}
-            num_batches = (len(requests_for_llm) + llm_batch_size - 1) // llm_batch_size
-
-            for i in range(num_batches):
-                start_index = i * llm_batch_size
-                end_index = min((i + 1) * llm_batch_size, len(requests_for_llm))
-                current_batch = requests_for_llm[start_index:end_index]
-                print(f"  -> Sending LLM batch {i+1}/{num_batches} with {len(current_batch)} requests...")
-
-                batch_llm_results = llm_helper.get_batch_building_assignments(current_batch)
-                if batch_llm_results:
-                    all_llm_results.update(batch_llm_results)
-                else:
-                    print(f"  -> WARNING: LLM did not provide any valid replacements for batch {i+1}.")
-
-            if all_llm_results:
-                print(f"Applying LLM suggestions from {len(all_llm_results)} total resolved requests...")
-                resolved_ids = set()
-                for req_id, chosen_preset in all_llm_results.items():
-                    if chosen_preset:
-                        matched_buildings[req_id] = chosen_preset
-                        llm_building_replacements_made += 1
-                        resolved_ids.add(req_id)
-                        print(f"  -> LLM SUCCESS: CK3 '{req_id}' -> Attila '{chosen_preset}'.")
-                    else:
-                        print(f"  -> LLM WARNING: No chosen preset for '{req_id}'.")
-
-                for req_data in high_confidence_building_failures:
-                    if req_data['id'] not in resolved_ids:
-                        llm_building_failures.append(req_data)
-            else:
-                print("LLM did not provide any valid replacements.")
-                llm_building_failures.extend(high_confidence_building_failures)
-        else:
-            print("\nLLM integration is disabled or no buildings required LLM intervention.")
-            llm_building_failures.extend(high_confidence_building_failures)
-
-    print(f"LLM pass complete. Matched {llm_building_replacements_made} buildings. {len(llm_building_failures)} remaining failures.")
-
-    # --- Stage 3: Low-Confidence Procedural Pass for Buildings ---
-    low_confidence_building_replacements = 0
-    unmatchable_buildings = []
-    if llm_building_failures:
-        print("\nRunning low-confidence procedural pass for remaining building assignments...")
-        for failure_data in llm_building_failures:
-            ck3_key = failure_data['id']
-            best_match = _find_best_preset_match(ck3_key, attila_preset_keys, threshold=0.60) # Lower threshold
+        # --- Stage 1: High-Confidence Procedural Pass for Buildings ---
+        print("\nRunning high-confidence procedural pass for building assignments...")
+        for ck3_key in sorted(list(ck3_building_keys)): # Sort for deterministic output
+            best_match = _find_best_preset_match(ck3_key, attila_preset_keys, threshold=0.85)
             if best_match:
                 matched_buildings[ck3_key] = best_match
-                low_confidence_building_replacements += 1
-                print(f"  -> Low-confidence match: CK3 '{ck3_key}' -> Attila '{best_match}'.")
+                print(f"  -> High-confidence match: CK3 '{ck3_key}' -> Attila '{best_match}'.")
             else:
-                unmatchable_buildings.append(ck3_key)
-                print(f"  -> WARNING: No low-confidence match found for CK3 '{ck3_key}'. This building will not be mapped.")
+                high_confidence_building_failures.append({'id': ck3_key, 'preset_pool': sorted(list(attila_preset_keys))})
+                print(f"  -> No high-confidence match for CK3 '{ck3_key}'. Queued for LLM/low-confidence processing.")
 
-    print(f"Low-confidence pass complete. Matched {low_confidence_building_replacements} buildings. {len(unmatchable_buildings)} unmatchable buildings.")
+        print(f"High-confidence pass complete. Matched {len(matched_buildings)} buildings. {len(high_confidence_building_failures)} failures.")
 
-    total_changes += len(matched_buildings)
+        # --- Stage 2: LLM Pass for Buildings ---
+        llm_building_replacements_made = 0
+        llm_building_failures = []
+        if llm_helper and high_confidence_building_failures:
+            print(f"\nAttempting to resolve {len(high_confidence_building_failures)} missing building assignments with LLM...")
 
-    # --- Final XML Population for Buildings ---
-    if matched_buildings:
-        print("\nPopulating XML with matched buildings...")
-        for ck3_key, attila_preset_key in sorted(matched_buildings.items()): # Sort for deterministic output
-            coords = attila_preset_coords.get(attila_preset_key)
-            if coords:
-                # MODIFIED: Create <Map> tag directly under historic_maps_container
-                map_element_for_building = ET.SubElement(historic_maps_container, 'Map', {
-                    'ck3_building_key': ck3_key,
-                    'x': coords['x'],
-                    'y': coords['y']
-                })
-                # print(f"  - Added <Map ck3_building_key='{ck3_key}' x='{coords['x']}' y='{coords['y']}'/>")
-            else:
-                print(f"  -> ERROR: Coordinates not found for Attila preset '{attila_preset_key}' (matched from CK3 '{ck3_key}'). Skipping.")
-                total_changes -= 1 # Decrement if we couldn't add it
-
-    # --- Normal Maps (Terrains) Processing ---
-    normal_maps_changes = 0
-    if ck3_terrain_types:
-        print("\n--- Processing Normal Maps (Terrains) ---")
-        normal_maps_element = root.find('Normal_maps')
-        if normal_maps_element is None:
-            normal_maps_element = ET.SubElement(root, 'Normal_maps')
-            normal_maps_changes += 1
-
-        # Remove all existing <Terrain> tags to start fresh
-        removed_terrains_count = 0
-        for terrain_element in list(normal_maps_element.findall('Terrain')):
-            normal_maps_element.remove(terrain_element)
-            removed_terrains_count += 1
-        if removed_terrains_count > 0:
-            print(f"Removed {removed_terrains_count} existing <Terrain> tags from the XML.")
-            normal_maps_changes += removed_terrains_count
-
-        print(f"Found {len(ck3_terrain_types)} CK3 terrain types.")
-
-        matched_terrains = {} # {ck3_terrain_type: attila_preset_key}
-        high_confidence_terrain_failures = []
-
-        # --- Stage 1: High-Confidence Procedural Pass for Terrains ---
-        print("\nRunning high-confidence procedural pass for terrain assignments...")
-        for ck3_terrain_key in sorted(list(ck3_terrain_types)): # Sort for deterministic output
-            best_match = _find_best_preset_match(ck3_terrain_key, attila_preset_keys, threshold=0.85)
-            if best_match:
-                matched_terrains[ck3_terrain_key] = best_match
-                print(f"  -> High-confidence match: CK3 '{ck3_terrain_key}' -> Attila '{best_match}'.")
-            else:
-                high_confidence_terrain_failures.append({'id': ck3_terrain_key, 'preset_pool': sorted(list(attila_preset_keys))})
-                print(f"  -> No high-confidence match for CK3 '{ck3_terrain_key}'. Queued for LLM/low-confidence processing.")
-
-        print(f"High-confidence pass complete. Matched {len(matched_terrains)} terrains. {len(high_confidence_terrain_failures)} failures.")
-
-        # --- Stage 2: LLM Pass for Terrains ---
-        llm_terrain_replacements_made = 0
-        llm_terrain_failures = []
-        if llm_helper and high_confidence_terrain_failures:
-            print(f"\nAttempting to resolve {len(high_confidence_terrain_failures)} missing terrain assignments with LLM...")
-
-            requests_for_llm = high_confidence_terrain_failures # Already in the correct format
-            element_map = {req['id']: req for req in high_confidence_terrain_failures} # Map ID back to original request data
+            requests_for_llm = high_confidence_building_failures # Already in the correct format
+            element_map = {req['id']: req for req in high_confidence_building_failures} # Map ID back to original request data
 
             if requests_for_llm:
                 all_llm_results = {}
@@ -828,7 +718,7 @@ def process_terrains_xml(terrains_xml_path, ck3_building_keys, attila_preset_coo
                     current_batch = requests_for_llm[start_index:end_index]
                     print(f"  -> Sending LLM batch {i+1}/{num_batches} with {len(current_batch)} requests...")
 
-                    batch_llm_results = llm_helper.get_batch_terrain_assignments(current_batch)
+                    batch_llm_results = llm_helper.get_batch_building_assignments(current_batch)
                     if batch_llm_results:
                         all_llm_results.update(batch_llm_results)
                     else:
@@ -839,63 +729,193 @@ def process_terrains_xml(terrains_xml_path, ck3_building_keys, attila_preset_coo
                     resolved_ids = set()
                     for req_id, chosen_preset in all_llm_results.items():
                         if chosen_preset:
-                            matched_terrains[req_id] = chosen_preset
-                            llm_terrain_replacements_made += 1
+                            matched_buildings[req_id] = chosen_preset
+                            llm_building_replacements_made += 1
                             resolved_ids.add(req_id)
-                            print(f"  -> LLM SUCCESS: CK3 Terrain '{req_id}' -> Attila '{chosen_preset}'.")
+                            print(f"  -> LLM SUCCESS: CK3 '{req_id}' -> Attila '{chosen_preset}'.")
                         else:
-                            print(f"  -> LLM WARNING: No chosen preset for CK3 Terrain '{req_id}'.")
+                            print(f"  -> LLM WARNING: No chosen preset for '{req_id}'.")
 
-                    for req_data in high_confidence_terrain_failures:
+                    for req_data in high_confidence_building_failures:
                         if req_data['id'] not in resolved_ids:
-                            llm_terrain_failures.append(req_data)
+                            llm_building_failures.append(req_data)
                 else:
-                    print("LLM did not provide any valid replacements for terrains.")
-                    llm_terrain_failures.extend(high_confidence_terrain_failures)
+                    print("LLM did not provide any valid replacements.")
+                    llm_building_failures.extend(high_confidence_building_failures)
             else:
-                print("No terrain assignment failures suitable for LLM processing.")
+                print("No building assignment failures suitable for LLM processing.")
         else:
-            print("\nLLM integration is disabled or no terrains required LLM intervention.")
-            llm_terrain_failures.extend(high_confidence_terrain_failures)
+            print("\nLLM integration is disabled or no buildings required LLM intervention.")
+            llm_building_failures.extend(high_confidence_building_failures)
 
-        print(f"LLM pass complete. Matched {llm_terrain_replacements_made} terrains. {len(llm_terrain_failures)} remaining failures.")
+        print(f"LLM pass complete. Matched {llm_building_replacements_made} buildings. {len(llm_building_failures)} remaining failures.")
 
-        # --- Stage 3: Low-Confidence Procedural Pass for Terrains ---
-        low_confidence_terrain_replacements = 0
-        unmatchable_terrains = []
-        if llm_terrain_failures:
-            print("\nRunning low-confidence procedural pass for remaining terrain assignments...")
-            for failure_data in llm_terrain_failures:
-                ck3_terrain_key = failure_data['id']
-                best_match = _find_best_preset_match(ck3_terrain_key, attila_preset_keys, threshold=0.60) # Lower threshold
+        # --- Stage 3: Low-Confidence Procedural Pass for Buildings ---
+        low_confidence_building_replacements = 0
+        unmatchable_buildings = []
+        if llm_building_failures:
+            print("\nRunning low-confidence procedural pass for remaining building assignments...")
+            for failure_data in llm_building_failures:
+                ck3_key = failure_data['id']
+                best_match = _find_best_preset_match(ck3_key, attila_preset_keys, threshold=0.60) # Lower threshold
                 if best_match:
-                    matched_terrains[ck3_terrain_key] = best_match
-                    low_confidence_terrain_replacements += 1
-                    print(f"  -> Low-confidence match: CK3 Terrain '{ck3_terrain_key}' -> Attila '{best_match}'.")
+                    matched_buildings[ck3_key] = best_match
+                    low_confidence_building_replacements += 1
+                    print(f"  -> Low-confidence match: CK3 '{ck3_key}' -> Attila '{best_match}'.")
                 else:
-                    unmatchable_terrains.append(ck3_terrain_key)
-                    print(f"  -> WARNING: No low-confidence match found for CK3 Terrain '{ck3_terrain_key}'. This terrain will not be mapped.")
+                    unmatchable_buildings.append(ck3_key)
+                    print(f"  -> WARNING: No low-confidence match found for CK3 '{ck3_key}'. This building will not be mapped.")
 
-        print(f"Low-confidence pass complete. Matched {low_confidence_terrain_replacements} terrains. {len(unmatchable_terrains)} unmatchable terrains.")
+        print(f"Low-confidence pass complete. Matched {low_confidence_building_replacements} buildings. {len(unmatchable_buildings)} unmatchable buildings.")
 
-        normal_maps_changes += len(matched_terrains) * (1 + NORMAL_MAP_COORDS_COUNT) # 1 Terrain tag + NORMAL_MAP_COORDS_COUNT Map tags per terrain
+        total_changes += len(matched_buildings)
 
-        # --- Final XML Population for Terrains ---
-        if matched_terrains:
-            print("\nPopulating XML with matched terrains...")
-            for ck3_terrain_key, attila_preset_key in sorted(matched_terrains.items()): # Sort for deterministic output
+        # --- Final XML Population for Buildings ---
+        if matched_buildings:
+            print("\nPopulating XML with matched buildings...")
+            for ck3_key, attila_preset_key in sorted(matched_buildings.items()): # Sort for deterministic output
                 coords = attila_preset_coords.get(attila_preset_key)
                 if coords:
-                    terrain_element = ET.SubElement(normal_maps_element, 'Terrain', {
-                        'ck3_name': ck3_terrain_key
+                    # MODIFIED: Create <Map> tag directly under historic_maps_container
+                    map_element_for_building = ET.SubElement(historic_maps_container, 'Map', {
+                        'ck3_building_key': ck3_key,
+                        'x': coords['x'],
+                        'y': coords['y']
                     })
-                    nearby_coords = _generate_nearby_coords(coords['x'], coords['y'])
-                    for x, y in nearby_coords:
-                        ET.SubElement(terrain_element, 'Map', {'x': x, 'y': y})
-                    # print(f"  - Added <Terrain ck3_name='{ck3_terrain_key}'> with {len(nearby_coords)} map points.")
+                    # print(f"  - Added <Map ck3_building_key='{ck3_key}' x='{coords['x']}' y='{coords['y']}'/>")
                 else:
-                    print(f"  -> ERROR: Coordinates not found for Attila preset '{attila_preset_key}' (matched from CK3 Terrain '{ck3_terrain_key}'). Skipping.")
-                    normal_maps_changes -= (1 + NORMAL_MAP_COORDS_COUNT) # Decrement if we couldn't add it
+                    print(f"  -> ERROR: Coordinates not found for Attila preset '{attila_preset_key}' (matched from CK3 '{ck3_key}'). Skipping.")
+                    total_changes -= 1 # Decrement if we couldn't add it
+    else:
+        print("\nSkipping Historic Maps processing due to --no-historic-maps flag.")
+
+
+    # --- Normal Maps (Terrains) Processing ---
+    if not no_normal_maps:
+        normal_maps_changes = 0
+        if ck3_terrain_types:
+            print("\n--- Processing Normal Maps (Terrains) ---")
+            normal_maps_element = root.find('Normal_Maps')
+            if normal_maps_element is None:
+                normal_maps_element = ET.SubElement(root, 'Normal_Maps')
+                normal_maps_changes += 1
+
+            # Remove all existing <Terrain> tags to start fresh
+            removed_terrains_count = 0
+            for terrain_element in list(normal_maps_element.findall('Terrain')):
+                normal_maps_element.remove(terrain_element)
+                removed_terrains_count += 1
+            if removed_terrains_count > 0:
+                print(f"Removed {removed_terrains_count} existing <Terrain> tags from the XML.")
+                normal_maps_changes += removed_terrains_count
+
+            print(f"Found {len(ck3_terrain_types)} CK3 terrain types.")
+
+            matched_terrains = {} # {ck3_terrain_type: attila_preset_key}
+            high_confidence_terrain_failures = []
+
+            # --- Stage 1: High-Confidence Procedural Pass for Terrains ---
+            print("\nRunning high-confidence procedural pass for terrain assignments...")
+            for ck3_terrain_key in sorted(list(ck3_terrain_types)): # Sort for deterministic output
+                best_match = _find_best_preset_match(ck3_terrain_key, attila_preset_keys, threshold=0.85)
+                if best_match:
+                    matched_terrains[ck3_terrain_key] = best_match
+                    print(f"  -> High-confidence match: CK3 '{ck3_terrain_key}' -> Attila '{best_match}'.")
+                else:
+                    high_confidence_terrain_failures.append({'id': ck3_terrain_key, 'preset_pool': sorted(list(attila_preset_keys))})
+                    print(f"  -> No high-confidence match for CK3 '{ck3_terrain_key}'. Queued for LLM/low-confidence processing.")
+
+            print(f"High-confidence pass complete. Matched {len(matched_terrains)} terrains. {len(high_confidence_terrain_failures)} failures.")
+
+            # --- Stage 2: LLM Pass for Terrains ---
+            llm_terrain_replacements_made = 0
+            llm_terrain_failures = []
+            if llm_helper and high_confidence_terrain_failures:
+                print(f"\nAttempting to resolve {len(high_confidence_terrain_failures)} missing terrain assignments with LLM...")
+
+                requests_for_llm = high_confidence_terrain_failures # Already in the correct format
+                element_map = {req['id']: req for req in high_confidence_terrain_failures} # Map ID back to original request data
+
+                if requests_for_llm:
+                    all_llm_results = {}
+                    num_batches = (len(requests_for_llm) + llm_batch_size - 1) // llm_batch_size
+
+                    for i in range(num_batches):
+                        start_index = i * llm_batch_size
+                        end_index = min((i + 1) * llm_batch_size, len(requests_for_llm))
+                        current_batch = requests_for_llm[start_index:end_index]
+                        print(f"  -> Sending LLM batch {i+1}/{num_batches} with {len(current_batch)} requests...")
+
+                        batch_llm_results = llm_helper.get_batch_terrain_assignments(current_batch)
+                        if batch_llm_results:
+                            all_llm_results.update(batch_llm_results)
+                        else:
+                            print(f"  -> WARNING: LLM did not provide any valid replacements for batch {i+1}.")
+
+                    if all_llm_results:
+                        print(f"Applying LLM suggestions from {len(all_llm_results)} total resolved requests...")
+                        resolved_ids = set()
+                        for req_id, chosen_preset in all_llm_results.items():
+                            if chosen_preset:
+                                matched_terrains[req_id] = chosen_preset
+                                llm_terrain_replacements_made += 1
+                                resolved_ids.add(req_id)
+                                print(f"  -> LLM SUCCESS: CK3 Terrain '{req_id}' -> Attila '{chosen_preset}'.")
+                            else:
+                                print(f"  -> LLM WARNING: No chosen preset for CK3 Terrain '{req_id}'.")
+
+                        for req_data in high_confidence_terrain_failures:
+                            if req_data['id'] not in resolved_ids:
+                                llm_terrain_failures.append(req_data)
+                    else:
+                        print("LLM did not provide any valid replacements for terrains.")
+                        llm_terrain_failures.extend(high_confidence_terrain_failures)
+                else:
+                    print("No terrain assignment failures suitable for LLM processing.")
+            else:
+                print("\nLLM integration is disabled or no terrains required LLM intervention.")
+                llm_terrain_failures.extend(high_confidence_terrain_failures)
+
+            print(f"LLM pass complete. Matched {llm_terrain_replacements_made} terrains. {len(llm_terrain_failures)} remaining failures.")
+
+            # --- Stage 3: Low-Confidence Procedural Pass for Terrains ---
+            low_confidence_terrain_replacements = 0
+            unmatchable_terrains = []
+            if llm_terrain_failures:
+                print("\nRunning low-confidence procedural pass for remaining terrain assignments...")
+                for failure_data in llm_terrain_failures:
+                    ck3_terrain_key = failure_data['id']
+                    best_match = _find_best_preset_match(ck3_terrain_key, attila_preset_keys, threshold=0.60) # Lower threshold
+                    if best_match:
+                        matched_terrains[ck3_terrain_key] = best_match
+                        low_confidence_terrain_replacements += 1
+                        print(f"  -> Low-confidence match: CK3 Terrain '{ck3_terrain_key}' -> Attila '{best_match}'.")
+                    else:
+                        unmatchable_terrains.append(ck3_terrain_key)
+                        print(f"  -> WARNING: No low-confidence match found for CK3 Terrain '{ck3_terrain_key}'. This terrain will not be mapped.")
+
+            print(f"Low-confidence pass complete. Matched {low_confidence_terrain_replacements} terrains. {len(unmatchable_terrains)} unmatchable terrains.")
+
+            normal_maps_changes += len(matched_terrains) * (1 + NORMAL_MAP_COORDS_COUNT) # 1 Terrain tag + NORMAL_MAP_COORDS_COUNT Map tags per terrain
+
+            # --- Final XML Population for Terrains ---
+            if matched_terrains:
+                print("\nPopulating XML with matched terrains...")
+                for ck3_terrain_key, attila_preset_key in sorted(matched_terrains.items()): # Sort for deterministic output
+                    coords = attila_preset_coords.get(attila_preset_key)
+                    if coords:
+                        terrain_element = ET.SubElement(normal_maps_element, 'Terrain', {
+                            'ck3_name': ck3_terrain_key
+                        })
+                        nearby_coords = _generate_nearby_coords(coords['x'], coords['y'])
+                        for x, y in nearby_coords:
+                            ET.SubElement(terrain_element, 'Map', {'x': x, 'y': y})
+                        # print(f"  - Added <Terrain ck3_name='{ck3_terrain_key}'> with {len(nearby_coords)} map points.")
+                    else:
+                        print(f"  -> ERROR: Coordinates not found for Attila preset '{attila_preset_key}' (matched from CK3 Terrain '{ck3_terrain_key}'). Skipping.")
+                        normal_maps_changes -= (1 + NORMAL_MAP_COORDS_COUNT) # Decrement if we couldn't add it
+    else:
+        print("\nSkipping Normal Maps processing due to --no-normal-maps flag.")
 
     total_changes += normal_maps_changes
 
@@ -946,6 +966,9 @@ if __name__ == "__main__":
     parser.add_argument("--llm-cache-tag", help="A unique tag for partitioning the LLM cache (e.g., 'AGOT').")
     parser.add_argument("--llm-batch-size", type=int, default=50, help="The maximum number of building assignment requests to send to the LLM in a single batch.")
     parser.add_argument("--clear-llm-cache", action='store_true', help="If set, clears the LLM cache for the specified --llm-cache-tag before processing.")
+    # New arguments for skipping map types
+    parser.add_argument("--no-historic-maps", action='store_true', help="If set, skips processing historic maps (buildings).")
+    parser.add_argument("--no-normal-maps", action='store_true', help="If set, skips processing normal maps (terrains).")
     args = parser.parse_args()
 
     if args.use_llm and not args.llm_cache_tag:
@@ -990,7 +1013,7 @@ if __name__ == "__main__":
 
     # Load data
     ck3_building_keys = get_ck3_building_keys(ck3_buildings_dir)
-    if not ck3_building_keys:
+    if not ck3_building_keys and not args.no_historic_maps: # Only abort if historic maps are enabled
         print("No CK3 building keys found. Aborting.")
         exit()
     print(f"Loaded {len(ck3_building_keys)} CK3 building keys.")
@@ -1003,14 +1026,14 @@ if __name__ == "__main__":
     print(f"Found map index '{map_index}' for Attila map '{args.attila_map}'.")
 
     attila_preset_coords = get_attila_preset_coords(attila_presets_dir, map_index) # Modified call
-    if not attila_preset_coords:
+    if not attila_preset_coords and (not args.no_historic_maps or not args.no_normal_maps): # Only abort if any map type is enabled
         print(f"No Attila battle presets found for map '{args.attila_map}'. Aborting.") # Updated log message
         exit()
     print(f"Loaded {len(attila_preset_coords)} Attila battle presets for map '{args.attila_map}' with coordinates.") # Updated log message
 
     # NEW: Load CK3 terrain types
     ck3_terrain_types = get_ck3_terrain_types(ck3_terrain_types_dir)
-    if not ck3_terrain_types:
+    if not ck3_terrain_types and not args.no_normal_maps: # Only warn if normal maps are enabled
         print("No CK3 terrain types found. Normal maps will not be generated.")
     else:
         print(f"Loaded {len(ck3_terrain_types)} CK3 terrain types.")
@@ -1045,5 +1068,7 @@ if __name__ == "__main__":
         settlement_presets=settlement_presets, # NEW: Pass settlement presets
         all_valid_factions=all_valid_factions, # NEW: Pass all valid factions
         screen_name_to_key_map=screen_name_to_key_map, # NEW: Pass screen name to key map
-        faction_to_subculture_map=faction_to_subculture_map # NEW: Pass faction to subculture map
+        faction_to_subculture_map=faction_to_subculture_map, # NEW: Pass faction to subculture map
+        no_historic_maps=args.no_historic_maps, # NEW: Pass new argument
+        no_normal_maps=args.no_normal_maps # NEW: Pass new argument
     )
