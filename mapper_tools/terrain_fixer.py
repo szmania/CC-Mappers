@@ -571,11 +571,14 @@ if __name__ == "__main__":
     parser.add_argument("--llm-model", default="ollama/llama3", help="The model name to use with the LLM helper (e.g., 'ollama/llama3', 'gpt-4').")
     parser.add_argument("--llm-api-base", help="The base URL for the LLM API server (for local models).")
     parser.add_argument("--llm-api-key", help="The API key for the LLM service.")
-    parser.add_argument("--llm-cache-path", default="mapper_tools/llm_cache.json", help="Path to the LLM response cache file.")
-    parser.add_argument("--llm-cache-tag", default="default", help="A unique tag for partitioning the LLM cache (e.g., 'AGOT').")
+    parser.add_argument("--llm-cache-dir", default="mapper_tools/llm_cache", help="Directory for LLM cache files.")
+    parser.add_argument("--llm-cache-tag", help="A unique tag for partitioning the LLM cache (e.g., 'AGOT').")
     parser.add_argument("--llm-batch-size", type=int, default=50, help="The maximum number of building assignment requests to send to the LLM in a single batch.")
     parser.add_argument("--clear-llm-cache", action='store_true', help="If set, clears the LLM cache for the specified --llm-cache-tag before processing.")
     args = parser.parse_args()
+
+    if args.use_llm and not args.llm_cache_tag:
+        parser.error("--llm-cache-tag is required when --use-llm is specified.")
 
     if not prompt_to_create_xml(args.terrains_xml_path, 'Terrains'):
         print("Terrains XML file is required to proceed. Aborting.")
@@ -596,7 +599,7 @@ if __name__ == "__main__":
             from mapper_tools.llm_helper import LLMHelper
             llm_helper = LLMHelper(
                 model=args.llm_model,
-                cache_path=args.llm_cache_path,
+                cache_dir=args.llm_cache_dir,
                 api_base=args.llm_api_base,
                 api_key=args.llm_api_key,
                 cache_tag=args.llm_cache_tag
@@ -604,7 +607,7 @@ if __name__ == "__main__":
             print("LLM Helper initialized.")
             if args.clear_llm_cache:
                 print(f"Clearing LLM cache for tag '{args.llm_cache_tag}'...")
-                llm_helper.clear_cache_for_tag()
+                llm_helper.clear_cache()
                 print("LLM cache cleared.")
         except ImportError:
             print("Warning: 'litellm' library not found. Please run 'pip install litellm' to use the LLM feature.")
