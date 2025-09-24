@@ -1,13 +1,27 @@
 <?xml version='1.0' encoding='utf-8'?>
 <Factions>
-    <Faction name="Default">
+    <Faction name="Default" subculture="att_sub_cult_roman_west">
         <General key="Essos_Targaryen_Dothraki_Bloodriders" rank="1" />
-        <Knights key="Essos_Targaryen_Dothraki_Bloodriders" rank="1" />
-        <Knights key="Essos_Targaryen_Dothraki_Mounted_Archers" rank="2" />
+        <Knights key="Essos_Targaryen_Dothraki_Mounted_Archers" rank="1" />
+        <Knights key="Essos_Targaryen_Dothraki_Bloodriders" rank="2" />
         <Knights key="Essos_Targaryen_Dothraki_Khalasar" rank="3" />
-        <Levies percentage="28" key="Essos_Targaryen_Dothraki_Khalasar" max="LEVY" />
-        <Levies percentage="30" key="Essos_Targaryen_Unsullied_Pikemen" max="LEVY" />
-        <Levies percentage="42" key="Essos_Targaryen_Unsullied_Swordsmen" max="LEVY" />
+        <Levies percentage="30" key="Essos_Targaryen_Dothraki_Mounted_Archers" max="LEVY" />
+        <Levies percentage="24" key="Essos_Targaryen_Unsullied_Pikemen" max="LEVY" />
+        <Levies percentage="13" key="Essos_Targaryen_Unsullied_Spearmen" max="LEVY" />
+        <Levies percentage="33" key="Essos_Targaryen_Unsullied_Swordsmen" max="LEVY" />
+        <Garrison key="Essos_Targaryen_Catapult" max="LEVY" level="1" percentage="60" />
+        <Garrison key="Essos_Targaryen_Catapult" max="LEVY" level="1" percentage="15" />
+        <Garrison key="Essos_Targaryen_Catapult" max="LEVY" level="1" percentage="25" />
+        <Garrison key="Essos_Targaryen_Catapult" max="LEVY" level="2" percentage="62" />
+        <Garrison key="Essos_Targaryen_Catapult" max="LEVY" level="2" percentage="18" />
+        <Garrison key="Essos_Targaryen_Catapult" max="LEVY" level="2" percentage="20" />
+        <Garrison key="Essos_Targaryen_Dothraki_Mounted_Archers" max="LEVY" level="3" percentage="32" />
+        <Garrison key="Essos_Targaryen_Dothraki_Khalasar" max="LEVY" level="3" percentage="40" />
+        <Garrison key="Essos_Targaryen_Dothraki_Mounted_Archers" max="LEVY" level="3" percentage="28" />
+        <Garrison key="Essos_Targaryen_Dothraki_Bloodriders" max="LEVY" level="4" percentage="31" />
+        <Garrison key="Essos_Targaryen_Unsullied_Spearmen" max="LEVY" level="4" percentage="16" />
+        <Garrison key="Essos_Targaryen_Unsullied_Swordsmen" max="LEVY" level="4" percentage="15" />
+        <Garrison key="Essos_Targaryen_Unsullied_Pikemen" max="LEVY" level="4" percentage="38" />
         <MenAtArm type="accolade_maa_archers" key="BTW_Wildling_MAA_Archers" max="RANGED" />
         <MenAtArm type="accolade_maa_cameliers" key="Reach_Tarly_MAA_Lance_Cavalry" />
         <MenAtArm type="accolade_maa_crossbowers" key="BTW_Wildling_MAA_Archers" max="RANGED" />
@@ -25,7 +39,7 @@
         <MenAtArm type="ayrudzi" key="BTW_White_Walkers" max="CAVALRY" />
         <MenAtArm type="ballistrai" key="BTW_Wildling_MAA_Archers" max="RANGED" />
         <MenAtArm type="barrow_knights" key="Dorne_Dayne_MAA_Lance_Cavalry" max="CAVALRY" />
-        <MenAtArm type="battering_ram" key="Essos_Targaryen_Catapult" />
+        <MenAtArm type="battering_ram" key="Essos_Targaryen_Catapult" siege="true" />
         <MenAtArm type="black_wall_chariots" key="Reach_Tarly_MAA_Lance_Cavalry" />
         <MenAtArm type="bloody_balesters" key="BTW_Wildling_MAA_Archers" max="RANGED" />
         <MenAtArm type="bowmen" key="BTW_Wildling_MAA_Archers" max="RANGED" />
@@ -50,7 +64,7 @@
         <MenAtArm type="dragon_scouts" key="BTW_White_Walkers" max="CAVALRY" />
         <MenAtArm type="dragon_spears" key="Vale_Arryn_MAA_Pikemen" max="INFANTRY" />
         <MenAtArm type="dragonkeepers" key="BTW_Night_King_Army_Wight_Infantry" max="INFANTRY" />
-        <MenAtArm type="dragons_regiment" key="Essos_Targaryen_Catapult" />
+        <MenAtArm type="dragons_regiment" key="Essos_Targaryen_Catapult" siege="true" />
         <MenAtArm type="dragonsworn" key="BTW_Night_King_Army_Wight_Infantry" max="INFANTRY" />
         <MenAtArm type="dread_spears" key="Vale_Arryn_MAA_Pikemen" max="INFANTRY" />
         <MenAtArm type="eastwatch_sailors" key="BTW_Wildling_MAA_Archers" max="RANGED" />
@@ -61,7 +75,7 @@
         <MenAtArm type="flower_spears" key="Vale_Arryn_MAA_Pikemen" max="INFANTRY" />
         <MenAtArm type="frog_spears" key="BTW_Wildling_MAA_Archers" max="RANGED" />
         <MenAtArm type="garden_guard" key="BTW_Night_King_Army_Wight_Infantry" max="INFANTRY" />
-        <MenAtArm type="giant_regiment" key="Essos_Targaryen_Catapult" />
+        <MenAtArm type="giant_regiment" key="Essos_Targaryen_Catapult" siege="true" />
         <MenAtArm type="goldcloaks" key="BTW_Night_King_Army_Wight_Infantry" max="INFANTRY" />
         <MenAtArm type="goldenheart_bowmen" key="BTW_Wildling_MAA_Archers" max="RANGED" />
         <MenAtArm type="green_daggers" key="BTW_Wildling_MAA_Archers" max="RANGED" />
@@ -94,7 +108,7 @@
         <MenAtArm type="maa_marauders" key="BTW_White_Walkers" max="CAVALRY" />
         <MenAtArm type="maa_poachers" key="BTW_Wildling_MAA_Archers" max="RANGED" />
         <MenAtArm type="maa_thieves" key="Vale_Arryn_MAA_Pikemen" max="INFANTRY" />
-        <MenAtArm type="mangonel" key="Essos_Targaryen_Catapult" />
+        <MenAtArm type="mangonel" key="Essos_Targaryen_Catapult" siege="true" />
         <MenAtArm type="marcher_footmen" key="BTW_Night_King_Army_Wight_Infantry" max="INFANTRY" />
         <MenAtArm type="marcher_longbowmen" key="BTW_Wildling_MAA_Archers" max="RANGED" />
         <MenAtArm type="market_guard" key="BTW_Night_King_Army_Wight_Infantry" max="INFANTRY" />
@@ -108,7 +122,7 @@
         <MenAtArm type="northern_spears" key="Vale_Arryn_MAA_Pikemen" max="INFANTRY" />
         <MenAtArm type="nw_rangers" key="BTW_Wildling_MAA_Archers" max="RANGED" />
         <MenAtArm type="nw_trackers" key="BTW_White_Walkers" max="CAVALRY" />
-        <MenAtArm type="onager" key="Essos_Targaryen_Catapult" />
+        <MenAtArm type="onager" key="Essos_Targaryen_Catapult" siege="true" />
         <MenAtArm type="ornate_helms" key="Vale_Arryn_MAA_Pikemen" max="INFANTRY" />
         <MenAtArm type="pass_pikes" key="Vale_Arryn_MAA_Pikemen" max="INFANTRY" />
         <MenAtArm type="pikemen_unit" key="Vale_Arryn_MAA_Pikemen" max="INFANTRY" />
@@ -133,7 +147,7 @@
         <MenAtArm type="sand_archers" key="BTW_Wildling_MAA_Archers" max="RANGED" />
         <MenAtArm type="sand_steeds" key="BTW_White_Walkers" max="CAVALRY" />
         <MenAtArm type="sarsfield_horse_archers" key="Vale_Royce_MAA_Lance_Cavalry" />
-        <MenAtArm type="scorpions" key="Dorne_Dayne_Catapult" />
+        <MenAtArm type="scorpions" key="Dorne_Dayne_Catapult" siege="true" />
         <MenAtArm type="sea_snakes" key="BTW_Wildling_MAA_Archers" max="RANGED" />
         <MenAtArm type="sea_watch" key="BTW_Wildling_MAA_Archers" max="RANGED" />
         <MenAtArm type="shadow_spears" key="Vale_Arryn_MAA_Pikemen" max="INFANTRY" />
@@ -164,8 +178,8 @@
         <MenAtArm type="sworn_brothers" key="BTW_Night_King_Army_Wight_Infantry" max="INFANTRY" />
         <MenAtArm type="tiger_cloaks" key="Vale_Arryn_MAA_Pikemen" max="INFANTRY" />
         <MenAtArm type="tolosi_slingers" key="BTW_Wildling_MAA_Archers" max="RANGED" />
-        <MenAtArm type="torch_bearers" key="Essos_Targaryen_Catapult" />
-        <MenAtArm type="trebuchet" key="Essos_Targaryen_Catapult" />
+        <MenAtArm type="torch_bearers" key="Essos_Targaryen_Catapult" siege="true" />
+        <MenAtArm type="trebuchet" key="Essos_Targaryen_Catapult" siege="true" />
         <MenAtArm type="triarchs_herd" key="Dorne_Uller_MAA_Lance_Cavalry" />
         <MenAtArm type="twins_guards" key="BTW_Night_King_Army_Wight_Infantry" max="INFANTRY" />
         <MenAtArm type="unicorn_riders" key="BTW_White_Walkers" max="CAVALRY" />
@@ -178,7 +192,7 @@
         <MenAtArm type="vale_pikes" key="Vale_Arryn_MAA_Pikemen" max="INFANTRY" />
         <MenAtArm type="warriors_sons_heavy_cav" key="Dorne_Dayne_MAA_Lance_Cavalry" max="CAVALRY" />
         <MenAtArm type="warriors_sons_heavy_infantry" key="BTW_Night_King_Army_Wight_Infantry" max="INFANTRY" />
-        <MenAtArm type="water_wizards" key="Dorne_Dayne_Catapult" />
+        <MenAtArm type="water_wizards" key="Dorne_Dayne_Catapult" siege="true" />
         <MenAtArm type="weeping_guard" key="BTW_Night_King_Army_Wight_Infantry" max="INFANTRY" />
         <MenAtArm type="westerland_billmen" key="Vale_Arryn_MAA_Pikemen" max="INFANTRY" />
         <MenAtArm type="westerland_footmen" key="BTW_Night_King_Army_Wight_Infantry" max="INFANTRY" />
@@ -192,7 +206,7 @@
         <MenAtArm type="winter_wolves" key="BTW_Night_King_Army_Wight_Infantry" max="INFANTRY" />
         <MenAtArm type="wolfswood_hunters" key="BTW_Wildling_MAA_Archers" max="RANGED" />
     </Faction>
-    <Faction name="Beyond the Wall">
+    <Faction name="Beyond the Wall" subculture="att_sub_cult_roman_west">
         <General key="BTW_White_Walkers" rank="1" />
         <General key="BTW_Wildling_Guard_Axemen" rank="2" />
         <General key="BTW_Wildling_Guard_Spearmen" rank="3" />
@@ -201,81 +215,101 @@
         <Levies percentage="29" key="BTW_Nights_Watch_MAA_Longbowmen" max="LEVY" />
         <Levies percentage="16" key="BTW_Wildling_MAA_Swordsmen" max="LEVY" />
         <Levies percentage="29" key="BTW_Nights_Watch_MAA_Mounted_Swordsmen" max="LEVY" />
-        <MenAtArm type="castelry_rock_knights" key="BTW_Nights_Watch_MAA_Mounted_Swordsmen" max="CAVALRY" />
-        <MenAtArm type="clegane_footmen" key="BTW_Nights_Watch_MAA_Swordsmen" max="INFANTRY" />
-        <MenAtArm type="dragon_bows" key="BTW_Nights_Watch_MAA_Longbowmen" max="RANGED" />
-        <MenAtArm type="dragon_knights" key="BTW_Nights_Watch_MAA_Mounted_Swordsmen" max="CAVALRY" />
-        <MenAtArm type="dragon_scouts" key="BTW_Nights_Watch_MAA_Mounted_Swordsmen" max="CAVALRY" />
-        <MenAtArm type="dragon_spears" key="BTW_Wildling_Guard_Spearmen" max="INFANTRY" />
-        <MenAtArm type="dread_spears" key="BTW_Wildling_Guard_Spearmen" max="INFANTRY" />
-        <MenAtArm type="highgarden_knights" key="BTW_Nights_Watch_MAA_Mounted_Swordsmen" max="CAVALRY" />
+        <Garrison key="BTW_Wildling_MAA_Archers" max="LEVY" level="3" percentage="30" />
+        <Garrison key="BTW_Nights_Watch_MAA_Mounted_Swordsmen" max="LEVY" level="3" percentage="18" />
+        <Garrison key="BTW_Wildling_MAA_Spearmen" max="LEVY" level="3" percentage="24" />
+        <Garrison key="BTW_Wildling_MAA_Swordsmen" max="LEVY" level="3" percentage="28" />
+        <Garrison key="BTW_Wildling_Guard_Spearmen" max="LEVY" level="4" percentage="20" />
+        <Garrison key="BTW_Wildling_Guard_Axemen" max="LEVY" level="4" percentage="39" />
+        <Garrison key="BTW_Nights_Watch_Guard_Rangers" max="LEVY" level="4" percentage="41" />
+        <MenAtArm type="castelry_rock_knights" key="BTW_Wildling_Guard_Spearmen" max="CAVALRY" />
+        <MenAtArm type="clegane_footmen" key="BTW_Wildling_Guard_Axemen" max="INFANTRY" />
+        <MenAtArm type="dragon_bows" key="BTW_Wildling_MAA_Archers" max="RANGED" />
+        <MenAtArm type="dragon_knights" key="BTW_Wildling_Guard_Spearmen" max="CAVALRY" />
+        <MenAtArm type="dragon_scouts" key="BTW_Wildling_MAA_Spearmen" max="CAVALRY" />
+        <MenAtArm type="dragon_spears" key="BTW_Wildling_MAA_Spearmen" max="INFANTRY" />
+        <MenAtArm type="dread_spears" key="BTW_Wildling_MAA_Spearmen" max="INFANTRY" />
+        <MenAtArm type="highgarden_knights" key="BTW_Wildling_Guard_Spearmen" max="CAVALRY" />
         <MenAtArm type="hightower_guards" key="BTW_Wildling_Guard_Axemen" max="INFANTRY" />
         <MenAtArm type="iron_bows" key="BTW_Wildling_MAA_Archers" max="RANGED" />
-        <MenAtArm type="iron_pikes" key="BTW_Wildling_Guard_Spearmen" max="INFANTRY" />
-        <MenAtArm type="iron_riders" key="BTW_Nights_Watch_MAA_Mounted_Swordsmen" max="CAVALRY" />
-        <MenAtArm type="marcher_footmen" key="BTW_Nights_Watch_MAA_Swordsmen" max="INFANTRY" />
+        <MenAtArm type="iron_pikes" key="BTW_Wildling_MAA_Spearmen" max="INFANTRY" />
+        <MenAtArm type="iron_riders" key="BTW_Wildling_MAA_Spearmen" max="CAVALRY" />
+        <MenAtArm type="marcher_footmen" key="BTW_Wildling_Guard_Axemen" max="INFANTRY" />
         <MenAtArm type="rainwood_hunters" key="BTW_Nights_Watch_Guard_Rangers" max="RANGED" />
         <MenAtArm type="raventree_bows" key="BTW_Wildling_MAA_Archers" max="RANGED" />
-        <MenAtArm type="reach_marcher" key="BTW_Nights_Watch_MAA_Swordsmen" max="INFANTRY" />
-        <MenAtArm type="reach_pikes" key="BTW_Wildling_Guard_Spearmen" max="INFANTRY" />
-        <MenAtArm type="reach_scouts" key="BTW_Nights_Watch_MAA_Mounted_Swordsmen" max="CAVALRY" />
-        <MenAtArm type="reach_swords" key="BTW_Nights_Watch_MAA_Swordsmen" max="INFANTRY" />
-        <MenAtArm type="river_footmen" key="BTW_Nights_Watch_MAA_Swordsmen" max="INFANTRY" />
-        <MenAtArm type="river_scouts" key="BTW_Nights_Watch_MAA_Mounted_Swordsmen" max="CAVALRY" />
+        <MenAtArm type="reach_marcher" key="BTW_Wildling_Guard_Axemen" max="INFANTRY" />
+        <MenAtArm type="reach_pikes" key="BTW_Wildling_MAA_Spearmen" max="INFANTRY" />
+        <MenAtArm type="reach_scouts" key="BTW_Wildling_MAA_Spearmen" max="CAVALRY" />
+        <MenAtArm type="reach_swords" key="BTW_Wildling_Guard_Axemen" max="INFANTRY" />
+        <MenAtArm type="river_footmen" key="BTW_Wildling_Guard_Axemen" max="INFANTRY" />
+        <MenAtArm type="river_scouts" key="BTW_Wildling_MAA_Spearmen" max="CAVALRY" />
         <MenAtArm type="sand_archers" key="BTW_Wildling_MAA_Archers" max="RANGED" />
         <MenAtArm type="starfall_guardians" key="BTW_Wildling_Guard_Axemen" max="INFANTRY" />
-        <MenAtArm type="stone_hedge_footmen" key="BTW_Nights_Watch_MAA_Swordsmen" max="INFANTRY" />
+        <MenAtArm type="stone_hedge_footmen" key="BTW_Wildling_Guard_Axemen" max="INFANTRY" />
         <MenAtArm type="stone_scouts" key="BTW_Nights_Watch_Guard_Rangers" max="RANGED" />
         <MenAtArm type="storm_bows" key="BTW_Wildling_MAA_Archers" max="RANGED" />
-        <MenAtArm type="storm_footmen" key="BTW_Nights_Watch_MAA_Swordsmen" max="INFANTRY" />
-        <MenAtArm type="storm_pikes" key="BTW_Wildling_Guard_Spearmen" max="INFANTRY" />
+        <MenAtArm type="storm_footmen" key="BTW_Wildling_Guard_Axemen" max="INFANTRY" />
+        <MenAtArm type="storm_pikes" key="BTW_Wildling_MAA_Spearmen" max="INFANTRY" />
         <MenAtArm type="storm_wardens" key="BTW_Wildling_Guard_Axemen" max="INFANTRY" />
-        <MenAtArm type="sun_knights" key="BTW_Nights_Watch_MAA_Mounted_Swordsmen" max="CAVALRY" />
+        <MenAtArm type="sun_knights" key="BTW_Wildling_Guard_Spearmen" max="CAVALRY" />
         <MenAtArm type="twins_guards" key="BTW_Wildling_Guard_Axemen" max="INFANTRY" />
         <MenAtArm type="vale_archers" key="BTW_Wildling_MAA_Archers" max="RANGED" />
-        <MenAtArm type="vale_footmen" key="BTW_Nights_Watch_MAA_Swordsmen" max="INFANTRY" />
+        <MenAtArm type="vale_footmen" key="BTW_Wildling_Guard_Axemen" max="INFANTRY" />
         <MenAtArm type="vale_guards" key="BTW_Wildling_Guard_Axemen" max="INFANTRY" />
-        <MenAtArm type="vale_knights" key="BTW_Nights_Watch_MAA_Mounted_Swordsmen" max="CAVALRY" />
-        <MenAtArm type="vale_pikes" key="BTW_Wildling_Guard_Spearmen" max="INFANTRY" />
-        <MenAtArm type="westerland_billmen" key="BTW_Wildling_Guard_Spearmen" max="INFANTRY" />
-        <MenAtArm type="westerland_footmen" key="BTW_Nights_Watch_MAA_Swordsmen" max="INFANTRY" />
-        <MenAtArm type="westerland_knights" key="BTW_Nights_Watch_MAA_Mounted_Swordsmen" max="CAVALRY" />
+        <MenAtArm type="vale_knights" key="BTW_Wildling_Guard_Spearmen" max="CAVALRY" />
+        <MenAtArm type="vale_pikes" key="BTW_Wildling_MAA_Spearmen" max="INFANTRY" />
+        <MenAtArm type="westerland_billmen" key="BTW_Wildling_MAA_Spearmen" max="INFANTRY" />
+        <MenAtArm type="westerland_footmen" key="BTW_Wildling_Guard_Axemen" max="INFANTRY" />
+        <MenAtArm type="westerland_knights" key="BTW_Wildling_Guard_Spearmen" max="CAVALRY" />
         <MenAtArm type="winter_guards" key="BTW_Wildling_Guard_Axemen" max="INFANTRY" />
-        <MenAtArm type="winter_knights" key="BTW_Nights_Watch_MAA_Mounted_Swordsmen" max="CAVALRY" />
+        <MenAtArm type="winter_knights" key="BTW_Wildling_Guard_Spearmen" max="CAVALRY" />
     </Faction>
-    <Faction name="Dorne">
-        <General key="Dorne_Uller_MAA_Mounted_Swordsmen" rank="1" />
-        <General key="Dorne_Dayne_MAA_Mounted_Swordsmen" rank="2" />
+    <Faction name="Dorne" subculture="att_sub_cult_roman_west">
+        <General key="Dorne_Dayne_MAA_Mounted_Swordsmen" rank="1" />
+        <General key="Dorne_Yronwood_MAA_Lance_Cavalry" rank="2" />
         <General key="Dorne_Dayne_MAA_Lance_Cavalry" rank="3" />
-        <Knights key="Dorne_Uller_MAA_Mounted_Swordsmen" rank="1" />
-        <Knights key="Dorne_Dayne_MAA_Mounted_Swordsmen" rank="2" />
+        <Knights key="Dorne_Dayne_MAA_Mounted_Swordsmen" rank="1" />
+        <Knights key="Dorne_Uller_MAA_Mounted_Swordsmen" rank="2" />
         <Knights key="Dorne_Uller_MAA_Lance_Cavalry" rank="3" />
-        <Levies percentage="28" key="Dorne_Uller_MAA_Longbowmen" max="LEVY" />
-        <Levies percentage="31" key="Dorne_Uller_MAA_Mounted_Swordsmen" max="LEVY" />
-        <Levies percentage="9" key="Dorne_Martell_MAA_Spearmen" max="LEVY" />
-        <Levies percentage="9" key="Dorne_Martell_MAA_Halberdiers" max="LEVY" />
-        <Levies percentage="23" key="Dorne_Uller_MAA_Billmen" max="LEVY" />
+        <Levies percentage="19" key="Dorne_Yronwood_MAA_Longbowmen" max="LEVY" />
+        <Levies percentage="18" key="Dorne_Uller_MAA_Mounted_Swordsmen" max="LEVY" />
+        <Levies percentage="41" key="Dorne_Dayne_MAA_Pikemen" max="LEVY" />
+        <Levies percentage="22" key="Dorne_Yronwood_MAA_Spearmen" max="LEVY" />
+        <Garrison key="Dorne_Martell_Catapult" max="LEVY" level="1" percentage="27" />
+        <Garrison key="Dorne_Uller_Catapult" max="LEVY" level="1" percentage="40" />
+        <Garrison key="Dorne_Dayne_Catapult" max="LEVY" level="1" percentage="33" />
+        <Garrison key="Dorne_Dayne_Catapult" max="LEVY" level="2" percentage="41" />
+        <Garrison key="Dorne_Yronwood_Catapult" max="LEVY" level="2" percentage="38" />
+        <Garrison key="Dorne_Martell_Catapult" max="LEVY" level="2" percentage="21" />
+        <Garrison key="Dorne_Martell_MAA_Longbowmen" max="LEVY" level="3" percentage="14" />
+        <Garrison key="Dorne_Uller_MAA_Lance_Cavalry" max="LEVY" level="3" percentage="31" />
+        <Garrison key="Dorne_Yronwood_MAA_Pikemen" max="LEVY" level="3" percentage="28" />
+        <Garrison key="Dorne_Yronwood_MAA_Axemen" max="LEVY" level="3" percentage="27" />
+        <Garrison key="Dorne_Yronwood_MAA_Longbowmen" max="LEVY" level="4" percentage="33" />
+        <Garrison key="Dorne_Martell_MAA_Lance_Cavalry" max="LEVY" level="4" percentage="30" />
+        <Garrison key="Dorne_Uller_MAA_Pikemen" max="LEVY" level="4" percentage="23" />
+        <Garrison key="Dorne_Yronwood_MAA_Spearmen" max="LEVY" level="4" percentage="14" />
         <MenAtArm type="castelry_rock_knights" key="Dorne_Dayne_MAA_Lance_Cavalry" max="CAVALRY" />
         <MenAtArm type="clegane_footmen" key="Dorne_Dayne_MAA_Swordsmen" max="INFANTRY" />
         <MenAtArm type="dragon_bows" key="Dorne_Dayne_MAA_Longbowmen" max="RANGED" />
         <MenAtArm type="dragon_knights" key="Dorne_Dayne_MAA_Lance_Cavalry" max="CAVALRY" />
-        <MenAtArm type="dragon_scouts" key="Dorne_Martell_MAA_Mounted_Archers" max="CAVALRY" />
+        <MenAtArm type="dragon_scouts" key="Dorne_Dayne_MAA_Mounted_Swordsmen" max="CAVALRY" />
         <MenAtArm type="dragon_spears" key="Dorne_Dayne_MAA_Pikemen" max="INFANTRY" />
         <MenAtArm type="dread_spears" key="Dorne_Dayne_MAA_Pikemen" max="INFANTRY" />
         <MenAtArm type="highgarden_knights" key="Dorne_Dayne_MAA_Lance_Cavalry" max="CAVALRY" />
         <MenAtArm type="hightower_guards" key="Dorne_Dayne_MAA_Halberdiers" max="INFANTRY" />
         <MenAtArm type="iron_bows" key="Dorne_Dayne_MAA_Longbowmen" max="RANGED" />
         <MenAtArm type="iron_pikes" key="Dorne_Dayne_MAA_Pikemen" max="INFANTRY" />
-        <MenAtArm type="iron_riders" key="Dorne_Martell_MAA_Mounted_Swordsmen" max="CAVALRY" />
+        <MenAtArm type="iron_riders" key="Dorne_Dayne_MAA_Mounted_Swordsmen" max="CAVALRY" />
         <MenAtArm type="marcher_footmen" key="Dorne_Dayne_MAA_Swordsmen" max="INFANTRY" />
         <MenAtArm type="rainwood_hunters" key="Dorne_Dayne_MAA_Javelins" max="RANGED" />
         <MenAtArm type="raventree_bows" key="Dorne_Dayne_MAA_Longbowmen" max="RANGED" />
         <MenAtArm type="reach_marcher" key="Dorne_Dayne_MAA_Swordsmen" max="INFANTRY" />
         <MenAtArm type="reach_pikes" key="Dorne_Dayne_MAA_Pikemen" max="INFANTRY" />
-        <MenAtArm type="reach_scouts" key="Dorne_Martell_MAA_Mounted_Archers" max="CAVALRY" />
+        <MenAtArm type="reach_scouts" key="Dorne_Dayne_MAA_Mounted_Swordsmen" max="CAVALRY" />
         <MenAtArm type="reach_swords" key="Dorne_Dayne_MAA_Swordsmen" max="INFANTRY" />
         <MenAtArm type="river_footmen" key="Dorne_Dayne_MAA_Swordsmen" max="INFANTRY" />
-        <MenAtArm type="river_scouts" key="Dorne_Martell_MAA_Mounted_Archers" max="CAVALRY" />
+        <MenAtArm type="river_scouts" key="Dorne_Dayne_MAA_Mounted_Swordsmen" max="CAVALRY" />
         <MenAtArm type="sand_archers" key="Dorne_Dayne_MAA_Longbowmen" max="RANGED" />
         <MenAtArm type="starfall_guardians" key="Dorne_Dayne_MAA_Halberdiers" max="INFANTRY" />
         <MenAtArm type="stone_hedge_footmen" key="Dorne_Dayne_MAA_Swordsmen" max="INFANTRY" />
@@ -297,15 +331,26 @@
         <MenAtArm type="winter_guards" key="Dorne_Dayne_MAA_Halberdiers" max="INFANTRY" />
         <MenAtArm type="winter_knights" key="Dorne_Dayne_MAA_Lance_Cavalry" max="CAVALRY" />
     </Faction>
-    <Faction name="Essos">
+    <Faction name="Essos" subculture="att_sub_cult_roman_west">
         <General key="Essos_Targaryen_Dothraki_Bloodriders" rank="1" />
-        <Knights key="Essos_Targaryen_Dothraki_Bloodriders" rank="1" />
-        <Knights key="Essos_Targaryen_Dothraki_Mounted_Archers" rank="2" />
+        <Knights key="Essos_Targaryen_Dothraki_Mounted_Archers" rank="1" />
+        <Knights key="Essos_Targaryen_Dothraki_Bloodriders" rank="2" />
         <Knights key="Essos_Targaryen_Dothraki_Khalasar" rank="3" />
-        <Levies percentage="40" key="Essos_Targaryen_Dothraki_Mounted_Archers" max="LEVY" />
-        <Levies percentage="12" key="Essos_Targaryen_Unsullied_Spearmen" max="LEVY" />
-        <Levies percentage="13" key="Essos_Targaryen_Unsullied_Swordsmen" max="LEVY" />
-        <Levies percentage="35" key="Essos_Targaryen_Unsullied_Pikemen" max="LEVY" />
+        <Levies percentage="34" key="Essos_Targaryen_Dothraki_Mounted_Archers" max="LEVY" />
+        <Levies percentage="46" key="Essos_Targaryen_Unsullied_Pikemen" max="LEVY" />
+        <Levies percentage="20" key="Essos_Targaryen_Unsullied_Swordsmen" max="LEVY" />
+        <Garrison key="Essos_Targaryen_Catapult" max="LEVY" level="1" percentage="25" />
+        <Garrison key="Essos_Targaryen_Catapult" max="LEVY" level="1" percentage="29" />
+        <Garrison key="Essos_Targaryen_Catapult" max="LEVY" level="1" percentage="46" />
+        <Garrison key="Essos_Targaryen_Catapult" max="LEVY" level="2" percentage="24" />
+        <Garrison key="Essos_Targaryen_Catapult" max="LEVY" level="2" percentage="32" />
+        <Garrison key="Essos_Targaryen_Catapult" max="LEVY" level="2" percentage="44" />
+        <Garrison key="Essos_Targaryen_Dothraki_Khalasar" max="LEVY" level="3" percentage="18" />
+        <Garrison key="Essos_Targaryen_Dothraki_Mounted_Archers" max="LEVY" level="3" percentage="57" />
+        <Garrison key="Essos_Targaryen_Dothraki_Khalasar" max="LEVY" level="3" percentage="25" />
+        <Garrison key="Essos_Targaryen_Dothraki_Bloodriders" max="LEVY" level="4" percentage="43" />
+        <Garrison key="Essos_Targaryen_Unsullied_Pikemen" max="LEVY" level="4" percentage="29" />
+        <Garrison key="Essos_Targaryen_Unsullied_Swordsmen" max="LEVY" level="4" percentage="28" />
         <MenAtArm type="castelry_rock_knights" key="Essos_Targaryen_Dothraki_Khalasar" max="CAVALRY" />
         <MenAtArm type="clegane_footmen" key="Essos_Targaryen_Unsullied_Swordsmen" max="INFANTRY" />
         <MenAtArm type="dragon_bows" key="Crownlands_Kings_Landing_Golden_Company_Longbowmen" max="RANGED" />
@@ -337,7 +382,7 @@
         <MenAtArm type="storm_wardens" key="Essos_Targaryen_Unsullied_Swordsmen" max="INFANTRY" />
         <MenAtArm type="sun_knights" key="Essos_Targaryen_Dothraki_Khalasar" max="CAVALRY" />
         <MenAtArm type="twins_guards" key="Essos_Targaryen_Unsullied_Swordsmen" max="INFANTRY" />
-        <MenAtArm type="vale_archers" key="Essos_Targaryen_Dothraki_Mounted_Archers" max="RANGED" />
+        <MenAtArm type="vale_archers" key="Crownlands_Kings_Landing_Golden_Company_Longbowmen" max="RANGED" />
         <MenAtArm type="vale_footmen" key="Essos_Targaryen_Unsullied_Swordsmen" max="INFANTRY" />
         <MenAtArm type="vale_guards" key="Essos_Targaryen_Unsullied_Swordsmen" max="INFANTRY" />
         <MenAtArm type="vale_knights" key="Essos_Targaryen_Dothraki_Khalasar" max="CAVALRY" />
@@ -348,16 +393,31 @@
         <MenAtArm type="winter_guards" key="Essos_Targaryen_Unsullied_Swordsmen" max="INFANTRY" />
         <MenAtArm type="winter_knights" key="Essos_Targaryen_Dothraki_Khalasar" max="CAVALRY" />
     </Faction>
-    <Faction name="The Crownlands">
+    <Faction name="The Crownlands" subculture="att_sub_cult_roman_west">
         <General key="Westerlands_Lannister_Guard_Spearmen" rank="1" />
-        <General key="Stormlands_Baratheon_Guard_Swordsmen" rank="2" />
-        <General key="Westerlands_Lannister_Guard_Swordsmen" rank="3" />
-        <Knights key="Crownlands_Kings_Landing_Goldcloak_Mounted_Swordsmen" rank="1" />
-        <Knights key="Westerlands_Lannister_MAA_Mounted_Swordsmen" rank="2" />
-        <Knights key="Stormlands_Baratheon_MAA_Lance_Cavalry" rank="3" />
-        <Levies percentage="41" key="Westerlands_Lannister_MAA_Crossbowmen" max="LEVY" />
-        <Levies percentage="32" key="Westerlands_Lannister_MAA_Lance_Cavalry" max="LEVY" />
-        <Levies percentage="27" key="Westerlands_Lannister_MAA_Spearmen" max="LEVY" />
+        <General key="Stormlands_Baratheon_Guard_Spearmen" rank="2" />
+        <General key="Stormlands_Baratheon_Guard_Swordsmen" rank="3" />
+        <Knights key="Stormlands_Baratheon_MAA_Mounted_Swordsmen" rank="1" />
+        <Knights key="Crownlands_Kings_Landing_Goldcloak_Mounted_Swordsmen" rank="2" />
+        <Knights key="Westerlands_Lannister_MAA_Lance_Cavalry" rank="3" />
+        <Levies percentage="13" key="Stormlands_Baratheon_MAA_Crossbowmen" max="LEVY" />
+        <Levies percentage="30" key="Westerlands_Lannister_MAA_Mounted_Swordsmen" max="LEVY" />
+        <Levies percentage="25" key="Crownlands_Kings_Landing_Peasants" max="LEVY" />
+        <Levies percentage="32" key="Westerlands_Lannister_MAA_Halberdiers" max="LEVY" />
+        <Garrison key="Westerlands_Lannister_Catapult" max="LEVY" level="1" percentage="39" />
+        <Garrison key="Stormlands_Baratheon_Catapult" max="LEVY" level="1" percentage="20" />
+        <Garrison key="Westerlands_Lannister_Catapult" max="LEVY" level="1" percentage="41" />
+        <Garrison key="Westerlands_Lannister_Catapult" max="LEVY" level="2" percentage="38" />
+        <Garrison key="Stormlands_Baratheon_Catapult" max="LEVY" level="2" percentage="17" />
+        <Garrison key="Stormlands_Baratheon_Catapult" max="LEVY" level="2" percentage="45" />
+        <Garrison key="Westerlands_Lannister_MAA_Crossbowmen" max="LEVY" level="3" percentage="24" />
+        <Garrison key="Westerlands_Lannister_MAA_Lance_Cavalry" max="LEVY" level="3" percentage="29" />
+        <Garrison key="Westerlands_Lannister_MAA_Spearmen" max="LEVY" level="3" percentage="28" />
+        <Garrison key="Westerlands_Lannister_MAA_Pikemen" max="LEVY" level="3" percentage="19" />
+        <Garrison key="Stormlands_Baratheon_Guard_Spearmen" max="LEVY" level="4" percentage="41" />
+        <Garrison key="Westerlands_Lannister_Guard_Swordsmen" max="LEVY" level="4" percentage="19" />
+        <Garrison key="Westerlands_Lannister_Guard_Spearmen" max="LEVY" level="4" percentage="16" />
+        <Garrison key="Stormlands_Baratheon_Guard_Swordsmen" max="LEVY" level="4" percentage="24" />
         <MenAtArm type="castelry_rock_knights" key="Westerlands_Lannister_MAA_Lance_Cavalry" max="CAVALRY" />
         <MenAtArm type="clegane_footmen" key="Westerlands_Lannister_Guard_Swordsmen" max="INFANTRY" />
         <MenAtArm type="dragon_bows" key="Crownlands_Kings_Landing_Golden_Company_Longbowmen" max="RANGED" />
@@ -400,15 +460,29 @@
         <MenAtArm type="winter_guards" key="Stormlands_Baratheon_Guard_Swordsmen" max="INFANTRY" />
         <MenAtArm type="winter_knights" key="Stormlands_Baratheon_MAA_Lance_Cavalry" max="CAVALRY" />
     </Faction>
-    <Faction name="The Iron Islands">
-        <General key="Iron_Islands_Greyjoy_Guard_Swordsmen" rank="1" />
-        <General key="Iron_Islands_Greyjoy_Guard_Spearmen" rank="2" />
+    <Faction name="The Iron Islands" subculture="att_sub_cult_roman_west">
+        <General key="Iron_Islands_Greyjoy_Guard_Spearmen" rank="1" />
+        <General key="Iron_Islands_Greyjoy_Guard_Swordsmen" rank="2" />
         <Knights key="Iron_Islands_Harlaw_MAA_Mounted_Swordsmen" rank="1" />
         <Knights key="Iron_Islands_Greyjoy_MAA_Mounted_Swordsmen" rank="2" />
         <Knights key="Iron_Islands_Harlaw_MAA_Lance_Cavalry" rank="3" />
-        <Levies percentage="23" key="Iron_Islands_Harlaw_MAA_Bowmen" max="LEVY" />
-        <Levies percentage="61" key="Iron_Islands_Harlaw_MAA_Lance_Cavalry" max="LEVY" />
-        <Levies percentage="16" key="Iron_Islands_Greyjoy_MAA_Infantry" max="LEVY" />
+        <Levies percentage="13" key="Iron_Islands_Harlaw_MAA_Crossbowmen" max="LEVY" />
+        <Levies percentage="37" key="Iron_Islands_Harlaw_MAA_Mounted_Swordsmen" max="LEVY" />
+        <Levies percentage="30" key="Iron_Islands_Greyjoy_MAA_Spearmen" max="LEVY" />
+        <Levies percentage="20" key="Iron_Islands_Harlaw_MAA_Halberdiers" max="LEVY" />
+        <Garrison key="Iron_Islands_Harlaw_Catapult" max="LEVY" level="1" percentage="21" />
+        <Garrison key="Iron_Islands_Greyjoy_Catapult" max="LEVY" level="1" percentage="28" />
+        <Garrison key="Iron_Islands_Harlaw_Catapult" max="LEVY" level="1" percentage="51" />
+        <Garrison key="Iron_Islands_Harlaw_Catapult" max="LEVY" level="2" percentage="40" />
+        <Garrison key="Iron_Islands_Greyjoy_Catapult" max="LEVY" level="2" percentage="21" />
+        <Garrison key="Iron_Islands_Greyjoy_Catapult" max="LEVY" level="2" percentage="39" />
+        <Garrison key="Iron_Islands_Greyjoy_MAA_Bowmen" max="LEVY" level="3" percentage="26" />
+        <Garrison key="Iron_Islands_Greyjoy_MAA_Mounted_Swordsmen" max="LEVY" level="3" percentage="18" />
+        <Garrison key="Iron_Islands_Harlaw_MAA_Pikemen" max="LEVY" level="3" percentage="26" />
+        <Garrison key="Iron_Islands_Harlaw_MAA_Swordsmen" max="LEVY" level="3" percentage="30" />
+        <Garrison key="Iron_Islands_Greyjoy_Guard_Spearmen" max="LEVY" level="4" percentage="47" />
+        <Garrison key="Iron_Islands_Greyjoy_Guard_Swordsmen" max="LEVY" level="4" percentage="36" />
+        <Garrison key="Iron_Islands_Greyjoy_Guard_Swordsmen" max="LEVY" level="4" percentage="17" />
         <MenAtArm type="castelry_rock_knights" key="Iron_Islands_Greyjoy_MAA_Lance_Cavalry" max="CAVALRY" />
         <MenAtArm type="clegane_footmen" key="Iron_Islands_Greyjoy_MAA_Swordsmen" max="INFANTRY" />
         <MenAtArm type="dragon_bows" key="Iron_Islands_Greyjoy_MAA_Bowmen" max="RANGED" />
@@ -451,16 +525,30 @@
         <MenAtArm type="winter_guards" key="Iron_Islands_Greyjoy_Guard_Swordsmen" max="INFANTRY" />
         <MenAtArm type="winter_knights" key="Iron_Islands_Greyjoy_MAA_Lance_Cavalry" max="CAVALRY" />
     </Faction>
-    <Faction name="The North">
-        <General key="North_Bolton_Guard_Spearmen" rank="1" />
-        <General key="North_Stark_Guard_Spearmen" rank="2" />
-        <General key="North_Stark_Guard_Swordsmen" rank="3" />
-        <Knights key="North_Cerwyn_MAA_Mounted_Swordsmen" rank="1" />
-        <Knights key="North_Karstark_MAA_Lance_Cavalry" rank="2" />
-        <Knights key="North_Hornwood_MAA_Lance_Cavalry" rank="3" />
-        <Levies percentage="34" key="North_Mormont_MAA_Longbowmen" max="LEVY" />
-        <Levies percentage="25" key="North_Mormont_MAA_Mounted_Swordsmen" max="LEVY" />
-        <Levies percentage="41" key="North_Umber_MAA_Spearmen" max="LEVY" />
+    <Faction name="The North" subculture="att_sub_cult_roman_west">
+        <General key="North_Stark_Guard_Spearmen" rank="1" />
+        <General key="North_Stark_Guard_Swordsmen" rank="2" />
+        <General key="North_Bolton_Guard_Spearmen" rank="3" />
+        <Knights key="North_Umber_MAA_Mounted_Swordsmen" rank="1" />
+        <Knights key="North_Hornwood_MAA_Lance_Cavalry" rank="2" />
+        <Knights key="North_Glover_MAA_Lance_Cavalry" rank="3" />
+        <Levies percentage="21" key="North_Karstark_MAA_Crossbowmen" max="LEVY" />
+        <Levies percentage="23" key="North_Karstark_MAA_Lance_Cavalry" max="LEVY" />
+        <Levies percentage="17" key="North_Glover_MAA_Pikemen" max="LEVY" />
+        <Levies percentage="20" key="North_Mormont_MAA_Axemen" max="LEVY" />
+        <Levies percentage="19" key="North_Cerwyn_MAA_Halberdiers" max="LEVY" />
+        <Garrison key="North_Stark_Catapult" max="LEVY" level="1" percentage="42" />
+        <Garrison key="North_Glover_Catapult" max="LEVY" level="1" percentage="25" />
+        <Garrison key="North_Bolton_Catapult" max="LEVY" level="1" percentage="33" />
+        <Garrison key="North_Stark_Catapult" max="LEVY" level="2" percentage="45" />
+        <Garrison key="North_Mormont_Catapult" max="LEVY" level="2" percentage="21" />
+        <Garrison key="North_Karstark_Catapult" max="LEVY" level="2" percentage="34" />
+        <Garrison key="North_Mormont_MAA_Longbowmen" max="LEVY" level="3" percentage="17" />
+        <Garrison key="North_Karstark_MAA_Lance_Cavalry" max="LEVY" level="3" percentage="40" />
+        <Garrison key="North_Glover_MAA_Spearmen" max="LEVY" level="3" percentage="43" />
+        <Garrison key="North_Bolton_Guard_Spearmen" max="LEVY" level="4" percentage="44" />
+        <Garrison key="North_Stark_Guard_Spearmen" max="LEVY" level="4" percentage="29" />
+        <Garrison key="North_Stark_Guard_Swordsmen" max="LEVY" level="4" percentage="27" />
         <MenAtArm type="castelry_rock_knights" key="North_Stark_MAA_Lance_Cavalry" max="CAVALRY" />
         <MenAtArm type="clegane_footmen" key="North_Stark_MAA_Swordsmen" max="INFANTRY" />
         <MenAtArm type="dragon_bows" key="North_Stark_MAA_Longbowmen" max="RANGED" />
@@ -503,14 +591,28 @@
         <MenAtArm type="winter_guards" key="North_Stark_Guard_Swordsmen" max="INFANTRY" />
         <MenAtArm type="winter_knights" key="North_Stark_MAA_Lance_Cavalry" max="CAVALRY" />
     </Faction>
-    <Faction name="The Reach">
+    <Faction name="The Reach" subculture="att_sub_cult_roman_west">
         <General key="Reach_Tyrell_MAA_Lance_Cavalry" />
         <Knights key="Reach_Tyrell_MAA_Mounted_Swordsmen" rank="1" />
         <Knights key="Reach_Tarly_MAA_Mounted_Swordsmen" rank="2" />
-        <Knights key="Reach_Tarly_MAA_Lance_Cavalry" rank="3" />
-        <Levies percentage="34" key="Reach_Tarly_MAA_Longbowmen" max="LEVY" />
-        <Levies percentage="21" key="Reach_Tarly_MAA_Mounted_Swordsmen" max="LEVY" />
-        <Levies percentage="45" key="Reach_Tarly_MAA_Spearmen" max="LEVY" />
+        <Knights key="Reach_Tyrell_MAA_Lance_Cavalry" rank="3" />
+        <Levies percentage="24" key="Reach_Tarly_MAA_Crossbowmen" max="LEVY" />
+        <Levies percentage="24" key="Reach_Tyrell_MAA_Mounted_Swordsmen" max="LEVY" />
+        <Levies percentage="30" key="Reach_Tyrell_MAA_Pikemen" max="LEVY" />
+        <Levies percentage="22" key="Reach_Tyrell_MAA_Billmen" max="LEVY" />
+        <Garrison key="Reach_Tyrell_Catapult" max="LEVY" level="1" percentage="19" />
+        <Garrison key="Reach_Tarly_Catapult" max="LEVY" level="1" percentage="32" />
+        <Garrison key="Reach_Tarly_Catapult" max="LEVY" level="1" percentage="49" />
+        <Garrison key="Reach_Tarly_Catapult" max="LEVY" level="2" percentage="31" />
+        <Garrison key="Reach_Tyrell_Catapult" max="LEVY" level="2" percentage="41" />
+        <Garrison key="Reach_Tyrell_Catapult" max="LEVY" level="2" percentage="28" />
+        <Garrison key="Reach_Tarly_MAA_Longbowmen" max="LEVY" level="3" percentage="9" />
+        <Garrison key="Reach_Tyrell_MAA_Mounted_Swordsmen" max="LEVY" level="3" percentage="18" />
+        <Garrison key="Reach_Tyrell_MAA_Pikemen" max="LEVY" level="3" percentage="39" />
+        <Garrison key="Reach_Tyrell_MAA_Spearmen" max="LEVY" level="3" percentage="34" />
+        <Garrison key="Reach_Tyrell_Guard_Spearmen" max="LEVY" level="4" percentage="26" />
+        <Garrison key="Reach_Tyrell_Guard_Swordsmen" max="LEVY" level="4" percentage="47" />
+        <Garrison key="Reach_Tyrell_Guard_Swordsmen" max="LEVY" level="4" percentage="27" />
         <MenAtArm type="castelry_rock_knights" key="Reach_Tyrell_MAA_Lance_Cavalry" max="CAVALRY" />
         <MenAtArm type="clegane_footmen" key="Reach_Tyrell_MAA_Swordsmen" max="INFANTRY" />
         <MenAtArm type="dragon_bows" key="Reach_Tyrell_MAA_Longbowmen" max="RANGED" />
@@ -553,15 +655,31 @@
         <MenAtArm type="winter_guards" key="Reach_Tyrell_Guard_Swordsmen" max="INFANTRY" />
         <MenAtArm type="winter_knights" key="Reach_Tyrell_MAA_Lance_Cavalry" max="CAVALRY" />
     </Faction>
-    <Faction name="The Riverlands">
+    <Faction name="The Riverlands" subculture="att_sub_cult_roman_west">
         <General key="Riverlands_Tully_Guard_Swordsmen" rank="1" />
         <General key="Riverlands_Tully_Guard_Spearmen" rank="2" />
-        <Knights key="Riverlands_Frey_MAA_Mounted_Swordsmen" rank="1" />
-        <Knights key="Riverlands_Tully_MAA_Mounted_Swordsmen" rank="2" />
-        <Knights key="Riverlands_Mallister_MAA_Lance_Cavalry" rank="3" />
-        <Levies percentage="44" key="Riverlands_Tully_MAA_Crossbowmen" max="LEVY" />
-        <Levies percentage="37" key="Riverlands_Frey_MAA_Mounted_Swordsmen" max="LEVY" />
-        <Levies percentage="19" key="Riverlands_Tully_MAA_Spearmen" max="LEVY" />
+        <Knights key="Riverlands_Mallister_MAA_Mounted_Swordsmen" rank="1" />
+        <Knights key="Riverlands_Frey_MAA_Mounted_Swordsmen" rank="2" />
+        <Knights key="Riverlands_Tully_MAA_Lance_Cavalry" rank="3" />
+        <Levies percentage="18" key="Riverlands_Mallister_MAA_Longbowmen" max="LEVY" />
+        <Levies percentage="24" key="Riverlands_Tully_MAA_Mounted_Swordsmen" max="LEVY" />
+        <Levies percentage="15" key="Riverlands_Frey_MAA_Pikemen" max="LEVY" />
+        <Levies percentage="15" key="Riverlands_Tully_MAA_Pikemen" max="LEVY" />
+        <Levies percentage="28" key="Riverlands_Mallister_MAA_Billmen" max="LEVY" />
+        <Garrison key="Riverlands_Frey_Catapult" max="LEVY" level="1" percentage="63" />
+        <Garrison key="Riverlands_Mallister_Catapult" max="LEVY" level="1" percentage="22" />
+        <Garrison key="Riverlands_Tully_Catapult" max="LEVY" level="1" percentage="15" />
+        <Garrison key="Riverlands_Tully_Catapult" max="LEVY" level="2" percentage="16" />
+        <Garrison key="Riverlands_Mallister_Catapult" max="LEVY" level="2" percentage="40" />
+        <Garrison key="Riverlands_Frey_Catapult" max="LEVY" level="2" percentage="44" />
+        <Garrison key="Riverlands_Tully_MAA_Crossbowmen" max="LEVY" level="3" percentage="28" />
+        <Garrison key="Riverlands_Mallister_MAA_Mounted_Swordsmen" max="LEVY" level="3" percentage="23" />
+        <Garrison key="Riverlands_Tully_MAA_Spearmen" max="LEVY" level="3" percentage="16" />
+        <Garrison key="Riverlands_Mallister_MAA_Billmen" max="LEVY" level="3" percentage="14" />
+        <Garrison key="Riverlands_Frey_MAA_Spearmen" max="LEVY" level="3" percentage="19" />
+        <Garrison key="Riverlands_Tully_Guard_Spearmen" max="LEVY" level="4" percentage="35" />
+        <Garrison key="Riverlands_Tully_Guard_Swordsmen" max="LEVY" level="4" percentage="31" />
+        <Garrison key="Riverlands_Tully_Guard_Spearmen" max="LEVY" level="4" percentage="34" />
         <MenAtArm type="castelry_rock_knights" key="Riverlands_Tully_MAA_Lance_Cavalry" max="CAVALRY" />
         <MenAtArm type="clegane_footmen" key="Riverlands_Tully_MAA_Swordsmen" max="INFANTRY" />
         <MenAtArm type="dragon_bows" key="Riverlands_Tully_MAA_Longbowmen" max="RANGED" />
@@ -604,16 +722,30 @@
         <MenAtArm type="winter_guards" key="Riverlands_Tully_Guard_Swordsmen" max="INFANTRY" />
         <MenAtArm type="winter_knights" key="Riverlands_Frey_MAA_Lance_Cavalry" max="CAVALRY" />
     </Faction>
-    <Faction name="The Stormlands">
+    <Faction name="The Stormlands" subculture="att_sub_cult_roman_west">
         <General key="Stormlands_Baratheon_Guard_Spearmen" rank="1" />
         <General key="Stormlands_Renly_Guard_Spearmen" rank="2" />
-        <General key="Stormlands_Renly_Guard_Swordsmen" rank="3" />
-        <Knights key="Stormlands_Baratheon_MAA_Mounted_Swordsmen" rank="1" />
-        <Knights key="Stormlands_Renly_MAA_Lance_Cavalry" rank="2" />
-        <Knights key="Stormlands_Baratheon_MAA_Lance_Cavalry" rank="3" />
-        <Levies percentage="34" key="Stormlands_Baratheon_MAA_Crossbowmen" max="LEVY" />
-        <Levies percentage="53" key="Stormlands_Dondarrion_MAA_Lance_Cavalry" max="LEVY" />
-        <Levies percentage="13" key="Stormlands_Dondarrion_MAA_Pikemen" max="LEVY" />
+        <General key="Stormlands_Baratheon_Guard_Swordsmen" rank="3" />
+        <Knights key="Stormlands_Dragonstone_MAA_Mounted_Swordsmen" rank="1" />
+        <Knights key="Stormlands_Dondarrion_MAA_Mounted_Swordsmen" rank="2" />
+        <Knights key="Stormlands_Renly_MAA_Lance_Cavalry" rank="3" />
+        <Levies percentage="31" key="Stormlands_Dondarrion_MAA_Crossbowmen" max="LEVY" />
+        <Levies percentage="24" key="Stormlands_Dondarrion_MAA_Lance_Cavalry" max="LEVY" />
+        <Levies percentage="30" key="Stormlands_Dragonstone_MAA_Pikemen" max="LEVY" />
+        <Levies percentage="15" key="Stormlands_Dondarrion_MAA_Pikemen" max="LEVY" />
+        <Garrison key="Stormlands_Dondarrion_Catapult" max="LEVY" level="1" percentage="30" />
+        <Garrison key="Stormlands_Renly_Catapult" max="LEVY" level="1" percentage="25" />
+        <Garrison key="Stormlands_Baratheon_Catapult" max="LEVY" level="1" percentage="45" />
+        <Garrison key="Stormlands_Renly_Catapult" max="LEVY" level="2" percentage="24" />
+        <Garrison key="Stormlands_Dragonstone_Catapult" max="LEVY" level="2" percentage="53" />
+        <Garrison key="Stormlands_Dondarrion_Catapult" max="LEVY" level="2" percentage="23" />
+        <Garrison key="Stormlands_Renly_MAA_Longbowmen" max="LEVY" level="3" percentage="28" />
+        <Garrison key="Stormlands_Baratheon_MAA_Lance_Cavalry" max="LEVY" level="3" percentage="32" />
+        <Garrison key="Stormlands_Dragonstone_MAA_Spearmen" max="LEVY" level="3" percentage="40" />
+        <Garrison key="Stormlands_Renly_Guard_Spearmen" max="LEVY" level="4" percentage="15" />
+        <Garrison key="Stormlands_Renly_Guard_Swordsmen" max="LEVY" level="4" percentage="32" />
+        <Garrison key="Stormlands_Baratheon_Guard_Spearmen" max="LEVY" level="4" percentage="31" />
+        <Garrison key="Stormlands_Baratheon_Guard_Swordsmen" max="LEVY" level="4" percentage="22" />
         <MenAtArm type="castelry_rock_knights" key="Stormlands_Baratheon_MAA_Lance_Cavalry" max="CAVALRY" />
         <MenAtArm type="clegane_footmen" key="Stormlands_Baratheon_MAA_Swordsmen" max="INFANTRY" />
         <MenAtArm type="dragon_bows" key="Stormlands_Baratheon_MAA_Longbowmen" max="RANGED" />
@@ -656,15 +788,28 @@
         <MenAtArm type="winter_guards" key="Stormlands_Baratheon_Guard_Swordsmen" max="INFANTRY" />
         <MenAtArm type="winter_knights" key="Stormlands_Baratheon_MAA_Lance_Cavalry" max="CAVALRY" />
     </Faction>
-    <Faction name="The Vale">
+    <Faction name="The Vale" subculture="att_sub_cult_roman_west">
         <General key="Vale_Arryn_Guard_Spearmen" rank="1" />
         <General key="Vale_Arryn_Guard_Swordsmen" rank="2" />
         <Knights key="Vale_Arryn_MAA_Mounted_Swordsmen" rank="1" />
         <Knights key="Vale_Royce_MAA_Mounted_Swordsmen" rank="2" />
-        <Knights key="Vale_Royce_MAA_Lance_Cavalry" rank="3" />
-        <Levies percentage="18" key="Vale_Royce_MAA_Longbowmen" max="LEVY" />
-        <Levies percentage="49" key="Vale_Royce_MAA_Mounted_Swordsmen" max="LEVY" />
-        <Levies percentage="33" key="Vale_Arryn_MAA_Spearmen" max="LEVY" />
+        <Knights key="Vale_Arryn_Faction_Specialist_Lance_Cavalry" rank="3" />
+        <Levies percentage="53" key="Vale_Royce_MAA_Longbowmen" max="LEVY" />
+        <Levies percentage="33" key="Vale_Arryn_Faction_Specialist_Lance_Cavalry" max="LEVY" />
+        <Levies percentage="14" key="Vale_Royce_MAA_Pikemen" max="LEVY" />
+        <Garrison key="Vale_Arryn_Catapult" max="LEVY" level="1" percentage="27" />
+        <Garrison key="Vale_Royce_Catapult" max="LEVY" level="1" percentage="49" />
+        <Garrison key="Vale_Royce_Catapult" max="LEVY" level="1" percentage="24" />
+        <Garrison key="Vale_Arryn_Catapult" max="LEVY" level="2" percentage="47" />
+        <Garrison key="Vale_Royce_Catapult" max="LEVY" level="2" percentage="32" />
+        <Garrison key="Vale_Arryn_Catapult" max="LEVY" level="2" percentage="21" />
+        <Garrison key="Vale_Royce_MAA_Longbowmen" max="LEVY" level="3" percentage="10" />
+        <Garrison key="Vale_Royce_MAA_Mounted_Swordsmen" max="LEVY" level="3" percentage="27" />
+        <Garrison key="Vale_Arryn_MAA_Spearmen" max="LEVY" level="3" percentage="44" />
+        <Garrison key="Vale_Arryn_MAA_Pikemen" max="LEVY" level="3" percentage="19" />
+        <Garrison key="Vale_Arryn_Guard_Spearmen" max="LEVY" level="4" percentage="47" />
+        <Garrison key="Vale_Arryn_Guard_Swordsmen" max="LEVY" level="4" percentage="14" />
+        <Garrison key="Vale_Arryn_Guard_Swordsmen" max="LEVY" level="4" percentage="39" />
         <MenAtArm type="castelry_rock_knights" key="Vale_Arryn_Faction_Specialist_Lance_Cavalry" max="CAVALRY" />
         <MenAtArm type="clegane_footmen" key="Vale_Arryn_MAA_Swordsmen" max="INFANTRY" />
         <MenAtArm type="dragon_bows" key="Vale_Arryn_MAA_Longbowmen" max="RANGED" />
@@ -707,16 +852,30 @@
         <MenAtArm type="winter_guards" key="Vale_Arryn_Guard_Swordsmen" max="INFANTRY" />
         <MenAtArm type="winter_knights" key="Vale_Arryn_Faction_Specialist_Lance_Cavalry" max="CAVALRY" />
     </Faction>
-    <Faction name="The Westerlands">
+    <Faction name="The Westerlands" subculture="att_sub_cult_roman_west">
         <General key="Westerlands_Lannister_Guard_Spearmen" rank="1" />
         <General key="Westerlands_Lannister_Guard_Swordsmen" rank="2" />
         <Knights key="Westerlands_Lannister_MAA_Mounted_Swordsmen" rank="1" />
-        <Knights key="Westerlands_Crakehall_MAA_Mounted_Swordsmen" rank="2" />
-        <Knights key="Westerlands_Lannister_MAA_Lance_Cavalry" rank="3" />
-        <Levies percentage="22" key="Westerlands_Brax_MAA_Crossbowmen" max="LEVY" />
-        <Levies percentage="20" key="Westerlands_Crakehall_MAA_Lance_Cavalry" max="LEVY" />
-        <Levies percentage="16" key="Westerlands_Lannister_MAA_Pikemen" max="LEVY" />
-        <Levies percentage="42" key="Westerlands_Brax_MAA_Spearmen" max="LEVY" />
+        <Knights key="Westerlands_Lannister_MAA_Lance_Cavalry" rank="2" />
+        <Knights key="Westerlands_Crakehall_MAA_Lance_Cavalry" rank="3" />
+        <Levies percentage="19" key="Westerlands_Crakehall_MAA_Longbowmen" max="LEVY" />
+        <Levies percentage="15" key="Westerlands_Crakehall_MAA_Mounted_Swordsmen" max="LEVY" />
+        <Levies percentage="29" key="Westerlands_Crakehall_MAA_Pikemen" max="LEVY" />
+        <Levies percentage="37" key="Westerlands_Brax_MAA_Halberdiers" max="LEVY" />
+        <Garrison key="Westerlands_Lannister_Catapult" max="LEVY" level="1" percentage="29" />
+        <Garrison key="Westerlands_Brax_Catapult" max="LEVY" level="1" percentage="27" />
+        <Garrison key="Westerlands_Marbrand_Catapult" max="LEVY" level="1" percentage="44" />
+        <Garrison key="Westerlands_Brax_Catapult" max="LEVY" level="2" percentage="17" />
+        <Garrison key="Westerlands_Marbrand_Catapult" max="LEVY" level="2" percentage="35" />
+        <Garrison key="Westerlands_Lannister_Catapult" max="LEVY" level="2" percentage="48" />
+        <Garrison key="Westerlands_Lannister_MAA_Longbowmen" max="LEVY" level="3" percentage="20" />
+        <Garrison key="Westerlands_Crakehall_MAA_Lance_Cavalry" max="LEVY" level="3" percentage="17" />
+        <Garrison key="Westerlands_Marbrand_MAA_Spearmen" max="LEVY" level="3" percentage="24" />
+        <Garrison key="Westerlands_Crakehall_MAA_Swordsmen" max="LEVY" level="3" percentage="15" />
+        <Garrison key="Westerlands_Lannister_MAA_Spearmen" max="LEVY" level="3" percentage="24" />
+        <Garrison key="Westerlands_Lannister_Guard_Spearmen" max="LEVY" level="4" percentage="25" />
+        <Garrison key="Westerlands_Lannister_Guard_Swordsmen" max="LEVY" level="4" percentage="31" />
+        <Garrison key="Westerlands_Lannister_Guard_Spearmen" max="LEVY" level="4" percentage="44" />
         <MenAtArm type="castelry_rock_knights" key="Westerlands_Lannister_MAA_Lance_Cavalry" max="CAVALRY" />
         <MenAtArm type="clegane_footmen" key="Westerlands_Lannister_Guard_Swordsmen" max="INFANTRY" />
         <MenAtArm type="dragon_bows" key="Westerlands_Lannister_MAA_Longbowmen" max="RANGED" />
