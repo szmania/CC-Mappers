@@ -3,15 +3,17 @@ import argparse
 import xml.etree.ElementTree as ET
 import hashlib
 
-def find_file(directory, filename):
+def find_files(directory, filename):
     """
-    Recursively searches for 'filename' within 'directory' using os.walk()
-    and returns the full path if found, otherwise None.
+    Recursively searches for all occurrences of 'filename' within 'directory'
+    using os.walk() and returns a list of all full paths where the file is found.
+    If no files are found, it returns an an empty list.
     """
+    found_paths = []
     for root, _, files in os.walk(directory):
         if filename in files:
-            return os.path.join(root, filename)
-    return None
+            found_paths.append(os.path.join(root, filename))
+    return found_paths
 
 def calculate_sha256(file_path, chunk_size=8192):
     """
@@ -86,10 +88,49 @@ def main():
         current_sha256 = mod_element.get('sha256')
 
         print(f"  - Processing mod: '{mod_pack_filename}'")
-        file_path = find_file(attila_mods_directory, mod_pack_filename)
+        found_paths = find_files(attila_mods_directory, mod_pack_filename)
 
-        if file_path:
-            calculated_sha256 = calculate_sha256(file_path)
+        file_to_hash = None
+
+        if not found_paths:
+            print(f"    -> Warning: Mod pack file '{mod_pack_filename}' not found in '{attila_mods_directory}'.")
+            if 'sha256' in mod_element.attrib:
+                del mod_element.attrib['sha256']
+                changes_made = True
+                print(f"    -> Removed existing sha256 for '{mod_pack_filename}' as file is missing.")
+            continue # Move to the next mod
+
+        elif len(found_paths) == 1:
+            file_to_hash = found_paths[0]
+            print(f"    -> Found unique file: '{file_to_hash}'")
+
+        else: # Multiple files found (duplicates)
+            print(f"    -> WARNING: Multiple instances of mod pack file '{mod_pack_filename}' found:")
+            for i, path in enumerate(found_paths):
+                print(f"       {i+1}. {path}")
+            print(f"       0. Skip this mod.")
+
+            while True:
+                try:
+                    choice = input("       Enter your choice (0 to skip): ")
+                    user_choice = int(choice)
+                    if 0 <= user_choice <= len(found_paths):
+                        break
+                    else:
+                        print("       Invalid choice. Please enter a number within the range.")
+                except ValueError:
+                    print("       Invalid input. Please enter a number.")
+
+            if user_choice == 0:
+                print(f"    -> Skipping mod '{mod_pack_filename}'.")
+                continue # Move to the next mod
+            else:
+                file_to_hash = found_paths[user_choice - 1]
+                print(f"    -> Selected file: '{file_to_hash}'")
+
+        # Hashing logic, executed only if a definitive file_to_hash is determined
+        if file_to_hash:
+            calculated_sha256 = calculate_sha256(file_to_hash)
             if calculated_sha256:
                 if current_sha256 != calculated_sha256:
                     mod_element.set('sha256', calculated_sha256)
@@ -103,12 +144,6 @@ def main():
                     del mod_element.attrib['sha256']
                     changes_made = True
                     print(f"    -> Removed existing sha256 for '{mod_pack_filename}' due to calculation error.")
-        else:
-            print(f"    -> Warning: Mod pack file '{mod_pack_filename}' not found in '{attila_mods_directory}'.")
-            if 'sha256' in mod_element.attrib:
-                del mod_element.attrib['sha256']
-                changes_made = True
-                print(f"    -> Removed existing sha256 for '{mod_pack_filename}' as file is missing.")
 
     if changes_made:
         indent_xml(root)
