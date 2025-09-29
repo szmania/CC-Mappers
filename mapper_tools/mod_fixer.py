@@ -86,10 +86,8 @@ def main():
 
         mod_text_content_stripped = mod_text_content.strip()
         
-        if mod_text_content_stripped.startswith('@'):
-            mod_pack_filename = mod_text_content_stripped[1:]
-        else:
-            mod_pack_filename = mod_text_content_stripped
+        # Preserve leading '@' symbols as they are part of the filename
+        mod_pack_filename = mod_text_content_stripped
             
         current_sha256 = mod_element.get('sha256')
 
