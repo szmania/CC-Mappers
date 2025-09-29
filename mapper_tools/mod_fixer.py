@@ -54,21 +54,21 @@ def indent_xml(elem, level=0):
 def main():
     parser = argparse.ArgumentParser(description="Update Mods.xml with SHA-256 hashes of mod pack files.")
     parser.add_argument("--mods-xml-path", required=True, help="Path to the Mods.xml file to be processed.")
-    parser.add_argument("--attila-mods-directory", required=True, help="Path to the root directory where Attila mod .pack files are stored.")
+    parser.add_argument("--attila-mods-dir", required=True, help="Path to the root directory where Attila mod .pack files are stored.")
     args = parser.parse_args()
 
     mods_xml_path = args.mods_xml_path
-    attila_mods_directory = args.attila_mods_directory
+    attila_mods_dir = args.attila_mods_dir
 
     if not os.path.exists(mods_xml_path):
         print(f"Error: Mods XML file not found at '{mods_xml_path}'.")
         return
-    if not os.path.isdir(attila_mods_directory):
-        print(f"Error: Attila mods directory not found at '{attila_mods_directory}'.")
+    if not os.path.isdir(attila_mods_dir):
+        print(f"Error: Attila mods directory not found at '{attila_mods_dir}'.")
         return
 
     print(f"Processing Mods XML file: '{mods_xml_path}'")
-    print(f"Searching for mod packs in: '{attila_mods_directory}'")
+    print(f"Searching for mod packs in: '{attila_mods_dir}'")
 
     try:
         tree = ET.parse(mods_xml_path)
@@ -88,12 +88,12 @@ def main():
         current_sha256 = mod_element.get('sha256')
 
         print(f"  - Processing mod: '{mod_pack_filename}'")
-        found_paths = find_files(attila_mods_directory, mod_pack_filename)
+        found_paths = find_files(attila_mods_dir, mod_pack_filename)
 
         file_to_hash = None
 
         if not found_paths:
-            print(f"    -> Warning: Mod pack file '{mod_pack_filename}' not found in '{attila_mods_directory}'.")
+            print(f"    -> Warning: Mod pack file '{mod_pack_filename}' not found in '{attila_mods_dir}'.")
             if 'sha256' in mod_element.attrib:
                 del mod_element.attrib['sha256']
                 changes_made = True
