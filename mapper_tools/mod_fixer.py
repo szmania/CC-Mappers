@@ -79,12 +79,18 @@ def main():
 
     changes_made = False
     for mod_element in root.findall('Mod'):
-        mod_pack_name_with_at = mod_element.text
-        if not mod_pack_name_with_at or not mod_pack_name_with_at.strip().startswith('@'):
-            print(f"Warning: Skipping <Mod> tag with invalid text content: '{mod_pack_name_with_at}'. Expected '@mod_name.pack'.")
+        mod_text_content = mod_element.text
+        if not mod_text_content or not mod_text_content.strip():
+            print(f"Warning: Skipping <Mod> tag with empty or whitespace text content.")
             continue
 
-        mod_pack_filename = mod_pack_name_with_at.strip()[1:] # Strip leading '@'
+        mod_text_content_stripped = mod_text_content.strip()
+        
+        if mod_text_content_stripped.startswith('@'):
+            mod_pack_filename = mod_text_content_stripped[1:]
+        else:
+            mod_pack_filename = mod_text_content_stripped
+            
         current_sha256 = mod_element.get('sha256')
 
         print(f"  - Processing mod: '{mod_pack_filename}'")
