@@ -83,7 +83,7 @@ def main():
             continue
 
         mod_pack_filename = mod_pack_name_with_at.strip()[1:] # Strip leading '@'
-        current_sha256 = mod_element.get('sha_256')
+        current_sha256 = mod_element.get('sha256')
 
         print(f"  - Processing mod: '{mod_pack_filename}'")
         file_path = find_file(attila_mods_directory, mod_pack_filename)
@@ -92,23 +92,23 @@ def main():
             calculated_sha256 = calculate_sha256(file_path)
             if calculated_sha256:
                 if current_sha256 != calculated_sha256:
-                    mod_element.set('sha_256', calculated_sha256)
+                    mod_element.set('sha256', calculated_sha256)
                     changes_made = True
-                    print(f"    -> Updated sha_256 for '{mod_pack_filename}' to '{calculated_sha256}'.")
+                    print(f"    -> Updated sha256 for '{mod_pack_filename}' to '{calculated_sha256}'.")
                 else:
-                    print(f"    -> sha_256 for '{mod_pack_filename}' is already correct.")
+                    print(f"    -> sha256 for '{mod_pack_filename}' is already correct.")
             else:
                 # If hash calculation failed, remove existing hash
-                if 'sha_256' in mod_element.attrib:
-                    del mod_element.attrib['sha_256']
+                if 'sha256' in mod_element.attrib:
+                    del mod_element.attrib['sha256']
                     changes_made = True
-                    print(f"    -> Removed existing sha_256 for '{mod_pack_filename}' due to calculation error.")
+                    print(f"    -> Removed existing sha256 for '{mod_pack_filename}' due to calculation error.")
         else:
             print(f"    -> Warning: Mod pack file '{mod_pack_filename}' not found in '{attila_mods_directory}'.")
-            if 'sha_256' in mod_element.attrib:
-                del mod_element.attrib['sha_256']
+            if 'sha256' in mod_element.attrib:
+                del mod_element.attrib['sha256']
                 changes_made = True
-                print(f"    -> Removed existing sha_256 for '{mod_pack_filename}' as file is missing.")
+                print(f"    -> Removed existing sha256 for '{mod_pack_filename}' as file is missing.")
 
     if changes_made:
         indent_xml(root)
