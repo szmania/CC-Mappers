@@ -456,6 +456,11 @@
         </Settlement_Unique>
     </Settlement_Maps_Unique>
     <Settlement_Maps>
+        <Settlement faction="Default" battle_type="settlement_unfortified">
+            <Variant key="preset_city_generic_dwarven_a" is_unique_settlement="False">
+                <Map x="0.648" y="0.144" />
+            </Variant>
+        </Settlement>
         <Settlement faction="Anduin-Vale" battle_type="settlement_standard">
             <Variant key="preset_city_generic_dunedain_a" is_unique_settlement="False">
                 <Map x="0.448" y="0.629" />
@@ -467,13 +472,19 @@
             </Variant>
         </Settlement>
         <Settlement faction="Angmar" battle_type="settlement_standard">
-            <Variant key="preset_city_generic_dwarven_a" is_unique_settlement="False">
-                <Map x="0.648" y="0.144" />
+            <Variant key="preset_city_generic_northmen_a" is_unique_settlement="False">
+                <Map x="0.388" y="0.519" />
+            </Variant>
+            <Variant key="preset_city_generic_northmen_b" is_unique_settlement="False">
+                <Map x="0.408" y="0.492" />
             </Variant>
         </Settlement>
         <Settlement faction="Angmar" battle_type="settlement_unfortified">
-            <Variant key="preset_city_generic_dwarven_a" is_unique_settlement="False">
-                <Map x="0.648" y="0.144" />
+            <Variant key="preset_city_generic_northmen_b" is_unique_settlement="False">
+                <Map x="0.408" y="0.492" />
+            </Variant>
+            <Variant key="preset_city_generic_northmen_a" is_unique_settlement="False">
+                <Map x="0.388" y="0.519" />
             </Variant>
         </Settlement>
         <Settlement faction="Arnor" battle_type="settlement_standard">
@@ -501,11 +512,11 @@
             </Variant>
         </Settlement>
         <Settlement faction="Bree Land" battle_type="settlement_unfortified">
-            <Variant key="preset_city_generic_northmen_b" is_unique_settlement="False">
-                <Map x="0.408" y="0.492" />
-            </Variant>
             <Variant key="preset_city_generic_northmen_a" is_unique_settlement="False">
                 <Map x="0.388" y="0.519" />
+            </Variant>
+            <Variant key="preset_city_generic_northmen_b" is_unique_settlement="False">
+                <Map x="0.408" y="0.492" />
             </Variant>
         </Settlement>
         <Settlement faction="Dale" battle_type="settlement_standard">
@@ -518,36 +529,20 @@
                 <Map x="0.648" y="0.144" />
             </Variant>
         </Settlement>
-        <Settlement faction="Default" battle_type="settlement_standard">
-            <Variant key="preset_city_generic_northmen_a" is_unique_settlement="False">
-                <Map x="0.388" y="0.519" />
-            </Variant>
-            <Variant key="preset_city_generic_northmen_b" is_unique_settlement="False">
-                <Map x="0.408" y="0.492" />
-            </Variant>
-        </Settlement>
-        <Settlement faction="Default" battle_type="settlement_unfortified">
-            <Variant key="preset_city_generic_northmen_b" is_unique_settlement="False">
-                <Map x="0.408" y="0.492" />
-            </Variant>
-            <Variant key="preset_city_generic_northmen_a" is_unique_settlement="False">
-                <Map x="0.388" y="0.519" />
-            </Variant>
-        </Settlement>
         <Settlement faction="Dol Amroth" battle_type="settlement_standard">
-            <Variant key="preset_city_generic_northmen_a" is_unique_settlement="False">
-                <Map x="0.388" y="0.519" />
-            </Variant>
             <Variant key="preset_city_generic_northmen_b" is_unique_settlement="False">
                 <Map x="0.408" y="0.492" />
+            </Variant>
+            <Variant key="preset_city_generic_northmen_a" is_unique_settlement="False">
+                <Map x="0.388" y="0.519" />
             </Variant>
         </Settlement>
         <Settlement faction="Dol Amroth" battle_type="settlement_unfortified">
-            <Variant key="preset_city_generic_northmen_a" is_unique_settlement="False">
-                <Map x="0.388" y="0.519" />
-            </Variant>
             <Variant key="preset_city_generic_northmen_b" is_unique_settlement="False">
                 <Map x="0.408" y="0.492" />
+            </Variant>
+            <Variant key="preset_city_generic_northmen_a" is_unique_settlement="False">
+                <Map x="0.388" y="0.519" />
             </Variant>
         </Settlement>
         <Settlement faction="Dol Guldur" battle_type="settlement_standard">
@@ -569,11 +564,11 @@
             </Variant>
         </Settlement>
         <Settlement faction="Dorwinion" battle_type="settlement_unfortified">
-            <Variant key="preset_city_generic_northmen_b" is_unique_settlement="False">
-                <Map x="0.408" y="0.492" />
-            </Variant>
             <Variant key="preset_city_generic_northmen_a" is_unique_settlement="False">
                 <Map x="0.388" y="0.519" />
+            </Variant>
+            <Variant key="preset_city_generic_northmen_b" is_unique_settlement="False">
+                <Map x="0.408" y="0.492" />
             </Variant>
         </Settlement>
         <Settlement faction="Dunlending" battle_type="settlement_standard">
@@ -623,11 +618,11 @@
             </Variant>
         </Settlement>
         <Settlement faction="Erebor" battle_type="settlement_standard">
-            <Variant key="preset_city_generic_northmen_a" is_unique_settlement="False">
-                <Map x="0.388" y="0.519" />
-            </Variant>
             <Variant key="preset_city_generic_northmen_b" is_unique_settlement="False">
                 <Map x="0.408" y="0.492" />
+            </Variant>
+            <Variant key="preset_city_generic_northmen_a" is_unique_settlement="False">
+                <Map x="0.388" y="0.519" />
             </Variant>
         </Settlement>
         <Settlement faction="Erebor" battle_type="settlement_unfortified">
@@ -705,35 +700,29 @@
             </Variant>
         </Settlement>
         <Settlement faction="Haradrim" battle_type="settlement_standard">
-            <Variant key="preset_city_generic_northmen_a" is_unique_settlement="False">
-                <Map x="0.388" y="0.519" />
-            </Variant>
             <Variant key="preset_city_generic_northmen_b" is_unique_settlement="False">
                 <Map x="0.408" y="0.492" />
+            </Variant>
+            <Variant key="preset_city_generic_northmen_a" is_unique_settlement="False">
+                <Map x="0.388" y="0.519" />
             </Variant>
         </Settlement>
         <Settlement faction="Haradrim" battle_type="settlement_unfortified">
-            <Variant key="preset_city_generic_northmen_b" is_unique_settlement="False">
-                <Map x="0.408" y="0.492" />
-            </Variant>
             <Variant key="preset_city_generic_northmen_a" is_unique_settlement="False">
                 <Map x="0.388" y="0.519" />
+            </Variant>
+            <Variant key="preset_city_generic_northmen_b" is_unique_settlement="False">
+                <Map x="0.408" y="0.492" />
             </Variant>
         </Settlement>
         <Settlement faction="Harondor" battle_type="settlement_standard">
-            <Variant key="preset_city_generic_northmen_b" is_unique_settlement="False">
-                <Map x="0.408" y="0.492" />
-            </Variant>
-            <Variant key="preset_city_generic_northmen_a" is_unique_settlement="False">
-                <Map x="0.388" y="0.519" />
+            <Variant key="preset_city_generic_dwarven_a" is_unique_settlement="False">
+                <Map x="0.648" y="0.144" />
             </Variant>
         </Settlement>
         <Settlement faction="Harondor" battle_type="settlement_unfortified">
-            <Variant key="preset_city_generic_northmen_a" is_unique_settlement="False">
-                <Map x="0.388" y="0.519" />
-            </Variant>
-            <Variant key="preset_city_generic_northmen_b" is_unique_settlement="False">
-                <Map x="0.408" y="0.492" />
+            <Variant key="preset_city_generic_dwarven_a" is_unique_settlement="False">
+                <Map x="0.648" y="0.144" />
             </Variant>
         </Settlement>
         <Settlement faction="High Elves" battle_type="settlement_standard">
@@ -807,19 +796,13 @@
             </Variant>
         </Settlement>
         <Settlement faction="Lothlorien" battle_type="settlement_standard">
-            <Variant key="preset_city_generic_northmen_b" is_unique_settlement="False">
-                <Map x="0.408" y="0.492" />
-            </Variant>
-            <Variant key="preset_city_generic_northmen_a" is_unique_settlement="False">
-                <Map x="0.388" y="0.519" />
+            <Variant key="preset_city_generic_dwarven_a" is_unique_settlement="False">
+                <Map x="0.648" y="0.144" />
             </Variant>
         </Settlement>
         <Settlement faction="Lothlorien" battle_type="settlement_unfortified">
-            <Variant key="preset_city_generic_northmen_b" is_unique_settlement="False">
-                <Map x="0.408" y="0.492" />
-            </Variant>
-            <Variant key="preset_city_generic_northmen_a" is_unique_settlement="False">
-                <Map x="0.388" y="0.519" />
+            <Variant key="preset_city_generic_dwarven_a" is_unique_settlement="False">
+                <Map x="0.648" y="0.144" />
             </Variant>
         </Settlement>
         <Settlement faction="Lothlórien" battle_type="settlement_standard">
@@ -887,11 +870,11 @@
             </Variant>
         </Settlement>
         <Settlement faction="Orocarni North" battle_type="settlement_unfortified">
-            <Variant key="preset_city_generic_northmen_a" is_unique_settlement="False">
-                <Map x="0.388" y="0.519" />
-            </Variant>
             <Variant key="preset_city_generic_northmen_b" is_unique_settlement="False">
                 <Map x="0.408" y="0.492" />
+            </Variant>
+            <Variant key="preset_city_generic_northmen_a" is_unique_settlement="False">
+                <Map x="0.388" y="0.519" />
             </Variant>
         </Settlement>
         <Settlement faction="Orocarni South" battle_type="settlement_standard">
@@ -1025,11 +1008,11 @@
             </Variant>
         </Settlement>
         <Settlement faction="blackroot" battle_type="settlement_unfortified">
-            <Variant key="preset_city_generic_northmen_b" is_unique_settlement="False">
-                <Map x="0.408" y="0.492" />
-            </Variant>
             <Variant key="preset_city_generic_northmen_a" is_unique_settlement="False">
                 <Map x="0.388" y="0.519" />
+            </Variant>
+            <Variant key="preset_city_generic_northmen_b" is_unique_settlement="False">
+                <Map x="0.408" y="0.492" />
             </Variant>
         </Settlement>
         <Settlement faction="dolamroth" battle_type="settlement_standard">
@@ -1041,11 +1024,11 @@
             </Variant>
         </Settlement>
         <Settlement faction="dolamroth" battle_type="settlement_unfortified">
-            <Variant key="preset_city_generic_northmen_b" is_unique_settlement="False">
-                <Map x="0.408" y="0.492" />
-            </Variant>
             <Variant key="preset_city_generic_northmen_a" is_unique_settlement="False">
                 <Map x="0.388" y="0.519" />
+            </Variant>
+            <Variant key="preset_city_generic_northmen_b" is_unique_settlement="False">
+                <Map x="0.408" y="0.492" />
             </Variant>
         </Settlement>
         <Settlement faction="harondor" battle_type="settlement_standard">
@@ -1097,11 +1080,11 @@
             </Variant>
         </Settlement>
         <Settlement faction="pinnath" battle_type="settlement_unfortified">
-            <Variant key="preset_city_generic_northmen_b" is_unique_settlement="False">
-                <Map x="0.408" y="0.492" />
-            </Variant>
             <Variant key="preset_city_generic_northmen_a" is_unique_settlement="False">
                 <Map x="0.388" y="0.519" />
+            </Variant>
+            <Variant key="preset_city_generic_northmen_b" is_unique_settlement="False">
+                <Map x="0.408" y="0.492" />
             </Variant>
         </Settlement>
         <Settlement faction="ringlo" battle_type="settlement_standard">
