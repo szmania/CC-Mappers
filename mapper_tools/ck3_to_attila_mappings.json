@@ -222,20 +222,25 @@
     },
     "TAG_ROLE_MAPPING": {
         "Garrison": [
-            "att_inf_sword_land",
-            "att_inf_spear_land"
+            "att_inf_bow_land",
+            "att_inf_crossbow_land",
+            "att_inf_spear_land",
+            "att_inf_sword_land"
         ],
         "Knights": [
-            "att_cav_shock_land",
-            "att_cav_melee_land"
+            "att_cav_melee_land",
+            "att_cav_shock_land"
         ],
         "Levies": [
+            "att_cav_melee_land",
+            "att_inf_bow_land",
+            "att_inf_javelin_land",
             "att_inf_spear_land",
             "att_inf_sword_land"
         ],
         "default": [
-            "att_inf_sword_land",
-            "att_inf_spear_land"
+            "att_inf_spear_land",
+            "att_inf_sword_land"
         ]
     }
 }
