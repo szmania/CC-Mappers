@@ -1,2 +1,174 @@
 <?xml version='1.0' encoding='utf-8'?>
-<Factions />
+<Factions>
+    <Faction name="Default" subculture="att_sub_cult_nomadic_sarmatian">
+        <General key="cha_avar_guard" rank="1" />
+        <General key="cha_avar_guard" rank="2" />
+        <General key="cha_avar_guard" rank="3" />
+        <Knights key="cha_avar_horse_archers" rank="1" />
+        <Knights key="cha_avar_noble_archers" rank="2" />
+        <Knights key="cha_avar_horse_masters" rank="3" />
+        <Levies key="cha_avar_foot_archers" percentage="28" max="LEVY" />
+        <Levies key="cha_avar_horse_archers" percentage="13" max="LEVY" />
+        <Levies key="cha_avar_levy_spear" percentage="16" max="LEVY" />
+        <Levies key="cha_avar_noble_sword" percentage="28" max="LEVY" />
+        <Levies key="cha_avar_tribesmen" percentage="15" max="LEVY" />
+        <Garrison key="cha_avar_levy_archers" percentage="8" max="LEVY" level="1" />
+        <Garrison key="cha_avar_lancers" percentage="18" max="LEVY" level="1" />
+        <Garrison key="cha_avar_spear" percentage="26" max="LEVY" level="1" />
+        <Garrison key="cha_avar_tribesmen" percentage="28" max="LEVY" level="1" />
+        <Garrison key="cha_avar_levy_spear" percentage="20" max="LEVY" level="1" />
+        <Garrison key="cha_avar_levy_archers" percentage="18" max="LEVY" level="2" />
+        <Garrison key="cha_avar_horse_archers" percentage="12" max="LEVY" level="2" />
+        <Garrison key="cha_avar_levy_spear" percentage="36" max="LEVY" level="2" />
+        <Garrison key="cha_avar_tribesmen" percentage="10" max="LEVY" level="2" />
+        <Garrison key="cha_avar_spear" percentage="24" max="LEVY" level="2" />
+        <Garrison key="cha_avar_foot_archers" percentage="21" max="LEVY" level="3" />
+        <Garrison key="cha_avar_horse_archers" percentage="16" max="LEVY" level="3" />
+        <Garrison key="cha_avar_levy_spear" percentage="22" max="LEVY" level="3" />
+        <Garrison key="cha_avar_tribesmen" percentage="22" max="LEVY" level="3" />
+        <Garrison key="cha_avar_spear" percentage="19" max="LEVY" level="3" />
+        <Garrison key="cha_avar_noble_archers" percentage="40" max="LEVY" level="4" />
+        <Garrison key="cha_avar_noble_sword" percentage="30" max="LEVY" level="4" />
+        <Garrison key="cha_avar_noble_lancers" percentage="30" max="LEVY" level="4" />
+        <MenAtArm type="abbasid_trebuchet" key="cha_avar_onager" siege="true" />
+        <MenAtArm type="abid_alshira" key="cha_avar_foot_archers" max="RANGED" />
+        <MenAtArm type="akritai" key="cha_avar_foot_archers" max="RANGED" />
+        <MenAtArm type="armored_footmen" key="cha_avar_noble_sword" max="INFANTRY" />
+        <MenAtArm type="armored_horsemen" key="cha_avar_lancers" max="CAVALRY" />
+        <MenAtArm type="artamat" key="cha_avar_foot_archers" max="RANGED" />
+        <MenAtArm type="ayrudzi" key="cha_avar_noble_archers" max="CAVALRY" />
+        <MenAtArm type="ballista_elephant" key="cha_avar_lancers" max="CAVALRY" />
+        <MenAtArm type="ballistrai" key="cha_avar_foot_archers" max="RANGED" />
+        <MenAtArm type="barbary_corsairs" key="cha_avar_foot_archers" max="RANGED" />
+        <MenAtArm type="bed_crossbows" key="cha_avar_onager" siege="true" />
+        <MenAtArm type="berdiche_axemen" key="cha_avar_noble_sword" max="INFANTRY" />
+        <MenAtArm type="bokator" key="cha_avar_noble_sword" max="INFANTRY" />
+        <MenAtArm type="bombard" key="cha_avar_onager" siege="true" />
+        <MenAtArm type="bowmen" key="cha_avar_foot_archers" max="RANGED" />
+        <MenAtArm type="bulgarian_ciobani" key="cha_avar_foot_archers" max="RANGED" />
+        <MenAtArm type="bulgarian_konnik" key="cha_avar_lancers" max="CAVALRY" />
+        <MenAtArm type="bulgarian_oklopnitsi" key="cha_avar_noble_sword" max="INFANTRY" />
+        <MenAtArm type="bulgarian_testudos" key="cha_avar_onager" siege="true" />
+        <MenAtArm type="bulgarian_voynik" key="cha_avar_foot_archers" max="RANGED" />
+        <MenAtArm type="byzantine_akontistai" key="cha_avar_foot_archers" max="RANGED" />
+        <MenAtArm type="byzantine_apelatai" key="cha_avar_foot_archers" max="RANGED" />
+        <MenAtArm type="byzantine_hippotoxotai" key="cha_avar_noble_archers" max="CAVALRY" />
+        <MenAtArm type="byzantine_klibanophoroi" key="cha_avar_lancers" max="CAVALRY" />
+        <MenAtArm type="byzantine_kontophoros" key="cha_avar_noble_sword" max="INFANTRY" />
+        <MenAtArm type="byzantine_koursores" key="cha_avar_noble_archers" max="CAVALRY" />
+        <MenAtArm type="byzantine_latinkon" key="cha_avar_lancers" max="CAVALRY" />
+        <MenAtArm type="byzantine_menaulatoi" key="cha_avar_tribesmen" max="INFANTRY" />
+        <MenAtArm type="byzantine_peltast" key="cha_avar_foot_archers" max="RANGED" />
+        <MenAtArm type="byzantine_psiloi" key="cha_avar_foot_archers" max="RANGED" />
+        <MenAtArm type="byzantine_skoutatoi" key="cha_avar_noble_sword" max="INFANTRY" />
+        <MenAtArm type="byzantine_skythikon" key="cha_avar_noble_archers" max="CAVALRY" />
+        <MenAtArm type="byzantine_toxotai" key="cha_avar_foot_archers" max="RANGED" />
+        <MenAtArm type="byzantine_trapezitai" key="cha_avar_noble_archers" max="CAVALRY" />
+        <MenAtArm type="byzantine_trebuchet" key="cha_avar_onager" siege="true" />
+        <MenAtArm type="byzantine_vardariotai" key="cha_avar_noble_archers" max="CAVALRY" />
+        <MenAtArm type="cam_quan" key="cha_avar_noble_sword" max="INFANTRY" />
+        <MenAtArm type="cataphract" key="cha_avar_lancers" max="CAVALRY" />
+        <MenAtArm type="conrois" key="cha_avar_lancers" max="CAVALRY" />
+        <MenAtArm type="cossack_cavalry" key="cha_avar_noble_archers" max="CAVALRY" />
+        <MenAtArm type="crossbowmen" key="cha_avar_foot_archers" max="RANGED" />
+        <MenAtArm type="danish_obudshaer" key="cha_avar_tribesmen" max="INFANTRY" />
+        <MenAtArm type="danish_svenner" key="cha_avar_noble_archers" max="CAVALRY" />
+        <MenAtArm type="dievas_guard" key="cha_avar_noble_archers" max="CAVALRY" />
+        <MenAtArm type="druzhina_cavalry" key="cha_avar_lancers" max="CAVALRY" />
+        <MenAtArm type="dvor_cavalry" key="cha_avar_noble_archers" max="CAVALRY" />
+        <MenAtArm type="dzukijan_horsemen" key="cha_avar_noble_archers" max="CAVALRY" />
+        <MenAtArm type="egyptian_khassaki" key="cha_avar_lancers" max="CAVALRY" />
+        <MenAtArm type="egyptian_tabardariyya" key="cha_avar_noble_sword" max="INFANTRY" />
+        <MenAtArm type="english_billmen" key="cha_avar_tribesmen" max="INFANTRY" />
+        <MenAtArm type="fire_lances" key="cha_avar_tribesmen" max="INFANTRY" />
+        <MenAtArm type="french_aventurier" key="cha_avar_foot_archers" max="RANGED" />
+        <MenAtArm type="french_caballarii" key="cha_avar_lancers" max="CAVALRY" />
+        <MenAtArm type="french_voulgier" key="cha_avar_tribesmen" max="INFANTRY" />
+        <MenAtArm type="gaelic_ceathairne" key="cha_avar_foot_archers" max="RANGED" />
+        <MenAtArm type="genoese_crossbowmen" key="cha_avar_foot_archers" max="RANGED" />
+        <MenAtArm type="germanic_verlorene_haufe" key="cha_avar_tribesmen" max="INFANTRY" />
+        <MenAtArm type="ghilman_nubians" key="cha_avar_noble_sword" max="INFANTRY" />
+        <MenAtArm type="giltines_chosen" key="cha_avar_tribesmen" max="INFANTRY" />
+        <MenAtArm type="gondi_shahanshah" key="cha_avar_noble_sword" max="INFANTRY" />
+        <MenAtArm type="halberdiers_unit" key="cha_avar_tribesmen" max="INFANTRY" />
+        <MenAtArm type="hand_cannons" key="cha_avar_foot_archers" max="RANGED" />
+        <MenAtArm type="handpicked_faithful" key="cha_avar_noble_sword" max="INFANTRY" />
+        <MenAtArm type="house_guard" key="cha_avar_noble_sword" max="INFANTRY" />
+        <MenAtArm type="hungarian_banderium" key="cha_avar_lancers" max="CAVALRY" />
+        <MenAtArm type="hungarian_hussar" key="cha_avar_noble_archers" max="CAVALRY" />
+        <MenAtArm type="hungarian_tizlandzsasok" key="cha_avar_lancers" max="CAVALRY" />
+        <MenAtArm type="iberian_coseletes" key="cha_avar_tribesmen" max="INFANTRY" />
+        <MenAtArm type="iberian_picas_secas" key="cha_avar_tribesmen" max="INFANTRY" />
+        <MenAtArm type="iberian_raiders" key="cha_avar_foot_archers" max="RANGED" />
+        <MenAtArm type="irish_ceithern" key="cha_avar_foot_archers" max="RANGED" />
+        <MenAtArm type="irish_cliathairi" key="cha_avar_tribesmen" max="INFANTRY" />
+        <MenAtArm type="irish_galloglaigh" key="cha_avar_noble_sword" max="INFANTRY" />
+        <MenAtArm type="irish_horseboys" key="cha_avar_noble_archers" max="CAVALRY" />
+        <MenAtArm type="irish_muire" key="cha_avar_noble_sword" max="INFANTRY" />
+        <MenAtArm type="irish_ostmen" key="cha_avar_foot_archers" max="RANGED" />
+        <MenAtArm type="irish_ridire" key="cha_avar_noble_archers" max="CAVALRY" />
+        <MenAtArm type="iron_buddhas" key="cha_avar_lancers" max="CAVALRY" />
+        <MenAtArm type="iron_hawks" key="cha_avar_lancers" max="CAVALRY" />
+        <MenAtArm type="islamic_alashair_infantry" key="cha_avar_tribesmen" max="INFANTRY" />
+        <MenAtArm type="islamic_fursan" key="cha_avar_lancers" max="CAVALRY" />
+        <MenAtArm type="islamic_hasham" key="cha_avar_lancers" max="CAVALRY" />
+        <MenAtArm type="islamic_iqtadar" key="cha_avar_noble_archers" max="CAVALRY" />
+        <MenAtArm type="islamic_khasseki_infantry" key="cha_avar_foot_archers" max="RANGED" />
+        <MenAtArm type="islamic_naffatun" key="cha_avar_foot_archers" max="RANGED" />
+        <MenAtArm type="islamic_rijal" key="cha_avar_foot_archers" max="RANGED" />
+        <MenAtArm type="islamic_rumat" key="cha_avar_foot_archers" max="RANGED" />
+        <MenAtArm type="janissaries_archer" key="cha_avar_foot_archers" max="RANGED" />
+        <MenAtArm type="janissaries_infantry" key="cha_avar_noble_sword" max="INFANTRY" />
+        <MenAtArm type="lanze_spezzate" key="cha_avar_lancers" max="CAVALRY" />
+        <MenAtArm type="light_footmen" key="cha_avar_foot_archers" max="RANGED" />
+        <MenAtArm type="light_horsemen" key="cha_avar_noble_archers" max="CAVALRY" />
+        <MenAtArm type="lithuanian_bajorija" key="cha_avar_lancers" max="CAVALRY" />
+        <MenAtArm type="luojuzi" key="cha_avar_tribesmen" max="INFANTRY" />
+        <MenAtArm type="maa_bandits" key="cha_avar_foot_archers" max="RANGED" />
+        <MenAtArm type="maa_marauders" key="cha_avar_noble_archers" max="CAVALRY" />
+        <MenAtArm type="maa_poachers" key="cha_avar_foot_archers" max="RANGED" />
+        <MenAtArm type="maa_thieves" key="cha_avar_tribesmen" max="INFANTRY" />
+        <MenAtArm type="mamluk_cavalry" key="cha_avar_lancers" max="CAVALRY" />
+        <MenAtArm type="mande_hunter" key="cha_avar_foot_archers" max="RANGED" />
+        <MenAtArm type="mangonel" key="cha_avar_onager" siege="true" />
+        <MenAtArm type="milan_famiglia_ducale" key="cha_avar_lancers" max="CAVALRY" />
+        <MenAtArm type="mongol_cataphract" key="cha_avar_lancers" max="CAVALRY" />
+        <MenAtArm type="muslim_jinete" key="cha_avar_noble_archers" max="CAVALRY" />
+        <MenAtArm type="nangchen_cavalry" key="cha_avar_noble_archers" max="CAVALRY" />
+        <MenAtArm type="norman_knights" key="cha_avar_lancers" max="CAVALRY" />
+        <MenAtArm type="onager" key="cha_avar_onager" siege="true" />
+        <MenAtArm type="outremer_bowmen" key="cha_avar_foot_archers" max="RANGED" />
+        <MenAtArm type="outremer_heavy_cavalry" key="cha_avar_lancers" max="CAVALRY" />
+        <MenAtArm type="outremer_turcopoles" key="cha_avar_noble_archers" max="CAVALRY" />
+        <MenAtArm type="pavise_spearmen" key="cha_avar_tribesmen" max="INFANTRY" />
+        <MenAtArm type="persian_cataphract" key="cha_avar_lancers" max="CAVALRY" />
+        <MenAtArm type="persian_kamandaran" key="cha_avar_foot_archers" max="RANGED" />
+        <MenAtArm type="persian_neyzedaran" key="cha_avar_tribesmen" max="INFANTRY" />
+        <MenAtArm type="persian_paighan" key="cha_avar_foot_archers" max="RANGED" />
+        <MenAtArm type="persian_war_elephant" key="cha_avar_lancers" max="CAVALRY" />
+        <MenAtArm type="pikemen_unit" key="cha_avar_tribesmen" max="INFANTRY" />
+        <MenAtArm type="polish_strzelcy" key="cha_avar_noble_archers" max="CAVALRY" />
+        <MenAtArm type="portugal_aventuros" key="cha_avar_tribesmen" max="INFANTRY" />
+        <MenAtArm type="portugal_crossbowmen" key="cha_avar_foot_archers" max="RANGED" />
+        <MenAtArm type="sherwood_archers" key="cha_avar_foot_archers" max="RANGED" />
+        <MenAtArm type="shotel_warriors" key="cha_avar_foot_archers" max="RANGED" />
+        <MenAtArm type="sibyan_alkhass" key="cha_avar_noble_archers" max="CAVALRY" />
+        <MenAtArm type="sicilian_archers" key="cha_avar_foot_archers" max="RANGED" />
+        <MenAtArm type="sipahi_lancers" key="cha_avar_lancers" max="CAVALRY" />
+        <MenAtArm type="sipahis" key="cha_avar_noble_archers" max="CAVALRY" />
+        <MenAtArm type="skoutatoi" key="cha_avar_tribesmen" max="INFANTRY" />
+        <MenAtArm type="sofa" key="cha_avar_foot_archers" max="RANGED" />
+        <MenAtArm type="spanish_jinete" key="cha_avar_noble_archers" max="CAVALRY" />
+        <MenAtArm type="sumpitan" key="cha_avar_foot_archers" max="RANGED" />
+        <MenAtArm type="trebuchet" key="cha_avar_onager" siege="true" />
+        <MenAtArm type="turkish_azabs" key="cha_avar_foot_archers" max="RANGED" />
+        <MenAtArm type="turkish_qapukulu" key="cha_avar_lancers" max="CAVALRY" />
+        <MenAtArm type="varangian_guards" key="cha_avar_noble_sword" max="INFANTRY" />
+        <MenAtArm type="welsh_helwyr" key="cha_avar_foot_archers" max="RANGED" />
+        <MenAtArm type="welsh_rhyfelwyr" key="cha_avar_noble_sword" max="INFANTRY" />
+        <MenAtArm type="welsh_saethwyr" key="cha_avar_foot_archers" max="RANGED" />
+        <MenAtArm type="welsh_teulu" key="cha_avar_lancers" max="CAVALRY" />
+        <MenAtArm type="woodsmen" key="cha_avar_foot_archers" max="RANGED" />
+        <MenAtArm type="yeoman_archers" key="cha_avar_foot_archers" max="RANGED" />
+    </Faction>
+</Factions>
