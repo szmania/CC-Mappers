@@ -1,0 +1,241 @@
+{
+    "ATTILA_CATEGORY_TO_MAX_VALUE": {
+        "cavalry": "CAVALRY",
+        "inf_melee": "INFANTRY",
+        "inf_ranged": "RANGED"
+    },
+    "CK3_TYPE_TO_ATTILA_CLASS": {
+        "archer_cavalry": [
+            "cav_crossbow_land"
+        ],
+        "archers": [
+            "inf_mis"
+        ],
+        "axe_infantry": [
+            "inf_mel"
+        ],
+        "camel_cavalry": [
+            "cav_melee_bow_land",
+            "cav_shock_bow_land"
+        ],
+        "camel_riders": [
+            "cav_mel"
+        ],
+        "crossbowmen": [
+            "inf_mis"
+        ],
+        "default": [
+            "inf_mel"
+        ],
+        "elephant_cavalry": [
+            "elph"
+        ],
+        "heavy_cavalry": [
+            "cav_shk",
+            "cav_mel"
+        ],
+        "heavy_infantry": [
+            "inf_mel"
+        ],
+        "horse_archers": [
+            "cav_mis"
+        ],
+        "light_cavalry": [
+            "cav_mel",
+            "cav_mis"
+        ],
+        "light_infantry": [
+            "inf_mel"
+        ],
+        "melee_cavalry": [
+            "cav_mel"
+        ],
+        "nomadic_horde": [
+            "art_fix",
+            "com"
+        ],
+        "pikemen": [
+            "inf_pik"
+        ],
+        "polearm_infantry": [
+            "inf_mel"
+        ],
+        "shock_cavalry": [
+            "cav_shk"
+        ],
+        "shock_infantry": [
+            "inf_mel"
+        ],
+        "siege_weapon": [
+            "art_siege",
+            "art_fld"
+        ],
+        "skirmishers": [
+            "inf_mis"
+        ],
+        "slingers": [
+            "inf_mis"
+        ],
+        "spear_infantry": [
+            "inf_spr"
+        ],
+        "sword_infantry": [
+            "inf_mel"
+        ],
+        "war_elephants": [
+            "elph"
+        ]
+    },
+    "CK3_TYPE_TO_ATTILA_MAX_CATEGORY": {
+        "archer_cavalry": "INFANTRY",
+        "archers": "RANGED",
+        "axe_infantry": "INFANTRY",
+        "camel_cavalry": "CAVALRY",
+        "camel_riders": "CAVALRY",
+        "crossbowmen": "RANGED",
+        "default": "INFANTRY",
+        "elephant_cavalry": "CAVALRY",
+        "heavy_cavalry": "CAVALRY",
+        "heavy_infantry": "INFANTRY",
+        "horse_archers": "CAVALRY",
+        "light_cavalry": "CAVALRY",
+        "light_infantry": "INFANTRY",
+        "melee_cavalry": "CAVALRY",
+        "nomadic_horde": "INFANTRY",
+        "pikemen": "INFANTRY",
+        "polearm_infantry": "INFANTRY",
+        "shock_cavalry": "CAVALRY",
+        "shock_infantry": "INFANTRY",
+        "siege_weapon": null,
+        "skirmishers": "RANGED",
+        "slingers": "RANGED",
+        "spear_infantry": "INFANTRY",
+        "sword_infantry": "INFANTRY",
+        "war_elephants": "CAVALRY"
+    },
+    "CK3_TYPE_TO_ATTILA_ROLES": {
+        "archer_cavalry": [
+            "att_inf_sword_bow_land",
+            "att_inf_spear_land"
+        ],
+        "archers": [
+            "att_inf_bow_land"
+        ],
+        "axe_infantry": [
+            "att_inf_axe_land",
+            "att_inf_sword_land"
+        ],
+        "camel_cavalry": [
+            "att_inf_axe_land",
+            "att_inf_sword_land"
+        ],
+        "camel_riders": [
+            "att_cav_melee_land"
+        ],
+        "crossbowmen": [
+            "att_inf_crossbow_land"
+        ],
+        "default": [
+            "att_inf_sword_land",
+            "att_inf_spear_land"
+        ],
+        "elephant_cavalry": [
+            "att_cav_shock_land"
+        ],
+        "heavy_cavalry": [
+            "att_cav_shock_land",
+            "att_cav_melee_land"
+        ],
+        "heavy_infantry": [
+            "att_inf_sword_land",
+            "att_inf_axe_land",
+            "att_inf_polearm_shock_land",
+            "att_inf_spear_land"
+        ],
+        "horse_archers": [
+            "att_cav_bow_land"
+        ],
+        "light_cavalry": [
+            "att_cav_melee_land",
+            "att_cav_shock_land"
+        ],
+        "light_infantry": [
+            "att_inf_sword_land",
+            "att_inf_axe_land",
+            "att_inf_javelin_land",
+            "att_inf_spear_land"
+        ],
+        "melee_cavalry": [
+            "att_cav_melee_land",
+            "att_cav_shock_land"
+        ],
+        "nomadic_horde": [
+            "att_inf_javelin_marine",
+            "att_inf_polearm_shock_land"
+        ],
+        "pikemen": [
+            "att_inf_spear_land",
+            "att_inf_polearm_land"
+        ],
+        "polearm_infantry": [
+            "att_inf_polearm_land",
+            "att_inf_polearm_shock_land",
+            "att_inf_spear_land"
+        ],
+        "shock_cavalry": [
+            "att_cav_shock_land",
+            "att_cav_melee_land"
+        ],
+        "shock_infantry": [
+            "att_inf_axe_land",
+            "att_inf_polearm_shock_land",
+            "att_inf_sword_land"
+        ],
+        "siege_weapon": [
+            "att_art_siege_land"
+        ],
+        "skirmishers": [
+            "att_inf_javelin_land",
+            "att_inf_bow_land"
+        ],
+        "slingers": [
+            "att_inf_javelin_land",
+            "att_inf_bow_land"
+        ],
+        "spear_infantry": [
+            "att_inf_spear_land",
+            "att_inf_sword_land"
+        ],
+        "sword_infantry": [
+            "att_inf_sword_land",
+            "att_inf_axe_land"
+        ],
+        "war_elephants": [
+            "att_cav_shock_land"
+        ]
+    },
+    "MAX_TO_CATEGORY": {
+        "CAVALRY": "cavalry",
+        "INFANTRY": "inf_melee",
+        "LEVY": "inf_melee",
+        "RANGED": "inf_ranged"
+    },
+    "TAG_ROLE_MAPPING": {
+        "Garrison": [
+            "att_inf_sword_land",
+            "att_inf_spear_land"
+        ],
+        "Knights": [
+            "att_cav_shock_land",
+            "att_cav_melee_land"
+        ],
+        "Levies": [
+            "att_inf_spear_land",
+            "att_inf_sword_land"
+        ],
+        "default": [
+            "att_inf_sword_land",
+            "att_inf_spear_land"
+        ]
+    }
+}
