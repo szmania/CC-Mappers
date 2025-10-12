@@ -1,44 +1,15 @@
 <?xml version='1.0' encoding='utf-8'?>
 <Factions>
     <Faction name="Default" subculture="att_sub_cult_nomadic_sarmatian">
-        <General key="cha_avar_guard" rank="1" />
-        <General key="cha_avar_guard" rank="2" />
-        <General key="cha_avar_guard" rank="3" />
-        <Knights key="cha_avar_horse_archers" rank="1" />
-        <Knights key="cha_avar_noble_archers" rank="2" />
-        <Knights key="cha_avar_horse_masters" rank="3" />
-        <Levies key="cha_avar_foot_archers" percentage="28" max="LEVY" />
-        <Levies key="cha_avar_horse_archers" percentage="13" max="LEVY" />
-        <Levies key="cha_avar_levy_spear" percentage="16" max="LEVY" />
-        <Levies key="cha_avar_noble_sword" percentage="28" max="LEVY" />
-        <Levies key="cha_avar_tribesmen" percentage="15" max="LEVY" />
-        <Garrison key="cha_avar_levy_archers" percentage="8" max="LEVY" level="1" />
-        <Garrison key="cha_avar_lancers" percentage="18" max="LEVY" level="1" />
-        <Garrison key="cha_avar_spear" percentage="26" max="LEVY" level="1" />
-        <Garrison key="cha_avar_tribesmen" percentage="28" max="LEVY" level="1" />
-        <Garrison key="cha_avar_levy_spear" percentage="20" max="LEVY" level="1" />
-        <Garrison key="cha_avar_levy_archers" percentage="18" max="LEVY" level="2" />
-        <Garrison key="cha_avar_horse_archers" percentage="12" max="LEVY" level="2" />
-        <Garrison key="cha_avar_levy_spear" percentage="36" max="LEVY" level="2" />
-        <Garrison key="cha_avar_tribesmen" percentage="10" max="LEVY" level="2" />
-        <Garrison key="cha_avar_spear" percentage="24" max="LEVY" level="2" />
-        <Garrison key="cha_avar_foot_archers" percentage="21" max="LEVY" level="3" />
-        <Garrison key="cha_avar_horse_archers" percentage="16" max="LEVY" level="3" />
-        <Garrison key="cha_avar_levy_spear" percentage="22" max="LEVY" level="3" />
-        <Garrison key="cha_avar_tribesmen" percentage="22" max="LEVY" level="3" />
-        <Garrison key="cha_avar_spear" percentage="19" max="LEVY" level="3" />
-        <Garrison key="cha_avar_noble_archers" percentage="40" max="LEVY" level="4" />
-        <Garrison key="cha_avar_noble_sword" percentage="30" max="LEVY" level="4" />
-        <Garrison key="cha_avar_noble_lancers" percentage="30" max="LEVY" level="4" />
         <MenAtArm type="abbasid_trebuchet" key="cha_avar_onager" siege="true" />
         <MenAtArm type="abid_alshira" key="cha_avar_foot_archers" max="RANGED" />
-        <MenAtArm type="akritai" key="cha_avar_foot_archers" max="RANGED" />
+        <MenAtArm type="akritai" key="cha_avar_foot_archers" max="INFANTRY" />
         <MenAtArm type="armored_footmen" key="cha_avar_noble_sword" max="INFANTRY" />
         <MenAtArm type="armored_horsemen" key="cha_avar_lancers" max="CAVALRY" />
         <MenAtArm type="artamat" key="cha_avar_foot_archers" max="RANGED" />
         <MenAtArm type="ayrudzi" key="cha_avar_noble_archers" max="CAVALRY" />
         <MenAtArm type="ballista_elephant" key="cha_avar_lancers" max="CAVALRY" />
-        <MenAtArm type="ballistrai" key="cha_avar_foot_archers" max="RANGED" />
+        <MenAtArm type="ballistrai" key="cha_avar_foot_archers" />
         <MenAtArm type="barbary_corsairs" key="cha_avar_foot_archers" max="RANGED" />
         <MenAtArm type="bed_crossbows" key="cha_avar_onager" siege="true" />
         <MenAtArm type="berdiche_axemen" key="cha_avar_noble_sword" max="INFANTRY" />
@@ -120,11 +91,11 @@
         <MenAtArm type="janissaries_archer" key="cha_avar_foot_archers" max="RANGED" />
         <MenAtArm type="janissaries_infantry" key="cha_avar_noble_sword" max="INFANTRY" />
         <MenAtArm type="lanze_spezzate" key="cha_avar_lancers" max="CAVALRY" />
-        <MenAtArm type="light_footmen" key="cha_avar_foot_archers" max="RANGED" />
+        <MenAtArm type="light_footmen" key="cha_avar_foot_archers" max="INFANTRY" />
         <MenAtArm type="light_horsemen" key="cha_avar_noble_archers" max="CAVALRY" />
         <MenAtArm type="lithuanian_bajorija" key="cha_avar_lancers" max="CAVALRY" />
         <MenAtArm type="luojuzi" key="cha_avar_tribesmen" max="INFANTRY" />
-        <MenAtArm type="maa_bandits" key="cha_avar_foot_archers" max="RANGED" />
+        <MenAtArm type="maa_bandits" key="cha_avar_foot_archers" max="INFANTRY" />
         <MenAtArm type="maa_marauders" key="cha_avar_noble_archers" max="CAVALRY" />
         <MenAtArm type="maa_poachers" key="cha_avar_foot_archers" max="RANGED" />
         <MenAtArm type="maa_thieves" key="cha_avar_tribesmen" max="INFANTRY" />
@@ -171,4 +142,476 @@
         <MenAtArm type="woodsmen" key="cha_avar_foot_archers" max="RANGED" />
         <MenAtArm type="yeoman_archers" key="cha_avar_foot_archers" max="RANGED" />
     </Faction>
+    <Faction name="Abarshahr" subculture="att_sub_cult_eastern_sassanid">
+        </Faction>
+    <Faction name="Abasgia" subculture="att_sub_cult_eastern_caucasian">
+        </Faction>
+    <Faction name="Aestii" subculture="att_sub_cult_barbarian_germanic_east">
+        </Faction>
+    <Faction name="Aethiopian Rebels" subculture="att_sub_cult_eastern_desert">
+        </Faction>
+    <Faction name="Aethiopian Separatists" subculture="att_sub_cult_eastern_desert">
+        </Faction>
+    <Faction name="African Rebels" subculture="att_sub_cult_eastern_desert">
+        </Faction>
+    <Faction name="African Separatists" subculture="att_sub_cult_eastern_desert">
+        </Faction>
+    <Faction name="Afrighids" subculture="att_sub_cult_eastern_sassanid">
+        </Faction>
+    <Faction name="Aksum" subculture="att_sub_cult_eastern_desert">
+        </Faction>
+    <Faction name="Aksumite Separatists" subculture="att_sub_cult_eastern_desert">
+        </Faction>
+    <Faction name="Alamannic Separatists" subculture="att_sub_cult_barbarian_germanic_west">
+        </Faction>
+    <Faction name="Alania" subculture="att_sub_cult_barbarian_germanic_east">
+        </Faction>
+    <Faction name="Alanic Separatists" subculture="att_sub_cult_barbarian_germanic_east">
+        </Faction>
+    <Faction name="Alt Clut" subculture="att_sub_cult_barbarian_celtic">
+        </Faction>
+    <Faction name="Anatolia" subculture="att_sub_cult_eastern_caucasian">
+        </Faction>
+    <Faction name="Angli" subculture="att_sub_cult_barbarian_germanic_north">
+        </Faction>
+    <Faction name="Angli Separatists" subculture="att_sub_cult_barbarian_germanic_north">
+        </Faction>
+    <Faction name="Angria" subculture="att_sub_cult_barbarian_germanic_north">
+        </Faction>
+    <Faction name="Antai" subculture="att_sub_cult_barbarian_germanic_east">
+        </Faction>
+    <Faction name="Antean Separatists" subculture="att_sub_cult_barbarian_germanic_east">
+        </Faction>
+    <Faction name="Aquitainia" subculture="att_sub_cult_roman_west">
+        </Faction>
+    <Faction name="Arabian Rebels" subculture="att_sub_cult_eastern_desert">
+        </Faction>
+    <Faction name="Aria" subculture="att_sub_cult_eastern_sassanid">
+        </Faction>
+    <Faction name="Armenia" subculture="att_sub_cult_eastern_caucasian">
+        </Faction>
+    <Faction name="Arran" subculture="att_sub_cult_eastern_caucasian">
+        </Faction>
+    <Faction name="Asia" subculture="att_sub_cult_roman_east">
+        </Faction>
+    <Faction name="Asturian Separatists" subculture="bel_sub_cult_roman">
+        </Faction>
+    <Faction name="Austrasia" subculture="att_sub_cult_roman_west">
+        </Faction>
+    <Faction name="Austrasian Separatists" subculture="att_sub_cult_roman_west">
+        </Faction>
+    <Faction name="Avar Rebels" subculture="att_sub_cult_nomadic_sarmatian">
+        </Faction>
+    <Faction name="Avar Separatists" subculture="att_sub_cult_nomadic_sarmatian">
+        </Faction>
+    <Faction name="Avaroi" subculture="att_sub_cult_barbarian_germanic_east">
+        </Faction>
+    <Faction name="Avaroi Rebels" subculture="att_sub_cult_nomadic_hunnic">
+        </Faction>
+    <Faction name="Avars" subculture="att_sub_cult_nomadic_sarmatian">
+        </Faction>
+    <Faction name="Banu Ghassan" subculture="att_sub_cult_eastern_desert">
+        </Faction>
+    <Faction name="Banu Lakhm" subculture="att_sub_cult_eastern_desert">
+        </Faction>
+    <Faction name="Banu Tamim" subculture="att_sub_cult_eastern_desert">
+        </Faction>
+    <Faction name="Basques" subculture="bel_sub_cult_roman">
+        </Faction>
+    <Faction name="Bavaria" subculture="att_sub_cult_barbarian_germanic_west">
+        </Faction>
+    <Faction name="Ben Sabar Revolt" subculture="att_sub_cult_eastern_desert">
+        </Faction>
+    <Faction name="Berbers" subculture="att_sub_cult_eastern_desert">
+        </Faction>
+    <Faction name="Blemmyes" subculture="att_sub_cult_eastern_desert">
+        </Faction>
+    <Faction name="Bohemia" subculture="att_sub_cult_barbarian_germanic_east">
+        </Faction>
+    <Faction name="Bretons" subculture="bel_sub_cult_roman">
+        </Faction>
+    <Faction name="Britanni" subculture="att_sub_cult_roman_west">
+        </Faction>
+    <Faction name="Burgundian Separatists" subculture="att_sub_cult_barbarian_germanic_west">
+        </Faction>
+    <Faction name="Burgundians" subculture="bel_sub_cult_roman">
+        </Faction>
+    <Faction name="Caucasian Rebels" subculture="att_sub_cult_eastern_caucasian">
+        </Faction>
+    <Faction name="Caucasian Separatists" subculture="att_sub_cult_eastern_caucasian">
+        </Faction>
+    <Faction name="Celtic Rebels" subculture="att_sub_cult_barbarian_celtic">
+        </Faction>
+    <Faction name="Christian Rebels" subculture="bel_sub_cult_roman">
+        </Faction>
+    <Faction name="Christian Separatists" subculture="bel_sub_cult_roman">
+        </Faction>
+    <Faction name="Cordoban Separatists" subculture="att_sub_cult_eastern_sassanid">
+        </Faction>
+    <Faction name="Corduba" subculture="att_sub_cult_roman_west">
+        </Faction>
+    <Faction name="Dakiai" subculture="att_sub_cult_barbarian_germanic_east">
+        </Faction>
+    <Faction name="Danir" subculture="att_sub_cult_barbarian_germanic_north">
+        </Faction>
+    <Faction name="Danish Separatists" subculture="att_sub_cult_barbarian_germanic_north">
+        </Faction>
+    <Faction name="Domain of Soissons" subculture="att_sub_cult_roman_west">
+        </Faction>
+    <Faction name="Ducatus Alemanniae" subculture="att_sub_cult_barbarian_germanic_west">
+        </Faction>
+    <Faction name="Duchy of Alemannia" subculture="bel_sub_cult_roman">
+        </Faction>
+    <Faction name="Duchy of Aquitane" subculture="bel_sub_cult_roman">
+        </Faction>
+    <Faction name="Duchy of Bavaria" subculture="bel_sub_cult_roman">
+        </Faction>
+    <Faction name="Duchy of Benevento" subculture="att_sub_cult_roman_east">
+        </Faction>
+    <Faction name="Duchy of Burgundy" subculture="bel_sub_cult_roman">
+        </Faction>
+    <Faction name="Duchy of Croatia" subculture="bel_sub_cult_roman">
+        </Faction>
+    <Faction name="Duchy of Frisia" subculture="bel_sub_cult_roman">
+        </Faction>
+    <Faction name="Duchy of Gascony" subculture="bel_sub_cult_roman">
+        </Faction>
+    <Faction name="Duchy of Pamplona" subculture="bel_sub_cult_roman">
+        </Faction>
+    <Faction name="Duchy of Provence" subculture="bel_sub_cult_roman">
+        </Faction>
+    <Faction name="Duchy of Spoleto" subculture="att_sub_cult_roman_east">
+        </Faction>
+    <Faction name="Dux Rebellionis" subculture="att_sub_cult_barbarian_celtic">
+        </Faction>
+    <Faction name="East Germanic Separatists" subculture="att_sub_cult_barbarian_germanic_east">
+        </Faction>
+    <Faction name="Eastern Germanic Rebels" subculture="att_sub_cult_barbarian_germanic_east">
+        </Faction>
+    <Faction name="Eastern Rebels" subculture="att_sub_cult_eastern_sassanid">
+        </Faction>
+    <Faction name="Eastern Separatists" subculture="bel_sub_cult_roman">
+        </Faction>
+    <Faction name="Eastphalia" subculture="att_sub_cult_barbarian_germanic_north">
+        </Faction>
+    <Faction name="Egypt" subculture="att_sub_cult_roman_east">
+        </Faction>
+    <Faction name="Emirate of Cordoba" subculture="att_sub_cult_eastern_sassanid">
+        </Faction>
+    <Faction name="Emirate of Granada" subculture="att_sub_cult_eastern_sassanid">
+        </Faction>
+    <Faction name="English Rebels" subculture="att_sub_cult_barbarian_germanic_west">
+        </Faction>
+    <Faction name="English Separatists" subculture="att_sub_cult_barbarian_germanic_west">
+        </Faction>
+    <Faction name="Eranshahr" subculture="att_sub_cult_eastern_sassanid">
+        </Faction>
+    <Faction name="Frankish Kingdom" subculture="bel_sub_cult_roman">
+        </Faction>
+    <Faction name="Frankish Rebels" subculture="att_sub_cult_roman_west">
+        </Faction>
+    <Faction name="Frankish Separatists" subculture="bel_sub_cult_roman">
+        </Faction>
+    <Faction name="Frisia" subculture="att_sub_cult_barbarian_germanic_west">
+        </Faction>
+    <Faction name="Frisian Separatists" subculture="att_sub_cult_barbarian_germanic_north">
+        </Faction>
+    <Faction name="Gaetuli" subculture="att_sub_cult_eastern_desert">
+        </Faction>
+    <Faction name="Gallacian Separatists" subculture="bel_sub_cult_roman">
+        </Faction>
+    <Faction name="Garamantes" subculture="att_sub_cult_eastern_desert">
+        </Faction>
+    <Faction name="Garamantian Separatists" subculture="att_sub_cult_eastern_desert">
+        </Faction>
+    <Faction name="Gaul" subculture="att_sub_cult_roman_west">
+        </Faction>
+    <Faction name="Gautar" subculture="att_sub_cult_barbarian_germanic_north">
+        </Faction>
+    <Faction name="Geat Separatists" subculture="att_sub_cult_barbarian_germanic_north">
+        </Faction>
+    <Faction name="Gepidae" subculture="att_sub_cult_barbarian_germanic_west">
+        </Faction>
+    <Faction name="Gepidae Separatists" subculture="att_sub_cult_barbarian_germanic_east">
+        </Faction>
+    <Faction name="Germanic Rebels" subculture="bel_sub_cult_roman">
+        </Faction>
+    <Faction name="Gothoi" subculture="att_sub_cult_barbarian_germanic_east">
+        </Faction>
+    <Faction name="Hepthalites" subculture="att_sub_cult_nomadic_hunnic">
+        </Faction>
+    <Faction name="Himyar" subculture="att_sub_cult_eastern_desert">
+        </Faction>
+    <Faction name="Himyarite Separatists" subculture="att_sub_cult_eastern_desert">
+        </Faction>
+    <Faction name="Hispania" subculture="att_sub_cult_roman_west">
+        </Faction>
+    <Faction name="Hunnic Separatists" subculture="att_sub_cult_nomadic_hunnic">
+        </Faction>
+    <Faction name="Irish Rebels" subculture="att_sub_cult_barbarian_celtic">
+        </Faction>
+    <Faction name="Irish Separatists" subculture="att_sub_cult_barbarian_celtic">
+        </Faction>
+    <Faction name="Italia" subculture="att_sub_cult_roman_west">
+        </Faction>
+    <Faction name="Italian Rebels" subculture="att_sub_cult_roman_east">
+        </Faction>
+    <Faction name="Italian Separatists" subculture="att_sub_cult_roman_east">
+        </Faction>
+    <Faction name="Jute Separatists" subculture="att_sub_cult_barbarian_germanic_north">
+        </Faction>
+    <Faction name="Jótar" subculture="att_sub_cult_barbarian_germanic_north">
+        </Faction>
+    <Faction name="Kartli" subculture="att_sub_cult_eastern_caucasian">
+        </Faction>
+    <Faction name="Kingdom of Ailech" subculture="att_sub_cult_barbarian_celtic">
+        </Faction>
+    <Faction name="Kingdom of Alt Clut" subculture="att_sub_cult_barbarian_celtic">
+        </Faction>
+    <Faction name="Kingdom of Asturias" subculture="bel_sub_cult_roman">
+        </Faction>
+    <Faction name="Kingdom of Brittany" subculture="att_sub_cult_barbarian_celtic">
+        </Faction>
+    <Faction name="Kingdom of Carloman" subculture="att_sub_cult_roman_west">
+        </Faction>
+    <Faction name="Kingdom of Charlemagne" subculture="att_sub_cult_roman_west">
+        </Faction>
+    <Faction name="Kingdom of Connachta" subculture="att_sub_cult_barbarian_celtic">
+        </Faction>
+    <Faction name="Kingdom of Glywysing" subculture="att_sub_cult_barbarian_celtic">
+        </Faction>
+    <Faction name="Kingdom of Gwynedd" subculture="att_sub_cult_barbarian_celtic">
+        </Faction>
+    <Faction name="Kingdom of Kent" subculture="att_sub_cult_barbarian_germanic_west">
+        </Faction>
+    <Faction name="Kingdom of Leinster" subculture="att_sub_cult_barbarian_celtic">
+        </Faction>
+    <Faction name="Kingdom of Mercia" subculture="att_sub_cult_barbarian_germanic_west">
+        </Faction>
+    <Faction name="Kingdom of Munster" subculture="att_sub_cult_barbarian_celtic">
+        </Faction>
+    <Faction name="Kingdom of Northumbria" subculture="att_sub_cult_barbarian_germanic_west">
+        </Faction>
+    <Faction name="Kingdom of Powys" subculture="att_sub_cult_barbarian_celtic">
+        </Faction>
+    <Faction name="Kingdom of Ulaid" subculture="att_sub_cult_barbarian_celtic">
+        </Faction>
+    <Faction name="Kingdom of Wessex" subculture="att_sub_cult_barbarian_germanic_west">
+        </Faction>
+    <Faction name="Kingdom of the Danes" subculture="att_sub_cult_barbarian_germanic_north">
+        </Faction>
+    <Faction name="Kingdom of the Lombards" subculture="att_sub_cult_roman_east">
+        </Faction>
+    <Faction name="Kingdom of the Picts" subculture="att_sub_cult_barbarian_celtic">
+        </Faction>
+    <Faction name="Koutrigoi" subculture="att_sub_cult_nomadic_sarmatian">
+        </Faction>
+    <Faction name="Kök Türük" subculture="att_sub_cult_barbarian_germanic_east">
+        </Faction>
+    <Faction name="Lakhmid Separatists" subculture="att_sub_cult_eastern_desert">
+        </Faction>
+    <Faction name="Langobard Separatists" subculture="att_sub_cult_barbarian_germanic_west">
+        </Faction>
+    <Faction name="Langobards" subculture="bel_sub_cult_roman">
+        </Faction>
+    <Faction name="Lazica" subculture="att_sub_cult_eastern_caucasian">
+        </Faction>
+    <Faction name="Lombard Separatists" subculture="att_sub_cult_roman_east">
+        </Faction>
+    <Faction name="Magiaroi" subculture="att_sub_cult_nomadic_hunnic">
+        </Faction>
+    <Faction name="Mauri" subculture="att_sub_cult_eastern_desert">
+        </Faction>
+    <Faction name="Mercian Separatists" subculture="att_sub_cult_barbarian_germanic_west">
+        </Faction>
+    <Faction name="Moors" subculture="att_sub_cult_eastern_desert">
+        </Faction>
+    <Faction name="Muslim Rebels" subculture="att_sub_cult_eastern_sassanid">
+        </Faction>
+    <Faction name="Muslim Separatists" subculture="att_sub_cult_eastern_sassanid">
+        </Faction>
+    <Faction name="Nasamounes" subculture="att_sub_cult_eastern_desert">
+        </Faction>
+    <Faction name="Neustria" subculture="att_sub_cult_roman_west">
+        </Faction>
+    <Faction name="Nobatia" subculture="att_sub_cult_eastern_desert">
+        </Faction>
+    <Faction name="Nomad Separatists" subculture="att_sub_cult_nomadic_sarmatian">
+        </Faction>
+    <Faction name="Nordalbingia" subculture="att_sub_cult_barbarian_germanic_north">
+        </Faction>
+    <Faction name="Nordic Rebels" subculture="att_sub_cult_barbarian_germanic_north">
+        </Faction>
+    <Faction name="North Germanic Separatists" subculture="att_sub_cult_barbarian_germanic_north">
+        </Faction>
+    <Faction name="Northern Germanic Rebels" subculture="att_sub_cult_barbarian_germanic_north">
+        </Faction>
+    <Faction name="Obodrite" subculture="att_sub_cult_barbarian_germanic_east">
+        </Faction>
+    <Faction name="Onogouroi" subculture="att_sub_cult_nomadic_sarmatian">
+        </Faction>
+    <Faction name="Oriens" subculture="att_sub_cult_roman_east">
+        </Faction>
+    <Faction name="Ostrogothic Kingdom" subculture="bel_sub_cult_roman">
+        </Faction>
+    <Faction name="Ostrogothic Separatists" subculture="bel_sub_cult_roman">
+        </Faction>
+    <Faction name="Outrigouroi" subculture="att_sub_cult_nomadic_sarmatian">
+        </Faction>
+    <Faction name="Palmyra" subculture="att_sub_cult_eastern_desert">
+        </Faction>
+    <Faction name="Papal States" subculture="bel_sub_cult_roman">
+        </Faction>
+    <Faction name="Persia" subculture="att_sub_cult_eastern_sassanid">
+        </Faction>
+    <Faction name="Picti" subculture="att_sub_cult_barbarian_celtic">
+        </Faction>
+    <Faction name="Pictish Rebels" subculture="att_sub_cult_barbarian_celtic">
+        </Faction>
+    <Faction name="Pictish Separatists" subculture="att_sub_cult_barbarian_celtic">
+        </Faction>
+    <Faction name="Pontus" subculture="att_sub_cult_roman_east">
+        </Faction>
+    <Faction name="Quraysh" subculture="att_sub_cult_eastern_desert">
+        </Faction>
+    <Faction name="Regnum Langobardorum" subculture="att_sub_cult_roman_west">
+        </Faction>
+    <Faction name="Regnum Maurorum et Romanorum" subculture="att_sub_cult_roman_east">
+        </Faction>
+    <Faction name="Regnum Suevorum" subculture="att_sub_cult_roman_west">
+        </Faction>
+    <Faction name="Regnum Visigothorum" subculture="att_sub_cult_roman_west">
+        </Faction>
+    <Faction name="Republic of Venice" subculture="bel_sub_cult_roman">
+        </Faction>
+    <Faction name="Roman Empire" subculture="att_sub_cult_roman_east">
+        </Faction>
+    <Faction name="Roman Expedition" subculture="bel_sub_cult_roman">
+        </Faction>
+    <Faction name="Roman Expedition Separatists" subculture="bel_sub_cult_roman">
+        </Faction>
+    <Faction name="Roman Rebels" subculture="bel_sub_cult_roman">
+        </Faction>
+    <Faction name="Roman Separatists" subculture="att_sub_cult_roman_west">
+        </Faction>
+    <Faction name="Romania" subculture="att_sub_cult_roman_east">
+        </Faction>
+    <Faction name="Sabiroi" subculture="att_sub_cult_nomadic_hunnic">
+        </Faction>
+    <Faction name="Saracenoi" subculture="att_sub_cult_eastern_desert">
+        </Faction>
+    <Faction name="Sardinians" subculture="bel_sub_cult_roman">
+        </Faction>
+    <Faction name="Sarmatian Rebels" subculture="att_sub_cult_nomadic_sarmatian">
+        </Faction>
+    <Faction name="Sarmatian Separatists" subculture="att_sub_cult_nomadic_sarmatian">
+        </Faction>
+    <Faction name="Sassanid Separatists" subculture="att_sub_cult_eastern_sassanid">
+        </Faction>
+    <Faction name="Saxon Rebels" subculture="att_sub_cult_barbarian_germanic_north">
+        </Faction>
+    <Faction name="Saxon Separatists" subculture="att_sub_cult_barbarian_germanic_north">
+        </Faction>
+    <Faction name="Saxones" subculture="att_sub_cult_barbarian_germanic_north">
+        </Faction>
+    <Faction name="Saxonia" subculture="att_sub_cult_barbarian_germanic_north">
+        </Faction>
+    <Faction name="Sclaboi" subculture="att_sub_cult_barbarian_germanic_east">
+        </Faction>
+    <Faction name="Sclavenian Separatists" subculture="att_sub_cult_barbarian_germanic_east">
+        </Faction>
+    <Faction name="Sclavenoi" subculture="att_sub_cult_barbarian_germanic_east">
+        </Faction>
+    <Faction name="Scoti" subculture="att_sub_cult_barbarian_celtic">
+        </Faction>
+    <Faction name="Scoti Separatists" subculture="att_sub_cult_barbarian_celtic">
+        </Faction>
+    <Faction name="Septimania" subculture="att_sub_cult_roman_west">
+        </Faction>
+    <Faction name="Serboi" subculture="att_sub_cult_barbarian_germanic_east">
+        </Faction>
+    <Faction name="Slavic Rebels" subculture="att_sub_cult_barbarian_germanic_east">
+        </Faction>
+    <Faction name="Slavic Rebels " subculture="att_sub_cult_barbarian_germanic_east">
+        </Faction>
+    <Faction name="Slavic Separatists" subculture="att_sub_cult_barbarian_germanic_east">
+        </Faction>
+    <Faction name="Spahan" subculture="att_sub_cult_eastern_sassanid">
+        </Faction>
+    <Faction name="Spanish Rebels" subculture="bel_sub_cult_roman">
+        </Faction>
+    <Faction name="Suebian Separatists" subculture="att_sub_cult_roman_west">
+        </Faction>
+    <Faction name="Suebians" subculture="bel_sub_cult_roman">
+        </Faction>
+    <Faction name="Taifa of Badajoz" subculture="att_sub_cult_eastern_sassanid">
+        </Faction>
+    <Faction name="Taifa of Barcelona" subculture="att_sub_cult_eastern_sassanid">
+        </Faction>
+    <Faction name="Taifa of Sevilla" subculture="att_sub_cult_eastern_sassanid">
+        </Faction>
+    <Faction name="Taifa of Toledo" subculture="att_sub_cult_eastern_sassanid">
+        </Faction>
+    <Faction name="Taifa of Valencia" subculture="att_sub_cult_eastern_sassanid">
+        </Faction>
+    <Faction name="Taifa of Zaragoza" subculture="att_sub_cult_eastern_sassanid">
+        </Faction>
+    <Faction name="Tanukhid Separatists" subculture="att_sub_cult_eastern_desert">
+        </Faction>
+    <Faction name="Theme of Sicily" subculture="bel_sub_cult_roman">
+        </Faction>
+    <Faction name="Thuringi Separatists" subculture="att_sub_cult_barbarian_germanic_north">
+        </Faction>
+    <Faction name="Thuringia" subculture="att_sub_cult_barbarian_germanic_west">
+        </Faction>
+    <Faction name="Tyrannos Rhomaios" subculture="att_sub_cult_roman_east">
+        </Faction>
+    <Faction name="Usurpatio " subculture="att_sub_cult_roman_west">
+        </Faction>
+    <Faction name="Vandalic Kingdom" subculture="bel_sub_cult_roman">
+        </Faction>
+    <Faction name="Vandalic Separatists" subculture="bel_sub_cult_roman">
+        </Faction>
+    <Faction name="Vascones" subculture="att_sub_cult_barbarian_celtic">
+        </Faction>
+    <Faction name="Venedian Separatists" subculture="att_sub_cult_barbarian_germanic_east">
+        </Faction>
+    <Faction name="Vidivarii" subculture="att_sub_cult_barbarian_germanic_east">
+        </Faction>
+    <Faction name="Viking Rebels" subculture="att_sub_cult_barbarian_germanic_north">
+        </Faction>
+    <Faction name="Viking Separatists" subculture="att_sub_cult_barbarian_germanic_north">
+        </Faction>
+    <Faction name="Visigothic Kingdom" subculture="bel_sub_cult_roman">
+        </Faction>
+    <Faction name="Visigothic Separatists" subculture="bel_sub_cult_roman">
+        </Faction>
+    <Faction name="Welsh Rebels" subculture="att_sub_cult_barbarian_celtic">
+        </Faction>
+    <Faction name="Welsh Separatists" subculture="att_sub_cult_barbarian_celtic">
+        </Faction>
+    <Faction name="Wenden" subculture="att_sub_cult_barbarian_germanic_east">
+        </Faction>
+    <Faction name="West Germanic Separatists" subculture="att_sub_cult_barbarian_germanic_west">
+        </Faction>
+    <Faction name="Western Germanic Rebels" subculture="att_sub_cult_barbarian_germanic_west">
+        </Faction>
+    <Faction name="Western Roman Empire" subculture="att_sub_cult_roman_west">
+        </Faction>
+    <Faction name="Western Roman Separatists" subculture="att_sub_cult_roman_west">
+        </Faction>
+    <Faction name="Western Separatists" subculture="bel_sub_cult_roman">
+        </Faction>
+    <Faction name="Westphalia" subculture="att_sub_cult_barbarian_germanic_north">
+        </Faction>
+    <Faction name="Westphalian Separatists" subculture="att_sub_cult_barbarian_germanic_north">
+        </Faction>
+    <Faction name="White Hun Rebels" subculture="att_sub_cult_nomadic_hunnic">
+        </Faction>
+    <Faction name="White Hun Separatists" subculture="att_sub_cult_nomadic_hunnic">
+        </Faction>
+    <Faction name="Wilzi" subculture="att_sub_cult_barbarian_germanic_east">
+        </Faction>
+    <Faction name="Ystrad Clut Separatists" subculture="att_sub_cult_barbarian_celtic">
+        </Faction>
 </Factions>
