@@ -1,885 +1,302 @@
 <?xml version='1.0' encoding='utf-8'?>
 <Factions>
     <Faction name="Default" subculture="att_sub_cult_roman_west">
-        <General key="Essos_Targaryen_Dothraki_Bloodriders" rank="1" />
-        <Knights key="Essos_Targaryen_Dothraki_Mounted_Archers" rank="1" />
-        <Knights key="Essos_Targaryen_Dothraki_Bloodriders" rank="2" />
-        <Knights key="Essos_Targaryen_Dothraki_Khalasar" rank="3" />
-        <Levies percentage="15" key="Essos_Targaryen_Dothraki_Khalasar" max="LEVY" />
-        <Levies percentage="28" key="Essos_Targaryen_Unsullied_Spearmen" max="LEVY" />
-        <Levies percentage="34" key="Essos_Targaryen_Unsullied_Swordsmen" max="LEVY" />
-        <Levies percentage="23" key="Essos_Targaryen_Unsullied_Pikemen" max="LEVY" />
-        <Garrison key="Essos_Targaryen_Catapult" max="LEVY" level="1" percentage="40" />
-        <Garrison key="Essos_Targaryen_Catapult" max="LEVY" level="1" percentage="47" />
-        <Garrison key="Essos_Targaryen_Catapult" max="LEVY" level="1" percentage="13" />
-        <Garrison key="Essos_Targaryen_Catapult" max="LEVY" level="2" percentage="44" />
-        <Garrison key="Essos_Targaryen_Catapult" max="LEVY" level="2" percentage="15" />
-        <Garrison key="Essos_Targaryen_Catapult" max="LEVY" level="2" percentage="41" />
-        <Garrison key="Essos_Targaryen_Dothraki_Mounted_Archers" max="LEVY" level="3" percentage="20" />
-        <Garrison key="Essos_Targaryen_Dothraki_Khalasar" max="LEVY" level="3" percentage="47" />
-        <Garrison key="Essos_Targaryen_Dothraki_Mounted_Archers" max="LEVY" level="3" percentage="33" />
-        <Garrison key="Essos_Targaryen_Dothraki_Bloodriders" max="LEVY" level="4" percentage="24" />
-        <Garrison key="Essos_Targaryen_Unsullied_Pikemen" max="LEVY" level="4" percentage="36" />
-        <Garrison key="Essos_Targaryen_Unsullied_Spearmen" max="LEVY" level="4" percentage="24" />
-        <Garrison key="Essos_Targaryen_Unsullied_Swordsmen" max="LEVY" level="4" percentage="16" />
-        <MenAtArm type="accolade_maa_archers" key="BTW_Wildling_MAA_Archers" max="RANGED" />
         <MenAtArm type="accolade_maa_archers_watch" key="BTW_Wildling_MAA_Archers" max="RANGED" />
         <MenAtArm type="accolade_maa_archers_wild" key="BTW_Wildling_MAA_Archers" max="RANGED" />
-        <MenAtArm type="accolade_maa_cameliers" key="Reach_Tarly_MAA_Lance_Cavalry" max="CAVALRY" />
-        <MenAtArm type="accolade_maa_crossbowers" key="BTW_Wildling_MAA_Archers" max="RANGED" />
-        <MenAtArm type="accolade_maa_elephantiers" key="Dorne_Uller_MAA_Lance_Cavalry" max="CAVALRY" />
-        <MenAtArm type="accolade_maa_horse_archers" key="Vale_Royce_MAA_Lance_Cavalry" max="CAVALRY" />
-        <MenAtArm type="accolade_maa_lancers" key="Dorne_Dayne_MAA_Lance_Cavalry" max="CAVALRY" />
         <MenAtArm type="accolade_maa_lancers_wild" key="Dorne_Dayne_MAA_Lance_Cavalry" max="CAVALRY" />
-        <MenAtArm type="accolade_maa_outriders" key="BTW_White_Walkers" max="INFANTRY" />
-        <MenAtArm type="accolade_maa_outriders_watch" key="BTW_White_Walkers" max="INFANTRY" />
-        <MenAtArm type="accolade_maa_outriders_wild" key="BTW_White_Walkers" max="INFANTRY" />
-        <MenAtArm type="accolade_maa_pikes" key="Vale_Arryn_MAA_Pikemen" max="INFANTRY" />
+        <MenAtArm type="accolade_maa_outriders_watch" key="BTW_White_Walkers" max="CAVALRY" />
+        <MenAtArm type="accolade_maa_outriders_wild" key="BTW_White_Walkers" max="CAVALRY" />
         <MenAtArm type="accolade_maa_pikes_watch" key="Vale_Arryn_MAA_Pikemen" max="INFANTRY" />
         <MenAtArm type="accolade_maa_pikes_wild" key="Vale_Arryn_MAA_Pikemen" max="INFANTRY" />
-        <MenAtArm type="accolade_maa_skirmishers" key="BTW_Wildling_MAA_Archers" max="RANGED" />
-        <MenAtArm type="accolade_maa_skirmishers_watch" key="BTW_Wildling_MAA_Archers" max="RANGED" />
-        <MenAtArm type="accolade_maa_skirmishers_wild" key="BTW_Wildling_MAA_Archers" max="RANGED" />
-        <MenAtArm type="accolade_maa_vanguards" key="BTW_Night_King_Army_Wight_Infantry" max="INFANTRY" />
+        <MenAtArm type="accolade_maa_skirmishers_watch" key="BTW_Wildling_MAA_Archers" max="INFANTRY" />
+        <MenAtArm type="accolade_maa_skirmishers_wild" key="BTW_Wildling_MAA_Archers" max="INFANTRY" />
         <MenAtArm type="accolade_maa_vanguards_watch" key="BTW_Night_King_Army_Wight_Infantry" max="INFANTRY" />
         <MenAtArm type="accolade_maa_vanguards_wild" key="BTW_Night_King_Army_Wight_Infantry" max="INFANTRY" />
-        <MenAtArm type="akritai" key="BTW_Wildling_MAA_Archers" max="RANGED" />
-        <MenAtArm type="arbor_marines" key="BTW_Wildling_MAA_Archers" max="RANGED" />
-        <MenAtArm type="armored_footmen" key="BTW_Night_King_Army_Wight_Infantry" max="INFANTRY" />
         <MenAtArm type="armored_footmen_wild" key="BTW_Night_King_Army_Wight_Infantry" max="INFANTRY" />
-        <MenAtArm type="armored_horsemen" key="Dorne_Dayne_MAA_Lance_Cavalry" max="CAVALRY" />
         <MenAtArm type="armored_horsemen_wild" key="Dorne_Dayne_MAA_Lance_Cavalry" max="CAVALRY" />
-        <MenAtArm type="ayrudzi" key="BTW_White_Walkers" max="INFANTRY" />
-        <MenAtArm type="ballistrai" key="BTW_Wildling_MAA_Archers" max="RANGED" />
-        <MenAtArm type="barrow_knights" key="Dorne_Dayne_MAA_Lance_Cavalry" max="CAVALRY" />
-        <MenAtArm type="battering_ram" key="Essos_Targaryen_Catapult" siege="true" />
-        <MenAtArm type="black_wall_chariots" key="Reach_Tarly_MAA_Lance_Cavalry" max="CAVALRY" />
-        <MenAtArm type="bloody_balesters" key="BTW_Wildling_MAA_Archers" max="RANGED" />
-        <MenAtArm type="bowmen" key="BTW_Wildling_MAA_Archers" max="RANGED" />
         <MenAtArm type="bowmen_wild" key="BTW_Wildling_MAA_Archers" max="RANGED" />
-        <MenAtArm type="bronze_raiders" key="BTW_Night_King_Army_Wight_Infantry" max="INFANTRY" />
-        <MenAtArm type="cailin_archers" key="BTW_Wildling_MAA_Archers" max="RANGED" />
-        <MenAtArm type="cape_watch" key="BTW_White_Walkers" max="INFANTRY" />
-        <MenAtArm type="cataphract_archers" key="Dorne_Dayne_MAA_Lance_Cavalry" max="CAVALRY" />
-        <MenAtArm type="clan_champions" key="BTW_Night_King_Army_Wight_Infantry" max="INFANTRY" />
-        <MenAtArm type="cohort_of_the_three_thousand" key="Vale_Arryn_MAA_Pikemen" max="INFANTRY" />
-        <MenAtArm type="collared_bows" key="BTW_Wildling_MAA_Archers" max="RANGED" />
-        <MenAtArm type="conrois" key="Dorne_Dayne_MAA_Lance_Cavalry" max="CAVALRY" />
-        <MenAtArm type="crossbowmen" key="BTW_Wildling_MAA_Archers" max="RANGED" />
-        <MenAtArm type="crownlands_spears" key="Vale_Arryn_MAA_Pikemen" max="INFANTRY" />
-        <MenAtArm type="demon_guards" key="BTW_Night_King_Army_Wight_Infantry" max="INFANTRY" />
-        <MenAtArm type="disputant_scouts" key="BTW_White_Walkers" max="INFANTRY" />
-        <MenAtArm type="dornish_crossbows" key="BTW_Wildling_MAA_Archers" max="RANGED" />
-        <MenAtArm type="dothraki_screamers" key="BTW_White_Walkers" max="INFANTRY" />
-        <MenAtArm type="dragonkeepers" key="BTW_Night_King_Army_Wight_Infantry" max="INFANTRY" />
-        <MenAtArm type="dragons_regiment" key="Essos_Targaryen_Catapult" siege="true" />
-        <MenAtArm type="dragonsworn" key="BTW_Night_King_Army_Wight_Infantry" max="INFANTRY" />
-        <MenAtArm type="eastwatch_sailors" key="BTW_Wildling_MAA_Archers" max="RANGED" />
-        <MenAtArm type="elyrian_sailors" key="BTW_Wildling_MAA_Archers" max="RANGED" />
-        <MenAtArm type="festival_guards" key="BTW_Night_King_Army_Wight_Infantry" max="INFANTRY" />
-        <MenAtArm type="fiery_hand" key="Vale_Arryn_MAA_Pikemen" max="INFANTRY" />
-        <MenAtArm type="finger_scouts" key="BTW_White_Walkers" max="INFANTRY" />
-        <MenAtArm type="flower_spears" key="Vale_Arryn_MAA_Pikemen" max="INFANTRY" />
-        <MenAtArm type="frog_spears" key="BTW_Wildling_MAA_Archers" max="RANGED" />
-        <MenAtArm type="garden_guard" key="BTW_Night_King_Army_Wight_Infantry" max="INFANTRY" />
-        <MenAtArm type="giant_regiment" key="Essos_Targaryen_Catapult" siege="true" />
-        <MenAtArm type="goldcloaks" key="BTW_Night_King_Army_Wight_Infantry" max="INFANTRY" />
-        <MenAtArm type="goldenheart_bowmen" key="BTW_Wildling_MAA_Archers" max="RANGED" />
-        <MenAtArm type="green_daggers" key="BTW_Wildling_MAA_Archers" max="RANGED" />
-        <MenAtArm type="green_hand" key="Dorne_Dayne_MAA_Lance_Cavalry" max="CAVALRY" />
-        <MenAtArm type="greenblood_oars" key="BTW_Wildling_MAA_Archers" max="RANGED" />
-        <MenAtArm type="grey_spears" key="Vale_Arryn_MAA_Pikemen" max="INFANTRY" />
-        <MenAtArm type="greycloaks" key="BTW_Night_King_Army_Wight_Infantry" max="INFANTRY" />
-        <MenAtArm type="handpicked_faithful" key="BTW_Night_King_Army_Wight_Infantry" max="INFANTRY" />
-        <MenAtArm type="heavy_horse_archers" key="Vale_Royce_MAA_Lance_Cavalry" max="CAVALRY" />
         <MenAtArm type="highgarden_knights" key="Dorne_Dayne_MAA_Lance_Cavalry" max="CAVALRY" />
-        <MenAtArm type="holy_guard" key="BTW_Night_King_Army_Wight_Infantry" max="INFANTRY" />
-        <MenAtArm type="honeywine_quirrels" key="BTW_Wildling_MAA_Archers" max="RANGED" />
-        <MenAtArm type="horse_archers" key="Vale_Royce_MAA_Lance_Cavalry" max="CAVALRY" />
-        <MenAtArm type="house_guard" key="BTW_Night_King_Army_Wight_Infantry" max="INFANTRY" />
-        <MenAtArm type="hunters_of_the_moon" key="BTW_Wildling_MAA_Archers" max="RANGED" />
-        <MenAtArm type="indentured_legion" key="BTW_Wildling_MAA_Archers" max="RANGED" />
-        <MenAtArm type="iron_legion" key="Vale_Arryn_MAA_Pikemen" max="INFANTRY" />
-        <MenAtArm type="ironborn_reavers" key="BTW_Night_King_Army_Wight_Infantry" max="INFANTRY" />
-        <MenAtArm type="kheshig" key="Vale_Royce_MAA_Lance_Cavalry" max="CAVALRY" />
-        <MenAtArm type="laamp_settler_maa" key="BTW_Wildling_MAA_Archers" max="RANGED" />
-        <MenAtArm type="light_footmen" key="BTW_Wildling_MAA_Archers" max="RANGED" />
-        <MenAtArm type="light_footmen_wild" key="BTW_Wildling_MAA_Archers" max="RANGED" />
-        <MenAtArm type="light_horsemen" key="BTW_White_Walkers" max="INFANTRY" />
-        <MenAtArm type="light_horsemen_wild" key="BTW_White_Walkers" max="INFANTRY" />
-        <MenAtArm type="lockstep_legion" key="Vale_Arryn_MAA_Pikemen" max="INFANTRY" />
-        <MenAtArm type="longbowmen" key="BTW_Wildling_MAA_Archers" max="RANGED" />
-        <MenAtArm type="maa_bandits" key="BTW_Wildling_MAA_Archers" max="RANGED" />
-        <MenAtArm type="maa_marauders" key="BTW_White_Walkers" max="INFANTRY" />
-        <MenAtArm type="maa_poachers" key="BTW_Wildling_MAA_Archers" max="RANGED" />
-        <MenAtArm type="maa_thieves" key="Vale_Arryn_MAA_Pikemen" max="INFANTRY" />
-        <MenAtArm type="mangonel" key="Essos_Targaryen_Catapult" siege="true" />
-        <MenAtArm type="marcher_longbowmen" key="BTW_Wildling_MAA_Archers" max="RANGED" />
-        <MenAtArm type="market_guard" key="BTW_Night_King_Army_Wight_Infantry" max="INFANTRY" />
-        <MenAtArm type="marsh_walker" key="BTW_Wildling_MAA_Archers" max="RANGED" />
-        <MenAtArm type="misty_shields" key="BTW_Night_King_Army_Wight_Infantry" max="INFANTRY" />
-        <MenAtArm type="moroshi_pikes" key="Vale_Arryn_MAA_Pikemen" max="INFANTRY" />
-        <MenAtArm type="mother_sworn" key="BTW_Wildling_MAA_Archers" max="RANGED" />
-        <MenAtArm type="myrish_crossbows" key="BTW_Wildling_MAA_Archers" max="RANGED" />
-        <MenAtArm type="nomad_lancers" key="Dorne_Dayne_MAA_Lance_Cavalry" max="CAVALRY" />
-        <MenAtArm type="nomadic_riders" key="North_Stark_MAA_Swordsmen" max="INFANTRY" />
-        <MenAtArm type="northern_spears" key="Vale_Arryn_MAA_Pikemen" max="INFANTRY" />
-        <MenAtArm type="nw_rangers" key="BTW_Wildling_MAA_Archers" max="RANGED" />
-        <MenAtArm type="nw_trackers" key="BTW_White_Walkers" max="INFANTRY" />
-        <MenAtArm type="onager" key="Essos_Targaryen_Catapult" siege="true" />
-        <MenAtArm type="ornate_helms" key="Vale_Arryn_MAA_Pikemen" max="INFANTRY" />
-        <MenAtArm type="pass_pikes" key="Vale_Arryn_MAA_Pikemen" max="INFANTRY" />
-        <MenAtArm type="pikemen_unit" key="Vale_Arryn_MAA_Pikemen" max="INFANTRY" />
+        <MenAtArm type="light_footmen_wild" key="BTW_Wildling_MAA_Archers" max="INFANTRY" />
+        <MenAtArm type="light_horsemen_wild" key="BTW_White_Walkers" max="CAVALRY" />
         <MenAtArm type="pikemen_unit_wild" key="Vale_Arryn_MAA_Pikemen" max="INFANTRY" />
-        <MenAtArm type="pit_fighters" key="BTW_Night_King_Army_Wight_Infantry" max="INFANTRY" />
         <MenAtArm type="pit_warriors" key="BTW_Night_King_Army_Wight_Infantry" max="INFANTRY" />
-        <MenAtArm type="poorfellow_skirmishers" key="BTW_Wildling_MAA_Archers" max="RANGED" />
-        <MenAtArm type="purple_sailors" key="BTW_Wildling_MAA_Archers" max="RANGED" />
-        <MenAtArm type="qarlons_fallen" key="BTW_Wildling_MAA_Archers" max="RANGED" />
-        <MenAtArm type="reach_light_cavalry" key="BTW_White_Walkers" max="INFANTRY" />
-        <MenAtArm type="redcloaks" key="BTW_Night_King_Army_Wight_Infantry" max="INFANTRY" />
-        <MenAtArm type="river_bows" key="BTW_Wildling_MAA_Archers" max="RANGED" />
-        <MenAtArm type="riverlands_light_infantry" key="BTW_Wildling_MAA_Archers" max="RANGED" />
-        <MenAtArm type="royal_crossbowmen" key="BTW_Wildling_MAA_Archers" max="RANGED" />
-        <MenAtArm type="ruby_spearwomen" key="Vale_Arryn_MAA_Pikemen" max="INFANTRY" />
-        <MenAtArm type="sand_steeds" key="BTW_White_Walkers" max="INFANTRY" />
-        <MenAtArm type="sarsfield_horse_archers" key="Vale_Royce_MAA_Lance_Cavalry" max="CAVALRY" />
-        <MenAtArm type="scorpions" key="Dorne_Dayne_Catapult" siege="true" />
-        <MenAtArm type="sea_snakes" key="BTW_Wildling_MAA_Archers" max="RANGED" />
-        <MenAtArm type="sea_watch" key="BTW_Wildling_MAA_Archers" max="RANGED" />
         <MenAtArm type="seal_hunters" key="BTW_Wildling_MAA_Archers" max="RANGED" />
-        <MenAtArm type="shadow_spears" key="Vale_Arryn_MAA_Pikemen" max="INFANTRY" />
-        <MenAtArm type="she_bears" key="BTW_Night_King_Army_Wight_Infantry" max="INFANTRY" />
-        <MenAtArm type="sistermen_pirates" key="BTW_Wildling_MAA_Archers" max="RANGED" />
-        <MenAtArm type="skahazdahn_wardens" key="BTW_Wildling_MAA_Archers" max="RANGED" />
-        <MenAtArm type="skoutatoi" key="Vale_Arryn_MAA_Pikemen" max="INFANTRY" />
-        <MenAtArm type="slave_legion" key="BTW_Wildling_MAA_Archers" max="RANGED" />
-        <MenAtArm type="smiths_axes" key="BTW_Night_King_Army_Wight_Infantry" max="INFANTRY" />
-        <MenAtArm type="stair_guard" key="Vale_Arryn_MAA_Pikemen" max="INFANTRY" />
-        <MenAtArm type="star_carved" key="BTW_Night_King_Army_Wight_Infantry" max="INFANTRY" />
-        <MenAtArm type="steppe_raiders" key="BTW_White_Walkers" max="INFANTRY" />
-        <MenAtArm type="stepstone_sailors" key="BTW_Wildling_MAA_Archers" max="RANGED" />
-        <MenAtArm type="stolen_spears" key="Vale_Arryn_MAA_Pikemen" max="INFANTRY" />
-        <MenAtArm type="storm_knights" key="Dorne_Dayne_MAA_Lance_Cavalry" max="CAVALRY" />
-        <MenAtArm type="stormlands_heavy_infantry" key="BTW_Night_King_Army_Wight_Infantry" max="INFANTRY" />
-        <MenAtArm type="summer_knights" key="Dorne_Dayne_MAA_Lance_Cavalry" max="CAVALRY" />
-        <MenAtArm type="sun_guard" key="Vale_Arryn_MAA_Pikemen" max="INFANTRY" />
-        <MenAtArm type="sun_spears" key="Vale_Arryn_MAA_Pikemen" max="INFANTRY" />
-        <MenAtArm type="sworn_brothers" key="BTW_Night_King_Army_Wight_Infantry" max="INFANTRY" />
-        <MenAtArm type="tiger_cloaks" key="Vale_Arryn_MAA_Pikemen" max="INFANTRY" />
-        <MenAtArm type="tolosi_slingers" key="BTW_Wildling_MAA_Archers" max="RANGED" />
-        <MenAtArm type="torch_bearers" key="Essos_Targaryen_Catapult" siege="true" />
-        <MenAtArm type="trebuchet" key="Essos_Targaryen_Catapult" siege="true" />
-        <MenAtArm type="triarchs_herd" key="Dorne_Uller_MAA_Lance_Cavalry" max="CAVALRY" />
-        <MenAtArm type="unicorn_riders" key="BTW_White_Walkers" max="INFANTRY" />
-        <MenAtArm type="unsullied" key="Vale_Arryn_MAA_Pikemen" max="INFANTRY" />
-        <MenAtArm type="vale_heavy_infantry" key="BTW_Night_King_Army_Wight_Infantry" max="INFANTRY" />
-        <MenAtArm type="warriors_sons_heavy_cav" key="Dorne_Dayne_MAA_Lance_Cavalry" max="CAVALRY" />
-        <MenAtArm type="warriors_sons_heavy_infantry" key="BTW_Night_King_Army_Wight_Infantry" max="INFANTRY" />
-        <MenAtArm type="water_wizards" key="Dorne_Dayne_Catapult" siege="true" />
-        <MenAtArm type="weeping_guard" key="BTW_Night_King_Army_Wight_Infantry" max="INFANTRY" />
         <MenAtArm type="westerland_knights" key="Dorne_Dayne_MAA_Lance_Cavalry" max="CAVALRY" />
-        <MenAtArm type="westerlands_knights" key="Dorne_Dayne_MAA_Lance_Cavalry" max="CAVALRY" />
-        <MenAtArm type="westerosi_sellswords" key="Dorne_Dayne_MAA_Lance_Cavalry" max="CAVALRY" />
-        <MenAtArm type="wights" key="BTW_Wildling_MAA_Archers" max="RANGED" />
-        <MenAtArm type="wildling_cavalry" key="BTW_White_Walkers" max="INFANTRY" />
-        <MenAtArm type="winged_knights" key="Dorne_Dayne_MAA_Lance_Cavalry" max="CAVALRY" />
-        <MenAtArm type="winter_wolves" key="BTW_Night_King_Army_Wight_Infantry" max="INFANTRY" />
-        <MenAtArm type="wolfswood_hunters" key="BTW_Wildling_MAA_Archers" max="RANGED" />
     </Faction>
     <Faction name="Beyond the Wall" subculture="att_sub_cult_roman_west">
-        <General key="BTW_White_Walkers" rank="1" />
-        <General key="BTW_Wildling_Guard_Axemen" rank="2" />
-        <General key="BTW_Wildling_Guard_Spearmen" rank="3" />
-        <Knights key="BTW_Nights_Watch_MAA_Mounted_Swordsmen" rank="1" />
-        <Levies percentage="9" key="BTW_Nights_Watch_MAA_Mounted_Swordsmen" max="LEVY" />
-        <Levies percentage="38" key="BTW_Wildling_MAA_Swordsmen" max="LEVY" />
-        <Levies percentage="40" key="BTW_Nights_Watch_MAA_Longbowmen" max="LEVY" />
-        <Levies percentage="13" key="BTW_Wildling_MAA_Spearmen" max="LEVY" />
-        <Garrison key="BTW_Nights_Watch_MAA_Crossbowmen" max="LEVY" level="3" percentage="14" />
-        <Garrison key="BTW_Nights_Watch_MAA_Mounted_Swordsmen" max="LEVY" level="3" percentage="22" />
-        <Garrison key="BTW_Wildling_MAA_Spearmen" max="LEVY" level="3" percentage="26" />
-        <Garrison key="BTW_Nights_Watch_MAA_Spearmen" max="LEVY" level="3" percentage="14" />
-        <Garrison key="BTW_Night_King_Army_Ancient_Wight_Infantry" max="LEVY" level="3" percentage="24" />
-        <Garrison key="BTW_Wildling_Guard_Spearmen" max="LEVY" level="4" percentage="31" />
-        <Garrison key="BTW_Nights_Watch_Guard_Rangers" max="LEVY" level="4" percentage="28" />
-        <Garrison key="BTW_Wildling_Guard_Axemen" max="LEVY" level="4" percentage="41" />
         <MenAtArm type="accolade_maa_archers_watch" key="BTW_Nights_Watch_MAA_Longbowmen" max="RANGED" />
         <MenAtArm type="accolade_maa_archers_wild" key="BTW_Wildling_MAA_Archers" max="RANGED" />
-        <MenAtArm type="accolade_maa_lancers_wild" key="BTW_White_Walkers" max="INFANTRY" />
-        <MenAtArm type="accolade_maa_outriders_watch" key="BTW_Nights_Watch_MAA_Mounted_Swordsmen" max="CAVALRY" />
-        <MenAtArm type="accolade_maa_outriders_wild" key="BTW_Nights_Watch_MAA_Mounted_Swordsmen" max="CAVALRY" />
-        <MenAtArm type="accolade_maa_pikes_watch" key="BTW_Nights_Watch_MAA_Spearmen" max="INFANTRY" />
-        <MenAtArm type="accolade_maa_pikes_wild" key="BTW_Wildling_MAA_Spearmen" max="INFANTRY" />
-        <MenAtArm type="accolade_maa_skirmishers_watch" key="BTW_Nights_Watch_MAA_Longbowmen" max="RANGED" />
-        <MenAtArm type="accolade_maa_skirmishers_wild" key="BTW_Wildling_MAA_Archers" max="RANGED" />
-        <MenAtArm type="accolade_maa_vanguards_watch" key="BTW_Nights_Watch_Guard_Rangers" max="INFANTRY" />
-        <MenAtArm type="accolade_maa_vanguards_wild" key="BTW_Wildling_Guard_Axemen" max="INFANTRY" />
-        <MenAtArm type="armored_footmen_wild" key="BTW_Wildling_Guard_Axemen" max="INFANTRY" />
-        <MenAtArm type="armored_horsemen_wild" key="BTW_White_Walkers" max="INFANTRY" />
-        <MenAtArm type="bowmen_wild" key="BTW_Wildling_MAA_Archers" max="RANGED" />
-        <MenAtArm type="highgarden_knights" key="BTW_White_Walkers" max="INFANTRY" />
-        <MenAtArm type="light_footmen_wild" key="BTW_Wildling_MAA_Archers" max="RANGED" />
-        <MenAtArm type="light_horsemen_wild" key="BTW_Nights_Watch_MAA_Mounted_Swordsmen" max="CAVALRY" />
-        <MenAtArm type="pikemen_unit_wild" key="BTW_Wildling_MAA_Spearmen" max="INFANTRY" />
-        <MenAtArm type="pit_warriors" key="BTW_Wildling_Guard_Axemen" max="INFANTRY" />
-        <MenAtArm type="seal_hunters" key="BTW_Wildling_MAA_Archers" max="RANGED" />
-        <MenAtArm type="westerland_knights" key="BTW_White_Walkers" max="INFANTRY" />
-    </Faction>
-    <Faction name="Dorne" subculture="att_sub_cult_roman_west">
-        <General key="Dorne_Martell_MAA_Mounted_Swordsmen" rank="1" />
-        <General key="Dorne_Uller_MAA_Lance_Cavalry" rank="2" />
-        <General key="Dorne_Martell_MAA_Lance_Cavalry" rank="3" />
-        <Knights key="Dorne_Yronwood_MAA_Mounted_Swordsmen" rank="1" />
-        <Knights key="Dorne_Uller_MAA_Lance_Cavalry" rank="2" />
-        <Knights key="Dorne_Martell_MAA_Lance_Cavalry" rank="3" />
-        <Levies percentage="27" key="Dorne_Dayne_MAA_Longbowmen" max="LEVY" />
-        <Levies percentage="30" key="Dorne_Yronwood_MAA_Mounted_Swordsmen" max="LEVY" />
-        <Levies percentage="33" key="Dorne_Dayne_MAA_Spearmen" max="LEVY" />
-        <Levies percentage="10" key="Dorne_Yronwood_MAA_Spearmen" max="LEVY" />
-        <Garrison key="Dorne_Dayne_Catapult" max="LEVY" level="1" percentage="17" />
-        <Garrison key="Dorne_Martell_Catapult" max="LEVY" level="1" percentage="21" />
-        <Garrison key="Dorne_Yronwood_Catapult" max="LEVY" level="1" percentage="62" />
-        <Garrison key="Dorne_Yronwood_Catapult" max="LEVY" level="2" percentage="22" />
-        <Garrison key="Dorne_Uller_Catapult" max="LEVY" level="2" percentage="35" />
-        <Garrison key="Dorne_Dayne_Catapult" max="LEVY" level="2" percentage="43" />
-        <Garrison key="Dorne_Yronwood_MAA_Longbowmen" max="LEVY" level="3" percentage="30" />
-        <Garrison key="Dorne_Martell_MAA_Mounted_Swordsmen" max="LEVY" level="3" percentage="11" />
-        <Garrison key="Dorne_Dayne_MAA_Spearmen" max="LEVY" level="3" percentage="23" />
-        <Garrison key="Dorne_Uller_MAA_Axemen" max="LEVY" level="3" percentage="22" />
-        <Garrison key="Dorne_Uller_MAA_Swordsmen" max="LEVY" level="3" percentage="14" />
-        <Garrison key="Dorne_Yronwood_MAA_Longbowmen" max="LEVY" level="4" percentage="25" />
-        <Garrison key="Dorne_Uller_MAA_Lance_Cavalry" max="LEVY" level="4" percentage="27" />
-        <Garrison key="Dorne_Uller_MAA_Pikemen" max="LEVY" level="4" percentage="12" />
-        <Garrison key="Dorne_Dayne_MAA_Halberdiers" max="LEVY" level="4" percentage="9" />
-        <Garrison key="Dorne_Martell_MAA_Spearmen" max="LEVY" level="4" percentage="27" />
-        <MenAtArm type="accolade_maa_archers_watch" key="Dorne_Martell_MAA_Longbowmen" max="RANGED" />
-        <MenAtArm type="accolade_maa_archers_wild" key="Dorne_Martell_MAA_Longbowmen" max="RANGED" />
-        <MenAtArm type="accolade_maa_lancers_wild" key="Dorne_Martell_MAA_Lance_Cavalry" max="CAVALRY" />
-        <MenAtArm type="accolade_maa_outriders_watch" key="Dorne_Martell_MAA_Mounted_Swordsmen" max="CAVALRY" />
-        <MenAtArm type="accolade_maa_outriders_wild" key="Dorne_Martell_MAA_Mounted_Swordsmen" max="CAVALRY" />
-        <MenAtArm type="accolade_maa_pikes_watch" key="Dorne_Martell_MAA_Pikemen" max="INFANTRY" />
-        <MenAtArm type="accolade_maa_pikes_wild" key="Dorne_Martell_MAA_Pikemen" max="INFANTRY" />
-        <MenAtArm type="accolade_maa_skirmishers_watch" key="Dorne_Martell_MAA_Javelins" max="INFANTRY" />
-        <MenAtArm type="accolade_maa_skirmishers_wild" key="Dorne_Martell_MAA_Javelins" max="INFANTRY" />
-        <MenAtArm type="accolade_maa_vanguards_watch" key="Dorne_Martell_MAA_Swordsmen" max="INFANTRY" />
-        <MenAtArm type="accolade_maa_vanguards_wild" key="Dorne_Martell_MAA_Swordsmen" max="INFANTRY" />
-        <MenAtArm type="armored_footmen_wild" key="Dorne_Martell_MAA_Swordsmen" max="INFANTRY" />
-        <MenAtArm type="armored_horsemen_wild" key="Dorne_Martell_MAA_Lance_Cavalry" max="CAVALRY" />
-        <MenAtArm type="bowmen_wild" key="Dorne_Martell_MAA_Longbowmen" max="RANGED" />
-        <MenAtArm type="highgarden_knights" key="Dorne_Martell_MAA_Lance_Cavalry" max="CAVALRY" />
-        <MenAtArm type="light_footmen_wild" key="Dorne_Martell_MAA_Javelins" max="INFANTRY" />
-        <MenAtArm type="light_horsemen_wild" key="Dorne_Martell_MAA_Mounted_Swordsmen" max="CAVALRY" />
-        <MenAtArm type="pikemen_unit_wild" key="Dorne_Martell_MAA_Pikemen" max="INFANTRY" />
-        <MenAtArm type="pit_warriors" key="Dorne_Martell_MAA_Swordsmen" max="INFANTRY" />
-        <MenAtArm type="seal_hunters" key="Dorne_Martell_MAA_Longbowmen" max="RANGED" />
-        <MenAtArm type="westerland_knights" key="Dorne_Martell_MAA_Lance_Cavalry" max="CAVALRY" />
-    </Faction>
-    <Faction name="Essos" subculture="att_sub_cult_roman_west">
-        <General key="Essos_Targaryen_Dothraki_Bloodriders" rank="1" />
-        <Knights key="Essos_Targaryen_Dothraki_Mounted_Archers" rank="1" />
-        <Knights key="Essos_Targaryen_Dothraki_Bloodriders" rank="2" />
-        <Knights key="Essos_Targaryen_Dothraki_Khalasar" rank="3" />
-        <Levies percentage="19" key="Essos_Targaryen_Dothraki_Mounted_Archers" max="LEVY" />
-        <Levies percentage="28" key="Essos_Targaryen_Unsullied_Pikemen" max="LEVY" />
-        <Levies percentage="18" key="Essos_Targaryen_Unsullied_Swordsmen" max="LEVY" />
-        <Levies percentage="35" key="Essos_Targaryen_Unsullied_Spearmen" max="LEVY" />
-        <Garrison key="Essos_Targaryen_Catapult" max="LEVY" level="1" percentage="22" />
-        <Garrison key="Essos_Targaryen_Catapult" max="LEVY" level="1" percentage="56" />
-        <Garrison key="Essos_Targaryen_Catapult" max="LEVY" level="1" percentage="22" />
-        <Garrison key="Essos_Targaryen_Catapult" max="LEVY" level="2" percentage="21" />
-        <Garrison key="Essos_Targaryen_Catapult" max="LEVY" level="2" percentage="31" />
-        <Garrison key="Essos_Targaryen_Catapult" max="LEVY" level="2" percentage="48" />
-        <Garrison key="Essos_Targaryen_Dothraki_Khalasar" max="LEVY" level="3" percentage="33" />
-        <Garrison key="Essos_Targaryen_Dothraki_Mounted_Archers" max="LEVY" level="3" percentage="38" />
-        <Garrison key="Essos_Targaryen_Dothraki_Khalasar" max="LEVY" level="3" percentage="29" />
-        <Garrison key="Essos_Targaryen_Dothraki_Bloodriders" max="LEVY" level="4" percentage="15" />
-        <Garrison key="Essos_Targaryen_Unsullied_Pikemen" max="LEVY" level="4" percentage="18" />
-        <Garrison key="Essos_Targaryen_Unsullied_Spearmen" max="LEVY" level="4" percentage="44" />
-        <Garrison key="Essos_Targaryen_Unsullied_Swordsmen" max="LEVY" level="4" percentage="23" />
-        <MenAtArm type="accolade_maa_archers_watch" key="Essos_Targaryen_Dothraki_Mounted_Archers" max="CAVALRY" />
-        <MenAtArm type="accolade_maa_archers_wild" key="Essos_Targaryen_Dothraki_Mounted_Archers" max="CAVALRY" />
         <MenAtArm type="accolade_maa_lancers_wild" key="Essos_Targaryen_Dothraki_Khalasar" max="CAVALRY" />
-        <MenAtArm type="accolade_maa_outriders_watch" key="Essos_Targaryen_Dothraki_Bloodriders" max="CAVALRY" />
-        <MenAtArm type="accolade_maa_outriders_wild" key="Essos_Targaryen_Dothraki_Bloodriders" max="CAVALRY" />
+        <MenAtArm type="accolade_maa_outriders_watch" key="Essos_Targaryen_Dothraki_Mounted_Archers" max="CAVALRY" />
+        <MenAtArm type="accolade_maa_outriders_wild" key="Essos_Targaryen_Dothraki_Mounted_Archers" max="CAVALRY" />
         <MenAtArm type="accolade_maa_pikes_watch" key="Essos_Targaryen_Unsullied_Pikemen" max="INFANTRY" />
         <MenAtArm type="accolade_maa_pikes_wild" key="Essos_Targaryen_Unsullied_Pikemen" max="INFANTRY" />
-        <MenAtArm type="accolade_maa_skirmishers_watch" key="Essos_Targaryen_Dothraki_Mounted_Archers" max="CAVALRY" />
-        <MenAtArm type="accolade_maa_skirmishers_wild" key="Essos_Targaryen_Dothraki_Mounted_Archers" max="CAVALRY" />
+        <MenAtArm type="accolade_maa_skirmishers_watch" key="BTW_Nights_Watch_MAA_Longbowmen" max="INFANTRY" />
+        <MenAtArm type="accolade_maa_skirmishers_wild" key="BTW_Nights_Watch_MAA_Longbowmen" max="INFANTRY" />
+        <MenAtArm type="accolade_maa_vanguards_watch" key="BTW_Night_King_Army_Wight_Infantry" max="INFANTRY" />
+        <MenAtArm type="accolade_maa_vanguards_wild" key="BTW_Night_King_Army_Wight_Infantry" max="INFANTRY" />
+        <MenAtArm type="armored_footmen_wild" key="BTW_Night_King_Army_Wight_Infantry" max="INFANTRY" />
+        <MenAtArm type="armored_horsemen_wild" key="Essos_Targaryen_Dothraki_Khalasar" max="CAVALRY" />
+        <MenAtArm type="bowmen_wild" key="BTW_Nights_Watch_MAA_Longbowmen" max="RANGED" />
+        <MenAtArm type="highgarden_knights" key="BTW_Nights_Watch_MAA_Mounted_Swordsmen" max="CAVALRY" />
+        <MenAtArm type="light_footmen_wild" key="BTW_Nights_Watch_MAA_Longbowmen" max="INFANTRY" />
+        <MenAtArm type="light_horsemen_wild" key="Essos_Targaryen_Dothraki_Mounted_Archers" max="CAVALRY" />
+        <MenAtArm type="pikemen_unit_wild" key="Essos_Targaryen_Unsullied_Pikemen" max="INFANTRY" />
+        <MenAtArm type="pit_warriors" key="BTW_Night_King_Army_Wight_Infantry" max="INFANTRY" />
+        <MenAtArm type="seal_hunters" key="BTW_Nights_Watch_MAA_Longbowmen" max="RANGED" />
+        <MenAtArm type="westerland_knights" key="BTW_Nights_Watch_MAA_Mounted_Swordsmen" max="CAVALRY" />
+    </Faction>
+    <Faction name="Dorne" subculture="att_sub_cult_roman_west">
+        <MenAtArm type="accolade_maa_archers_watch" key="Dorne_Martell_MAA_Javelins" max="RANGED" />
+        <MenAtArm type="accolade_maa_archers_wild" key="Dorne_Martell_MAA_Javelins" max="RANGED" />
+        <MenAtArm type="accolade_maa_lancers_wild" key="Dorne_Dayne_MAA_Lance_Cavalry" max="CAVALRY" />
+        <MenAtArm type="accolade_maa_outriders_watch" key="Dorne_Martell_MAA_Mounted_Archers" max="CAVALRY" />
+        <MenAtArm type="accolade_maa_outriders_wild" key="Dorne_Martell_MAA_Mounted_Archers" max="CAVALRY" />
+        <MenAtArm type="accolade_maa_pikes_watch" key="Dorne_Yronwood_MAA_Pikemen" max="INFANTRY" />
+        <MenAtArm type="accolade_maa_pikes_wild" key="Dorne_Yronwood_MAA_Pikemen" max="INFANTRY" />
+        <MenAtArm type="accolade_maa_skirmishers_watch" key="Dorne_Martell_MAA_Javelins" max="INFANTRY" />
+        <MenAtArm type="accolade_maa_skirmishers_wild" key="Dorne_Martell_MAA_Javelins" max="INFANTRY" />
+        <MenAtArm type="accolade_maa_vanguards_watch" key="Dorne_Uller_MAA_Swordsmen" max="INFANTRY" />
+        <MenAtArm type="accolade_maa_vanguards_wild" key="Dorne_Uller_MAA_Swordsmen" max="INFANTRY" />
+        <MenAtArm type="armored_footmen_wild" key="Dorne_Uller_MAA_Swordsmen" max="INFANTRY" />
+        <MenAtArm type="armored_horsemen_wild" key="Dorne_Dayne_MAA_Lance_Cavalry" max="CAVALRY" />
+        <MenAtArm type="bowmen_wild" key="Dorne_Martell_MAA_Javelins" max="RANGED" />
+        <MenAtArm type="highgarden_knights" key="Dorne_Uller_MAA_Lance_Cavalry" max="CAVALRY" />
+        <MenAtArm type="light_footmen_wild" key="Dorne_Martell_MAA_Javelins" max="INFANTRY" />
+        <MenAtArm type="light_horsemen_wild" key="Dorne_Martell_MAA_Mounted_Archers" max="CAVALRY" />
+        <MenAtArm type="pikemen_unit_wild" key="Dorne_Yronwood_MAA_Pikemen" max="INFANTRY" />
+        <MenAtArm type="pit_warriors" key="Dorne_Uller_MAA_Swordsmen" max="INFANTRY" />
+        <MenAtArm type="seal_hunters" key="Dorne_Martell_MAA_Javelins" max="RANGED" />
+        <MenAtArm type="westerland_knights" key="Dorne_Uller_MAA_Lance_Cavalry" max="CAVALRY" />
+    </Faction>
+    <Faction name="Essos" subculture="att_sub_cult_roman_west">
+        <MenAtArm type="accolade_maa_archers_watch" key="Westerlands_Marbrand_MAA_Crossbowmen" max="RANGED" />
+        <MenAtArm type="accolade_maa_archers_wild" key="Westerlands_Marbrand_MAA_Crossbowmen" max="RANGED" />
+        <MenAtArm type="accolade_maa_lancers_wild" key="Essos_Targaryen_Dothraki_Khalasar" max="CAVALRY" />
+        <MenAtArm type="accolade_maa_outriders_watch" key="Essos_Targaryen_Dothraki_Mounted_Archers" max="CAVALRY" />
+        <MenAtArm type="accolade_maa_outriders_wild" key="Essos_Targaryen_Dothraki_Mounted_Archers" max="CAVALRY" />
+        <MenAtArm type="accolade_maa_pikes_watch" key="Essos_Targaryen_Unsullied_Pikemen" max="INFANTRY" />
+        <MenAtArm type="accolade_maa_pikes_wild" key="Essos_Targaryen_Unsullied_Pikemen" max="INFANTRY" />
+        <MenAtArm type="accolade_maa_skirmishers_watch" key="Westerlands_Marbrand_MAA_Crossbowmen" max="INFANTRY" />
+        <MenAtArm type="accolade_maa_skirmishers_wild" key="Westerlands_Marbrand_MAA_Crossbowmen" max="INFANTRY" />
         <MenAtArm type="accolade_maa_vanguards_watch" key="Essos_Targaryen_Unsullied_Swordsmen" max="INFANTRY" />
         <MenAtArm type="accolade_maa_vanguards_wild" key="Essos_Targaryen_Unsullied_Swordsmen" max="INFANTRY" />
         <MenAtArm type="armored_footmen_wild" key="Essos_Targaryen_Unsullied_Swordsmen" max="INFANTRY" />
         <MenAtArm type="armored_horsemen_wild" key="Essos_Targaryen_Dothraki_Khalasar" max="CAVALRY" />
-        <MenAtArm type="bowmen_wild" key="Essos_Targaryen_Dothraki_Mounted_Archers" max="CAVALRY" />
-        <MenAtArm type="highgarden_knights" key="Essos_Targaryen_Dothraki_Khalasar" max="CAVALRY" />
-        <MenAtArm type="light_footmen_wild" key="Essos_Targaryen_Dothraki_Mounted_Archers" max="CAVALRY" />
-        <MenAtArm type="light_horsemen_wild" key="Essos_Targaryen_Dothraki_Bloodriders" max="CAVALRY" />
+        <MenAtArm type="bowmen_wild" key="Westerlands_Marbrand_MAA_Crossbowmen" max="RANGED" />
+        <MenAtArm type="highgarden_knights" key="Essos_Targaryen_Dothraki_Bloodriders" max="CAVALRY" />
+        <MenAtArm type="light_footmen_wild" key="Westerlands_Marbrand_MAA_Crossbowmen" max="INFANTRY" />
+        <MenAtArm type="light_horsemen_wild" key="Essos_Targaryen_Dothraki_Mounted_Archers" max="CAVALRY" />
         <MenAtArm type="pikemen_unit_wild" key="Essos_Targaryen_Unsullied_Pikemen" max="INFANTRY" />
         <MenAtArm type="pit_warriors" key="Essos_Targaryen_Unsullied_Swordsmen" max="INFANTRY" />
-        <MenAtArm type="seal_hunters" key="Essos_Targaryen_Dothraki_Mounted_Archers" max="CAVALRY" />
-        <MenAtArm type="westerland_knights" key="Essos_Targaryen_Dothraki_Khalasar" max="CAVALRY" />
+        <MenAtArm type="seal_hunters" key="Westerlands_Marbrand_MAA_Crossbowmen" max="RANGED" />
+        <MenAtArm type="westerland_knights" key="Westerlands_Marbrand_MAA_Lance_Cavalry" max="CAVALRY" />
     </Faction>
     <Faction name="The Crownlands" subculture="att_sub_cult_roman_west">
-        <General key="Stormlands_Baratheon_Guard_Swordsmen" rank="1" />
-        <General key="Stormlands_Baratheon_Guard_Spearmen" rank="2" />
-        <General key="Westerlands_Lannister_Guard_Swordsmen" rank="3" />
-        <Knights key="Westerlands_Lannister_MAA_Mounted_Swordsmen" rank="1" />
-        <Knights key="Crownlands_Velaryon_MAA_Mounted_Swordsmen" rank="2" />
-        <Knights key="Crownlands_Velaryon_MAA_Lance_Cavalry" rank="3" />
-        <Levies percentage="29" key="Crownlands_Velaryon_MAA_Longbowmen" max="LEVY" />
-        <Levies percentage="29" key="Crownlands_Kings_Landing_Goldcloak_Mounted_Swordsmen" max="LEVY" />
-        <Levies percentage="25" key="Stormlands_Baratheon_MAA_Spearmen" max="LEVY" />
-        <Levies percentage="17" key="Crownlands_Velaryon_MAA_Spearmen" max="LEVY" />
-        <Garrison key="Westerlands_Lannister_Catapult" max="LEVY" level="1" percentage="20" />
-        <Garrison key="Stormlands_Baratheon_Catapult" max="LEVY" level="1" percentage="62" />
-        <Garrison key="Westerlands_Lannister_Catapult" max="LEVY" level="1" percentage="18" />
-        <Garrison key="Westerlands_Lannister_Catapult" max="LEVY" level="2" percentage="33" />
-        <Garrison key="Stormlands_Baratheon_Catapult" max="LEVY" level="2" percentage="26" />
-        <Garrison key="Westerlands_Lannister_Catapult" max="LEVY" level="2" percentage="41" />
-        <Garrison key="Westerlands_Lannister_MAA_Longbowmen" max="LEVY" level="3" percentage="25" />
-        <Garrison key="Crownlands_Kings_Landing_Goldcloak_Mounted_Swordsmen" max="LEVY" level="3" percentage="20" />
-        <Garrison key="Westerlands_Lannister_MAA_Spearmen" max="LEVY" level="3" percentage="16" />
-        <Garrison key="Westerlands_Lannister_MAA_Axemen" max="LEVY" level="3" percentage="16" />
-        <Garrison key="Westerlands_Lannister_MAA_Halberdiers" max="LEVY" level="3" percentage="23" />
-        <Garrison key="Stormlands_Baratheon_Guard_Spearmen" max="LEVY" level="4" percentage="37" />
-        <Garrison key="Westerlands_Lannister_Guard_Swordsmen" max="LEVY" level="4" percentage="7" />
-        <Garrison key="Stormlands_Baratheon_Guard_Swordsmen" max="LEVY" level="4" percentage="28" />
-        <Garrison key="Westerlands_Lannister_Guard_Spearmen" max="LEVY" level="4" percentage="28" />
-        <MenAtArm type="accolade_maa_archers_watch" key="Crownlands_Kings_Landing_Golden_Company_Longbowmen" max="RANGED" />
-        <MenAtArm type="accolade_maa_archers_wild" key="Crownlands_Velaryon_MAA_Longbowmen" max="RANGED" />
-        <MenAtArm type="accolade_maa_lancers_wild" key="Crownlands_Velaryon_MAA_Lance_Cavalry" max="CAVALRY" />
-        <MenAtArm type="accolade_maa_outriders_watch" key="Crownlands_Kings_Landing_Goldcloak_Mounted_Swordsmen" max="CAVALRY" />
-        <MenAtArm type="accolade_maa_outriders_wild" key="Crownlands_Velaryon_MAA_Mounted_Swordsmen" max="CAVALRY" />
-        <MenAtArm type="accolade_maa_pikes_watch" key="Crownlands_Velaryon_MAA_Pikemen" max="INFANTRY" />
-        <MenAtArm type="accolade_maa_pikes_wild" key="Crownlands_Velaryon_MAA_Pikemen" max="INFANTRY" />
-        <MenAtArm type="accolade_maa_skirmishers_watch" key="Crownlands_Kings_Landing_Goldcloak_Crossbowmen" max="RANGED" />
-        <MenAtArm type="accolade_maa_skirmishers_wild" key="Crownlands_Velaryon_MAA_Crossbowmen" max="RANGED" />
-        <MenAtArm type="accolade_maa_vanguards_watch" key="Crownlands_Kings_Landing_Golden_Company_Swordsmen" max="INFANTRY" />
-        <MenAtArm type="accolade_maa_vanguards_wild" key="Crownlands_Velaryon_MAA_Swordsmen" max="INFANTRY" />
-        <MenAtArm type="armored_footmen_wild" key="Crownlands_Velaryon_MAA_Swordsmen" max="INFANTRY" />
-        <MenAtArm type="armored_horsemen_wild" key="Crownlands_Velaryon_MAA_Lance_Cavalry" max="CAVALRY" />
-        <MenAtArm type="bowmen_wild" key="Crownlands_Velaryon_Conscript_Longbowmen" max="RANGED" />
-        <MenAtArm type="highgarden_knights" key="Crownlands_Velaryon_MAA_Lance_Cavalry" max="CAVALRY" />
-        <MenAtArm type="light_footmen_wild" key="Crownlands_Velaryon_MAA_Crossbowmen" max="RANGED" />
-        <MenAtArm type="light_horsemen_wild" key="Crownlands_Velaryon_MAA_Mounted_Swordsmen" max="CAVALRY" />
-        <MenAtArm type="pikemen_unit_wild" key="Crownlands_Velaryon_MAA_Pikemen" max="INFANTRY" />
-        <MenAtArm type="pit_warriors" key="Crownlands_Kings_Landing_Golden_Company_Swordsmen" max="INFANTRY" />
-        <MenAtArm type="seal_hunters" key="Crownlands_Velaryon_Conscript_Longbowmen" max="RANGED" />
-        <MenAtArm type="westerland_knights" key="Crownlands_Velaryon_MAA_Lance_Cavalry" max="CAVALRY" />
+        <MenAtArm type="accolade_maa_archers_watch" key="Westerlands_Lannister_MAA_Longbowmen" max="RANGED" />
+        <MenAtArm type="accolade_maa_archers_wild" key="Westerlands_Lannister_MAA_Longbowmen" max="RANGED" />
+        <MenAtArm type="accolade_maa_lancers_wild" key="Stormlands_Baratheon_MAA_Lance_Cavalry" max="CAVALRY" />
+        <MenAtArm type="accolade_maa_outriders_watch" key="Essos_Targaryen_Dothraki_Mounted_Archers" max="CAVALRY" />
+        <MenAtArm type="accolade_maa_outriders_wild" key="Essos_Targaryen_Dothraki_Mounted_Archers" max="CAVALRY" />
+        <MenAtArm type="accolade_maa_pikes_watch" key="Crownlands_Velaryon_Conscript_Pikemen" max="INFANTRY" />
+        <MenAtArm type="accolade_maa_pikes_wild" key="Crownlands_Velaryon_Conscript_Pikemen" max="INFANTRY" />
+        <MenAtArm type="accolade_maa_skirmishers_watch" key="Westerlands_Lannister_MAA_Longbowmen" max="INFANTRY" />
+        <MenAtArm type="accolade_maa_skirmishers_wild" key="Westerlands_Lannister_MAA_Longbowmen" max="INFANTRY" />
+        <MenAtArm type="accolade_maa_vanguards_watch" key="Stormlands_Baratheon_MAA_Axemen" max="INFANTRY" />
+        <MenAtArm type="accolade_maa_vanguards_wild" key="Stormlands_Baratheon_MAA_Axemen" max="INFANTRY" />
+        <MenAtArm type="armored_footmen_wild" key="Stormlands_Baratheon_MAA_Axemen" max="INFANTRY" />
+        <MenAtArm type="armored_horsemen_wild" key="Stormlands_Baratheon_MAA_Lance_Cavalry" max="CAVALRY" />
+        <MenAtArm type="bowmen_wild" key="Westerlands_Lannister_MAA_Longbowmen" max="RANGED" />
+        <MenAtArm type="highgarden_knights" key="Crownlands_Kings_Landing_Goldcloak_Mounted_Swordsmen" max="CAVALRY" />
+        <MenAtArm type="light_footmen_wild" key="Westerlands_Lannister_MAA_Longbowmen" max="INFANTRY" />
+        <MenAtArm type="light_horsemen_wild" key="Essos_Targaryen_Dothraki_Mounted_Archers" max="CAVALRY" />
+        <MenAtArm type="pikemen_unit_wild" key="Crownlands_Velaryon_Conscript_Pikemen" max="INFANTRY" />
+        <MenAtArm type="pit_warriors" key="Crownlands_Kings_Landing_Goldcloak_Swordsmen" max="INFANTRY" />
+        <MenAtArm type="seal_hunters" key="Crownlands_Velaryon_MAA_Crossbowmen" max="RANGED" />
+        <MenAtArm type="westerland_knights" key="Westerlands_Lannister_MAA_Lance_Cavalry" max="CAVALRY" />
     </Faction>
     <Faction name="The Iron Islands" subculture="att_sub_cult_roman_west">
-        <General key="Iron_Islands_Greyjoy_Guard_Swordsmen" rank="1" />
-        <General key="Iron_Islands_Greyjoy_Guard_Spearmen" rank="2" />
-        <Knights key="Iron_Islands_Greyjoy_MAA_Mounted_Swordsmen" rank="1" />
-        <Knights key="Iron_Islands_Harlaw_MAA_Mounted_Swordsmen" rank="2" />
-        <Knights key="Iron_Islands_Greyjoy_MAA_Lance_Cavalry" rank="3" />
-        <Levies percentage="14" key="Iron_Islands_Greyjoy_MAA_Bowmen" max="LEVY" />
-        <Levies percentage="18" key="Iron_Islands_Harlaw_MAA_Lance_Cavalry" max="LEVY" />
-        <Levies percentage="31" key="Iron_Islands_Harlaw_MAA_Infantry" max="LEVY" />
-        <Levies percentage="37" key="Iron_Islands_Greyjoy_MAA_Pikemen" max="LEVY" />
-        <Garrison key="Iron_Islands_Greyjoy_Catapult" max="LEVY" level="1" percentage="35" />
-        <Garrison key="Iron_Islands_Harlaw_Catapult" max="LEVY" level="1" percentage="18" />
-        <Garrison key="Iron_Islands_Harlaw_Catapult" max="LEVY" level="1" percentage="47" />
-        <Garrison key="Iron_Islands_Greyjoy_Catapult" max="LEVY" level="2" percentage="36" />
-        <Garrison key="Iron_Islands_Harlaw_Catapult" max="LEVY" level="2" percentage="28" />
-        <Garrison key="Iron_Islands_Harlaw_Catapult" max="LEVY" level="2" percentage="36" />
-        <Garrison key="Iron_Islands_Harlaw_MAA_Bowmen" max="LEVY" level="3" percentage="19" />
-        <Garrison key="Iron_Islands_Harlaw_MAA_Mounted_Swordsmen" max="LEVY" level="3" percentage="19" />
-        <Garrison key="Iron_Islands_Greyjoy_MAA_Spearmen" max="LEVY" level="3" percentage="17" />
-        <Garrison key="Iron_Islands_Harlaw_MAA_Pikemen" max="LEVY" level="3" percentage="23" />
-        <Garrison key="Iron_Islands_Harlaw_MAA_Swordsmen" max="LEVY" level="3" percentage="22" />
-        <Garrison key="Iron_Islands_Greyjoy_Guard_Spearmen" max="LEVY" level="4" percentage="33" />
-        <Garrison key="Iron_Islands_Greyjoy_Guard_Swordsmen" max="LEVY" level="4" percentage="35" />
-        <Garrison key="Iron_Islands_Greyjoy_Guard_Spearmen" max="LEVY" level="4" percentage="32" />
-        <MenAtArm type="accolade_maa_archers_watch" key="Iron_Islands_Greyjoy_MAA_Bowmen" max="RANGED" />
-        <MenAtArm type="accolade_maa_archers_wild" key="Iron_Islands_Greyjoy_MAA_Bowmen" max="RANGED" />
-        <MenAtArm type="accolade_maa_lancers_wild" key="Iron_Islands_Greyjoy_MAA_Lance_Cavalry" max="CAVALRY" />
-        <MenAtArm type="accolade_maa_outriders_watch" key="Iron_Islands_Greyjoy_MAA_Mounted_Swordsmen" max="CAVALRY" />
-        <MenAtArm type="accolade_maa_outriders_wild" key="Iron_Islands_Greyjoy_MAA_Mounted_Swordsmen" max="CAVALRY" />
-        <MenAtArm type="accolade_maa_pikes_watch" key="Iron_Islands_Greyjoy_MAA_Pikemen" max="INFANTRY" />
-        <MenAtArm type="accolade_maa_pikes_wild" key="Iron_Islands_Greyjoy_MAA_Pikemen" max="INFANTRY" />
-        <MenAtArm type="accolade_maa_skirmishers_watch" key="Iron_Islands_Greyjoy_MAA_Crossbowmen" max="RANGED" />
-        <MenAtArm type="accolade_maa_skirmishers_wild" key="Iron_Islands_Greyjoy_MAA_Crossbowmen" max="RANGED" />
-        <MenAtArm type="accolade_maa_vanguards_watch" key="Iron_Islands_Greyjoy_Guard_Swordsmen" max="INFANTRY" />
-        <MenAtArm type="accolade_maa_vanguards_wild" key="Iron_Islands_Greyjoy_Guard_Swordsmen" max="INFANTRY" />
-        <MenAtArm type="armored_footmen_wild" key="Iron_Islands_Greyjoy_Guard_Swordsmen" max="INFANTRY" />
-        <MenAtArm type="armored_horsemen_wild" key="Iron_Islands_Greyjoy_MAA_Lance_Cavalry" max="CAVALRY" />
-        <MenAtArm type="bowmen_wild" key="Iron_Islands_Greyjoy_MAA_Bowmen" max="RANGED" />
-        <MenAtArm type="highgarden_knights" key="Iron_Islands_Greyjoy_MAA_Lance_Cavalry" max="CAVALRY" />
-        <MenAtArm type="light_footmen_wild" key="Iron_Islands_Greyjoy_MAA_Crossbowmen" max="RANGED" />
-        <MenAtArm type="light_horsemen_wild" key="Iron_Islands_Greyjoy_MAA_Mounted_Swordsmen" max="CAVALRY" />
-        <MenAtArm type="pikemen_unit_wild" key="Iron_Islands_Greyjoy_MAA_Pikemen" max="INFANTRY" />
-        <MenAtArm type="pit_warriors" key="Iron_Islands_Greyjoy_Guard_Swordsmen" max="INFANTRY" />
-        <MenAtArm type="seal_hunters" key="Iron_Islands_Greyjoy_MAA_Bowmen" max="RANGED" />
-        <MenAtArm type="westerland_knights" key="Iron_Islands_Greyjoy_MAA_Lance_Cavalry" max="CAVALRY" />
+        <MenAtArm type="accolade_maa_archers_watch" key="Iron_Islands_Harlaw_MAA_Bowmen" max="RANGED" />
+        <MenAtArm type="accolade_maa_archers_wild" key="Iron_Islands_Harlaw_MAA_Bowmen" max="RANGED" />
+        <MenAtArm type="accolade_maa_lancers_wild" key="Iron_Islands_Harlaw_MAA_Lance_Cavalry" max="CAVALRY" />
+        <MenAtArm type="accolade_maa_outriders_watch" key="Dorne_Martell_MAA_Mounted_Archers" max="CAVALRY" />
+        <MenAtArm type="accolade_maa_outriders_wild" key="Dorne_Martell_MAA_Mounted_Archers" max="CAVALRY" />
+        <MenAtArm type="accolade_maa_pikes_watch" key="Iron_Islands_Harlaw_MAA_Pikemen" max="INFANTRY" />
+        <MenAtArm type="accolade_maa_pikes_wild" key="Iron_Islands_Harlaw_MAA_Pikemen" max="INFANTRY" />
+        <MenAtArm type="accolade_maa_skirmishers_watch" key="Iron_Islands_Harlaw_MAA_Bowmen" max="INFANTRY" />
+        <MenAtArm type="accolade_maa_skirmishers_wild" key="Iron_Islands_Harlaw_MAA_Bowmen" max="INFANTRY" />
+        <MenAtArm type="accolade_maa_vanguards_watch" key="Iron_Islands_Greyjoy_MAA_Halberdiers" max="INFANTRY" />
+        <MenAtArm type="accolade_maa_vanguards_wild" key="Iron_Islands_Greyjoy_MAA_Halberdiers" max="INFANTRY" />
+        <MenAtArm type="armored_footmen_wild" key="Iron_Islands_Greyjoy_MAA_Halberdiers" max="INFANTRY" />
+        <MenAtArm type="armored_horsemen_wild" key="Iron_Islands_Harlaw_MAA_Lance_Cavalry" max="CAVALRY" />
+        <MenAtArm type="bowmen_wild" key="Iron_Islands_Harlaw_MAA_Bowmen" max="RANGED" />
+        <MenAtArm type="highgarden_knights" key="Iron_Islands_Harlaw_MAA_Mounted_Swordsmen" max="CAVALRY" />
+        <MenAtArm type="light_footmen_wild" key="Iron_Islands_Harlaw_MAA_Bowmen" max="INFANTRY" />
+        <MenAtArm type="light_horsemen_wild" key="Dorne_Martell_MAA_Mounted_Archers" max="CAVALRY" />
+        <MenAtArm type="pikemen_unit_wild" key="Iron_Islands_Harlaw_MAA_Pikemen" max="INFANTRY" />
+        <MenAtArm type="pit_warriors" key="Iron_Islands_Greyjoy_MAA_Halberdiers" max="INFANTRY" />
+        <MenAtArm type="seal_hunters" key="Iron_Islands_Harlaw_MAA_Bowmen" max="RANGED" />
+        <MenAtArm type="westerland_knights" key="Iron_Islands_Harlaw_MAA_Mounted_Swordsmen" max="CAVALRY" />
     </Faction>
     <Faction name="The North" subculture="att_sub_cult_roman_west">
-        <General key="North_Stark_Guard_Spearmen" rank="1" />
-        <General key="North_Stark_Guard_Swordsmen" rank="2" />
-        <General key="North_Bolton_Guard_Spearmen" rank="3" />
-        <Knights key="North_Karstark_MAA_Mounted_Swordsmen" rank="1" />
-        <Knights key="North_Bolton_MAA_Mounted_Swordsmen" rank="2" />
-        <Knights key="North_Cerwyn_MAA_Lance_Cavalry" rank="3" />
-        <Levies percentage="23" key="North_Hornwood_MAA_Longbowmen" max="LEVY" />
-        <Levies percentage="22" key="North_Glover_MAA_Lance_Cavalry" max="LEVY" />
-        <Levies percentage="8" key="North_Cerwyn_MAA_Pikemen" max="LEVY" />
-        <Levies percentage="32" key="North_Cerwyn_MAA_Halberdiers" max="LEVY" />
-        <Levies percentage="15" key="North_Hornwood_MAA_Swordsmen" max="LEVY" />
-        <Garrison key="North_Cerwyn_Catapult" max="LEVY" level="1" percentage="39" />
-        <Garrison key="North_Stark_Catapult" max="LEVY" level="1" percentage="20" />
-        <Garrison key="North_Bolton_Catapult" max="LEVY" level="1" percentage="41" />
-        <Garrison key="North_Umber_Catapult" max="LEVY" level="2" percentage="60" />
-        <Garrison key="North_Hornwood_Catapult" max="LEVY" level="2" percentage="22" />
-        <Garrison key="North_Cerwyn_Catapult" max="LEVY" level="2" percentage="18" />
-        <Garrison key="North_Hornwood_MAA_Longbowmen" max="LEVY" level="3" percentage="10" />
-        <Garrison key="North_Cerwyn_MAA_Mounted_Swordsmen" max="LEVY" level="3" percentage="20" />
-        <Garrison key="North_Umber_MAA_Spearmen" max="LEVY" level="3" percentage="25" />
-        <Garrison key="North_Stark_MAA_Pikemen" max="LEVY" level="3" percentage="20" />
-        <Garrison key="North_Cerwyn_MAA_Swordsmen" max="LEVY" level="3" percentage="25" />
-        <Garrison key="North_Stark_Guard_Spearmen" max="LEVY" level="4" percentage="27" />
-        <Garrison key="North_Stark_Guard_Swordsmen" max="LEVY" level="4" percentage="40" />
-        <Garrison key="North_Bolton_Guard_Spearmen" max="LEVY" level="4" percentage="33" />
-        <MenAtArm type="accolade_maa_archers_watch" key="North_Stark_MAA_Longbowmen" max="RANGED" />
-        <MenAtArm type="accolade_maa_archers_wild" key="North_Stark_MAA_Longbowmen" max="RANGED" />
-        <MenAtArm type="accolade_maa_lancers_wild" key="North_Stark_MAA_Lance_Cavalry" max="CAVALRY" />
-        <MenAtArm type="accolade_maa_outriders_watch" key="North_Stark_MAA_Mounted_Swordsmen" max="CAVALRY" />
-        <MenAtArm type="accolade_maa_outriders_wild" key="North_Stark_MAA_Mounted_Swordsmen" max="CAVALRY" />
-        <MenAtArm type="accolade_maa_pikes_watch" key="North_Stark_MAA_Pikemen" max="INFANTRY" />
-        <MenAtArm type="accolade_maa_pikes_wild" key="North_Stark_MAA_Pikemen" max="INFANTRY" />
-        <MenAtArm type="accolade_maa_skirmishers_watch" key="North_Stark_MAA_Crossbowmen" max="RANGED" />
-        <MenAtArm type="accolade_maa_skirmishers_wild" key="North_Stark_MAA_Crossbowmen" max="RANGED" />
-        <MenAtArm type="accolade_maa_vanguards_watch" key="North_Stark_Guard_Swordsmen" max="INFANTRY" />
-        <MenAtArm type="accolade_maa_vanguards_wild" key="North_Stark_Guard_Swordsmen" max="INFANTRY" />
-        <MenAtArm type="armored_footmen_wild" key="North_Stark_Guard_Swordsmen" max="INFANTRY" />
-        <MenAtArm type="armored_horsemen_wild" key="North_Stark_MAA_Lance_Cavalry" max="CAVALRY" />
-        <MenAtArm type="bowmen_wild" key="North_Stark_MAA_Longbowmen" max="RANGED" />
-        <MenAtArm type="highgarden_knights" key="North_Stark_MAA_Lance_Cavalry" max="CAVALRY" />
-        <MenAtArm type="light_footmen_wild" key="North_Stark_MAA_Crossbowmen" max="RANGED" />
-        <MenAtArm type="light_horsemen_wild" key="North_Stark_MAA_Mounted_Swordsmen" max="CAVALRY" />
-        <MenAtArm type="pikemen_unit_wild" key="North_Stark_MAA_Pikemen" max="INFANTRY" />
-        <MenAtArm type="pit_warriors" key="North_Stark_Guard_Swordsmen" max="INFANTRY" />
-        <MenAtArm type="seal_hunters" key="North_Stark_MAA_Longbowmen" max="RANGED" />
-        <MenAtArm type="westerland_knights" key="North_Stark_MAA_Lance_Cavalry" max="CAVALRY" />
+        <MenAtArm type="accolade_maa_archers_watch" key="North_Umber_MAA_Longbowmen" max="RANGED" />
+        <MenAtArm type="accolade_maa_archers_wild" key="North_Umber_MAA_Longbowmen" max="RANGED" />
+        <MenAtArm type="accolade_maa_lancers_wild" key="North_Cerwyn_MAA_Lance_Cavalry" max="CAVALRY" />
+        <MenAtArm type="accolade_maa_outriders_watch" key="Dorne_Martell_MAA_Mounted_Archers" max="CAVALRY" />
+        <MenAtArm type="accolade_maa_outriders_wild" key="Dorne_Martell_MAA_Mounted_Archers" max="CAVALRY" />
+        <MenAtArm type="accolade_maa_pikes_watch" key="North_Cerwyn_MAA_Pikemen" max="INFANTRY" />
+        <MenAtArm type="accolade_maa_pikes_wild" key="North_Cerwyn_MAA_Pikemen" max="INFANTRY" />
+        <MenAtArm type="accolade_maa_skirmishers_watch" key="North_Umber_MAA_Longbowmen" max="INFANTRY" />
+        <MenAtArm type="accolade_maa_skirmishers_wild" key="North_Umber_MAA_Longbowmen" max="INFANTRY" />
+        <MenAtArm type="accolade_maa_vanguards_watch" key="North_Hornwood_MAA_Swordsmen" max="INFANTRY" />
+        <MenAtArm type="accolade_maa_vanguards_wild" key="North_Hornwood_MAA_Swordsmen" max="INFANTRY" />
+        <MenAtArm type="armored_footmen_wild" key="North_Hornwood_MAA_Swordsmen" max="INFANTRY" />
+        <MenAtArm type="armored_horsemen_wild" key="North_Cerwyn_MAA_Lance_Cavalry" max="CAVALRY" />
+        <MenAtArm type="bowmen_wild" key="North_Umber_MAA_Longbowmen" max="RANGED" />
+        <MenAtArm type="highgarden_knights" key="North_Bolton_MAA_Mounted_Swordsmen" max="CAVALRY" />
+        <MenAtArm type="light_footmen_wild" key="North_Umber_MAA_Longbowmen" max="INFANTRY" />
+        <MenAtArm type="light_horsemen_wild" key="Dorne_Martell_MAA_Mounted_Archers" max="CAVALRY" />
+        <MenAtArm type="pikemen_unit_wild" key="North_Cerwyn_MAA_Pikemen" max="INFANTRY" />
+        <MenAtArm type="pit_warriors" key="North_Hornwood_MAA_Swordsmen" max="INFANTRY" />
+        <MenAtArm type="seal_hunters" key="North_Umber_MAA_Longbowmen" max="RANGED" />
+        <MenAtArm type="westerland_knights" key="North_Bolton_MAA_Mounted_Swordsmen" max="CAVALRY" />
     </Faction>
     <Faction name="The Reach" subculture="att_sub_cult_roman_west">
-        <General key="Reach_Tyrell_MAA_Lance_Cavalry" />
-        <Knights key="Reach_Tarly_MAA_Mounted_Swordsmen" rank="1" />
-        <Knights key="Reach_Tyrell_MAA_Mounted_Swordsmen" rank="2" />
-        <Knights key="Reach_Tarly_MAA_Lance_Cavalry" rank="3" />
-        <Levies percentage="15" key="Reach_Tyrell_MAA_Crossbowmen" max="LEVY" />
-        <Levies percentage="27" key="Reach_Tarly_MAA_Mounted_Swordsmen" max="LEVY" />
-        <Levies percentage="27" key="Reach_Tarly_MAA_Spearmen" max="LEVY" />
-        <Levies percentage="31" key="Reach_Tyrell_MAA_Billmen" max="LEVY" />
-        <Garrison key="Reach_Tarly_Catapult" max="LEVY" level="1" percentage="34" />
-        <Garrison key="Reach_Tyrell_Catapult" max="LEVY" level="1" percentage="21" />
-        <Garrison key="Reach_Tyrell_Catapult" max="LEVY" level="1" percentage="45" />
-        <Garrison key="Reach_Tyrell_Catapult" max="LEVY" level="2" percentage="55" />
-        <Garrison key="Reach_Tarly_Catapult" max="LEVY" level="2" percentage="24" />
-        <Garrison key="Reach_Tyrell_Catapult" max="LEVY" level="2" percentage="21" />
-        <Garrison key="Reach_Tarly_MAA_Crossbowmen" max="LEVY" level="3" percentage="14" />
-        <Garrison key="Reach_Tyrell_MAA_Lance_Cavalry" max="LEVY" level="3" percentage="28" />
-        <Garrison key="Reach_Tyrell_MAA_Spearmen" max="LEVY" level="3" percentage="14" />
-        <Garrison key="Reach_Tyrell_MAA_Billmen" max="LEVY" level="3" percentage="31" />
-        <Garrison key="Reach_Tarly_MAA_Halberdiers" max="LEVY" level="3" percentage="13" />
-        <Garrison key="Reach_Tyrell_Guard_Spearmen" max="LEVY" level="4" percentage="22" />
-        <Garrison key="Reach_Tyrell_Guard_Swordsmen" max="LEVY" level="4" percentage="24" />
-        <Garrison key="Reach_Tyrell_Guard_Spearmen" max="LEVY" level="4" percentage="54" />
-        <MenAtArm type="accolade_maa_archers_watch" key="Reach_Tyrell_MAA_Longbowmen" max="RANGED" />
-        <MenAtArm type="accolade_maa_archers_wild" key="Reach_Tyrell_MAA_Longbowmen" max="RANGED" />
-        <MenAtArm type="accolade_maa_lancers_wild" key="Reach_Tyrell_MAA_Lance_Cavalry" max="CAVALRY" />
-        <MenAtArm type="accolade_maa_outriders_watch" key="Reach_Tyrell_MAA_Mounted_Swordsmen" max="CAVALRY" />
-        <MenAtArm type="accolade_maa_outriders_wild" key="Reach_Tyrell_MAA_Mounted_Swordsmen" max="CAVALRY" />
-        <MenAtArm type="accolade_maa_pikes_watch" key="Reach_Tyrell_MAA_Pikemen" max="INFANTRY" />
-        <MenAtArm type="accolade_maa_pikes_wild" key="Reach_Tyrell_MAA_Pikemen" max="INFANTRY" />
-        <MenAtArm type="accolade_maa_skirmishers_watch" key="Reach_Tyrell_MAA_Crossbowmen" max="RANGED" />
-        <MenAtArm type="accolade_maa_skirmishers_wild" key="Reach_Tyrell_MAA_Crossbowmen" max="RANGED" />
-        <MenAtArm type="accolade_maa_vanguards_watch" key="Reach_Tyrell_Guard_Swordsmen" max="INFANTRY" />
-        <MenAtArm type="accolade_maa_vanguards_wild" key="Reach_Tyrell_Guard_Swordsmen" max="INFANTRY" />
-        <MenAtArm type="armored_footmen_wild" key="Reach_Tyrell_Guard_Swordsmen" max="INFANTRY" />
-        <MenAtArm type="armored_horsemen_wild" key="Reach_Tyrell_MAA_Lance_Cavalry" max="CAVALRY" />
-        <MenAtArm type="bowmen_wild" key="Reach_Tyrell_MAA_Longbowmen" max="RANGED" />
-        <MenAtArm type="highgarden_knights" key="Reach_Tyrell_MAA_Lance_Cavalry" max="CAVALRY" />
-        <MenAtArm type="light_footmen_wild" key="Reach_Tyrell_MAA_Crossbowmen" max="RANGED" />
-        <MenAtArm type="light_horsemen_wild" key="Reach_Tyrell_MAA_Mounted_Swordsmen" max="CAVALRY" />
-        <MenAtArm type="pikemen_unit_wild" key="Reach_Tyrell_MAA_Pikemen" max="INFANTRY" />
-        <MenAtArm type="pit_warriors" key="Reach_Tyrell_Guard_Swordsmen" max="INFANTRY" />
-        <MenAtArm type="seal_hunters" key="Reach_Tyrell_MAA_Longbowmen" max="RANGED" />
+        <MenAtArm type="accolade_maa_archers_watch" key="Reach_Tyrell_MAA_Crossbowmen" max="RANGED" />
+        <MenAtArm type="accolade_maa_archers_wild" key="Reach_Tyrell_MAA_Crossbowmen" max="RANGED" />
+        <MenAtArm type="accolade_maa_lancers_wild" key="Reach_Tarly_MAA_Lance_Cavalry" max="CAVALRY" />
+        <MenAtArm type="accolade_maa_outriders_watch" key="Dorne_Martell_MAA_Mounted_Archers" max="CAVALRY" />
+        <MenAtArm type="accolade_maa_outriders_wild" key="Dorne_Martell_MAA_Mounted_Archers" max="CAVALRY" />
+        <MenAtArm type="accolade_maa_pikes_watch" key="Reach_Tarly_MAA_Pikemen" max="INFANTRY" />
+        <MenAtArm type="accolade_maa_pikes_wild" key="Reach_Tarly_MAA_Pikemen" max="INFANTRY" />
+        <MenAtArm type="accolade_maa_skirmishers_watch" key="Reach_Tyrell_MAA_Crossbowmen" max="INFANTRY" />
+        <MenAtArm type="accolade_maa_skirmishers_wild" key="Reach_Tyrell_MAA_Crossbowmen" max="INFANTRY" />
+        <MenAtArm type="accolade_maa_vanguards_watch" key="Reach_Tyrell_MAA_Billmen" max="INFANTRY" />
+        <MenAtArm type="accolade_maa_vanguards_wild" key="Reach_Tyrell_MAA_Billmen" max="INFANTRY" />
+        <MenAtArm type="armored_footmen_wild" key="Reach_Tyrell_MAA_Billmen" max="INFANTRY" />
+        <MenAtArm type="armored_horsemen_wild" key="Reach_Tarly_MAA_Lance_Cavalry" max="CAVALRY" />
+        <MenAtArm type="bowmen_wild" key="Reach_Tyrell_MAA_Crossbowmen" max="RANGED" />
+        <MenAtArm type="highgarden_knights" key="Reach_Tyrell_MAA_Mounted_Swordsmen" max="CAVALRY" />
+        <MenAtArm type="light_footmen_wild" key="Reach_Tyrell_MAA_Crossbowmen" max="INFANTRY" />
+        <MenAtArm type="light_horsemen_wild" key="Dorne_Martell_MAA_Mounted_Archers" max="CAVALRY" />
+        <MenAtArm type="pikemen_unit_wild" key="Reach_Tarly_MAA_Pikemen" max="INFANTRY" />
+        <MenAtArm type="pit_warriors" key="Reach_Tyrell_MAA_Billmen" max="INFANTRY" />
+        <MenAtArm type="seal_hunters" key="Reach_Tyrell_MAA_Crossbowmen" max="RANGED" />
         <MenAtArm type="westerland_knights" key="Reach_Tyrell_MAA_Lance_Cavalry" max="CAVALRY" />
     </Faction>
     <Faction name="The Riverlands" subculture="att_sub_cult_roman_west">
-        <General key="Riverlands_Tully_Guard_Spearmen" rank="1" />
-        <General key="Riverlands_Tully_Guard_Swordsmen" rank="2" />
-        <Knights key="Riverlands_Frey_MAA_Mounted_Swordsmen" rank="1" />
-        <Knights key="Riverlands_Mallister_MAA_Lance_Cavalry" rank="2" />
-        <Knights key="Riverlands_Tully_MAA_Lance_Cavalry" rank="3" />
-        <Levies percentage="27" key="Riverlands_Tully_MAA_Longbowmen" max="LEVY" />
-        <Levies percentage="25" key="Riverlands_Tully_MAA_Lance_Cavalry" max="LEVY" />
-        <Levies percentage="18" key="Riverlands_Frey_MAA_Pikemen" max="LEVY" />
-        <Levies percentage="30" key="Riverlands_Mallister_MAA_Halberdiers" max="LEVY" />
-        <Garrison key="Riverlands_Frey_Catapult" max="LEVY" level="1" percentage="38" />
-        <Garrison key="Riverlands_Mallister_Catapult" max="LEVY" level="1" percentage="44" />
-        <Garrison key="Riverlands_Tully_Catapult" max="LEVY" level="1" percentage="18" />
-        <Garrison key="Riverlands_Mallister_Catapult" max="LEVY" level="2" percentage="28" />
-        <Garrison key="Riverlands_Frey_Catapult" max="LEVY" level="2" percentage="50" />
-        <Garrison key="Riverlands_Tully_Catapult" max="LEVY" level="2" percentage="22" />
-        <Garrison key="Riverlands_Frey_MAA_Longbowmen" max="LEVY" level="3" percentage="29" />
-        <Garrison key="Riverlands_Frey_MAA_Mounted_Swordsmen" max="LEVY" level="3" percentage="11" />
-        <Garrison key="Riverlands_Tully_MAA_Pikemen" max="LEVY" level="3" percentage="34" />
-        <Garrison key="Riverlands_Frey_MAA_Halberdiers" max="LEVY" level="3" percentage="18" />
-        <Garrison key="Riverlands_Tully_MAA_Swordsmen" max="LEVY" level="3" percentage="8" />
-        <Garrison key="Riverlands_Tully_Guard_Spearmen" max="LEVY" level="4" percentage="43" />
-        <Garrison key="Riverlands_Tully_Guard_Swordsmen" max="LEVY" level="4" percentage="40" />
-        <Garrison key="Riverlands_Tully_Guard_Spearmen" max="LEVY" level="4" percentage="17" />
-        <MenAtArm type="accolade_maa_archers_watch" key="Riverlands_Tully_MAA_Longbowmen" max="RANGED" />
-        <MenAtArm type="accolade_maa_archers_wild" key="Riverlands_Tully_MAA_Longbowmen" max="RANGED" />
-        <MenAtArm type="accolade_maa_lancers_wild" key="Riverlands_Tully_MAA_Lance_Cavalry" max="CAVALRY" />
-        <MenAtArm type="accolade_maa_outriders_watch" key="Riverlands_Tully_MAA_Mounted_Swordsmen" max="CAVALRY" />
-        <MenAtArm type="accolade_maa_outriders_wild" key="Riverlands_Tully_MAA_Mounted_Swordsmen" max="CAVALRY" />
-        <MenAtArm type="accolade_maa_pikes_watch" key="Riverlands_Tully_MAA_Pikemen" max="INFANTRY" />
-        <MenAtArm type="accolade_maa_pikes_wild" key="Riverlands_Tully_MAA_Pikemen" max="INFANTRY" />
-        <MenAtArm type="accolade_maa_skirmishers_watch" key="Riverlands_Tully_MAA_Crossbowmen" max="RANGED" />
-        <MenAtArm type="accolade_maa_skirmishers_wild" key="Riverlands_Tully_MAA_Crossbowmen" max="RANGED" />
-        <MenAtArm type="accolade_maa_vanguards_watch" key="Riverlands_Tully_Guard_Swordsmen" max="INFANTRY" />
-        <MenAtArm type="accolade_maa_vanguards_wild" key="Riverlands_Tully_Guard_Swordsmen" max="INFANTRY" />
-        <MenAtArm type="armored_footmen_wild" key="Riverlands_Tully_Guard_Swordsmen" max="INFANTRY" />
-        <MenAtArm type="armored_horsemen_wild" key="Riverlands_Tully_MAA_Lance_Cavalry" max="CAVALRY" />
-        <MenAtArm type="bowmen_wild" key="Riverlands_Tully_MAA_Longbowmen" max="RANGED" />
+        <MenAtArm type="accolade_maa_archers_watch" key="Riverlands_Mallister_MAA_Longbowmen" max="RANGED" />
+        <MenAtArm type="accolade_maa_archers_wild" key="Riverlands_Mallister_MAA_Longbowmen" max="RANGED" />
+        <MenAtArm type="accolade_maa_lancers_wild" key="Riverlands_Frey_MAA_Lance_Cavalry" max="CAVALRY" />
+        <MenAtArm type="accolade_maa_outriders_watch" key="Dorne_Martell_MAA_Mounted_Archers" max="CAVALRY" />
+        <MenAtArm type="accolade_maa_outriders_wild" key="Dorne_Martell_MAA_Mounted_Archers" max="CAVALRY" />
+        <MenAtArm type="accolade_maa_pikes_watch" key="Riverlands_Mallister_MAA_Pikemen" max="INFANTRY" />
+        <MenAtArm type="accolade_maa_pikes_wild" key="Riverlands_Mallister_MAA_Pikemen" max="INFANTRY" />
+        <MenAtArm type="accolade_maa_skirmishers_watch" key="Riverlands_Mallister_MAA_Longbowmen" max="INFANTRY" />
+        <MenAtArm type="accolade_maa_skirmishers_wild" key="Riverlands_Mallister_MAA_Longbowmen" max="INFANTRY" />
+        <MenAtArm type="accolade_maa_vanguards_watch" key="Riverlands_Frey_MAA_Axemen" max="INFANTRY" />
+        <MenAtArm type="accolade_maa_vanguards_wild" key="Riverlands_Frey_MAA_Axemen" max="INFANTRY" />
+        <MenAtArm type="armored_footmen_wild" key="Riverlands_Frey_MAA_Axemen" max="INFANTRY" />
+        <MenAtArm type="armored_horsemen_wild" key="Riverlands_Frey_MAA_Lance_Cavalry" max="CAVALRY" />
+        <MenAtArm type="bowmen_wild" key="Riverlands_Mallister_MAA_Longbowmen" max="RANGED" />
         <MenAtArm type="highgarden_knights" key="Riverlands_Tully_MAA_Lance_Cavalry" max="CAVALRY" />
-        <MenAtArm type="light_footmen_wild" key="Riverlands_Tully_MAA_Crossbowmen" max="RANGED" />
-        <MenAtArm type="light_horsemen_wild" key="Riverlands_Tully_MAA_Mounted_Swordsmen" max="CAVALRY" />
-        <MenAtArm type="pikemen_unit_wild" key="Riverlands_Tully_MAA_Pikemen" max="INFANTRY" />
-        <MenAtArm type="pit_warriors" key="Riverlands_Tully_Guard_Swordsmen" max="INFANTRY" />
-        <MenAtArm type="seal_hunters" key="Riverlands_Tully_MAA_Longbowmen" max="RANGED" />
+        <MenAtArm type="light_footmen_wild" key="Riverlands_Mallister_MAA_Longbowmen" max="INFANTRY" />
+        <MenAtArm type="light_horsemen_wild" key="Dorne_Martell_MAA_Mounted_Archers" max="CAVALRY" />
+        <MenAtArm type="pikemen_unit_wild" key="Riverlands_Mallister_MAA_Pikemen" max="INFANTRY" />
+        <MenAtArm type="pit_warriors" key="Riverlands_Frey_MAA_Axemen" max="INFANTRY" />
+        <MenAtArm type="seal_hunters" key="Riverlands_Mallister_MAA_Longbowmen" max="RANGED" />
         <MenAtArm type="westerland_knights" key="Riverlands_Tully_MAA_Lance_Cavalry" max="CAVALRY" />
     </Faction>
     <Faction name="The Stormlands" subculture="att_sub_cult_roman_west">
-        <General key="Stormlands_Baratheon_Guard_Swordsmen" rank="1" />
-        <General key="Stormlands_Baratheon_Guard_Spearmen" rank="2" />
-        <General key="Stormlands_Renly_Guard_Swordsmen" rank="3" />
-        <Knights key="Stormlands_Dragonstone_MAA_Mounted_Swordsmen" rank="1" />
-        <Knights key="Stormlands_Baratheon_MAA_Mounted_Swordsmen" rank="2" />
-        <Knights key="Stormlands_Renly_MAA_Lance_Cavalry" rank="3" />
-        <Levies percentage="25" key="Stormlands_Dragonstone_MAA_Longbowmen" max="LEVY" />
-        <Levies percentage="8" key="Stormlands_Dragonstone_MAA_Lance_Cavalry" max="LEVY" />
-        <Levies percentage="21" key="Stormlands_Renly_MAA_Spearmen" max="LEVY" />
-        <Levies percentage="18" key="Stormlands_Dragonstone_MAA_Billmen" max="LEVY" />
-        <Levies percentage="28" key="Stormlands_Renly_MAA_Halberdiers" max="LEVY" />
-        <Garrison key="Stormlands_Baratheon_Catapult" max="LEVY" level="1" percentage="16" />
-        <Garrison key="Stormlands_Dondarrion_Catapult" max="LEVY" level="1" percentage="33" />
-        <Garrison key="Stormlands_Renly_Catapult" max="LEVY" level="1" percentage="51" />
-        <Garrison key="Stormlands_Baratheon_Catapult" max="LEVY" level="2" percentage="31" />
-        <Garrison key="Stormlands_Renly_Catapult" max="LEVY" level="2" percentage="32" />
-        <Garrison key="Stormlands_Dondarrion_Catapult" max="LEVY" level="2" percentage="37" />
-        <Garrison key="Stormlands_Baratheon_MAA_Longbowmen" max="LEVY" level="3" percentage="18" />
-        <Garrison key="Stormlands_Dondarrion_MAA_Lance_Cavalry" max="LEVY" level="3" percentage="19" />
-        <Garrison key="Stormlands_Dondarrion_MAA_Spearmen" max="LEVY" level="3" percentage="29" />
-        <Garrison key="Stormlands_Dondarrion_MAA_Halberdiers" max="LEVY" level="3" percentage="19" />
-        <Garrison key="Stormlands_Baratheon_MAA_Billmen" max="LEVY" level="3" percentage="15" />
-        <Garrison key="Stormlands_Renly_Guard_Spearmen" max="LEVY" level="4" percentage="23" />
-        <Garrison key="Stormlands_Baratheon_Guard_Spearmen" max="LEVY" level="4" percentage="22" />
-        <Garrison key="Stormlands_Baratheon_Guard_Swordsmen" max="LEVY" level="4" percentage="17" />
-        <Garrison key="Stormlands_Renly_Guard_Swordsmen" max="LEVY" level="4" percentage="38" />
-        <MenAtArm type="accolade_maa_archers_watch" key="Stormlands_Baratheon_MAA_Longbowmen" max="RANGED" />
-        <MenAtArm type="accolade_maa_archers_wild" key="Stormlands_Baratheon_MAA_Longbowmen" max="RANGED" />
-        <MenAtArm type="accolade_maa_lancers_wild" key="Stormlands_Baratheon_MAA_Lance_Cavalry" max="CAVALRY" />
-        <MenAtArm type="accolade_maa_outriders_watch" key="Stormlands_Baratheon_MAA_Mounted_Swordsmen" max="CAVALRY" />
-        <MenAtArm type="accolade_maa_outriders_wild" key="Stormlands_Baratheon_MAA_Mounted_Swordsmen" max="CAVALRY" />
+        <MenAtArm type="accolade_maa_archers_watch" key="Stormlands_Renly_MAA_Longbowmen" max="RANGED" />
+        <MenAtArm type="accolade_maa_archers_wild" key="Stormlands_Renly_MAA_Longbowmen" max="RANGED" />
+        <MenAtArm type="accolade_maa_lancers_wild" key="Stormlands_Dragonstone_MAA_Lance_Cavalry" max="CAVALRY" />
+        <MenAtArm type="accolade_maa_outriders_watch" key="Dorne_Martell_MAA_Mounted_Archers" max="CAVALRY" />
+        <MenAtArm type="accolade_maa_outriders_wild" key="Dorne_Martell_MAA_Mounted_Archers" max="CAVALRY" />
         <MenAtArm type="accolade_maa_pikes_watch" key="Stormlands_Baratheon_MAA_Pikemen" max="INFANTRY" />
         <MenAtArm type="accolade_maa_pikes_wild" key="Stormlands_Baratheon_MAA_Pikemen" max="INFANTRY" />
-        <MenAtArm type="accolade_maa_skirmishers_watch" key="Stormlands_Baratheon_MAA_Crossbowmen" max="RANGED" />
-        <MenAtArm type="accolade_maa_skirmishers_wild" key="Stormlands_Baratheon_MAA_Crossbowmen" max="RANGED" />
-        <MenAtArm type="accolade_maa_vanguards_watch" key="Stormlands_Baratheon_Guard_Swordsmen" max="INFANTRY" />
-        <MenAtArm type="accolade_maa_vanguards_wild" key="Stormlands_Baratheon_Guard_Swordsmen" max="INFANTRY" />
-        <MenAtArm type="armored_footmen_wild" key="Stormlands_Baratheon_Guard_Swordsmen" max="INFANTRY" />
-        <MenAtArm type="armored_horsemen_wild" key="Stormlands_Baratheon_MAA_Lance_Cavalry" max="CAVALRY" />
-        <MenAtArm type="bowmen_wild" key="Stormlands_Baratheon_MAA_Longbowmen" max="RANGED" />
-        <MenAtArm type="highgarden_knights" key="Stormlands_Baratheon_MAA_Lance_Cavalry" max="CAVALRY" />
-        <MenAtArm type="light_footmen_wild" key="Stormlands_Baratheon_MAA_Crossbowmen" max="RANGED" />
-        <MenAtArm type="light_horsemen_wild" key="Stormlands_Baratheon_MAA_Mounted_Swordsmen" max="CAVALRY" />
+        <MenAtArm type="accolade_maa_skirmishers_watch" key="Stormlands_Renly_MAA_Longbowmen" max="INFANTRY" />
+        <MenAtArm type="accolade_maa_skirmishers_wild" key="Stormlands_Renly_MAA_Longbowmen" max="INFANTRY" />
+        <MenAtArm type="accolade_maa_vanguards_watch" key="Stormlands_Baratheon_MAA_Axemen" max="INFANTRY" />
+        <MenAtArm type="accolade_maa_vanguards_wild" key="Stormlands_Baratheon_MAA_Axemen" max="INFANTRY" />
+        <MenAtArm type="armored_footmen_wild" key="Stormlands_Baratheon_MAA_Axemen" max="INFANTRY" />
+        <MenAtArm type="armored_horsemen_wild" key="Stormlands_Dragonstone_MAA_Lance_Cavalry" max="CAVALRY" />
+        <MenAtArm type="bowmen_wild" key="Stormlands_Renly_MAA_Longbowmen" max="RANGED" />
+        <MenAtArm type="highgarden_knights" key="Stormlands_Dragonstone_MAA_Mounted_Swordsmen" max="CAVALRY" />
+        <MenAtArm type="light_footmen_wild" key="Stormlands_Renly_MAA_Longbowmen" max="INFANTRY" />
+        <MenAtArm type="light_horsemen_wild" key="Dorne_Martell_MAA_Mounted_Archers" max="CAVALRY" />
         <MenAtArm type="pikemen_unit_wild" key="Stormlands_Baratheon_MAA_Pikemen" max="INFANTRY" />
-        <MenAtArm type="pit_warriors" key="Stormlands_Baratheon_Guard_Swordsmen" max="INFANTRY" />
-        <MenAtArm type="seal_hunters" key="Stormlands_Baratheon_MAA_Longbowmen" max="RANGED" />
-        <MenAtArm type="westerland_knights" key="Stormlands_Baratheon_MAA_Lance_Cavalry" max="CAVALRY" />
+        <MenAtArm type="pit_warriors" key="Stormlands_Baratheon_MAA_Axemen" max="INFANTRY" />
+        <MenAtArm type="seal_hunters" key="Stormlands_Renly_MAA_Longbowmen" max="RANGED" />
+        <MenAtArm type="westerland_knights" key="Stormlands_Dragonstone_MAA_Mounted_Swordsmen" max="CAVALRY" />
     </Faction>
     <Faction name="The Vale" subculture="att_sub_cult_roman_west">
-        <General key="Vale_Arryn_Guard_Swordsmen" rank="1" />
-        <General key="Vale_Arryn_Guard_Spearmen" rank="2" />
-        <Knights key="Vale_Royce_MAA_Mounted_Swordsmen" rank="1" />
-        <Knights key="Vale_Arryn_MAA_Mounted_Swordsmen" rank="2" />
-        <Knights key="Vale_Arryn_Faction_Specialist_Lance_Cavalry" rank="3" />
-        <Levies percentage="17" key="Vale_Arryn_MAA_Crossbowmen" max="LEVY" />
-        <Levies percentage="56" key="Vale_Arryn_Faction_Specialist_Lance_Cavalry" max="LEVY" />
-        <Levies percentage="27" key="Vale_Royce_MAA_Pikemen" max="LEVY" />
-        <Garrison key="Vale_Royce_Catapult" max="LEVY" level="1" percentage="31" />
-        <Garrison key="Vale_Arryn_Catapult" max="LEVY" level="1" percentage="45" />
-        <Garrison key="Vale_Arryn_Catapult" max="LEVY" level="1" percentage="24" />
-        <Garrison key="Vale_Arryn_Catapult" max="LEVY" level="2" percentage="25" />
-        <Garrison key="Vale_Royce_Catapult" max="LEVY" level="2" percentage="38" />
-        <Garrison key="Vale_Arryn_Catapult" max="LEVY" level="2" percentage="37" />
-        <Garrison key="Vale_Arryn_MAA_Longbowmen" max="LEVY" level="3" percentage="21" />
-        <Garrison key="Vale_Arryn_MAA_Mounted_Swordsmen" max="LEVY" level="3" percentage="8" />
-        <Garrison key="Vale_Royce_MAA_Pikemen" max="LEVY" level="3" percentage="25" />
-        <Garrison key="Vale_Royce_MAA_Halberdiers" max="LEVY" level="3" percentage="25" />
-        <Garrison key="Vale_Arryn_MAA_Spearmen" max="LEVY" level="3" percentage="21" />
-        <Garrison key="Vale_Arryn_Guard_Spearmen" max="LEVY" level="4" percentage="47" />
-        <Garrison key="Vale_Arryn_Guard_Swordsmen" max="LEVY" level="4" percentage="21" />
-        <Garrison key="Vale_Arryn_Guard_Swordsmen" max="LEVY" level="4" percentage="32" />
-        <MenAtArm type="accolade_maa_archers_watch" key="Vale_Arryn_MAA_Longbowmen" max="RANGED" />
-        <MenAtArm type="accolade_maa_archers_wild" key="Vale_Arryn_MAA_Longbowmen" max="RANGED" />
-        <MenAtArm type="accolade_maa_lancers_wild" key="Vale_Arryn_Faction_Specialist_Lance_Cavalry" max="CAVALRY" />
-        <MenAtArm type="accolade_maa_outriders_watch" key="Vale_Arryn_MAA_Mounted_Swordsmen" max="CAVALRY" />
-        <MenAtArm type="accolade_maa_outriders_wild" key="Vale_Arryn_MAA_Mounted_Swordsmen" max="CAVALRY" />
+        <MenAtArm type="accolade_maa_archers_watch" key="Vale_Royce_MAA_Longbowmen" max="RANGED" />
+        <MenAtArm type="accolade_maa_archers_wild" key="Vale_Royce_MAA_Longbowmen" max="RANGED" />
+        <MenAtArm type="accolade_maa_lancers_wild" key="Vale_Royce_MAA_Lance_Cavalry" max="CAVALRY" />
+        <MenAtArm type="accolade_maa_outriders_watch" key="Essos_Targaryen_Dothraki_Mounted_Archers" max="CAVALRY" />
+        <MenAtArm type="accolade_maa_outriders_wild" key="Essos_Targaryen_Dothraki_Mounted_Archers" max="CAVALRY" />
         <MenAtArm type="accolade_maa_pikes_watch" key="Vale_Arryn_MAA_Pikemen" max="INFANTRY" />
         <MenAtArm type="accolade_maa_pikes_wild" key="Vale_Arryn_MAA_Pikemen" max="INFANTRY" />
-        <MenAtArm type="accolade_maa_skirmishers_watch" key="Vale_Arryn_MAA_Crossbowmen" max="RANGED" />
-        <MenAtArm type="accolade_maa_skirmishers_wild" key="Vale_Arryn_MAA_Crossbowmen" max="RANGED" />
-        <MenAtArm type="accolade_maa_vanguards_watch" key="Vale_Arryn_Guard_Swordsmen" max="INFANTRY" />
-        <MenAtArm type="accolade_maa_vanguards_wild" key="Vale_Arryn_Guard_Swordsmen" max="INFANTRY" />
-        <MenAtArm type="armored_footmen_wild" key="Vale_Arryn_Guard_Swordsmen" max="INFANTRY" />
-        <MenAtArm type="armored_horsemen_wild" key="Vale_Arryn_Faction_Specialist_Lance_Cavalry" max="CAVALRY" />
-        <MenAtArm type="bowmen_wild" key="Vale_Arryn_MAA_Longbowmen" max="RANGED" />
-        <MenAtArm type="highgarden_knights" key="Vale_Arryn_Faction_Specialist_Lance_Cavalry" max="CAVALRY" />
-        <MenAtArm type="light_footmen_wild" key="Vale_Arryn_MAA_Crossbowmen" max="RANGED" />
-        <MenAtArm type="light_horsemen_wild" key="Vale_Arryn_MAA_Mounted_Swordsmen" max="CAVALRY" />
+        <MenAtArm type="accolade_maa_skirmishers_watch" key="Vale_Royce_MAA_Longbowmen" max="INFANTRY" />
+        <MenAtArm type="accolade_maa_skirmishers_wild" key="Vale_Royce_MAA_Longbowmen" max="INFANTRY" />
+        <MenAtArm type="accolade_maa_vanguards_watch" key="Vale_Arryn_MAA_Halberdiers" max="INFANTRY" />
+        <MenAtArm type="accolade_maa_vanguards_wild" key="Vale_Arryn_MAA_Halberdiers" max="INFANTRY" />
+        <MenAtArm type="armored_footmen_wild" key="Vale_Arryn_MAA_Halberdiers" max="INFANTRY" />
+        <MenAtArm type="armored_horsemen_wild" key="Vale_Royce_MAA_Lance_Cavalry" max="CAVALRY" />
+        <MenAtArm type="bowmen_wild" key="Vale_Royce_MAA_Longbowmen" max="RANGED" />
+        <MenAtArm type="highgarden_knights" key="Vale_Royce_MAA_Lance_Cavalry" max="CAVALRY" />
+        <MenAtArm type="light_footmen_wild" key="Vale_Royce_MAA_Longbowmen" max="INFANTRY" />
+        <MenAtArm type="light_horsemen_wild" key="Essos_Targaryen_Dothraki_Mounted_Archers" max="CAVALRY" />
         <MenAtArm type="pikemen_unit_wild" key="Vale_Arryn_MAA_Pikemen" max="INFANTRY" />
-        <MenAtArm type="pit_warriors" key="Vale_Arryn_MAA_Axemen" max="INFANTRY" />
-        <MenAtArm type="seal_hunters" key="Vale_Arryn_MAA_Longbowmen" max="RANGED" />
-        <MenAtArm type="westerland_knights" key="Vale_Arryn_Faction_Specialist_Lance_Cavalry" max="CAVALRY" />
+        <MenAtArm type="pit_warriors" key="Vale_Arryn_MAA_Halberdiers" max="INFANTRY" />
+        <MenAtArm type="seal_hunters" key="Vale_Royce_MAA_Longbowmen" max="RANGED" />
+        <MenAtArm type="westerland_knights" key="Vale_Royce_MAA_Mounted_Swordsmen" max="CAVALRY" />
     </Faction>
     <Faction name="The Westerlands" subculture="att_sub_cult_roman_west">
-        <General key="Westerlands_Lannister_Guard_Swordsmen" rank="1" />
-        <General key="Westerlands_Lannister_Guard_Spearmen" rank="2" />
-        <Knights key="Westerlands_Lannister_MAA_Mounted_Swordsmen" rank="1" />
-        <Knights key="Westerlands_Crakehall_MAA_Mounted_Swordsmen" rank="2" />
-        <Knights key="Westerlands_Marbrand_MAA_Lance_Cavalry" rank="3" />
-        <Levies percentage="25" key="Westerlands_Marbrand_MAA_Longbowmen" max="LEVY" />
-        <Levies percentage="43" key="Westerlands_Marbrand_MAA_Mounted_Swordsmen" max="LEVY" />
-        <Levies percentage="32" key="Westerlands_Brax_MAA_Pikemen" max="LEVY" />
-        <Garrison key="Westerlands_Lannister_Catapult" max="LEVY" level="1" percentage="35" />
-        <Garrison key="Westerlands_Brax_Catapult" max="LEVY" level="1" percentage="35" />
-        <Garrison key="Westerlands_Crakehall_Catapult" max="LEVY" level="1" percentage="30" />
-        <Garrison key="Westerlands_Lannister_Catapult" max="LEVY" level="2" percentage="54" />
-        <Garrison key="Westerlands_Crakehall_Catapult" max="LEVY" level="2" percentage="14" />
-        <Garrison key="Westerlands_Marbrand_Catapult" max="LEVY" level="2" percentage="32" />
-        <Garrison key="Westerlands_Lannister_MAA_Crossbowmen" max="LEVY" level="3" percentage="26" />
-        <Garrison key="Westerlands_Lannister_MAA_Mounted_Swordsmen" max="LEVY" level="3" percentage="12" />
-        <Garrison key="Westerlands_Brax_MAA_Spearmen" max="LEVY" level="3" percentage="28" />
-        <Garrison key="Westerlands_Lannister_MAA_Axemen" max="LEVY" level="3" percentage="16" />
-        <Garrison key="Westerlands_Lannister_MAA_Spearmen" max="LEVY" level="3" percentage="18" />
-        <Garrison key="Westerlands_Lannister_Guard_Spearmen" max="LEVY" level="4" percentage="39" />
-        <Garrison key="Westerlands_Lannister_Guard_Swordsmen" max="LEVY" level="4" percentage="18" />
-        <Garrison key="Westerlands_Lannister_Guard_Spearmen" max="LEVY" level="4" percentage="43" />
-        <MenAtArm type="accolade_maa_archers_watch" key="Westerlands_Lannister_MAA_Longbowmen" max="RANGED" />
-        <MenAtArm type="accolade_maa_archers_wild" key="Westerlands_Lannister_MAA_Longbowmen" max="RANGED" />
-        <MenAtArm type="accolade_maa_lancers_wild" key="Westerlands_Lannister_MAA_Lance_Cavalry" max="CAVALRY" />
-        <MenAtArm type="accolade_maa_outriders_watch" key="Westerlands_Lannister_MAA_Mounted_Swordsmen" max="CAVALRY" />
-        <MenAtArm type="accolade_maa_outriders_wild" key="Westerlands_Lannister_MAA_Mounted_Swordsmen" max="CAVALRY" />
-        <MenAtArm type="accolade_maa_pikes_watch" key="Westerlands_Lannister_MAA_Pikemen" max="INFANTRY" />
-        <MenAtArm type="accolade_maa_pikes_wild" key="Westerlands_Lannister_MAA_Pikemen" max="INFANTRY" />
-        <MenAtArm type="accolade_maa_skirmishers_watch" key="Westerlands_Lannister_MAA_Crossbowmen" max="RANGED" />
-        <MenAtArm type="accolade_maa_skirmishers_wild" key="Westerlands_Lannister_MAA_Crossbowmen" max="RANGED" />
-        <MenAtArm type="accolade_maa_vanguards_watch" key="Westerlands_Lannister_Guard_Swordsmen" max="INFANTRY" />
-        <MenAtArm type="accolade_maa_vanguards_wild" key="Westerlands_Lannister_Guard_Swordsmen" max="INFANTRY" />
-        <MenAtArm type="armored_footmen_wild" key="Westerlands_Lannister_Guard_Swordsmen" max="INFANTRY" />
-        <MenAtArm type="armored_horsemen_wild" key="Westerlands_Lannister_MAA_Lance_Cavalry" max="CAVALRY" />
-        <MenAtArm type="bowmen_wild" key="Westerlands_Lannister_MAA_Longbowmen" max="RANGED" />
-        <MenAtArm type="highgarden_knights" key="Westerlands_Lannister_MAA_Lance_Cavalry" max="CAVALRY" />
-        <MenAtArm type="light_footmen_wild" key="Westerlands_Lannister_MAA_Crossbowmen" max="RANGED" />
-        <MenAtArm type="light_horsemen_wild" key="Westerlands_Lannister_MAA_Mounted_Swordsmen" max="CAVALRY" />
-        <MenAtArm type="pikemen_unit_wild" key="Westerlands_Lannister_MAA_Pikemen" max="INFANTRY" />
-        <MenAtArm type="pit_warriors" key="Westerlands_Lannister_MAA_Axemen" max="INFANTRY" />
-        <MenAtArm type="seal_hunters" key="Westerlands_Lannister_MAA_Longbowmen" max="RANGED" />
-        <MenAtArm type="westerland_knights" key="Westerlands_Lannister_MAA_Lance_Cavalry" max="CAVALRY" />
+        <MenAtArm type="accolade_maa_archers_watch" key="Westerlands_Marbrand_MAA_Longbowmen" max="RANGED" />
+        <MenAtArm type="accolade_maa_archers_wild" key="Westerlands_Marbrand_MAA_Longbowmen" max="RANGED" />
+        <MenAtArm type="accolade_maa_lancers_wild" key="Westerlands_Brax_MAA_Lance_Cavalry" max="CAVALRY" />
+        <MenAtArm type="accolade_maa_outriders_watch" key="Dorne_Martell_MAA_Mounted_Archers" max="CAVALRY" />
+        <MenAtArm type="accolade_maa_outriders_wild" key="Dorne_Martell_MAA_Mounted_Archers" max="CAVALRY" />
+        <MenAtArm type="accolade_maa_pikes_watch" key="Westerlands_Marbrand_MAA_Pikemen" max="INFANTRY" />
+        <MenAtArm type="accolade_maa_pikes_wild" key="Westerlands_Marbrand_MAA_Pikemen" max="INFANTRY" />
+        <MenAtArm type="accolade_maa_skirmishers_watch" key="Westerlands_Marbrand_MAA_Longbowmen" max="INFANTRY" />
+        <MenAtArm type="accolade_maa_skirmishers_wild" key="Westerlands_Marbrand_MAA_Longbowmen" max="INFANTRY" />
+        <MenAtArm type="accolade_maa_vanguards_watch" key="Westerlands_Lannister_MAA_Billmen" max="INFANTRY" />
+        <MenAtArm type="accolade_maa_vanguards_wild" key="Westerlands_Lannister_MAA_Billmen" max="INFANTRY" />
+        <MenAtArm type="armored_footmen_wild" key="Westerlands_Lannister_MAA_Billmen" max="INFANTRY" />
+        <MenAtArm type="armored_horsemen_wild" key="Westerlands_Brax_MAA_Lance_Cavalry" max="CAVALRY" />
+        <MenAtArm type="bowmen_wild" key="Westerlands_Marbrand_MAA_Longbowmen" max="RANGED" />
+        <MenAtArm type="highgarden_knights" key="Westerlands_Marbrand_MAA_Lance_Cavalry" max="CAVALRY" />
+        <MenAtArm type="light_footmen_wild" key="Westerlands_Marbrand_MAA_Longbowmen" max="INFANTRY" />
+        <MenAtArm type="light_horsemen_wild" key="Dorne_Martell_MAA_Mounted_Archers" max="CAVALRY" />
+        <MenAtArm type="pikemen_unit_wild" key="Westerlands_Marbrand_MAA_Pikemen" max="INFANTRY" />
+        <MenAtArm type="pit_warriors" key="Westerlands_Lannister_MAA_Billmen" max="INFANTRY" />
+        <MenAtArm type="seal_hunters" key="Westerlands_Marbrand_MAA_Longbowmen" max="RANGED" />
+        <MenAtArm type="westerland_knights" key="Lannister House Guard" max="CAVALRY" />
     </Faction>
     <Faction name="House Velaryon" subculture="att_sub_cult_eastern_sassanid">
-        <General key="Crownlands_Velaryon_MAA_Mounted_Swordsmen" rank="1" />
-        <General key="Crownlands_Velaryon_MAA_Lance_Cavalry" rank="2" />
-        <Knights key="Crownlands_Velaryon_MAA_Mounted_Swordsmen" rank="1" />
-        <Knights key="Crownlands_Velaryon_MAA_Lance_Cavalry" rank="2" />
-        <Levies percentage="19" key="Crownlands_Velaryon_MAA_Longbowmen" max="LEVY" />
-        <Levies percentage="25" key="Crownlands_Velaryon_MAA_Lance_Cavalry" max="LEVY" />
-        <Levies percentage="13" key="Crownlands_Velaryon_Conscript_Pikemen" max="LEVY" />
-        <Levies percentage="24" key="Crownlands_Velaryon_MAA_Axemen" max="LEVY" />
-        <Levies percentage="19" key="Crownlands_Velaryon_MAA_Spearmen" max="LEVY" />
-        <Garrison key="Essos_Targaryen_Catapult" max="LEVY" level="1" percentage="40" />
-        <Garrison key="Essos_Targaryen_Catapult" max="LEVY" level="1" percentage="47" />
-        <Garrison key="Essos_Targaryen_Catapult" max="LEVY" level="1" percentage="13" />
-        <Garrison key="Essos_Targaryen_Catapult" max="LEVY" level="2" percentage="44" />
-        <Garrison key="Essos_Targaryen_Catapult" max="LEVY" level="2" percentage="15" />
-        <Garrison key="Essos_Targaryen_Catapult" max="LEVY" level="2" percentage="41" />
-        <Garrison key="Crownlands_Velaryon_MAA_Crossbowmen" max="LEVY" level="3" percentage="18" />
-        <Garrison key="Crownlands_Velaryon_MAA_Mounted_Swordsmen" max="LEVY" level="3" percentage="8" />
-        <Garrison key="Crownlands_Velaryon_Conscript_Spearmen" max="LEVY" level="3" percentage="25" />
-        <Garrison key="Crownlands_Velaryon_MAA_Pikemen" max="LEVY" level="3" percentage="21" />
-        <Garrison key="Crownlands_Velaryon_Conscript_Pikemen" max="LEVY" level="3" percentage="28" />
-        <Garrison key="Crownlands_Velaryon_Conscript_Longbowmen" max="LEVY" level="4" percentage="18" />
-        <Garrison key="Crownlands_Velaryon_MAA_Lance_Cavalry" max="LEVY" level="4" percentage="23" />
-        <Garrison key="Crownlands_Velaryon_Conscript_Spearmen" max="LEVY" level="4" percentage="14" />
-        <Garrison key="Crownlands_Velaryon_MAA_Pikemen" max="LEVY" level="4" percentage="28" />
-        <Garrison key="Crownlands_Velaryon_MAA_Billmen" max="LEVY" level="4" percentage="17" />
-        <MenAtArm type="accolade_maa_archers" key="Crownlands_Velaryon_MAA_Longbowmen" max="RANGED" />
-        <MenAtArm type="accolade_maa_archers_watch" key="Crownlands_Velaryon_MAA_Longbowmen" max="RANGED" />
+        <MenAtArm type="accolade_maa_archers_watch" key="Crownlands_Velaryon_MAA_Crossbowmen" max="RANGED" />
         <MenAtArm type="accolade_maa_archers_wild" key="Crownlands_Velaryon_MAA_Longbowmen" max="RANGED" />
-        <MenAtArm type="accolade_maa_cameliers" key="Crownlands_Velaryon_MAA_Mounted_Swordsmen" max="CAVALRY" />
-        <MenAtArm type="accolade_maa_crossbowers" key="Crownlands_Velaryon_MAA_Crossbowmen" max="RANGED" />
-        <MenAtArm type="accolade_maa_elephantiers" key="Crownlands_Velaryon_MAA_Lance_Cavalry" max="CAVALRY" />
-        <MenAtArm type="accolade_maa_horse_archers" key="Crownlands_Velaryon_MAA_Mounted_Swordsmen" max="CAVALRY" />
-        <MenAtArm type="accolade_maa_lancers" key="Crownlands_Velaryon_MAA_Lance_Cavalry" max="CAVALRY" />
         <MenAtArm type="accolade_maa_lancers_wild" key="Crownlands_Velaryon_MAA_Lance_Cavalry" max="CAVALRY" />
-        <MenAtArm type="accolade_maa_outriders" key="Crownlands_Velaryon_MAA_Mounted_Swordsmen" max="CAVALRY" />
-        <MenAtArm type="accolade_maa_outriders_watch" key="Crownlands_Velaryon_MAA_Mounted_Swordsmen" max="CAVALRY" />
-        <MenAtArm type="accolade_maa_outriders_wild" key="Crownlands_Velaryon_MAA_Mounted_Swordsmen" max="CAVALRY" />
-        <MenAtArm type="accolade_maa_pikes" key="Crownlands_Velaryon_MAA_Pikemen" max="INFANTRY" />
+        <MenAtArm type="accolade_maa_outriders_watch" key="Dorne_Martell_MAA_Mounted_Archers" max="CAVALRY" />
+        <MenAtArm type="accolade_maa_outriders_wild" key="Dorne_Martell_MAA_Mounted_Archers" max="CAVALRY" />
         <MenAtArm type="accolade_maa_pikes_watch" key="Crownlands_Velaryon_MAA_Pikemen" max="INFANTRY" />
         <MenAtArm type="accolade_maa_pikes_wild" key="Crownlands_Velaryon_MAA_Pikemen" max="INFANTRY" />
-        <MenAtArm type="accolade_maa_skirmishers" key="Crownlands_Velaryon_MAA_Crossbowmen" max="RANGED" />
-        <MenAtArm type="accolade_maa_skirmishers_watch" key="Crownlands_Velaryon_MAA_Crossbowmen" max="RANGED" />
-        <MenAtArm type="accolade_maa_skirmishers_wild" key="Crownlands_Velaryon_MAA_Crossbowmen" max="RANGED" />
-        <MenAtArm type="accolade_maa_vanguards" key="Crownlands_Velaryon_MAA_Swordsmen" max="INFANTRY" />
+        <MenAtArm type="accolade_maa_skirmishers_watch" key="Crownlands_Velaryon_MAA_Crossbowmen" max="INFANTRY" />
+        <MenAtArm type="accolade_maa_skirmishers_wild" key="Crownlands_Velaryon_MAA_Crossbowmen" max="INFANTRY" />
         <MenAtArm type="accolade_maa_vanguards_watch" key="Crownlands_Velaryon_MAA_Swordsmen" max="INFANTRY" />
-        <MenAtArm type="accolade_maa_vanguards_wild" key="Crownlands_Velaryon_MAA_Swordsmen" max="INFANTRY" />
-        <MenAtArm type="akritai" key="Crownlands_Velaryon_Conscript_Longbowmen" max="RANGED" />
-        <MenAtArm type="arbor_marines" key="Crownlands_Velaryon_MAA_Crossbowmen" max="RANGED" />
-        <MenAtArm type="armored_footmen" key="Crownlands_Velaryon_MAA_Swordsmen" max="INFANTRY" />
-        <MenAtArm type="armored_footmen_wild" key="Crownlands_Velaryon_MAA_Swordsmen" max="INFANTRY" />
-        <MenAtArm type="armored_horsemen" key="Crownlands_Velaryon_MAA_Lance_Cavalry" max="CAVALRY" />
+        <MenAtArm type="accolade_maa_vanguards_wild" key="Crownlands_Velaryon_MAA_Axemen" max="INFANTRY" />
+        <MenAtArm type="armored_footmen_wild" key="Crownlands_Velaryon_MAA_Halberdiers" max="INFANTRY" />
         <MenAtArm type="armored_horsemen_wild" key="Crownlands_Velaryon_MAA_Lance_Cavalry" max="CAVALRY" />
-        <MenAtArm type="ayrudzi" key="Crownlands_Velaryon_MAA_Billmen" max="INFANTRY" />
-        <MenAtArm type="ballistrai" key="Crownlands_Velaryon_MAA_Crossbowmen" max="RANGED" />
-        <MenAtArm type="barrow_knights" key="Crownlands_Velaryon_MAA_Mounted_Swordsmen" max="CAVALRY" />
-        <MenAtArm type="battering_ram" key="Crownlands_Velaryon_Catapult" siege="true" />
-        <MenAtArm type="black_wall_chariots" key="Crownlands_Velaryon_MAA_Lance_Cavalry" max="CAVALRY" />
-        <MenAtArm type="bloody_balesters" key="Crownlands_Velaryon_MAA_Crossbowmen" max="RANGED" />
-        <MenAtArm type="bowmen" key="Crownlands_Velaryon_MAA_Longbowmen" max="RANGED" />
-        <MenAtArm type="bowmen_wild" key="Crownlands_Velaryon_MAA_Longbowmen" max="RANGED" />
-        <MenAtArm type="bronze_raiders" key="Crownlands_Velaryon_MAA_Swordsmen" max="INFANTRY" />
-        <MenAtArm type="cailin_archers" key="Crownlands_Velaryon_MAA_Longbowmen" max="RANGED" />
-        <MenAtArm type="cape_watch" key="Crownlands_Velaryon_MAA_Billmen" max="INFANTRY" />
-        <MenAtArm type="cataphract_archers" key="Crownlands_Velaryon_MAA_Mounted_Swordsmen" max="CAVALRY" />
-        <MenAtArm type="clan_champions" key="Crownlands_Velaryon_MAA_Halberdiers" max="INFANTRY" />
-        <MenAtArm type="cohort_of_the_three_thousand" key="Crownlands_Velaryon_MAA_Pikemen" max="INFANTRY" />
-        <MenAtArm type="collared_bows" key="Crownlands_Velaryon_MAA_Longbowmen" max="RANGED" />
-        <MenAtArm type="conrois" key="Crownlands_Velaryon_MAA_Mounted_Swordsmen" max="CAVALRY" />
-        <MenAtArm type="crossbowmen" key="Crownlands_Velaryon_MAA_Crossbowmen" max="RANGED" />
-        <MenAtArm type="crownlands_spears" key="Crownlands_Velaryon_Conscript_Swordsmen" max="INFANTRY" />
-        <MenAtArm type="demon_guards" key="Crownlands_Velaryon_Conscript_Swordsmen" max="INFANTRY" />
-        <MenAtArm type="disputant_scouts" key="Crownlands_Velaryon_MAA_Spearmen" max="INFANTRY" />
-        <MenAtArm type="dornish_crossbows" key="Crownlands_Velaryon_Conscript_Longbowmen" max="RANGED" />
-        <MenAtArm type="dothraki_screamers" key="Crownlands_Velaryon_MAA_Spearmen" max="INFANTRY" />
-        <MenAtArm type="dragonkeepers" key="Crownlands_Velaryon_MAA_Axemen" max="INFANTRY" />
-        <MenAtArm type="dragons_regiment" key="Crownlands_Velaryon_MAA_Longbowmen_Ship" />
-        <MenAtArm type="dragonsworn" key="Crownlands_Velaryon_MAA_Billmen" max="INFANTRY" />
-        <MenAtArm type="eastwatch_sailors" key="Crownlands_Velaryon_MAA_Crossbowmen" max="RANGED" />
-        <MenAtArm type="elyrian_sailors" key="Crownlands_Velaryon_MAA_Crossbowmen" max="RANGED" />
-        <MenAtArm type="festival_guards" key="Crownlands_Velaryon_MAA_Spearmen" max="INFANTRY" />
-        <MenAtArm type="fiery_hand" key="Crownlands_Velaryon_MAA_Spearmen" max="INFANTRY" />
-        <MenAtArm type="finger_scouts" key="Crownlands_Velaryon_MAA_Billmen" max="INFANTRY" />
-        <MenAtArm type="flower_spears" key="Crownlands_Velaryon_Conscript_Swordsmen" max="INFANTRY" />
-        <MenAtArm type="frog_spears" key="Crownlands_Velaryon_MAA_Longbowmen" max="RANGED" />
-        <MenAtArm type="garden_guard" key="Crownlands_Velaryon_Conscript_Swordsmen" max="INFANTRY" />
-        <MenAtArm type="giant_regiment" key="Crownlands_Velaryon_Conscript_Swordsmen_Ship" />
-        <MenAtArm type="goldcloaks" key="Crownlands_Velaryon_Marine" max="INFANTRY" />
-        <MenAtArm type="goldenheart_bowmen" key="Crownlands_Velaryon_Conscript_Longbowmen" max="RANGED" />
-        <MenAtArm type="green_daggers" key="Crownlands_Velaryon_MAA_Longbowmen" max="RANGED" />
-        <MenAtArm type="green_hand" key="Crownlands_Velaryon_MAA_Mounted_Swordsmen" max="CAVALRY" />
-        <MenAtArm type="greenblood_oars" key="Crownlands_Velaryon_Conscript_Longbowmen" max="RANGED" />
-        <MenAtArm type="grey_spears" key="Crownlands_Velaryon_MAA_Billmen" max="INFANTRY" />
-        <MenAtArm type="greycloaks" key="Crownlands_Velaryon_MAA_Swordsmen" max="INFANTRY" />
-        <MenAtArm type="handpicked_faithful" key="Crownlands_Velaryon_Marine" max="INFANTRY" />
-        <MenAtArm type="heavy_horse_archers" key="Crownlands_Velaryon_MAA_Mounted_Swordsmen" max="CAVALRY" />
-        <MenAtArm type="highgarden_knights" key="Crownlands_Velaryon_MAA_Lance_Cavalry" max="CAVALRY" />
-        <MenAtArm type="holy_guard" key="Crownlands_Velaryon_MAA_Swordsmen" max="INFANTRY" />
-        <MenAtArm type="honeywine_quirrels" key="Crownlands_Velaryon_Conscript_Longbowmen" max="RANGED" />
-        <MenAtArm type="horse_archers" key="Crownlands_Velaryon_MAA_Lance_Cavalry" max="CAVALRY" />
-        <MenAtArm type="house_guard" key="Crownlands_Velaryon_MAA_Swordsmen" max="INFANTRY" />
-        <MenAtArm type="hunters_of_the_moon" key="Crownlands_Velaryon_MAA_Longbowmen" max="RANGED" />
-        <MenAtArm type="indentured_legion" key="Crownlands_Velaryon_MAA_Crossbowmen" max="RANGED" />
-        <MenAtArm type="iron_legion" key="Crownlands_Velaryon_MAA_Pikemen" max="INFANTRY" />
-        <MenAtArm type="ironborn_reavers" key="Crownlands_Velaryon_MAA_Spearmen" max="INFANTRY" />
-        <MenAtArm type="kheshig" key="Crownlands_Velaryon_MAA_Lance_Cavalry" max="CAVALRY" />
-        <MenAtArm type="laamp_settler_maa" key="Crownlands_Velaryon_MAA_Longbowmen" max="RANGED" />
-        <MenAtArm type="light_footmen" key="Crownlands_Velaryon_MAA_Crossbowmen" max="RANGED" />
-        <MenAtArm type="light_footmen_wild" key="Crownlands_Velaryon_MAA_Crossbowmen" max="RANGED" />
-        <MenAtArm type="light_horsemen" key="Crownlands_Velaryon_MAA_Mounted_Swordsmen" max="CAVALRY" />
-        <MenAtArm type="light_horsemen_wild" key="Crownlands_Velaryon_MAA_Mounted_Swordsmen" max="CAVALRY" />
-        <MenAtArm type="lockstep_legion" key="Crownlands_Velaryon_MAA_Spearmen" max="INFANTRY" />
-        <MenAtArm type="longbowmen" key="Crownlands_Velaryon_MAA_Longbowmen" max="RANGED" />
-        <MenAtArm type="maa_bandits" key="Crownlands_Velaryon_Conscript_Longbowmen" max="RANGED" />
-        <MenAtArm type="maa_marauders" key="Crownlands_Velaryon_MAA_Swordsmen" max="INFANTRY" />
-        <MenAtArm type="maa_poachers" key="Crownlands_Velaryon_MAA_Longbowmen" max="RANGED" />
-        <MenAtArm type="maa_thieves" key="Crownlands_Velaryon_Conscript_Spearmen" max="INFANTRY" />
-        <MenAtArm type="mangonel" key="Crownlands_Velaryon_Catapult" siege="true" />
-        <MenAtArm type="marcher_longbowmen" key="Crownlands_Velaryon_MAA_Longbowmen" max="RANGED" />
-        <MenAtArm type="market_guard" key="Crownlands_Velaryon_MAA_Pikemen" max="INFANTRY" />
-        <MenAtArm type="marsh_walker" key="Crownlands_Velaryon_MAA_Longbowmen" max="RANGED" />
-        <MenAtArm type="misty_shields" key="Crownlands_Velaryon_MAA_Axemen" max="INFANTRY" />
-        <MenAtArm type="moroshi_pikes" key="Crownlands_Velaryon_MAA_Billmen" max="INFANTRY" />
-        <MenAtArm type="mother_sworn" key="Crownlands_Velaryon_MAA_Longbowmen" max="RANGED" />
-        <MenAtArm type="myrish_crossbows" key="Crownlands_Velaryon_MAA_Crossbowmen" max="RANGED" />
-        <MenAtArm type="nomad_lancers" key="Crownlands_Velaryon_MAA_Lance_Cavalry" max="CAVALRY" />
-        <MenAtArm type="nomadic_riders" key="Crownlands_Velaryon_MAA_Axemen" max="INFANTRY" />
-        <MenAtArm type="northern_spears" key="Crownlands_Velaryon_MAA_Pikemen" max="INFANTRY" />
-        <MenAtArm type="nw_rangers" key="Crownlands_Velaryon_Conscript_Longbowmen" max="RANGED" />
-        <MenAtArm type="nw_trackers" key="Crownlands_Velaryon_MAA_Mounted_Swordsmen" max="CAVALRY" />
-        <MenAtArm type="onager" key="Crownlands_Velaryon_Catapult" siege="true" />
-        <MenAtArm type="ornate_helms" key="Crownlands_Velaryon_MAA_Pikemen" max="INFANTRY" />
-        <MenAtArm type="pass_pikes" key="Crownlands_Velaryon_MAA_Halberdiers" max="INFANTRY" />
-        <MenAtArm type="pikemen_unit" key="Crownlands_Velaryon_MAA_Pikemen" max="INFANTRY" />
-        <MenAtArm type="pikemen_unit_wild" key="Crownlands_Velaryon_MAA_Pikemen" max="INFANTRY" />
-        <MenAtArm type="pit_fighters" key="Crownlands_Velaryon_Conscript_Pikemen" max="INFANTRY" />
+        <MenAtArm type="bowmen_wild" key="Crownlands_Velaryon_MAA_Crossbowmen" max="RANGED" />
+        <MenAtArm type="highgarden_knights" key="Crownlands_Velaryon_MAA_Mounted_Swordsmen" max="CAVALRY" />
+        <MenAtArm type="light_footmen_wild" key="Crownlands_Velaryon_MAA_Longbowmen" max="INFANTRY" />
+        <MenAtArm type="light_horsemen_wild" key="Dorne_Martell_MAA_Mounted_Archers" max="CAVALRY" />
+        <MenAtArm type="pikemen_unit_wild" key="Crownlands_Velaryon_Conscript_Pikemen" max="INFANTRY" />
         <MenAtArm type="pit_warriors" key="Crownlands_Velaryon_MAA_Axemen" max="INFANTRY" />
-        <MenAtArm type="poorfellow_skirmishers" key="Crownlands_Velaryon_MAA_Longbowmen" max="RANGED" />
-        <MenAtArm type="purple_sailors" key="Crownlands_Velaryon_MAA_Longbowmen" max="RANGED" />
-        <MenAtArm type="qarlons_fallen" key="Crownlands_Velaryon_MAA_Crossbowmen" max="RANGED" />
-        <MenAtArm type="reach_light_cavalry" key="Crownlands_Velaryon_MAA_Halberdiers" max="INFANTRY" />
-        <MenAtArm type="redcloaks" key="Crownlands_Velaryon_MAA_Swordsmen" max="INFANTRY" />
-        <MenAtArm type="river_bows" key="Crownlands_Velaryon_MAA_Crossbowmen" max="RANGED" />
-        <MenAtArm type="riverlands_light_infantry" key="Crownlands_Velaryon_MAA_Longbowmen" max="RANGED" />
-        <MenAtArm type="royal_crossbowmen" key="Crownlands_Velaryon_MAA_Longbowmen" max="RANGED" />
-        <MenAtArm type="ruby_spearwomen" key="Crownlands_Velaryon_Marine" max="INFANTRY" />
-        <MenAtArm type="sand_steeds" key="Crownlands_Velaryon_MAA_Swordsmen" max="INFANTRY" />
-        <MenAtArm type="sarsfield_horse_archers" key="Crownlands_Velaryon_MAA_Mounted_Swordsmen" max="CAVALRY" />
-        <MenAtArm type="scorpions" key="Crownlands_Velaryon_Conscript_Longbowmen" max="RANGED" />
-        <MenAtArm type="sea_snakes" key="Crownlands_Velaryon_Conscript_Longbowmen" max="RANGED" />
-        <MenAtArm type="sea_watch" key="Crownlands_Velaryon_Marine" max="INFANTRY" />
-        <MenAtArm type="seal_hunters" key="Crownlands_Velaryon_MAA_Longbowmen" max="RANGED" />
-        <MenAtArm type="shadow_spears" key="Crownlands_Velaryon_Conscript_Swordsmen" max="INFANTRY" />
-        <MenAtArm type="she_bears" key="Crownlands_Velaryon_Conscript_Pikemen" max="INFANTRY" />
-        <MenAtArm type="sistermen_pirates" key="Crownlands_Velaryon_MAA_Crossbowmen" max="RANGED" />
-        <MenAtArm type="skahazdahn_wardens" key="Crownlands_Velaryon_MAA_Longbowmen" max="RANGED" />
-        <MenAtArm type="skoutatoi" key="Crownlands_Velaryon_MAA_Axemen" max="INFANTRY" />
-        <MenAtArm type="slave_legion" key="Crownlands_Velaryon_MAA_Crossbowmen" max="RANGED" />
-        <MenAtArm type="smiths_axes" key="Crownlands_Velaryon_MAA_Swordsmen" max="INFANTRY" />
-        <MenAtArm type="stair_guard" key="Crownlands_Velaryon_Conscript_Swordsmen" max="INFANTRY" />
-        <MenAtArm type="star_carved" key="Crownlands_Velaryon_MAA_Pikemen" max="INFANTRY" />
-        <MenAtArm type="steppe_raiders" key="Crownlands_Velaryon_MAA_Pikemen" max="INFANTRY" />
-        <MenAtArm type="stepstone_sailors" key="Crownlands_Velaryon_MAA_Longbowmen" max="RANGED" />
-        <MenAtArm type="stolen_spears" key="Crownlands_Velaryon_MAA_Swordsmen" max="INFANTRY" />
-        <MenAtArm type="storm_knights" key="Crownlands_Velaryon_MAA_Lance_Cavalry" max="CAVALRY" />
-        <MenAtArm type="stormlands_heavy_infantry" key="Crownlands_Velaryon_MAA_Billmen" max="INFANTRY" />
-        <MenAtArm type="summer_knights" key="Crownlands_Velaryon_MAA_Mounted_Swordsmen" max="CAVALRY" />
-        <MenAtArm type="sun_guard" key="Crownlands_Velaryon_Conscript_Spearmen" max="INFANTRY" />
-        <MenAtArm type="sun_spears" key="Crownlands_Velaryon_MAA_Billmen" max="INFANTRY" />
-        <MenAtArm type="sworn_brothers" key="Crownlands_Velaryon_MAA_Spearmen" max="INFANTRY" />
-        <MenAtArm type="tiger_cloaks" key="Crownlands_Velaryon_Conscript_Swordsmen" max="INFANTRY" />
-        <MenAtArm type="tolosi_slingers" key="Crownlands_Velaryon_Conscript_Longbowmen" max="RANGED" />
-        <MenAtArm type="torch_bearers" key="Crownlands_Velaryon_MAA_Swordsmen_Ship" />
-        <MenAtArm type="trebuchet" key="Crownlands_Velaryon_Catapult" siege="true" />
-        <MenAtArm type="triarchs_herd" key="Crownlands_Velaryon_MAA_Lance_Cavalry" max="CAVALRY" />
-        <MenAtArm type="unicorn_riders" key="Crownlands_Velaryon_Conscript_Spearmen" max="INFANTRY" />
-        <MenAtArm type="unsullied" key="Crownlands_Velaryon_MAA_Pikemen" max="INFANTRY" />
-        <MenAtArm type="vale_heavy_infantry" key="Crownlands_Velaryon_Conscript_Swordsmen" max="INFANTRY" />
-        <MenAtArm type="warriors_sons_heavy_cav" key="Crownlands_Velaryon_MAA_Lance_Cavalry" max="CAVALRY" />
-        <MenAtArm type="warriors_sons_heavy_infantry" key="Crownlands_Velaryon_MAA_Swordsmen" max="INFANTRY" />
-        <MenAtArm type="water_wizards" key="Crownlands_Velaryon_Catapult" siege="true" />
-        <MenAtArm type="weeping_guard" key="Crownlands_Velaryon_MAA_Halberdiers" max="INFANTRY" />
-        <MenAtArm type="westerland_knights" key="Crownlands_Velaryon_MAA_Lance_Cavalry" max="CAVALRY" />
-        <MenAtArm type="westerlands_knights" key="Crownlands_Velaryon_MAA_Lance_Cavalry" max="CAVALRY" />
-        <MenAtArm type="westerosi_sellswords" key="Crownlands_Velaryon_MAA_Mounted_Swordsmen" max="CAVALRY" />
-        <MenAtArm type="wights" key="Crownlands_Velaryon_Conscript_Longbowmen" max="RANGED" />
-        <MenAtArm type="wildling_cavalry" key="Crownlands_Velaryon_MAA_Halberdiers" max="INFANTRY" />
-        <MenAtArm type="winged_knights" key="Crownlands_Velaryon_MAA_Mounted_Swordsmen" max="CAVALRY" />
-        <MenAtArm type="winter_wolves" key="Crownlands_Velaryon_MAA_Axemen" max="INFANTRY" />
-        <MenAtArm type="wolfswood_hunters" key="Crownlands_Velaryon_MAA_Crossbowmen" max="RANGED" />
+        <MenAtArm type="seal_hunters" key="Crownlands_Velaryon_MAA_Crossbowmen" max="RANGED" />
+        <MenAtArm type="westerland_knights" key="Crownlands_Velaryon_MAA_Mounted_Swordsmen" max="CAVALRY" />
     </Faction>
 </Factions>
