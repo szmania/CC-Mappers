@@ -1,24 +1,24 @@
 <?xml version='1.0' encoding='utf-8'?>
 <Factions>
     <Faction name="Default" subculture="att_sub_cult_barbarian_germanic_west">
-        <General key="bal_bane_of_the_steppes" rank="1" />
-        <General key="bal_khavar" rank="2" />
+        <General key="bal_rhunic_warlords" rank="1" />
+        <General key="bal_loke_rim_cataphracts" rank="2" />
         <General key="bal_wainrider_chiefs" rank="3" />
         <Knights key="bal_khandish_horse_archers" rank="1" />
-        <Knights key="bal_khavar" rank="2" />
+        <Knights key="bal_bane_of_the_steppes" rank="2" />
         <Knights key="bal_wainrider_chiefs" rank="3" />
-        <Levies key="bal_clan_huntsmen" percentage="46" max="LEVY" />
-        <Levies key="bal_clan_raiders" percentage="38" max="LEVY" />
-        <Levies key="bal_clan_spearmen" percentage="16" max="LEVY" />
+        <Levies key="bal_clan_huntsmen" percentage="34" max="LEVY" />
+        <Levies key="bal_clan_raiders" percentage="33" max="LEVY" />
+        <Levies key="bal_clan_spearmen" percentage="33" max="LEVY" />
         <Garrison key="bal_clan_huntsmen" percentage="13" max="LEVY" level="1" />
         <Garrison key="bal_clan_raiders" percentage="38" max="LEVY" level="1" />
         <Garrison key="bal_clan_spearmen" percentage="33" max="LEVY" level="1" />
         <Garrison key="bal_clan_axemen" percentage="16" max="LEVY" level="1" />
-        <Garrison key="bal_feredrim_rangers" percentage="24" max="LEVY" level="2" />
-        <Garrison key="bal_khandish_horse_archers" percentage="11" max="LEVY" level="2" />
-        <Garrison key="bal_spears" percentage="32" max="LEVY" level="2" />
-        <Garrison key="bal_khandish_sentries" percentage="19" max="LEVY" level="2" />
-        <Garrison key="bal_raiders" percentage="14" max="LEVY" level="2" />
+        <Garrison key="bal_feredrim_woodsmen" percentage="24" max="LEVY" level="2" />
+        <Garrison key="bal_khandish_horse_archers" percentage="18" max="LEVY" level="2" />
+        <Garrison key="bal_spears" percentage="9" max="LEVY" level="2" />
+        <Garrison key="bal_rhunic_warriors" percentage="33" max="LEVY" level="2" />
+        <Garrison key="bal_khandish_sentries" percentage="16" max="LEVY" level="2" />
         <Garrison key="bal_variag_bowmen" percentage="24" max="LEVY" level="3" />
         <Garrison key="bal_variag_lancers" percentage="14" max="LEVY" level="3" />
         <Garrison key="bal_clan_guards" percentage="29" max="LEVY" level="3" />
@@ -338,16 +338,16 @@
         <MenAtArm type="zeba_outriders" key="roh_eored_gap" max="CAVALRY" />
         <MenAtArm type="zebaback_slavers" key="bal_clan_raiders" max="CAVALRY" />
     </Faction>
-    <Faction name="Anduin-Vale" subculture="att_sub_cult_roman_west">
+    <Faction name="Goblins" subculture="att_sub_cult_roman_west">
         <General key="av_beorning_warriors" rank="1" />
         <General key="av_eotheod_nobles" rank="2" />
         <General key="av_eotheod_cavalry" rank="3" />
         <Knights key="av_eotheod_outriders" rank="1" />
-        <Knights key="av_eotheod_horse_archers" rank="2" />
+        <Knights key="av_eotheod_cavalry" rank="2" />
         <Knights key="av_eotheod_lancers" rank="3" />
-        <Levies key="av_valesmen_archer_levy" percentage="14" max="LEVY" />
-        <Levies key="av_eotheod_outriders" percentage="70" max="LEVY" />
-        <Levies key="av_valesmen_levy" percentage="16" max="LEVY" />
+        <Levies key="av_valesmen_archer_levy" percentage="12" max="LEVY" />
+        <Levies key="av_eotheod_outriders" percentage="43" max="LEVY" />
+        <Levies key="av_valesmen_levy" percentage="45" max="LEVY" />
         <Garrison key="av_valesmen_archer_levy" percentage="43" max="LEVY" level="1" />
         <Garrison key="av_eotheod_outriders" percentage="9" max="LEVY" level="1" />
         <Garrison key="av_valesmen_levy" percentage="39" max="LEVY" level="1" />
@@ -357,16 +357,16 @@
         <Garrison key="av_vale_spearmen" percentage="19" max="LEVY" level="2" />
         <Garrison key="av_greenwood_foresters" percentage="28" max="LEVY" level="2" />
         <Garrison key="av_vale_axemen" percentage="6" max="LEVY" level="2" />
-        <Garrison key="av_anduin_longbowmen" percentage="8" max="LEVY" level="3" />
-        <Garrison key="av_eotheod_lancers" percentage="13" max="LEVY" level="3" />
-        <Garrison key="av_carrock_wardens" percentage="25" max="LEVY" level="3" />
-        <Garrison key="av_anduin_sentinels" percentage="32" max="LEVY" level="3" />
-        <Garrison key="av_pass_sentries" percentage="22" max="LEVY" level="3" />
-        <Garrison key="av_anduin_longbowmen" percentage="32" max="LEVY" level="4" />
-        <Garrison key="av_eotheod_lancers" percentage="26" max="LEVY" level="4" />
-        <Garrison key="av_carrock_wardens" percentage="10" max="LEVY" level="4" />
-        <Garrison key="av_eotheod_footmen" percentage="9" max="LEVY" level="4" />
-        <Garrison key="av_anduin_sentinels" percentage="23" max="LEVY" level="4" />
+        <Garrison key="av_greenwood_rangers" percentage="17" max="LEVY" level="3" />
+        <Garrison key="av_eotheod_lancers" percentage="19" max="LEVY" level="3" />
+        <Garrison key="av_carrock_wardens" percentage="22" max="LEVY" level="3" />
+        <Garrison key="av_eotheod_footmen" percentage="16" max="LEVY" level="3" />
+        <Garrison key="av_pass_sentries" percentage="26" max="LEVY" level="3" />
+        <Garrison key="av_greenwood_rangers" percentage="18" max="LEVY" level="4" />
+        <Garrison key="av_eotheod_lancers" percentage="16" max="LEVY" level="4" />
+        <Garrison key="av_carrock_wardens" percentage="24" max="LEVY" level="4" />
+        <Garrison key="av_pass_sentries" percentage="24" max="LEVY" level="4" />
+        <Garrison key="av_anduin_sentinels" percentage="18" max="LEVY" level="4" />
         <MenAtArm type="abrazanim_halberdiers" key="av_carrock_wardens" max="INFANTRY" />
         <MenAtArm type="abrazanim_legion" key="av_pass_sentries" max="INFANTRY" />
         <MenAtArm type="abrazanim_warbows" key="av_greenwood_rangers" max="RANGED" />
@@ -1027,17 +1027,16 @@
         <MenAtArm type="zeba_outriders" key="roh_eored_gap" max="CAVALRY" />
         <MenAtArm type="zebaback_slavers" key="lin_cavalry" max="CAVALRY" />
     </Faction>
-    <Faction name="Arnor" subculture="att_sub_cult_roman_west">
+    <Faction name="Haradrim" subculture="att_sub_cult_roman_west">
         <General key="arn_lords_westernesse" rank="1" />
         <General key="arn_marshals_annuminas" rank="2" />
         <General key="arn_aragorn" rank="3" />
         <Knights key="arn_mounted_scouts" rank="1" />
         <Knights key="arn_sergeants" rank="2" />
         <Knights key="arn_marshals_annuminas" rank="3" />
-        <Levies key="arn_hobbit_shirrifs" percentage="23" max="LEVY" />
-        <Levies key="arn_mounted_scouts" percentage="34" max="LEVY" />
-        <Levies key="arn_spear_militia" percentage="34" max="LEVY" />
-        <Levies key="arn_sword_militia" percentage="9" max="LEVY" />
+        <Levies key="arn_eriador_hunters" percentage="35" max="LEVY" />
+        <Levies key="arn_mounted_scouts" percentage="39" max="LEVY" />
+        <Levies key="arn_spear_militia" percentage="26" max="LEVY" />
         <Garrison key="arn_hobbit_shirrifs" percentage="32" max="LEVY" level="1" />
         <Garrison key="arn_mounted_scouts" percentage="30" max="LEVY" level="1" />
         <Garrison key="arn_spear_militia" percentage="30" max="LEVY" level="1" />
@@ -1713,20 +1712,20 @@
         <MenAtArm type="zeba_outriders" key="roh_eored_gap" max="CAVALRY" />
         <MenAtArm type="zebaback_slavers" key="lin_cavalry" max="CAVALRY" />
     </Faction>
-    <Faction name="Dale" subculture="att_sub_cult_roman_west">
+    <Faction name="Dorwinion" subculture="att_sub_cult_roman_west">
         <General key="dale_brand" />
-        <General key="dale_northmen_scouts" rank="1" />
-        <General key="roh_eored_westfold" rank="2" />
-        <General key="kha_akha_chosen" rank="3" />
+        <General key="hor_immortals" rank="1" />
+        <General key="gon_silver_swan_knights" rank="2" />
+        <General key="bal_khavar" rank="3" />
         <Knights key="dale_northmen_scouts" rank="1" />
         <Knights key="dale_merchant_escorts" rank="2" />
         <Knights key="dale_rhovanion_regent" rank="3" />
         <Levies key="dale_watchpost_sentries" percentage="48" max="LEVY" />
         <Levies key="dale_rivermen" percentage="22" max="LEVY" />
         <Levies key="dale_bardings" percentage="30" max="LEVY" />
-        <Garrison key="dale_yeomen" percentage="46" max="LEVY" level="1" />
-        <Garrison key="dale_northmen_scouts" percentage="39" max="LEVY" level="1" />
-        <Garrison key="dale_spear_militia" percentage="15" max="LEVY" level="1" />
+        <Garrison key="dale_yeomen" percentage="33" max="LEVY" level="1" />
+        <Garrison key="dale_northmen_scouts" percentage="33" max="LEVY" level="1" />
+        <Garrison key="dale_spear_militia" percentage="34" max="LEVY" level="1" />
         <Garrison key="dale_vineland_yardpatrollers" percentage="26" max="LEVY" level="2" />
         <Garrison key="dale_merchant_escorts" percentage="9" max="LEVY" level="2" />
         <Garrison key="dale_vineland_watchmen" percentage="17" max="LEVY" level="2" />
@@ -1736,9 +1735,9 @@
         <Garrison key="dale_cavalry_regiment" percentage="19" max="LEVY" level="3" />
         <Garrison key="dale_spearguards" percentage="36" max="LEVY" level="3" />
         <Garrison key="dale_swordsmen" percentage="8" max="LEVY" level="3" />
-        <Garrison key="dale_rhovanion_rangers" percentage="38" max="LEVY" level="4" />
-        <Garrison key="dale_laketown_guards" percentage="29" max="LEVY" level="4" />
-        <Garrison key="dale_spearguards" percentage="33" max="LEVY" level="4" />
+        <Garrison key="dale_rhovanion_rangers" percentage="36" max="LEVY" level="4" />
+        <Garrison key="dale_laketown_guards" percentage="25" max="LEVY" level="4" />
+        <Garrison key="dale_swordsmen" percentage="39" max="LEVY" level="4" />
         <MenAtArm type="abrazanim_halberdiers" key="dale_vineland_watchmen" max="INFANTRY" />
         <MenAtArm type="abrazanim_legion" key="dale_vineland_guard_sword" max="INFANTRY" />
         <MenAtArm type="abrazanim_warbows" key="dale_rhovanion_rangers" max="RANGED" />
@@ -2067,9 +2066,9 @@
         <Garrison key="dol_princes_coastguard" percentage="38" max="LEVY" level="2" />
         <Garrison key="gon_pelargir_marines" percentage="13" max="LEVY" level="2" />
         <Garrison key="dol_princes_footmen" percentage="15" max="LEVY" level="2" />
-        <Garrison key="dol_knight_edhellond" percentage="37" max="LEVY" level="3" />
-        <Garrison key="dol_amroth_knights" percentage="37" max="LEVY" level="3" />
-        <Garrison key="dol_prince_marksmen" percentage="26" max="LEVY" level="3" />
+        <Garrison key="dol_knight_edhellond" percentage="34" max="LEVY" level="3" />
+        <Garrison key="dol_amroth_knights" percentage="29" max="LEVY" level="3" />
+        <Garrison key="dol_princes_footmen" percentage="37" max="LEVY" level="3" />
         <Garrison key="dol_sentinels" percentage="19" max="LEVY" level="4" />
         <Garrison key="dol_knight_edhellond" percentage="36" max="LEVY" level="4" />
         <Garrison key="dol_amroth_knights" percentage="45" max="LEVY" level="4" />
@@ -2386,30 +2385,31 @@
     </Faction>
     <Faction name="Dol Guldur" subculture="att_sub_cult_barbarian_germanic_west">
         <General key="dg_khamul" />
-        <General key="hor_immortals" rank="1" />
-        <General key="dol_prince_imrahil_swan" rank="2" />
+        <General key="dor_merchant_escorts" rank="1" />
+        <General key="gon_cavalry_sword" rank="2" />
         <General key="har_harad_camel_riders" rank="3" />
         <Knights key="dg_guldur_glaives" />
-        <Knights key="roh_esquires_of_rohan" rank="1" />
-        <Knights key="roh_eored_westfold" rank="2" />
-        <Knights key="bal_haerrim_outriders" rank="3" />
-        <Levies key="dg_mirkwood_raiders" percentage="50" max="LEVY" />
-        <Levies key="mor_warg_riders" percentage="18" max="LEVY" />
-        <Levies key="dg_guldur_pikes" percentage="32" max="LEVY" />
-        <Garrison key="dg_mirkwood_raiders" percentage="23" max="LEVY" level="1" />
-        <Garrison key="mor_warg_riders" percentage="21" max="LEVY" level="1" />
-        <Garrison key="dg_phantoms" percentage="14" max="LEVY" level="1" />
-        <Garrison key="dg_guldur_glaives" percentage="22" max="LEVY" level="1" />
-        <Garrison key="gun_barrow_wights" percentage="20" max="LEVY" level="1" />
-        <Garrison key="mor_warg_riders" percentage="23" max="LEVY" level="2" />
-        <Garrison key="dg_guldur_glaives" percentage="53" max="LEVY" level="2" />
-        <Garrison key="dg_guldur_pikes" percentage="24" max="LEVY" level="2" />
+        <Knights key="hor_heavycav" rank="1" />
+        <Knights key="roh_winfried" rank="2" />
+        <Knights key="har_serpent_guards" rank="3" />
+        <Levies key="dg_mirkwood_raiders" percentage="20" max="LEVY" />
+        <Levies key="mor_warg_riders" percentage="25" max="LEVY" />
+        <Levies key="dg_guldur_pikes" percentage="18" max="LEVY" />
+        <Levies key="dg_guldur_glaives" percentage="37" max="LEVY" />
+        <Garrison key="dg_mirkwood_trackers" percentage="14" max="LEVY" level="1" />
+        <Garrison key="mor_warg_riders" percentage="18" max="LEVY" level="1" />
+        <Garrison key="dg_guldur_pikes" percentage="22" max="LEVY" level="1" />
+        <Garrison key="gun_barrow_wights" percentage="17" max="LEVY" level="1" />
+        <Garrison key="dg_guldur_blades" percentage="29" max="LEVY" level="1" />
+        <Garrison key="mor_warg_riders" percentage="33" max="LEVY" level="2" />
+        <Garrison key="dg_guldur_blades" percentage="35" max="LEVY" level="2" />
+        <Garrison key="dg_guldur_glaives" percentage="32" max="LEVY" level="2" />
         <Garrison key="dg_guldur_pikes" percentage="36" max="LEVY" level="3" />
         <Garrison key="dg_guldur_glaives" percentage="30" max="LEVY" level="3" />
         <Garrison key="dg_guldur_blades" percentage="34" max="LEVY" level="3" />
-        <Garrison key="mor_servants_of_the_eyes" percentage="48" max="LEVY" level="4" />
-        <Garrison key="mor_olog_hai" percentage="26" max="LEVY" level="4" />
-        <Garrison key="dg_guldur_glaives" percentage="26" max="LEVY" level="4" />
+        <Garrison key="mor_servants_of_the_eyes" percentage="37" max="LEVY" level="4" />
+        <Garrison key="mor_olog_hai" percentage="29" max="LEVY" level="4" />
+        <Garrison key="dg_guldur_blades" percentage="34" max="LEVY" level="4" />
         <MenAtArm type="abrazanim_halberdiers" key="dg_guldur_pikes" max="INFANTRY" />
         <MenAtArm type="abrazanim_legion" key="dg_guldur_glaives" max="INFANTRY" />
         <MenAtArm type="abrazanim_warbows" key="dg_mirkwood_raiders" max="RANGED" />
@@ -2723,16 +2723,16 @@
     </Faction>
     <Faction name="Dorwinion" subculture="att_sub_cult_roman_west">
         <General key="dor_riders_of_the_vinter_court" />
-        <General key="hor_immortals" rank="1" />
-        <General key="gon_cavalry_sword" rank="2" />
-        <General key="har_ar_belzagar" rank="3" />
+        <General key="iml_horse_rangers" rank="1" />
+        <General key="av_eotheod_lancers" rank="2" />
+        <General key="dg_nazgul" rank="3" />
         <Knights key="dor_avari_warriors" />
-        <Knights key="wr_elvenking_riders" rank="1" />
-        <Knights key="exe_iml_glorfindel" rank="2" />
-        <Knights key="bal_khavar" rank="3" />
-        <Levies key="dor_vineland_spear_militia" percentage="17" max="LEVY" />
-        <Levies key="dor_vineland_seafarers" percentage="44" max="LEVY" />
-        <Levies key="dor_vineland_seafarers" percentage="39" max="LEVY" />
+        <Knights key="ere_merc_cav" rank="1" />
+        <Knights key="av_eotheod_lancers" rank="2" />
+        <Knights key="rhu_crrothean_hill_riders" rank="3" />
+        <Levies key="dor_vineland_spear_militia" percentage="30" max="LEVY" />
+        <Levies key="dor_vineland_seafarers" percentage="36" max="LEVY" />
+        <Levies key="dor_vineland_seafarers" percentage="34" max="LEVY" />
         <Garrison key="dor_vineland_seafarers" percentage="35" max="LEVY" level="1" />
         <Garrison key="dor_vineland_spear_militia" percentage="35" max="LEVY" level="1" />
         <Garrison key="dor_dorwinion_sword_milita" percentage="30" max="LEVY" level="1" />
@@ -2744,9 +2744,9 @@
         <Garrison key="dor_dorwinion_spearguard" percentage="18" max="LEVY" level="3" />
         <Garrison key="dor_dorwinion_Infantry" percentage="30" max="LEVY" level="3" />
         <Garrison key="dor_dorwinion_vinter_guard" percentage="31" max="LEVY" level="3" />
-        <Garrison key="dor_warden" percentage="17" max="LEVY" level="4" />
-        <Garrison key="dor_dorwinion_Infantry" percentage="37" max="LEVY" level="4" />
-        <Garrison key="dale_avari_wanderers" percentage="46" max="LEVY" level="4" />
+        <Garrison key="dor_warden" percentage="24" max="LEVY" level="4" />
+        <Garrison key="dor_dorwinion_Infantry" percentage="40" max="LEVY" level="4" />
+        <Garrison key="dale_avari_wanderers" percentage="36" max="LEVY" level="4" />
         <MenAtArm type="abrazanim_halberdiers" key="dor_dorwinion_spearguard" max="INFANTRY" />
         <MenAtArm type="abrazanim_legion" key="dor_vineland_men_at_arms" max="INFANTRY" />
         <MenAtArm type="abrazanim_warbows" key="dor_vineland_yardpatrollers" max="RANGED" />
@@ -3418,11 +3418,11 @@
         <Garrison key="dun_tribal_raiders" percentage="22" max="LEVY" level="1" />
         <Garrison key="dun_tribal_spearmen" percentage="22" max="LEVY" level="1" />
         <Garrison key="dun_tribal_warriors" percentage="21" max="LEVY" level="1" />
-        <Garrison key="dun_slingers" percentage="25" max="LEVY" level="2" />
-        <Garrison key="dun_elder_riders" percentage="25" max="LEVY" level="2" />
-        <Garrison key="dun_elder_spears" percentage="12" max="LEVY" level="2" />
-        <Garrison key="dun_bloodsworn" percentage="21" max="LEVY" level="2" />
-        <Garrison key="dun_hound_tamers" percentage="17" max="LEVY" level="2" />
+        <Garrison key="dun_warlord_crossbows" percentage="11" max="LEVY" level="2" />
+        <Garrison key="dun_elder_riders" percentage="30" max="LEVY" level="2" />
+        <Garrison key="dun_elder_spears" percentage="18" max="LEVY" level="2" />
+        <Garrison key="dun_pikemen" percentage="11" max="LEVY" level="2" />
+        <Garrison key="dun_pillagers" percentage="30" max="LEVY" level="2" />
         <Garrison key="dun_archer_heerban" percentage="19" max="LEVY" level="3" />
         <Garrison key="dun_warlords_cavalry" percentage="21" max="LEVY" level="3" />
         <Garrison key="dun_orthanc_servants" percentage="18" max="LEVY" level="3" />
@@ -3744,12 +3744,12 @@
         <MenAtArm type="zeba_outriders" key="ise_dunland_horse_raider" max="CAVALRY" />
         <MenAtArm type="zebaback_slavers" key="dun_elder_riders" max="CAVALRY" />
     </Faction>
-    <Faction name="Easterlings" subculture="att_sub_cult_barbarian_germanic_west">
+    <Faction name="Imladris" subculture="att_sub_cult_barbarian_germanic_west">
         <General key="bal_bane_of_the_steppes" rank="1" />
-        <General key="bal_loke_rim_cataphracts" rank="2" />
-        <General key="bal_wainrider_chiefs" rank="3" />
+        <General key="bal_khavar" rank="2" />
+        <General key="bal_khahar" rank="3" />
         <Knights key="bal_khandish_horse_archers" rank="1" />
-        <Knights key="bal_variag_lancers" rank="2" />
+        <Knights key="bal_khavar" rank="2" />
         <Knights key="bal_wainrider_chiefs" rank="3" />
         <Levies key="bal_clan_spearmen" percentage="12" max="LEVY" />
         <Levies key="bal_clan_raiders" percentage="44" max="LEVY" />
@@ -3759,10 +3759,10 @@
         <Garrison key="bal_clan_spearmen" percentage="33" max="LEVY" level="1" />
         <Garrison key="bal_clan_axemen" percentage="16" max="LEVY" level="1" />
         <Garrison key="bal_feredrim_rangers" percentage="17" max="LEVY" level="2" />
-        <Garrison key="bal_khandish_horse_archers" percentage="20" max="LEVY" level="2" />
-        <Garrison key="bal_spears" percentage="23" max="LEVY" level="2" />
-        <Garrison key="bal_rhunic_warriors" percentage="16" max="LEVY" level="2" />
-        <Garrison key="bal_khandish_sentries" percentage="24" max="LEVY" level="2" />
+        <Garrison key="bal_khandish_horse_archers" percentage="24" max="LEVY" level="2" />
+        <Garrison key="bal_spears" percentage="19" max="LEVY" level="2" />
+        <Garrison key="bal_rhunic_savages" percentage="25" max="LEVY" level="2" />
+        <Garrison key="bal_raiders" percentage="15" max="LEVY" level="2" />
         <Garrison key="bal_variag_bowmen" percentage="24" max="LEVY" level="3" />
         <Garrison key="bal_variag_lancers" percentage="14" max="LEVY" level="3" />
         <Garrison key="bal_clan_guards" percentage="29" max="LEVY" level="3" />
@@ -4082,32 +4082,34 @@
         <MenAtArm type="zebaback_slavers" key="bal_variag_lancers" max="CAVALRY" />
     </Faction>
     <Faction name="Elves" subculture="att_sub_cult_nomadic_hunnic">
-        <General key="loth_heroes_amon_lanc" rank="1" />
-        <General key="loth_haldirs_bodyguards" rank="2" />
-        <General key="ler_redhorn_pass_protectors" rank="3" />
-        <Knights key="exe_iml_rivendell_riders" rank="1" />
-        <Knights key="iml_cavalry" rank="2" />
-        <Knights key="exe_iml_glorfindel" rank="3" />
-        <Levies key="ler_volunteer_archers" percentage="21" max="LEVY" />
-        <Levies key="loth_lor_outriders" percentage="53" max="LEVY" />
-        <Levies key="ler_volunteer_spears" percentage="26" max="LEVY" />
-        <Garrison key="ler_volunteer_archers" percentage="17" max="LEVY" level="1" />
-        <Garrison key="ler_volunteer_spears" percentage="33" max="LEVY" level="1" />
-        <Garrison key="exe_iml_rivendell_riders" percentage="50" max="LEVY" level="1" />
-        <Garrison key="lin_haven_watchers" percentage="29" max="LEVY" level="2" />
-        <Garrison key="loth_nimrodel_patrollers" percentage="15" max="LEVY" level="2" />
-        <Garrison key="loth_lor_spear_company" percentage="17" max="LEVY" level="2" />
-        <Garrison key="wr_silvan_spears" percentage="28" max="LEVY" level="2" />
-        <Garrison key="loth_amroth_sentinels" percentage="11" max="LEVY" level="2" />
-        <Garrison key="iml_archers" percentage="8" max="LEVY" level="3" />
-        <Garrison key="wr_forest_riders" percentage="29" max="LEVY" level="3" />
-        <Garrison key="loth_galad_spear_warriors" percentage="10" max="LEVY" level="3" />
-        <Garrison key="exe_lin_sword_infantry" percentage="29" max="LEVY" level="3" />
-        <Garrison key="exe_lin_telerin_longspears" percentage="24" max="LEVY" level="3" />
-        <Garrison key="exe_iml_hidden_valley_rangers" percentage="43" max="LEVY" level="4" />
-        <Garrison key="Lorien_Bow_Cav" percentage="19" max="LEVY" level="4" />
-        <Garrison key="Lorien_Swords" percentage="14" max="LEVY" level="4" />
-        <Garrison key="exe_iml_eregion_veterans" percentage="24" max="LEVY" level="4" />
+        <General key="wr_hall_guardians" rank="1" />
+        <General key="exe_lin_noldorin_rangers" rank="2" />
+        <General key="ler_mirdain_remnants" rank="3" />
+        <Knights key="ler_hollin_cavalry" rank="1" />
+        <Knights key="wr_gurthlagor" rank="2" />
+        <Knights key="exe_iml_lords_golden_flower" rank="3" />
+        <Levies key="ler_volunteer_archers" percentage="28" max="LEVY" />
+        <Levies key="exe_iml_rivendell_riders" percentage="22" max="LEVY" />
+        <Levies key="ler_volunteer_spears" percentage="17" max="LEVY" />
+        <Levies key="Lorien_Sword_Sentries" percentage="19" max="LEVY" />
+        <Levies key="loth_amroth_sentinels" percentage="14" max="LEVY" />
+        <Garrison key="ler_volunteer_archers" percentage="20" max="LEVY" level="1" />
+        <Garrison key="ler_volunteer_spears" percentage="45" max="LEVY" level="1" />
+        <Garrison key="lin_falathrim_seafarers" percentage="35" max="LEVY" level="1" />
+        <Garrison key="wr_silvan_archers" percentage="26" max="LEVY" level="2" />
+        <Garrison key="exe_iml_rivendell_riders" percentage="16" max="LEVY" level="2" />
+        <Garrison key="loth_naith_infantry" percentage="15" max="LEVY" level="2" />
+        <Garrison key="loth_lor_sword_company" percentage="34" max="LEVY" level="2" />
+        <Garrison key="loth_lor_spear_company" percentage="9" max="LEVY" level="2" />
+        <Garrison key="wr_lasgalen_bows" percentage="22" max="LEVY" level="3" />
+        <Garrison key="wr_forest_riders" percentage="24" max="LEVY" level="3" />
+        <Garrison key="ler_hollin_pike_infantry" percentage="9" max="LEVY" level="3" />
+        <Garrison key="exe_iml_spearmen" percentage="14" max="LEVY" level="3" />
+        <Garrison key="exe_lin_telerin_longspears" percentage="31" max="LEVY" level="3" />
+        <Garrison key="Lorien_Bows" percentage="42" max="LEVY" level="4" />
+        <Garrison key="Lorien_Bow_Cav" percentage="23" max="LEVY" level="4" />
+        <Garrison key="Lorien_Swords" percentage="18" max="LEVY" level="4" />
+        <Garrison key="exe_iml_eregion_veterans" percentage="17" max="LEVY" level="4" />
         <MenAtArm type="abrazanim_halberdiers" key="ler_hollin_pike_infantry" max="INFANTRY" />
         <MenAtArm type="abrazanim_legion" key="exe_iml_swords" max="INFANTRY" />
         <MenAtArm type="abrazanim_warbows" key="ler_mirdain_remnants" max="RANGED" />
@@ -4420,23 +4422,23 @@
         <MenAtArm type="zebaback_slavers" key="exe_wr_lasgalen_riders" max="CAVALRY" />
     </Faction>
     <Faction name="Erebor" subculture="att_sub_cult_eastern_caucasian">
-        <General key="ere_baruk_guard" rank="1" />
+        <General key="ere_iron_guardians" rank="1" />
         <General key="ere_gimli" rank="2" />
-        <General key="ere_balin" rank="3" />
+        <General key="ere_sons_of_mountain" rank="3" />
         <Knights key="ere_merc_cav" rank="1" />
         <Knights key="ere_merc_cav" rank="2" />
         <Knights key="ere_merc_cav" rank="3" />
-        <Levies key="ere_dwarven_warriors" percentage="45" max="LEVY" />
-        <Levies key="ere_dwarven_spearmen" percentage="31" max="LEVY" />
-        <Levies key="ere_dwarven_warriors" percentage="24" max="LEVY" />
-        <Garrison key="ere_dwarven_ranged_travellers" percentage="47" max="LEVY" level="1" />
-        <Garrison key="ere_dwarven_company" percentage="21" max="LEVY" level="1" />
-        <Garrison key="ere_miners" percentage="32" max="LEVY" level="1" />
-        <Garrison key="ere_iron_hill_crossbow" percentage="31" max="LEVY" level="2" />
-        <Garrison key="ere_merc_cav" percentage="15" max="LEVY" level="2" />
-        <Garrison key="ere_dwarven_spearmen" percentage="26" max="LEVY" level="2" />
-        <Garrison key="ere_dwarven_warriors" percentage="16" max="LEVY" level="2" />
-        <Garrison key="ere_halberdiers" percentage="12" max="LEVY" level="2" />
+        <Levies key="ere_dwarven_warriors" percentage="42" max="LEVY" />
+        <Levies key="ere_dwarven_spearmen" percentage="30" max="LEVY" />
+        <Levies key="ere_dwarven_spearmen" percentage="28" max="LEVY" />
+        <Garrison key="ere_axe_throwers" percentage="36" max="LEVY" level="1" />
+        <Garrison key="ere_miners" percentage="37" max="LEVY" level="1" />
+        <Garrison key="ere_dwarven_company" percentage="27" max="LEVY" level="1" />
+        <Garrison key="ere_iron_hill_crossbow" percentage="22" max="LEVY" level="2" />
+        <Garrison key="ere_merc_cav" percentage="10" max="LEVY" level="2" />
+        <Garrison key="ere_dwarven_spearmen" percentage="23" max="LEVY" level="2" />
+        <Garrison key="ere_dwarven_warriors" percentage="28" max="LEVY" level="2" />
+        <Garrison key="ere_halberdiers" percentage="17" max="LEVY" level="2" />
         <Garrison key="ere_crossbowmen" percentage="18" max="LEVY" level="3" />
         <Garrison key="ere_spearguards" percentage="46" max="LEVY" level="3" />
         <Garrison key="ere_axe_warriors" percentage="36" max="LEVY" level="3" />
@@ -4761,25 +4763,25 @@
         <General key="dg_nazgul" rank="3" />
         <Knights key="el_broadbeam_axe_warriors" rank="1" />
         <Knights key="el_broadbeam_pikes" rank="2" />
-        <Knights key="el_gabligathol_wardens" rank="3" />
-        <Levies key="el_firebeared_scouts" percentage="31" max="LEVY" />
-        <Levies key="el_broadbeam_pikes" percentage="31" max="LEVY" />
-        <Levies key="el_merchant_wardens" percentage="26" max="LEVY" />
-        <Levies key="el_bridge_wardens" percentage="12" max="LEVY" />
-        <Garrison key="el_firebeared_scouts" percentage="37" max="LEVY" level="1" />
-        <Garrison key="el_bridge_wardens" percentage="26" max="LEVY" level="1" />
-        <Garrison key="el_merchant_wardens" percentage="37" max="LEVY" level="1" />
+        <Knights key="el_tomb_protectors" rank="3" />
+        <Levies key="el_dwarven_shooters" percentage="11" max="LEVY" />
+        <Levies key="el_broadbeam_pikes" percentage="28" max="LEVY" />
+        <Levies key="el_bridge_wardens" percentage="44" max="LEVY" />
+        <Levies key="el_merchant_wardens" percentage="17" max="LEVY" />
+        <Garrison key="el_dwarven_shooters" percentage="42" max="LEVY" level="1" />
+        <Garrison key="el_merchant_wardens" percentage="41" max="LEVY" level="1" />
+        <Garrison key="el_bridge_wardens" percentage="17" max="LEVY" level="1" />
         <Garrison key="el_firebeared_orc_hunters" percentage="34" max="LEVY" level="2" />
         <Garrison key="el_broadbeam_pikes" percentage="21" max="LEVY" level="2" />
         <Garrison key="el_broadbeam_axe_warriors" percentage="45" max="LEVY" level="2" />
-        <Garrison key="el_noldorian_borderguards" percentage="11" max="LEVY" level="3" />
-        <Garrison key="el_broadbeam_underground_guard" percentage="29" max="LEVY" level="3" />
-        <Garrison key="el_broadbeam_shielders" percentage="31" max="LEVY" level="3" />
-        <Garrison key="el_firebeared_hammers" percentage="29" max="LEVY" level="3" />
-        <Garrison key="el_noldorian_borderguards" percentage="39" max="LEVY" level="4" />
-        <Garrison key="el_broadbeam_shielders" percentage="22" max="LEVY" level="4" />
-        <Garrison key="el_firebeared_hammers" percentage="25" max="LEVY" level="4" />
-        <Garrison key="el_broadbeam_underground_guard" percentage="14" max="LEVY" level="4" />
+        <Garrison key="el_firebeared_crossbows" percentage="22" max="LEVY" level="3" />
+        <Garrison key="el_broadbeam_underground_guard" percentage="30" max="LEVY" level="3" />
+        <Garrison key="el_firebeared_hammers" percentage="14" max="LEVY" level="3" />
+        <Garrison key="el_broadbeam_shielders" percentage="34" max="LEVY" level="3" />
+        <Garrison key="el_firebeared_crossbows" percentage="18" max="LEVY" level="4" />
+        <Garrison key="el_broadbeam_shielders" percentage="38" max="LEVY" level="4" />
+        <Garrison key="el_broadbeam_underground_guard" percentage="26" max="LEVY" level="4" />
+        <Garrison key="el_firebeared_hammers" percentage="18" max="LEVY" level="4" />
         <MenAtArm type="abrazanim_halberdiers" key="el_broadbeam_pikes" max="INFANTRY" />
         <MenAtArm type="abrazanim_legion" key="el_bridge_wardens" max="INFANTRY" />
         <MenAtArm type="abrazanim_warbows" key="el_firebeared_scouts" max="RANGED" />
@@ -5091,17 +5093,16 @@
         <MenAtArm type="zeba_outriders" key="bal_khandish_horse_archers" max="CAVALRY" />
         <MenAtArm type="zebaback_slavers" key="av_eotheod_nobles" max="CAVALRY" />
     </Faction>
-    <Faction name="Ered-Mithrin" subculture="att_sub_cult_eastern_caucasian">
+    <Faction name="blackroot" subculture="att_sub_cult_eastern_caucasian">
         <General key="em_dragon_trackers" rank="1" />
         <General key="em_dragon_slayers" rank="2" />
         <General key="em_frostguard" rank="3" />
-        <Knights key="em_snow_axes" rank="1" />
-        <Knights key="em_nobles" rank="2" />
+        <Knights key="em_ered_mithrin_pikes" rank="1" />
+        <Knights key="em_bronzewatch_spearmen" rank="2" />
         <Knights key="em_frostguard" rank="3" />
-        <Levies key="em_grey_mountain_scouts" percentage="40" max="LEVY" />
-        <Levies key="em_ered_mithrin_pikes" percentage="20" max="LEVY" />
-        <Levies key="em_dwarven_conscripts" percentage="17" max="LEVY" />
-        <Levies key="em_snow_axes" percentage="23" max="LEVY" />
+        <Levies key="em_grey_mountain_scouts" percentage="25" max="LEVY" />
+        <Levies key="em_ered_mithrin_pikes" percentage="29" max="LEVY" />
+        <Levies key="em_dwarven_conscripts" percentage="46" max="LEVY" />
         <Garrison key="em_grey_mountain_scouts" percentage="41" max="LEVY" level="1" />
         <Garrison key="em_dwarven_conscripts" percentage="19" max="LEVY" level="1" />
         <Garrison key="em_snow_axes" percentage="40" max="LEVY" level="1" />
@@ -5112,9 +5113,9 @@
         <Garrison key="em_bronzewatch_spearmen" percentage="43" max="LEVY" level="3" />
         <Garrison key="em_fist_mountain" percentage="27" max="LEVY" level="3" />
         <Garrison key="em_nobles" percentage="30" max="LEVY" level="3" />
-        <Garrison key="em_ered_mithrin_veterans" percentage="45" max="LEVY" level="4" />
-        <Garrison key="em_fist_mountain" percentage="31" max="LEVY" level="4" />
-        <Garrison key="em_bronzewatch_spearmen" percentage="24" max="LEVY" level="4" />
+        <Garrison key="em_ered_mithrin_veterans" percentage="14" max="LEVY" level="4" />
+        <Garrison key="em_fist_mountain" percentage="45" max="LEVY" level="4" />
+        <Garrison key="em_nobles" percentage="41" max="LEVY" level="4" />
         <MenAtArm type="abrazanim_halberdiers" key="em_ered_mithrin_pikes" max="INFANTRY" />
         <MenAtArm type="abrazanim_legion" key="em_fist_mountain" max="INFANTRY" />
         <MenAtArm type="abrazanim_warbows" key="em_troll_hunters" max="RANGED" />
@@ -5428,32 +5429,32 @@
     </Faction>
     <Faction name="Eregion" subculture="att_sub_cult_nomadic_hunnic">
         <General key="ler_ost-in-edhil_mounted_guard" />
-        <General key="dol_swancav" rank="1" />
-        <General key="roh_eored_king_mark" rank="2" />
-        <General key="bal_haerrim_outriders" rank="3" />
+        <General key="ere_merc_cav" rank="1" />
+        <General key="exe_wr_elvenking_riders_elk" rank="2" />
+        <General key="mor_witchking" rank="3" />
         <Knights key="ler_hollin_cavalry" />
-        <Knights key="ler_hollin_cavalry" rank="1" />
-        <Knights key="exe_wr_thranduil_elk" rank="2" />
-        <Knights key="rhu_crrothean_hill_riders" rank="3" />
+        <Knights key="loth_lor_outriders" rank="1" />
+        <Knights key="roh_eored_king_mark" rank="2" />
+        <Knights key="mor_nazgul" rank="3" />
         <Levies key="ler_eregion_archers" percentage="39" max="LEVY" />
         <Levies key="ler_eregion_spear_infantry" percentage="16" max="LEVY" />
         <Levies key="ler_eregion_swordsmen" percentage="45" max="LEVY" />
-        <Garrison key="ler_volunteer_archers" percentage="30" max="LEVY" level="1" />
-        <Garrison key="ler_volunteer_spears" percentage="44" max="LEVY" level="1" />
-        <Garrison key="ler_eregion_swordsmen" percentage="26" max="LEVY" level="1" />
-        <Garrison key="ler_volunteer_archers" percentage="29" max="LEVY" level="2" />
-        <Garrison key="ler_volunteer_spears" percentage="27" max="LEVY" level="2" />
-        <Garrison key="ler_hollin_cavalry" percentage="44" max="LEVY" level="2" />
-        <Garrison key="ler_eregion_archers" percentage="40" max="LEVY" level="3" />
-        <Garrison key="ler_hollin_cavalry" percentage="15" max="LEVY" level="3" />
-        <Garrison key="ler_eregion_spear_infantry" percentage="11" max="LEVY" level="3" />
-        <Garrison key="ler_eregion_hammer_infantry" percentage="21" max="LEVY" level="3" />
-        <Garrison key="ler_hollin_pike_infantry" percentage="13" max="LEVY" level="3" />
-        <Garrison key="ler_eregion_archers" percentage="20" max="LEVY" level="4" />
-        <Garrison key="ler_hollin_cavalry" percentage="22" max="LEVY" level="4" />
-        <Garrison key="ler_eregion_spear_infantry" percentage="18" max="LEVY" level="4" />
-        <Garrison key="ler_hollin_sword_infantry" percentage="31" max="LEVY" level="4" />
-        <Garrison key="ler_hollin_pike_infantry" percentage="9" max="LEVY" level="4" />
+        <Garrison key="ler_volunteer_archers" percentage="26" max="LEVY" level="1" />
+        <Garrison key="ler_volunteer_spears" percentage="51" max="LEVY" level="1" />
+        <Garrison key="ler_eregion_archers" percentage="23" max="LEVY" level="1" />
+        <Garrison key="ler_volunteer_archers" percentage="28" max="LEVY" level="2" />
+        <Garrison key="ler_volunteer_spears" percentage="36" max="LEVY" level="2" />
+        <Garrison key="ler_eregion_hammer_infantry" percentage="36" max="LEVY" level="2" />
+        <Garrison key="ler_eregion_archers" percentage="23" max="LEVY" level="3" />
+        <Garrison key="ler_hollin_cavalry" percentage="17" max="LEVY" level="3" />
+        <Garrison key="ler_eregion_spear_infantry" percentage="12" max="LEVY" level="3" />
+        <Garrison key="ler_eregion_hammer_infantry" percentage="27" max="LEVY" level="3" />
+        <Garrison key="ler_eregion_swordsmen" percentage="21" max="LEVY" level="3" />
+        <Garrison key="ler_eregion_archers" percentage="26" max="LEVY" level="4" />
+        <Garrison key="ler_hollin_cavalry" percentage="18" max="LEVY" level="4" />
+        <Garrison key="ler_eregion_spear_infantry" percentage="15" max="LEVY" level="4" />
+        <Garrison key="ler_hollin_pike_infantry" percentage="28" max="LEVY" level="4" />
+        <Garrison key="ler_eregion_hammer_infantry" percentage="13" max="LEVY" level="4" />
         <MenAtArm type="abrazanim_halberdiers" key="ler_ost-in-edhil_defenders" max="INFANTRY" />
         <MenAtArm type="abrazanim_legion" key="ler_redhorn_pass_protectors" max="INFANTRY" />
         <MenAtArm type="abrazanim_warbows" key="ler_volunteer_archers" max="RANGED" />
@@ -5768,12 +5769,12 @@
     <Faction name="Goblins" subculture="att_sub_cult_barbarian_germanic_west">
         <General key="gob_goblin_king" />
         <General key="hor_immortals" rank="1" />
-        <General key="gon_imrahil" rank="2" />
-        <General key="mor_nazgul" rank="3" />
+        <General key="exe_wr_elvenking_riders_elk" rank="2" />
+        <General key="bal_khavar" rank="3" />
         <Knights key="gob_warg_pack" />
-        <Knights key="dale_northmen_scouts" rank="1" />
-        <Knights key="gon_cavalry_sword" rank="2" />
-        <Knights key="dor_riders_of_the_vinter_court" rank="3" />
+        <Knights key="dol_patrollers_of_belfalas" rank="1" />
+        <Knights key="roh_king_company" rank="2" />
+        <Knights key="bal_khahar" rank="3" />
         <Levies key="gob_goblin_heavy_archers" percentage="36" max="LEVY" />
         <Levies key="gob_goblin_scrappers" percentage="36" max="LEVY" />
         <Levies key="gob_goblin_blade_warriors" percentage="28" max="LEVY" />
@@ -5781,11 +5782,11 @@
         <Garrison key="gob_goblin_warband" percentage="32" max="LEVY" level="1" />
         <Garrison key="gob_goblin_light_inf" percentage="21" max="LEVY" level="1" />
         <Garrison key="gob_goblin_scrappers" percentage="24" max="LEVY" level="1" />
-        <Garrison key="gob_scavenged_crossbows" percentage="15" max="LEVY" level="2" />
-        <Garrison key="gun_warg_scouts" percentage="28" max="LEVY" level="2" />
-        <Garrison key="gob_goblin_blackshield_spears" percentage="15" max="LEVY" level="2" />
-        <Garrison key="gob_mountain_marauders" percentage="29" max="LEVY" level="2" />
-        <Garrison key="gob_goblin_blackshield_guard" percentage="13" max="LEVY" level="2" />
+        <Garrison key="gob_scavenged_crossbows" percentage="27" max="LEVY" level="2" />
+        <Garrison key="gun_warg_scouts" percentage="19" max="LEVY" level="2" />
+        <Garrison key="gob_underground_wardens" percentage="17" max="LEVY" level="2" />
+        <Garrison key="gob_goblin_blackshield_spears" percentage="20" max="LEVY" level="2" />
+        <Garrison key="gob_mountain_marauders" percentage="17" max="LEVY" level="2" />
         <Garrison key="gob_goblin_heavy_archers" percentage="31" max="LEVY" level="3" />
         <Garrison key="gob_goblin_spear_warriors" percentage="18" max="LEVY" level="3" />
         <Garrison key="gob_mordor_uruks" percentage="26" max="LEVY" level="3" />
@@ -6105,35 +6106,35 @@
         <MenAtArm type="zeba_outriders" key="gun_warg_scouts" max="CAVALRY" />
         <MenAtArm type="zebaback_slavers" key="gob_warg_pack" max="CAVALRY" />
     </Faction>
-    <Faction name="Gondor" subculture="att_sub_cult_roman_west">
+    <Faction name="harondor" subculture="att_sub_cult_roman_west">
         <General key="gon_silver_swan_knights" />
-        <General key="pin_riders" rank="1" />
-        <General key="exe_iml_lords_golden_flower" rank="2" />
-        <General key="mor_witchking" rank="3" />
+        <General key="dol_adrahil" rank="1" />
+        <General key="roh_winfried" rank="2" />
+        <General key="bal_khavar" rank="3" />
         <Knights key="gon_citadel_guard" />
         <Knights key="pin_cavshock" rank="1" />
-        <Knights key="wr_thranduil" rank="2" />
-        <Knights key="arn_aragorn" rank="3" />
+        <Knights key="dg_servants_of_the_eyes" rank="2" />
+        <Knights key="bal_haerrim_outriders" rank="3" />
         <Levies key="gon_spear_militia" percentage="41" max="LEVY" />
         <Levies key="gon_sword_militia" percentage="14" max="LEVY" />
         <Levies key="gon_bow_militia" percentage="45" max="LEVY" />
-        <Garrison key="gon_bow_militia" percentage="21" max="LEVY" level="1" />
-        <Garrison key="gon_anorien_patrollers" percentage="29" max="LEVY" level="1" />
-        <Garrison key="gon_spear_militia" percentage="7" max="LEVY" level="1" />
-        <Garrison key="gon_sword_militia" percentage="18" max="LEVY" level="1" />
-        <Garrison key="gon_hillmen_of_lamedon" percentage="25" max="LEVY" level="1" />
-        <Garrison key="gon_blackroot_archers" percentage="28" max="LEVY" level="2" />
+        <Garrison key="gon_bow_militia" percentage="27" max="LEVY" level="1" />
+        <Garrison key="gon_anorien_patrollers" percentage="28" max="LEVY" level="1" />
+        <Garrison key="gon_spear_militia" percentage="10" max="LEVY" level="1" />
+        <Garrison key="gon_hillmen_of_lamedon" percentage="12" max="LEVY" level="1" />
+        <Garrison key="gon_sword_militia" percentage="23" max="LEVY" level="1" />
+        <Garrison key="gon_blackroot_archers" percentage="7" max="LEVY" level="2" />
         <Garrison key="gon_princes_sergeants" percentage="20" max="LEVY" level="2" />
-        <Garrison key="gon_princes_coastguard" percentage="21" max="LEVY" level="2" />
-        <Garrison key="gon_pelargir_marines" percentage="22" max="LEVY" level="2" />
-        <Garrison key="gon_ringlo_vale_footmen" percentage="9" max="LEVY" level="2" />
-        <Garrison key="gon_archers" percentage="18" max="LEVY" level="3" />
-        <Garrison key="gon_cavalry_sword" percentage="25" max="LEVY" level="3" />
-        <Garrison key="gon_spear_infantry" percentage="16" max="LEVY" level="3" />
-        <Garrison key="gon_sword_infantry" percentage="41" max="LEVY" level="3" />
-        <Garrison key="gon_ithilien_rangers" percentage="37" max="LEVY" level="4" />
-        <Garrison key="gon_archers" percentage="26" max="LEVY" level="4" />
-        <Garrison key="gon_spear_infantry" percentage="37" max="LEVY" level="4" />
+        <Garrison key="gon_princes_coastguard" percentage="30" max="LEVY" level="2" />
+        <Garrison key="gon_ringlo_vale_footmen" percentage="13" max="LEVY" level="2" />
+        <Garrison key="gon_lossarnach_warriors" percentage="30" max="LEVY" level="2" />
+        <Garrison key="gon_archers" percentage="29" max="LEVY" level="3" />
+        <Garrison key="gon_cavalry" percentage="36" max="LEVY" level="3" />
+        <Garrison key="gon_spear_infantry" percentage="14" max="LEVY" level="3" />
+        <Garrison key="gon_sword_infantry" percentage="21" max="LEVY" level="3" />
+        <Garrison key="gon_ithilien_rangers" percentage="38" max="LEVY" level="4" />
+        <Garrison key="gon_spear_infantry" percentage="27" max="LEVY" level="4" />
+        <Garrison key="gon_sword_infantry" percentage="35" max="LEVY" level="4" />
         <MenAtArm type="abrazanim_halberdiers" key="gon_fountain_guard" max="INFANTRY" />
         <MenAtArm type="abrazanim_legion" key="gon_lossarnach_warriors" max="INFANTRY" />
         <MenAtArm type="abrazanim_warbows" key="gon_blackroot_archers" max="RANGED" />
@@ -6452,18 +6453,20 @@
         <Knights key="gun_warg_riders" rank="1" />
         <Knights key="gun_warg_scouts" rank="2" />
         <Knights key="gun_armoured_spear_wargs" rank="3" />
-        <Levies key="gun_tunnel_slaves" percentage="34" max="LEVY" />
-        <Levies key="gun_warg_scouts" percentage="23" max="LEVY" />
-        <Levies key="gun_orc_warband" percentage="43" max="LEVY" />
+        <Levies key="gun_tunnel_slaves" percentage="14" max="LEVY" />
+        <Levies key="gun_warg_riders" percentage="10" max="LEVY" />
+        <Levies key="gun_orc_warband" percentage="12" max="LEVY" />
+        <Levies key="gun_goblin_mercenaries" percentage="32" max="LEVY" />
+        <Levies key="gun_orc_marauders" percentage="32" max="LEVY" />
         <Garrison key="gun_tunnel_slaves" percentage="36" max="LEVY" level="1" />
         <Garrison key="gun_orc_warband" percentage="27" max="LEVY" level="1" />
         <Garrison key="gun_goblin_mercenaries" percentage="16" max="LEVY" level="1" />
         <Garrison key="gun_orc_marauders" percentage="21" max="LEVY" level="1" />
-        <Garrison key="gun_night_hunters" percentage="28" max="LEVY" level="2" />
-        <Garrison key="gun_warg_riders" percentage="9" max="LEVY" level="2" />
-        <Garrison key="gun_rhudaur_infantry" percentage="21" max="LEVY" level="2" />
-        <Garrison key="gun_stalkers" percentage="19" max="LEVY" level="2" />
-        <Garrison key="gun_reavers" percentage="23" max="LEVY" level="2" />
+        <Garrison key="gun_night_hunters" percentage="18" max="LEVY" level="2" />
+        <Garrison key="gun_warg_scouts" percentage="22" max="LEVY" level="2" />
+        <Garrison key="gun_rhudaur_infantry" percentage="14" max="LEVY" level="2" />
+        <Garrison key="gun_stalkers" percentage="21" max="LEVY" level="2" />
+        <Garrison key="gun_reavers" percentage="25" max="LEVY" level="2" />
         <Garrison key="gun_traversers" percentage="21" max="LEVY" level="3" />
         <Garrison key="gun_armoured_blade_wargs" percentage="23" max="LEVY" level="3" />
         <Garrison key="gun_heavy_halberds" percentage="26" max="LEVY" level="3" />
@@ -6784,34 +6787,34 @@
     </Faction>
     <Faction name="Haradrim" subculture="att_sub_cult_barbarian_germanic_west">
         <General key="har_serpent_guards" />
-        <General key="dol_patrollers_of_belfalas" rank="1" />
-        <General key="exe_wr_elvenking_riders_elk" rank="2" />
-        <General key="dale_rhovanion_regent" rank="3" />
+        <General key="los_axecav" rank="1" />
+        <General key="exe_wr_thranduil_elk" rank="2" />
+        <General key="umb_haradrim_auxillaries" rank="3" />
         <Knights key="har_serpent_guards" />
-        <Knights key="dor_merchant_escorts" rank="1" />
-        <Knights key="roh_eored_westfold" rank="2" />
-        <Knights key="dale_rhovanion_regent" rank="3" />
+        <Knights key="pin_mountedswords" rank="1" />
+        <Knights key="av_eotheod_lancers" rank="2" />
+        <Knights key="rhu_crrothean_hill_riders" rank="3" />
         <Levies key="har_harad_archers" percentage="40" max="LEVY" />
         <Levies key="har_harad_swords" percentage="23" max="LEVY" />
         <Levies key="har_mahud_spearmen" percentage="37" max="LEVY" />
-        <Garrison key="har_desert_bowmen" percentage="43" max="LEVY" level="1" />
+        <Garrison key="har_desert_trackers" percentage="22" max="LEVY" level="1" />
         <Garrison key="har_desert_raiders" percentage="25" max="LEVY" level="1" />
-        <Garrison key="har_desert_spears" percentage="32" max="LEVY" level="1" />
-        <Garrison key="har_mahud_hunters" percentage="8" max="LEVY" level="2" />
-        <Garrison key="har_harad_lancers" percentage="21" max="LEVY" level="2" />
-        <Garrison key="har_mahud_spearmen" percentage="14" max="LEVY" level="2" />
-        <Garrison key="har_mahud_clubmen" percentage="32" max="LEVY" level="2" />
-        <Garrison key="har_harad_swords" percentage="25" max="LEVY" level="2" />
-        <Garrison key="har_serpent_archers" percentage="27" max="LEVY" level="3" />
-        <Garrison key="har_serpent_spearmen" percentage="27" max="LEVY" level="3" />
-        <Garrison key="har_serpent_warriors" percentage="14" max="LEVY" level="3" />
-        <Garrison key="har_farharad_mutants" percentage="20" max="LEVY" level="3" />
-        <Garrison key="har_umbar_guards" percentage="12" max="LEVY" level="3" />
-        <Garrison key="har_farharad_ranged_mutants" percentage="16" max="LEVY" level="4" />
-        <Garrison key="har_serpent_spearmen" percentage="8" max="LEVY" level="4" />
-        <Garrison key="har_umbar_ursurpers" percentage="24" max="LEVY" level="4" />
-        <Garrison key="har_umbar_guards" percentage="26" max="LEVY" level="4" />
-        <Garrison key="har_serpent_warriors" percentage="26" max="LEVY" level="4" />
+        <Garrison key="har_desert_spears" percentage="53" max="LEVY" level="1" />
+        <Garrison key="har_corsair_marines" percentage="10" max="LEVY" level="2" />
+        <Garrison key="har_harad_horse_archers" percentage="23" max="LEVY" level="2" />
+        <Garrison key="har_harad_swords" percentage="8" max="LEVY" level="2" />
+        <Garrison key="har_corsair_raiders" percentage="30" max="LEVY" level="2" />
+        <Garrison key="har_mahud_clubmen" percentage="29" max="LEVY" level="2" />
+        <Garrison key="har_serpent_archers" percentage="15" max="LEVY" level="3" />
+        <Garrison key="har_serpent_spearmen" percentage="16" max="LEVY" level="3" />
+        <Garrison key="har_farharad_mutants" percentage="29" max="LEVY" level="3" />
+        <Garrison key="har_mahud_beasttamers" percentage="29" max="LEVY" level="3" />
+        <Garrison key="har_serpent_warriors" percentage="11" max="LEVY" level="3" />
+        <Garrison key="har_farharad_ranged_mutants" percentage="25" max="LEVY" level="4" />
+        <Garrison key="har_serpent_spearmen" percentage="20" max="LEVY" level="4" />
+        <Garrison key="har_mahud_beasttamers" percentage="23" max="LEVY" level="4" />
+        <Garrison key="har_umbar_ursurpers" percentage="16" max="LEVY" level="4" />
+        <Garrison key="har_farharad_mutants" percentage="16" max="LEVY" level="4" />
         <MenAtArm type="abrazanim_halberdiers" key="oroc_stonefoot_halberds" max="INFANTRY" />
         <MenAtArm type="abrazanim_legion" key="har_umbar_guards" max="INFANTRY" />
         <MenAtArm type="abrazanim_warbows" key="har_desert_bowmen" max="RANGED" />
@@ -7125,13 +7128,13 @@
     </Faction>
     <Faction name="Harondor" subculture="att_sub_cult_barbarian_germanic_west">
         <General key="hor_guardspear" />
-        <General key="pin_cavshock" rank="1" />
-        <General key="roh_eored_eastfold" rank="2" />
-        <General key="har_serpent_guards" rank="3" />
+        <General key="pin_riders" rank="1" />
+        <General key="ler_ost-in-edhil_mounted_guard" rank="2" />
+        <General key="umb_haradrim_auxillaries" rank="3" />
         <Knights key="hor_heavycav" />
-        <Knights key="pin_cavsword" rank="1" />
-        <Knights key="exe_wr_thranduil_elk" rank="2" />
-        <Knights key="bal_clan_raiders" rank="3" />
+        <Knights key="dol_patrollers_of_belfalas" rank="1" />
+        <Knights key="mor_the_nine" rank="2" />
+        <Knights key="bal_bane_of_the_steppes" rank="3" />
         <Levies key="hor_levysword" percentage="39" max="LEVY" />
         <Levies key="hor_levyspear" percentage="25" max="LEVY" />
         <Levies key="hor_skirm" percentage="36" max="LEVY" />
@@ -7142,12 +7145,12 @@
         <Garrison key="hor_halberd" percentage="20" max="LEVY" level="2" />
         <Garrison key="hor_mediumsword" percentage="21" max="LEVY" level="2" />
         <Garrison key="hor_mediumspear" percentage="37" max="LEVY" level="2" />
-        <Garrison key="hor_marksmen_rev" percentage="47" max="LEVY" level="3" />
-        <Garrison key="hor_cav" percentage="28" max="LEVY" level="3" />
-        <Garrison key="hor_glaive" percentage="25" max="LEVY" level="3" />
-        <Garrison key="hor_immortals" percentage="43" max="LEVY" level="4" />
-        <Garrison key="hor_elephant" percentage="27" max="LEVY" level="4" />
-        <Garrison key="hor_horsearcher" percentage="30" max="LEVY" level="4" />
+        <Garrison key="hor_marksmen_rev" percentage="30" max="LEVY" level="3" />
+        <Garrison key="hor_horsearcher" percentage="33" max="LEVY" level="3" />
+        <Garrison key="hor_glaive" percentage="37" max="LEVY" level="3" />
+        <Garrison key="hor_immortals" percentage="37" max="LEVY" level="4" />
+        <Garrison key="hor_elephant" percentage="39" max="LEVY" level="4" />
+        <Garrison key="hor_horsearcher" percentage="24" max="LEVY" level="4" />
         <MenAtArm type="abrazanim_halberdiers" key="hor_halberd" max="INFANTRY" />
         <MenAtArm type="abrazanim_legion" key="hor_mediumsword" max="INFANTRY" />
         <MenAtArm type="abrazanim_warbows" key="hor_marksmen_rev" max="RANGED" />
@@ -7460,28 +7463,30 @@
         <MenAtArm type="zebaback_slavers" key="hor_cav" max="CAVALRY" />
     </Faction>
     <Faction name="High Elves" subculture="att_sub_cult_nomadic_hunnic">
-        <General key="iml_elrond" rank="1" />
-        <General key="exe_lin_noldorin_rangers" rank="2" />
-        <General key="exe_lin_remnants_golden_flower" rank="3" />
-        <Knights key="exe_iml_rivendell_riders" rank="1" />
-        <Knights key="iml_cavalry" rank="2" />
+        <General key="iml_guards" rank="1" />
+        <General key="exe_iml_loremasters" rank="2" />
+        <General key="exe_iml_elrond" rank="3" />
+        <Knights key="lin_lindon_scouts" rank="1" />
+        <Knights key="lin_cavalry" rank="2" />
         <Knights key="exe_iml_glorfindel" rank="3" />
-        <Levies key="exe_iml_rivendell_bows" percentage="19" max="LEVY" />
-        <Levies key="exe_iml_rivendell_riders" percentage="19" max="LEVY" />
-        <Levies key="exe_iml_rivendell_longspears" percentage="62" max="LEVY" />
-        <Garrison key="exe_lin_telerin_bows" percentage="15" max="LEVY" level="1" />
-        <Garrison key="exe_iml_rivendell_riders" percentage="23" max="LEVY" level="1" />
-        <Garrison key="exe_lin_straight_road_guardians" percentage="28" max="LEVY" level="1" />
-        <Garrison key="exe_iml_rivendell_longspears" percentage="16" max="LEVY" level="1" />
-        <Garrison key="lin_spearmen" percentage="18" max="LEVY" level="1" />
-        <Garrison key="lin_haven_watchers" percentage="19" max="LEVY" level="2" />
-        <Garrison key="lin_lindon_scouts" percentage="50" max="LEVY" level="2" />
-        <Garrison key="exe_iml_rivendell_longspears" percentage="31" max="LEVY" level="2" />
-        <Garrison key="iml_archers" percentage="9" max="LEVY" level="3" />
-        <Garrison key="iml_cavalry" percentage="36" max="LEVY" level="3" />
-        <Garrison key="exe_iml_spearmen" percentage="22" max="LEVY" level="3" />
-        <Garrison key="exe_iml_sword_infantry" percentage="21" max="LEVY" level="3" />
-        <Garrison key="lin_spearmen" percentage="12" max="LEVY" level="3" />
+        <Levies key="exe_iml_rivendell_bows" percentage="25" max="LEVY" />
+        <Levies key="exe_iml_rivendell_riders" percentage="8" max="LEVY" />
+        <Levies key="exe_iml_rivendell_longspears" percentage="28" max="LEVY" />
+        <Levies key="exe_iml_swords" percentage="13" max="LEVY" />
+        <Levies key="iml_swordsmen" percentage="26" max="LEVY" />
+        <Garrison key="exe_lin_telerin_bows" percentage="31" max="LEVY" level="1" />
+        <Garrison key="exe_iml_lords_golden_flower" percentage="18" max="LEVY" level="1" />
+        <Garrison key="exe_iml_spearmen" percentage="30" max="LEVY" level="1" />
+        <Garrison key="exe_lin_telerin_longspears" percentage="7" max="LEVY" level="1" />
+        <Garrison key="lin_swordsmen" percentage="14" max="LEVY" level="1" />
+        <Garrison key="exe_iml_rivendell_bows" percentage="23" max="LEVY" level="2" />
+        <Garrison key="lin_lindon_scouts" percentage="34" max="LEVY" level="2" />
+        <Garrison key="exe_iml_rivendell_longspears" percentage="43" max="LEVY" level="2" />
+        <Garrison key="lin_archers" percentage="11" max="LEVY" level="3" />
+        <Garrison key="iml_cavalry" percentage="34" max="LEVY" level="3" />
+        <Garrison key="exe_lin_straight_road_guardians" percentage="24" max="LEVY" level="3" />
+        <Garrison key="exe_lin_sword_infantry" percentage="23" max="LEVY" level="3" />
+        <Garrison key="exe_iml_sword_infantry" percentage="8" max="LEVY" level="3" />
         <Garrison key="exe_iml_hidden_valley_rangers" percentage="39" max="LEVY" level="4" />
         <Garrison key="exe_iml_lords_golden_flower" percentage="32" max="LEVY" level="4" />
         <Garrison key="exe_iml_eregion_veterans" percentage="29" max="LEVY" level="4" />
@@ -7798,29 +7803,29 @@
     </Faction>
     <Faction name="Imladris" subculture="att_sub_cult_nomadic_hunnic">
         <General key="iml_guards" />
-        <General key="dale_northmen_scouts" rank="1" />
-        <General key="ler_ost-in-edhil_mounted_guard" rank="2" />
-        <General key="har_serpent_guards" rank="3" />
+        <General key="dor_merchant_escorts" rank="1" />
+        <General key="gon_silver_swan_knights" rank="2" />
+        <General key="bal_haerrim_outriders" rank="3" />
         <Knights key="iml_horse_rangers" />
-        <Knights key="dol_patrollers_of_belfalas" rank="1" />
-        <Knights key="gon_cavalry_sword" rank="2" />
-        <Knights key="bal_loke_rim_cataphracts" rank="3" />
+        <Knights key="hor_immortals" rank="1" />
+        <Knights key="arn_marshals_annuminas" rank="2" />
+        <Knights key="dg_nazgul" rank="3" />
         <Levies key="iml_swordsmen" percentage="37" max="LEVY" />
         <Levies key="exe_iml_warriors" percentage="45" max="LEVY" />
         <Levies key="exe_iml_spearmen" percentage="18" max="LEVY" />
-        <Garrison key="exe_iml_rivendell_bows" percentage="30" max="LEVY" level="1" />
-        <Garrison key="exe_iml_rivendell_riders" percentage="19" max="LEVY" level="1" />
-        <Garrison key="exe_iml_spearmen" percentage="22" max="LEVY" level="1" />
-        <Garrison key="exe_iml_rivendell_longspears" percentage="7" max="LEVY" level="1" />
-        <Garrison key="exe_iml_sword_infantry" percentage="22" max="LEVY" level="1" />
+        <Garrison key="exe_iml_warriors" percentage="31" max="LEVY" level="1" />
+        <Garrison key="exe_iml_rivendell_riders" percentage="9" max="LEVY" level="1" />
+        <Garrison key="exe_iml_spears" percentage="27" max="LEVY" level="1" />
+        <Garrison key="exe_iml_spearmen" percentage="26" max="LEVY" level="1" />
+        <Garrison key="exe_iml_swords" percentage="7" max="LEVY" level="1" />
         <Garrison key="exe_iml_rivendell_bows" percentage="32" max="LEVY" level="2" />
         <Garrison key="exe_iml_rivendell_riders" percentage="35" max="LEVY" level="2" />
         <Garrison key="exe_iml_rivendell_longspears" percentage="33" max="LEVY" level="2" />
-        <Garrison key="iml_archers" percentage="16" max="LEVY" level="3" />
-        <Garrison key="iml_cavalry" percentage="19" max="LEVY" level="3" />
-        <Garrison key="exe_iml_spears" percentage="20" max="LEVY" level="3" />
-        <Garrison key="iml_pikemen" percentage="28" max="LEVY" level="3" />
-        <Garrison key="exe_iml_swords" percentage="17" max="LEVY" level="3" />
+        <Garrison key="exe_iml_warriors" percentage="24" max="LEVY" level="3" />
+        <Garrison key="iml_cavalry" percentage="15" max="LEVY" level="3" />
+        <Garrison key="iml_pikemen" percentage="18" max="LEVY" level="3" />
+        <Garrison key="exe_iml_spearmen" percentage="20" max="LEVY" level="3" />
+        <Garrison key="exe_iml_spears" percentage="23" max="LEVY" level="3" />
         <Garrison key="exe_iml_hidden_valley_rangers" percentage="27" max="LEVY" level="4" />
         <Garrison key="exe_iml_lords_golden_flower" percentage="59" max="LEVY" level="4" />
         <Garrison key="exe_iml_eregion_veterans" percentage="14" max="LEVY" level="4" />
@@ -8137,9 +8142,9 @@
     </Faction>
     <Faction name="Iron Hills" subculture="att_sub_cult_eastern_caucasian">
         <General key="iro_dain_ironfoot" />
-        <General key="pin_cavshock" rank="1" />
-        <General key="ler_ost-in-edhil_mounted_guard" rank="2" />
-        <General key="dale_rhovanion_regent" rank="3" />
+        <General key="exe_wr_lasgalen_riders" rank="1" />
+        <General key="gon_imrahil" rank="2" />
+        <General key="dun_elder_riders" rank="3" />
         <Knights key="tlb_ere_goat_riders" rank="1" />
         <Knights key="tlb_ere_goat_riders" rank="2" />
         <Knights key="hor_immortals" rank="3" />
@@ -8476,12 +8481,12 @@
         <General key="ise_ugluk" rank="2" />
         <General key="ise_white_hand_stormer" rank="3" />
         <Knights key="ise_uruk_hai_infantry" />
-        <Knights key="pin_mountedswords" rank="1" />
-        <Knights key="roh_eored_eastfold" rank="2" />
-        <Knights key="rhu_corcurian_raiders" rank="3" />
-        <Levies key="ise_halforc_spears" percentage="46" max="LEVY" />
-        <Levies key="ise_halforc_axes" percentage="12" max="LEVY" />
-        <Levies key="ise_halforc_spears" percentage="42" max="LEVY" />
+        <Knights key="dol_patrollers_of_belfalas" rank="1" />
+        <Knights key="roh_winfried" rank="2" />
+        <Knights key="roh_household_knights_theodred" rank="3" />
+        <Levies key="ise_halforc_axes" percentage="32" max="LEVY" />
+        <Levies key="ise_halforc_spears" percentage="26" max="LEVY" />
+        <Levies key="ise_halforc_axes" percentage="42" max="LEVY" />
         <Garrison key="ise_goblinmen_bows" percentage="21" max="LEVY" level="1" />
         <Garrison key="ise_dunland_horse_raider" percentage="20" max="LEVY" level="1" />
         <Garrison key="ise_dunland_tribesmen" percentage="26" max="LEVY" level="1" />
@@ -8491,12 +8496,12 @@
         <Garrison key="ise_halforc_spears" percentage="21" max="LEVY" level="2" />
         <Garrison key="ise_halforc_axes" percentage="15" max="LEVY" level="2" />
         <Garrison key="ise_uruk_hai_raiders" percentage="23" max="LEVY" level="2" />
-        <Garrison key="ise_bomb_throwers" percentage="30" max="LEVY" level="3" />
-        <Garrison key="ise_uruk_hai_pikemen" percentage="51" max="LEVY" level="3" />
-        <Garrison key="ise_uruk_hai_infantry" percentage="19" max="LEVY" level="3" />
+        <Garrison key="ise_uruk_hai_crossbowmen" percentage="41" max="LEVY" level="3" />
+        <Garrison key="ise_uruk_hai_pikemen" percentage="17" max="LEVY" level="3" />
+        <Garrison key="ise_uruk_hai_infantry" percentage="42" max="LEVY" level="3" />
         <Garrison key="ise_berserker" percentage="28" max="LEVY" level="4" />
-        <Garrison key="ise_uruk_hai_infantry" percentage="55" max="LEVY" level="4" />
-        <Garrison key="ise_uruk_hai_pikemen" percentage="17" max="LEVY" level="4" />
+        <Garrison key="ise_uruk_hai_infantry" percentage="40" max="LEVY" level="4" />
+        <Garrison key="ise_uruk_hai_pikemen" percentage="32" max="LEVY" level="4" />
         <MenAtArm type="abrazanim_halberdiers" key="ise_uruk_hai_pikemen" max="INFANTRY" />
         <MenAtArm type="abrazanim_legion" key="ise_white_hand_stormer" max="INFANTRY" />
         <MenAtArm type="abrazanim_warbows" key="ise_goblinmen_bows" max="RANGED" />
@@ -8812,27 +8817,27 @@
         <General key="kha_bane_of_the_steppes" rank="1" />
         <General key="kha_eastern_legion" rank="2" />
         <General key="kha_wainrider_nobles" rank="3" />
-        <Knights key="kha_khandish_outriders" rank="1" />
+        <Knights key="kha_khandish_horse_archers" rank="1" />
         <Knights key="kha_akha_chosen" rank="2" />
-        <Knights key="kha_wainrider_nobles" rank="3" />
+        <Knights key="kha_variag_horse_archers" rank="3" />
         <Levies key="kha_wainrider_spear_warriors" percentage="27" max="LEVY" />
         <Levies key="kha_khandish_bowmen" percentage="18" max="LEVY" />
         <Levies key="kha_khandish_raiders" percentage="55" max="LEVY" />
         <Garrison key="kha_akha_raiders" percentage="30" max="LEVY" level="1" />
         <Garrison key="kha_akha_tribalists" percentage="23" max="LEVY" level="1" />
         <Garrison key="kha_akha_spearfishers" percentage="47" max="LEVY" level="1" />
-        <Garrison key="kha_khandish_bowmen" percentage="25" max="LEVY" level="2" />
-        <Garrison key="kha_khandish_horse_archers" percentage="27" max="LEVY" level="2" />
-        <Garrison key="kha_khandish_raiders" percentage="26" max="LEVY" level="2" />
-        <Garrison key="kha_khandish_sentries" percentage="16" max="LEVY" level="2" />
-        <Garrison key="kha_khandish_berserkers" percentage="6" max="LEVY" level="2" />
-        <Garrison key="kha_variag_bowmen" percentage="36" max="LEVY" level="3" />
-        <Garrison key="kha_akha_chosen" percentage="31" max="LEVY" level="3" />
-        <Garrison key="kha_wainrider_spear_warriors" percentage="10" max="LEVY" level="3" />
-        <Garrison key="kha_variag_warriors" percentage="23" max="LEVY" level="3" />
-        <Garrison key="kha_khandish_cataphracts" percentage="18" max="LEVY" level="4" />
-        <Garrison key="kha_wainrider_spear_warriors" percentage="40" max="LEVY" level="4" />
-        <Garrison key="kha_variag_warriors" percentage="42" max="LEVY" level="4" />
+        <Garrison key="kha_khandish_bowmen" percentage="28" max="LEVY" level="2" />
+        <Garrison key="kha_khandish_horse_archers" percentage="11" max="LEVY" level="2" />
+        <Garrison key="kha_khandish_sentries" percentage="26" max="LEVY" level="2" />
+        <Garrison key="kha_khandish_berserkers" percentage="28" max="LEVY" level="2" />
+        <Garrison key="kha_khandish_raiders" percentage="7" max="LEVY" level="2" />
+        <Garrison key="kha_variag_bowmen" percentage="19" max="LEVY" level="3" />
+        <Garrison key="kha_variag_horse_archers" percentage="23" max="LEVY" level="3" />
+        <Garrison key="kha_wainrider_spear_warriors" percentage="27" max="LEVY" level="3" />
+        <Garrison key="kha_variag_warriors" percentage="31" max="LEVY" level="3" />
+        <Garrison key="kha_khandish_cataphracts" percentage="42" max="LEVY" level="4" />
+        <Garrison key="kha_wainrider_spear_warriors" percentage="34" max="LEVY" level="4" />
+        <Garrison key="kha_akha_chosen" percentage="24" max="LEVY" level="4" />
         <MenAtArm type="abrazanim_halberdiers" key="kha_wainrider_spear_warriors" max="INFANTRY" />
         <MenAtArm type="abrazanim_legion" key="kha_khandish_sentries" max="INFANTRY" />
         <MenAtArm type="abrazanim_warbows" key="kha_akha_hunters" max="RANGED" />
@@ -9148,23 +9153,23 @@
         <General key="khz_durins_gate_guard" rank="1" />
         <General key="khz_durins_mithril_guard" rank="2" />
         <General key="ere_balin" rank="3" />
-        <Knights key="khz_darrowdelf_swordsmen" rank="1" />
-        <Knights key="khz_champions_of_mountain" rank="2" />
-        <Knights key="khz_veterans_khazad_dum" rank="3" />
+        <Knights key="khz_mountain_travellers" rank="1" />
+        <Knights key="khz_legionaries" rank="2" />
+        <Knights key="khz_durins_mithril_guard" rank="3" />
         <Levies key="khz_hunters" percentage="36" max="LEVY" />
         <Levies key="khz_longbeard_spears" percentage="45" max="LEVY" />
         <Levies key="ere_miners" percentage="19" max="LEVY" />
         <Garrison key="khz_hunters" percentage="31" max="LEVY" level="1" />
         <Garrison key="khz_longbeard_spears" percentage="14" max="LEVY" level="1" />
         <Garrison key="ere_miners" percentage="55" max="LEVY" level="1" />
-        <Garrison key="khz_axe_throwers" percentage="29" max="LEVY" level="2" />
-        <Garrison key="khz_protectors_azanulbizar" percentage="22" max="LEVY" level="2" />
-        <Garrison key="khz_watchers_mirrormere" percentage="19" max="LEVY" level="2" />
-        <Garrison key="khz_mountain_travellers" percentage="24" max="LEVY" level="2" />
-        <Garrison key="khz_darrowdelf_swordsmen" percentage="6" max="LEVY" level="2" />
-        <Garrison key="khz_crossbows" percentage="38" max="LEVY" level="3" />
-        <Garrison key="khz_legionaries" percentage="40" max="LEVY" level="3" />
-        <Garrison key="khz_protectors_azanulbizar" percentage="22" max="LEVY" level="3" />
+        <Garrison key="khz_axe_throwers" percentage="39" max="LEVY" level="2" />
+        <Garrison key="khz_halberds" percentage="10" max="LEVY" level="2" />
+        <Garrison key="khz_mountain_travellers" percentage="18" max="LEVY" level="2" />
+        <Garrison key="khz_watchers_mirrormere" percentage="10" max="LEVY" level="2" />
+        <Garrison key="khz_protectors_azanulbizar" percentage="23" max="LEVY" level="2" />
+        <Garrison key="khz_crossbows" percentage="23" max="LEVY" level="3" />
+        <Garrison key="khz_legionaries" percentage="25" max="LEVY" level="3" />
+        <Garrison key="khz_axe_throwers" percentage="52" max="LEVY" level="3" />
         <Garrison key="khz_veterans_khazad_dum" percentage="36" max="LEVY" level="4" />
         <Garrison key="khz_mansion_reclaimers" percentage="38" max="LEVY" level="4" />
         <Garrison key="khz_champions_of_mountain" percentage="26" max="LEVY" level="4" />
@@ -9481,34 +9486,34 @@
     </Faction>
     <Faction name="Lindon" subculture="att_sub_cult_nomadic_hunnic">
         <General key="lin_nobles" />
-        <General key="dol_adrahil" rank="1" />
-        <General key="roh_eored_westfold" rank="2" />
-        <General key="dun_elder_riders" rank="3" />
+        <General key="exe_wr_lasgalen_riders" rank="1" />
+        <General key="exe_iml_glorfindel" rank="2" />
+        <General key="rhu_corcurian_raiders" rank="3" />
         <Knights key="lin_cavalry" />
-        <Knights key="pin_riders" rank="1" />
-        <Knights key="exe_iml_lords_golden_flower" rank="2" />
-        <Knights key="bal_loke_rim_cataphracts" rank="3" />
+        <Knights key="dale_merchant_escorts" rank="1" />
+        <Knights key="roh_eorling_knights" rank="2" />
+        <Knights key="kha_khandish_outriders" rank="3" />
         <Levies key="exe_lin_sword_infantry" percentage="22" max="LEVY" />
         <Levies key="lin_spearmen" percentage="53" max="LEVY" />
         <Levies key="lin_archers" percentage="25" max="LEVY" />
-        <Garrison key="lin_haven_watchers" percentage="32" max="LEVY" level="1" />
-        <Garrison key="lin_lindon_scouts" percentage="16" max="LEVY" level="1" />
+        <Garrison key="lin_haven_watchers" percentage="9" max="LEVY" level="1" />
+        <Garrison key="lin_lindon_scouts" percentage="18" max="LEVY" level="1" />
         <Garrison key="exe_lin_telerin_longspears" percentage="23" max="LEVY" level="1" />
-        <Garrison key="exe_lin_straight_road_guardians" percentage="11" max="LEVY" level="1" />
-        <Garrison key="lin_swordsmen" percentage="18" max="LEVY" level="1" />
+        <Garrison key="lin_swordsmen" percentage="30" max="LEVY" level="1" />
+        <Garrison key="exe_lin_telerin_swords" percentage="20" max="LEVY" level="1" />
         <Garrison key="lin_falathrim_seafarers" percentage="40" max="LEVY" level="2" />
         <Garrison key="lin_lindon_scouts" percentage="36" max="LEVY" level="2" />
         <Garrison key="lin_haven_watchers" percentage="24" max="LEVY" level="2" />
         <Garrison key="lin_archers" percentage="14" max="LEVY" level="3" />
-        <Garrison key="lin_cavalry" percentage="8" max="LEVY" level="3" />
-        <Garrison key="exe_lin_straight_road_guardians" percentage="14" max="LEVY" level="3" />
-        <Garrison key="lin_swordsmen" percentage="32" max="LEVY" level="3" />
-        <Garrison key="exe_lin_telerin_longspears" percentage="32" max="LEVY" level="3" />
-        <Garrison key="exe_lin_telerin_bows" percentage="29" max="LEVY" level="4" />
-        <Garrison key="lin_cavalry" percentage="23" max="LEVY" level="4" />
-        <Garrison key="exe_lin_straight_road_guardians" percentage="10" max="LEVY" level="4" />
-        <Garrison key="lin_swordsmen" percentage="19" max="LEVY" level="4" />
-        <Garrison key="exe_lin_telerin_swords" percentage="19" max="LEVY" level="4" />
+        <Garrison key="lin_cavalry" percentage="7" max="LEVY" level="3" />
+        <Garrison key="exe_lin_straight_road_guardians" percentage="18" max="LEVY" level="3" />
+        <Garrison key="exe_lin_sword_infantry" percentage="35" max="LEVY" level="3" />
+        <Garrison key="exe_lin_telerin_swords" percentage="26" max="LEVY" level="3" />
+        <Garrison key="exe_lin_telerin_bows" percentage="20" max="LEVY" level="4" />
+        <Garrison key="lin_cavalry" percentage="21" max="LEVY" level="4" />
+        <Garrison key="lin_spearmen" percentage="20" max="LEVY" level="4" />
+        <Garrison key="lin_swordsmen" percentage="20" max="LEVY" level="4" />
+        <Garrison key="exe_lin_telerin_longspears" percentage="19" max="LEVY" level="4" />
         <MenAtArm type="abrazanim_halberdiers" key="lin_spearmen" max="INFANTRY" />
         <MenAtArm type="abrazanim_legion" key="lin_swordsmen" max="INFANTRY" />
         <MenAtArm type="abrazanim_warbows" key="lin_haven_watchers" max="RANGED" />
@@ -9822,33 +9827,33 @@
     </Faction>
     <Faction name="Lothlorien" subculture="att_sub_cult_barbarian_germanic_west">
         <General key="loth_twilight_guard" />
-        <General key="leb_retainercav" rank="1" />
-        <General key="dale_cavalry_regiment" rank="2" />
-        <General key="kha_khandish_outriders" rank="3" />
+        <General key="dol_adrahil" rank="1" />
+        <General key="gon_silver_swan_knights" rank="2" />
+        <General key="rhu_corcurian_raiders" rank="3" />
         <Knights key="loth_lor_outriders" rank="1" />
         <Knights key="Lorien_Bow_Cav" rank="2" />
         <Knights key="loth_nimrodel_patrollers" rank="3" />
         <Levies key="Galadhrim_Spear_Infantry" percentage="35" max="LEVY" />
         <Levies key="Galadhrim_Sword_Infantry" percentage="41" max="LEVY" />
         <Levies key="loth_galad_bow_warriors" percentage="24" max="LEVY" />
-        <Garrison key="loth_galadhon_archers" percentage="10" max="LEVY" level="1" />
-        <Garrison key="loth_nimrodel_patrollers" percentage="42" max="LEVY" level="1" />
-        <Garrison key="loth_naith_infantry" percentage="18" max="LEVY" level="1" />
-        <Garrison key="Lorien_Sword_Sentries" percentage="12" max="LEVY" level="1" />
-        <Garrison key="Galadhrim_Sword_Infantry" percentage="18" max="LEVY" level="1" />
-        <Garrison key="loth_galadhon_archers" percentage="6" max="LEVY" level="2" />
-        <Garrison key="loth_lor_outriders" percentage="22" max="LEVY" level="2" />
-        <Garrison key="loth_lor_spear_company" percentage="25" max="LEVY" level="2" />
-        <Garrison key="loth_naith_infantry" percentage="18" max="LEVY" level="2" />
-        <Garrison key="Lorien_Sword_Sentries" percentage="29" max="LEVY" level="2" />
+        <Garrison key="loth_lor_sentries" percentage="20" max="LEVY" level="1" />
+        <Garrison key="Lorien_Bow_Cav" percentage="28" max="LEVY" level="1" />
+        <Garrison key="loth_galad_spear_warriors" percentage="15" max="LEVY" level="1" />
+        <Garrison key="Lorien_Swords" percentage="20" max="LEVY" level="1" />
+        <Garrison key="loth_galad_sword_warriors" percentage="17" max="LEVY" level="1" />
+        <Garrison key="loth_lor_sentries" percentage="24" max="LEVY" level="2" />
+        <Garrison key="loth_lor_outriders" percentage="18" max="LEVY" level="2" />
+        <Garrison key="loth_lor_spear_company" percentage="27" max="LEVY" level="2" />
+        <Garrison key="Lorien_Sword_Sentries" percentage="11" max="LEVY" level="2" />
+        <Garrison key="loth_naith_infantry" percentage="20" max="LEVY" level="2" />
         <Garrison key="loth_galad_bow_warriors" percentage="14" max="LEVY" level="3" />
         <Garrison key="loth_galad_spear_warriors" percentage="22" max="LEVY" level="3" />
         <Garrison key="Galadhrim_Spear_Infantry" percentage="25" max="LEVY" level="3" />
         <Garrison key="loth_galad_sword_warriors" percentage="24" max="LEVY" level="3" />
         <Garrison key="Galadhrim_Sword_Infantry" percentage="15" max="LEVY" level="3" />
-        <Garrison key="Lorien_Bows" percentage="24" max="LEVY" level="4" />
-        <Garrison key="Lorien_Bow_Cav" percentage="44" max="LEVY" level="4" />
-        <Garrison key="Lorien_Swords" percentage="32" max="LEVY" level="4" />
+        <Garrison key="Lorien_Bows" percentage="57" max="LEVY" level="4" />
+        <Garrison key="Lorien_Bow_Cav" percentage="19" max="LEVY" level="4" />
+        <Garrison key="Lorien_Swords" percentage="24" max="LEVY" level="4" />
         <MenAtArm type="abrazanim_halberdiers" key="loth_galad_spear_warriors" max="INFANTRY" />
         <MenAtArm type="abrazanim_legion" key="koh_celin_amroth_sentinels" max="INFANTRY" />
         <MenAtArm type="abrazanim_warbows" key="loth_galadhon_archers" max="RANGED" />
@@ -10162,25 +10167,25 @@
     </Faction>
     <Faction name="Lothlórien" subculture="att_sub_cult_nomadic_hunnic">
         <General key="loth_twilight_guard" />
-        <General key="dale_merchant_escorts" rank="1" />
-        <General key="dale_cavalry_regiment" rank="2" />
-        <General key="kha_khandish_outriders" rank="3" />
+        <General key="ere_merc_cav" rank="1" />
+        <General key="roh_eored_king_mark" rank="2" />
+        <General key="rhu_corcurian_raiders" rank="3" />
         <Knights key="loth_lor_outriders" rank="1" />
         <Knights key="Lorien_Bow_Cav" rank="2" />
         <Knights key="loth_nimrodel_patrollers" rank="3" />
         <Levies key="Galadhrim_Spear_Infantry" percentage="31" max="LEVY" />
         <Levies key="Galadhrim_Sword_Infantry" percentage="21" max="LEVY" />
         <Levies key="loth_galad_bow_warriors" percentage="48" max="LEVY" />
-        <Garrison key="Caras_Galadhon_Guards" percentage="21" max="LEVY" level="1" />
-        <Garrison key="loth_nimrodel_patrollers" percentage="20" max="LEVY" level="1" />
-        <Garrison key="loth_naith_infantry" percentage="20" max="LEVY" level="1" />
-        <Garrison key="loth_lor_sword_company" percentage="19" max="LEVY" level="1" />
-        <Garrison key="loth_amroth_sentinels" percentage="20" max="LEVY" level="1" />
-        <Garrison key="Lorien_Bow_Sentries" percentage="14" max="LEVY" level="2" />
-        <Garrison key="loth_nimrodel_patrollers" percentage="28" max="LEVY" level="2" />
-        <Garrison key="loth_naith_infantry" percentage="12" max="LEVY" level="2" />
-        <Garrison key="loth_lor_spear_company" percentage="23" max="LEVY" level="2" />
-        <Garrison key="loth_amroth_sentinels" percentage="23" max="LEVY" level="2" />
+        <Garrison key="Lorien_Bow_Sentries" percentage="8" max="LEVY" level="1" />
+        <Garrison key="loth_nimrodel_patrollers" percentage="22" max="LEVY" level="1" />
+        <Garrison key="loth_naith_infantry" percentage="29" max="LEVY" level="1" />
+        <Garrison key="Lorien_Swords" percentage="15" max="LEVY" level="1" />
+        <Garrison key="loth_lor_spear_company" percentage="26" max="LEVY" level="1" />
+        <Garrison key="loth_galadhon_archers" percentage="27" max="LEVY" level="2" />
+        <Garrison key="loth_nimrodel_patrollers" percentage="17" max="LEVY" level="2" />
+        <Garrison key="loth_lor_spear_company" percentage="11" max="LEVY" level="2" />
+        <Garrison key="loth_amroth_sentinels" percentage="24" max="LEVY" level="2" />
+        <Garrison key="loth_lor_sword_company" percentage="21" max="LEVY" level="2" />
         <Garrison key="loth_galad_bow_warriors" percentage="16" max="LEVY" level="3" />
         <Garrison key="Galadhrim_Spear_Infantry" percentage="14" max="LEVY" level="3" />
         <Garrison key="loth_galad_spear_warriors" percentage="19" max="LEVY" level="3" />
@@ -10500,33 +10505,33 @@
         <MenAtArm type="zeba_outriders" key="Lorien_Bow_Cav" max="CAVALRY" />
         <MenAtArm type="zebaback_slavers" key="loth_lor_outriders" max="CAVALRY" />
     </Faction>
-    <Faction name="Mordor" subculture="att_sub_cult_barbarian_germanic_west">
+    <Faction name="Gundabad" subculture="att_sub_cult_barbarian_germanic_west">
         <General key="mor_gothmog" rank="1" />
         <General key="mor_the_nine" rank="2" />
         <General key="mor_othrod" rank="3" />
         <Knights key="mor_servants_of_the_eyes" />
-        <Knights key="pin_riders" rank="1" />
-        <Knights key="roh_king_company" rank="2" />
-        <Knights key="har_harad_lancers" rank="3" />
+        <Knights key="ler_hollin_cavalry" rank="1" />
+        <Knights key="dg_servants_of_the_eyes" rank="2" />
+        <Knights key="roh_household_knights_theodred" rank="3" />
         <Levies key="mor_orc_rabble" percentage="42" max="LEVY" />
         <Levies key="mor_orc_rabble_bowmen" percentage="37" max="LEVY" />
         <Levies key="mor_orc_warband" percentage="21" max="LEVY" />
         <Garrison key="mor_warg_sentries" percentage="28" max="LEVY" level="1" />
         <Garrison key="mor_orc_pillagers" percentage="55" max="LEVY" level="1" />
         <Garrison key="mor_orc_warband" percentage="17" max="LEVY" level="1" />
-        <Garrison key="mor_orc_archers" percentage="25" max="LEVY" level="2" />
-        <Garrison key="mor_warg_riders" percentage="25" max="LEVY" level="2" />
-        <Garrison key="mor_orc_spears" percentage="14" max="LEVY" level="2" />
-        <Garrison key="mor_morgul_orcs" percentage="11" max="LEVY" level="2" />
-        <Garrison key="mor_orc_warriors" percentage="25" max="LEVY" level="2" />
+        <Garrison key="mor_orc_archers" percentage="15" max="LEVY" level="2" />
+        <Garrison key="mor_warg_riders" percentage="14" max="LEVY" level="2" />
+        <Garrison key="mor_orc_pikes" percentage="21" max="LEVY" level="2" />
+        <Garrison key="mor_orc_warriors" percentage="22" max="LEVY" level="2" />
+        <Garrison key="mor_morgul_orcs" percentage="28" max="LEVY" level="2" />
         <Garrison key="mor_uruk_archers" percentage="17" max="LEVY" level="3" />
         <Garrison key="mor_uruk_spears" percentage="27" max="LEVY" level="3" />
         <Garrison key="gob_mordor_uruks" percentage="8" max="LEVY" level="3" />
         <Garrison key="mor_uruk_throng" percentage="29" max="LEVY" level="3" />
         <Garrison key="mor_morgul_legion" percentage="19" max="LEVY" level="3" />
-        <Garrison key="mor_servants_of_the_eyes" percentage="26" max="LEVY" level="4" />
-        <Garrison key="mor_olog_hai" percentage="25" max="LEVY" level="4" />
-        <Garrison key="mor_morgul_legion" percentage="49" max="LEVY" level="4" />
+        <Garrison key="mor_servants_of_the_eyes" percentage="44" max="LEVY" level="4" />
+        <Garrison key="mor_olog_hai" percentage="24" max="LEVY" level="4" />
+        <Garrison key="mor_morgul_legion" percentage="32" max="LEVY" level="4" />
         <MenAtArm type="abrazanim_halberdiers" key="mor_orc_pikes" max="INFANTRY" />
         <MenAtArm type="abrazanim_legion" key="mor_morgul_wargs" max="INFANTRY" />
         <MenAtArm type="abrazanim_warbows" key="mor_orc_archers" max="RANGED" />
@@ -10838,7 +10843,7 @@
         <MenAtArm type="zeba_outriders" key="mor_warg_sentries" max="CAVALRY" />
         <MenAtArm type="zebaback_slavers" key="mor_warg_riders" max="CAVALRY" />
     </Faction>
-    <Faction name="Northern Dunedain" subculture="att_sub_cult_barbarian_germanic_west">
+    <Faction name="pinnath" subculture="att_sub_cult_barbarian_germanic_west">
         <General key="bal_bane_of_the_steppes" rank="1" />
         <General key="bal_khavar" rank="2" />
         <General key="bal_khahar" rank="3" />
@@ -11538,34 +11543,34 @@
         <MenAtArm type="zebaback_slavers" key="lin_cavalry" max="CAVALRY" />
     </Faction>
     <Faction name="Orcs Of The North" subculture="att_sub_cult_barbarian_germanic_west">
-        <General key="tomb_gundabad_citadel" rank="1" />
-        <General key="tomb_gundabad_raiders" rank="2" />
-        <General key="gob_chieftan_guard" rank="3" />
+        <General key="tomb_gundabad_warlord" rank="1" />
+        <General key="dg_nazgul" rank="2" />
+        <General key="gob_goblin_bodyguards" rank="3" />
         <Knights key="dg_servants_of_the_eyes" rank="1" />
         <Knights key="dg_nazgul" rank="2" />
         <Knights key="gun_armoured_spear_wargs" rank="3" />
-        <Levies key="gob_snaga_javelin" percentage="22" max="LEVY" />
-        <Levies key="dg_nazgul" percentage="22" max="LEVY" />
+        <Levies key="gob_snaga_javelin" percentage="24" max="LEVY" />
+        <Levies key="dg_nazgul" percentage="23" max="LEVY" />
         <Levies key="gob_goblin_warband" percentage="13" max="LEVY" />
-        <Levies key="gob_goblin_scrappers" percentage="23" max="LEVY" />
-        <Levies key="gob_goblin_light_inf" percentage="20" max="LEVY" />
+        <Levies key="gob_goblin_scrappers" percentage="18" max="LEVY" />
+        <Levies key="gob_goblin_light_inf" percentage="22" max="LEVY" />
         <Garrison key="gob_snaga_javelin" percentage="31" max="LEVY" level="1" />
         <Garrison key="gob_goblin_warband" percentage="22" max="LEVY" level="1" />
         <Garrison key="gob_goblin_scrappers" percentage="25" max="LEVY" level="1" />
         <Garrison key="gob_goblin_light_inf" percentage="22" max="LEVY" level="1" />
-        <Garrison key="gob_mountain_pass_scout" percentage="19" max="LEVY" level="2" />
-        <Garrison key="gob_underground_wardens" percentage="18" max="LEVY" level="2" />
-        <Garrison key="gob_goblin_blackshield_spears" percentage="27" max="LEVY" level="2" />
-        <Garrison key="gob_night_raiders" percentage="26" max="LEVY" level="2" />
-        <Garrison key="tomb_gundabad_goblins" percentage="10" max="LEVY" level="2" />
-        <Garrison key="tomb_gundabad_traversers" percentage="20" max="LEVY" level="3" />
-        <Garrison key="dg_guldur_pikes" percentage="18" max="LEVY" level="3" />
-        <Garrison key="tomb_gundabad_halberd" percentage="22" max="LEVY" level="3" />
-        <Garrison key="dg_guldur_glaives" percentage="11" max="LEVY" level="3" />
-        <Garrison key="tomb_gundabad_blades" percentage="29" max="LEVY" level="3" />
-        <Garrison key="dg_servants_of_the_eyes" percentage="25" max="LEVY" level="4" />
-        <Garrison key="mor_olog_hai" percentage="31" max="LEVY" level="4" />
-        <Garrison key="tomb_gundabad_rhudaur_infantry" percentage="44" max="LEVY" level="4" />
+        <Garrison key="tomb_gundabad_night_hunters" percentage="21" max="LEVY" level="2" />
+        <Garrison key="gob_underground_wardens" percentage="22" max="LEVY" level="2" />
+        <Garrison key="gob_goblin_blackshield_guard" percentage="24" max="LEVY" level="2" />
+        <Garrison key="tomb_gundabad_rhudaur_macemen" percentage="21" max="LEVY" level="2" />
+        <Garrison key="tomb_gundabad_stalkers" percentage="12" max="LEVY" level="2" />
+        <Garrison key="tomb_gundabad_traversers" percentage="16" max="LEVY" level="3" />
+        <Garrison key="dg_guldur_pikes" percentage="29" max="LEVY" level="3" />
+        <Garrison key="tomb_gundabad_rhudaur_infantry" percentage="16" max="LEVY" level="3" />
+        <Garrison key="dg_guldur_blades" percentage="13" max="LEVY" level="3" />
+        <Garrison key="tomb_gundabad_blades" percentage="26" max="LEVY" level="3" />
+        <Garrison key="dg_servants_of_the_eyes" percentage="17" max="LEVY" level="4" />
+        <Garrison key="mor_olog_hai" percentage="40" max="LEVY" level="4" />
+        <Garrison key="tomb_gundabad_traversers" percentage="43" max="LEVY" level="4" />
         <MenAtArm type="abrazanim_halberdiers" key="tomb_gundabad_halberd" max="INFANTRY" />
         <MenAtArm type="abrazanim_legion" key="gob_night_raiders" max="INFANTRY" />
         <MenAtArm type="abrazanim_warbows" key="gob_goblin_heavy_archers" max="RANGED" />
@@ -11877,37 +11882,36 @@
         <MenAtArm type="zeba_outriders" key="roh_horse_archers" max="CAVALRY" />
         <MenAtArm type="zebaback_slavers" key="gun_warg_riders" max="CAVALRY" />
     </Faction>
-    <Faction name="Orocarni North" subculture="att_sub_cult_eastern_caucasian">
+    <Faction name="Easterlings" subculture="att_sub_cult_eastern_caucasian">
         <General key="oroc_stonefoot_guards" rank="1" />
         <General key="oro_stonefoot_guards" rank="2" />
         <General key="oroc_blacklock_nobles" rank="3" />
-        <Knights key="oro_axes" rank="1" />
-        <Knights key="oro_blacklock_infantry" rank="2" />
-        <Knights key="oroc_blacklock_warriors" rank="3" />
-        <Levies key="oro_bows" percentage="25" max="LEVY" />
-        <Levies key="oro_halberds" percentage="23" max="LEVY" />
-        <Levies key="oroc_axes" percentage="24" max="LEVY" />
-        <Levies key="oro_spears" percentage="28" max="LEVY" />
-        <Garrison key="oro_skirmishers" percentage="30" max="LEVY" level="1" />
-        <Garrison key="oro_halberds" percentage="13" max="LEVY" level="1" />
-        <Garrison key="oroc_spears" percentage="25" max="LEVY" level="1" />
-        <Garrison key="oro_axes" percentage="16" max="LEVY" level="1" />
-        <Garrison key="oroc_axes" percentage="16" max="LEVY" level="1" />
-        <Garrison key="oro_stonefoot_halberds" percentage="32" max="LEVY" level="2" />
-        <Garrison key="oroc_stonefoot_pikes" percentage="20" max="LEVY" level="2" />
+        <Knights key="oro_halberds" rank="1" />
+        <Knights key="oro_stonefoot_halberds" rank="2" />
+        <Knights key="oro_stonefoot_guards" rank="3" />
+        <Levies key="oroc_skirmishers" percentage="44" max="LEVY" />
+        <Levies key="oroc_spears" percentage="17" max="LEVY" />
+        <Levies key="oro_halberds" percentage="39" max="LEVY" />
+        <Garrison key="oro_bows" percentage="29" max="LEVY" level="1" />
+        <Garrison key="oroc_spears" percentage="10" max="LEVY" level="1" />
+        <Garrison key="oro_axes" percentage="22" max="LEVY" level="1" />
+        <Garrison key="oro_spears" percentage="12" max="LEVY" level="1" />
+        <Garrison key="oro_halberds" percentage="27" max="LEVY" level="1" />
+        <Garrison key="oro_stonefoot_halberds" percentage="14" max="LEVY" level="2" />
+        <Garrison key="oro_stonefoot_pikes" percentage="28" max="LEVY" level="2" />
+        <Garrison key="oroc_stonefoot_halberds" percentage="18" max="LEVY" level="2" />
         <Garrison key="oroc_blacklock_infantry" percentage="12" max="LEVY" level="2" />
-        <Garrison key="oro_stonefoot_pikes" percentage="15" max="LEVY" level="2" />
-        <Garrison key="oroc_stonefoot_halberds" percentage="21" max="LEVY" level="2" />
-        <Garrison key="oro_stonefoot_heavy_pikes" percentage="19" max="LEVY" level="3" />
-        <Garrison key="oroc_stonefoot_heavy_pikes" percentage="10" max="LEVY" level="3" />
-        <Garrison key="oro_blacklock_heavy_infantry" percentage="28" max="LEVY" level="3" />
-        <Garrison key="oroc_blacklock_heavy_infantry" percentage="31" max="LEVY" level="3" />
-        <Garrison key="oroc_blacklock_warriors" percentage="12" max="LEVY" level="3" />
-        <Garrison key="oro_stonefoot_heavy_pikes" percentage="20" max="LEVY" level="4" />
-        <Garrison key="oro_blacklock_warriors" percentage="22" max="LEVY" level="4" />
-        <Garrison key="oro_blacklock_heavy_infantry" percentage="37" max="LEVY" level="4" />
-        <Garrison key="oroc_stonefoot_heavy_pikes" percentage="8" max="LEVY" level="4" />
-        <Garrison key="oroc_blacklock_heavy_infantry" percentage="13" max="LEVY" level="4" />
+        <Garrison key="oroc_stonefoot_pikes" percentage="28" max="LEVY" level="2" />
+        <Garrison key="oro_stonefoot_heavy_pikes" percentage="22" max="LEVY" level="3" />
+        <Garrison key="oroc_blacklock_warriors" percentage="18" max="LEVY" level="3" />
+        <Garrison key="oroc_stonefoot_heavy_pikes" percentage="22" max="LEVY" level="3" />
+        <Garrison key="oro_blacklock_warriors" percentage="27" max="LEVY" level="3" />
+        <Garrison key="oroc_blacklock_heavy_infantry" percentage="11" max="LEVY" level="3" />
+        <Garrison key="oroc_stonefoot_heavy_pikes" percentage="12" max="LEVY" level="4" />
+        <Garrison key="oroc_blacklock_warriors" percentage="9" max="LEVY" level="4" />
+        <Garrison key="oro_blacklock_warriors" percentage="36" max="LEVY" level="4" />
+        <Garrison key="oroc_blacklock_heavy_infantry" percentage="30" max="LEVY" level="4" />
+        <Garrison key="oro_stonefoot_heavy_pikes" percentage="13" max="LEVY" level="4" />
         <MenAtArm type="abrazanim_halberdiers" key="oro_halberds" max="INFANTRY" />
         <MenAtArm type="abrazanim_legion" key="oroc_axes" max="INFANTRY" />
         <MenAtArm type="abrazanim_warbows" key="oro_skirmishers" max="RANGED" />
@@ -12220,34 +12224,34 @@
         <MenAtArm type="zebaback_slavers" key="dale_cavalry_regiment" max="CAVALRY" />
     </Faction>
     <Faction name="Orocarni South" subculture="att_sub_cult_eastern_caucasian">
-        <General key="oroc_ironfist_guards" rank="1" />
-        <General key="oro_ironfist_guards" rank="2" />
-        <General key="oro_stiffbeard_nobles" rank="3" />
+        <General key="oro_ironfist_guards" rank="1" />
+        <General key="oroc_ironfist_guards" rank="2" />
+        <General key="oroc_stiffbeard_nobles" rank="3" />
         <Knights key="oroc_spears" rank="1" />
-        <Knights key="oro_halberds" rank="2" />
-        <Knights key="oro_ironfist_guards" rank="3" />
-        <Levies key="oroc_skirmishers" percentage="11" max="LEVY" />
-        <Levies key="oro_spears" percentage="27" max="LEVY" />
-        <Levies key="oroc_axes" percentage="33" max="LEVY" />
-        <Levies key="oro_axes" percentage="29" max="LEVY" />
-        <Garrison key="oro_bows" percentage="23" max="LEVY" level="1" />
-        <Garrison key="oroc_spears" percentage="16" max="LEVY" level="1" />
-        <Garrison key="oro_spears" percentage="23" max="LEVY" level="1" />
+        <Knights key="oroc_ironfist_heavy_spears" rank="2" />
+        <Knights key="oro_ironfist_warriors" rank="3" />
+        <Levies key="oroc_skirmishers" percentage="34" max="LEVY" />
+        <Levies key="oro_spears" percentage="22" max="LEVY" />
+        <Levies key="oro_axes" percentage="27" max="LEVY" />
+        <Levies key="oroc_axes" percentage="17" max="LEVY" />
+        <Garrison key="oro_skirmishers" percentage="27" max="LEVY" level="1" />
+        <Garrison key="oro_halberds" percentage="27" max="LEVY" level="1" />
         <Garrison key="oroc_axes" percentage="23" max="LEVY" level="1" />
-        <Garrison key="oro_axes" percentage="15" max="LEVY" level="1" />
-        <Garrison key="oro_stiffbeard_archers" percentage="29" max="LEVY" level="2" />
-        <Garrison key="oro_ironfist_spears" percentage="33" max="LEVY" level="2" />
-        <Garrison key="oroc_ironfist_spears" percentage="38" max="LEVY" level="2" />
+        <Garrison key="oro_spears" percentage="15" max="LEVY" level="1" />
+        <Garrison key="oro_axes" percentage="8" max="LEVY" level="1" />
+        <Garrison key="oroc_stiffbeard_archers" percentage="30" max="LEVY" level="2" />
+        <Garrison key="oroc_ironfist_spears" percentage="26" max="LEVY" level="2" />
+        <Garrison key="oro_ironfist_spears" percentage="44" max="LEVY" level="2" />
         <Garrison key="oroc_stiffbeard_heavy_archers" percentage="27" max="LEVY" level="3" />
         <Garrison key="oroc_ironfist_heavy_spears" percentage="12" max="LEVY" level="3" />
         <Garrison key="oroc_ironfist_warriors" percentage="36" max="LEVY" level="3" />
         <Garrison key="oro_ironfist_heavy_spears" percentage="14" max="LEVY" level="3" />
         <Garrison key="oro_ironfist_warriors" percentage="11" max="LEVY" level="3" />
-        <Garrison key="oroc_stiffbeard_heavy_archers" percentage="9" max="LEVY" level="4" />
+        <Garrison key="oro_stiffbeard_heavy_archers" percentage="9" max="LEVY" level="4" />
+        <Garrison key="oroc_ironfist_heavy_spears" percentage="22" max="LEVY" level="4" />
+        <Garrison key="oro_ironfist_warriors" percentage="33" max="LEVY" level="4" />
+        <Garrison key="oroc_ironfist_warriors" percentage="9" max="LEVY" level="4" />
         <Garrison key="oro_ironfist_heavy_spears" percentage="27" max="LEVY" level="4" />
-        <Garrison key="oroc_ironfist_warriors" percentage="33" max="LEVY" level="4" />
-        <Garrison key="oro_ironfist_warriors" percentage="13" max="LEVY" level="4" />
-        <Garrison key="oroc_ironfist_heavy_spears" percentage="18" max="LEVY" level="4" />
         <MenAtArm type="abrazanim_halberdiers" key="oro_halberds" max="INFANTRY" />
         <MenAtArm type="abrazanim_legion" key="oroc_axes" max="INFANTRY" />
         <MenAtArm type="abrazanim_warbows" key="oroc_stiffbeard_archers" max="RANGED" />
@@ -12911,13 +12915,13 @@
     </Faction>
     <Faction name="Rhudaur" subculture="att_sub_cult_barbarian_germanic_west">
         <General key="rhu_trev_duvardain_reavers" />
-        <General key="dale_merchant_escorts" rank="1" />
-        <General key="roh_winfried" rank="2" />
-        <General key="kha_akha_chosen" rank="3" />
+        <General key="ler_hollin_cavalry" rank="1" />
+        <General key="exe_wr_elvenking_riders_elk" rank="2" />
+        <General key="har_harad_lancers" rank="3" />
         <Knights key="rhu_crrothean_hill_riders" />
-        <Knights key="dale_northmen_scouts" rank="1" />
-        <Knights key="exe_iml_lords_golden_flower" rank="2" />
-        <Knights key="mor_nazgul" rank="3" />
+        <Knights key="roh_esquires_of_rohan" rank="1" />
+        <Knights key="roh_household_knights_theoden" rank="2" />
+        <Knights key="bal_bane_of_the_steppes" rank="3" />
         <Levies key="rhu_hillman_hunters" percentage="33" max="LEVY" />
         <Levies key="rhu_bondi_axes" percentage="40" max="LEVY" />
         <Levies key="rhu_bondi_spears" percentage="27" max="LEVY" />
@@ -12929,9 +12933,9 @@
         <Garrison key="rhu_coldfell_spearband" percentage="24" max="LEVY" level="2" />
         <Garrison key="rhu_corcurian_axe_hird" percentage="15" max="LEVY" level="2" />
         <Garrison key="rhu_weather_hill_scavengers" percentage="19" max="LEVY" level="2" />
-        <Garrison key="rhu_creothean_retainers" percentage="45" max="LEVY" level="3" />
         <Garrison key="rhu_creothean_raiders" percentage="35" max="LEVY" level="3" />
-        <Garrison key="rhu_corcurian_raiders" percentage="20" max="LEVY" level="3" />
+        <Garrison key="rhu_creothean_retainers" percentage="17" max="LEVY" level="3" />
+        <Garrison key="rhu_coldfell_spearband" percentage="48" max="LEVY" level="3" />
         <Garrison key="rhu_trev_duvardain_packmasters" percentage="38" max="LEVY" level="4" />
         <Garrison key="rhu_creothean_raiders" percentage="16" max="LEVY" level="4" />
         <Garrison key="rhu_creothean_retainers" percentage="46" max="LEVY" level="4" />
@@ -13596,33 +13600,33 @@
         <MenAtArm type="zeba_outriders" key="roh_eored_gap" max="CAVALRY" />
         <MenAtArm type="zebaback_slavers" key="lin_cavalry" max="CAVALRY" />
     </Faction>
-    <Faction name="Rohan" subculture="att_sub_cult_roman_west">
-        <General key="roh_winfried" rank="1" />
-        <General key="roh_erkenbrand" rank="2" />
-        <General key="roh_household_knights_theodred" rank="3" />
-        <Knights key="roh_esquires_of_rohan" rank="1" />
-        <Knights key="roh_eorling_knights" rank="2" />
-        <Knights key="roh_winfried" rank="3" />
-        <Levies key="roh_mustered_archers" percentage="19" max="LEVY" />
-        <Levies key="roh_horse_archers" percentage="31" max="LEVY" />
-        <Levies key="roh_mustered_spears" percentage="20" max="LEVY" />
-        <Levies key="roh_mustered_axes" percentage="30" max="LEVY" />
-        <Garrison key="roh_mustered_archers" percentage="18" max="LEVY" level="1" />
-        <Garrison key="roh_horse_archers" percentage="10" max="LEVY" level="1" />
-        <Garrison key="roh_mustered_spears" percentage="37" max="LEVY" level="1" />
-        <Garrison key="roh_mustered_axes" percentage="35" max="LEVY" level="1" />
-        <Garrison key="roh_yeomen_of_the_mark" percentage="9" max="LEVY" level="2" />
-        <Garrison key="roh_esquires_of_rohan" percentage="37" max="LEVY" level="2" />
-        <Garrison key="roh_sword_theigns" percentage="32" max="LEVY" level="2" />
-        <Garrison key="roh_axe_theigns" percentage="22" max="LEVY" level="2" />
-        <Garrison key="roh_helmingas" percentage="31" max="LEVY" level="3" />
-        <Garrison key="roh_eorling_knights" percentage="21" max="LEVY" level="3" />
-        <Garrison key="roh_eorling_men_at_arms" percentage="34" max="LEVY" level="3" />
-        <Garrison key="roh_eorling_retainers" percentage="14" max="LEVY" level="3" />
-        <Garrison key="roh_helmingas" percentage="26" max="LEVY" level="4" />
-        <Garrison key="roh_eored_king_mark" percentage="28" max="LEVY" level="4" />
-        <Garrison key="roh_eorling_men_at_arms" percentage="20" max="LEVY" level="4" />
-        <Garrison key="roh_eorling_retainers" percentage="26" max="LEVY" level="4" />
+    <Faction name="Haradrim" subculture="att_sub_cult_roman_west">
+        <General key="roh_king_company" rank="1" />
+        <General key="roh_household_knights_theoden" rank="2" />
+        <General key="roh_eored_king_mark_eomer" rank="3" />
+        <Knights key="roh_horse_archers" rank="1" />
+        <Knights key="roh_eored_westfold" rank="2" />
+        <Knights key="roh_household_knights_theoden" rank="3" />
+        <Levies key="roh_mustered_archers" percentage="14" max="LEVY" />
+        <Levies key="roh_rohan_skirmishers" percentage="32" max="LEVY" />
+        <Levies key="roh_mustered_spears" percentage="31" max="LEVY" />
+        <Levies key="roh_mustered_axes" percentage="23" max="LEVY" />
+        <Garrison key="roh_mustered_archers" percentage="43" max="LEVY" level="1" />
+        <Garrison key="roh_rohan_skirmishers" percentage="18" max="LEVY" level="1" />
+        <Garrison key="roh_mustered_spears" percentage="17" max="LEVY" level="1" />
+        <Garrison key="roh_mustered_axes" percentage="22" max="LEVY" level="1" />
+        <Garrison key="roh_yeomen_of_the_mark" percentage="47" max="LEVY" level="2" />
+        <Garrison key="roh_eored_eastfold" percentage="13" max="LEVY" level="2" />
+        <Garrison key="roh_sword_theigns" percentage="12" max="LEVY" level="2" />
+        <Garrison key="roh_axe_theigns" percentage="28" max="LEVY" level="2" />
+        <Garrison key="roh_helmingas" percentage="19" max="LEVY" level="3" />
+        <Garrison key="roh_eorling_riders" percentage="14" max="LEVY" level="3" />
+        <Garrison key="roh_eorling_men_at_arms" percentage="40" max="LEVY" level="3" />
+        <Garrison key="roh_eorling_retainers" percentage="27" max="LEVY" level="3" />
+        <Garrison key="roh_helmingas" percentage="10" max="LEVY" level="4" />
+        <Garrison key="roh_eorling_knights" percentage="24" max="LEVY" level="4" />
+        <Garrison key="roh_eorling_men_at_arms" percentage="29" max="LEVY" level="4" />
+        <Garrison key="roh_eorling_retainers" percentage="37" max="LEVY" level="4" />
         <MenAtArm type="abrazanim_halberdiers" key="los_pike" max="INFANTRY" />
         <MenAtArm type="abrazanim_legion" key="roh_axe_theigns" max="INFANTRY" />
         <MenAtArm type="abrazanim_warbows" key="roh_mustered_archers" max="RANGED" />
@@ -13935,33 +13939,35 @@
         <MenAtArm type="zebaback_slavers" key="roh_household_knights_theoden" max="CAVALRY" />
     </Faction>
     <Faction name="Silvan Elves" subculture="att_sub_cult_nomadic_hunnic">
-        <General key="koh_celin_amroth_sentinels" rank="1" />
-        <General key="Marchwarden_Of_The_Golden_Wood" rank="2" />
-        <General key="wr_legolas" rank="3" />
-        <Knights key="wr_forest_riders" rank="1" />
-        <Knights key="wr_gurthlagor" rank="2" />
-        <Knights key="wr_elvenking_riders" rank="3" />
-        <Levies key="loth_lor_sentries" percentage="33" max="LEVY" />
-        <Levies key="wr_gurthlagor" percentage="26" max="LEVY" />
-        <Levies key="wr_silvan_spears" percentage="41" max="LEVY" />
-        <Garrison key="wr_forest_rangers" percentage="27" max="LEVY" level="1" />
-        <Garrison key="loth_nimrodel_patrollers" percentage="14" max="LEVY" level="1" />
-        <Garrison key="loth_galad_spear_warriors" percentage="22" max="LEVY" level="1" />
-        <Garrison key="loth_amroth_sentinels" percentage="18" max="LEVY" level="1" />
-        <Garrison key="exe_wr_forest_assassins" percentage="19" max="LEVY" level="1" />
-        <Garrison key="loth_lor_sentries" percentage="22" max="LEVY" level="2" />
-        <Garrison key="loth_nimrodel_patrollers" percentage="25" max="LEVY" level="2" />
-        <Garrison key="wr_silvan_spears" percentage="8" max="LEVY" level="2" />
-        <Garrison key="wr_silvan_axes" percentage="17" max="LEVY" level="2" />
+        <General key="Defenders_Of_Lorien" rank="1" />
+        <General key="Marchwarden_of_Greenwood" rank="2" />
+        <General key="exe_wr_border_guards" rank="3" />
+        <Knights key="loth_lor_outriders" rank="1" />
+        <Knights key="loth_nimrodel_patrollers" rank="2" />
+        <Knights key="wr_thranduil" rank="3" />
+        <Levies key="wr_silvan_archers" percentage="21" max="LEVY" />
+        <Levies key="loth_lor_outriders" percentage="23" max="LEVY" />
+        <Levies key="exe_wr_warriors_kinn-lai" percentage="23" max="LEVY" />
+        <Levies key="loth_naith_infantry" percentage="12" max="LEVY" />
+        <Levies key="loth_lor_spear_company" percentage="21" max="LEVY" />
+        <Garrison key="wr_silvan_archers" percentage="17" max="LEVY" level="1" />
+        <Garrison key="wr_gurthlagor" percentage="31" max="LEVY" level="1" />
+        <Garrison key="loth_galad_spear_warriors" percentage="23" max="LEVY" level="1" />
+        <Garrison key="wr_silvan_spears" percentage="12" max="LEVY" level="1" />
+        <Garrison key="wr_silvan_axes" percentage="17" max="LEVY" level="1" />
+        <Garrison key="loth_galadhon_archers" percentage="15" max="LEVY" level="2" />
+        <Garrison key="wr_gurthlagor" percentage="21" max="LEVY" level="2" />
+        <Garrison key="exe_wr_warriors_kinn-lai" percentage="24" max="LEVY" level="2" />
         <Garrison key="Lorien_Sword_Sentries" percentage="28" max="LEVY" level="2" />
-        <Garrison key="loth_galad_bow_warriors" percentage="19" max="LEVY" level="3" />
-        <Garrison key="exe_wr_lasgalen_riders" percentage="25" max="LEVY" level="3" />
-        <Garrison key="wr_lasgalen_spears" percentage="8" max="LEVY" level="3" />
-        <Garrison key="wr_lasgalen_swords" percentage="37" max="LEVY" level="3" />
-        <Garrison key="exe_wr_greenwood_glaives" percentage="11" max="LEVY" level="3" />
-        <Garrison key="wr_forest_rangers" percentage="25" max="LEVY" level="4" />
-        <Garrison key="Lorien_Bow_Cav" percentage="47" max="LEVY" level="4" />
-        <Garrison key="Lorien_Swords" percentage="28" max="LEVY" level="4" />
+        <Garrison key="wr_silvan_spears" percentage="12" max="LEVY" level="2" />
+        <Garrison key="wr_forest_archers" percentage="15" max="LEVY" level="3" />
+        <Garrison key="wr_forest_riders" percentage="11" max="LEVY" level="3" />
+        <Garrison key="wr_lasgalen_spears" percentage="44" max="LEVY" level="3" />
+        <Garrison key="loth_galad_spear_warriors" percentage="20" max="LEVY" level="3" />
+        <Garrison key="Galadhrim_Spear_Infantry" percentage="10" max="LEVY" level="3" />
+        <Garrison key="wr_forest_rangers" percentage="32" max="LEVY" level="4" />
+        <Garrison key="Lorien_Bow_Cav" percentage="23" max="LEVY" level="4" />
+        <Garrison key="Lorien_Swords" percentage="45" max="LEVY" level="4" />
         <MenAtArm type="abrazanim_halberdiers" key="loth_galad_spear_warriors" max="INFANTRY" />
         <MenAtArm type="abrazanim_legion" key="Lorien_Sword_Sentries" max="INFANTRY" />
         <MenAtArm type="abrazanim_warbows" key="loth_galadhon_archers" max="RANGED" />
@@ -14275,31 +14281,31 @@
     </Faction>
     <Faction name="Umbar" subculture="att_sub_cult_barbarian_germanic_west">
         <General key="umb_black_haven_guard" />
-        <General key="los_axecav" rank="1" />
-        <General key="exe_wr_elvenking_riders_elk" rank="2" />
-        <General key="bal_bane_of_the_steppes" rank="3" />
+        <General key="roh_esquires_of_rohan" rank="1" />
+        <General key="roh_eored_westfold" rank="2" />
+        <General key="bal_haerrim_outriders" rank="3" />
         <Knights key="umb_black_haven_guard" />
-        <Knights key="loth_lor_outriders" rank="1" />
-        <Knights key="gon_silver_swan_knights" rank="2" />
-        <Knights key="roh_household_knights_theodred" rank="3" />
+        <Knights key="exe_wr_lasgalen_riders" rank="1" />
+        <Knights key="roh_eored_king_mark" rank="2" />
+        <Knights key="dale_rhovanion_regent" rank="3" />
         <Levies key="umb_lb_corsair_archers" percentage="32" max="LEVY" />
         <Levies key="umb_lb_corsair_archers" percentage="29" max="LEVY" />
         <Levies key="umb_lb_corsair_archers" percentage="39" max="LEVY" />
-        <Garrison key="umb_balik_bowmen" percentage="21" max="LEVY" level="1" />
-        <Garrison key="umb_slaves_of_umbar" percentage="52" max="LEVY" level="1" />
-        <Garrison key="umb_corsair_blades" percentage="27" max="LEVY" level="1" />
-        <Garrison key="umb_har_corsair_marines" percentage="32" max="LEVY" level="2" />
-        <Garrison key="umb_haradrim_auxillaries" percentage="11" max="LEVY" level="2" />
-        <Garrison key="umb_lb_corsair_marines" percentage="30" max="LEVY" level="2" />
-        <Garrison key="umb_usurpers" percentage="18" max="LEVY" level="2" />
-        <Garrison key="umb_balik_axemen" percentage="9" max="LEVY" level="2" />
+        <Garrison key="umb_haradrim_hunters" percentage="33" max="LEVY" level="1" />
+        <Garrison key="umb_slaves_of_umbar" percentage="36" max="LEVY" level="1" />
+        <Garrison key="umb_corsair_blades" percentage="31" max="LEVY" level="1" />
+        <Garrison key="umb_lb_corsair_archers" percentage="26" max="LEVY" level="2" />
+        <Garrison key="umb_haradrim_auxillaries" percentage="12" max="LEVY" level="2" />
+        <Garrison key="umb_balik_axemen" percentage="19" max="LEVY" level="2" />
+        <Garrison key="umb_lb_corsair_marines" percentage="17" max="LEVY" level="2" />
+        <Garrison key="umb_usurpers" percentage="26" max="LEVY" level="2" />
         <Garrison key="umb_black_haven_marksmen" percentage="11" max="LEVY" level="3" />
         <Garrison key="umb_black_haven_guard" percentage="35" max="LEVY" level="3" />
         <Garrison key="umb_black_haven_sentries" percentage="27" max="LEVY" level="3" />
         <Garrison key="umb_maces_of_tolfalas" percentage="27" max="LEVY" level="3" />
-        <Garrison key="umb_agannalo" percentage="32" max="LEVY" level="4" />
-        <Garrison key="umb_maces_of_tolfalas" percentage="32" max="LEVY" level="4" />
-        <Garrison key="umb_black_haven_marksmen" percentage="36" max="LEVY" level="4" />
+        <Garrison key="umb_agannalo" percentage="21" max="LEVY" level="4" />
+        <Garrison key="umb_black_haven_marksmen" percentage="47" max="LEVY" level="4" />
+        <Garrison key="umb_black_haven_guard" percentage="32" max="LEVY" level="4" />
         <MenAtArm type="abrazanim_halberdiers" key="umb_bakulmagan" max="INFANTRY" />
         <MenAtArm type="abrazanim_legion" key="umb_corsair_blades" max="INFANTRY" />
         <MenAtArm type="abrazanim_warbows" key="umb_haradrim_hunters" max="RANGED" />
@@ -14613,34 +14619,34 @@
     </Faction>
     <Faction name="Woodland Realm" subculture="att_sub_cult_nomadic_hunnic">
         <General key="wr_thranduil" />
-        <General key="wr_elvenking_riders" rank="1" />
-        <General key="gon_horsemen_sword" rank="2" />
-        <General key="dale_rhovanion_regent" rank="3" />
+        <General key="exe_iml_rivendell_riders" rank="1" />
+        <General key="dol_prince_imrahil_swan" rank="2" />
+        <General key="dor_riders_of_the_vinter_court" rank="3" />
         <Knights key="wr_elvenking_riders" />
-        <Knights key="dor_merchant_escorts" rank="1" />
-        <Knights key="gon_cavalry_sword" rank="2" />
-        <Knights key="bal_clan_raiders" rank="3" />
+        <Knights key="pin_cavsword" rank="1" />
+        <Knights key="av_eotheod_lancers" rank="2" />
+        <Knights key="dun_elder_riders" rank="3" />
         <Levies key="wr_lasgalen_swords" percentage="17" max="LEVY" />
         <Levies key="wr_lasgalen_spears" percentage="28" max="LEVY" />
         <Levies key="wr_lasgalen_bows" percentage="55" max="LEVY" />
-        <Garrison key="wr_silvan_lookouts" percentage="35" max="LEVY" level="1" />
-        <Garrison key="exe_wr_lasgalen_riders" percentage="31" max="LEVY" level="1" />
-        <Garrison key="wr_silvan_spears" percentage="9" max="LEVY" level="1" />
-        <Garrison key="exe_wr_greenwood_glaives" percentage="11" max="LEVY" level="1" />
-        <Garrison key="wr_forest_axes" percentage="14" max="LEVY" level="1" />
-        <Garrison key="wr_silvan_archers" percentage="20" max="LEVY" level="2" />
-        <Garrison key="wr_gurthlagor" percentage="18" max="LEVY" level="2" />
-        <Garrison key="exe_wr_warriors_kinn-lai" percentage="21" max="LEVY" level="2" />
-        <Garrison key="wr_silvan_axes" percentage="20" max="LEVY" level="2" />
-        <Garrison key="wr_silvan_spears" percentage="21" max="LEVY" level="2" />
-        <Garrison key="wr_lasgalen_bows" percentage="29" max="LEVY" level="3" />
-        <Garrison key="wr_forest_riders" percentage="25" max="LEVY" level="3" />
-        <Garrison key="wr_lasgalen_spears" percentage="14" max="LEVY" level="3" />
-        <Garrison key="exe_wr_forest_assassins" percentage="21" max="LEVY" level="3" />
-        <Garrison key="wr_forest_sentinels" percentage="11" max="LEVY" level="3" />
-        <Garrison key="wr_forest_rangers" percentage="33" max="LEVY" level="4" />
-        <Garrison key="exe_wr_lasgalen_riders" percentage="32" max="LEVY" level="4" />
-        <Garrison key="wr_lasgalen_spears" percentage="35" max="LEVY" level="4" />
+        <Garrison key="wr_silvan_archers" percentage="18" max="LEVY" level="1" />
+        <Garrison key="exe_wr_lasgalen_riders" percentage="26" max="LEVY" level="1" />
+        <Garrison key="exe_wr_warriors_kinn-lai" percentage="15" max="LEVY" level="1" />
+        <Garrison key="wr_lasgalen_spears" percentage="18" max="LEVY" level="1" />
+        <Garrison key="wr_lasgalen_swords" percentage="23" max="LEVY" level="1" />
+        <Garrison key="wr_silvan_archers" percentage="6" max="LEVY" level="2" />
+        <Garrison key="wr_gurthlagor" percentage="19" max="LEVY" level="2" />
+        <Garrison key="exe_wr_warriors_kinn-lai" percentage="25" max="LEVY" level="2" />
+        <Garrison key="wr_silvan_spears" percentage="27" max="LEVY" level="2" />
+        <Garrison key="wr_silvan_axes" percentage="23" max="LEVY" level="2" />
+        <Garrison key="wr_lasgalen_bows" percentage="23" max="LEVY" level="3" />
+        <Garrison key="wr_forest_riders" percentage="27" max="LEVY" level="3" />
+        <Garrison key="wr_forest_spears" percentage="16" max="LEVY" level="3" />
+        <Garrison key="exe_wr_greenwood_glaives" percentage="22" max="LEVY" level="3" />
+        <Garrison key="wr_lasgalen_axes" percentage="12" max="LEVY" level="3" />
+        <Garrison key="wr_forest_rangers" percentage="29" max="LEVY" level="4" />
+        <Garrison key="wr_forest_sentinels" percentage="45" max="LEVY" level="4" />
+        <Garrison key="wr_forest_riders" percentage="26" max="LEVY" level="4" />
         <MenAtArm type="abrazanim_halberdiers" key="wr_hall_guardians" max="INFANTRY" />
         <MenAtArm type="abrazanim_legion" key="wr_forest_axes" max="INFANTRY" />
         <MenAtArm type="abrazanim_warbows" key="wr_forest_archers" max="RANGED" />
@@ -14952,38 +14958,36 @@
         <MenAtArm type="zeba_outriders" key="wr_gurthlagor" max="CAVALRY" />
         <MenAtArm type="zebaback_slavers" key="wr_elvenking_riders" max="CAVALRY" />
     </Faction>
-    <Faction name="all" subculture="att_sub_cult_roman_west">
-        <General key="dol_marinesword" rank="1" />
-        <General key="brv_duinhir" rank="2" />
-        <General key="dol_sergeantcav" rank="3" />
-        <Knights key="pin_mountedswords" rank="1" />
-        <Knights key="stan_cav" rank="2" />
-        <Knights key="pin_hirluin" rank="3" />
-        <Levies key="brv_skirm" percentage="25" max="LEVY" />
-        <Levies key="anf_skirmcav" percentage="17" max="LEVY" />
-        <Levies key="pin_levyspear" percentage="27" max="LEVY" />
-        <Levies key="los_levymace" percentage="23" max="LEVY" />
-        <Levies key="hor_levyspear" percentage="8" max="LEVY" />
-        <Garrison key="hor_skirm" percentage="9" max="LEVY" level="1" />
-        <Garrison key="anf_skirmcav" percentage="22" max="LEVY" level="1" />
-        <Garrison key="dol_levyspear" percentage="25" max="LEVY" level="1" />
-        <Garrison key="hor_levyspear" percentage="25" max="LEVY" level="1" />
-        <Garrison key="brv_levysword" percentage="19" max="LEVY" level="1" />
-        <Garrison key="stan_mediumarcher" percentage="28" max="LEVY" level="2" />
-        <Garrison key="los_axecav" percentage="6" max="LEVY" level="2" />
-        <Garrison key="leb_mediumspear" percentage="10" max="LEVY" level="2" />
-        <Garrison key="stan_pike" percentage="27" max="LEVY" level="2" />
-        <Garrison key="anf_pike" percentage="29" max="LEVY" level="2" />
-        <Garrison key="leb_marinearcher" percentage="23" max="LEVY" level="3" />
-        <Garrison key="pin_cavshock" percentage="15" max="LEVY" level="3" />
-        <Garrison key="leb_marinespear" percentage="22" max="LEVY" level="3" />
-        <Garrison key="stan_cairandros" percentage="21" max="LEVY" level="3" />
-        <Garrison key="leb_retainer" percentage="19" max="LEVY" level="3" />
-        <Garrison key="stan_ranger" percentage="26" max="LEVY" level="4" />
-        <Garrison key="hor_immortals" percentage="20" max="LEVY" level="4" />
-        <Garrison key="dol_swanpike" percentage="16" max="LEVY" level="4" />
-        <Garrison key="stan_moonguard" percentage="22" max="LEVY" level="4" />
-        <Garrison key="dol_swanspear" percentage="16" max="LEVY" level="4" />
+    <Faction name="Khand" subculture="att_sub_cult_roman_west">
+        <General key="hor_heavysword" rank="1" />
+        <General key="pin_guardspear" rank="2" />
+        <General key="stan_boromir" rank="3" />
+        <Knights key="pin_cavshock" rank="1" />
+        <Knights key="lam_angbor" rank="2" />
+        <Knights key="dol_adrahil" rank="3" />
+        <Levies key="rv_skirm" percentage="32" max="LEVY" />
+        <Levies key="anf_skirmcav" percentage="31" max="LEVY" />
+        <Levies key="lam_levyspear" percentage="37" max="LEVY" />
+        <Garrison key="dol_skirm" percentage="14" max="LEVY" level="1" />
+        <Garrison key="anf_skirmcav" percentage="16" max="LEVY" level="1" />
+        <Garrison key="los_levyspear" percentage="28" max="LEVY" level="1" />
+        <Garrison key="hor_levysword" percentage="28" max="LEVY" level="1" />
+        <Garrison key="stan_levyspear" percentage="14" max="LEVY" level="1" />
+        <Garrison key="anf_mediumskirm" percentage="19" max="LEVY" level="2" />
+        <Garrison key="pin_riders" percentage="9" max="LEVY" level="2" />
+        <Garrison key="lam_mediumspear" percentage="19" max="LEVY" level="2" />
+        <Garrison key="rv_pike" percentage="34" max="LEVY" level="2" />
+        <Garrison key="pin_mediumsword" percentage="19" max="LEVY" level="2" />
+        <Garrison key="brv_ambushers" percentage="23" max="LEVY" level="3" />
+        <Garrison key="leb_retainercav" percentage="18" max="LEVY" level="3" />
+        <Garrison key="lam_retainerspear" percentage="16" max="LEVY" level="3" />
+        <Garrison key="pin_heavysword" percentage="22" max="LEVY" level="3" />
+        <Garrison key="dol_marinespear" percentage="21" max="LEVY" level="3" />
+        <Garrison key="stan_ranger" percentage="10" max="LEVY" level="4" />
+        <Garrison key="hor_immortals" percentage="19" max="LEVY" level="4" />
+        <Garrison key="dol_swanpike" percentage="26" max="LEVY" level="4" />
+        <Garrison key="los_poleaxe" percentage="32" max="LEVY" level="4" />
+        <Garrison key="stan_moonguard" percentage="13" max="LEVY" level="4" />
         <MenAtArm type="abrazanim_halberdiers" key="lam_halberd" max="INFANTRY" />
         <MenAtArm type="abrazanim_legion" key="brv_mediumsword" max="INFANTRY" />
         <MenAtArm type="abrazanim_warbows" key="stan_mediumarcher" max="RANGED" />
@@ -15298,33 +15302,32 @@
     <Faction name="anfalas" subculture="att_sub_cult_roman_west">
         <General key="anf_golasgil" rank="1" />
         <General key="anf_heavysword" rank="2" />
-        <General key="anf_heavyspear" rank="3" />
+        <General key="anf_hammers_rev" rank="3" />
         <Knights key="anf_skirmcav" rank="1" />
         <Knights key="anf_marshals" rank="2" />
         <Knights key="anf_marshals" rank="3" />
-        <Levies key="anf_skirm" percentage="25" max="LEVY" />
-        <Levies key="anf_skirmcav" percentage="25" max="LEVY" />
-        <Levies key="anf_levyspear" percentage="24" max="LEVY" />
-        <Levies key="anf_levysword" percentage="26" max="LEVY" />
+        <Levies key="anf_skirm" percentage="43" max="LEVY" />
+        <Levies key="anf_skirmcav" percentage="39" max="LEVY" />
+        <Levies key="anf_levyspear" percentage="18" max="LEVY" />
         <Garrison key="anf_skirm" percentage="22" max="LEVY" level="1" />
         <Garrison key="anf_skirmcav" percentage="28" max="LEVY" level="1" />
         <Garrison key="anf_levyspear" percentage="25" max="LEVY" level="1" />
         <Garrison key="anf_levysword" percentage="25" max="LEVY" level="1" />
-        <Garrison key="anf_archer" percentage="14" max="LEVY" level="2" />
-        <Garrison key="anf_marshals" percentage="31" max="LEVY" level="2" />
-        <Garrison key="anf_pike" percentage="11" max="LEVY" level="2" />
-        <Garrison key="anf_mediumspear" percentage="27" max="LEVY" level="2" />
-        <Garrison key="anf_defenders" percentage="17" max="LEVY" level="2" />
-        <Garrison key="anf_archer" percentage="23" max="LEVY" level="3" />
-        <Garrison key="anf_marshals" percentage="12" max="LEVY" level="3" />
-        <Garrison key="anf_pike" percentage="16" max="LEVY" level="3" />
-        <Garrison key="anf_defenders" percentage="20" max="LEVY" level="3" />
-        <Garrison key="anf_mediumsword" percentage="29" max="LEVY" level="3" />
-        <Garrison key="anf_mediumskirm" percentage="13" max="LEVY" level="4" />
-        <Garrison key="anf_marshals" percentage="18" max="LEVY" level="4" />
-        <Garrison key="anf_pike" percentage="21" max="LEVY" level="4" />
-        <Garrison key="anf_defenders" percentage="19" max="LEVY" level="4" />
-        <Garrison key="anf_mediumspear" percentage="29" max="LEVY" level="4" />
+        <Garrison key="anf_mediumskirm" percentage="16" max="LEVY" level="2" />
+        <Garrison key="anf_marshals" percentage="23" max="LEVY" level="2" />
+        <Garrison key="anf_mediumspear" percentage="23" max="LEVY" level="2" />
+        <Garrison key="anf_mediumsword" percentage="22" max="LEVY" level="2" />
+        <Garrison key="anf_defenders" percentage="16" max="LEVY" level="2" />
+        <Garrison key="anf_mediumskirm" percentage="28" max="LEVY" level="3" />
+        <Garrison key="anf_marshals" percentage="22" max="LEVY" level="3" />
+        <Garrison key="anf_pike" percentage="11" max="LEVY" level="3" />
+        <Garrison key="anf_mediumspear" percentage="28" max="LEVY" level="3" />
+        <Garrison key="anf_mediumsword" percentage="11" max="LEVY" level="3" />
+        <Garrison key="anf_archer" percentage="38" max="LEVY" level="4" />
+        <Garrison key="anf_marshals" percentage="11" max="LEVY" level="4" />
+        <Garrison key="anf_pike" percentage="11" max="LEVY" level="4" />
+        <Garrison key="anf_mediumspear" percentage="12" max="LEVY" level="4" />
+        <Garrison key="anf_defenders" percentage="28" max="LEVY" level="4" />
         <MenAtArm type="abrazanim_halberdiers" key="anf_pike" max="INFANTRY" />
         <MenAtArm type="abrazanim_legion" key="anf_hammers_rev" max="INFANTRY" />
         <MenAtArm type="abrazanim_warbows" key="anf_skirm" max="RANGED" />
@@ -15335,7 +15338,7 @@
         <MenAtArm type="angmarim_archers" key="anf_skirm" max="RANGED" />
         <MenAtArm type="angmarim_pikemen" key="anf_pike" max="INFANTRY" />
         <MenAtArm type="annammon_kin" key="hor_elephant" max="CAVALRY" />
-        <MenAtArm type="armored_footmen" key="gon_sword_infantry" max="INFANTRY" />
+        <MenAtArm type="armored_footmen" key="arn_royal_infantry" max="INFANTRY" />
         <MenAtArm type="armored_horsemen" key="gon_cavalry" max="CAVALRY" />
         <MenAtArm type="arnorian_bowmen" key="anf_skirm" max="RANGED" />
         <MenAtArm type="arnorian_cavalry" key="anf_marshals" max="CAVALRY" />
@@ -15637,18 +15640,19 @@
         <MenAtArm type="zebaback_slavers" key="anf_marshals" max="CAVALRY" />
     </Faction>
     <Faction name="anorien" subculture="att_sub_cult_roman_west">
-        <General key="stan_fountainpike" rank="1" />
-        <General key="stan_citadel" rank="2" />
+        <General key="stan_faramir" rank="1" />
+        <General key="stan_denethor" rank="2" />
         <General key="stan_cav" rank="3" />
         <Knights key="stan_sergeantcav" rank="1" />
         <Knights key="stan_cav" rank="2" />
         <Knights key="stan_cav" rank="3" />
-        <Levies key="stan_mediumarcher" percentage="31" max="LEVY" />
-        <Levies key="stan_sergeantcav" percentage="40" max="LEVY" />
-        <Levies key="stan_levyspear" percentage="29" max="LEVY" />
-        <Garrison key="stan_levyspear" percentage="37" max="LEVY" level="1" />
-        <Garrison key="stan_levysword" percentage="40" max="LEVY" level="1" />
-        <Garrison key="stan_sergeantcav" percentage="23" max="LEVY" level="1" />
+        <Levies key="stan_mediumarcher" percentage="11" max="LEVY" />
+        <Levies key="stan_sergeantcav" percentage="14" max="LEVY" />
+        <Levies key="stan_levyspear" percentage="47" max="LEVY" />
+        <Levies key="stan_levysword" percentage="28" max="LEVY" />
+        <Garrison key="stan_levyspear" percentage="18" max="LEVY" level="1" />
+        <Garrison key="stan_levysword" percentage="49" max="LEVY" level="1" />
+        <Garrison key="stan_mediumarcher" percentage="33" max="LEVY" level="1" />
         <Garrison key="stan_mediumarcher" percentage="32" max="LEVY" level="2" />
         <Garrison key="stan_sergeantcav" percentage="29" max="LEVY" level="2" />
         <Garrison key="stan_mediumspear" percentage="39" max="LEVY" level="2" />
@@ -15656,9 +15660,9 @@
         <Garrison key="stan_heavyspear" percentage="33" max="LEVY" level="3" />
         <Garrison key="stan_cairandros" percentage="17" max="LEVY" level="3" />
         <Garrison key="stan_heavysword" percentage="29" max="LEVY" level="3" />
-        <Garrison key="stan_moonguard" percentage="39" max="LEVY" level="4" />
-        <Garrison key="stan_cairandros" percentage="19" max="LEVY" level="4" />
-        <Garrison key="stan_heavysword" percentage="42" max="LEVY" level="4" />
+        <Garrison key="stan_moonguard" percentage="23" max="LEVY" level="4" />
+        <Garrison key="stan_heavysword" percentage="55" max="LEVY" level="4" />
+        <Garrison key="stan_archer" percentage="22" max="LEVY" level="4" />
         <MenAtArm type="abrazanim_halberdiers" key="stan_fountainpike" max="INFANTRY" />
         <MenAtArm type="abrazanim_legion" key="stan_boromir" max="INFANTRY" />
         <MenAtArm type="abrazanim_warbows" key="stan_archer" max="RANGED" />
@@ -15977,15 +15981,15 @@
         <Knights key="brv_levyspear" rank="1" />
         <Knights key="brv_mediumsword" rank="2" />
         <Knights key="brv_mediumspear" rank="3" />
-        <Levies key="brv_skirm" percentage="25" max="LEVY" />
-        <Levies key="brv_levyspear" percentage="38" max="LEVY" />
-        <Levies key="brv_levysword" percentage="37" max="LEVY" />
+        <Levies key="brv_skirm" percentage="32" max="LEVY" />
+        <Levies key="brv_levyspear" percentage="50" max="LEVY" />
+        <Levies key="brv_levysword" percentage="18" max="LEVY" />
         <Garrison key="brv_levyarcher" percentage="18" max="LEVY" level="1" />
         <Garrison key="brv_levyspear" percentage="41" max="LEVY" level="1" />
         <Garrison key="brv_levysword" percentage="41" max="LEVY" level="1" />
-        <Garrison key="brv_mediumspear" percentage="52" max="LEVY" level="2" />
-        <Garrison key="brv_levysword" percentage="26" max="LEVY" level="2" />
-        <Garrison key="brv_skirm" percentage="22" max="LEVY" level="2" />
+        <Garrison key="brv_mediumspear" percentage="35" max="LEVY" level="2" />
+        <Garrison key="brv_levyspear" percentage="35" max="LEVY" level="2" />
+        <Garrison key="brv_levyarcher" percentage="30" max="LEVY" level="2" />
         <Garrison key="brv_ambushers" percentage="25" max="LEVY" level="3" />
         <Garrison key="brv_archer" percentage="45" max="LEVY" level="3" />
         <Garrison key="brv_mediumspear" percentage="30" max="LEVY" level="3" />
@@ -16305,13 +16309,13 @@
     </Faction>
     <Faction name="dolamroth" subculture="att_sub_cult_roman_west">
         <General key="dol_adrahil" />
-        <General key="dale_northmen_scouts" rank="1" />
-        <General key="gon_horsemen_sword" rank="2" />
-        <General key="har_harad_camel_riders" rank="3" />
+        <General key="ere_merc_cav" rank="1" />
+        <General key="dale_cavalry_regiment" rank="2" />
+        <General key="dale_rhovanion_regent" rank="3" />
         <Knights key="dol_swancav" />
-        <Knights key="los_flowercav" rank="1" />
-        <Knights key="roh_eored_king_mark" rank="2" />
-        <Knights key="har_ar_belzagar" rank="3" />
+        <Knights key="dol_knight_edhellond" rank="1" />
+        <Knights key="roh_eored_westfold" rank="2" />
+        <Knights key="roh_household_knights" rank="3" />
         <Levies key="dol_levyspear" percentage="28" max="LEVY" />
         <Levies key="dol_levysword" percentage="36" max="LEVY" />
         <Levies key="dol_skirm" percentage="36" max="LEVY" />
@@ -16321,13 +16325,13 @@
         <Garrison key="dol_archer" percentage="16" max="LEVY" level="2" />
         <Garrison key="dol_princehalberd" percentage="40" max="LEVY" level="2" />
         <Garrison key="dol_mediumsword" percentage="44" max="LEVY" level="2" />
-        <Garrison key="dol_marineskirm" percentage="27" max="LEVY" level="3" />
-        <Garrison key="dol_cav" percentage="23" max="LEVY" level="3" />
-        <Garrison key="dol_marinespear" percentage="24" max="LEVY" level="3" />
-        <Garrison key="dol_heavysword" percentage="26" max="LEVY" level="3" />
-        <Garrison key="dol_swanspear" percentage="48" max="LEVY" level="4" />
-        <Garrison key="dol_swanpike" percentage="33" max="LEVY" level="4" />
-        <Garrison key="dol_heavysword" percentage="19" max="LEVY" level="4" />
+        <Garrison key="dol_marineskirm" percentage="13" max="LEVY" level="3" />
+        <Garrison key="dol_cav" percentage="40" max="LEVY" level="3" />
+        <Garrison key="dol_marinespear" percentage="35" max="LEVY" level="3" />
+        <Garrison key="dol_heavysword" percentage="12" max="LEVY" level="3" />
+        <Garrison key="dol_swanpike" percentage="13" max="LEVY" level="4" />
+        <Garrison key="dol_swanspear" percentage="45" max="LEVY" level="4" />
+        <Garrison key="dol_heavyarcher" percentage="42" max="LEVY" level="4" />
         <MenAtArm type="abrazanim_halberdiers" key="dol_swanpike" max="INFANTRY" />
         <MenAtArm type="abrazanim_legion" key="dol_heavysword" max="INFANTRY" />
         <MenAtArm type="abrazanim_warbows" key="dol_heavyarcher" max="RANGED" />
@@ -16642,12 +16646,12 @@
     <Faction name="harondor" subculture="att_sub_cult_roman_west">
         <General key="hor_guardspear" />
         <General key="hor_heavycav" rank="1" />
-        <General key="gon_cavalry_sword" rank="2" />
-        <General key="dg_nazgul" rank="3" />
+        <General key="ler_ost-in-edhil_mounted_guard" rank="2" />
+        <General key="bal_loke_rim_cataphracts" rank="3" />
         <Knights key="hor_heavycav" />
-        <Knights key="los_axecav" rank="1" />
-        <Knights key="gon_cavalry_sword" rank="2" />
-        <Knights key="roh_household_knights_theodred" rank="3" />
+        <Knights key="ere_merc_cav" rank="1" />
+        <Knights key="ler_ost-in-edhil_mounted_guard" rank="2" />
+        <Knights key="mor_nazgul" rank="3" />
         <Levies key="hor_levysword" percentage="25" max="LEVY" />
         <Levies key="hor_levyspear" percentage="41" max="LEVY" />
         <Levies key="hor_skirm" percentage="34" max="LEVY" />
@@ -16658,12 +16662,12 @@
         <Garrison key="hor_halberd" percentage="23" max="LEVY" level="2" />
         <Garrison key="hor_mediumsword" percentage="12" max="LEVY" level="2" />
         <Garrison key="hor_mediumspear" percentage="26" max="LEVY" level="2" />
-        <Garrison key="hor_marksmen_rev" percentage="36" max="LEVY" level="3" />
-        <Garrison key="hor_horsearcher" percentage="35" max="LEVY" level="3" />
-        <Garrison key="hor_glaive" percentage="29" max="LEVY" level="3" />
-        <Garrison key="hor_immortals" percentage="23" max="LEVY" level="4" />
-        <Garrison key="hor_elephant" percentage="21" max="LEVY" level="4" />
-        <Garrison key="hor_cav" percentage="56" max="LEVY" level="4" />
+        <Garrison key="hor_marksmen_rev" percentage="45" max="LEVY" level="3" />
+        <Garrison key="hor_horsearcher" percentage="45" max="LEVY" level="3" />
+        <Garrison key="hor_glaive" percentage="10" max="LEVY" level="3" />
+        <Garrison key="hor_immortals" percentage="55" max="LEVY" level="4" />
+        <Garrison key="hor_elephant" percentage="19" max="LEVY" level="4" />
+        <Garrison key="hor_horsearcher" percentage="26" max="LEVY" level="4" />
         <MenAtArm type="abrazanim_halberdiers" key="hor_halberd" max="INFANTRY" />
         <MenAtArm type="abrazanim_legion" key="hor_mediumsword" max="INFANTRY" />
         <MenAtArm type="abrazanim_warbows" key="hor_marksmen_rev" max="RANGED" />
@@ -16977,13 +16981,13 @@
     </Faction>
     <Faction name="lamedon" subculture="att_sub_cult_roman_west">
         <General key="lam_clansmen" />
-        <General key="dale_northmen_scouts" rank="1" />
-        <General key="roh_eored_westfold" rank="2" />
-        <General key="bal_loke_rim_cataphracts" rank="3" />
+        <General key="exe_iml_rivendell_riders" rank="1" />
+        <General key="roh_winfried" rank="2" />
+        <General key="mor_witchking" rank="3" />
         <Knights key="lam_clansmen" />
-        <Knights key="los_axecav" rank="1" />
-        <Knights key="gon_cavalry_sword" rank="2" />
-        <Knights key="bal_bane_of_the_steppes" rank="3" />
+        <Knights key="hor_immortals_officer" rank="1" />
+        <Knights key="roh_eored_eastfold" rank="2" />
+        <Knights key="har_harad_camel_riders" rank="3" />
         <Levies key="lam_skirm" percentage="25" max="LEVY" />
         <Levies key="lam_levysword" percentage="41" max="LEVY" />
         <Levies key="lam_levyspear" percentage="34" max="LEVY" />
@@ -16994,16 +16998,16 @@
         <Garrison key="lam_mediumspear" percentage="23" max="LEVY" level="2" />
         <Garrison key="lam_halberd" percentage="29" max="LEVY" level="2" />
         <Garrison key="lam_mediumsword" percentage="35" max="LEVY" level="2" />
-        <Garrison key="lam_heavyarcher" percentage="25" max="LEVY" level="3" />
-        <Garrison key="lam_retainerspear" percentage="21" max="LEVY" level="3" />
-        <Garrison key="lam_heavyspear" percentage="17" max="LEVY" level="3" />
-        <Garrison key="lam_retainersword" percentage="19" max="LEVY" level="3" />
-        <Garrison key="lam_heavysword" percentage="18" max="LEVY" level="3" />
-        <Garrison key="lam_heavyarcher" percentage="9" max="LEVY" level="4" />
-        <Garrison key="lam_heavypike" percentage="11" max="LEVY" level="4" />
-        <Garrison key="lam_heavysword" percentage="30" max="LEVY" level="4" />
-        <Garrison key="lam_retainerspear" percentage="34" max="LEVY" level="4" />
-        <Garrison key="lam_retainersword" percentage="16" max="LEVY" level="4" />
+        <Garrison key="lam_heavyarcher" percentage="19" max="LEVY" level="3" />
+        <Garrison key="lam_heavyspear" percentage="18" max="LEVY" level="3" />
+        <Garrison key="lam_heavypike" percentage="20" max="LEVY" level="3" />
+        <Garrison key="lam_heavysword" percentage="28" max="LEVY" level="3" />
+        <Garrison key="lam_retainerspear" percentage="15" max="LEVY" level="3" />
+        <Garrison key="lam_heavyarcher" percentage="11" max="LEVY" level="4" />
+        <Garrison key="lam_heavyspear" percentage="24" max="LEVY" level="4" />
+        <Garrison key="lam_clansmen" percentage="23" max="LEVY" level="4" />
+        <Garrison key="lam_heavypike" percentage="20" max="LEVY" level="4" />
+        <Garrison key="lam_heavysword" percentage="22" max="LEVY" level="4" />
         <MenAtArm type="abrazanim_halberdiers" key="lam_halberd" max="INFANTRY" />
         <MenAtArm type="abrazanim_legion" key="lam_heavysword" max="INFANTRY" />
         <MenAtArm type="abrazanim_warbows" key="lam_archer" max="RANGED" />
@@ -17316,8 +17320,8 @@
         <MenAtArm type="zebaback_slavers" key="lam_cav" max="CAVALRY" />
     </Faction>
     <Faction name="lebennin" subculture="att_sub_cult_roman_west">
-        <General key="leb_guardsword" rank="1" />
-        <General key="leb_marinesword" rank="2" />
+        <General key="leb_heavysword" rank="1" />
+        <General key="leb_guardsword" rank="2" />
         <General key="leb_guardspear" rank="3" />
         <Knights key="leb_mediumcav" rank="1" />
         <Knights key="leb_retainercav" rank="2" />
@@ -17325,19 +17329,19 @@
         <Levies key="leb_skirm" percentage="19" max="LEVY" />
         <Levies key="leb_skirm" percentage="34" max="LEVY" />
         <Levies key="leb_skirm" percentage="47" max="LEVY" />
-        <Garrison key="leb_skirm" percentage="24" max="LEVY" level="1" />
-        <Garrison key="leb_marineraider" percentage="39" max="LEVY" level="1" />
-        <Garrison key="leb_mediumsword" percentage="37" max="LEVY" level="1" />
+        <Garrison key="leb_skirm" percentage="26" max="LEVY" level="1" />
+        <Garrison key="leb_marineraider" percentage="41" max="LEVY" level="1" />
+        <Garrison key="leb_archer" percentage="33" max="LEVY" level="1" />
         <Garrison key="leb_archer" percentage="27" max="LEVY" level="2" />
         <Garrison key="leb_mediumcav" percentage="11" max="LEVY" level="2" />
         <Garrison key="leb_mediumspear" percentage="25" max="LEVY" level="2" />
         <Garrison key="leb_mediumsword" percentage="18" max="LEVY" level="2" />
         <Garrison key="leb_marineraider" percentage="19" max="LEVY" level="2" />
-        <Garrison key="leb_marineskirm" percentage="19" max="LEVY" level="3" />
-        <Garrison key="leb_retainercav" percentage="14" max="LEVY" level="3" />
-        <Garrison key="leb_heavyspear" percentage="37" max="LEVY" level="3" />
-        <Garrison key="leb_marinespear" percentage="17" max="LEVY" level="3" />
-        <Garrison key="leb_retainer" percentage="13" max="LEVY" level="3" />
+        <Garrison key="leb_marinearcher" percentage="10" max="LEVY" level="3" />
+        <Garrison key="leb_retainercav" percentage="19" max="LEVY" level="3" />
+        <Garrison key="leb_marinespear" percentage="34" max="LEVY" level="3" />
+        <Garrison key="leb_retainer" percentage="9" max="LEVY" level="3" />
+        <Garrison key="leb_heavyspear" percentage="28" max="LEVY" level="3" />
         <Garrison key="leb_marinearcher" percentage="7" max="LEVY" level="4" />
         <Garrison key="leb_retainercav" percentage="14" max="LEVY" level="4" />
         <Garrison key="leb_marinespear" percentage="20" max="LEVY" level="4" />
@@ -17656,30 +17660,30 @@
     </Faction>
     <Faction name="lossarnach" subculture="att_sub_cult_roman_west">
         <General key="los_lords" />
-        <General key="hor_immortals" rank="1" />
+        <General key="dale_merchant_escorts" rank="1" />
         <General key="mor_the_nine" rank="2" />
-        <General key="dun_elder_riders" rank="3" />
+        <General key="dale_rhovanion_regent" rank="3" />
         <Knights key="los_flowercav" />
-        <Knights key="wr_elvenking_riders" rank="1" />
-        <Knights key="mor_servants_of_the_eyes" rank="2" />
-        <Knights key="rhu_corcurian_raiders" rank="3" />
-        <Levies key="los_skirm" percentage="34" max="LEVY" />
-        <Levies key="los_levyspear" percentage="27" max="LEVY" />
-        <Levies key="los_skirm" percentage="39" max="LEVY" />
-        <Garrison key="los_levyspear" percentage="43" max="LEVY" level="1" />
-        <Garrison key="los_levymace" percentage="32" max="LEVY" level="1" />
-        <Garrison key="los_refugearcher" percentage="25" max="LEVY" level="1" />
-        <Garrison key="los_archer" percentage="23" max="LEVY" level="2" />
-        <Garrison key="los_flowercav" percentage="17" max="LEVY" level="2" />
-        <Garrison key="los_pike" percentage="23" max="LEVY" level="2" />
-        <Garrison key="los_spears" percentage="7" max="LEVY" level="2" />
-        <Garrison key="los_skirm" percentage="30" max="LEVY" level="2" />
-        <Garrison key="los_heavyaxe" percentage="39" max="LEVY" level="3" />
-        <Garrison key="los_skirm" percentage="21" max="LEVY" level="3" />
-        <Garrison key="los_pike" percentage="40" max="LEVY" level="3" />
-        <Garrison key="los_poleaxe" percentage="55" max="LEVY" level="4" />
-        <Garrison key="los_heavyaxe" percentage="13" max="LEVY" level="4" />
-        <Garrison key="los_bowmen" percentage="32" max="LEVY" level="4" />
+        <Knights key="dale_northmen_scouts" rank="1" />
+        <Knights key="dol_prince_imrahil_swan" rank="2" />
+        <Knights key="mor_witchking" rank="3" />
+        <Levies key="los_skirm" percentage="28" max="LEVY" />
+        <Levies key="los_levyspear" percentage="23" max="LEVY" />
+        <Levies key="los_levyspear" percentage="49" max="LEVY" />
+        <Garrison key="los_levyspear" percentage="29" max="LEVY" level="1" />
+        <Garrison key="los_levymace" percentage="19" max="LEVY" level="1" />
+        <Garrison key="los_refugearcher" percentage="52" max="LEVY" level="1" />
+        <Garrison key="los_archer" percentage="26" max="LEVY" level="2" />
+        <Garrison key="los_flowercav" percentage="15" max="LEVY" level="2" />
+        <Garrison key="los_pike" percentage="18" max="LEVY" level="2" />
+        <Garrison key="los_skirm" percentage="17" max="LEVY" level="2" />
+        <Garrison key="los_medium2axe" percentage="24" max="LEVY" level="2" />
+        <Garrison key="los_heavyaxe" percentage="40" max="LEVY" level="3" />
+        <Garrison key="los_refugearcher" percentage="46" max="LEVY" level="3" />
+        <Garrison key="los_axethrowers" percentage="14" max="LEVY" level="3" />
+        <Garrison key="los_poleaxe" percentage="37" max="LEVY" level="4" />
+        <Garrison key="los_heavyaxe" percentage="41" max="LEVY" level="4" />
+        <Garrison key="los_archer" percentage="22" max="LEVY" level="4" />
         <MenAtArm type="abrazanim_halberdiers" key="los_pike" max="INFANTRY" />
         <MenAtArm type="abrazanim_legion" key="los_swords" max="INFANTRY" />
         <MenAtArm type="abrazanim_warbows" key="los_bowmen" max="RANGED" />
@@ -17903,7 +17907,7 @@
         <MenAtArm type="orthanc_guard" key="los_swords" max="INFANTRY" />
         <MenAtArm type="orthanc_guardsmen" key="los_pike" max="INFANTRY" />
         <MenAtArm type="ossiriand_rangers" key="los_bowmen" max="RANGED" />
-        <MenAtArm type="pikemen_unit" key="lam_mediumspear" max="INFANTRY" />
+        <MenAtArm type="pikemen_unit" key="dol_mediumspear" max="INFANTRY" />
         <MenAtArm type="powan_hunters" key="los_bowmen" max="RANGED" />
         <MenAtArm type="quayside_crossbowmen" key="gon_archers" max="RANGED" />
         <MenAtArm type="rabbit_riders" key="los_axecav" max="CAVALRY" />
@@ -17994,10 +17998,10 @@
     <Faction name="pinnath" subculture="att_sub_cult_roman_west">
         <General key="pin_guardspear" rank="1" />
         <General key="pin_heavypike" rank="2" />
-        <General key="pin_sergeantcav" rank="3" />
+        <General key="pin_hirluin" rank="3" />
         <Knights key="pin_mountedswords" rank="1" />
         <Knights key="pin_riders" rank="2" />
-        <Knights key="pin_hirluin" rank="3" />
+        <Knights key="pin_sergeantcav" rank="3" />
         <Levies key="pin_levyspear" percentage="44" max="LEVY" />
         <Levies key="pin_skirm" percentage="42" max="LEVY" />
         <Levies key="pin_levysword" percentage="14" max="LEVY" />
@@ -18005,17 +18009,17 @@
         <Garrison key="pin_levyspear" percentage="40" max="LEVY" level="1" />
         <Garrison key="pin_levysword" percentage="29" max="LEVY" level="1" />
         <Garrison key="pin_axe" percentage="18" max="LEVY" level="1" />
-        <Garrison key="pin_archer" percentage="17" max="LEVY" level="2" />
+        <Garrison key="pin_crossbow" percentage="25" max="LEVY" level="2" />
         <Garrison key="pin_riders" percentage="15" max="LEVY" level="2" />
-        <Garrison key="pin_pike" percentage="27" max="LEVY" level="2" />
-        <Garrison key="pin_forresters" percentage="27" max="LEVY" level="2" />
-        <Garrison key="pin_heavymace" percentage="14" max="LEVY" level="2" />
-        <Garrison key="pin_heavyspear" percentage="38" max="LEVY" level="3" />
-        <Garrison key="pin_heavysword" percentage="41" max="LEVY" level="3" />
-        <Garrison key="pin_mediumspear" percentage="21" max="LEVY" level="3" />
-        <Garrison key="pin_heavyspear" percentage="44" max="LEVY" level="4" />
-        <Garrison key="pin_heavysword" percentage="26" max="LEVY" level="4" />
-        <Garrison key="pin_pike" percentage="30" max="LEVY" level="4" />
+        <Garrison key="pin_halberd" percentage="13" max="LEVY" level="2" />
+        <Garrison key="pin_forresters" percentage="16" max="LEVY" level="2" />
+        <Garrison key="pin_mace" percentage="31" max="LEVY" level="2" />
+        <Garrison key="pin_heavyspear" percentage="32" max="LEVY" level="3" />
+        <Garrison key="pin_heavysword" percentage="53" max="LEVY" level="3" />
+        <Garrison key="pin_halberd" percentage="15" max="LEVY" level="3" />
+        <Garrison key="pin_heavyspear" percentage="45" max="LEVY" level="4" />
+        <Garrison key="pin_heavysword" percentage="44" max="LEVY" level="4" />
+        <Garrison key="pin_heavymace" percentage="11" max="LEVY" level="4" />
         <MenAtArm type="abrazanim_halberdiers" key="pin_halberd" max="INFANTRY" />
         <MenAtArm type="abrazanim_legion" key="pin_heavysword" max="INFANTRY" />
         <MenAtArm type="abrazanim_warbows" key="pin_archer" max="RANGED" />
@@ -18340,17 +18344,17 @@
         <Garrison key="rv_skirm" percentage="53" max="LEVY" level="1" />
         <Garrison key="rv_levyspear" percentage="28" max="LEVY" level="1" />
         <Garrison key="rv_levysword" percentage="19" max="LEVY" level="1" />
-        <Garrison key="rv_archer" percentage="26" max="LEVY" level="2" />
-        <Garrison key="rv_sergeantcav" percentage="19" max="LEVY" level="2" />
-        <Garrison key="rv_mediumspear" percentage="10" max="LEVY" level="2" />
-        <Garrison key="rv_axe" percentage="21" max="LEVY" level="2" />
-        <Garrison key="rv_mace" percentage="24" max="LEVY" level="2" />
-        <Garrison key="rv_heavyspear" percentage="32" max="LEVY" level="3" />
-        <Garrison key="rv_heavysword" percentage="33" max="LEVY" level="3" />
-        <Garrison key="rv_archer" percentage="35" max="LEVY" level="3" />
-        <Garrison key="rv_heavyspear" percentage="45" max="LEVY" level="4" />
-        <Garrison key="rv_heavysword" percentage="28" max="LEVY" level="4" />
-        <Garrison key="rv_pike" percentage="27" max="LEVY" level="4" />
+        <Garrison key="rv_archer" percentage="9" max="LEVY" level="2" />
+        <Garrison key="rv_sergeantcav" percentage="38" max="LEVY" level="2" />
+        <Garrison key="rv_mediumspear" percentage="17" max="LEVY" level="2" />
+        <Garrison key="rv_mediumsword" percentage="10" max="LEVY" level="2" />
+        <Garrison key="rv_pike" percentage="26" max="LEVY" level="2" />
+        <Garrison key="rv_heavyspear" percentage="45" max="LEVY" level="3" />
+        <Garrison key="rv_heavysword" percentage="14" max="LEVY" level="3" />
+        <Garrison key="rv_mediumspear" percentage="41" max="LEVY" level="3" />
+        <Garrison key="rv_heavyspear" percentage="33" max="LEVY" level="4" />
+        <Garrison key="rv_heavysword" percentage="30" max="LEVY" level="4" />
+        <Garrison key="rv_halberd" percentage="37" max="LEVY" level="4" />
         <MenAtArm type="abrazanim_halberdiers" key="rv_halberd" max="INFANTRY" />
         <MenAtArm type="abrazanim_legion" key="rv_mediumsword" max="INFANTRY" />
         <MenAtArm type="abrazanim_warbows" key="rv_archer" max="RANGED" />
