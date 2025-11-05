@@ -68,8 +68,8 @@
     </Faction>
     <Faction name="African Separatists" subculture="att_sub_cult_eastern_desert">
         <MenAtArm type="emishi_riders" key="MAUR_amazigh_tribal_horsemen" max="CAVALRY" />
-        <MenAtArm type="gaemamusa" key="cha_mus_berber_light_cav" max="CAVALRY" />
-        <MenAtArm type="heavy_khitan_cavalry" key="cha_mus_berber_light_cav" max="CAVALRY" />
+        <MenAtArm type="gaemamusa" key="GOTH_dux" max="CAVALRY" />
+        <MenAtArm type="heavy_khitan_cavalry" key="MERC_ERE_perso_iustiniani" max="CAVALRY" />
         <MenAtArm type="hwarang" key="MERC_MAURI_tribal_warriors" max="INFANTRY" />
         <MenAtArm type="ji_pikemen" key="bel_ost_gothic_pikemen" max="INFANTRY" />
         <MenAtArm type="ksatra" key="MERC_MAURI_tribal_warriors" max="INFANTRY" />
@@ -107,6 +107,7 @@
         <MenAtArm type="sohei" key="bel_ost_gothic_pikemen" max="INFANTRY" />
     </Faction>
     <Faction name="Alamannic Separatists" subculture="att_sub_cult_barbarian_germanic_west">
+        <General key="GOTH_dux" rank="3" />
         <MenAtArm type="emishi_riders" key="MAUR_amazigh_tribal_horsemen" max="CAVALRY" />
         <MenAtArm type="gaemamusa" key="MERC_gallo_noble" max="CAVALRY" />
         <MenAtArm type="heavy_khitan_cavalry" key="MERC_gallo_noble" max="CAVALRY" />
@@ -175,13 +176,13 @@
         <MenAtArm type="emishi_riders" key="MERC_vascon_javelin_cav" max="CAVALRY" />
         <MenAtArm type="gaemamusa" key="ERE_limitanei_levy_lancers" max="CAVALRY" />
         <MenAtArm type="heavy_khitan_cavalry" key="ERE_limitanei_levy_lancers" max="CAVALRY" />
-        <MenAtArm type="hwarang" key="cha_sax_axe_band" max="INFANTRY" />
+        <MenAtArm type="hwarang" key="SAS_elite_heavy_dailamite_infantry" max="INFANTRY" />
         <MenAtArm type="ji_pikemen" key="bel_ost_gothic_pikemen" max="INFANTRY" />
-        <MenAtArm type="ksatra" key="cha_sax_axe_band" max="INFANTRY" />
+        <MenAtArm type="ksatra" key="SAS_elite_heavy_dailamite_infantry" max="INFANTRY" />
         <MenAtArm type="sohei" key="bel_ost_gothic_pikemen" max="INFANTRY" />
     </Faction>
     <Faction name="Angria" subculture="att_sub_cult_barbarian_germanic_north">
-        <MenAtArm type="emishi_riders" key="cha_sax_scout_cav" max="CAVALRY" />
+        <MenAtArm type="emishi_riders" key="att_merc_rom_funditores" max="CAVALRY" />
         <MenAtArm type="gaemamusa" key="cha_sax_hearth_cav" max="CAVALRY" />
         <MenAtArm type="heavy_khitan_cavalry" key="cha_sax_hearth_cav" max="CAVALRY" />
         <MenAtArm type="hwarang" key="ANG_geburas_axes" max="INFANTRY" />
@@ -225,7 +226,7 @@
     <Faction name="Arabian Rebels" subculture="att_sub_cult_eastern_desert">
         <MenAtArm type="emishi_riders" key="MAUR_amazigh_tribal_horsemen" max="CAVALRY" />
         <MenAtArm type="gaemamusa" key="QUR_banu_judham_lancers" max="CAVALRY" />
-        <MenAtArm type="heavy_khitan_cavalry" key="cha_mus_berber_light_cav" max="CAVALRY" />
+        <MenAtArm type="heavy_khitan_cavalry" key="cha_sax_hearth_cav" max="CAVALRY" />
         <MenAtArm type="hwarang" key="mubs_berber_armored_footmen" max="INFANTRY" />
         <MenAtArm type="ji_pikemen" key="bel_ost_gothic_pikemen" max="INFANTRY" />
         <MenAtArm type="ksatra" key="MERC_MAURI_tribal_warriors" max="INFANTRY" />
@@ -260,6 +261,8 @@
         <MenAtArm type="sohei" key="bel_ost_gothic_pikemen" max="INFANTRY" />
     </Faction>
     <Faction name="Asia" subculture="att_sub_cult_roman_east">
+        <General key="GHAS_phylarch" rank="2" />
+        <General key="mubs_maghrebi_lesser_nobles" rank="3" />
         <MenAtArm type="emishi_riders" key="ERE_equites_toxoto_dalmatae" max="CAVALRY" />
         <MenAtArm type="gaemamusa" key="ERE_bucellarii" max="CAVALRY" />
         <MenAtArm type="heavy_khitan_cavalry" key="ERE_bucellarii" max="CAVALRY" />
@@ -312,8 +315,8 @@
         <General key="HIM_banu_abs_lancer" rank="2" />
         <General key="bel_rom_tagmata_cavalry" rank="3" />
         <MenAtArm type="emishi_riders" key="cha_avar_horse_archers" max="CAVALRY" />
-        <MenAtArm type="gaemamusa" key="cha_avar_guard" max="CAVALRY" />
-        <MenAtArm type="heavy_khitan_cavalry" key="cha_avar_guard" max="CAVALRY" />
+        <MenAtArm type="gaemamusa" key="cha_sax_hearth_cav" max="CAVALRY" />
+        <MenAtArm type="heavy_khitan_cavalry" key="cha_avar_lancers" max="CAVALRY" />
         <MenAtArm type="hwarang" key="NOM_axes" max="INFANTRY" />
         <MenAtArm type="ji_pikemen" key="bel_ost_gothic_pikemen" max="INFANTRY" />
         <MenAtArm type="ksatra" key="NOM_axes" max="INFANTRY" />
@@ -342,12 +345,12 @@
     <Faction name="Avars" subculture="att_sub_cult_nomadic_sarmatian">
         <General key="KOK_cha_bre_armorican_cav" rank="2" />
         <General key="KOK_cha_gen_guard_cav" rank="3" />
-        <MenAtArm type="emishi_riders" key="cha_avar_horse_masters" max="CAVALRY" />
+        <MenAtArm type="emishi_riders" key="cha_mus_umayyad_guardsmen" max="CAVALRY" />
         <MenAtArm type="gaemamusa" key="cha_avar_lancers" max="CAVALRY" />
         <MenAtArm type="heavy_khitan_cavalry" key="cha_avar_lancers" max="CAVALRY" />
-        <MenAtArm type="hwarang" key="cha_avar_noble_sword" max="INFANTRY" />
+        <MenAtArm type="hwarang" key="SUEB_sword_levy" max="INFANTRY" />
         <MenAtArm type="ji_pikemen" key="bel_ost_gothic_pikemen" max="INFANTRY" />
-        <MenAtArm type="ksatra" key="cha_avar_noble_sword" max="INFANTRY" />
+        <MenAtArm type="ksatra" key="mubs_arab_levy_swords" max="INFANTRY" />
         <MenAtArm type="sohei" key="bel_ost_gothic_pikemen" max="INFANTRY" />
     </Faction>
     <Faction name="Banu Ghassan" subculture="att_sub_cult_eastern_desert">
@@ -393,6 +396,7 @@
         <MenAtArm type="sohei" key="bel_ost_gothic_pikemen" max="INFANTRY" />
     </Faction>
     <Faction name="Bavaria" subculture="att_sub_cult_barbarian_germanic_west">
+        <General key="GOTH_dux" rank="3" />
         <MenAtArm type="emishi_riders" key="MERC_vascon_javelin_cav" max="CAVALRY" />
         <MenAtArm type="gaemamusa" key="ERE_limitanei_levy_lancers" max="CAVALRY" />
         <MenAtArm type="heavy_khitan_cavalry" key="ERE_limitanei_levy_lancers" max="CAVALRY" />
@@ -406,14 +410,14 @@
         <MenAtArm type="gaemamusa" key="bel_ost_gothic_lancers" max="CAVALRY" />
         <MenAtArm type="heavy_khitan_cavalry" key="bel_ost_gothic_lancers" max="CAVALRY" />
         <MenAtArm type="hwarang" key="MERC_MAURI_tribal_warriors" max="INFANTRY" />
-        <MenAtArm type="ji_pikemen" key="bel_ost_gothic_pikemen" max="INFANTRY" />
+        <MenAtArm type="ji_pikemen" key="att_merc_ger_gothic_pikemen" max="INFANTRY" />
         <MenAtArm type="ksatra" key="MERC_MAURI_tribal_warriors" max="INFANTRY" />
-        <MenAtArm type="sohei" key="bel_ost_gothic_pikemen" max="INFANTRY" />
+        <MenAtArm type="sohei" key="att_merc_ger_gothic_pikemen" max="INFANTRY" />
     </Faction>
     <Faction name="Berbers" subculture="att_sub_cult_eastern_desert">
         <MenAtArm type="emishi_riders" key="MAUR_amazigh_tribal_horsemen" max="CAVALRY" />
-        <MenAtArm type="gaemamusa" key="cha_mus_berber_light_cav" max="CAVALRY" />
-        <MenAtArm type="heavy_khitan_cavalry" key="cha_mus_berber_light_cav" max="CAVALRY" />
+        <MenAtArm type="gaemamusa" key="GOTH_dux" max="CAVALRY" />
+        <MenAtArm type="heavy_khitan_cavalry" key="GOTH_dux" max="CAVALRY" />
         <MenAtArm type="hwarang" key="MERC_MAURI_tribal_warriors" max="INFANTRY" />
         <MenAtArm type="ji_pikemen" key="bel_ost_gothic_pikemen" max="INFANTRY" />
         <MenAtArm type="ksatra" key="MERC_MAURI_tribal_warriors" max="INFANTRY" />
@@ -423,15 +427,14 @@
         <General key="mubs_mulathanum" rank="2" />
         <General key="mubs_mulathanum" rank="3" />
         <MenAtArm type="emishi_riders" key="MAUR_amazigh_tribal_horsemen" max="CAVALRY" />
-        <MenAtArm type="gaemamusa" key="cha_mus_berber_light_cav" max="CAVALRY" />
-        <MenAtArm type="heavy_khitan_cavalry" key="cha_mus_berber_light_cav" max="CAVALRY" />
+        <MenAtArm type="gaemamusa" key="GOTH_dux" max="CAVALRY" />
+        <MenAtArm type="heavy_khitan_cavalry" key="GOTH_dux" max="CAVALRY" />
         <MenAtArm type="hwarang" key="BLEMM_heavy_khanda" max="INFANTRY" />
         <MenAtArm type="ji_pikemen" key="bel_ost_elite_ostrogothic_pikemen" max="INFANTRY" />
         <MenAtArm type="ksatra" key="BLEMM_heavy_khanda" max="INFANTRY" />
         <MenAtArm type="sohei" key="bel_ost_elite_ostrogothic_pikemen" max="INFANTRY" />
     </Faction>
     <Faction name="Bohemia" subculture="att_sub_cult_barbarian_germanic_east">
-        <General key="bel_ost_scholae" rank="3" />
         <MenAtArm type="emishi_riders" key="cha_slav_raiders" max="CAVALRY" />
         <MenAtArm type="gaemamusa" key="cha_slav_royal_cav" max="CAVALRY" />
         <MenAtArm type="heavy_khitan_cavalry" key="cha_slav_royal_cav" max="CAVALRY" />
@@ -461,6 +464,7 @@
         <MenAtArm type="sohei" key="bel_ost_gothic_pikemen" max="INFANTRY" />
     </Faction>
     <Faction name="Burgundian Separatists" subculture="att_sub_cult_barbarian_germanic_west">
+        <General key="THUR_elite_lancers" rank="3" />
         <MenAtArm type="emishi_riders" key="MAUR_amazigh_tribal_horsemen" max="CAVALRY" />
         <MenAtArm type="gaemamusa" key="MERC_gallo_noble" max="CAVALRY" />
         <MenAtArm type="heavy_khitan_cavalry" key="MERC_gallo_noble" max="CAVALRY" />
@@ -499,6 +503,8 @@
         <MenAtArm type="sohei" key="bel_ost_gothic_pikemen" max="INFANTRY" />
     </Faction>
     <Faction name="Celtic Rebels" subculture="att_sub_cult_barbarian_celtic">
+        <General key="pict_myrchan" rank="2" />
+        <General key="mubs_maghrebi_lesser_nobles" rank="3" />
         <MenAtArm type="emishi_riders" key="MAUR_amazigh_tribal_horsemen" max="CAVALRY" />
         <MenAtArm type="gaemamusa" key="MERC_gallo_noble" max="CAVALRY" />
         <MenAtArm type="heavy_khitan_cavalry" key="MERC_gallo_noble" max="CAVALRY" />
@@ -586,6 +592,7 @@
         <MenAtArm type="sohei" key="bel_ost_gothic_pikemen" max="INFANTRY" />
     </Faction>
     <Faction name="Ducatus Alemanniae" subculture="att_sub_cult_barbarian_germanic_west">
+        <General key="att_ger_sarmatian_cataphracts_fra" rank="3" />
         <MenAtArm type="emishi_riders" key="MAUR_amazigh_tribal_horsemen" max="CAVALRY" />
         <MenAtArm type="gaemamusa" key="MERC_gallo_noble" max="CAVALRY" />
         <MenAtArm type="heavy_khitan_cavalry" key="MERC_gallo_noble" max="CAVALRY" />
@@ -624,12 +631,12 @@
     <Faction name="Duchy of Benevento" subculture="att_sub_cult_roman_east">
         <General key="mubs_camel_riders" rank="2" />
         <General key="mubs_mulathanum" rank="3" />
-        <MenAtArm type="emishi_riders" key="cha_lom_raider_cav" max="CAVALRY" />
-        <MenAtArm type="gaemamusa" key="cha_lom_horsemen" max="CAVALRY" />
-        <MenAtArm type="heavy_khitan_cavalry" key="cha_lom_horsemen" max="CAVALRY" />
-        <MenAtArm type="hwarang" key="cha_lom_axemen" max="INFANTRY" />
+        <MenAtArm type="emishi_riders" key="att_mar_nor_nordic_light_marauders" max="CAVALRY" />
+        <MenAtArm type="gaemamusa" key="GOTH_dux" max="CAVALRY" />
+        <MenAtArm type="heavy_khitan_cavalry" key="GOTH_dux" max="CAVALRY" />
+        <MenAtArm type="hwarang" key="SUEB_sword_levy" max="INFANTRY" />
         <MenAtArm type="ji_pikemen" key="bel_ost_gothic_pikemen" max="INFANTRY" />
-        <MenAtArm type="ksatra" key="cha_lom_axemen" max="INFANTRY" />
+        <MenAtArm type="ksatra" key="mubs_arab_levy_swords" max="INFANTRY" />
         <MenAtArm type="sohei" key="bel_ost_gothic_pikemen" max="INFANTRY" />
     </Faction>
     <Faction name="Duchy of Burgundy" subculture="bel_sub_cult_roman">
@@ -651,9 +658,6 @@
         <MenAtArm type="sohei" key="bel_ost_gothic_pikemen" max="INFANTRY" />
     </Faction>
     <Faction name="Duchy of Frisia" subculture="bel_sub_cult_roman">
-        <General key="bel_rom_tagmata_cavalry" rank="3" />
-        <Knights key="bel_rom_bucellarii_guard_cavalry" rank="2" />
-        <Knights key="bel_rom_tagmata_cavalry" rank="3" />
         <MenAtArm type="emishi_riders" key="MAUR_amazigh_tribal_horsemen" max="CAVALRY" />
         <MenAtArm type="gaemamusa" key="MERC_gallo_noble" max="CAVALRY" />
         <MenAtArm type="heavy_khitan_cavalry" key="MERC_gallo_noble" max="CAVALRY" />
@@ -690,6 +694,8 @@
         <MenAtArm type="sohei" key="bel_ost_gothic_pikemen" max="INFANTRY" />
     </Faction>
     <Faction name="Duchy of Spoleto" subculture="att_sub_cult_roman_east">
+        <General key="bel_rom_bucellarii_guard_cavalry" rank="2" />
+        <General key="bel_rom_tagmata_cavalry" rank="3" />
         <MenAtArm type="emishi_riders" key="MAUR_amazigh_tribal_horsemen" max="CAVALRY" />
         <MenAtArm type="gaemamusa" key="ERE_limitanei_levy_lancers" max="CAVALRY" />
         <MenAtArm type="heavy_khitan_cavalry" key="ERE_limitanei_levy_lancers" max="CAVALRY" />
@@ -699,6 +705,8 @@
         <MenAtArm type="sohei" key="bel_ost_gothic_pikemen" max="INFANTRY" />
     </Faction>
     <Faction name="Dux Rebellionis" subculture="att_sub_cult_barbarian_celtic">
+        <General key="BRIT_teulu" rank="2" />
+        <General key="mubs_maghrebi_lesser_nobles" rank="3" />
         <MenAtArm type="emishi_riders" key="MAUR_amazigh_tribal_horsemen" max="CAVALRY" />
         <MenAtArm type="gaemamusa" key="ERE_limitanei_levy_lancers" max="CAVALRY" />
         <MenAtArm type="heavy_khitan_cavalry" key="ERE_limitanei_levy_lancers" max="CAVALRY" />
@@ -720,9 +728,9 @@
         <MenAtArm type="emishi_riders" key="MERC_vascon_javelin_cav" max="CAVALRY" />
         <MenAtArm type="gaemamusa" key="ERE_limitanei_levy_lancers" max="CAVALRY" />
         <MenAtArm type="heavy_khitan_cavalry" key="MERC_gallo_noble" max="CAVALRY" />
-        <MenAtArm type="hwarang" key="cha_vik_axe_freemen" max="INFANTRY" />
+        <MenAtArm type="hwarang" key="SUEB_sword_levy" max="INFANTRY" />
         <MenAtArm type="ji_pikemen" key="bel_ost_gothic_pikemen" max="INFANTRY" />
-        <MenAtArm type="ksatra" key="cha_vik_axe_freemen" max="INFANTRY" />
+        <MenAtArm type="ksatra" key="SUEB_sword_levy" max="INFANTRY" />
         <MenAtArm type="sohei" key="bel_ost_gothic_pikemen" max="INFANTRY" />
     </Faction>
     <Faction name="Eastern Rebels" subculture="att_sub_cult_eastern_sassanid">
@@ -747,12 +755,14 @@
         <MenAtArm type="emishi_riders" key="MAUR_amazigh_tribal_horsemen" max="CAVALRY" />
         <MenAtArm type="gaemamusa" key="MERC_gallo_noble" max="CAVALRY" />
         <MenAtArm type="heavy_khitan_cavalry" key="MERC_gallo_noble" max="CAVALRY" />
-        <MenAtArm type="hwarang" key="cha_sax_axe_band" max="INFANTRY" />
+        <MenAtArm type="hwarang" key="mubs_arab_levy_swords" max="INFANTRY" />
         <MenAtArm type="ji_pikemen" key="bel_ost_gothic_pikemen" max="INFANTRY" />
-        <MenAtArm type="ksatra" key="cha_sax_axe_band" max="INFANTRY" />
+        <MenAtArm type="ksatra" key="SUEB_sword_levy" max="INFANTRY" />
         <MenAtArm type="sohei" key="bel_ost_gothic_pikemen" max="INFANTRY" />
     </Faction>
     <Faction name="Egypt" subculture="att_sub_cult_roman_east">
+        <General key="bel_rom_bucellarii_guard_cavalry" rank="2" />
+        <General key="ERE_belisarius_bucellarii" rank="3" />
         <MenAtArm type="emishi_riders" key="MAUR_amazigh_tribal_horsemen" max="CAVALRY" />
         <MenAtArm type="gaemamusa" key="ERE_limitanei_levy_lancers" max="CAVALRY" />
         <MenAtArm type="heavy_khitan_cavalry" key="ERE_limitanei_levy_lancers" max="CAVALRY" />
@@ -780,6 +790,7 @@
         <MenAtArm type="sohei" key="bel_ost_gothic_pikemen" max="INFANTRY" />
     </Faction>
     <Faction name="English Rebels" subculture="att_sub_cult_barbarian_germanic_west">
+        <General key="ERE_belisarius_bucellarii" rank="3" />
         <MenAtArm type="emishi_riders" key="MAUR_amazigh_tribal_horsemen" max="CAVALRY" />
         <MenAtArm type="gaemamusa" key="MERC_gallo_noble" max="CAVALRY" />
         <MenAtArm type="heavy_khitan_cavalry" key="MERC_gallo_noble" max="CAVALRY" />
@@ -789,6 +800,7 @@
         <MenAtArm type="sohei" key="bel_ost_gothic_pikemen" max="INFANTRY" />
     </Faction>
     <Faction name="English Separatists" subculture="att_sub_cult_barbarian_germanic_west">
+        <General key="BRIT_dux_bello" rank="3" />
         <MenAtArm type="emishi_riders" key="MAUR_amazigh_tribal_horsemen" max="CAVALRY" />
         <MenAtArm type="gaemamusa" key="MERC_gallo_noble" max="CAVALRY" />
         <MenAtArm type="heavy_khitan_cavalry" key="MERC_gallo_noble" max="CAVALRY" />
@@ -800,7 +812,6 @@
     <Faction name="Eranshahr" subculture="att_sub_cult_eastern_sassanid">
         <General key="SAS_frasdaran" rank="2" />
         <General key="HEP_kushan_cataphracts" rank="3" />
-        <Knights key="HEP_kushan_cataphracts" rank="3" />
         <MenAtArm type="emishi_riders" key="MAUR_amazigh_tribal_horsemen" max="CAVALRY" />
         <MenAtArm type="gaemamusa" key="SAS_frasdaran" max="CAVALRY" />
         <MenAtArm type="heavy_khitan_cavalry" key="SAS_frasdaran" max="CAVALRY" />
@@ -918,7 +929,7 @@
         <MenAtArm type="heavy_khitan_cavalry" key="ERE_limitanei_levy_lancers" max="CAVALRY" />
         <MenAtArm type="hwarang" key="MERC_MAURI_tribal_warriors" max="INFANTRY" />
         <MenAtArm type="ji_pikemen" key="bel_ost_gothic_pikemen" max="INFANTRY" />
-        <MenAtArm type="ksatra" key="cha_vik_axe_freemen" max="INFANTRY" />
+        <MenAtArm type="ksatra" key="SUEB_sword_levy" max="INFANTRY" />
         <MenAtArm type="sohei" key="bel_ost_gothic_pikemen" max="INFANTRY" />
     </Faction>
     <Faction name="Gepidae" subculture="att_sub_cult_barbarian_germanic_west">
@@ -945,9 +956,9 @@
         <MenAtArm type="emishi_riders" key="MERC_vascon_javelin_cav" max="CAVALRY" />
         <MenAtArm type="gaemamusa" key="ERE_limitanei_levy_lancers" max="CAVALRY" />
         <MenAtArm type="heavy_khitan_cavalry" key="ERE_limitanei_levy_lancers" max="CAVALRY" />
-        <MenAtArm type="hwarang" key="cha_sax_axe_band" max="INFANTRY" />
+        <MenAtArm type="hwarang" key="SUEB_sword_levy" max="INFANTRY" />
         <MenAtArm type="ji_pikemen" key="bel_ost_gothic_pikemen" max="INFANTRY" />
-        <MenAtArm type="ksatra" key="cha_sax_axe_band" max="INFANTRY" />
+        <MenAtArm type="ksatra" key="SAS_elite_heavy_dailamite_infantry" max="INFANTRY" />
         <MenAtArm type="sohei" key="bel_ost_gothic_pikemen" max="INFANTRY" />
     </Faction>
     <Faction name="Gothoi" subculture="att_sub_cult_barbarian_germanic_east">
@@ -1011,6 +1022,8 @@
         <MenAtArm type="sohei" key="bel_ost_gothic_pikemen" max="INFANTRY" />
     </Faction>
     <Faction name="Irish Rebels" subculture="att_sub_cult_barbarian_celtic">
+        <General key="pict_myrchan" rank="2" />
+        <General key="pict_myrchan" rank="3" />
         <MenAtArm type="emishi_riders" key="MAUR_amazigh_tribal_horsemen" max="CAVALRY" />
         <MenAtArm type="gaemamusa" key="MERC_gallo_noble" max="CAVALRY" />
         <MenAtArm type="heavy_khitan_cavalry" key="MERC_gallo_noble" max="CAVALRY" />
@@ -1020,6 +1033,8 @@
         <MenAtArm type="sohei" key="bel_ost_gothic_pikemen" max="INFANTRY" />
     </Faction>
     <Faction name="Irish Separatists" subculture="att_sub_cult_barbarian_celtic">
+        <General key="pict_myrchan" rank="2" />
+        <General key="mubs_maghrebi_lesser_nobles" rank="3" />
         <MenAtArm type="emishi_riders" key="cantabrian_jav_cav" max="CAVALRY" />
         <MenAtArm type="gaemamusa" key="MERC_gallo_noble" max="CAVALRY" />
         <MenAtArm type="heavy_khitan_cavalry" key="MERC_gallo_noble" max="CAVALRY" />
@@ -1038,6 +1053,8 @@
         <MenAtArm type="sohei" key="bel_ost_gothic_pikemen" max="INFANTRY" />
     </Faction>
     <Faction name="Italian Rebels" subculture="att_sub_cult_roman_east">
+        <General key="GARAM_limitanei_horsemen" rank="2" />
+        <General key="HEP_spet_xyon_horsemen" rank="3" />
         <MenAtArm type="emishi_riders" key="MAUR_amazigh_tribal_horsemen" max="CAVALRY" />
         <MenAtArm type="gaemamusa" key="MERC_gallo_noble" max="CAVALRY" />
         <MenAtArm type="heavy_khitan_cavalry" key="MERC_gallo_noble" max="CAVALRY" />
@@ -1047,6 +1064,8 @@
         <MenAtArm type="sohei" key="bel_ost_gothic_pikemen" max="INFANTRY" />
     </Faction>
     <Faction name="Italian Separatists" subculture="att_sub_cult_roman_east">
+        <General key="GARAM_limitanei_horsemen" rank="2" />
+        <General key="HEP_spet_xyon_horsemen" rank="3" />
         <MenAtArm type="emishi_riders" key="MAUR_amazigh_tribal_horsemen" max="CAVALRY" />
         <MenAtArm type="gaemamusa" key="MERC_gallo_noble" max="CAVALRY" />
         <MenAtArm type="heavy_khitan_cavalry" key="MERC_gallo_noble" max="CAVALRY" />
@@ -1090,7 +1109,6 @@
     <Faction name="Kingdom of Ailech" subculture="att_sub_cult_barbarian_celtic">
         <General key="pict_myrchan" rank="2" />
         <General key="cha_cel_kings_fianna" rank="3" />
-        <Knights key="cha_cel_kings_fianna" rank="3" />
         <MenAtArm type="emishi_riders" key="MAUR_amazigh_tribal_horsemen" max="CAVALRY" />
         <MenAtArm type="gaemamusa" key="cha_cel_horsemen" max="CAVALRY" />
         <MenAtArm type="heavy_khitan_cavalry" key="cha_cel_horsemen" max="CAVALRY" />
@@ -1100,6 +1118,8 @@
         <MenAtArm type="sohei" key="bel_ost_gothic_pikemen" max="INFANTRY" />
     </Faction>
     <Faction name="Kingdom of Alt Clut" subculture="att_sub_cult_barbarian_celtic">
+        <General key="BRIT_teulu" rank="2" />
+        <General key="pict_myrchan" rank="3" />
         <MenAtArm type="emishi_riders" key="cantabrian_jav_cav" max="CAVALRY" />
         <MenAtArm type="gaemamusa" key="MERC_gallo_noble" max="CAVALRY" />
         <MenAtArm type="heavy_khitan_cavalry" key="MERC_gallo_noble" max="CAVALRY" />
@@ -1111,10 +1131,10 @@
     <Faction name="Kingdom of Asturias" subculture="bel_sub_cult_roman">
         <General key="bel_rom_bucellarii_guard_cavalry" rank="2" />
         <General key="ERE_bucellarii_garrison" rank="3" />
-        <MenAtArm type="emishi_riders" key="cha_spa_jinetes" max="CAVALRY" />
-        <MenAtArm type="gaemamusa" key="cha_spa_iberian_cav" max="CAVALRY" />
-        <MenAtArm type="heavy_khitan_cavalry" key="cha_spa_royal_knights" max="CAVALRY" />
-        <MenAtArm type="hwarang" key="cha_spa_royal_guardsmen" max="INFANTRY" />
+        <MenAtArm type="emishi_riders" key="att_merc_mar_ger_germanic_light_boatmen" max="CAVALRY" />
+        <MenAtArm type="gaemamusa" key="cha_spa_royal_knights" max="CAVALRY" />
+        <MenAtArm type="heavy_khitan_cavalry" key="cha_spa_royal_guard_cavalry" max="CAVALRY" />
+        <MenAtArm type="hwarang" key="cha_gen_sword" max="INFANTRY" />
         <MenAtArm type="ji_pikemen" key="bel_ost_gothic_pikemen" max="INFANTRY" />
         <MenAtArm type="ksatra" key="cha_gen_sword" max="INFANTRY" />
         <MenAtArm type="sohei" key="bel_ost_gothic_pikemen" max="INFANTRY" />
@@ -1134,9 +1154,9 @@
         <MenAtArm type="emishi_riders" key="MAUR_amazigh_tribal_horsemen" max="CAVALRY" />
         <MenAtArm type="gaemamusa" key="MERC_gallo_noble" max="CAVALRY" />
         <MenAtArm type="heavy_khitan_cavalry" key="MERC_gallo_noble" max="CAVALRY" />
-        <MenAtArm type="hwarang" key="cha_eng_select_axemen" max="INFANTRY" />
+        <MenAtArm type="hwarang" key="SUEB_sword_levy" max="INFANTRY" />
         <MenAtArm type="ji_pikemen" key="bel_ost_gothic_pikemen" max="INFANTRY" />
-        <MenAtArm type="ksatra" key="cha_eng_select_axemen" max="INFANTRY" />
+        <MenAtArm type="ksatra" key="SAS_elite_heavy_dailamite_infantry" max="INFANTRY" />
         <MenAtArm type="sohei" key="bel_ost_gothic_pikemen" max="INFANTRY" />
     </Faction>
     <Faction name="Kingdom of Charlemagne" subculture="att_sub_cult_roman_west">
@@ -1150,6 +1170,8 @@
         <MenAtArm type="sohei" key="bel_ost_gothic_pikemen" max="INFANTRY" />
     </Faction>
     <Faction name="Kingdom of Connachta" subculture="att_sub_cult_barbarian_celtic">
+        <General key="pict_myrchan" rank="2" />
+        <General key="mubs_maghrebi_lesser_nobles" rank="3" />
         <MenAtArm type="emishi_riders" key="MAUR_amazigh_tribal_horsemen" max="CAVALRY" />
         <MenAtArm type="gaemamusa" key="MERC_gallo_noble" max="CAVALRY" />
         <MenAtArm type="heavy_khitan_cavalry" key="MERC_gallo_noble" max="CAVALRY" />
@@ -1159,6 +1181,8 @@
         <MenAtArm type="sohei" key="bel_ost_gothic_pikemen" max="INFANTRY" />
     </Faction>
     <Faction name="Kingdom of Glywysing" subculture="att_sub_cult_barbarian_celtic">
+        <General key="pict_myrchan" rank="2" />
+        <General key="pict_myrchan" rank="3" />
         <MenAtArm type="emishi_riders" key="MAUR_amazigh_tribal_horsemen" max="CAVALRY" />
         <MenAtArm type="gaemamusa" key="bel_rom_foederati_cav" max="CAVALRY" />
         <MenAtArm type="heavy_khitan_cavalry" key="bel_rom_foederati_cav" max="CAVALRY" />
@@ -1179,17 +1203,18 @@
         <MenAtArm type="sohei" key="bel_ost_gothic_pikemen" max="INFANTRY" />
     </Faction>
     <Faction name="Kingdom of Kent" subculture="att_sub_cult_barbarian_germanic_west">
-        <General key="cha_lom_gastald_guardsmen" rank="2" />
-        <General key="cha_lom_gastald_guardsmen" rank="3" />
-        <MenAtArm type="emishi_riders" key="cha_lom_night_raiders" max="CAVALRY" />
-        <MenAtArm type="gaemamusa" key="cha_lom_horsemen" max="CAVALRY" />
-        <MenAtArm type="heavy_khitan_cavalry" key="cha_lom_horsemen" max="CAVALRY" />
-        <MenAtArm type="hwarang" key="cha_lom_axemen" max="INFANTRY" />
+        <General key="LOM_exercitales" rank="3" />
+        <MenAtArm type="emishi_riders" key="AKS_himyarite_horsemen" max="CAVALRY" />
+        <MenAtArm type="gaemamusa" key="cha_byz_tagmata_cavalry" max="CAVALRY" />
+        <MenAtArm type="heavy_khitan_cavalry" key="cha_byz_tagmata_cavalry" max="CAVALRY" />
+        <MenAtArm type="hwarang" key="SAS_elite_heavy_dailamite_infantry" max="INFANTRY" />
         <MenAtArm type="ji_pikemen" key="bel_ost_gothic_pikemen" max="INFANTRY" />
-        <MenAtArm type="ksatra" key="cha_lom_axemen" max="INFANTRY" />
+        <MenAtArm type="ksatra" key="SAS_elite_heavy_dailamite_infantry" max="INFANTRY" />
         <MenAtArm type="sohei" key="bel_ost_gothic_pikemen" max="INFANTRY" />
     </Faction>
     <Faction name="Kingdom of Leinster" subculture="att_sub_cult_barbarian_celtic">
+        <General key="pict_myrchan" rank="2" />
+        <General key="pict_myrchan" rank="3" />
         <MenAtArm type="emishi_riders" key="MAUR_amazigh_tribal_horsemen" max="CAVALRY" />
         <MenAtArm type="gaemamusa" key="MERC_gallo_noble" max="CAVALRY" />
         <MenAtArm type="heavy_khitan_cavalry" key="MERC_gallo_noble" max="CAVALRY" />
@@ -1201,17 +1226,18 @@
     <Faction name="Kingdom of Mercia" subculture="att_sub_cult_barbarian_germanic_west">
         <General key="bel_ost_comes" rank="2" />
         <General key="MERC_avars" rank="3" />
-        <Knights key="bel_van_vandal_horsemen" rank="2" />
         <Knights key="cha_cel_teulu" rank="3" />
         <MenAtArm type="emishi_riders" key="MAUR_amazigh_tribal_horsemen" max="CAVALRY" />
-        <MenAtArm type="gaemamusa" key="cha_eng_horsemen" max="CAVALRY" />
-        <MenAtArm type="heavy_khitan_cavalry" key="cha_eng_horsemen" max="CAVALRY" />
-        <MenAtArm type="hwarang" key="cha_eng_select_axemen" max="INFANTRY" />
+        <MenAtArm type="gaemamusa" key="cha_eng_royal_horsemen" max="CAVALRY" />
+        <MenAtArm type="heavy_khitan_cavalry" key="cha_eng_royal_horsemen" max="CAVALRY" />
+        <MenAtArm type="hwarang" key="cha_eng_fyrd_axemen" max="INFANTRY" />
         <MenAtArm type="ji_pikemen" key="bel_ost_gothic_pikemen" max="INFANTRY" />
-        <MenAtArm type="ksatra" key="cha_eng_select_axemen" max="INFANTRY" />
+        <MenAtArm type="ksatra" key="cha_eng_fyrd_axemen" max="INFANTRY" />
         <MenAtArm type="sohei" key="bel_ost_gothic_pikemen" max="INFANTRY" />
     </Faction>
     <Faction name="Kingdom of Munster" subculture="att_sub_cult_barbarian_celtic">
+        <General key="BRIT_teulu" rank="2" />
+        <General key="pict_myrchan" rank="3" />
         <MenAtArm type="emishi_riders" key="MAUR_amazigh_tribal_horsemen" max="CAVALRY" />
         <MenAtArm type="gaemamusa" key="MERC_gallo_noble" max="CAVALRY" />
         <MenAtArm type="heavy_khitan_cavalry" key="MERC_gallo_noble" max="CAVALRY" />
@@ -1221,16 +1247,13 @@
         <MenAtArm type="sohei" key="bel_ost_gothic_pikemen" max="INFANTRY" />
     </Faction>
     <Faction name="Kingdom of Northumbria" subculture="att_sub_cult_barbarian_germanic_west">
-        <General key="bel_ost_comes" rank="2" />
         <General key="cha_cel_teulu" rank="3" />
-        <Knights key="bel_ost_noble_gothic_landers" rank="2" />
-        <Knights key="cha_cel_teulu" rank="3" />
         <MenAtArm type="emishi_riders" key="MAUR_amazigh_tribal_horsemen" max="CAVALRY" />
-        <MenAtArm type="gaemamusa" key="cha_eng_horsemen" max="CAVALRY" />
-        <MenAtArm type="heavy_khitan_cavalry" key="cha_eng_horsemen" max="CAVALRY" />
-        <MenAtArm type="hwarang" key="cha_eng_royal_companions" max="INFANTRY" />
+        <MenAtArm type="gaemamusa" key="cha_byz_tagmata_cavalry" max="CAVALRY" />
+        <MenAtArm type="heavy_khitan_cavalry" key="cha_byz_tagmata_cavalry" max="CAVALRY" />
+        <MenAtArm type="hwarang" key="SAS_elite_heavy_dailamite_infantry" max="INFANTRY" />
         <MenAtArm type="ji_pikemen" key="bel_ost_gothic_pikemen" max="INFANTRY" />
-        <MenAtArm type="ksatra" key="cha_eng_royal_companions" max="INFANTRY" />
+        <MenAtArm type="ksatra" key="SAS_elite_heavy_dailamite_infantry" max="INFANTRY" />
         <MenAtArm type="sohei" key="bel_ost_gothic_pikemen" max="INFANTRY" />
     </Faction>
     <Faction name="Kingdom of Powys" subculture="att_sub_cult_barbarian_celtic">
@@ -1245,6 +1268,8 @@
         <MenAtArm type="sohei" key="bel_ost_gothic_pikemen" max="INFANTRY" />
     </Faction>
     <Faction name="Kingdom of Ulaid" subculture="att_sub_cult_barbarian_celtic">
+        <General key="pict_myrchan" rank="2" />
+        <General key="pict_myrchan" rank="3" />
         <MenAtArm type="emishi_riders" key="MAUR_amazigh_tribal_horsemen" max="CAVALRY" />
         <MenAtArm type="gaemamusa" key="ERE_limitanei_levy_lancers" max="CAVALRY" />
         <MenAtArm type="heavy_khitan_cavalry" key="MERC_gallo_noble" max="CAVALRY" />
@@ -1254,6 +1279,7 @@
         <MenAtArm type="sohei" key="bel_ost_gothic_pikemen" max="INFANTRY" />
     </Faction>
     <Faction name="Kingdom of Wessex" subculture="att_sub_cult_barbarian_germanic_west">
+        <General key="LOM_exercitales" rank="3" />
         <MenAtArm type="emishi_riders" key="MAUR_amazigh_tribal_horsemen" max="CAVALRY" />
         <MenAtArm type="gaemamusa" key="ERE_limitanei_levy_lancers" max="CAVALRY" />
         <MenAtArm type="heavy_khitan_cavalry" key="MERC_gallo_noble" max="CAVALRY" />
@@ -1264,30 +1290,28 @@
     </Faction>
     <Faction name="Kingdom of the Danes" subculture="att_sub_cult_barbarian_germanic_north">
         <General key="BAL_armoured_retinue" rank="3" />
-        <Knights key="BAL_armoured_retinue" rank="2" />
-        <Knights key="BAL_armoured_retinue" rank="3" />
         <MenAtArm type="emishi_riders" key="MAUR_amazigh_tribal_horsemen" max="CAVALRY" />
         <MenAtArm type="gaemamusa" key="MERC_gallo_noble" max="CAVALRY" />
         <MenAtArm type="heavy_khitan_cavalry" key="MERC_gallo_noble" max="CAVALRY" />
-        <MenAtArm type="hwarang" key="cha_vik_housecarls" max="INFANTRY" />
+        <MenAtArm type="hwarang" key="cha_vik_axemen" max="INFANTRY" />
         <MenAtArm type="ji_pikemen" key="bel_ost_gothic_pikemen" max="INFANTRY" />
-        <MenAtArm type="ksatra" key="cha_vik_housecarls" max="INFANTRY" />
+        <MenAtArm type="ksatra" key="cha_vik_axemen" max="INFANTRY" />
         <MenAtArm type="sohei" key="bel_ost_gothic_pikemen" max="INFANTRY" />
     </Faction>
     <Faction name="Kingdom of the Lombards" subculture="att_sub_cult_roman_east">
         <General key="cha_nor_chef" rank="3" />
+        <General key="cha_lom_gastald_guardsmen" rank="2" />
         <MenAtArm type="emishi_riders" key="MAUR_amazigh_tribal_horsemen" max="CAVALRY" />
         <MenAtArm type="gaemamusa" key="MERC_gallo_noble" max="CAVALRY" />
         <MenAtArm type="heavy_khitan_cavalry" key="MERC_gallo_noble" max="CAVALRY" />
-        <MenAtArm type="hwarang" key="cha_vik_warlords_companions" max="INFANTRY" />
+        <MenAtArm type="hwarang" key="cha_lom_levy_axemen" max="INFANTRY" />
         <MenAtArm type="ji_pikemen" key="bel_ost_gothic_pikemen" max="INFANTRY" />
-        <MenAtArm type="ksatra" key="cha_vik_warlords_companions" max="INFANTRY" />
+        <MenAtArm type="ksatra" key="cha_lom_levy_axemen" max="INFANTRY" />
         <MenAtArm type="sohei" key="bel_ost_gothic_pikemen" max="INFANTRY" />
     </Faction>
     <Faction name="Kingdom of the Picts" subculture="att_sub_cult_barbarian_celtic">
         <General key="BRIT_teulu" rank="2" />
         <General key="cha_cel_pictish_nobles" rank="3" />
-        <Knights key="cha_cel_pictish_nobles" rank="3" />
         <MenAtArm type="emishi_riders" key="MAUR_amazigh_tribal_horsemen" max="CAVALRY" />
         <MenAtArm type="gaemamusa" key="cha_cel_horsemen" max="CAVALRY" />
         <MenAtArm type="heavy_khitan_cavalry" key="cha_cel_pictish_nobles" max="CAVALRY" />
@@ -1320,14 +1344,15 @@
     </Faction>
     <Faction name="Lakhmid Separatists" subculture="att_sub_cult_eastern_desert">
         <MenAtArm type="emishi_riders" key="MAUR_amazigh_tribal_horsemen" max="CAVALRY" />
-        <MenAtArm type="gaemamusa" key="cha_mus_berber_light_cav" max="CAVALRY" />
-        <MenAtArm type="heavy_khitan_cavalry" key="cha_eng_royal_horsemen" max="CAVALRY" />
+        <MenAtArm type="gaemamusa" key="GOTH_dux" max="CAVALRY" />
+        <MenAtArm type="heavy_khitan_cavalry" key="GOTH_dux" max="CAVALRY" />
         <MenAtArm type="hwarang" key="MERC_MAURI_tribal_warriors" max="INFANTRY" />
-        <MenAtArm type="ji_pikemen" key="bel_ost_gothic_pikemen" max="INFANTRY" />
+        <MenAtArm type="ji_pikemen" key="att_merc_ger_gothic_pikemen" max="INFANTRY" />
         <MenAtArm type="ksatra" key="MERC_MAURI_tribal_warriors" max="INFANTRY" />
         <MenAtArm type="sohei" key="bel_ost_gothic_pikemen" max="INFANTRY" />
     </Faction>
     <Faction name="Langobard Separatists" subculture="att_sub_cult_barbarian_germanic_west">
+        <General key="bel_ost_noble_gothic_landers" rank="3" />
         <MenAtArm type="emishi_riders" key="MAUR_amazigh_tribal_horsemen" max="CAVALRY" />
         <MenAtArm type="gaemamusa" key="ERE_limitanei_levy_lancers" max="CAVALRY" />
         <MenAtArm type="heavy_khitan_cavalry" key="ERE_limitanei_levy_lancers" max="CAVALRY" />
@@ -1337,7 +1362,7 @@
         <MenAtArm type="sohei" key="bel_ost_gothic_pikemen" max="INFANTRY" />
     </Faction>
     <Faction name="Langobards" subculture="bel_sub_cult_roman">
-        <MenAtArm type="emishi_riders" key="mubs_berber_levy_javs" max="CAVALRY" />
+        <MenAtArm type="emishi_riders" key="bas_archers" max="CAVALRY" />
         <MenAtArm type="gaemamusa" key="bel_rom_scout_equites" max="CAVALRY" />
         <MenAtArm type="heavy_khitan_cavalry" key="bel_rom_scout_equites" max="CAVALRY" />
         <MenAtArm type="hwarang" key="cha_spa_sword" max="INFANTRY" />
@@ -1356,6 +1381,8 @@
         <MenAtArm type="sohei" key="bel_ost_gothic_pikemen" max="INFANTRY" />
     </Faction>
     <Faction name="Lombard Separatists" subculture="att_sub_cult_roman_east">
+        <General key="LOM_exercitales" rank="2" />
+        <General key="ERE_belisarius_bucellarii" rank="3" />
         <MenAtArm type="emishi_riders" key="MAUR_amazigh_tribal_horsemen" max="CAVALRY" />
         <MenAtArm type="gaemamusa" key="MERC_gallo_noble" max="CAVALRY" />
         <MenAtArm type="heavy_khitan_cavalry" key="MERC_gallo_noble" max="CAVALRY" />
@@ -1383,6 +1410,7 @@
         <MenAtArm type="sohei" key="bel_ost_gothic_pikemen" max="INFANTRY" />
     </Faction>
     <Faction name="Mercian Separatists" subculture="att_sub_cult_barbarian_germanic_west">
+        <General key="GOTH_dux" rank="3" />
         <MenAtArm type="emishi_riders" key="MAUR_amazigh_tribal_horsemen" max="CAVALRY" />
         <MenAtArm type="gaemamusa" key="MERC_gallo_noble" max="CAVALRY" />
         <MenAtArm type="heavy_khitan_cavalry" key="MERC_gallo_noble" max="CAVALRY" />
@@ -1411,7 +1439,7 @@
     </Faction>
     <Faction name="Muslim Separatists" subculture="att_sub_cult_eastern_sassanid">
         <MenAtArm type="emishi_riders" key="MAUR_amazigh_tribal_horsemen" max="CAVALRY" />
-        <MenAtArm type="gaemamusa" key="cha_byz_tagmata_cavalry" max="CAVALRY" />
+        <MenAtArm type="gaemamusa" key="LOM_lancers" max="CAVALRY" />
         <MenAtArm type="heavy_khitan_cavalry" key="BAL_nordic_retinue" max="CAVALRY" />
         <MenAtArm type="hwarang" key="mubs_berber_armored_footmen" max="INFANTRY" />
         <MenAtArm type="ji_pikemen" key="bel_ost_gothic_pikemen" max="INFANTRY" />
@@ -1455,16 +1483,16 @@
         <MenAtArm type="emishi_riders" key="MERC_bucellarii_hun" max="CAVALRY" />
         <MenAtArm type="gaemamusa" key="MERC_sarmatae" max="CAVALRY" />
         <MenAtArm type="heavy_khitan_cavalry" key="MERC_sarmatae" max="CAVALRY" />
-        <MenAtArm type="hwarang" key="SAS_elite_heavy_dailamite_infantry" max="INFANTRY" />
+        <MenAtArm type="hwarang" key="SUEB_sword_levy" max="INFANTRY" />
         <MenAtArm type="ji_pikemen" key="bel_ost_gothic_pikemen" max="INFANTRY" />
-        <MenAtArm type="ksatra" key="SAS_elite_heavy_dailamite_infantry" max="INFANTRY" />
+        <MenAtArm type="ksatra" key="mubs_arab_levy_swords" max="INFANTRY" />
         <MenAtArm type="sohei" key="bel_ost_gothic_pikemen" max="INFANTRY" />
     </Faction>
     <Faction name="Nordalbingia" subculture="att_sub_cult_barbarian_germanic_north">
         <MenAtArm type="emishi_riders" key="MAUR_amazigh_tribal_horsemen" max="CAVALRY" />
         <MenAtArm type="gaemamusa" key="ERE_limitanei_levy_lancers" max="CAVALRY" />
         <MenAtArm type="heavy_khitan_cavalry" key="ERE_limitanei_levy_lancers" max="CAVALRY" />
-        <MenAtArm type="hwarang" key="SAS_elite_heavy_dailamite_infantry" max="INFANTRY" />
+        <MenAtArm type="hwarang" key="ANG_geburas_axes" max="INFANTRY" />
         <MenAtArm type="ji_pikemen" key="bel_ost_gothic_pikemen" max="INFANTRY" />
         <MenAtArm type="ksatra" key="BAL_chieftains_retinue" max="INFANTRY" />
         <MenAtArm type="sohei" key="bel_ost_gothic_pikemen" max="INFANTRY" />
@@ -1502,7 +1530,7 @@
         <MenAtArm type="heavy_khitan_cavalry" key="ERE_limitanei_levy_lancers" max="CAVALRY" />
         <MenAtArm type="hwarang" key="NOM_axes" max="INFANTRY" />
         <MenAtArm type="ji_pikemen" key="att_merc_ger_gothic_pikemen" max="INFANTRY" />
-        <MenAtArm type="ksatra" key="cha_lom_levy_axemen" max="INFANTRY" />
+        <MenAtArm type="ksatra" key="SUEB_sword_levy" max="INFANTRY" />
         <MenAtArm type="sohei" key="att_merc_ger_gothic_pikemen" max="INFANTRY" />
     </Faction>
     <Faction name="Onogouroi" subculture="att_sub_cult_nomadic_sarmatian">
@@ -1517,6 +1545,8 @@
         <MenAtArm type="sohei" key="bel_ost_elite_ostrogothic_pikemen" max="INFANTRY" />
     </Faction>
     <Faction name="Oriens" subculture="att_sub_cult_roman_east">
+        <General key="ERE_early_optimatoi" rank="2" />
+        <General key="ERE_belisarius_bucellarii" rank="3" />
         <MenAtArm type="emishi_riders" key="ERE_avar_horse_archers" max="CAVALRY" />
         <MenAtArm type="gaemamusa" key="ERE_bucellarii" max="CAVALRY" />
         <MenAtArm type="heavy_khitan_cavalry" key="ERE_bucellarii" max="CAVALRY" />
@@ -1566,9 +1596,7 @@
         <MenAtArm type="sohei" key="bel_ost_gothic_pikemen" max="INFANTRY" />
     </Faction>
     <Faction name="Papal States" subculture="bel_sub_cult_roman">
-        <General key="bel_rom_bucellarii_guard_cavalry" rank="2" />
-        <General key="ERE_belisarius_bucellarii" rank="3" />
-        <MenAtArm type="emishi_riders" key="cha_gen_skirm_cav" max="CAVALRY" />
+        <MenAtArm type="emishi_riders" key="att_mar_est_sassanid_naft_marines" max="CAVALRY" />
         <MenAtArm type="gaemamusa" key="cha_gen_guard_cav" max="CAVALRY" />
         <MenAtArm type="heavy_khitan_cavalry" key="cha_gen_guard_cav" max="CAVALRY" />
         <MenAtArm type="hwarang" key="cha_spa_sword" max="INFANTRY" />
@@ -1598,6 +1626,8 @@
         <MenAtArm type="sohei" key="pict_gairmorlom" max="INFANTRY" />
     </Faction>
     <Faction name="Pictish Rebels" subculture="att_sub_cult_barbarian_celtic">
+        <General key="pict_myrchan" rank="2" />
+        <General key="pict_myrchan" rank="3" />
         <MenAtArm type="emishi_riders" key="MAUR_amazigh_tribal_horsemen" max="CAVALRY" />
         <MenAtArm type="gaemamusa" key="bel_rom_foederati_cav" max="CAVALRY" />
         <MenAtArm type="heavy_khitan_cavalry" key="MERC_gallo_noble" max="CAVALRY" />
@@ -1607,6 +1637,8 @@
         <MenAtArm type="sohei" key="pict_gairmorlom" max="INFANTRY" />
     </Faction>
     <Faction name="Pictish Separatists" subculture="att_sub_cult_barbarian_celtic">
+        <General key="pict_myrchan" rank="2" />
+        <General key="pict_myrchan" rank="3" />
         <MenAtArm type="emishi_riders" key="MAUR_amazigh_tribal_horsemen" max="CAVALRY" />
         <MenAtArm type="gaemamusa" key="MERC_gallo_noble" max="CAVALRY" />
         <MenAtArm type="heavy_khitan_cavalry" key="MERC_gallo_noble" max="CAVALRY" />
@@ -1616,6 +1648,8 @@
         <MenAtArm type="sohei" key="pict_gairmorlom" max="INFANTRY" />
     </Faction>
     <Faction name="Pontus" subculture="att_sub_cult_roman_east">
+        <General key="GHAS_phylarch" rank="2" />
+        <General key="MERC_ERE_perso_armenii" rank="3" />
         <MenAtArm type="emishi_riders" key="MAUR_amazigh_tribal_horsemen" max="CAVALRY" />
         <MenAtArm type="gaemamusa" key="ERE_limitanei_levy_lancers" max="CAVALRY" />
         <MenAtArm type="heavy_khitan_cavalry" key="ERE_limitanei_levy_lancers" max="CAVALRY" />
@@ -1631,7 +1665,7 @@
         <MenAtArm type="gaemamusa" key="GHAS_judham" max="CAVALRY" />
         <MenAtArm type="heavy_khitan_cavalry" key="GHAS_judham" max="CAVALRY" />
         <MenAtArm type="hwarang" key="MERC_MAURI_tribal_warriors" max="INFANTRY" />
-        <MenAtArm type="ji_pikemen" key="bel_ost_elite_ostrogothic_pikemen" max="INFANTRY" />
+        <MenAtArm type="ji_pikemen" key="att_ger_gothic_pikemen" max="INFANTRY" />
         <MenAtArm type="ksatra" key="MERC_MAURI_tribal_warriors" max="INFANTRY" />
         <MenAtArm type="sohei" key="bel_ost_gothic_pikemen" max="INFANTRY" />
     </Faction>
@@ -1687,6 +1721,8 @@
         <MenAtArm type="sohei" key="bel_ost_gothic_pikemen" max="INFANTRY" />
     </Faction>
     <Faction name="Roman Empire" subculture="att_sub_cult_roman_east">
+        <General key="ERE_patrikos_obsequium" rank="2" />
+        <General key="bel_rom_clibanarii_1" rank="3" />
         <MenAtArm type="emishi_riders" key="MAUR_amazigh_tribal_horsemen" max="CAVALRY" />
         <MenAtArm type="gaemamusa" key="MERC_gallo_noble" max="CAVALRY" />
         <MenAtArm type="heavy_khitan_cavalry" key="MERC_gallo_noble" max="CAVALRY" />
@@ -1813,9 +1849,9 @@
         <MenAtArm type="emishi_riders" key="MERC_vascon_javelin_cav" max="CAVALRY" />
         <MenAtArm type="gaemamusa" key="ERE_limitanei_levy_lancers" max="CAVALRY" />
         <MenAtArm type="heavy_khitan_cavalry" key="ERE_limitanei_levy_lancers" max="CAVALRY" />
-        <MenAtArm type="hwarang" key="cha_lom_levy_axemen" max="INFANTRY" />
+        <MenAtArm type="hwarang" key="ANG_geburas_axes" max="INFANTRY" />
         <MenAtArm type="ji_pikemen" key="bel_ost_gothic_pikemen" max="INFANTRY" />
-        <MenAtArm type="ksatra" key="cha_lom_levy_axemen" max="INFANTRY" />
+        <MenAtArm type="ksatra" key="SUEB_sword_levy" max="INFANTRY" />
         <MenAtArm type="sohei" key="bel_ost_gothic_pikemen" max="INFANTRY" />
     </Faction>
     <Faction name="Saxones" subculture="att_sub_cult_barbarian_germanic_north">
@@ -1842,7 +1878,7 @@
         <MenAtArm type="emishi_riders" key="MERC_bucellarii_hun" max="CAVALRY" />
         <MenAtArm type="gaemamusa" key="MERC_sarmatae" max="CAVALRY" />
         <MenAtArm type="heavy_khitan_cavalry" key="MERC_sarmatae" max="CAVALRY" />
-        <MenAtArm type="hwarang" key="SAS_elite_heavy_dailamite_infantry" max="INFANTRY" />
+        <MenAtArm type="hwarang" key="AKS_himyarite_horsemen" max="INFANTRY" />
         <MenAtArm type="ji_pikemen" key="bel_ost_gothic_pikemen" max="INFANTRY" />
         <MenAtArm type="ksatra" key="NOM_axes" max="INFANTRY" />
         <MenAtArm type="sohei" key="bel_ost_gothic_pikemen" max="INFANTRY" />
@@ -1851,7 +1887,7 @@
         <MenAtArm type="emishi_riders" key="cha_fra_cheval_javeloz" max="CAVALRY" />
         <MenAtArm type="gaemamusa" key="ERE_limitanei_levy_lancers" max="CAVALRY" />
         <MenAtArm type="heavy_khitan_cavalry" key="ERE_limitanei_levy_lancers" max="CAVALRY" />
-        <MenAtArm type="hwarang" key="cha_spa_raider_cav" max="INFANTRY" />
+        <MenAtArm type="hwarang" key="mubs_arab_levy_swords" max="INFANTRY" />
         <MenAtArm type="ji_pikemen" key="bel_ost_gothic_pikemen" max="INFANTRY" />
         <MenAtArm type="ksatra" key="MERC_MAURI_tribal_warriors" max="INFANTRY" />
         <MenAtArm type="sohei" key="bel_ost_gothic_pikemen" max="INFANTRY" />
@@ -1881,6 +1917,8 @@
         <MenAtArm type="sohei" key="bel_ost_gothic_pikemen" max="INFANTRY" />
     </Faction>
     <Faction name="Scoti Separatists" subculture="att_sub_cult_barbarian_celtic">
+        <General key="pict_myrchan" rank="2" />
+        <General key="pict_myrchan" rank="3" />
         <MenAtArm type="emishi_riders" key="MAUR_amazigh_tribal_horsemen" max="CAVALRY" />
         <MenAtArm type="gaemamusa" key="MERC_gallo_noble" max="CAVALRY" />
         <MenAtArm type="heavy_khitan_cavalry" key="MERC_gallo_noble" max="CAVALRY" />
@@ -1980,11 +2018,9 @@
         <MenAtArm type="sohei" key="bel_ost_gothic_pikemen" max="INFANTRY" />
     </Faction>
     <Faction name="Taifa of Barcelona" subculture="att_sub_cult_eastern_sassanid">
-        <General key="GHAS_equites_promoti" rank="2" />
-        <General key="cha_eng_royal_horsemen" rank="3" />
-        <MenAtArm type="emishi_riders" key="cha_spa_jinetes" max="CAVALRY" />
-        <MenAtArm type="gaemamusa" key="cha_spa_iberian_cav" max="CAVALRY" />
-        <MenAtArm type="heavy_khitan_cavalry" key="cha_spa_iberian_cav" max="CAVALRY" />
+        <MenAtArm type="emishi_riders" key="AKS_himyarite_horsemen" max="CAVALRY" />
+        <MenAtArm type="gaemamusa" key="GOTH_dux" max="CAVALRY" />
+        <MenAtArm type="heavy_khitan_cavalry" key="GOTH_dux" max="CAVALRY" />
         <MenAtArm type="hwarang" key="cha_spa_armoured_sword" max="INFANTRY" />
         <MenAtArm type="ji_pikemen" key="bel_ost_gothic_pikemen" max="INFANTRY" />
         <MenAtArm type="ksatra" key="cha_spa_armoured_sword" max="INFANTRY" />
@@ -2000,24 +2036,21 @@
         <MenAtArm type="sohei" key="bel_ost_gothic_pikemen" max="INFANTRY" />
     </Faction>
     <Faction name="Taifa of Toledo" subculture="att_sub_cult_eastern_sassanid">
-        <General key="mubs_arab_nobles" rank="2" />
-        <General key="MAUR_amazigh_raiders" rank="3" />
-        <MenAtArm type="emishi_riders" key="att_mar_slav_bow_marauders" max="CAVALRY" />
-        <MenAtArm type="gaemamusa" key="cha_mus_umayyad_guard_cav" max="CAVALRY" />
-        <MenAtArm type="heavy_khitan_cavalry" key="cha_mus_berber_light_cav" max="CAVALRY" />
+        <MenAtArm type="emishi_riders" key="SAX_juguth_bows" max="CAVALRY" />
+        <MenAtArm type="gaemamusa" key="cha_byz_tagmata_cavalry" max="CAVALRY" />
+        <MenAtArm type="heavy_khitan_cavalry" key="cha_byz_tagmata_cavalry" max="CAVALRY" />
         <MenAtArm type="hwarang" key="bas_levy_axemen" max="INFANTRY" />
         <MenAtArm type="ji_pikemen" key="bel_ost_gothic_pikemen" max="INFANTRY" />
         <MenAtArm type="ksatra" key="cha_cel_sword" max="INFANTRY" />
         <MenAtArm type="sohei" key="bel_ost_gothic_pikemen" max="INFANTRY" />
     </Faction>
     <Faction name="Taifa of Valencia" subculture="att_sub_cult_eastern_sassanid">
-        <General key="HIM_banu_abs_lancer" rank="3" />
         <MenAtArm type="emishi_riders" key="cha_fra_cheval_javeloz" max="CAVALRY" />
-        <MenAtArm type="gaemamusa" key="cha_fra_cav" max="CAVALRY" />
-        <MenAtArm type="heavy_khitan_cavalry" key="cha_fra_horsemen" max="CAVALRY" />
-        <MenAtArm type="hwarang" key="cha_fra_sword" max="INFANTRY" />
+        <MenAtArm type="gaemamusa" key="LOM_lancers" max="CAVALRY" />
+        <MenAtArm type="heavy_khitan_cavalry" key="GOTH_dux" max="CAVALRY" />
+        <MenAtArm type="hwarang" key="SUEB_sword_levy" max="INFANTRY" />
         <MenAtArm type="ji_pikemen" key="bel_ost_gothic_pikemen" max="INFANTRY" />
-        <MenAtArm type="ksatra" key="cha_fra_sword" max="INFANTRY" />
+        <MenAtArm type="ksatra" key="mubs_arab_levy_swords" max="INFANTRY" />
         <MenAtArm type="sohei" key="bel_ost_gothic_pikemen" max="INFANTRY" />
     </Faction>
     <Faction name="Taifa of Zaragoza" subculture="att_sub_cult_eastern_sassanid">
@@ -2071,6 +2104,8 @@
         <MenAtArm type="sohei" key="bel_ost_gothic_pikemen" max="INFANTRY" />
     </Faction>
     <Faction name="Tyrannos Rhomaios" subculture="att_sub_cult_roman_east">
+        <General key="HEP_spet_xyon_horsemen" rank="2" />
+        <General key="GOTH_dux" rank="3" />
         <MenAtArm type="emishi_riders" key="MAUR_amazigh_tribal_horsemen" max="CAVALRY" />
         <MenAtArm type="gaemamusa" key="ERE_patrikos_obsequium" max="CAVALRY" />
         <MenAtArm type="heavy_khitan_cavalry" key="ERE_patrikos_obsequium" max="CAVALRY" />
@@ -2108,6 +2143,8 @@
         <MenAtArm type="sohei" key="bel_ost_gothic_pikemen" max="INFANTRY" />
     </Faction>
     <Faction name="Vascones" subculture="att_sub_cult_barbarian_celtic">
+        <General key="bas_att_ger_suebi_warriors" rank="2" />
+        <General key="bas_att_ger_suebi_warriors" rank="3" />
         <MenAtArm type="emishi_riders" key="bas_spear_cavalry" max="CAVALRY" />
         <MenAtArm type="gaemamusa" key="bel_van_vandal_horsemen" max="CAVALRY" />
         <MenAtArm type="heavy_khitan_cavalry" key="bel_van_vandal_horsemen" max="CAVALRY" />
@@ -2150,9 +2187,9 @@
         <MenAtArm type="emishi_riders" key="MAUR_amazigh_tribal_horsemen" max="CAVALRY" />
         <MenAtArm type="gaemamusa" key="MERC_gallo_noble" max="CAVALRY" />
         <MenAtArm type="heavy_khitan_cavalry" key="MERC_gallo_noble" max="CAVALRY" />
-        <MenAtArm type="hwarang" key="cha_lom_clubmen" max="INFANTRY" />
+        <MenAtArm type="hwarang" key="SUEB_sword_levy" max="INFANTRY" />
         <MenAtArm type="ji_pikemen" key="bel_ost_gothic_pikemen" max="INFANTRY" />
-        <MenAtArm type="ksatra" key="cha_lom_clubmen" max="INFANTRY" />
+        <MenAtArm type="ksatra" key="mubs_arab_levy_swords" max="INFANTRY" />
         <MenAtArm type="sohei" key="bel_ost_gothic_pikemen" max="INFANTRY" />
     </Faction>
     <Faction name="Visigothic Kingdom" subculture="bel_sub_cult_roman">
@@ -2170,19 +2207,23 @@
         <MenAtArm type="heavy_khitan_cavalry" key="MERC_gallo_noble" max="CAVALRY" />
         <MenAtArm type="hwarang" key="MERC_MAURI_tribal_warriors" max="INFANTRY" />
         <MenAtArm type="ji_pikemen" key="bel_ost_gothic_pikemen" max="INFANTRY" />
-        <MenAtArm type="ksatra" key="SAS_elite_heavy_dailamite_infantry" max="INFANTRY" />
+        <MenAtArm type="ksatra" key="mubs_maghrebi_pikemen" max="INFANTRY" />
         <MenAtArm type="sohei" key="bel_ost_gothic_pikemen" max="INFANTRY" />
     </Faction>
     <Faction name="Welsh Rebels" subculture="att_sub_cult_barbarian_celtic">
+        <General key="KOK_cha_bre_armorican_cav" rank="2" />
+        <General key="KOK_cha_bre_armorican_knights" rank="3" />
         <MenAtArm type="emishi_riders" key="MAUR_amazigh_tribal_horsemen" max="CAVALRY" />
         <MenAtArm type="gaemamusa" key="ERE_limitanei_levy_lancers" max="CAVALRY" />
         <MenAtArm type="heavy_khitan_cavalry" key="ERE_limitanei_levy_lancers" max="CAVALRY" />
-        <MenAtArm type="hwarang" key="SAS_elite_heavy_dailamite_infantry" max="INFANTRY" />
+        <MenAtArm type="hwarang" key="SUEB_sword_levy" max="INFANTRY" />
         <MenAtArm type="ji_pikemen" key="bel_ost_gothic_pikemen" max="INFANTRY" />
         <MenAtArm type="ksatra" key="SAS_elite_heavy_dailamite_infantry" max="INFANTRY" />
         <MenAtArm type="sohei" key="bel_ost_gothic_pikemen" max="INFANTRY" />
     </Faction>
     <Faction name="Welsh Separatists" subculture="att_sub_cult_barbarian_celtic">
+        <General key="pict_myrchan" rank="2" />
+        <General key="pict_myrchan" rank="3" />
         <MenAtArm type="emishi_riders" key="MAUR_amazigh_tribal_horsemen" max="CAVALRY" />
         <MenAtArm type="gaemamusa" key="ERE_limitanei_levy_lancers" max="CAVALRY" />
         <MenAtArm type="heavy_khitan_cavalry" key="MERC_gallo_noble" max="CAVALRY" />
@@ -2205,6 +2246,7 @@
         <MenAtArm type="sohei" key="bel_ost_gothic_pikemen" max="INFANTRY" />
     </Faction>
     <Faction name="West Germanic Separatists" subculture="att_sub_cult_barbarian_germanic_west">
+        <General key="THUR_elite_lancers" rank="3" />
         <MenAtArm type="emishi_riders" key="MERC_vascon_javelin_cav" max="CAVALRY" />
         <MenAtArm type="gaemamusa" key="bel_van_vandal_horsemen" max="CAVALRY" />
         <MenAtArm type="heavy_khitan_cavalry" key="bel_van_vandal_horsemen" max="CAVALRY" />
@@ -2214,6 +2256,7 @@
         <MenAtArm type="sohei" key="bel_ost_gothic_pikemen" max="INFANTRY" />
     </Faction>
     <Faction name="Western Germanic Rebels" subculture="att_sub_cult_barbarian_germanic_west">
+        <General key="THUR_elite_lancers" rank="3" />
         <MenAtArm type="emishi_riders" key="MAUR_amazigh_tribal_horsemen" max="CAVALRY" />
         <MenAtArm type="gaemamusa" key="bel_van_vandal_horsemen" max="CAVALRY" />
         <MenAtArm type="heavy_khitan_cavalry" key="MERC_gallo_noble" max="CAVALRY" />
@@ -2250,13 +2293,14 @@
         <MenAtArm type="sohei" key="bel_ost_gothic_pikemen" max="INFANTRY" />
     </Faction>
     <Faction name="Westphalia" subculture="att_sub_cult_barbarian_germanic_north">
+        <General key="LOM_exercitales" rank="2" />
         <General key="cha_sax_legio_regia" rank="3" />
-        <MenAtArm type="emishi_riders" key="MERC_syrian_archers" max="CAVALRY" />
+        <MenAtArm type="emishi_riders" key="att_mar_cel_celtic_artillery_crew" max="CAVALRY" num_guns="1" />
         <MenAtArm type="gaemamusa" key="ERE_limitanei_levy_lancers" max="CAVALRY" />
         <MenAtArm type="heavy_khitan_cavalry" key="ERE_limitanei_levy_lancers" max="CAVALRY" />
-        <MenAtArm type="hwarang" key="cha_sax_seax_band" max="INFANTRY" />
+        <MenAtArm type="hwarang" key="cha_sax_hearth_guard" max="INFANTRY" />
         <MenAtArm type="ji_pikemen" key="bel_ost_gothic_pikemen" max="INFANTRY" />
-        <MenAtArm type="ksatra" key="cha_sax_warhounds" max="INFANTRY" />
+        <MenAtArm type="ksatra" key="cha_sax_sword_veterans" max="INFANTRY" />
         <MenAtArm type="sohei" key="bel_ost_gothic_pikemen" max="INFANTRY" />
     </Faction>
     <Faction name="Westphalian Separatists" subculture="att_sub_cult_barbarian_germanic_north">
@@ -2296,6 +2340,8 @@
         <MenAtArm type="sohei" key="bel_ost_elite_ostrogothic_pikemen" max="INFANTRY" />
     </Faction>
     <Faction name="Ystrad Clut Separatists" subculture="att_sub_cult_barbarian_celtic">
+        <General key="pict_myrchan" rank="2" />
+        <General key="mubs_mulathanum" rank="3" />
         <MenAtArm type="emishi_riders" key="MERC_bucellarii_hun" max="CAVALRY" />
         <MenAtArm type="gaemamusa" key="MERC_sarmatae" max="CAVALRY" />
         <MenAtArm type="heavy_khitan_cavalry" key="MERC_sarmatae" max="CAVALRY" />
