@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='utf-8'?>
 <Cultures submod_addon_for="DahanChina">
     <Heritage name="Default" faction="Default">
-        <Culture name="Default" faction="Abarshahr" />
+        <Culture name="Default" faction="Default" />
         <Culture name="Default" faction="Abasgia" />
         <Culture name="Default" faction="Aethiopian Rebels" />
         <Culture name="Default" faction="Africa" />
@@ -217,28 +217,78 @@
         <Culture name="Default" faction="Wilzi" />
         <Culture name="Default" faction="Ystrad Clut Separatists" />
         <Culture name="Default" faction="Angria" />
+        <Culture name="Default" faction="" />
+        <Culture name="Default" faction="Algonquian" />
+        <Culture name="Default" faction="Arabic" />
+        <Culture name="Default" faction="Aramean" />
+        <Culture name="Default" faction="Arberian" />
+        <Culture name="Default" faction="Armenian" />
+        <Culture name="Default" faction="Austrasia" />
+        <Culture name="Default" faction="Balto Finnic" />
+        <Culture name="Default" faction="Bantu" />
+        <Culture name="Default" faction="Briton" />
+        <Culture name="Default" faction="Brythonic" />
+        <Culture name="Default" faction="Central Germanic" />
+        <Culture name="Default" faction="Central Sahelian" />
+        <Culture name="Default" faction="East African" />
+        <Culture name="Default" faction="East Slavic" />
+        <Culture name="Default" faction="Elamite" />
+        <Culture name="Default" faction="Goidelic" />
+        <Culture name="Default" faction="Guinean Uplander" />
+        <Culture name="Default" faction="Gur" />
+        <Culture name="Default" faction="Hellenic" />
+        <Culture name="Default" faction="Inuit" />
+        <Culture name="Default" faction="Iroquoian" />
+        <Culture name="Default" faction="Irrawaddy" />
+        <Culture name="Default" faction="Lower Niger" />
+        <Culture name="Default" faction="Magyar" />
+        <Culture name="Default" faction="Niger Delta" />
+        <Culture name="Default" faction="Paleo Inui" />
+        <Culture name="Default" faction="Paleo Inuit" />
+        <Culture name="Default" faction="Peristani" />
+        <Culture name="Default" faction="Rus" />
+        <Culture name="Default" faction="Seaxon" />
+        <Culture name="Default" faction="Senegambian" />
+        <Culture name="Default" faction="Serindian" />
+        <Culture name="Default" faction="South Slavic" />
+        <Culture name="Default" faction="Spahan" />
+        <Culture name="Default" faction="Syriac" />
+        <Culture name="Default" faction="Tocharian" />
+        <Culture name="Default" faction="Ugro Permian" />
+        <Culture name="Default" faction="Vlach" />
+        <Culture name="Default" faction="Volga Finnic" />
+        <Culture name="Default" faction="West African" />
+        <Culture name="Default" faction="West Germanic" />
+        <Culture name="Default" faction="West Sahelian" />
+        <Culture name="Default" faction="West Slavic" />
+        <Culture name="Default" faction="Yoruba" />
+        <Culture name="Default" faction="Yugrian" />
+        <Culture name="Default" faction="Dravidian" />
+        <Culture name="Default" faction="Abarshahr" />
+        <Culture name="Default" faction="Aethiopian Separatists" />
     </Heritage>
-    <Heritage name="heritage_lesser_sunda" faction="Default">
-        <Culture name="abui" faction="Default" />
-        <Culture name="bima" faction="Default" />
-        <Culture name="fataluku" faction="Default" />
-        <Culture name="kambera" faction="Default" />
-        <Culture name="larantuka" faction="Default" />
-        <Culture name="manggarai" faction="Default" />
-        <Culture name="ngada" faction="Default" />
-        <Culture name="sika" faction="Default" />
-        <Culture name="tambora" faction="Default" />
+    <Heritage name="heritage_lesser_sunda" faction="Malayic">
+        <Culture name="abui" faction="Sulawesi" />
+        <Culture name="bima" faction="Sulawesi" />
+        <Culture name="fataluku" faction="Sulawesi" />
+        <Culture name="kambera" faction="Malayic" />
+        <Culture name="larantuka" faction="Malayic" />
+        <Culture name="manggarai" faction="Malayic" />
+        <Culture name="ngada" faction="Malayic" />
+        <Culture name="sika" faction="Malayic" />
+        <Culture name="tambora" faction="Malayic" />
         <Culture name="tetun" faction="Default" />
         <Culture name="uab_meto" faction="Default" />
+        <Culture name="Default" faction="Saka" />
     </Heritage>
-    <Heritage name="heritage_papuan" faction="Spahan">
+    <Heritage name="heritage_papuan" faction="Sulawesi">
         <Culture name="abun" faction="Default" />
-        <Culture name="arandai" faction="Default" />
-        <Culture name="awera" faction="Default" />
-        <Culture name="baham" faction="Default" />
-        <Culture name="buruwai" faction="Default" />
-        <Culture name="hatam" faction="Default" />
-        <Culture name="iha" faction="Default" />
+        <Culture name="arandai" faction="Sulawesi" />
+        <Culture name="awera" faction="Sulawesi" />
+        <Culture name="baham" faction="Sulawesi" />
+        <Culture name="buruwai" faction="Africa" />
+        <Culture name="hatam" faction="Africa" />
+        <Culture name="iha" faction="Africa" />
         <Culture name="kemoro" faction="Default" />
         <Culture name="kwesten" faction="Default" />
         <Culture name="mairasi" faction="Default" />
@@ -249,14 +299,14 @@
         <Culture name="tor" faction="Default" />
         <Culture name="tunggare" faction="Default" />
         <Culture name="warembori" faction="Default" />
-        <Culture name="yapen" faction="Default" />
+        <Culture name="yapen" faction="Asia" />
     </Heritage>
-    <Heritage name="heritage_chamic" faction="Default">
-        <Culture name="aceh" faction="Default" />
-        <Culture name="champ" faction="Default" />
+    <Heritage name="heritage_chamic" faction="Chamic">
+        <Culture name="aceh" faction="Chamic" />
+        <Culture name="champ" faction="Han Empire" />
     </Heritage>
-    <Heritage name="heritage_negrito" faction="Garamantes">
-        <Culture name="aeta" faction="Default" />
+    <Heritage name="heritage_negrito" faction="Filipino">
+        <Culture name="aeta" faction="Filipino" />
         <Culture name="andamanese" faction="Default" />
         <Culture name="Default" faction="Garamantes" />
     </Heritage>
@@ -264,32 +314,32 @@
         <Culture name="ainu" faction="Han Empire" />
         <Culture name="emishi" faction="Han Empire" />
     </Heritage>
-    <Heritage name="heritage_moluccan" faction="Abarshahr">
+    <Heritage name="heritage_moluccan" faction="Malayic">
         <Culture name="alune" faction="Default" />
         <Culture name="aru" faction="Default" />
-        <Culture name="biak" faction="Abarshahr" />
-        <Culture name="buru" faction="Default" />
-        <Culture name="galela" faction="Default" />
-        <Culture name="gane" faction="Default" />
-        <Culture name="hitu" faction="Default" />
-        <Culture name="kei" faction="Default" />
-        <Culture name="kowiai" faction="Austrasia" />
+        <Culture name="biak" faction="Filipino" />
+        <Culture name="buru" faction="Filipino" />
+        <Culture name="galela" faction="Filipino" />
+        <Culture name="gane" faction="Malayic" />
+        <Culture name="hitu" faction="Malayic" />
+        <Culture name="kei" faction="Malayic" />
+        <Culture name="kowiai" faction="Malayic" />
         <Culture name="kuri" faction="Central African" />
-        <Culture name="maba" faction="Default" />
-        <Culture name="maden" faction="Aethiopian Separatists" />
-        <Culture name="makian" faction="Akan" />
-        <Culture name="manusela" faction="Default" />
-        <Culture name="matbat" faction="Default" />
-        <Culture name="sahu" faction="Default" />
-        <Culture name="sawai" faction="Default" />
-        <Culture name="sula" faction="Default" />
-        <Culture name="tanimbar" faction="Default" />
-        <Culture name="ternate" faction="Default" />
-        <Culture name="tidore" faction="Default" />
-        <Culture name="tobelo" faction="Default" />
-        <Culture name="waigeo" faction="Default" />
-        <Culture name="wandamen" faction="Default" />
-        <Culture name="wemale" faction="Default" />
+        <Culture name="maba" faction="Malayic" />
+        <Culture name="maden" faction="Malayic" />
+        <Culture name="makian" faction="Sulawesi" />
+        <Culture name="manusela" faction="Sulawesi" />
+        <Culture name="matbat" faction="Sulawesi" />
+        <Culture name="sahu" faction="Filipino" />
+        <Culture name="sawai" faction="Filipino" />
+        <Culture name="sula" faction="Sulawesi" />
+        <Culture name="tanimbar" faction="Filipino" />
+        <Culture name="ternate" faction="Malayic" />
+        <Culture name="tidore" faction="Malayic" />
+        <Culture name="tobelo" faction="Malayic" />
+        <Culture name="waigeo" faction="Malayic" />
+        <Culture name="wandamen" faction="Malayic" />
+        <Culture name="wemale" faction="Filipino" />
         <Culture name="wetar" faction="North Germanic" />
         <Culture name="Default" faction="Makran" />
         <Culture name="Default" faction="Wenden" />
@@ -312,6 +362,11 @@
     <Heritage name="heritage_aslian" faction="Iranian">
         <Culture name="aslian" faction="Iranian" />
         <Culture name="Default" faction="Asia" />
+        <Culture name="Default" faction="Albanian" />
+        <Culture name="Default" faction="Byzantine" />
+        <Culture name="Default" faction="Iberian" />
+        <Culture name="Default" faction="Sahelian" />
+        <Culture name="Default" faction="Somalian" />
     </Heritage>
     <Heritage name="heritage_chinese" faction="Han Empire">
         <Culture name="ba_shu" faction="Han Empire" />
@@ -320,6 +375,7 @@
         <Culture name="wu" faction="Han Empire" />
         <Culture name="yue" faction="Han Empire" />
         <Culture name="han" faction="Han Empire" />
+        <Culture name="Default" faction="Chinese" />
     </Heritage>
     <Heritage name="heritage_malay" faction="Han Empire">
         <Culture name="bacan" faction="Han Empire" />
@@ -329,6 +385,7 @@
         <Culture name="lampung" faction="Han Empire" />
         <Culture name="malay" faction="Han Empire" />
         <Culture name="minangkabau" faction="Han Empire" />
+        <Culture name="Default" faction="Malayic" />
     </Heritage>
     <Heritage name="heritage_korean" faction="Han Empire">
         <Culture name="baekje" faction="Han Empire" />
@@ -338,6 +395,7 @@
         <Culture name="saro" faction="Central African" />
         <Culture name="tamna" faction="Han Empire" />
         <Culture name="yemaek" faction="Han Empire" />
+        <Culture name="Default" faction="Korean" />
     </Heritage>
     <Heritage name="heritage_katuic" faction="Han Empire">
         <Culture name="bahnaric" faction="Han Empire" />
@@ -347,6 +405,8 @@
     <Heritage name="heritage_bai" faction="Imazigen">
         <Culture name="bai" faction="Imazigen" />
         <Culture name="Default" faction="Berbers" />
+        <Culture name="Default" faction="Berber" />
+        <Culture name="Default" faction="Frankish" />
     </Heritage>
     <Heritage name="heritage_javanese" faction="Han Empire">
         <Culture name="bali" faction="Israelite" />
@@ -410,6 +470,7 @@
         <Culture name="Default" faction="Angli" />
         <Culture name="Default" faction="Danir" />
         <Culture name="Default" faction="Roman Empire" />
+        <Culture name="Default" faction="Baltic" />
     </Heritage>
     <Heritage name="heritage_kradai" faction="Han Empire">
         <Culture name="beish" faction="Han Empire" />
@@ -420,6 +481,7 @@
         <Culture name="tai" faction="Iranian" />
         <Culture name="tay" faction="Han Empire" />
         <Culture name="Default" faction="Antai" />
+        <Culture name="Default" faction="Tai" />
     </Heritage>
     <Heritage name="heritage_dayak" faction="Han Empire">
         <Culture name="bidayuh" faction="Han Empire" />
@@ -429,6 +491,7 @@
         <Culture name="ngaju" faction="Han Empire" />
         <Culture name="ot_danum" faction="Han Empire" />
         <Culture name="rejang" faction="Han Empire" />
+        <Culture name="Default" faction="Tibetan" />
     </Heritage>
     <Heritage name="heritage_burman" faction="Han Empire">
         <Culture name="kachin" faction="Han Empire" />
@@ -440,6 +503,7 @@
         <Culture name="tripuri" faction="Han Empire" />
         <Culture name="Default" faction="Armenia" />
         <Culture name="burmese" faction="Burman" />
+        <Culture name="Default" faction="Gurma" />
     </Heritage>
     <Heritage name="heritage_mongolic" faction="Han Empire">
         <Culture name="di" faction="Caucasian" />
@@ -477,18 +541,21 @@
     </Heritage>
     <Heritage name="heritage_nivkh" faction="Iranian">
         <Culture name="gilyak" faction="Iranian" />
-        <Culture name="mishihase" faction="Default" />
+        <Culture name="mishihase" faction="Siberian" />
     </Heritage>
     <Heritage name="heritage_loloish" faction="Han Empire">
         <Culture name="hani" faction="Han Empire" />
         <Culture name="tujia" faction="Han Empire" />
         <Culture name="wuman" faction="Han Empire" />
+        <Culture name="Default" faction="Loloish" />
     </Heritage>
     <Heritage name="heritage_khasic" faction="Han Empire">
         <Culture name="khasi" faction="Han Empire" />
+        <Culture name="Default" faction="Khorasani" />
     </Heritage>
     <Heritage name="heritage_khmer" faction="Han Empire">
         <Culture name="khmer" faction="Han Empire" />
+        <Culture name="Default" faction="Khmer" />
     </Heritage>
     <Heritage name="heritage_palaungic" faction="Han Empire">
         <Culture name="khmu" faction="Han Empire" />
@@ -500,6 +567,7 @@
         <Culture name="kinh" faction="Han Empire" />
         <Culture name="muong" faction="Han Empire" />
         <Culture name="tho" faction="Han Empire" />
+        <Culture name="Default" faction="Vietic" />
     </Heritage>
     <Heritage name="heritage_sea_gypsy" faction="Han Empire">
         <Culture name="moklen" faction="Han Empire" />
@@ -519,6 +587,7 @@
     </Heritage>
     <Heritage name="heritage_japanese" faction="Han Empire">
         <Culture name="yamato" faction="Han Empire" />
+        <Culture name="Default" faction="Yamato" />
     </Heritage>
     <Heritage name="heritage_egyptian" faction="Egyptian">
         <Culture name="ancient_egyptian" faction="Egyptian" />
@@ -527,7 +596,7 @@
     <Heritage name="heritage_indo_aryan" faction="Indo Aryan">
         <Culture name="assamese" faction="Indo Aryan" />
         <Culture name="bengali" faction="Indo Aryan" />
-        <Culture name="brahui" faction="Default" />
+        <Culture name="brahui" faction="Aria" />
         <Culture name="gujarati" faction="Indo Aryan" />
         <Culture name="hindustani" faction="Turkic" />
         <Culture name="kashmiri" faction="Indo Aryan" />
@@ -561,6 +630,7 @@
         <Culture name="uyghur" faction="Turkic" />
         <Culture name="yughur" faction="Turkic" />
         <Culture name="Default" faction="Avars" />
+        <Culture name="Default" faction="Akan" />
     </Heritage>
     <Heritage name="heritage_tibetan" faction="Han Empire">
         <Culture name="bodpa" faction="Han Empire" />
@@ -572,17 +642,20 @@
     </Heritage>
     <Heritage name="heritage_gothic" faction="East Germanic">
         <Culture name="gothic" faction="East Germanic" />
+        <Culture name="Default" faction="Gothic" />
     </Heritage>
-    <Heritage name="heritage_israelite" faction="Default">
-        <Culture name="hebrew" faction="Default" />
+    <Heritage name="heritage_israelite" faction="Israelite">
+        <Culture name="hebrew" faction="Israelite" />
     </Heritage>
-    <Heritage name="heritage_hunnic" faction="Hunnic Rebels">
-        <Culture name="hunnic" faction="Default" />
+    <Heritage name="heritage_hunnic" faction="Huns">
+        <Culture name="hunnic" faction="Huns" />
+        <Culture name="Default" faction="Hunnic" />
     </Heritage>
     <Heritage name="heritage_ancient_greek" faction="Latin">
         <Culture name="macedonian" faction="Latin" />
-        <Culture name="trojan" faction="Macedonia" />
+        <Culture name="trojan" faction="Byzantine" />
         <Culture name="Default" faction="Macedonia" />
+        <Culture name="Default" faction="Roman" />
     </Heritage>
     <Heritage name="heritage_mon" faction="Burman">
         <Culture name="mon" faction="Burman" />
@@ -590,5 +663,6 @@
     <Heritage name="heritage_qiangic" faction="Han Empire">
         <Culture name="qiang" faction="Han Empire" />
         <Culture name="tangut" faction="Han Empire" />
+        <Culture name="Default" faction="Qiangic" />
     </Heritage>
 </Cultures>
