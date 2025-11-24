@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="Factions">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="Faction" maxOccurs="unbounded" minOccurs="0">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="General" maxOccurs="unbounded" minOccurs="0">
+                <xs:complexType>
+                  <xs:attribute name="key" type="xs:string" use="required" />
+                  <xs:attribute name="rank" type="xs:integer" use="optional" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="Knights" maxOccurs="unbounded" minOccurs="0">
+                <xs:complexType>
+                  <xs:attribute name="key" type="xs:string" use="required" />
+                  <xs:attribute name="rank" type="xs:integer" use="optional" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="Levies" maxOccurs="unbounded" minOccurs="0">
+                <xs:complexType>
+                  <xs:attribute name="key" type="xs:string" use="required" />
+                  <xs:attribute name="percentage" type="xs:integer" use="required" />
+                  <xs:attribute name="max" type="xs:string" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="Garrison" maxOccurs="unbounded" minOccurs="0">
+                <xs:complexType>
+                  <xs:attribute name="key" type="xs:string" use="required" />
+                  <xs:attribute name="percentage" type="xs:integer" use="required" />
+                  <xs:attribute name="max" type="xs:string" use="required" />
+                  <xs:attribute name="level" type="xs:integer" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="MenAtArm" maxOccurs="unbounded" minOccurs="0">
+                <xs:complexType>
+                  <xs:attribute name="type" type="xs:string" use="required" />
+                  <xs:attribute name="key" type="xs:string" use="required" />
+                  <xs:attribute name="max" type="xs:string" use="required" />
+                  <xs:attribute name="siege" type="xs:boolean" use="optional" />
+                  <xs:attribute name="siege_engine_per_unit" type="xs:integer" use="optional" />
+                  <xs:attribute name="num_guns" type="xs:integer" use="optional" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:attribute name="name" type="xs:string" use="required" />
+            <xs:attribute name="subculture" type="xs:string" use="required" />
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+</xs:schema>
