@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="Terrains">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="Map" minOccurs="0" maxOccurs="1">
+          <xs:complexType>
+            <xs:attribute name="name" type="xs:string" use="required" />
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Settlement_Maps_Unique" minOccurs="0" maxOccurs="1">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Settlement_Unique" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="Variant" maxOccurs="unbounded">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="Map">
+                            <xs:complexType>
+                              <xs:attribute name="x" type="xs:decimal" use="required" />
+                              <xs:attribute name="y" type="xs:decimal" use="required" />
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                        <xs:attribute name="key" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                  <xs:attribute name="battle_type" type="xs:string" use="required" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Settlement_Maps" minOccurs="0" maxOccurs="1">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Settlement" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="Variant" maxOccurs="unbounded">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="Map">
+                            <xs:complexType>
+                              <xs:attribute name="x" type="xs:decimal" use="required" />
+                              <xs:attribute name="y" type="xs:decimal" use="required" />
+                              <xs:attribute name="overridden_x" type="xs:decimal" use="optional" />
+                              <xs:attribute name="overridden_y" type="xs:decimal" use="optional" />
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                        <xs:attribute name="key" type="xs:string" use="required" />
+                        <xs:attribute name="is_unique_settlement" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                  <xs:attribute name="faction" type="xs:string" use="required" />
+                  <xs:attribute name="battle_type" type="xs:string" use="required" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Coastal_Maps" minOccurs="0" maxOccurs="1">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Coastal" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="Variant">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="Map">
+                            <xs:complexType>
+                              <xs:attribute name="x" type="xs:decimal" use="required" />
+                              <xs:attribute name="y" type="xs:decimal" use="required" />
+                              <xs:attribute name="overridden_x" type="xs:decimal" use="optional" />
+                              <xs:attribute name="overridden_y" type="xs:decimal" use="optional" />
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                        <xs:attribute name="key" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                  <xs:attribute name="name" type="xs:string" use="required" />
+                  <xs:attribute name="ck3_province" type="xs:integer" use="required" />
+                  <xs:attribute name="battle_type" type="xs:string" use="required" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+</xs:schema>
