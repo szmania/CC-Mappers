@@ -23,3 +23,30 @@
   </xs:element>
 
 </xs:schema>
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="Cultures">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="Culture" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="Name" type="xs:string" />
+                            <xs:element name="DisplayName" type="xs:string" />
+                            <xs:element name="IsVassal" type="xs:boolean" />
+                            <xs:element name="Color">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="Red" type="xs:unsignedByte" />
+                                        <xs:element name="Green" type="xs:unsignedByte" />
+                                        <xs:element name="Blue" type="xs:unsignedByte" />
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>
