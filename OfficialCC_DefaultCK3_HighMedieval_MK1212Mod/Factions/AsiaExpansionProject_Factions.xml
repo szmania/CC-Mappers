@@ -1,14 +1,14 @@
 <?xml version='1.0' encoding='utf-8'?>
 <Factions>
     <Faction name="Default" subculture="att_sub_cult_roman_east">
-        <MenAtArm type="emishi_riders" key="mk_haz_t1_shabankara_cavalry" max="CAVALRY" />
+        <MenAtArm type="emishi_riders" key="mk_tou_t1_arbaletriers_mounted" max="CAVALRY" />
         <MenAtArm type="gaemamusa" key="mk_merc_cuman_t1_light_lancers" max="CAVALRY" />
-        <MenAtArm type="heavy_khitan_cavalry" key="mk_nav_t1_caballeros" max="CAVALRY" />
+        <MenAtArm type="heavy_khitan_cavalry" key="mk_rum_t1_ghazi_lancers" max="CAVALRY" />
         <MenAtArm type="hwarang" key="mk_abb_t1_ghazi" max="INFANTRY" />
-        <MenAtArm type="ji_pikemen" key="mk_aor_mag_t1_maghrebi_spearmen" max="INFANTRY" />
+        <MenAtArm type="ji_pikemen" key="mk_mon_t1_fire_lance_infantry" max="INFANTRY" />
         <MenAtArm type="ksatra" key="mk_abb_t1_ghazi" max="INFANTRY" />
-        <MenAtArm type="luojuzi" key="mk_aus_t1_fussknechte_halberdiers" max="INFANTRY" />
-        <MenAtArm type="sohei" key="mk_aor_mag_t1_maghrebi_spearmen" max="INFANTRY" />
+        <MenAtArm type="luojuzi" key="mk_mon_t1_fire_lance_infantry" max="INFANTRY" />
+        <MenAtArm type="sohei" key="mk_mon_t1_fire_lance_infantry" max="INFANTRY" />
     </Faction>
     <Faction name="Kingdom of Georgia" subculture="att_sub_cult_roman_east">
         <General key="mk_georg_t1_aznauri_lancers" rank="2" />
@@ -29,7 +29,7 @@
         <MenAtArm type="hwarang" key="mk_volga_t1_tribal_infantry" max="INFANTRY" />
         <MenAtArm type="ji_pikemen" key="mk_volga_t1_tribal_spearmen" max="INFANTRY" />
         <MenAtArm type="ksatra" key="mk_volga_t1_tribal_infantry" max="INFANTRY" />
-        <MenAtArm type="luojuzi" key="mk_aus_t1_fussknechte_halberdiers" max="INFANTRY" />
+        <MenAtArm type="luojuzi" key="mk_mon_t1_fire_lance_infantry" max="INFANTRY" />
         <MenAtArm type="sohei" key="mk_volga_t1_tribal_spearmen" max="INFANTRY" />
     </Faction>
     <Faction name="Abbasid Pretenders" subculture="att_sub_cult_eastern_sassanid">
@@ -43,14 +43,14 @@
         <MenAtArm type="sohei" key="mk_eng_t1_spear_militia" max="INFANTRY" />
     </Faction>
     <Faction name="Abyssinian Pretenders" subculture="att_sub_cult_eastern_caucasian">
-        <MenAtArm type="emishi_riders" key="mk_haz_t1_shabankara_cavalry" max="CAVALRY" />
-        <MenAtArm type="gaemamusa" key="mk_nav_t1_caballeros" max="CAVALRY" />
-        <MenAtArm type="heavy_khitan_cavalry" key="mk_nav_t1_caballeros" max="CAVALRY" />
-        <MenAtArm type="hwarang" key="att_merc_nor_nordic_brigade" max="INFANTRY" />
-        <MenAtArm type="ji_pikemen" key="mk_aor_mag_t1_maghrebi_spearmen" max="INFANTRY" />
-        <MenAtArm type="ksatra" key="att_merc_nor_nordic_brigade" max="INFANTRY" />
-        <MenAtArm type="luojuzi" key="mk_aus_t1_fussknechte_halberdiers" max="INFANTRY" />
-        <MenAtArm type="sohei" key="mk_aor_mag_t1_maghrebi_spearmen" max="INFANTRY" />
+        <MenAtArm type="emishi_riders" key="mk_tou_t1_arbaletriers_mounted" max="CAVALRY" />
+        <MenAtArm type="gaemamusa" key="mk_rum_t1_ghazi_lancers" max="CAVALRY" />
+        <MenAtArm type="heavy_khitan_cavalry" key="mk_rum_t1_ghazi_lancers" max="CAVALRY" />
+        <MenAtArm type="hwarang" key="mk_nic_t1_akritai" max="INFANTRY" />
+        <MenAtArm type="ji_pikemen" key="mk_rum_t1_ecrihor_spearmen" max="INFANTRY" />
+        <MenAtArm type="ksatra" key="mk_wel_t1_rhyfelwyr" max="INFANTRY" />
+        <MenAtArm type="luojuzi" key="mk_rum_t1_ecrihor_spearmen" max="INFANTRY" />
+        <MenAtArm type="sohei" key="mk_rum_t1_ecrihor_spearmen" max="INFANTRY" />
     </Faction>
     <Faction name="Aethiopian Rebels" subculture="att_sub_cult_eastern_desert">
         <MenAtArm type="emishi_riders" key="mk_cuman_t1_skirmisher_cavalry" max="CAVALRY" />
@@ -127,10 +127,10 @@
         <MenAtArm type="gaemamusa" key="mubs_bedouin_levy_cav" max="CAVALRY" />
         <MenAtArm type="heavy_khitan_cavalry" key="mubs_bedouin_levy_cav" max="CAVALRY" />
         <MenAtArm type="hwarang" key="mubs_bedouin_levy_swords" max="INFANTRY" />
-        <MenAtArm type="ji_pikemen" key="mk_aor_mag_t1_maghrebi_spearmen" max="INFANTRY" />
+        <MenAtArm type="ji_pikemen" key="mk_aus_t1_burgerwehr_spearmen" max="INFANTRY" />
         <MenAtArm type="ksatra" key="mubs_bedouin_levy_swords" max="INFANTRY" />
         <MenAtArm type="luojuzi" key="mubs_arab_levy_spears" max="INFANTRY" />
-        <MenAtArm type="sohei" key="mk_aor_mag_t1_maghrebi_spearmen" max="INFANTRY" />
+        <MenAtArm type="sohei" key="mk_aus_t1_burgerwehr_spearmen" max="INFANTRY" />
     </Faction>
     <Faction name="Alan Pretenders" subculture="att_sub_cult_nomadic_hunnic">
         <MenAtArm type="emishi_riders" key="mk_cuman_t1_skirmisher_cavalry" max="CAVALRY" />
@@ -154,14 +154,14 @@
     </Faction>
     <Faction name="Albanian League of Lezhe" subculture="att_sub_cult_roman_east">
         <General key="mk_volga_t1_knights" rank="3" />
-        <MenAtArm type="emishi_riders" key="mk_fla_t1_mounted_crossbowmen" max="CAVALRY" />
-        <MenAtArm type="gaemamusa" key="mk_nav_t1_caballeros" max="CAVALRY" />
-        <MenAtArm type="heavy_khitan_cavalry" key="mk_nav_t1_caballeros" max="CAVALRY" />
+        <MenAtArm type="emishi_riders" key="mk_khw_t1_ghulaman" max="CAVALRY" />
+        <MenAtArm type="gaemamusa" key="mk_rum_t1_ghazi_lancers" max="CAVALRY" />
+        <MenAtArm type="heavy_khitan_cavalry" key="mk_rum_t1_ghazi_lancers" max="CAVALRY" />
         <MenAtArm type="hwarang" key="mk_merc_ara_t1_almogavar" max="INFANTRY" />
-        <MenAtArm type="ji_pikemen" key="mymod_lit_t1_cossack" max="INFANTRY" />
+        <MenAtArm type="ji_pikemen" key="mk_mon_t1_fire_lance_infantry" max="INFANTRY" />
         <MenAtArm type="ksatra" key="mk_merc_ara_t1_almogavar" max="INFANTRY" />
         <MenAtArm type="luojuzi" key="earl_civ_eur_farm" max="INFANTRY" />
-        <MenAtArm type="sohei" key="mymod_lit_t1_cossack" max="INFANTRY" />
+        <MenAtArm type="sohei" key="mk_mon_t1_fire_lance_infantry" max="INFANTRY" />
     </Faction>
     <Faction name="Almohad Caliphate" subculture="att_sub_cult_eastern_desert">
         <MenAtArm type="emishi_riders" key="mk_mar_t1_zenata_skirmish_cavalry" max="CAVALRY" />
@@ -274,14 +274,14 @@
         <MenAtArm type="sohei" key="mk_mold_t1_voinici_spearmen" max="INFANTRY" />
     </Faction>
     <Faction name="Arabian Separatists" subculture="att_sub_cult_eastern_desert">
-        <MenAtArm type="emishi_riders" key="mk_haz_t1_shabankara_cavalry" max="CAVALRY" />
-        <MenAtArm type="gaemamusa" key="mk_nav_t1_caballeros" max="CAVALRY" />
-        <MenAtArm type="heavy_khitan_cavalry" key="mk_nav_t1_caballeros" max="CAVALRY" />
-        <MenAtArm type="hwarang" key="att_merc_nor_nordic_brigade" max="INFANTRY" />
-        <MenAtArm type="ji_pikemen" key="mk_aor_mag_t1_maghrebi_spearmen" max="INFANTRY" />
-        <MenAtArm type="ksatra" key="att_merc_nor_nordic_brigade" max="INFANTRY" />
-        <MenAtArm type="luojuzi" key="mk_aus_t1_fussknechte_halberdiers" max="INFANTRY" />
-        <MenAtArm type="sohei" key="mk_aor_mag_t1_maghrebi_spearmen" max="INFANTRY" />
+        <MenAtArm type="emishi_riders" key="mk_tou_t1_arbaletriers_mounted" max="CAVALRY" />
+        <MenAtArm type="gaemamusa" key="mk_rum_t1_ghazi_lancers" max="CAVALRY" />
+        <MenAtArm type="heavy_khitan_cavalry" key="mk_rum_t1_ghazi_lancers" max="CAVALRY" />
+        <MenAtArm type="hwarang" key="mk_wel_t1_rhyfelwyr" max="INFANTRY" />
+        <MenAtArm type="ji_pikemen" key="mk_rum_t1_ecrihor_spearmen" max="INFANTRY" />
+        <MenAtArm type="ksatra" key="mk_wel_t1_rhyfelwyr" max="INFANTRY" />
+        <MenAtArm type="luojuzi" key="mk_rum_t1_ecrihor_spearmen" max="INFANTRY" />
+        <MenAtArm type="sohei" key="mk_rum_t1_ecrihor_spearmen" max="INFANTRY" />
     </Faction>
     <Faction name="Aragonese Pretenders" subculture="att_sub_cult_roman_west">
         <MenAtArm type="emishi_riders" key="mk_cuman_t1_skirmisher_cavalry" max="CAVALRY" />
@@ -322,7 +322,7 @@
         <MenAtArm type="hwarang" key="mk_mak_t1_frontier_guardsmen" max="INFANTRY" />
         <MenAtArm type="ji_pikemen" key="mk_mak_t1_beja_tribesmen" max="INFANTRY" />
         <MenAtArm type="ksatra" key="mk_mak_t1_frontier_guardsmen" max="INFANTRY" />
-        <MenAtArm type="luojuzi" key="mk_aus_t1_fussknechte_halberdiers" max="INFANTRY" />
+        <MenAtArm type="luojuzi" key="mk_rum_t1_ecrihor_spearmen" max="INFANTRY" />
         <MenAtArm type="sohei" key="mk_mak_t1_beja_tribesmen" max="INFANTRY" />
     </Faction>
     <Faction name="Artuqid Beylik" subculture="att_sub_cult_eastern_sassanid">
@@ -412,7 +412,7 @@
         <MenAtArm type="hwarang" key="mk_tri_t1_trier_swordsmen" max="INFANTRY" />
         <MenAtArm type="ji_pikemen" key="mk_eng_t1_spear_militia" max="INFANTRY" />
         <MenAtArm type="ksatra" key="mk_hun_t1_sword" max="INFANTRY" />
-        <MenAtArm type="luojuzi" key="mk_bulg_t1_hooked_pikemen" max="INFANTRY" />
+        <MenAtArm type="luojuzi" key="mk_rum_t1_ecrihor_spearmen" max="INFANTRY" />
         <MenAtArm type="sohei" key="mk_eng_t1_spear_militia" max="INFANTRY" />
     </Faction>
     <Faction name="Ayyubid Pretenders" subculture="att_sub_cult_eastern_desert">
@@ -513,7 +513,7 @@
         <MenAtArm type="hwarang" key="mk_sic_t1_militia_swordsmen" max="INFANTRY" />
         <MenAtArm type="ji_pikemen" key="mk_mold_t1_voinici_spearmen" max="INFANTRY" />
         <MenAtArm type="ksatra" key="mk_sic_t1_militia_swordsmen" max="INFANTRY" />
-        <MenAtArm type="luojuzi" key="mk_rum_t1_hasher" max="INFANTRY" />
+        <MenAtArm type="luojuzi" key="mk_rum_t1_ecrihor_spearmen" max="INFANTRY" />
         <MenAtArm type="sohei" key="mk_mold_t1_voinici_spearmen" max="INFANTRY" />
     </Faction>
     <Faction name="Blue Horde" subculture="att_sub_cult_nomadic_hunnic">
@@ -723,10 +723,10 @@
         <MenAtArm type="gaemamusa" key="mk_swi_t1_zaehringer_mounted_sergeants" max="CAVALRY" />
         <MenAtArm type="heavy_khitan_cavalry" key="mk_swi_t1_zaehringer_mounted_sergeants" max="CAVALRY" />
         <MenAtArm type="hwarang" key="mk_swi_t1_zaehringer_swordsmen" max="INFANTRY" />
-        <MenAtArm type="ji_pikemen" key="mymod_lit_t1_cossack" max="INFANTRY" />
+        <MenAtArm type="ji_pikemen" key="mk_rum_t1_ecrihor_spearmen" max="INFANTRY" />
         <MenAtArm type="ksatra" key="mk_swi_t1_zaehringer_swordsmen" max="INFANTRY" />
         <MenAtArm type="luojuzi" key="mk_swi_t1_landsturm_halberdiers" max="INFANTRY" />
-        <MenAtArm type="sohei" key="mymod_lit_t1_cossack" max="INFANTRY" />
+        <MenAtArm type="sohei" key="mk_rum_t1_ecrihor_spearmen" max="INFANTRY" />
     </Faction>
     <Faction name="Castilian Pretenders" subculture="att_sub_cult_roman_west">
         <MenAtArm type="emishi_riders" key="mk_cuman_t1_skirmisher_cavalry" max="CAVALRY" />
@@ -840,7 +840,7 @@
         <MenAtArm type="hwarang" key="mk_pap_t1_foot_berrovieri" max="INFANTRY" />
         <MenAtArm type="ji_pikemen" key="mk_eng_t1_spear_militia" max="INFANTRY" />
         <MenAtArm type="ksatra" key="mk_pap_t1_foot_berrovieri" max="INFANTRY" />
-        <MenAtArm type="luojuzi" key="mk_aus_t1_fussknechte_halberdiers" max="INFANTRY" />
+        <MenAtArm type="luojuzi" key="mk_mon_t1_fire_lance_infantry" max="INFANTRY" />
         <MenAtArm type="sohei" key="mk_eng_t1_spear_militia" max="INFANTRY" />
     </Faction>
     <Faction name="Cordoban Separatists" subculture="att_sub_cult_eastern_sassanid">
@@ -889,17 +889,17 @@
         <Knights key="mk_sav_t1_mounted_serjeants" rank="2" />
         <Knights key="mk_sav_t1_mounted_serjeants" rank="3" />
         <MenAtArm type="emishi_riders" key="mk_cuman_t1_skirmisher_cavalry" max="CAVALRY" />
-        <MenAtArm type="gaemamusa" key="mk_nav_t1_caballeros" max="CAVALRY" />
-        <MenAtArm type="heavy_khitan_cavalry" key="mk_nav_t1_caballeros" max="CAVALRY" />
+        <MenAtArm type="gaemamusa" key="mk_rum_t1_ghazi_lancers" max="CAVALRY" />
+        <MenAtArm type="heavy_khitan_cavalry" key="mk_rum_t1_ghazi_lancers" max="CAVALRY" />
         <MenAtArm type="hwarang" key="mk_pap_t1_foot_berrovieri" max="INFANTRY" />
         <MenAtArm type="ji_pikemen" key="mk_eng_t1_spear_militia" max="INFANTRY" />
         <MenAtArm type="ksatra" key="mk_pap_t1_foot_berrovieri" max="INFANTRY" />
-        <MenAtArm type="luojuzi" key="mk_aus_t1_fussknechte_halberdiers" max="INFANTRY" />
+        <MenAtArm type="luojuzi" key="mk_mon_t1_fire_lance_infantry" max="INFANTRY" />
         <MenAtArm type="sohei" key="mk_eng_t1_spear_militia" max="INFANTRY" />
     </Faction>
     <Faction name="County of Toulouse" subculture="att_sub_cult_roman_west">
         <General key="mk_tou_t1_banneret_chevaliers_mounted" rank="3" />
-        <MenAtArm type="emishi_riders" key="mk_pol_t1_mounted_crossbowmen" max="CAVALRY" />
+        <MenAtArm type="emishi_riders" key="mk_khw_t1_ghulaman" max="CAVALRY" />
         <MenAtArm type="gaemamusa" key="mk_tou_t1_cliens" max="CAVALRY" />
         <MenAtArm type="heavy_khitan_cavalry" key="mk_tou_t1_cliens" max="CAVALRY" />
         <MenAtArm type="hwarang" key="mk_tou_t1_sergeant_axemen" max="INFANTRY" />
@@ -1299,14 +1299,14 @@
         <MenAtArm type="sohei" key="mk_mold_t1_voinici_spearmen" max="INFANTRY" />
     </Faction>
     <Faction name="Eastern Rebels" subculture="att_sub_cult_eastern_sassanid">
-        <MenAtArm type="emishi_riders" key="mk_haz_t1_shabankara_cavalry" max="CAVALRY" />
+        <MenAtArm type="emishi_riders" key="mk_georg_t1_HA" max="CAVALRY" />
         <MenAtArm type="gaemamusa" key="mk_ata_t1_askari" max="CAVALRY" />
         <MenAtArm type="heavy_khitan_cavalry" key="mk_ata_t1_askari" max="CAVALRY" />
-        <MenAtArm type="hwarang" key="att_merc_nor_nordic_brigade" max="INFANTRY" />
-        <MenAtArm type="ji_pikemen" key="mk_aor_mag_t1_maghrebi_spearmen" max="INFANTRY" />
-        <MenAtArm type="ksatra" key="att_merc_nor_nordic_brigade" max="INFANTRY" />
+        <MenAtArm type="hwarang" key="mk_swi_t1_dismounted_zaehringer_ritter" max="INFANTRY" />
+        <MenAtArm type="ji_pikemen" key="mk_mon_t1_fire_lance_infantry" max="INFANTRY" />
+        <MenAtArm type="ksatra" key="mk_swi_t1_dismounted_zaehringer_ritter" max="INFANTRY" />
         <MenAtArm type="luojuzi" key="mk_abb_t1_futuwwa" max="INFANTRY" />
-        <MenAtArm type="sohei" key="mk_aor_mag_t1_maghrebi_spearmen" max="INFANTRY" />
+        <MenAtArm type="sohei" key="mk_mon_t1_fire_lance_infantry" max="INFANTRY" />
     </Faction>
     <Faction name="Eastern Roman Empire" subculture="att_sub_cult_roman_east">
         <MenAtArm type="emishi_riders" key="mk_cuman_t1_skirmisher_cavalry" max="CAVALRY" />
@@ -2025,8 +2025,8 @@
     </Faction>
     <Faction name="Himyar" subculture="att_sub_cult_eastern_desert">
         <MenAtArm type="emishi_riders" key="mk_cuman_t1_skirmisher_cavalry" max="CAVALRY" />
-        <MenAtArm type="gaemamusa" key="mk_abb_t1_fursan_ajnad" max="CAVALRY" />
-        <MenAtArm type="heavy_khitan_cavalry" key="mk_abb_t1_fursan_ajnad" max="CAVALRY" />
+        <MenAtArm type="gaemamusa" key="mk_rum_t1_ghazi_lancers" max="CAVALRY" />
+        <MenAtArm type="heavy_khitan_cavalry" key="mk_rum_t1_ghazi_lancers" max="CAVALRY" />
         <MenAtArm type="hwarang" key="mk_merc_fre_t1_gascon_bideaux" max="INFANTRY" />
         <MenAtArm type="ji_pikemen" key="mk_mold_t1_voinici_spearmen" max="INFANTRY" />
         <MenAtArm type="ksatra" key="mk_merc_fre_t1_gascon_bideaux" max="INFANTRY" />
@@ -2044,18 +2044,18 @@
         <MenAtArm type="sohei" key="mk_mold_t1_voinici_spearmen" max="INFANTRY" />
     </Faction>
     <Faction name="Hispania" subculture="att_sub_cult_roman_west">
-        <MenAtArm type="emishi_riders" key="mk_haz_t1_shabankara_cavalry" max="CAVALRY" />
+        <MenAtArm type="emishi_riders" key="mk_tou_t1_arbaletriers_mounted" max="CAVALRY" />
         <MenAtArm type="gaemamusa" key="mk_ara_t1_caballeros_villanos" max="CAVALRY" />
         <MenAtArm type="heavy_khitan_cavalry" key="mk_ara_t1_caballeros_villanos" max="CAVALRY" />
         <MenAtArm type="hwarang" key="mk_merc_fre_t1_gascon_bideaux" max="INFANTRY" />
-        <MenAtArm type="ji_pikemen" key="mymod_lit_t1_cossack" max="INFANTRY" />
+        <MenAtArm type="ji_pikemen" key="mk_rum_t1_ecrihor_spearmen" max="INFANTRY" />
         <MenAtArm type="ksatra" key="mk_merc_fre_t1_gascon_bideaux" max="INFANTRY" />
         <MenAtArm type="luojuzi" key="mk_ara_t1_pikemen" max="INFANTRY" />
-        <MenAtArm type="sohei" key="mymod_lit_t1_cossack" max="INFANTRY" />
+        <MenAtArm type="sohei" key="mk_mon_t1_fire_lance_infantry" max="INFANTRY" />
     </Faction>
     <Faction name="Holy Roman Empire" subculture="att_sub_cult_roman_west">
         <General key="mk_hre_t1_ritter" rank="3" />
-        <MenAtArm type="emishi_riders" key="mk_haz_t1_shabankara_cavalry" max="CAVALRY" />
+        <MenAtArm type="emishi_riders" key="mk_khw_t1_ghulaman" max="CAVALRY" />
         <MenAtArm type="gaemamusa" key="mk_hre_t1_ritter" max="CAVALRY" />
         <MenAtArm type="heavy_khitan_cavalry" key="mk_hre_t1_ritter" max="CAVALRY" />
         <MenAtArm type="hwarang" key="mk_hre_t1_burgerwehr_streitaxte" max="INFANTRY" />
@@ -2391,13 +2391,13 @@
         <General key="mk_merc_iran_t1_khwarazmian_lancers" rank="3" />
         <Knights key="mk_georg_t1_aznauri_lancers" rank="2" />
         <Knights key="mk_georg_t1_aznauri_lancers" rank="3" />
-        <MenAtArm type="emishi_riders" key="mk_haz_t1_shabankara_cavalry" max="CAVALRY" />
+        <MenAtArm type="emishi_riders" key="mk_georg_t1_HA" max="CAVALRY" />
         <MenAtArm type="gaemamusa" key="mk_merc_arab_t1_bedouin_camel_riders" max="CAVALRY" />
         <MenAtArm type="heavy_khitan_cavalry" key="mk_merc_arab_t1_bedouin_camel_riders" max="CAVALRY" />
         <MenAtArm type="hwarang" key="mk_mak_t1_frontier_guardsmen" max="INFANTRY" />
         <MenAtArm type="ji_pikemen" key="mk_mak_t1_beja_tribesmen" max="INFANTRY" />
         <MenAtArm type="ksatra" key="mk_mak_t1_frontier_guardsmen" max="INFANTRY" />
-        <MenAtArm type="luojuzi" key="mk_aus_t1_fussknechte_halberdiers" max="INFANTRY" />
+        <MenAtArm type="luojuzi" key="mk_mon_t1_fire_lance_infantry" max="INFANTRY" />
         <MenAtArm type="sohei" key="mk_mak_t1_beja_tribesmen" max="INFANTRY" />
     </Faction>
     <Faction name="Khanate of Kazan" subculture="att_sub_cult_barbarian_germanic_east">
@@ -2483,7 +2483,7 @@
     </Faction>
     <Faction name="Kingdom of Bohemia" subculture="att_sub_cult_roman_west">
         <General key="mk_boh_t1_mounted_sergeants" rank="3" />
-        <MenAtArm type="emishi_riders" key="mk_fla_t1_mounted_crossbowmen" max="CAVALRY" />
+        <MenAtArm type="emishi_riders" key="mk_swi_t1_mounted_crossbows" max="CAVALRY" />
         <MenAtArm type="gaemamusa" key="mk_boh_t1_mounted_raiders" max="CAVALRY" />
         <MenAtArm type="heavy_khitan_cavalry" key="mk_boh_t1_mounted_raiders" max="CAVALRY" />
         <MenAtArm type="hwarang" key="mk_merc_boh_t1_infantry" max="INFANTRY" />
@@ -2586,7 +2586,7 @@
     </Faction>
     <Faction name="Kingdom of Denmark" subculture="att_sub_cult_roman_west">
         <General key="mk_dan_t1_banneret_knights" rank="3" />
-        <MenAtArm type="emishi_riders" key="mk_fla_t1_mounted_crossbowmen" max="CAVALRY" />
+        <MenAtArm type="emishi_riders" key="mk_swi_t1_mounted_crossbows" max="CAVALRY" />
         <MenAtArm type="gaemamusa" key="mk_merc_bra_t1_brabanzonen_cavalry" max="CAVALRY" />
         <MenAtArm type="heavy_khitan_cavalry" key="mk_merc_bra_t1_brabanzonen_cavalry" max="CAVALRY" />
         <MenAtArm type="hwarang" key="mk_dan_t1_gotland_peasant_militia" max="INFANTRY" />
@@ -2880,7 +2880,7 @@
         <MenAtArm type="hwarang" key="mk_merc_fre_t1_gascon_bideaux" max="INFANTRY" />
         <MenAtArm type="ji_pikemen" key="mk_eng_t1_spear_militia" max="INFANTRY" />
         <MenAtArm type="ksatra" key="mk_merc_fre_t1_gascon_bideaux" max="INFANTRY" />
-        <MenAtArm type="luojuzi" key="mk_ilkhan_t3_hashar" max="INFANTRY" />
+        <MenAtArm type="luojuzi" key="mk_mon_t1_fire_lance_infantry" max="INFANTRY" />
         <MenAtArm type="sohei" key="mk_eng_t1_spear_militia" max="INFANTRY" />
     </Faction>
     <Faction name="Landgraviate of Hesse" subculture="att_sub_cult_roman_west">
@@ -3230,10 +3230,10 @@
         <MenAtArm type="gaemamusa" key="mubs_bedouin_levy_cav" max="CAVALRY" />
         <MenAtArm type="heavy_khitan_cavalry" key="mubs_bedouin_levy_cav" max="CAVALRY" />
         <MenAtArm type="hwarang" key="mubs_bedouin_levy_swords" max="INFANTRY" />
-        <MenAtArm type="ji_pikemen" key="mk_aor_mag_t1_maghrebi_spearmen" max="INFANTRY" />
+        <MenAtArm type="ji_pikemen" key="mk_mon_t1_fire_lance_infantry" max="INFANTRY" />
         <MenAtArm type="ksatra" key="mubs_bedouin_levy_swords" max="INFANTRY" />
         <MenAtArm type="luojuzi" key="mubs_arab_levy_spears" max="INFANTRY" />
-        <MenAtArm type="sohei" key="mk_aor_mag_t1_maghrebi_spearmen" max="INFANTRY" />
+        <MenAtArm type="sohei" key="mk_mon_t1_fire_lance_infantry" max="INFANTRY" />
     </Faction>
     <Faction name="Muscovite Pretenders" subculture="att_sub_cult_barbarian_germanic_west">
         <MenAtArm type="emishi_riders" key="mk_cuman_t1_skirmisher_cavalry" max="CAVALRY" />
@@ -3451,8 +3451,8 @@
         <Knights key="mk_merc_ger_t1_knights" rank="2" />
         <Knights key="mk_merc_ger_t1_knights" rank="3" />
         <MenAtArm type="emishi_riders" key="mk_cuman_t1_skirmisher_cavalry" max="CAVALRY" />
-        <MenAtArm type="gaemamusa" key="mk_nav_t1_caballeros" max="CAVALRY" />
-        <MenAtArm type="heavy_khitan_cavalry" key="mk_nav_t1_caballeros" max="CAVALRY" />
+        <MenAtArm type="gaemamusa" key="mk_rum_t1_ghazi_lancers" max="CAVALRY" />
+        <MenAtArm type="heavy_khitan_cavalry" key="mk_rum_t1_ghazi_lancers" max="CAVALRY" />
         <MenAtArm type="hwarang" key="bel_ost_milites" max="INFANTRY" />
         <MenAtArm type="ji_pikemen" key="bel_ost_gothic_pikemen" max="INFANTRY" />
         <MenAtArm type="ksatra" key="bel_ost_milites" max="INFANTRY" />
@@ -3847,9 +3847,9 @@
         <General key="mk_nic_t1_pronoiarioi" rank="2" />
         <General key="mk_nic_t1_pronoiarioi" rank="3" />
         <Knights key="mk_nic_t1_pronoiarioi" rank="3" />
-        <MenAtArm type="emishi_riders" key="mk_cuman_t1_skirmisher_cavalry" max="CAVALRY" />
-        <MenAtArm type="gaemamusa" key="mk_nav_t1_caballeros" max="CAVALRY" />
-        <MenAtArm type="heavy_khitan_cavalry" key="mk_nav_t1_caballeros" max="CAVALRY" />
+        <MenAtArm type="emishi_riders" key="mk_khw_t1_ghulaman" max="CAVALRY" />
+        <MenAtArm type="gaemamusa" key="mk_rum_t1_ghazi_lancers" max="CAVALRY" />
+        <MenAtArm type="heavy_khitan_cavalry" key="mk_rum_t1_ghazi_lancers" max="CAVALRY" />
         <MenAtArm type="hwarang" key="bel_rom_foederati" max="INFANTRY" />
         <MenAtArm type="ji_pikemen" key="mk_mold_t1_voinici_spearmen" max="INFANTRY" />
         <MenAtArm type="ksatra" key="bel_rom_foederati" max="INFANTRY" />
@@ -4431,12 +4431,12 @@
     <Faction name="Tatar Pretenders" subculture="att_sub_cult_nomadic_hunnic">
         <MenAtArm type="emishi_riders" key="mk_cuman_t1_skirmisher_cavalry" max="CAVALRY" />
         <MenAtArm type="gaemamusa" key="mk_cuman_t1_light_lancers" max="CAVALRY" />
-        <MenAtArm type="heavy_khitan_cavalry" key="mk_nav_t1_caballeros" max="CAVALRY" />
-        <MenAtArm type="hwarang" key="att_merc_nor_nordic_brigade" max="INFANTRY" />
-        <MenAtArm type="ji_pikemen" key="mk_aor_mag_t1_maghrebi_spearmen" max="INFANTRY" />
-        <MenAtArm type="ksatra" key="att_merc_nor_nordic_brigade" max="INFANTRY" />
+        <MenAtArm type="heavy_khitan_cavalry" key="mk_mon_t1_golden_lancers" max="CAVALRY" />
+        <MenAtArm type="hwarang" key="mk_swi_t1_dismounted_zaehringer_ritter" max="INFANTRY" />
+        <MenAtArm type="ji_pikemen" key="mk_mon_t1_fire_lance_infantry" max="INFANTRY" />
+        <MenAtArm type="ksatra" key="mk_swi_t1_dismounted_zaehringer_ritter" max="INFANTRY" />
         <MenAtArm type="luojuzi" key="mk_cuman_t3_light_spearmen" max="INFANTRY" />
-        <MenAtArm type="sohei" key="mk_aor_mag_t1_maghrebi_spearmen" max="INFANTRY" />
+        <MenAtArm type="sohei" key="mk_mon_t1_fire_lance_infantry" max="INFANTRY" />
     </Faction>
     <Faction name="Teutonic Deserters" subculture="att_sub_cult_roman_west">
         <MenAtArm type="emishi_riders" key="mk_cuman_t1_skirmisher_cavalry" max="CAVALRY" />
@@ -4484,13 +4484,13 @@
         <Knights key="mk_hun_t1_banneret_knight" rank="2" />
         <Knights key="mk_hun_t1_banneret_knight" rank="3" />
         <MenAtArm type="emishi_riders" key="mk_mon_t1_qaraghul" max="CAVALRY" />
-        <MenAtArm type="gaemamusa" key="mk_nav_t1_caballeros" max="CAVALRY" />
-        <MenAtArm type="heavy_khitan_cavalry" key="mk_nav_t1_caballeros" max="CAVALRY" />
+        <MenAtArm type="gaemamusa" key="mk_rum_t1_ghazi_lancers" max="CAVALRY" />
+        <MenAtArm type="heavy_khitan_cavalry" key="mk_rum_t1_ghazi_lancers" max="CAVALRY" />
         <MenAtArm type="hwarang" key="mk_merc_afg_t1_afghan_hillmen" max="INFANTRY" />
-        <MenAtArm type="ji_pikemen" key="mymod_lit_t1_cossack" max="INFANTRY" />
+        <MenAtArm type="ji_pikemen" key="mk_mon_t1_fire_lance_infantry" max="INFANTRY" />
         <MenAtArm type="ksatra" key="mk_merc_afg_t1_afghan_hillmen" max="INFANTRY" />
-        <MenAtArm type="luojuzi" key="mk_aus_t1_fussknechte_halberdiers" max="INFANTRY" />
-        <MenAtArm type="sohei" key="mymod_lit_t1_cossack" max="INFANTRY" />
+        <MenAtArm type="luojuzi" key="mk_mon_t1_fire_lance_infantry" max="INFANTRY" />
+        <MenAtArm type="sohei" key="mk_mon_t1_fire_lance_infantry" max="INFANTRY" />
     </Faction>
     <Faction name="Timurid Pretenders" subculture="att_sub_cult_nomadic_hunnic">
         <MenAtArm type="emishi_riders" key="mk_cuman_t1_skirmisher_cavalry" max="CAVALRY" />
@@ -4602,7 +4602,7 @@
         <MenAtArm type="heavy_khitan_cavalry" key="mk_merc_cuman_t1_light_lancers" max="CAVALRY" />
         <MenAtArm type="hwarang" key="mk_merc_iran_t1_daylami_infantry" max="INFANTRY" />
         <MenAtArm type="ji_pikemen" key="mk_eng_t1_spear_militia" max="INFANTRY" />
-        <MenAtArm type="ksatra" key="mk_hun_t1_sword" max="INFANTRY" />
+        <MenAtArm type="ksatra" key="mk_merc_iran_t1_daylami_infantry" max="INFANTRY" />
         <MenAtArm type="luojuzi" key="earl_mon_foot_soldiers" max="INFANTRY" />
         <MenAtArm type="sohei" key="mk_eng_t1_spear_militia" max="INFANTRY" />
     </Faction>
@@ -4623,7 +4623,7 @@
         <MenAtArm type="heavy_khitan_cavalry" key="mk_merc_cuman_t1_light_lancers" max="CAVALRY" />
         <MenAtArm type="hwarang" key="bel_van_noble_vandal_swordsmen" max="INFANTRY" />
         <MenAtArm type="ji_pikemen" key="mk_eng_t1_spear_militia" max="INFANTRY" />
-        <MenAtArm type="ksatra" key="mk_tri_t1_trier_swordsmen" max="INFANTRY" />
+        <MenAtArm type="ksatra" key="mk_wel_t1_rhyfelwyr" max="INFANTRY" />
         <MenAtArm type="luojuzi" key="bel_van_moorish_levy" max="INFANTRY" />
         <MenAtArm type="sohei" key="mk_eng_t1_spear_militia" max="INFANTRY" />
     </Faction>
@@ -5007,13 +5007,13 @@
         <General key="mk_hre_t1_renner" rank="3" />
         <Knights key="mk_hre_t1_renner" rank="2" />
         <Knights key="mk_hre_t1_renner" rank="3" />
-        <MenAtArm type="emishi_riders" key="mk_haz_t1_shabankara_cavalry" max="CAVALRY" />
+        <MenAtArm type="emishi_riders" key="mk_tou_t1_arbaletriers_mounted" max="CAVALRY" />
         <MenAtArm type="gaemamusa" key="mk_merc_arab_t1_bedouin_camel_riders" max="CAVALRY" />
         <MenAtArm type="heavy_khitan_cavalry" key="mk_merc_arab_t1_bedouin_camel_riders" max="CAVALRY" />
         <MenAtArm type="hwarang" key="mk_mak_t1_frontier_guardsmen" max="INFANTRY" />
-        <MenAtArm type="ji_pikemen" key="mk_aor_mag_t1_maghrebi_spearmen" max="INFANTRY" />
+        <MenAtArm type="ji_pikemen" key="mk_mon_t1_fire_lance_infantry" max="INFANTRY" />
         <MenAtArm type="ksatra" key="mk_mak_t1_frontier_guardsmen" max="INFANTRY" />
-        <MenAtArm type="luojuzi" key="mk_aus_t1_fussknechte_halberdiers" max="INFANTRY" />
+        <MenAtArm type="luojuzi" key="mk_mon_t1_fire_lance_infantry" max="INFANTRY" />
         <MenAtArm type="sohei" key="mk_mak_t1_beja_tribesmen" max="INFANTRY" />
     </Faction>
     <Faction name="Aksum" subculture="att_sub_cult_eastern_desert">
@@ -5029,14 +5029,14 @@
         <MenAtArm type="sohei" key="mk_mak_t1_nubian_quilted_spearmen" max="INFANTRY" />
     </Faction>
     <Faction name="Huns" subculture="att_sub_cult_nomadic_hunnic">
-        <MenAtArm type="emishi_riders" key="mk_haz_t1_shabankara_cavalry" max="CAVALRY" />
-        <MenAtArm type="gaemamusa" key="mk_nav_t1_caballeros" max="CAVALRY" />
-        <MenAtArm type="heavy_khitan_cavalry" key="mk_nav_t1_caballeros" max="CAVALRY" />
-        <MenAtArm type="hwarang" key="att_merc_nor_nordic_brigade" max="INFANTRY" />
-        <MenAtArm type="ji_pikemen" key="mk_aor_mag_t1_maghrebi_spearmen" max="INFANTRY" />
-        <MenAtArm type="ksatra" key="att_merc_nor_nordic_brigade" max="INFANTRY" />
-        <MenAtArm type="luojuzi" key="mk_aus_t1_fussknechte_halberdiers" max="INFANTRY" />
-        <MenAtArm type="sohei" key="mk_aor_mag_t1_maghrebi_spearmen" max="INFANTRY" />
+        <MenAtArm type="emishi_riders" key="mk_tou_t1_arbaletriers_mounted" max="CAVALRY" />
+        <MenAtArm type="gaemamusa" key="mk_rum_t1_ghazi_lancers" max="CAVALRY" />
+        <MenAtArm type="heavy_khitan_cavalry" key="mk_rum_t1_ghazi_lancers" max="CAVALRY" />
+        <MenAtArm type="hwarang" key="mk_swi_t1_dismounted_zaehringer_ritter" max="INFANTRY" />
+        <MenAtArm type="ji_pikemen" key="mk_mon_t1_fire_lance_infantry" max="INFANTRY" />
+        <MenAtArm type="ksatra" key="mk_swi_t1_dismounted_zaehringer_ritter" max="INFANTRY" />
+        <MenAtArm type="luojuzi" key="mk_mon_t1_fire_lance_infantry" max="INFANTRY" />
+        <MenAtArm type="sohei" key="mk_mon_t1_fire_lance_infantry" max="INFANTRY" />
     </Faction>
     <Faction name="Kingdom of Abyssinia" subculture="att_sub_cult_eastern_caucasian">
         <General key="mk_mak_t1_arab_horsemen" rank="3" />
@@ -5092,24 +5092,24 @@
         <MenAtArm type="sohei" key="mk_mold_t1_voinici_spearmen" max="INFANTRY" />
     </Faction>
     <Faction name="Makran" subculture="att_sub_cult_eastern_sassanid">
-        <MenAtArm type="emishi_riders" key="mk_haz_t1_shabankara_cavalry" max="CAVALRY" />
-        <MenAtArm type="gaemamusa" key="mk_nav_t1_caballeros" max="CAVALRY" />
-        <MenAtArm type="heavy_khitan_cavalry" key="mk_nav_t1_caballeros" max="CAVALRY" />
-        <MenAtArm type="hwarang" key="att_merc_nor_nordic_brigade" max="INFANTRY" />
-        <MenAtArm type="ji_pikemen" key="mk_aor_mag_t1_maghrebi_spearmen" max="INFANTRY" />
-        <MenAtArm type="ksatra" key="att_merc_nor_nordic_brigade" max="INFANTRY" />
-        <MenAtArm type="luojuzi" key="mk_aus_t1_fussknechte_halberdiers" max="INFANTRY" />
-        <MenAtArm type="sohei" key="mk_aor_mag_t1_maghrebi_spearmen" max="INFANTRY" />
+        <MenAtArm type="emishi_riders" key="mk_tou_t1_arbaletriers_mounted" max="CAVALRY" />
+        <MenAtArm type="gaemamusa" key="mk_rum_t1_ghazi_lancers" max="CAVALRY" />
+        <MenAtArm type="heavy_khitan_cavalry" key="mk_rum_t1_ghazi_lancers" max="CAVALRY" />
+        <MenAtArm type="hwarang" key="mk_swi_t1_dismounted_zaehringer_ritter" max="INFANTRY" />
+        <MenAtArm type="ji_pikemen" key="mk_mon_t1_fire_lance_infantry" max="INFANTRY" />
+        <MenAtArm type="ksatra" key="mk_swi_t1_dismounted_zaehringer_ritter" max="INFANTRY" />
+        <MenAtArm type="luojuzi" key="mk_mon_t1_fire_lance_infantry" max="INFANTRY" />
+        <MenAtArm type="sohei" key="mk_mon_t1_fire_lance_infantry" max="INFANTRY" />
     </Faction>
     <Faction name="Tanukhids " subculture="att_sub_cult_eastern_desert">
         <MenAtArm type="emishi_riders" key="mubs_berber_levy_cav" max="CAVALRY" />
         <MenAtArm type="gaemamusa" key="mubs_bedouin_levy_cav" max="CAVALRY" />
         <MenAtArm type="heavy_khitan_cavalry" key="mubs_bedouin_levy_cav" max="CAVALRY" />
         <MenAtArm type="hwarang" key="mubs_bedouin_levy_swords" max="INFANTRY" />
-        <MenAtArm type="ji_pikemen" key="mk_aor_mag_t1_maghrebi_spearmen" max="INFANTRY" />
+        <MenAtArm type="ji_pikemen" key="mk_mon_t1_fire_lance_infantry" max="INFANTRY" />
         <MenAtArm type="ksatra" key="mubs_bedouin_levy_swords" max="INFANTRY" />
         <MenAtArm type="luojuzi" key="mubs_berber_levy_spears" max="INFANTRY" />
-        <MenAtArm type="sohei" key="mk_aor_mag_t1_maghrebi_spearmen" max="INFANTRY" />
+        <MenAtArm type="sohei" key="mk_mon_t1_fire_lance_infantry" max="INFANTRY" />
     </Faction>
     <Faction name="Eastern Separatists" subculture="bel_sub_cult_roman">
         <General key="mk_boh_t1_mounted_sergeants" rank="2" />
@@ -5124,14 +5124,14 @@
         <MenAtArm type="sohei" key="mk_mak_t1_nubian_quilted_spearmen" max="INFANTRY" />
     </Faction>
     <Faction name="Anteans" subculture="att_sub_cult_barbarian_germanic_east">
-        <MenAtArm type="emishi_riders" key="mk_haz_t1_shabankara_cavalry" max="CAVALRY" />
-        <MenAtArm type="gaemamusa" key="mk_nav_t1_caballeros" max="CAVALRY" />
-        <MenAtArm type="heavy_khitan_cavalry" key="mk_nav_t1_caballeros" max="CAVALRY" />
-        <MenAtArm type="hwarang" key="att_merc_nor_nordic_brigade" max="INFANTRY" />
-        <MenAtArm type="ji_pikemen" key="mk_aor_mag_t1_maghrebi_spearmen" max="INFANTRY" />
-        <MenAtArm type="ksatra" key="att_merc_nor_nordic_brigade" max="INFANTRY" />
-        <MenAtArm type="luojuzi" key="mk_aus_t1_fussknechte_halberdiers" max="INFANTRY" />
-        <MenAtArm type="sohei" key="mk_aor_mag_t1_maghrebi_spearmen" max="INFANTRY" />
+        <MenAtArm type="emishi_riders" key="mk_tou_t1_arbaletriers_mounted" max="CAVALRY" />
+        <MenAtArm type="gaemamusa" key="mk_rum_t1_ghazi_lancers" max="CAVALRY" />
+        <MenAtArm type="heavy_khitan_cavalry" key="mk_rum_t1_ghazi_lancers" max="CAVALRY" />
+        <MenAtArm type="hwarang" key="mk_swi_t1_dismounted_zaehringer_ritter" max="INFANTRY" />
+        <MenAtArm type="ji_pikemen" key="mk_mon_t1_fire_lance_infantry" max="INFANTRY" />
+        <MenAtArm type="ksatra" key="mk_swi_t1_dismounted_zaehringer_ritter" max="INFANTRY" />
+        <MenAtArm type="luojuzi" key="mk_mon_t1_fire_lance_infantry" max="INFANTRY" />
+        <MenAtArm type="sohei" key="mk_mon_t1_fire_lance_infantry" max="INFANTRY" />
     </Faction>
     <Faction name="Ayyubid Sultanate" subculture="att_sub_cult_eastern_desert">
         <MenAtArm type="emishi_riders" key="mk_ayy_t1_wafidiyya" max="CAVALRY" />
@@ -5186,24 +5186,24 @@
         <MenAtArm type="sohei" key="mk_mold_t1_voinici_spearmen" max="INFANTRY" />
     </Faction>
     <Faction name="Maurians" subculture="att_sub_cult_eastern_desert">
-        <MenAtArm type="emishi_riders" key="mk_haz_t1_shabankara_cavalry" max="CAVALRY" />
-        <MenAtArm type="gaemamusa" key="mk_ayy_t1_halqa_lancers" max="CAVALRY" />
-        <MenAtArm type="heavy_khitan_cavalry" key="mk_ayy_t1_halqa_lancers" max="CAVALRY" />
-        <MenAtArm type="hwarang" key="mk_alm_t1_ghuzat" max="INFANTRY" />
-        <MenAtArm type="ji_pikemen" key="mk_aor_mag_t1_maghrebi_spearmen" max="INFANTRY" />
-        <MenAtArm type="ksatra" key="att_merc_nor_nordic_brigade" max="INFANTRY" />
-        <MenAtArm type="luojuzi" key="mk_aus_t1_fussknechte_halberdiers" max="INFANTRY" />
-        <MenAtArm type="sohei" key="mk_aor_mag_t1_maghrebi_spearmen" max="INFANTRY" />
+        <MenAtArm type="emishi_riders" key="mk_tou_t1_arbaletriers_mounted" max="CAVALRY" />
+        <MenAtArm type="gaemamusa" key="mk_rum_t1_ghazi_lancers" max="CAVALRY" />
+        <MenAtArm type="heavy_khitan_cavalry" key="mk_rum_t1_ghazi_lancers" max="CAVALRY" />
+        <MenAtArm type="hwarang" key="mk_swi_t1_dismounted_zaehringer_ritter" max="INFANTRY" />
+        <MenAtArm type="ji_pikemen" key="mk_mon_t1_fire_lance_infantry" max="INFANTRY" />
+        <MenAtArm type="ksatra" key="mk_swi_t1_dismounted_zaehringer_ritter" max="INFANTRY" />
+        <MenAtArm type="luojuzi" key="mk_mon_t1_fire_lance_infantry" max="INFANTRY" />
+        <MenAtArm type="sohei" key="mk_mon_t1_fire_lance_infantry" max="INFANTRY" />
     </Faction>
     <Faction name="White Huns" subculture="att_sub_cult_nomadic_hunnic">
         <MenAtArm type="emishi_riders" key="mk_cuman_t1_skirmisher_cavalry" max="CAVALRY" />
-        <MenAtArm type="gaemamusa" key="mk_nav_t1_caballeros" max="CAVALRY" />
-        <MenAtArm type="heavy_khitan_cavalry" key="mk_nav_t1_caballeros" max="CAVALRY" />
-        <MenAtArm type="hwarang" key="att_merc_nor_nordic_brigade" max="INFANTRY" />
-        <MenAtArm type="ji_pikemen" key="mk_aor_mag_t1_maghrebi_spearmen" max="INFANTRY" />
-        <MenAtArm type="ksatra" key="att_merc_nor_nordic_brigade" max="INFANTRY" />
-        <MenAtArm type="luojuzi" key="mk_aus_t1_fussknechte_halberdiers" max="INFANTRY" />
-        <MenAtArm type="sohei" key="mk_aor_mag_t1_maghrebi_spearmen" max="INFANTRY" />
+        <MenAtArm type="gaemamusa" key="mk_rum_t1_ghazi_lancers" max="CAVALRY" />
+        <MenAtArm type="heavy_khitan_cavalry" key="mk_rum_t1_ghazi_lancers" max="CAVALRY" />
+        <MenAtArm type="hwarang" key="mk_swi_t1_dismounted_zaehringer_ritter" max="INFANTRY" />
+        <MenAtArm type="ji_pikemen" key="mk_mon_t1_fire_lance_infantry" max="INFANTRY" />
+        <MenAtArm type="ksatra" key="mk_swi_t1_dismounted_zaehringer_ritter" max="INFANTRY" />
+        <MenAtArm type="luojuzi" key="mk_mon_t1_fire_lance_infantry" max="INFANTRY" />
+        <MenAtArm type="sohei" key="mk_mon_t1_fire_lance_infantry" max="INFANTRY" />
     </Faction>
     <Faction name="Abarshahr" subculture="att_sub_cult_eastern_sassanid">
         <General key="mk_hre_t1_renner" rank="2" />
@@ -5214,10 +5214,10 @@
         <MenAtArm type="gaemamusa" key="mubs_bedouin_levy_cav" max="CAVALRY" />
         <MenAtArm type="heavy_khitan_cavalry" key="mubs_bedouin_levy_cav" max="CAVALRY" />
         <MenAtArm type="hwarang" key="mubs_bedouin_levy_swords" max="INFANTRY" />
-        <MenAtArm type="ji_pikemen" key="mk_aor_mag_t1_maghrebi_spearmen" max="INFANTRY" />
+        <MenAtArm type="ji_pikemen" key="mk_mon_t1_fire_lance_infantry" max="INFANTRY" />
         <MenAtArm type="ksatra" key="mubs_bedouin_levy_swords" max="INFANTRY" />
         <MenAtArm type="luojuzi" key="mubs_arab_levy_spears" max="INFANTRY" />
-        <MenAtArm type="sohei" key="mk_aor_mag_t1_maghrebi_spearmen" max="INFANTRY" />
+        <MenAtArm type="sohei" key="mk_mon_t1_fire_lance_infantry" max="INFANTRY" />
     </Faction>
     <Faction name="Abbasid Caliphate" subculture="att_sub_cult_eastern_sassanid">
         <General key="mk_merc_arab_t1_bedouin_horsemen" rank="3" />
@@ -5235,20 +5235,20 @@
         <MenAtArm type="gaemamusa" key="mubs_bedouin_levy_cav" max="CAVALRY" />
         <MenAtArm type="heavy_khitan_cavalry" key="mubs_bedouin_levy_cav" max="CAVALRY" />
         <MenAtArm type="hwarang" key="mubs_bedouin_levy_swords" max="INFANTRY" />
-        <MenAtArm type="ji_pikemen" key="mk_aor_mag_t1_maghrebi_spearmen" max="INFANTRY" />
+        <MenAtArm type="ji_pikemen" key="mk_mon_t1_fire_lance_infantry" max="INFANTRY" />
         <MenAtArm type="ksatra" key="mubs_bedouin_levy_swords" max="INFANTRY" />
         <MenAtArm type="luojuzi" key="mubs_arab_levy_spears" max="INFANTRY" />
-        <MenAtArm type="sohei" key="mk_aor_mag_t1_maghrebi_spearmen" max="INFANTRY" />
+        <MenAtArm type="sohei" key="mk_mon_t1_fire_lance_infantry" max="INFANTRY" />
     </Faction>
     <Faction name="Asia" subculture="att_sub_cult_roman_east">
-        <MenAtArm type="emishi_riders" key="mk_haz_t1_shabankara_cavalry" max="CAVALRY" />
-        <MenAtArm type="gaemamusa" key="mk_nav_t1_caballeros" max="CAVALRY" />
-        <MenAtArm type="heavy_khitan_cavalry" key="mk_nav_t1_caballeros" max="CAVALRY" />
-        <MenAtArm type="hwarang" key="att_merc_nor_nordic_brigade" max="INFANTRY" />
-        <MenAtArm type="ji_pikemen" key="mk_aor_mag_t1_maghrebi_spearmen" max="INFANTRY" />
-        <MenAtArm type="ksatra" key="att_merc_nor_nordic_brigade" max="INFANTRY" />
-        <MenAtArm type="luojuzi" key="mk_aus_t1_fussknechte_halberdiers" max="INFANTRY" />
-        <MenAtArm type="sohei" key="mk_aor_mag_t1_maghrebi_spearmen" max="INFANTRY" />
+        <MenAtArm type="emishi_riders" key="mk_tou_t1_arbaletriers_mounted" max="CAVALRY" />
+        <MenAtArm type="gaemamusa" key="mk_rum_t1_ghazi_lancers" max="CAVALRY" />
+        <MenAtArm type="heavy_khitan_cavalry" key="mk_rum_t1_ghazi_lancers" max="CAVALRY" />
+        <MenAtArm type="hwarang" key="mk_swi_t1_dismounted_zaehringer_ritter" max="INFANTRY" />
+        <MenAtArm type="ji_pikemen" key="mk_mon_t1_fire_lance_infantry" max="INFANTRY" />
+        <MenAtArm type="ksatra" key="mk_swi_t1_dismounted_zaehringer_ritter" max="INFANTRY" />
+        <MenAtArm type="luojuzi" key="mk_mon_t1_fire_lance_infantry" max="INFANTRY" />
+        <MenAtArm type="sohei" key="mk_mon_t1_fire_lance_infantry" max="INFANTRY" />
     </Faction>
     <Faction name="Kingdom of Alania" subculture="att_sub_cult_nomadic_hunnic">
         <MenAtArm type="emishi_riders" key="mk_cuman_t1_skirmisher_cavalry" max="CAVALRY" />
@@ -5257,7 +5257,7 @@
         <MenAtArm type="hwarang" key="mk_mold_t1_moldavian_warrior" max="INFANTRY" />
         <MenAtArm type="ji_pikemen" key="mk_cuman_t1_spearmen" max="INFANTRY" />
         <MenAtArm type="ksatra" key="mk_mold_t1_moldavian_warrior" max="INFANTRY" />
-        <MenAtArm type="luojuzi" key="mk_aus_t1_fussknechte_halberdiers" max="INFANTRY" />
+        <MenAtArm type="luojuzi" key="mk_mon_t1_fire_lance_infantry" max="INFANTRY" />
         <MenAtArm type="sohei" key="mk_cuman_t1_spearmen" max="INFANTRY" />
     </Faction>
     <Faction name="Persia" subculture="att_sub_cult_eastern_sassanid">
