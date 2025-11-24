@@ -38,7 +38,7 @@
                 <xs:complexType>
                   <xs:attribute name="type" type="xs:string" use="required" />
                   <xs:attribute name="key" type="xs:string" use="required" />
-                  <xs:attribute name="max" type="xs:string" use="required" />
+                  <xs:attribute name="max" type="xs:string" use="optional" />
                   <xs:attribute name="siege" type="xs:boolean" use="optional" />
                   <xs:attribute name="siege_engine_per_unit" type="xs:integer" use="optional" />
                   <xs:attribute name="num_guns" type="xs:integer" use="optional" />
