@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:complexType name="GeneralType">
+    <xs:attribute name="key" type="xs:string" use="required" />
+  </xs:complexType>
+
+  <xs:complexType name="KnightsType">
+    <xs:attribute name="key" type="xs:string" use="required" />
+  </xs:complexType>
+
+  <xs:complexType name="MenAtArmType">
+    <xs:attribute name="type" type="xs:string" use="required" />
+    <xs:attribute name="key" type="xs:string" use="required" />
+  </xs:complexType>
+
+  <xs:complexType name="FactionType">
+    <xs:sequence>
+      <xs:element name="General" type="GeneralType" />
+      <xs:element name="Knights" type="KnightsType" />
+      <xs:element name="MenAtArm" type="MenAtArmType" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+    <xs:attribute name="title_key" type="xs:string" use="required" />
+    <xs:attribute name="name" type="xs:string" use="required" />
+  </xs:complexType>
+
+  <xs:element name="Titles">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="Faction" type="FactionType" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+</xs:schema>
