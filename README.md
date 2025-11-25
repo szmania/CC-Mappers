@@ -3,12 +3,14 @@ Mappers for [Crusader Conflicts](https://github.com/szmania/Crusader-Wars/releas
 
 ## Mapper Loading Order
 
-The Crusader Conflicts mod loads culture and faction mapping XML files in a specific order to allow for overrides. The loading process is as follows:
+The Crusader Conflicts mod loads culture, faction, and terrain mapping XML files in a specific order to allow for overrides. The loading process is as follows:
 
-1.  **Base Mappers**: The official playthrough base mappers are loaded first. These files are identified by the naming convention `OfficialCC_<mapper_tag>_*.xml`.
-2.  **Submod Mappers**: After the base mappers, all other XML files in the cultures and factions directories are loaded in alphabetical order. These are typically submod mappers.
+1.  **Base Mappers**: The official playthrough base mappers are loaded first. These files are identified by the naming convention `OfficialCC_*.xml`.
+2.  **Optional Add-on Mappers**: After the base mappers, optional add-on files that are not submod files are loaded in alphabetical order.
+3.  **Submod Mappers**: After the optional add-ons, submod mappers are loaded. These are identified by a `submod_tag` attribute in the root element of the XML file.
+4.  **Submod Optional Add-on Mappers**: Finally, optional add-ons for submods are loaded in alphabetical order. These files are identified by a `submod_addon_tag` attribute in the root element, which links them to a specific submod.
 
-This loading order means that any mapping defined in a submod mapper will overwrite a mapping for the same culture or faction from a base mapper. If multiple submod mappers define the same mapping, the one loaded last (alphabetically) will take precedence.
+This loading order means that files loaded later will overwrite mappings from files loaded earlier. For example, a submod mapper can override a base mapper, and a submod's optional add-on can override the submod's own mappings. When multiple files of the same type are loaded (like optional add-ons), the one that comes last alphabetically takes precedence.
 
 
 ## Custom Mappers
