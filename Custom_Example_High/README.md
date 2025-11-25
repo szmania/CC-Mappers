@@ -15,6 +15,7 @@ This directory serves as an example of how to structure a custom mapper for Crus
     - `Kingdoms.xml`: Example for kingdom-level titles.
 - `Mods.xml`: This file lists the mods that this custom mapper depends on.
 - `TimePeriod.xml`: This file defines the time period for your custom map.
+- `tag.txt`: The value in this file is the name that shows in the dropdown within the Crusader Conflicts Custom mapper tab. This is the tag for your custom mapper, and this value MUST start with "Custom" in order to appear in the Custom mapper screen. You can have multiple folders with the same tag.txt value, if you want, for example, to have different units for different TimePeriod.xml values. eg. Early, High, Late, Renaissance periods.
 - `background.png`: A background image for the custom map in the launcher.
 
 ## Required Files
@@ -23,6 +24,7 @@ For a custom mapper to be valid, the following files are required:
 
 - `Mods.xml`
 - `TimePeriod.xml`
+- `tag.txt`
 - At least one XML file in the `Cultures/` directory.
 - At least one XML file in the `Factions/` directory.
 - At least one XML file in the `Terrains/` directory.
