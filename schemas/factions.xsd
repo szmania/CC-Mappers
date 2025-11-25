@@ -32,6 +32,7 @@
                   <xs:attribute name="percentage" type="xs:integer" use="required" />
                   <xs:attribute name="max" type="xs:string" use="required" />
                   <xs:attribute name="level" type="xs:integer" use="required" />
+                  <xs:attribute name="num_guns" type="xs:integer" use="optional" />
                 </xs:complexType>
               </xs:element>
               <xs:element name="MenAtArm" maxOccurs="unbounded" minOccurs="0">
@@ -50,6 +51,7 @@
           </xs:complexType>
         </xs:element>
       </xs:sequence>
+      <xs:attribute name="submod_addon_tag" type="xs:string" use="optional"/>
     </xs:complexType>
   </xs:element>
 
