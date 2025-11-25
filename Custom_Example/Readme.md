@@ -1,23 +1,30 @@
-# Custom Example Mod
+# Custom Example
 
-This directory serves as a template for creating a custom "playthrough" for the Crusader Conflicts application. Below is an explanation of each file and its purpose.
+This directory serves as an example of how to structure a custom mapper for Crusader Conflicts.
 
-## File Descriptions
+## File Structure and Purpose
 
--   **`Cultures/OfficialCC_Custom_Default_Cultures.xml`**: This file defines the cultures for your custom playthrough. You can map specific cultures to different unit rosters and cultural attributes.
+- `Cultures/`: This directory contains XML files that define the cultures for your custom map.
+  - `OfficialCC_Custom_Default_Cultures.xml`: An example culture definition file.
+- `Factions/`: This directory contains XML files that define the factions and their units.
+  - `OfficialCC_Custom_Default_Factions.xml`: An example faction definition file.
+- `Terrains/`: This directory contains XML files that define the terrains for your custom map.
+- `Titles/` (Optional): This directory can contain XML files to assign specific men-at-arms units to landed titles (e.g., counties, duchies, kingdoms). This is an optional feature.
+  - `Counties.xml`: Example for county-level titles.
+  - `Duchies.xml`: Example for duchy-level titles.
+  - `Kingdoms.xml`: Example for kingdom-level titles.
+- `Mods.xml`: This file lists the mods that this custom mapper depends on.
+- `TimePeriod.xml`: This file defines the time period for your custom map.
+- `background.png`: A background image for the custom map in the launcher.
 
--   **`Factions/OfficialCC_Custom_Default_Factions.xml`**: This file is used to define the factions. It specifies the units available to each faction, including their generals, knights, and men-at-arms.
+## Required Files
 
--   **`Terrains/OfficialCC_Custom_Default_Terrains.xml`**: This file maps different terrain types to modifiers that can affect battles or unit performance.
+For a custom mapper to be valid, the following files are required:
 
--   **`TimePeriod.xml`**: This file sets the start and end dates for your custom playthrough scenario.
+- `Mods.xml`
+- `TimePeriod.xml`
+- At least one XML file in the `Cultures/` directory.
+- At least one XML file in the `Factions/` directory.
+- At least one XML file in the `Terrains/` directory.
 
--   **`Titles/` (Optional)**: The XML files within this directory (`Counties.xml`, `Duchies.xml`, `Kingdoms.xml`) allow you to assign specific unit rosters to landed titles (e.g., a specific duchy or kingdom), overriding the default culture-based unit assignments.
-
--   **`background.png`**: This is the background image that will be displayed in the Crusader Conflicts application when your custom playthrough is selected.
-
--   **`tag.txt`**: This file contains a unique tag or identifier for your custom playthrough.
-
-## XML Validation
-
-When this playthrough is enabled in the Crusader Conflicts application, all XML files will be automatically validated against their respective schemas to ensure they are correctly formatted and free of errors.
+Submods, submod addons, and other general addons are not required.
