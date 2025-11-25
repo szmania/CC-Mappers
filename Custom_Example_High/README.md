@@ -28,3 +28,13 @@ For a custom mapper to be valid, the following files are required:
 - At least one XML file in the `Terrains/` directory.
 
 Submods, submod addons, and other general addons are not required.
+
+## Loading Order
+
+The files within the `Cultures`, `Factions`, `Terrains`, and `Titles` directories are loaded alphabetically. If you have multiple files in these directories, their contents will be merged.
+
+The general loading order for the mapper is as follows:
+1.  **Cultures**: Defines the cultures.
+2.  **Factions**: Defines factions and their units. These can be assigned to cultures.
+3.  **Terrains**: Defines the terrain mapping.
+4.  **Titles** (Optional): Assigns specific units to landed titles, overriding culture-based units.
