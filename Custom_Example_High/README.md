@@ -35,6 +35,6 @@ The files within the `Cultures`, `Factions`, `Terrains`, and `Titles` directorie
 
 The general loading order for the mapper is as follows:
 1.  **Cultures**: Defines the cultures.
-2.  **Factions**: Defines factions and their units. These can be assigned to cultures.
+2.  **Factions**: Defines factions and their units.
 3.  **Terrains**: Defines the terrain mapping.
 4.  **Titles** (Optional): Assigns specific units to landed titles, overriding culture-based units.
