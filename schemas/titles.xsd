@@ -15,11 +15,11 @@
   </xs:complexType>
 
   <xs:complexType name="FactionType">
-    <xs:sequence>
-      <xs:element name="General" type="GeneralType" minOccurs="0" maxOccurs="unbounded" />
-      <xs:element name="Knights" type="KnightsType" minOccurs="0" maxOccurs="unbounded" />
-      <xs:element name="MenAtArm" type="MenAtArmType" minOccurs="0" maxOccurs="unbounded" />
-    </xs:sequence>
+    <xs:choice minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="General" type="GeneralType" />
+      <xs:element name="Knights" type="KnightsType" />
+      <xs:element name="MenAtArm" type="MenAtArmType" />
+    </xs:choice>
     <xs:attribute name="title_key" type="xs:string" use="required" />
     <xs:attribute name="name" type="xs:string" use="required" />
   </xs:complexType>
