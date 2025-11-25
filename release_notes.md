@@ -5,6 +5,7 @@
 - Added `num_guns` attribute to faction units.
 - Added `submod_tag` to factions.
 - Added `submod_addon_tag` to factions and cultures schemas.
+- Allowed multiple `General` and `Knights` elements in faction definitions.
 - Renamed `Time Period.xml` to `TimePeriod.xml`.
 - Renamed `FireForgedEmpire` directory.
 - Capitalized the `Terrains` folder.
