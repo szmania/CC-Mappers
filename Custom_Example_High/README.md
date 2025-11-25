@@ -4,11 +4,11 @@ This directory serves as an example of how to structure a custom mapper for Crus
 
 ## File Structure and Purpose
 
-- `Cultures/`: This directory contains XML files that define the cultures for your custom map.
+- `Cultures/`: This directory contains XML files that define what Crusader Kings 3 heritages and cultures are mapped to what factions in Total War: Attila.
     - `OfficialCC_Custom_Default_Cultures.xml`: An example culture definition file.
 - `Factions/`: This directory contains XML files that define the factions and their units.
     - `OfficialCC_Custom_Default_Factions.xml`: An example faction definition file.
-- `Terrains/`: This directory contains XML files that define the terrains for your custom map.
+- `Terrains/`: This directory contains XML files that define the terrains for your custom map, including coastal regions, straits, river crossings, and settlement coordinates.
 - `Titles/` (Optional): This directory can contain XML files to assign specific men-at-arms units to landed titles (e.g., counties, duchies, kingdoms). This is an optional feature.
     - `Counties.xml`: Example for county-level titles.
     - `Duchies.xml`: Example for duchy-level titles.
