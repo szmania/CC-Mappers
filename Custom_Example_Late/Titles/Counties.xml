@@ -1,0 +1,282 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Titles>
+	<!--This is to assign MEN-AT-ARMS units based on title key and not owner culture-->
+	<!--Levies do not take part in this!!-->
+	
+	
+	<!--DEFAULT value does not work here, every unit must have a unit key-->
+	<!--title_key = key of the landed title-->
+	<Faction title_key="c_venezia" name= "Venice County One">
+		<General key="mk_ven_t2_doge_bodyguard"></General>
+		<Knights key="mk_ven_t2_general_bodyguard"></Knights>
+		
+		<MenAtArm type="light_footmen" key="mk_ven_t2_militia_swordsmen"></MenAtArm>
+		<MenAtArm type="armored_footmen" key="mk_ven_t2_heavy_infantry"></MenAtArm>
+		<MenAtArm type="pikemen_unit" key="mk_ven_t2_spearmen"></MenAtArm>
+		<MenAtArm type="bowmen" key="mk_ven_t2_archers"></MenAtArm>
+		<MenAtArm type="crossbowmen" key="mk_ven_t2_crossbowmen"></MenAtArm>
+		<MenAtArm type="light_horsemen" key="mk_ven_t2_mounted_zaffones"></MenAtArm>
+		<MenAtArm type="armored_horsemen" key="mk_ven_t2_knight"></MenAtArm>
+		<MenAtArm type="house_guard" key="mk_ven_t2_excusati_guard"></MenAtArm>
+		<MenAtArm type="teutonic_knights" key="mk_mio_t2_hospitaller_knights_dismounted"></MenAtArm>
+
+		<MenAtArm type="picchieri" key="mk_ven_t2_pikemen"></MenAtArm>
+		
+		<MenAtArm type="accolade_maa_archers" key="mk_lat_t2_albanioi_toxotes"></MenAtArm>
+		<MenAtArm type="accolade_maa_lancers" key="mk_merc_ita_t2_condottieri"></MenAtArm>
+		<MenAtArm type="accolade_maa_outriders" key="mk_ven_t2_mounted_serjeants"></MenAtArm>
+		<MenAtArm type="accolade_maa_pikes" key="mk_ven_t2_excusati_guard"></MenAtArm>
+		<MenAtArm type="accolade_maa_skirmishers" key="mk_aor_croat_t2_vlach_hooked_spearmen"></MenAtArm>
+		<MenAtArm type="accolade_maa_vanguard" key="mk_ven_t2_foot_knight"></MenAtArm>
+		<MenAtArm type="accolade_maa_crossbowmen" key="mk_merc_gen_t2_genoese_crossbowmen"></MenAtArm>
+	</Faction>
+
+	<Faction title_key="c_veneto" name= "Venice County Two">
+		<General key="mk_ven_t2_doge_bodyguard"></General>
+		<Knights key="mk_ven_t2_general_bodyguard"></Knights>
+		
+		<MenAtArm type="light_footmen" key="mk_ven_t2_militia_swordsmen"></MenAtArm>
+		<MenAtArm type="armored_footmen" key="mk_ven_t2_heavy_infantry"></MenAtArm>
+		<MenAtArm type="pikemen_unit" key="mk_ven_t2_spearmen"></MenAtArm>
+		<MenAtArm type="bowmen" key="mk_ven_t2_archers"></MenAtArm>
+		<MenAtArm type="crossbowmen" key="mk_ven_t2_crossbowmen"></MenAtArm>
+		<MenAtArm type="light_horsemen" key="mk_ven_t2_mounted_zaffones"></MenAtArm>
+		<MenAtArm type="armored_horsemen" key="mk_ven_t2_knight"></MenAtArm>
+		<MenAtArm type="house_guard" key="mk_ven_t2_excusati_guard"></MenAtArm>
+		<MenAtArm type="teutonic_knights" key="mk_mio_t2_hospitaller_knights_dismounted"></MenAtArm>
+
+		<MenAtArm type="picchieri" key="mk_ven_t2_pikemen"></MenAtArm>
+		
+		<MenAtArm type="accolade_maa_archers" key="mk_lat_t2_albanioi_toxotes"></MenAtArm>
+		<MenAtArm type="accolade_maa_lancers" key="mk_merc_ita_t2_condottieri"></MenAtArm>
+		<MenAtArm type="accolade_maa_outriders" key="mk_ven_t2_mounted_serjeants"></MenAtArm>
+		<MenAtArm type="accolade_maa_pikes" key="mk_ven_t2_excusati_guard"></MenAtArm>
+		<MenAtArm type="accolade_maa_skirmishers" key="mk_aor_croat_t2_vlach_hooked_spearmen"></MenAtArm>
+		<MenAtArm type="accolade_maa_vanguard" key="mk_ven_t2_foot_knight"></MenAtArm>
+		<MenAtArm type="accolade_maa_crossbowmen" key="mk_merc_gen_t2_genoese_crossbowmen"></MenAtArm>
+	</Faction>
+
+	<Faction title_key="c_genoa " name= "Genoa County One">
+		<General key="mk_gen_t2_bodyguard"></General>
+		<Knights key="mk_gen_t2_knights"></Knights>
+		
+		<MenAtArm type="light_footmen" key="mk_gen_t2_militia_swordsmen"></MenAtArm>
+		<MenAtArm type="armored_footmen" key="mk_gen_t2_foot_knights"></MenAtArm>
+		<MenAtArm type="pikemen_unit" key="mk_gen_t2_spearmen"></MenAtArm>
+		<MenAtArm type="bowmen" key="mk_gen_t2_archers"></MenAtArm>
+		<MenAtArm type="crossbowmen" key="mk_gen_t2_crossbowmen"></MenAtArm>
+		<MenAtArm type="light_horsemen" key="mk_gen_t2_mounted_serjeants"></MenAtArm>
+		<MenAtArm type="armored_horsemen" key="mk_ita_t2_knights"></MenAtArm>
+		<MenAtArm type="house_guard" key="mk_gen_t2_ducal_guard"></MenAtArm>
+		<MenAtArm type="teutonic_knights" key="mk_mio_t2_templar_knights_dismounted"></MenAtArm>
+
+		<MenAtArm type="picchieri" key="mk_gen_t2_pikemen"></MenAtArm>
+		
+		<MenAtArm type="accolade_maa_archers" key="mk_merc_gen_t2_genoese_crossbowmen"></MenAtArm>
+		<MenAtArm type="accolade_maa_lancers" key="mk_gen_t2_knights"></MenAtArm>
+		<MenAtArm type="accolade_maa_outriders" key="mk_gen_t2_mounted_serjeants"></MenAtArm>
+		<MenAtArm type="accolade_maa_pikes" key="mk_gen_t2_ronconieri"></MenAtArm>
+		<MenAtArm type="accolade_maa_skirmishers" key="mk_merc_ara_t2_catalan_company"></MenAtArm>
+		<MenAtArm type="accolade_maa_vanguard" key="mk_gen_t2_foot_knights"></MenAtArm>
+		<MenAtArm type="accolade_maa_crossbowmen" key="mk_merc_gen_t2_genoese_crossbowmen"></MenAtArm>
+	</Faction>	
+
+	<Faction title_key="c_luni " name= "Genoa County Two">
+		<General key="mk_gen_t2_bodyguard"></General>
+		<Knights key="mk_gen_t2_knights"></Knights>
+		
+		<MenAtArm type="light_footmen" key="mk_gen_t2_militia_swordsmen"></MenAtArm>
+		<MenAtArm type="armored_footmen" key="mk_gen_t2_foot_knights"></MenAtArm>
+		<MenAtArm type="pikemen_unit" key="mk_gen_t2_spearmen"></MenAtArm>
+		<MenAtArm type="bowmen" key="mk_gen_t2_archers"></MenAtArm>
+		<MenAtArm type="crossbowmen" key="mk_gen_t2_crossbowmen"></MenAtArm>
+		<MenAtArm type="light_horsemen" key="mk_gen_t2_mounted_serjeants"></MenAtArm>
+		<MenAtArm type="armored_horsemen" key="mk_ita_t2_knights"></MenAtArm>
+		<MenAtArm type="house_guard" key="mk_gen_t2_ducal_guard"></MenAtArm>
+		<MenAtArm type="teutonic_knights" key="mk_mio_t2_templar_knights_dismounted"></MenAtArm>
+
+		<MenAtArm type="picchieri" key="mk_gen_t2_pikemen"></MenAtArm>
+		
+		<MenAtArm type="accolade_maa_archers" key="mk_merc_gen_t2_genoese_crossbowmen"></MenAtArm>
+		<MenAtArm type="accolade_maa_lancers" key="mk_gen_t2_knights"></MenAtArm>
+		<MenAtArm type="accolade_maa_outriders" key="mk_gen_t2_mounted_serjeants"></MenAtArm>
+		<MenAtArm type="accolade_maa_pikes" key="mk_gen_t2_ronconieri"></MenAtArm>
+		<MenAtArm type="accolade_maa_skirmishers" key="mk_merc_ara_t2_catalan_company"></MenAtArm>
+		<MenAtArm type="accolade_maa_vanguard" key="mk_gen_t2_foot_knights"></MenAtArm>
+		<MenAtArm type="accolade_maa_crossbowmen" key="mk_merc_gen_t2_genoese_crossbowmen"></MenAtArm>
+	</Faction>
+	
+	<Faction title_key="c_pisa " name= "Pisa County">
+		<General key="mk_pis_t2_bodyguard"></General>
+		<Knights key="mk_pis_t2_knights"></Knights>
+		
+		<MenAtArm type="light_footmen" key="mk_pis_t2_militia_swordsmen"></MenAtArm>
+		<MenAtArm type="armored_footmen" key="mk_pis_t2_foot_knights"></MenAtArm>
+		<MenAtArm type="pikemen_unit" key="mk_pis_t2_spearmen"></MenAtArm>
+		<MenAtArm type="bowmen" key="mk_pis_t2_archers"></MenAtArm>
+		<MenAtArm type="crossbowmen" key="mk_pis_t2_crossbowmen"></MenAtArm>
+		<MenAtArm type="light_horsemen" key="mk_pis_t2_mounted_serjeants"></MenAtArm>
+		<MenAtArm type="armored_horsemen" key="mk_ita_t2_knights"></MenAtArm>
+		<MenAtArm type="house_guard" key="mk_ita_t2_knights_dismounted"></MenAtArm>
+		<MenAtArm type="teutonic_knights" key="mk_mio_t2_hospitaller_knights_dismounted"></MenAtArm>
+
+		<MenAtArm type="picchieri" key="mk_pis_t2_pikemen"></MenAtArm>
+		
+		<MenAtArm type="accolade_maa_archers" key="mk_fla_t2_guild_bowmen"></MenAtArm>
+		<MenAtArm type="accolade_maa_lancers" key="mk_pis_t2_knights"></MenAtArm>
+		<MenAtArm type="accolade_maa_outriders" key="mk_pis_t2_mounted_serjeants"></MenAtArm>
+		<MenAtArm type="accolade_maa_pikes" key="mk_pis_t2_ronconieri"></MenAtArm>
+		<MenAtArm type="accolade_maa_skirmishers" key="mk_merc_ara_t2_catalan_company"></MenAtArm>
+		<MenAtArm type="accolade_maa_vanguard" key="mk_ita_t2_knights"></MenAtArm>
+		<MenAtArm type="accolade_maa_crossbowmen" key="mk_pis_t2_mounted_crossbowmen"></MenAtArm>
+	</Faction>
+
+	<Faction title_key="c_brugge " name= "Flanders County One">
+		<General key="mk_fla_t2_countguard"></General>
+		<Knights key="mk_fla_t2_burgomasters"></Knights>
+		
+		<MenAtArm type="light_footmen" key="mk_fla_t2_goedendag_shock"></MenAtArm>
+		<MenAtArm type="armored_footmen" key="mk_fla_t2_dismounted_maa"></MenAtArm>
+		<MenAtArm type="pikemen_unit" key="mk_fla_t2_pikemen"></MenAtArm>
+		<MenAtArm type="bowmen" key="mk_fla_t2_guild_bowmen"></MenAtArm>
+		<MenAtArm type="crossbowmen" key="mk_fla_t2_sergeant_crossbowmen"></MenAtArm>
+		<MenAtArm type="light_horsemen" key="mk_fla_t2_mounted_sergeants"></MenAtArm>
+		<MenAtArm type="armored_horsemen" key="mk_fla_t2_maa"></MenAtArm>
+		<MenAtArm type="house_guard" key="mk_fla_t2_guild_goedendags"></MenAtArm>
+		<MenAtArm type="teutonic_knights" key="mk_mio_t2_templar_knights_dismounted"></MenAtArm>
+
+		<MenAtArm type="goedendag" key="mk_fla_t2_guild_goedendags"></MenAtArm>
+
+		<MenAtArm type="accolade_maa_archers" key="mk_eng_t2_retinue_longbowmen"></MenAtArm>
+		<MenAtArm type="accolade_maa_lancers" key="mk_brab_t2_banneret_knights"></MenAtArm>
+		<MenAtArm type="accolade_maa_outriders" key="mk_fla_t2_mounted_crossbowmen"></MenAtArm>
+		<MenAtArm type="accolade_maa_pikes" key="mk_fla_t2_guild_pikemen"></MenAtArm>
+		<MenAtArm type="accolade_maa_skirmishers" key="mk_fla_t2_guild_swordsmen"></MenAtArm>
+		<MenAtArm type="accolade_maa_vanguard" key="mk_fla_t2_dismounted_maa"></MenAtArm>
+		<MenAtArm type="accolade_maa_crossbowmen" key="mk_fla_t2_guild_crossbowmen"></MenAtArm>		
+	</Faction>	
+
+	<Faction title_key="c_yperen " name= "Flanders County Two">
+		<General key="mk_fla_t2_countguard"></General>
+		<Knights key="mk_fla_t2_burgomasters"></Knights>
+		
+		<MenAtArm type="light_footmen" key="mk_fla_t2_goedendag_shock"></MenAtArm>
+		<MenAtArm type="armored_footmen" key="mk_fla_t2_dismounted_maa"></MenAtArm>
+		<MenAtArm type="pikemen_unit" key="mk_fla_t2_pikemen"></MenAtArm>
+		<MenAtArm type="bowmen" key="mk_fla_t2_guild_bowmen"></MenAtArm>
+		<MenAtArm type="crossbowmen" key="mk_fla_t2_sergeant_crossbowmen"></MenAtArm>
+		<MenAtArm type="light_horsemen" key="mk_fla_t2_mounted_sergeants"></MenAtArm>
+		<MenAtArm type="armored_horsemen" key="mk_fla_t2_maa"></MenAtArm>
+		<MenAtArm type="house_guard" key="mk_fla_t2_guild_goedendags"></MenAtArm>
+		<MenAtArm type="teutonic_knights" key="mk_mio_t2_templar_knights_dismounted"></MenAtArm>
+
+		<MenAtArm type="goedendag" key="mk_fla_t2_guild_goedendags"></MenAtArm>
+
+		<MenAtArm type="accolade_maa_archers" key="mk_eng_t2_retinue_longbowmen"></MenAtArm>
+		<MenAtArm type="accolade_maa_lancers" key="mk_brab_t2_banneret_knights"></MenAtArm>
+		<MenAtArm type="accolade_maa_outriders" key="mk_fla_t2_mounted_crossbowmen"></MenAtArm>
+		<MenAtArm type="accolade_maa_pikes" key="mk_fla_t2_guild_pikemen"></MenAtArm>
+		<MenAtArm type="accolade_maa_skirmishers" key="mk_fla_t2_guild_swordsmen"></MenAtArm>
+		<MenAtArm type="accolade_maa_vanguard" key="mk_fla_t2_dismounted_maa"></MenAtArm>
+		<MenAtArm type="accolade_maa_crossbowmen" key="mk_fla_t2_guild_crossbowmen"></MenAtArm>		
+	</Faction>	
+	
+	<Faction title_key="c_guines " name= "Flanders County Three">
+		<General key="mk_fla_t2_countguard"></General>
+		<Knights key="mk_fla_t2_burgomasters"></Knights>
+		
+		<MenAtArm type="light_footmen" key="mk_fla_t2_goedendag_shock"></MenAtArm>
+		<MenAtArm type="armored_footmen" key="mk_fla_t2_dismounted_maa"></MenAtArm>
+		<MenAtArm type="pikemen_unit" key="mk_fla_t2_pikemen"></MenAtArm>
+		<MenAtArm type="bowmen" key="mk_fla_t2_guild_bowmen"></MenAtArm>
+		<MenAtArm type="crossbowmen" key="mk_fla_t2_sergeant_crossbowmen"></MenAtArm>
+		<MenAtArm type="light_horsemen" key="mk_fla_t2_mounted_sergeants"></MenAtArm>
+		<MenAtArm type="armored_horsemen" key="mk_fla_t2_maa"></MenAtArm>
+		<MenAtArm type="house_guard" key="mk_fla_t2_guild_goedendags"></MenAtArm>
+		<MenAtArm type="teutonic_knights" key="mk_mio_t2_templar_knights_dismounted"></MenAtArm>
+
+		<MenAtArm type="goedendag" key="mk_fla_t2_guild_goedendags"></MenAtArm>
+
+		<MenAtArm type="accolade_maa_archers" key="mk_eng_t2_retinue_longbowmen"></MenAtArm>
+		<MenAtArm type="accolade_maa_lancers" key="mk_brab_t2_banneret_knights"></MenAtArm>
+		<MenAtArm type="accolade_maa_outriders" key="mk_fla_t2_mounted_crossbowmen"></MenAtArm>
+		<MenAtArm type="accolade_maa_pikes" key="mk_fla_t2_guild_pikemen"></MenAtArm>
+		<MenAtArm type="accolade_maa_skirmishers" key="mk_fla_t2_guild_swordsmen"></MenAtArm>
+		<MenAtArm type="accolade_maa_vanguard" key="mk_fla_t2_dismounted_maa"></MenAtArm>
+		<MenAtArm type="accolade_maa_crossbowmen" key="mk_fla_t2_guild_crossbowmen"></MenAtArm>		
+	</Faction>		
+	
+	<Faction title_key="c_lille " name= "Flanders County Four">
+		<General key="mk_fla_t2_countguard"></General>
+		<Knights key="mk_fla_t2_burgomasters"></Knights>
+		
+		<MenAtArm type="light_footmen" key="mk_fla_t2_goedendag_shock"></MenAtArm>
+		<MenAtArm type="armored_footmen" key="mk_fla_t2_dismounted_maa"></MenAtArm>
+		<MenAtArm type="pikemen_unit" key="mk_fla_t2_pikemen"></MenAtArm>
+		<MenAtArm type="bowmen" key="mk_fla_t2_guild_bowmen"></MenAtArm>
+		<MenAtArm type="crossbowmen" key="mk_fla_t2_sergeant_crossbowmen"></MenAtArm>
+		<MenAtArm type="light_horsemen" key="mk_fla_t2_mounted_sergeants"></MenAtArm>
+		<MenAtArm type="armored_horsemen" key="mk_fla_t2_maa"></MenAtArm>
+		<MenAtArm type="house_guard" key="mk_fla_t2_guild_goedendags"></MenAtArm>
+		<MenAtArm type="teutonic_knights" key="mk_mio_t2_templar_knights_dismounted"></MenAtArm>
+
+		<MenAtArm type="goedendag" key="mk_fla_t2_guild_goedendags"></MenAtArm>
+
+		<MenAtArm type="accolade_maa_archers" key="mk_eng_t2_retinue_longbowmen"></MenAtArm>
+		<MenAtArm type="accolade_maa_lancers" key="mk_brab_t2_banneret_knights"></MenAtArm>
+		<MenAtArm type="accolade_maa_outriders" key="mk_fla_t2_mounted_crossbowmen"></MenAtArm>
+		<MenAtArm type="accolade_maa_pikes" key="mk_fla_t2_guild_pikemen"></MenAtArm>
+		<MenAtArm type="accolade_maa_skirmishers" key="mk_fla_t2_guild_swordsmen"></MenAtArm>
+		<MenAtArm type="accolade_maa_vanguard" key="mk_fla_t2_dismounted_maa"></MenAtArm>
+		<MenAtArm type="accolade_maa_crossbowmen" key="mk_fla_t2_guild_crossbowmen"></MenAtArm>		
+	</Faction>	
+	
+	<Faction title_key="c_boulogne " name= "Flanders County Five">
+		<General key="mk_fla_t2_countguard"></General>
+		<Knights key="mk_fla_t2_burgomasters"></Knights>
+		
+		<MenAtArm type="light_footmen" key="mk_fla_t2_goedendag_shock"></MenAtArm>
+		<MenAtArm type="armored_footmen" key="mk_fla_t2_dismounted_maa"></MenAtArm>
+		<MenAtArm type="pikemen_unit" key="mk_fla_t2_pikemen"></MenAtArm>
+		<MenAtArm type="bowmen" key="mk_fla_t2_guild_bowmen"></MenAtArm>
+		<MenAtArm type="crossbowmen" key="mk_fla_t2_sergeant_crossbowmen"></MenAtArm>
+		<MenAtArm type="light_horsemen" key="mk_fla_t2_mounted_sergeants"></MenAtArm>
+		<MenAtArm type="armored_horsemen" key="mk_fla_t2_maa"></MenAtArm>
+		<MenAtArm type="house_guard" key="mk_fla_t2_guild_goedendags"></MenAtArm>
+		<MenAtArm type="teutonic_knights" key="mk_mio_t2_templar_knights_dismounted"></MenAtArm>
+
+		<MenAtArm type="goedendag" key="mk_fla_t2_guild_goedendags"></MenAtArm>
+
+		<MenAtArm type="accolade_maa_archers" key="mk_eng_t2_retinue_longbowmen"></MenAtArm>
+		<MenAtArm type="accolade_maa_lancers" key="mk_brab_t2_banneret_knights"></MenAtArm>
+		<MenAtArm type="accolade_maa_outriders" key="mk_fla_t2_mounted_crossbowmen"></MenAtArm>
+		<MenAtArm type="accolade_maa_pikes" key="mk_fla_t2_guild_pikemen"></MenAtArm>
+		<MenAtArm type="accolade_maa_skirmishers" key="mk_fla_t2_guild_swordsmen"></MenAtArm>
+		<MenAtArm type="accolade_maa_vanguard" key="mk_fla_t2_dismounted_maa"></MenAtArm>
+		<MenAtArm type="accolade_maa_crossbowmen" key="mk_fla_t2_guild_crossbowmen"></MenAtArm>		
+	</Faction>	
+
+	<Faction title_key="c_trier " name= "Trier">
+		<General key="mk_tri_t2_mounted_elector_guard"></General>
+		<Knights key="mk_tri_t2_mounted_elector_guard_non_gen"></Knights>
+		
+		<MenAtArm type="light_footmen" key="mk_tri_t2_elector_swordsmen"></MenAtArm>
+		<MenAtArm type="armored_footmen" key="mk_tri_t2_dismounted_elector_knights"></MenAtArm>
+		<MenAtArm type="pikemen_unit" key="mk_tri_t2_trier_spearmen"></MenAtArm>
+		<MenAtArm type="bowmen" key="mk_tri_t2_elector_bowmen"></MenAtArm>
+		<MenAtArm type="crossbowmen" key="mk_tri_t2_trier_crossbowmen"></MenAtArm>
+		<MenAtArm type="light_horsemen" key="mk_tri_t2_elector_horsemen"></MenAtArm>
+		<MenAtArm type="armored_horsemen" key="mk_tri_t2_elector_knights"></MenAtArm>
+		<MenAtArm type="house_guard" key="mk_tri_t2_dismounted_elector_guard"></MenAtArm>
+		<MenAtArm type="teutonic_knights" key="mk_mio_t2_hospitaller_knights_dismounted"></MenAtArm>
+		
+		<MenAtArm type="accolade_maa_archers" key="mk_hre_t2_bogenschutzen"></MenAtArm>
+		<MenAtArm type="accolade_maa_lancers" key="mk_tri_t2_banneret_elector_knights"></MenAtArm>
+		<MenAtArm type="accolade_maa_outriders" key="mk_tri_t2_trier_city_knights"></MenAtArm>
+		<MenAtArm type="accolade_maa_pikes" key="mk_tri_t2_trier_pikemen"></MenAtArm>
+		<MenAtArm type="accolade_maa_skirmishers" key="mk_brab_t2_goedendag_militia"></MenAtArm>
+		<MenAtArm type="accolade_maa_vanguard" key="mk_tri_t2_dismounted_elector_guard"></MenAtArm>
+		<MenAtArm type="accolade_maa_crossbowmen" key="mk_merc_gen_t2_genoese_crossbowmen"></MenAtArm>	
+	</Faction>	
+	
+</Titles>
