@@ -11,12 +11,14 @@
                 <xs:complexType>
                   <xs:attribute name="key" type="xs:string" use="required" />
                   <xs:attribute name="rank" type="xs:integer" use="optional" />
+                  <xs:attribute name="num_guns" type="xs:integer" use="optional" />
                 </xs:complexType>
               </xs:element>
               <xs:element name="Knights" maxOccurs="unbounded" minOccurs="0">
                 <xs:complexType>
                   <xs:attribute name="key" type="xs:string" use="required" />
                   <xs:attribute name="rank" type="xs:integer" use="optional" />
+                  <xs:attribute name="num_guns" type="xs:integer" use="optional" />
                 </xs:complexType>
               </xs:element>
               <xs:element name="Levies" maxOccurs="unbounded" minOccurs="0">
@@ -24,6 +26,7 @@
                   <xs:attribute name="key" type="xs:string" use="required" />
                   <xs:attribute name="percentage" type="xs:integer" use="required" />
                   <xs:attribute name="max" type="xs:string" use="required" />
+                  <xs:attribute name="num_guns" type="xs:integer" use="optional" />
                 </xs:complexType>
               </xs:element>
               <xs:element name="Garrison" maxOccurs="unbounded" minOccurs="0">
@@ -51,6 +54,7 @@
           </xs:complexType>
         </xs:element>
       </xs:sequence>
+      <xs:attribute name="submod_tag" type="xs:string" use="optional"/>
       <xs:attribute name="submod_addon_tag" type="xs:string" use="optional"/>
     </xs:complexType>
   </xs:element>
