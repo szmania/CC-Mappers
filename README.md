@@ -11,6 +11,7 @@ The Crusader Conflicts mod loads culture, faction, and terrain mapping XML files
 4.  **Submod Optional Add-on Mappers**: Finally, optional add-ons for submods are loaded in alphabetical order. These files are identified by a `submod_addon_tag` attribute in the root element, which links them to a specific submod.
 
 This loading order means that files loaded later will overwrite mappings from files loaded earlier. For example, a submod mapper can override a base mapper, and a submod's optional add-on can override the submod's own mappings. When multiple files of the same type are loaded (like optional add-ons), the one that comes last alphabetically takes precedence.
+The files within the `Cultures`, `Factions`, `Terrains`, and `Titles` directories are loaded in the same way, and optional add ons and submod optional addons are loaded alphabetically within their respective loading group. If you have multiple files in these directories, their contents will be merged.
 
 
 ## Custom Mappers
@@ -47,16 +48,6 @@ For a custom mapper to be valid, the following files are required:
 - At least one XML file in the `Terrains/` directory.
 
 Submods, submod addons, and other general addons are not required.
-
-### Loading Order
-
-The files within the `Cultures`, `Factions`, `Terrains`, and `Titles` directories are loaded alphabetically. If you have multiple files in these directories, their contents will be merged.
-
-The general loading order for the mapper is as follows:
-1.  **Cultures**: Defines the cultures.
-2.  **Factions**: Defines factions and their units.
-3.  **Terrains**: Defines the terrain mapping.
-4.  **Titles** (Optional): Assigns specific units to landed titles, overriding culture-based units.
 
 
 ## License
