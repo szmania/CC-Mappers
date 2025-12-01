@@ -1,32 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
 <Terrains>
     <Map name="terrain/battles/main_attila_map/" />
-    <Settlement_Maps_Unique />
-    <Settlement_Maps>
-        <Settlement faction="Default" battle_type="settlement_standard">
-            <Variant key="att_eastern_city_a" is_unique_settlement="False">
-                <Map x="0.656" y="0.58" />
-            </Variant>
-            <Variant key="att_eastern_city_c" is_unique_settlement="False">
-                <Map x="0.577" y="0.51" />
-            </Variant>
-            <Variant key="att_eastern_city_b" is_unique_settlement="False">
-                <Map x="0.598" y="0.536" />
-            </Variant>
-        </Settlement>
-        <Settlement faction="Default" battle_type="settlement_unfortified">
-            <Variant key="att_eastern_city_a_minor" is_unique_settlement="False">
-                <Map x="0.567" y="0.55" />
-            </Variant>
-            <Variant key="att_eastern_city_c_minor" is_unique_settlement="False">
-                <Map x="0.396" y="0.418" />
-            </Variant>
-            <Variant key="att_eastern_city_b_minor" is_unique_settlement="False">
-                <Map x="0.5970001" y="0.6900001" />
-            </Variant>
-        </Settlement>
-    </Settlement_Maps>
-    <Siege_Engines />
     <Land_Bridge_Maps>
         <Land_Bridge name="Amarendrapura-Chum Kiri" ck3_province_from="12117" ck3_province_to="12106" ck3_type="river_large" battle_type="land_bridge">
             <Variant key="river_preset_01" orientations="W,E">
@@ -34,8 +8,8 @@
             </Variant>
         </Land_Bridge>
         <Land_Bridge name="Angkor Borei-Kiri Vong" ck3_province_from="11748" ck3_province_to="12107" ck3_type="river_large" battle_type="land_bridge">
-            <Variant key="river_preset_02" orientations="W,E">
-                <Map x="0.564" y="0.805" />
+            <Variant key="river_preset_01">
+                <Map x="0.311" y="0.461" />
             </Variant>
         </Land_Bridge>
         <Land_Bridge name="Badau-Bunut" ck3_province_from="11459" ck3_province_to="11458" ck3_type="river_large" battle_type="land_bridge">
@@ -44,8 +18,8 @@
             </Variant>
         </Land_Bridge>
         <Land_Bridge name="Bati-Amarendrapura" ck3_province_from="11751" ck3_province_to="12117" ck3_type="river_large" battle_type="land_bridge">
-            <Variant key="river_preset_02" orientations="W,E">
-                <Map x="0.564" y="0.805" />
+            <Variant key="river_preset_01">
+                <Map x="0.311" y="0.461" />
             </Variant>
         </Land_Bridge>
         <Land_Bridge name="Jiangning-Hezhou" ck3_province_from="10175" ck3_province_to="10162" ck3_type="river_large" battle_type="land_bridge">
@@ -54,8 +28,8 @@
             </Variant>
         </Land_Bridge>
         <Land_Bridge name="Jiangxia-Mianzhou" ck3_province_from="10270" ck3_province_to="10142" ck3_type="river_large" battle_type="land_bridge">
-            <Variant key="river_preset_02" orientations="W,E">
-                <Map x="0.564" y="0.805" />
+            <Variant key="river_preset_01">
+                <Map x="0.311" y="0.461" />
             </Variant>
         </Land_Bridge>
         <Land_Bridge name="Jinan-Bozhou Liaocheng" ck3_province_from="10101" ck3_province_to="10564" ck3_type="river_large" battle_type="land_bridge">
@@ -64,8 +38,8 @@
             </Variant>
         </Land_Bridge>
         <Land_Bridge name="Kapuas Kuala-Paju Epat" ck3_province_from="11407" ck3_province_to="12202" ck3_type="river_large" battle_type="land_bridge">
-            <Variant key="river_preset_02" orientations="W,E">
-                <Map x="0.564" y="0.805" />
+            <Variant key="river_preset_01">
+                <Map x="0.311" y="0.461" />
             </Variant>
         </Land_Bridge>
         <Land_Bridge name="Ketungau Hilir-Sintang" ck3_province_from="12193" ck3_province_to="11453" ck3_type="river_large" battle_type="land_bridge">
@@ -74,8 +48,8 @@
             </Variant>
         </Land_Bridge>
         <Land_Bridge name="Kottinagara-Sadek" ck3_province_from="11753" ck3_province_to="11754" ck3_type="river_large" battle_type="land_bridge">
-            <Variant key="river_preset_02" orientations="W,E">
-                <Map x="0.564" y="0.805" />
+            <Variant key="river_preset_01">
+                <Map x="0.311" y="0.461" />
             </Variant>
         </Land_Bridge>
         <Land_Bridge name="Lahei-Mantangai" ck3_province_from="11408" ck3_province_to="12204" ck3_type="river_large" battle_type="land_bridge">
@@ -84,8 +58,8 @@
             </Variant>
         </Land_Bridge>
         <Land_Bridge name="Luang Prabang-Chomphet" ck3_province_from="10536" ck3_province_to="12048" ck3_type="river_large" battle_type="land_bridge">
-            <Variant key="river_preset_02" orientations="W,E">
-                <Map x="0.564" y="0.805" />
+            <Variant key="river_preset_01">
+                <Map x="0.311" y="0.461" />
             </Variant>
         </Land_Bridge>
         <Land_Bridge name="Luoyang-Heyang" ck3_province_from="10050" ck3_province_to="10861" ck3_type="river_large" battle_type="land_bridge">
@@ -94,8 +68,8 @@
             </Variant>
         </Land_Bridge>
         <Land_Bridge name="Myeik-Tanangsi" ck3_province_from="11872" ck3_province_to="11708" ck3_type="river_large" battle_type="land_bridge">
-            <Variant key="river_preset_02" orientations="W,E">
-                <Map x="0.564" y="0.805" />
+            <Variant key="river_preset_01">
+                <Map x="0.311" y="0.461" />
             </Variant>
         </Land_Bridge>
         <Land_Bridge name="Nakhon Phanom-Thakhek" ck3_province_from="11681" ck3_province_to="12071" ck3_type="river_large" battle_type="land_bridge">
@@ -104,8 +78,8 @@
             </Variant>
         </Land_Bridge>
         <Land_Bridge name="Nakhon Sawan-Lopburi" ck3_province_from="11690" ck3_province_to="11734" ck3_type="river_large" battle_type="land_bridge">
-            <Variant key="river_preset_02" orientations="W,E">
-                <Map x="0.564" y="0.805" />
+            <Variant key="river_preset_01">
+                <Map x="0.311" y="0.461" />
             </Variant>
         </Land_Bridge>
         <Land_Bridge name="Permata Intan-Sumbar Barito" ck3_province_from="12203" ck3_province_to="11413" ck3_type="river_large" battle_type="land_bridge">
@@ -114,8 +88,8 @@
             </Variant>
         </Land_Bridge>
         <Land_Bridge name="Sangkulirang-Palas" ck3_province_from="11440" ck3_province_to="11439" ck3_type="river_large" battle_type="land_bridge">
-            <Variant key="river_preset_02" orientations="W,E">
-                <Map x="0.564" y="0.805" />
+            <Variant key="river_preset_01">
+                <Map x="0.311" y="0.461" />
             </Variant>
         </Land_Bridge>
         <Land_Bridge name="Seruyan Hilir-Baambang" ck3_province_from="11417" ck3_province_to="11418" ck3_type="river_large" battle_type="land_bridge">
@@ -124,8 +98,8 @@
             </Variant>
         </Land_Bridge>
         <Land_Bridge name="Shrestapura-Pakse" ck3_province_from="11673" ck3_province_to="12095" ck3_type="river_large" battle_type="land_bridge">
-            <Variant key="river_preset_02" orientations="W,E">
-                <Map x="0.564" y="0.805" />
+            <Variant key="river_preset_01">
+                <Map x="0.311" y="0.461" />
             </Variant>
         </Land_Bridge>
         <Land_Bridge name="Singhapura-Lavapura" ck3_province_from="11399" ck3_province_to="11689" ck3_type="river_large" battle_type="land_bridge">
@@ -134,8 +108,8 @@
             </Variant>
         </Land_Bridge>
         <Land_Bridge name="Thala Borivat-Sesan" ck3_province_from="11764" ck3_province_to="12103" ck3_type="river_large" battle_type="land_bridge">
-            <Variant key="river_preset_02" orientations="W,E">
-                <Map x="0.564" y="0.805" />
+            <Variant key="river_preset_01">
+                <Map x="0.311" y="0.461" />
             </Variant>
         </Land_Bridge>
         <Land_Bridge name="Thang Long-Tan Hung" ck3_province_from="10438" ck3_province_to="11885" ck3_type="river_large" battle_type="land_bridge">
@@ -144,8 +118,8 @@
             </Variant>
         </Land_Bridge>
         <Land_Bridge name="Thang Long-Thai Binh" ck3_province_from="10438" ck3_province_to="10430" ck3_type="river_large" battle_type="land_bridge">
-            <Variant key="river_preset_02" orientations="W,E">
-                <Map x="0.564" y="0.805" />
+            <Variant key="river_preset_01">
+                <Map x="0.311" y="0.461" />
             </Variant>
         </Land_Bridge>
         <Land_Bridge name="Thonburi-Ayutthaya" ck3_province_from="11400" ck3_province_to="12041" ck3_type="river_large" battle_type="land_bridge">
@@ -154,8 +128,8 @@
             </Variant>
         </Land_Bridge>
         <Land_Bridge name="Trang An-Thai Binh" ck3_province_from="10429" ck3_province_to="10430" ck3_type="river_large" battle_type="land_bridge">
-            <Variant key="river_preset_02" orientations="W,E">
-                <Map x="0.564" y="0.805" />
+            <Variant key="river_preset_01">
+                <Map x="0.311" y="0.461" />
             </Variant>
         </Land_Bridge>
         <Land_Bridge name="Vientiane-Nong Khai" ck3_province_from="10545" ck3_province_to="11679" ck3_type="river_large" battle_type="land_bridge">
@@ -164,8 +138,8 @@
             </Variant>
         </Land_Bridge>
         <Land_Bridge name="Xanamkhan-Kenethao" ck3_province_from="12047" ck3_province_to="12050" ck3_type="river_large" battle_type="land_bridge">
-            <Variant key="river_preset_02" orientations="W,E">
-                <Map x="0.564" y="0.805" />
+            <Variant key="river_preset_01">
+                <Map x="0.311" y="0.461" />
             </Variant>
         </Land_Bridge>
     </Land_Bridge_Maps>
@@ -176,8 +150,8 @@
             </Variant>
         </Coastal>
         <Coastal name="Aki-Iyo" ck3_province_from="11186" ck3_province_to="11152" ck3_type="sea" battle_type="coastal_battle">
-            <Variant key="coastal_preset_02" orientations="W,E">
-                <Map x="0.124" y="0.0735" overridden_x="0.124" overridden_y="0.0735" />
+            <Variant key="coastal_preset_01">
+                <Map x="0.302" y="0.477" />
             </Variant>
         </Coastal>
         <Coastal name="Alor-Maubara" ck3_province_from="12020" ck3_province_to="12026" ck3_type="sea" battle_type="coastal_battle">
@@ -186,8 +160,8 @@
             </Variant>
         </Coastal>
         <Coastal name="Ambon-Kairatu" ck3_province_from="10457" ck3_province_to="10457" ck3_type="sea" battle_type="coastal_battle">
-            <Variant key="coastal_preset_02" orientations="W,E">
-                <Map x="0.124" y="0.0735" overridden_x="0.124" overridden_y="0.0735" />
+            <Variant key="coastal_preset_01">
+                <Map x="0.302" y="0.477" />
             </Variant>
         </Coastal>
         <Coastal name="Aparri-Balintang" ck3_province_from="11804" ck3_province_to="11809" ck3_type="sea" battle_type="coastal_battle">
@@ -196,8 +170,8 @@
             </Variant>
         </Coastal>
         <Coastal name="Awaji-Awa" ck3_province_from="11211" ck3_province_to="11318" ck3_type="sea" battle_type="coastal_battle">
-            <Variant key="coastal_preset_02" orientations="W,E">
-                <Map x="0.124" y="0.0735" overridden_x="0.124" overridden_y="0.0735" />
+            <Variant key="coastal_preset_01">
+                <Map x="0.302" y="0.477" />
             </Variant>
         </Coastal>
         <Coastal name="Bacan-Gane" ck3_province_from="11465" ck3_province_to="11470" ck3_type="sea" battle_type="coastal_battle">
@@ -206,8 +180,8 @@
             </Variant>
         </Coastal>
         <Coastal name="Bali-Lombok" ck3_province_from="11521" ck3_province_to="12344" ck3_type="sea" battle_type="coastal_battle">
-            <Variant key="coastal_preset_02" orientations="W,E">
-                <Map x="0.124" y="0.0735" overridden_x="0.124" overridden_y="0.0735" />
+            <Variant key="coastal_preset_01">
+                <Map x="0.302" y="0.477" />
             </Variant>
         </Coastal>
         <Coastal name="Banggai-Taliabu" ck3_province_from="11484" ck3_province_to="12402" ck3_type="sea" battle_type="coastal_battle">
@@ -216,8 +190,8 @@
             </Variant>
         </Coastal>
         <Coastal name="Bangka-Belitung" ck3_province_from="11622" ck3_province_to="11623" ck3_type="sea" battle_type="coastal_battle">
-            <Variant key="coastal_preset_02" orientations="W,E">
-                <Map x="0.124" y="0.0735" overridden_x="0.124" overridden_y="0.0735" />
+            <Variant key="coastal_preset_01">
+                <Map x="0.302" y="0.477" />
             </Variant>
         </Coastal>
         <Coastal name="Bantaeng-Selayar" ck3_province_from="11519" ck3_province_to="12426" ck3_type="sea" battle_type="coastal_battle">
@@ -226,8 +200,8 @@
             </Variant>
         </Coastal>
         <Coastal name="Barangkatopa-Wowona" ck3_province_from="12436" ck3_province_to="12438" ck3_type="sea" battle_type="coastal_battle">
-            <Variant key="coastal_preset_02" orientations="W,E">
-                <Map x="0.124" y="0.0735" overridden_x="0.124" overridden_y="0.0735" />
+            <Variant key="coastal_preset_01">
+                <Map x="0.302" y="0.477" />
             </Variant>
         </Coastal>
         <Coastal name="Bizen-Sanuki" ck3_province_from="11283" ck3_province_to="11225" ck3_type="sea" battle_type="coastal_battle">
@@ -236,8 +210,8 @@
             </Variant>
         </Coastal>
         <Coastal name="Bizen-Sanuki" ck3_province_from="11283" ck3_province_to="11226" ck3_type="sea" battle_type="coastal_battle">
-            <Variant key="coastal_preset_02" orientations="W,E">
-                <Map x="0.124" y="0.0735" overridden_x="0.124" overridden_y="0.0735" />
+            <Variant key="coastal_preset_01">
+                <Map x="0.302" y="0.477" />
             </Variant>
         </Coastal>
         <Coastal name="Bombana-Kabaena" ck3_province_from="11499" ck3_province_to="12435" ck3_type="sea" battle_type="coastal_battle">
@@ -246,8 +220,8 @@
             </Variant>
         </Coastal>
         <Coastal name="Bombana-Muna" ck3_province_from="11499" ck3_province_to="11493" ck3_type="sea" battle_type="coastal_battle">
-            <Variant key="coastal_preset_02" orientations="W,E">
-                <Map x="0.124" y="0.0735" overridden_x="0.124" overridden_y="0.0735" />
+            <Variant key="coastal_preset_01">
+                <Map x="0.302" y="0.477" />
             </Variant>
         </Coastal>
         <Coastal name="Bool-Limasawa" ck3_province_from="11827" ck3_province_to="12007" ck3_type="sea" battle_type="coastal_battle">
@@ -256,8 +230,8 @@
             </Variant>
         </Coastal>
         <Coastal name="Bool-Maktan" ck3_province_from="11827" ck3_province_to="12002" ck3_type="sea" battle_type="coastal_battle">
-            <Variant key="coastal_preset_02" orientations="W,E">
-                <Map x="0.124" y="0.0735" overridden_x="0.124" overridden_y="0.0735" />
+            <Variant key="coastal_preset_01">
+                <Map x="0.302" y="0.477" />
             </Variant>
         </Coastal>
         <Coastal name="Bualemo-Banggai" ck3_province_from="12445" ck3_province_to="11484" ck3_type="sea" battle_type="coastal_battle">
@@ -266,8 +240,8 @@
             </Variant>
         </Coastal>
         <Coastal name="Buru-Haumual" ck3_province_from="10456" ck3_province_to="12404" ck3_type="sea" battle_type="coastal_battle">
-            <Variant key="coastal_preset_02" orientations="W,E">
-                <Map x="0.124" y="0.0735" overridden_x="0.124" overridden_y="0.0735" />
+            <Variant key="coastal_preset_01">
+                <Map x="0.302" y="0.477" />
             </Variant>
         </Coastal>
         <Coastal name="Buruwai-Kaimana" ck3_province_from="11495" ck3_province_to="12369" ck3_type="sea" battle_type="coastal_battle">
@@ -276,8 +250,8 @@
             </Variant>
         </Coastal>
         <Coastal name="Busuanga-Taytay" ck3_province_from="11859" ck3_province_to="11858" ck3_type="sea" battle_type="coastal_battle">
-            <Variant key="coastal_preset_02" orientations="W,E">
-                <Map x="0.124" y="0.0735" overridden_x="0.124" overridden_y="0.0735" />
+            <Variant key="coastal_preset_01">
+                <Map x="0.302" y="0.477" />
             </Variant>
         </Coastal>
         <Coastal name="Central Banggi-Pitas" ck3_province_from="12155" ck3_province_to="12143" ck3_type="sea" battle_type="coastal_battle">
@@ -286,8 +260,8 @@
             </Variant>
         </Coastal>
         <Coastal name="Gresik-Madura" ck3_province_from="12320" ck3_province_to="12333" ck3_type="sea" battle_type="coastal_battle">
-            <Variant key="coastal_preset_02" orientations="W,E">
-                <Map x="0.124" y="0.0735" overridden_x="0.124" overridden_y="0.0735" />
+            <Variant key="coastal_preset_01">
+                <Map x="0.302" y="0.477" />
             </Variant>
         </Coastal>
         <Coastal name="Gyoha-Kaeseong" ck3_province_from="12253" ck3_province_to="10883" ck3_type="sea" battle_type="coastal_battle">
@@ -296,8 +270,8 @@
             </Variant>
         </Coastal>
         <Coastal name="Haizhou-Yuzhou" ck3_province_from="10131" ck3_province_to="10132" ck3_type="sea" battle_type="coastal_battle">
-            <Variant key="coastal_preset_02" orientations="W,E">
-                <Map x="0.124" y="0.0735" overridden_x="0.124" overridden_y="0.0735" />
+            <Variant key="coastal_preset_01">
+                <Map x="0.302" y="0.477" />
             </Variant>
         </Coastal>
         <Coastal name="Harima-Awaji" ck3_province_from="11209" ck3_province_to="11211" ck3_type="sea" battle_type="coastal_battle">
@@ -306,8 +280,8 @@
             </Variant>
         </Coastal>
         <Coastal name="Haumual-Ambon" ck3_province_from="12404" ck3_province_to="10457" ck3_type="sea" battle_type="coastal_battle">
-            <Variant key="coastal_preset_02" orientations="W,E">
-                <Map x="0.124" y="0.0735" overridden_x="0.124" overridden_y="0.0735" />
+            <Variant key="coastal_preset_01">
+                <Map x="0.302" y="0.477" />
             </Variant>
         </Coastal>
         <Coastal name="Hizen-Goto" ck3_province_from="11262" ck3_province_to="11307" ck3_type="sea" battle_type="coastal_battle">
@@ -316,8 +290,8 @@
             </Variant>
         </Coastal>
         <Coastal name="Hizen-Iki" ck3_province_from="11262" ck3_province_to="11261" ck3_type="sea" battle_type="coastal_battle">
-            <Variant key="coastal_preset_02" orientations="W,E">
-                <Map x="0.124" y="0.0735" overridden_x="0.124" overridden_y="0.0735" />
+            <Variant key="coastal_preset_01">
+                <Map x="0.302" y="0.477" />
             </Variant>
         </Coastal>
         <Coastal name="Hujung Galuh-Madura" ck3_province_from="12322" ck3_province_to="12333" ck3_type="sea" battle_type="coastal_battle">
@@ -326,8 +300,8 @@
             </Variant>
         </Coastal>
         <Coastal name="Ibabao-Sorsogon" ck3_province_from="11831" ck3_province_to="11784" ck3_type="sea" battle_type="coastal_battle">
-            <Variant key="coastal_preset_02" orientations="W,E">
-                <Map x="0.124" y="0.0735" overridden_x="0.124" overridden_y="0.0735" />
+            <Variant key="coastal_preset_01">
+                <Map x="0.302" y="0.477" />
             </Variant>
         </Coastal>
         <Coastal name="Iyo-Bungo" ck3_province_from="11153" ck3_province_to="11274" ck3_type="sea" battle_type="coastal_battle">
@@ -336,8 +310,8 @@
             </Variant>
         </Coastal>
         <Coastal name="Japen-Biak" ck3_province_from="12388" ck3_province_to="12385" ck3_type="sea" battle_type="coastal_battle">
-            <Variant key="coastal_preset_02" orientations="W,E">
-                <Map x="0.124" y="0.0735" overridden_x="0.124" overridden_y="0.0735" />
+            <Variant key="coastal_preset_01">
+                <Map x="0.302" y="0.477" />
             </Variant>
         </Coastal>
         <Coastal name="Japen-Sawai" ck3_province_from="12388" ck3_province_to="12380" ck3_type="sea" battle_type="coastal_battle">
@@ -346,8 +320,8 @@
             </Variant>
         </Coastal>
         <Coastal name="Jawi Jawi-Maimbung" ck3_province_from="11856" ck3_province_to="11854" ck3_type="sea" battle_type="coastal_battle">
-            <Variant key="coastal_preset_02" orientations="W,E">
-                <Map x="0.124" y="0.0735" overridden_x="0.124" overridden_y="0.0735" />
+            <Variant key="coastal_preset_01">
+                <Map x="0.302" y="0.477" />
             </Variant>
         </Coastal>
         <Coastal name="Kabaena-Muna" ck3_province_from="12435" ck3_province_to="11493" ck3_type="sea" battle_type="coastal_battle">
@@ -356,8 +330,8 @@
             </Variant>
         </Coastal>
         <Coastal name="Kalabakan-Sebatik" ck3_province_from="12156" ck3_province_to="12157" ck3_type="sea" battle_type="coastal_battle">
-            <Variant key="coastal_preset_02" orientations="W,E">
-                <Map x="0.124" y="0.0735" overridden_x="0.124" overridden_y="0.0735" />
+            <Variant key="coastal_preset_01">
+                <Map x="0.302" y="0.477" />
             </Variant>
         </Coastal>
         <Coastal name="Kalingga-Muria" ck3_province_from="11535" ck3_province_to="12302" ck3_type="sea" battle_type="coastal_battle">
@@ -366,8 +340,8 @@
             </Variant>
         </Coastal>
         <Coastal name="Konda-Barangkatopa" ck3_province_from="12437" ck3_province_to="12436" ck3_type="sea" battle_type="coastal_battle">
-            <Variant key="coastal_preset_02" orientations="W,E">
-                <Map x="0.124" y="0.0735" overridden_x="0.124" overridden_y="0.0735" />
+            <Variant key="coastal_preset_01">
+                <Map x="0.302" y="0.477" />
             </Variant>
         </Coastal>
         <Coastal name="Konda-Wowona" ck3_province_from="12437" ck3_province_to="12438" ck3_type="sea" battle_type="coastal_battle">
@@ -376,8 +350,8 @@
             </Variant>
         </Coastal>
         <Coastal name="Kowiai-Aiduma" ck3_province_from="12363" ck3_province_to="12370" ck3_type="sea" battle_type="coastal_battle">
-            <Variant key="coastal_preset_02" orientations="W,E">
-                <Map x="0.124" y="0.0735" overridden_x="0.124" overridden_y="0.0735" />
+            <Variant key="coastal_preset_01">
+                <Map x="0.302" y="0.477" />
             </Variant>
         </Coastal>
         <Coastal name="Kowiai-Kaimana" ck3_province_from="12363" ck3_province_to="12369" ck3_type="sea" battle_type="coastal_battle">
@@ -386,8 +360,8 @@
             </Variant>
         </Coastal>
         <Coastal name="Kowiai-Mairasi" ck3_province_from="12363" ck3_province_to="11516" ck3_type="sea" battle_type="coastal_battle">
-            <Variant key="coastal_preset_02" orientations="W,E">
-                <Map x="0.124" y="0.0735" overridden_x="0.124" overridden_y="0.0735" />
+            <Variant key="coastal_preset_01">
+                <Map x="0.302" y="0.477" />
             </Variant>
         </Coastal>
         <Coastal name="Kumawa-Kowiai" ck3_province_from="12367" ck3_province_to="12363" ck3_type="sea" battle_type="coastal_battle">
@@ -396,8 +370,8 @@
             </Variant>
         </Coastal>
         <Coastal name="Labuan-Menumbok" ck3_province_from="12133" ck3_province_to="12153" ck3_type="sea" battle_type="coastal_battle">
-            <Variant key="coastal_preset_02" orientations="W,E">
-                <Map x="0.124" y="0.0735" overridden_x="0.124" overridden_y="0.0735" />
+            <Variant key="coastal_preset_01">
+                <Map x="0.302" y="0.477" />
             </Variant>
         </Coastal>
         <Coastal name="Lampung-Banten" ck3_province_from="11641" ck3_province_to="11558" ck3_type="sea" battle_type="coastal_battle">
@@ -406,8 +380,8 @@
             </Variant>
         </Coastal>
         <Coastal name="Larantuka-Lembata" ck3_province_from="12018" ck3_province_to="12019" ck3_type="sea" battle_type="coastal_battle">
-            <Variant key="coastal_preset_02" orientations="W,E">
-                <Map x="0.124" y="0.0735" overridden_x="0.124" overridden_y="0.0735" />
+            <Variant key="coastal_preset_01">
+                <Map x="0.302" y="0.477" />
             </Variant>
         </Coastal>
         <Coastal name="Lasem-Muria" ck3_province_from="12309" ck3_province_to="12302" ck3_type="sea" battle_type="coastal_battle">
@@ -416,8 +390,8 @@
             </Variant>
         </Coastal>
         <Coastal name="Lembata-Pantar" ck3_province_from="12019" ck3_province_to="12416" ck3_type="sea" battle_type="coastal_battle">
-            <Variant key="coastal_preset_02" orientations="W,E">
-                <Map x="0.124" y="0.0735" overridden_x="0.124" overridden_y="0.0735" />
+            <Variant key="coastal_preset_01">
+                <Map x="0.302" y="0.477" />
             </Variant>
         </Coastal>
         <Coastal name="Leti-Babar" ck3_province_from="12410" ck3_province_to="12409" ck3_type="sea" battle_type="coastal_battle">
@@ -426,8 +400,8 @@
             </Variant>
         </Coastal>
         <Coastal name="Lingga-Muaro Jambi" ck3_province_from="11614" ck3_province_to="11629" ck3_type="sea" battle_type="coastal_battle">
-            <Variant key="coastal_preset_02" orientations="W,E">
-                <Map x="0.124" y="0.0735" overridden_x="0.124" overridden_y="0.0735" />
+            <Variant key="coastal_preset_01">
+                <Map x="0.302" y="0.477" />
             </Variant>
         </Coastal>
         <Coastal name="Loloda-Moro" ck3_province_from="11476" ck3_province_to="11477" ck3_type="sea" battle_type="coastal_battle">
@@ -436,8 +410,8 @@
             </Variant>
         </Coastal>
         <Coastal name="Lombok-Sumbawa" ck3_province_from="12345" ck3_province_to="12346" ck3_type="sea" battle_type="coastal_battle">
-            <Variant key="coastal_preset_02" orientations="W,E">
-                <Map x="0.124" y="0.0735" overridden_x="0.124" overridden_y="0.0735" />
+            <Variant key="coastal_preset_01">
+                <Map x="0.302" y="0.477" />
             </Variant>
         </Coastal>
         <Coastal name="Luwuk-Banggai" ck3_province_from="11483" ck3_province_to="11484" ck3_type="sea" battle_type="coastal_battle">
@@ -446,8 +420,8 @@
             </Variant>
         </Coastal>
         <Coastal name="Magasungay-Dumangas" ck3_province_from="11821" ck3_province_to="11817" ck3_type="sea" battle_type="coastal_battle">
-            <Variant key="coastal_preset_02" orientations="W,E">
-                <Map x="0.124" y="0.0735" overridden_x="0.124" overridden_y="0.0735" />
+            <Variant key="coastal_preset_01">
+                <Map x="0.302" y="0.477" />
             </Variant>
         </Coastal>
         <Coastal name="Maimbung-Tagima" ck3_province_from="11854" ck3_province_to="11855" ck3_type="sea" battle_type="coastal_battle">
@@ -456,8 +430,8 @@
             </Variant>
         </Coastal>
         <Coastal name="Makian-Tobaru" ck3_province_from="12396" ck3_province_to="12395" ck3_type="sea" battle_type="coastal_battle">
-            <Variant key="coastal_preset_02" orientations="W,E">
-                <Map x="0.124" y="0.0735" overridden_x="0.124" overridden_y="0.0735" />
+            <Variant key="coastal_preset_01">
+                <Map x="0.302" y="0.477" />
             </Variant>
         </Coastal>
         <Coastal name="Maktan-Sugbu" ck3_province_from="12002" ck3_province_to="11812" ck3_type="sea" battle_type="coastal_battle">
@@ -466,8 +440,8 @@
             </Variant>
         </Coastal>
         <Coastal name="Masbat-Sorsogon" ck3_province_from="11825" ck3_province_to="11784" ck3_type="sea" battle_type="coastal_battle">
-            <Variant key="coastal_preset_02" orientations="W,E">
-                <Map x="0.124" y="0.0735" overridden_x="0.124" overridden_y="0.0735" />
+            <Variant key="coastal_preset_01">
+                <Map x="0.302" y="0.477" />
             </Variant>
         </Coastal>
         <Coastal name="Maubara-Wetar" ck3_province_from="12026" ck3_province_to="12021" ck3_type="sea" battle_type="coastal_battle">
@@ -476,8 +450,8 @@
             </Variant>
         </Coastal>
         <Coastal name="Mehara-Leti" ck3_province_from="12412" ck3_province_to="12410" ck3_type="sea" battle_type="coastal_battle">
-            <Variant key="coastal_preset_02" orientations="W,E">
-                <Map x="0.124" y="0.0735" overridden_x="0.124" overridden_y="0.0735" />
+            <Variant key="coastal_preset_01">
+                <Map x="0.302" y="0.477" />
             </Variant>
         </Coastal>
         <Coastal name="Mingzhou-Wengshan" ck3_province_from="10197" ck3_province_to="10199" ck3_type="sea" battle_type="coastal_battle">
@@ -486,8 +460,8 @@
             </Variant>
         </Coastal>
         <Coastal name="Minolo-Balayan" ck3_province_from="11793" ck3_province_to="11780" ck3_type="sea" battle_type="coastal_battle">
-            <Variant key="coastal_preset_02" orientations="W,E">
-                <Map x="0.124" y="0.0735" overridden_x="0.124" overridden_y="0.0735" />
+            <Variant key="coastal_preset_01">
+                <Map x="0.302" y="0.477" />
             </Variant>
         </Coastal>
         <Coastal name="Muna-Barangkatopa" ck3_province_from="11493" ck3_province_to="12436" ck3_type="sea" battle_type="coastal_battle">
@@ -496,8 +470,8 @@
             </Variant>
         </Coastal>
         <Coastal name="Muna-Buton" ck3_province_from="11493" ck3_province_to="11494" ck3_type="sea" battle_type="coastal_battle">
-            <Variant key="coastal_preset_02" orientations="W,E">
-                <Map x="0.124" y="0.0735" overridden_x="0.124" overridden_y="0.0735" />
+            <Variant key="coastal_preset_01">
+                <Map x="0.302" y="0.477" />
             </Variant>
         </Coastal>
         <Coastal name="Naga-Katanduan" ck3_province_from="11785" ck3_province_to="11786" ck3_type="sea" battle_type="coastal_battle">
@@ -506,8 +480,8 @@
             </Variant>
         </Coastal>
         <Coastal name="Nagato-Buzen" ck3_province_from="11336" ck3_province_to="11160" ck3_type="sea" battle_type="coastal_battle">
-            <Variant key="coastal_preset_02" orientations="W,E">
-                <Map x="0.124" y="0.0735" overridden_x="0.124" overridden_y="0.0735" />
+            <Variant key="coastal_preset_01">
+                <Map x="0.302" y="0.477" />
             </Variant>
         </Coastal>
         <Coastal name="Nahalin-Ormok" ck3_province_from="11813" ck3_province_to="11832" ck3_type="sea" battle_type="coastal_battle">
@@ -516,8 +490,8 @@
             </Variant>
         </Coastal>
         <Coastal name="Nurgan-Pogobi" ck3_province_from="10758" ck3_province_to="10767" ck3_type="sea" battle_type="coastal_battle">
-            <Variant key="coastal_preset_02" orientations="W,E">
-                <Map x="0.124" y="0.0735" overridden_x="0.124" overridden_y="0.0735" />
+            <Variant key="coastal_preset_01">
+                <Map x="0.302" y="0.477" />
             </Variant>
         </Coastal>
         <Coastal name="Obi-Bacan" ck3_province_from="10926" ck3_province_to="11465" ck3_type="sea" battle_type="coastal_battle">
@@ -526,8 +500,8 @@
             </Variant>
         </Coastal>
         <Coastal name="Ormok-Masbat" ck3_province_from="11832" ck3_province_to="11825" ck3_type="sea" battle_type="coastal_battle">
-            <Variant key="coastal_preset_02" orientations="W,E">
-                <Map x="0.124" y="0.0735" overridden_x="0.124" overridden_y="0.0735" />
+            <Variant key="coastal_preset_01">
+                <Map x="0.302" y="0.477" />
             </Variant>
         </Coastal>
         <Coastal name="Oton-Binalbagan" ck3_province_from="11815" ck3_province_to="11823" ck3_type="sea" battle_type="coastal_battle">
@@ -536,8 +510,8 @@
             </Variant>
         </Coastal>
         <Coastal name="Palembang-Bangka" ck3_province_from="11617" ck3_province_to="11622" ck3_type="sea" battle_type="coastal_battle">
-            <Variant key="coastal_preset_02" orientations="W,E">
-                <Map x="0.124" y="0.0735" overridden_x="0.124" overridden_y="0.0735" />
+            <Variant key="coastal_preset_01">
+                <Map x="0.302" y="0.477" />
             </Variant>
         </Coastal>
         <Coastal name="Pantar-Alor" ck3_province_from="12416" ck3_province_to="12020" ck3_type="sea" battle_type="coastal_battle">
@@ -546,8 +520,8 @@
             </Variant>
         </Coastal>
         <Coastal name="Riau-Lingga" ck3_province_from="11613" ck3_province_to="11614" ck3_type="sea" battle_type="coastal_battle">
-            <Variant key="coastal_preset_02" orientations="W,E">
-                <Map x="0.124" y="0.0735" overridden_x="0.124" overridden_y="0.0735" />
+            <Variant key="coastal_preset_01">
+                <Map x="0.302" y="0.477" />
             </Variant>
         </Coastal>
         <Coastal name="Riau-Pelalawan" ck3_province_from="11613" ck3_province_to="11603" ck3_type="sea" battle_type="coastal_battle">
@@ -556,8 +530,8 @@
             </Variant>
         </Coastal>
         <Coastal name="Sachi-Miyako" ck3_province_from="11285" ck3_province_to="10925" ck3_type="sea" battle_type="coastal_battle">
-            <Variant key="coastal_preset_02" orientations="W,E">
-                <Map x="0.124" y="0.0735" overridden_x="0.124" overridden_y="0.0735" />
+            <Variant key="coastal_preset_01">
+                <Map x="0.302" y="0.477" />
             </Variant>
         </Coastal>
         <Coastal name="Salawati-Waigama" ck3_province_from="11486" ck3_province_to="11489" ck3_type="sea" battle_type="coastal_battle">
@@ -566,8 +540,8 @@
             </Variant>
         </Coastal>
         <Coastal name="Salawati-Waigeo" ck3_province_from="11486" ck3_province_to="11485" ck3_type="sea" battle_type="coastal_battle">
-            <Variant key="coastal_preset_02" orientations="W,E">
-                <Map x="0.124" y="0.0735" overridden_x="0.124" overridden_y="0.0735" />
+            <Variant key="coastal_preset_01">
+                <Map x="0.302" y="0.477" />
             </Variant>
         </Coastal>
         <Coastal name="Sariwon-Yonggang" ck3_province_from="10881" ck3_province_to="10913" ck3_type="sea" battle_type="coastal_battle">
@@ -576,8 +550,8 @@
             </Variant>
         </Coastal>
         <Coastal name="Sebatik-Lumbis" ck3_province_from="12157" ck3_province_to="11435" ck3_type="sea" battle_type="coastal_battle">
-            <Variant key="coastal_preset_02" orientations="W,E">
-                <Map x="0.124" y="0.0735" overridden_x="0.124" overridden_y="0.0735" />
+            <Variant key="coastal_preset_01">
+                <Map x="0.302" y="0.477" />
             </Variant>
         </Coastal>
         <Coastal name="Siberut-Pagai" ck3_province_from="11605" ck3_province_to="11606" ck3_type="sea" battle_type="coastal_battle">
@@ -586,8 +560,8 @@
             </Variant>
         </Coastal>
         <Coastal name="Soren-Salawati" ck3_province_from="11505" ck3_province_to="11486" ck3_type="sea" battle_type="coastal_battle">
-            <Variant key="coastal_preset_02" orientations="W,E">
-                <Map x="0.124" y="0.0735" overridden_x="0.124" overridden_y="0.0735" />
+            <Variant key="coastal_preset_01">
+                <Map x="0.302" y="0.477" />
             </Variant>
         </Coastal>
         <Coastal name="Sugbu-Diyolongan" ck3_province_from="11812" ck3_province_to="11824" ck3_type="sea" battle_type="coastal_battle">
@@ -596,8 +570,8 @@
             </Variant>
         </Coastal>
         <Coastal name="Suligaw-Limasawa" ck3_province_from="11836" ck3_province_to="12007" ck3_type="sea" battle_type="coastal_battle">
-            <Variant key="coastal_preset_02" orientations="W,E">
-                <Map x="0.124" y="0.0735" overridden_x="0.124" overridden_y="0.0735" />
+            <Variant key="coastal_preset_01">
+                <Map x="0.302" y="0.477" />
             </Variant>
         </Coastal>
         <Coastal name="Sumbawa-Flores" ck3_province_from="12350" ck3_province_to="12422" ck3_type="sea" battle_type="coastal_battle">
@@ -606,8 +580,8 @@
             </Variant>
         </Coastal>
         <Coastal name="Suo-Iyo" ck3_province_from="11334" ck3_province_to="11152" ck3_type="sea" battle_type="coastal_battle">
-            <Variant key="coastal_preset_02" orientations="W,E">
-                <Map x="0.124" y="0.0735" overridden_x="0.124" overridden_y="0.0735" />
+            <Variant key="coastal_preset_01">
+                <Map x="0.302" y="0.477" />
             </Variant>
         </Coastal>
         <Coastal name="Suwon-Ganghwa" ck3_province_from="10888" ck3_province_to="10887" ck3_type="sea" battle_type="coastal_battle">
@@ -616,8 +590,8 @@
             </Variant>
         </Coastal>
         <Coastal name="Suwon-Gyoha" ck3_province_from="10888" ck3_province_to="12253" ck3_type="sea" battle_type="coastal_battle">
-            <Variant key="coastal_preset_02" orientations="W,E">
-                <Map x="0.124" y="0.0735" overridden_x="0.124" overridden_y="0.0735" />
+            <Variant key="coastal_preset_01">
+                <Map x="0.302" y="0.477" />
             </Variant>
         </Coastal>
         <Coastal name="Tagima-Samboangan" ck3_province_from="11855" ck3_province_to="11851" ck3_type="sea" battle_type="coastal_battle">
@@ -626,8 +600,8 @@
             </Variant>
         </Coastal>
         <Coastal name="Takola-Salang" ck3_province_from="11701" ck3_province_to="11702" ck3_type="sea" battle_type="coastal_battle">
-            <Variant key="coastal_preset_02" orientations="W,E">
-                <Map x="0.124" y="0.0735" overridden_x="0.124" overridden_y="0.0735" />
+            <Variant key="coastal_preset_01">
+                <Map x="0.302" y="0.477" />
             </Variant>
         </Coastal>
         <Coastal name="Taliabu-Sula" ck3_province_from="12402" ck3_province_to="10453" ck3_type="sea" battle_type="coastal_battle">
@@ -636,8 +610,8 @@
             </Variant>
         </Coastal>
         <Coastal name="Tanghay-Sialo" ck3_province_from="11820" ck3_province_to="11814" ck3_type="sea" battle_type="coastal_battle">
-            <Variant key="coastal_preset_02" orientations="W,E">
-                <Map x="0.124" y="0.0735" overridden_x="0.124" overridden_y="0.0735" />
+            <Variant key="coastal_preset_01">
+                <Map x="0.302" y="0.477" />
             </Variant>
         </Coastal>
         <Coastal name="Tayabas-Malindug" ck3_province_from="11778" ck3_province_to="11779" ck3_type="sea" battle_type="coastal_battle">
@@ -646,8 +620,8 @@
             </Variant>
         </Coastal>
         <Coastal name="Temasik-Gelanggi" ck3_province_from="11561" ck3_province_to="11559" ck3_type="sea" battle_type="coastal_battle">
-            <Variant key="coastal_preset_02" orientations="W,E">
-                <Map x="0.124" y="0.0735" overridden_x="0.124" overridden_y="0.0735" />
+            <Variant key="coastal_preset_01">
+                <Map x="0.302" y="0.477" />
             </Variant>
         </Coastal>
         <Coastal name="Temasik-Riau" ck3_province_from="11561" ck3_province_to="11613" ck3_type="sea" battle_type="coastal_battle">
@@ -656,8 +630,8 @@
             </Variant>
         </Coastal>
         <Coastal name="Ternate-Sidangoli" ck3_province_from="11472" ck3_province_to="12393" ck3_type="sea" battle_type="coastal_battle">
-            <Variant key="coastal_preset_02" orientations="W,E">
-                <Map x="0.124" y="0.0735" overridden_x="0.124" overridden_y="0.0735" />
+            <Variant key="coastal_preset_01">
+                <Map x="0.302" y="0.477" />
             </Variant>
         </Coastal>
         <Coastal name="Tidore-Oba" ck3_province_from="11471" ck3_province_to="12394" ck3_type="sea" battle_type="coastal_battle">
@@ -666,8 +640,8 @@
             </Variant>
         </Coastal>
         <Coastal name="Tidore-Ternate" ck3_province_from="11471" ck3_province_to="11472" ck3_type="sea" battle_type="coastal_battle">
-            <Variant key="coastal_preset_02" orientations="W,E">
-                <Map x="0.124" y="0.0735" overridden_x="0.124" overridden_y="0.0735" />
+            <Variant key="coastal_preset_01">
+                <Map x="0.302" y="0.477" />
             </Variant>
         </Coastal>
         <Coastal name="Tinanggea-Muna" ck3_province_from="11497" ck3_province_to="11499" ck3_type="sea" battle_type="coastal_battle">
@@ -676,8 +650,8 @@
             </Variant>
         </Coastal>
         <Coastal name="Wetar-Leti" ck3_province_from="12021" ck3_province_to="12410" ck3_type="sea" battle_type="coastal_battle">
-            <Variant key="coastal_preset_02" orientations="W,E">
-                <Map x="0.124" y="0.0735" overridden_x="0.124" overridden_y="0.0735" />
+            <Variant key="coastal_preset_01">
+                <Map x="0.302" y="0.477" />
             </Variant>
         </Coastal>
         <Coastal name="Wirabhumi-Bali" ck3_province_from="12331" ck3_province_to="12338" ck3_type="sea" battle_type="coastal_battle">
@@ -686,8 +660,8 @@
             </Variant>
         </Coastal>
         <Coastal name="Xinhui-Yashan" ck3_province_from="10372" ck3_province_to="10373" ck3_type="sea" battle_type="coastal_battle">
-            <Variant key="coastal_preset_02" orientations="W,E">
-                <Map x="0.124" y="0.0735" overridden_x="0.124" overridden_y="0.0735" />
+            <Variant key="coastal_preset_01">
+                <Map x="0.302" y="0.477" />
             </Variant>
         </Coastal>
         <Coastal name="Yazhou-Leizhou" ck3_province_from="10385" ck3_province_to="10384" ck3_type="sea" battle_type="coastal_battle">
