@@ -9,21 +9,21 @@
             <xs:sequence>
               <xs:element name="General" maxOccurs="unbounded" minOccurs="0">
                 <xs:complexType>
-                  <xs:attribute name="key" type="xs:string" use="optional" />
-                  <xs:attribute name="rank" type="xs:integer" use="optional" />
+                  <xs:attribute name="key" type="xs:string" use="required" />
+                  <xs:attribute name="rank" type="xs:integer" use="required" />
                   <xs:attribute name="num_guns" type="xs:integer" use="optional" />
                 </xs:complexType>
               </xs:element>
               <xs:element name="Knights" maxOccurs="unbounded" minOccurs="0">
                 <xs:complexType>
-                  <xs:attribute name="key" type="xs:string" use="optional" />
-                  <xs:attribute name="rank" type="xs:integer" use="optional" />
+                  <xs:attribute name="key" type="xs:string" use="required" />
+                  <xs:attribute name="rank" type="xs:integer" use="required" />
                   <xs:attribute name="num_guns" type="xs:integer" use="optional" />
                 </xs:complexType>
               </xs:element>
               <xs:element name="Levies" maxOccurs="unbounded" minOccurs="0">
                 <xs:complexType>
-                  <xs:attribute name="key" type="xs:string" use="optional" />
+                  <xs:attribute name="key" type="xs:string" use="required" />
                   <xs:attribute name="percentage" type="xs:integer" use="required" />
                   <xs:attribute name="max" type="xs:string" use="required" />
                   <xs:attribute name="num_guns" type="xs:integer" use="optional" />
@@ -31,7 +31,7 @@
               </xs:element>
               <xs:element name="Garrison" maxOccurs="unbounded" minOccurs="0">
                 <xs:complexType>
-                  <xs:attribute name="key" type="xs:string" use="optional" />
+                  <xs:attribute name="key" type="xs:string" use="required" />
                   <xs:attribute name="percentage" type="xs:integer" use="required" />
                   <xs:attribute name="max" type="xs:string" use="required" />
                   <xs:attribute name="level" type="xs:integer" use="required" />
@@ -41,7 +41,7 @@
               <xs:element name="MenAtArm" maxOccurs="unbounded" minOccurs="0">
                 <xs:complexType>
                   <xs:attribute name="type" type="xs:string" use="required" />
-                  <xs:attribute name="key" type="xs:string" use="optional" />
+                  <xs:attribute name="key" type="xs:string" use="required" />
                   <xs:attribute name="max" type="xs:string" use="optional" />
                   <xs:attribute name="siege" type="xs:boolean" use="optional" />
                   <xs:attribute name="siege_engine_per_unit" type="xs:integer" use="optional" />
