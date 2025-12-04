@@ -349,6 +349,15 @@ def run_llm_roster_review_pass(root, llm_helper, time_period_context, llm_thread
     all_review_requests = []
     faction_element_map = {} # Maps faction name to its XML element
 
+    # 1. Inject Temporary Unique IDs
+    temp_id_counter = 0
+    tags_to_review = ['General', 'Knights', 'Levies', 'Garrison', 'MenAtArm']
+    for faction in root.findall('Faction'):
+        for child in faction:
+            if child.tag in tags_to_review:
+                child.set('__review_id__', str(temp_id_counter))
+                temp_id_counter += 1
+
     for faction in root.findall('Faction'):
         faction_name = faction.get('name')
         if faction_name == "Default":
@@ -367,13 +376,14 @@ def run_llm_roster_review_pass(root, llm_helper, time_period_context, llm_thread
         # 2. Build the structured roster object
         roster = defaultdict(list)
         for child in faction:
-            if child.tag in ['General', 'Knights', 'Levies', 'Garrison', 'MenAtArm']:
+            if child.tag in tags_to_review:
                 unit_key = child.get('key')
-                if not unit_key:
+                review_id = child.get('__review_id__') # Get the temporary ID
+                if not unit_key or not review_id:
                     continue
 
-                # Create a unique, serializable identifier for this specific tag
-                identifier = {k: v for k, v in child.attrib.items() if k != 'key'}
+                # Simplify the LLM Request Identifier
+                identifier = {'__review_id__': review_id}
 
                 roster[child.tag].append({
                     "current_unit": unit_key,
@@ -453,49 +463,29 @@ def run_llm_roster_review_pass(root, llm_helper, time_period_context, llm_thread
                 print(f"    -> WARNING: Invalid correction object received from LLM. Skipping. Data: {correction}")
                 continue
 
-            # --- Improved Matching Logic ---
-            element_to_modify = None
-            log_current_unit = current_unit_from_llm
+            # Replace the Element Matching Logic
+            review_id = identifier.get('__review_id__')
+            if not review_id:
+                print(f"    -> WARNING: Correction object missing '__review_id__'. Skipping. Data: {correction}")
+                continue
 
-            # Pass 1: Strict match on identifier AND current_unit key
-            for child in faction_element.findall(tag_to_find):
-                # Use str(v) to handle potential type mismatches from JSON (e.g., int vs str)
-                if all(child.get(k) == str(v) for k, v in identifier.items()) and child.get('key') == current_unit_from_llm:
-                    element_to_modify = child
-                    break
+            element_to_modify = faction_element.find(f".//{tag_to_find}[@__review_id__='{review_id}']")
 
-            # Pass 2: If no strict match, try a lenient match on identifier only, if it's unique
-            if not element_to_modify:
-                potential_matches = [
-                    child for child in faction_element.findall(tag_to_find)
-                    # Use str(v) here as well for consistency
-                    if all(child.get(k) == str(v) for k, v in identifier.items())
-                ]
-                if len(potential_matches) == 1:
-                    element_to_modify = potential_matches[0]
-                    original_key = element_to_modify.get('key', 'N/A')
-                    log_current_unit = original_key # Use the actual key for logging
-                    # Only print the warning if the key is actually different
-                    if original_key != current_unit_from_llm:
-                        print(f"    -> WARNING: Found unique element for ID {identifier} in '{faction_name}', but its key has changed (expected '{current_unit_from_llm}', found '{original_key}'). Applying correction anyway.")
-                elif len(potential_matches) > 1:
-                    # Tie-breaker: if multiple elements match the identifier, try to match by current_unit_from_llm key
-                    key_filtered_matches = [
-                        child for child in potential_matches
-                        if child.get('key') == current_unit_from_llm
-                    ]
-                    if len(key_filtered_matches) == 1:
-                        element_to_modify = key_filtered_matches[0]
-                        log_current_unit = current_unit_from_llm
-                        print(f"    -> INFO: Resolved ambiguous identifier for ID {identifier} in '{faction_name}' by matching current_unit '{current_unit_from_llm}'.")
-                    else:
-                        print(f"    -> WARNING: Ambiguous identifier for ID {identifier} in '{faction_name}'. Multiple or no elements match after key filtering. Cannot apply correction.")
-
-            if element_to_modify:
+            if element_to_modify is not None:
+                original_key = element_to_modify.get('key')
+                if original_key != current_unit_from_llm:
+                    print(f"    -> WARNING: Element for ID '{review_id}' in '{faction_name}' has changed key (expected '{current_unit_from_llm}', found '{original_key}'). Applying correction anyway.")
+                
                 element_to_modify.set('key', suggested_unit)
                 total_corrections_applied += 1
-                print(f"    - Changed <{tag_to_find}> (ID: {identifier}): '{log_current_unit}' -> '{suggested_unit}'. Reason: {correction.get('reason', 'N/A')}")
+                print(f"    - Changed <{tag_to_find}> (ID: {review_id}): '{original_key}' -> '{suggested_unit}'. Reason: {correction.get('reason', 'N/A')}")
             else:
-                print(f"    -> WARNING: Could not find a unique matching element for correction in '{faction_name}': Tag={tag_to_find}, ID={identifier}, current_unit='{current_unit_from_llm}'")
+                print(f"    -> WARNING: Could not find matching element for correction in '{faction_name}': Tag={tag_to_find}, ID={review_id}, current_unit='{current_unit_from_llm}'")
+
+    # 4. Clean Up Temporary IDs
+    print("\nCleaning up temporary '__review_id__' attributes...")
+    for elem in root.findall(".//*[@__review_id__]"):
+        del elem.attrib['__review_id__']
+    print("Temporary '__review_id__' attributes removed.")
 
     return total_corrections_applied
