@@ -6,17 +6,14 @@ from mapper_tools import unit_management
 from mapper_tools import unit_selector
 from mapper_tools import ck3_to_attila_mappings as mappings
 
-def prepare_llm_request(failure_data, screen_name_to_faction_key_map, faction_key_to_units_map, faction_to_subculture_map, subculture_to_factions_map, faction_key_to_screen_name_map, culture_to_faction_map, excluded_units_set, faction_to_heritage_map, heritage_to_factions_map, faction_to_heritages_map, all_units, unit_to_class_map, unit_to_tier_map, unit_to_description_map, unit_stats_map, faction_pool_cache, max_tier_level=None, min_pool_size=5, override_pool=None):
+def _build_llm_request_object(failure_data, unit_pool_for_request, screen_name_to_faction_key_map, faction_to_subculture_map, unit_to_class_map, unit_stats_map):
     """
-    Prepares a single, consolidated LLM request object for a given failure.
-    It constructs a prioritized list of candidate units based on the specified tier level.
-    The final unit_pool for the LLM prompt will be curated later based on batch size.
-    Returns None if the constructed pool is smaller than min_pool_size.
+    Builds a single, consolidated LLM request object for a given failure using a pre-calculated unit pool.
     """
     faction_name = failure_data['faction_element'].get('name', 'Unknown')
     tag_name = failure_data['tag_name']
 
-    # --- NEW: Handle LevyComposition requests ---
+    # Handle LevyComposition requests separately as they don't use a unit pool in the same way.
     if tag_name == 'LevyComposition':
         req_id = f"{faction_name}|LevyComposition|tier_{failure_data['tier'] if failure_data['tier'] is not None else 'any'}"
         llm_request_obj = {
@@ -29,7 +26,6 @@ def prepare_llm_request(failure_data, screen_name_to_faction_key_map, faction_ke
             'excluded_units_set': list(failure_data['excluded_units_set']) if failure_data['excluded_units_set'] else []
         }
         return req_id, llm_request_obj
-    # --- END NEW ---
 
     # 1. Build the request ID
     req_id_parts = [faction_name, tag_name]
@@ -46,51 +42,7 @@ def prepare_llm_request(failure_data, screen_name_to_faction_key_map, faction_ke
     req_id_parts.append(f"tier_{failure_data['tier'] if failure_data['tier'] is not None else 'any'}")
     req_id = "|".join(req_id_parts)
 
-    # 2. Construct the unit pool
-    if override_pool is not None:
-        # Use the provided override pool (for global thematic search)
-        current_tier_pool = set(override_pool)
-    else:
-        # Use the tiered cultural pool logic
-        # The cache key for faction_pool_cache should include excluded_units_set
-        cache_key = faction_name # Changed cache key to only faction_name
-        if cache_key not in faction_pool_cache:
-            tiered_pools, _ = faction_xml_utils.get_all_tiered_pools(
-                faction_name, screen_name_to_faction_key_map, faction_key_to_units_map,
-                faction_to_subculture_map, subculture_to_factions_map, faction_key_to_screen_name_map,
-                culture_to_faction_map, faction_to_heritage_map=faction_to_heritage_map,
-                heritage_to_factions_map=heritage_to_factions_map, faction_to_heritages_map=faction_to_heritages_map
-            )
-            faction_pool_cache[cache_key] = (tiered_pools, _)
-        tiered_pools, _ = faction_pool_cache[cache_key]
-
-        # Apply exclusions dynamically after retrieving from cache
-        filtered_tiered_pools = []
-        if excluded_units_set:
-            for pool in tiered_pools:
-                filtered_tiered_pools.append(pool - excluded_units_set)
-        else:
-            filtered_tiered_pools = tiered_pools
-
-        current_tier_pool = set()
-        num_tiers_available = len(filtered_tiered_pools) # Use filtered_tiered_pools here
-        # If max_tier_level is None, use all available tiers. Otherwise, use up to the specified level.
-        effective_max_tier = num_tiers_available if max_tier_level is None else max_tier_level + 1
-
-        for i in range(effective_max_tier):
-            if i < num_tiers_available:
-                current_tier_pool.update(filtered_tiered_pools[i]) # Use filtered_tiered_pools here
-
-    # --- NEW: Apply JSON exclusions ---
-    excluded_by_json = failure_data.get('excluded_by_json')
-    if excluded_by_json:
-        current_tier_pool = current_tier_pool - excluded_by_json
-    # --- END NEW ---
-
-    if len(current_tier_pool) < min_pool_size:
-        return None, None # Not enough units to form a valid request for this tier.
-
-    # 3. Build prioritized candidate lists, but only with units from the current tiered pool.
+    # 2. Build prioritized candidate lists from the provided pool.
     primary_candidates = []
     secondary_candidates_with_scores = []
 
@@ -107,8 +59,7 @@ def prepare_llm_request(failure_data, screen_name_to_faction_key_map, faction_ke
     elif tag_name == 'Garrison':
         expected_attila_classes = mappings.CK3_TYPE_TO_ATTILA_CLASS.get('heavy_infantry')
 
-    # Iterate through the tiered pool to create candidates
-    for unit_key in sorted(list(current_tier_pool)): # Sort for determinism
+    for unit_key in sorted(list(unit_pool_for_request)): # Sort for determinism
         unit_class = unit_to_class_map.get(unit_key)
         if expected_attila_classes and unit_class in expected_attila_classes:
             primary_candidates.append(unit_key)
@@ -120,10 +71,10 @@ def prepare_llm_request(failure_data, screen_name_to_faction_key_map, faction_ke
     secondary_candidates_with_scores.sort(key=lambda x: x[0], reverse=True)
 
     if not primary_candidates and not secondary_candidates_with_scores:
-        print(f"      -> WARNING: No primary/secondary candidates identified for '{req_id}' in the current tier pool. This should not happen if pool has units.")
+        print(f"      -> WARNING: No primary/secondary candidates identified for '{req_id}' in the provided pool. This should not happen if pool has units.")
         return None, None
 
-    # 4. Build the final request object
+    # 3. Build the final request object
     faction_key = screen_name_to_faction_key_map.get(faction_name)
     subculture = faction_to_subculture_map.get(faction_key)
 
@@ -131,7 +82,7 @@ def prepare_llm_request(failure_data, screen_name_to_faction_key_map, faction_ke
         'id': req_id,
         'faction': faction_name,
         'subculture': subculture,
-        'validation_pool': sorted(list(current_tier_pool)), # Full pool for this tier for validation
+        'validation_pool': sorted(list(unit_pool_for_request)), # Full pool for this tier for validation
         'primary_candidates': primary_candidates,
         'secondary_candidates': [key for score, key in secondary_candidates_with_scores],
         'tier': failure_data['tier']
@@ -177,7 +128,16 @@ def run_iterative_llm_pass(llm_helper, all_llm_failures_to_process, time_period_
         return 0, all_llm_failures_to_process
 
     llm_replacements_made = 0
-    remaining_failures = list(all_llm_failures_to_process)
+
+    # 1. Group initial failures by faction name.
+    failures_by_faction = defaultdict(list)
+    for failure in all_llm_failures_to_process:
+        faction_name = failure['faction_element'].get('name')
+        if faction_name:
+            failures_by_faction[faction_name].append(failure)
+
+    # 2. Initialize an empty `accumulated_pools` dictionary
+    accumulated_pools = defaultdict(set)
 
     # Determine max number of tiers from a sample faction. Default to 7 cultural tiers + 1 global thematic tier.
     num_cultural_tiers = 7
@@ -188,85 +148,117 @@ def run_iterative_llm_pass(llm_helper, all_llm_failures_to_process, time_period_
 
     total_passes = num_cultural_tiers + 1 # Add one for the global thematic pass
 
+    # 3. Implement the new main loop that iterates through tiers
     for tier_level in range(total_passes):
-        if not remaining_failures:
+        if not failures_by_faction:
             break
 
         is_global_pass = (tier_level == num_cultural_tiers)
         pass_name = f"Global Thematic Search Pass ({tier_level + 1}/{total_passes})" if is_global_pass else f"Cultural Tier Pass {tier_level + 1}/{total_passes}"
-        print(f"\n--- Running LLM Pass ({pass_name}) for {len(remaining_failures)} units ---")
+
+        # Count pending failures
+        pending_failure_count = sum(len(v) for v in failures_by_faction.values())
+        print(f"\n--- Running LLM Pass ({pass_name}) for {pending_failure_count} units ---")
 
         requests_for_this_tier = []
-        element_map = {}
-        failures_for_next_tier = []
+        element_map = {} # Maps req_id back to original failure data
 
-        if is_global_pass:
-            # --- NEW: Global Thematic Search Logic ---
-            for failure_data in remaining_failures:
-                # This global search is primarily for highly thematic MAA types.
-                if failure_data['tag_name'] != 'MenAtArm':
-                    failures_for_next_tier.append(failure_data)
-                    continue
+        # Factions whose failures will be processed in this tier
+        factions_to_process_in_this_tier = list(failures_by_faction.keys())
 
-                global_candidates = unit_management.find_global_thematic_candidates(
-                    failure_data, all_units, unit_to_class_map, unit_to_description_map, ck3_maa_definitions
-                )
+        # 4. ... then through factions with pending failures.
+        for faction_name in factions_to_process_in_this_tier:
+            pending_failures_for_faction = failures_by_faction[faction_name]
 
-                if global_candidates:
-                    # --- NEW: Exclude levy keys ---
-                    current_excluded_units = set(excluded_units_set) if excluded_units_set else set()
-                    if failure_data['tag_name'] == 'MenAtArm':
+            if is_global_pass:
+                # 5. Correctly integrate the global thematic search pass
+                # For global pass, we generate requests for each failure individually with a special pool
+                failures_processed_this_pass = []
+                for failure_data in pending_failures_for_faction:
+                    if failure_data['tag_name'] != 'MenAtArm':
+                        continue # Global pass is only for MAA
+
+                    global_candidates = unit_management.find_global_thematic_candidates(
+                        failure_data, all_units, unit_to_class_map, unit_to_description_map, ck3_maa_definitions
+                    )
+
+                    if global_candidates:
+                        # Exclude levy keys for this specific request
+                        current_excluded_units = set(excluded_units_set) if excluded_units_set else set()
                         levy_keys_in_faction = {el.get('key') for el in failure_data['faction_element'].findall('Levies') if el.get('key')}
                         current_excluded_units.update(levy_keys_in_faction)
-                    # --- END NEW ---
-                    # We found potential global matches, create a request for the LLM
-                    req_id, llm_request_obj = prepare_llm_request(
-                        failure_data, screen_name_to_faction_key_map, faction_key_to_units_map,
-                        faction_to_subculture_map, subculture_to_factions_map, faction_key_to_screen_name_map,
-                        culture_to_faction_map, current_excluded_units, faction_to_heritage_map,
-                        heritage_to_factions_map, faction_to_heritages_map, all_units, unit_to_class_map, unit_to_tier_map,
-                        unit_to_description_map, unit_stats_map, faction_pool_cache,
-                        max_tier_level=tier_level, min_pool_size=1, # Use min_pool_size=1 for global pass
-                        override_pool=global_candidates # Provide the globally found candidates
-                    )
-                    if req_id and llm_request_obj:
-                        print(f"  -> Found {len(global_candidates)} global thematic candidates for '{failure_data['maa_definition_name']}'. Queuing for LLM.")
-                        requests_for_this_tier.append(llm_request_obj)
-                        element_map[req_id] = failure_data
-                    else:
-                        failures_for_next_tier.append(failure_data)
-                else:
-                    # No global candidates found, this unit will fail completely.
-                    failures_for_next_tier.append(failure_data)
-        else:
-            # --- Existing Cultural Tier Logic ---
-            for failure_data in remaining_failures:
-                # --- NEW: Exclude levy keys ---
-                current_excluded_units = set(excluded_units_set) if excluded_units_set else set()
-                if failure_data['tag_name'] == 'MenAtArm':
-                    levy_keys_in_faction = {el.get('key') for el in failure_data['faction_element'].findall('Levies') if el.get('key')}
-                    current_excluded_units.update(levy_keys_in_faction)
-                # --- END NEW ---
-                req_id, llm_request_obj = prepare_llm_request(
-                    failure_data, screen_name_to_faction_key_map, faction_key_to_units_map,
-                    faction_to_subculture_map, subculture_to_factions_map, faction_key_to_screen_name_map,
-                    culture_to_faction_map, current_excluded_units, faction_to_heritage_map,
-                    heritage_to_factions_map, faction_to_heritages_map, all_units, unit_to_class_map, unit_to_tier_map,
-                    unit_to_description_map, unit_stats_map, faction_pool_cache,
-                    max_tier_level=tier_level, min_pool_size=5
-                )
-                if req_id and llm_request_obj:
-                    requests_for_this_tier.append(llm_request_obj)
-                    element_map[req_id] = failure_data
-                else:
-                    failures_for_next_tier.append(failure_data)
+
+                        # Apply JSON exclusions
+                        excluded_by_json = failure_data.get('excluded_by_json')
+                        if excluded_by_json:
+                            current_excluded_units.update(excluded_by_json)
+
+                        final_global_pool = set(global_candidates) - current_excluded_units
+
+                        if final_global_pool:
+                            req_id, llm_request_obj = _build_llm_request_object(
+                                failure_data, final_global_pool, screen_name_to_faction_key_map,
+                                faction_to_subculture_map, unit_to_class_map, unit_stats_map
+                            )
+                            if req_id and llm_request_obj:
+                                print(f"  -> Found {len(final_global_pool)} global thematic candidates for '{failure_data['maa_definition_name']}' in '{faction_name}'. Queuing for LLM.")
+                                requests_for_this_tier.append(llm_request_obj)
+                                element_map[req_id] = failure_data
+                                failures_processed_this_pass.append(failure_data)
+
+                # Remove processed failures from the faction's pending list
+                failures_by_faction[faction_name] = [f for f in pending_failures_for_faction if f not in failures_processed_this_pass]
+                if not failures_by_faction[faction_name]:
+                    del failures_by_faction[faction_name]
+
+            else: # Cultural pass
+                # 6. Inside the loop, add the logic to progressively build the `accumulated_pool`
+                # The `tiered_pools` are unfiltered by global exclusions.
+                tiered_pools, _ = faction_pool_cache.get(faction_name, ([], []))
+                if tier_level < len(tiered_pools):
+                    accumulated_pools[faction_name].update(tiered_pools[tier_level])
+
+                # Apply global exclusions to the accumulated pool
+                current_accumulated_pool = accumulated_pools[faction_name]
+                if excluded_units_set:
+                    current_accumulated_pool = current_accumulated_pool - excluded_units_set
+
+                # Check if pool is large enough to proceed
+                if len(current_accumulated_pool) >= 5: # min_pool_size
+                    # 7. Generate requests for all of a faction's pending failures
+                    print(f"  -> Faction '{faction_name}': Pool ready at Tier {tier_level + 1} with {len(current_accumulated_pool)} units. Generating {len(pending_failures_for_faction)} requests.")
+
+                    for failure_data in pending_failures_for_faction:
+                        # Apply request-specific exclusions (JSON, levy keys)
+                        final_pool_for_request = set(current_accumulated_pool)
+
+                        excluded_by_json = failure_data.get('excluded_by_json')
+                        if excluded_by_json:
+                            final_pool_for_request.difference_update(excluded_by_json)
+
+                        if failure_data['tag_name'] == 'MenAtArm':
+                            levy_keys_in_faction = {el.get('key') for el in failure_data['faction_element'].findall('Levies') if el.get('key')}
+                            final_pool_for_request.difference_update(levy_keys_in_faction)
+
+                        if not final_pool_for_request:
+                            continue # Skip if exclusions emptied the pool for this specific request
+
+                        req_id, llm_request_obj = _build_llm_request_object(
+                            failure_data, final_pool_for_request, screen_name_to_faction_key_map,
+                            faction_to_subculture_map, unit_to_class_map, unit_stats_map
+                        )
+                        if req_id and llm_request_obj:
+                            requests_for_this_tier.append(llm_request_obj)
+                            element_map[req_id] = failure_data
+
+                    # All failures for this faction have been processed for this tier, so clear them.
+                    del failures_by_faction[faction_name]
 
         if not requests_for_this_tier:
             print("No requests with sufficient pool size for this tier. Moving to next tier.")
-            remaining_failures = failures_for_next_tier
             continue
 
-        # The rest of this logic is adapted from the original single-pass implementation
+        # 8. Adapt the LLM batching, execution, and result-handling logic
         cached_results, uncached_requests, cache_modified = llm_helper.filter_requests_against_cache(requests_for_this_tier)
         if cache_modified:
             llm_helper.save_cache()
@@ -275,40 +267,30 @@ def run_iterative_llm_pass(llm_helper, all_llm_failures_to_process, time_period_
 
         network_llm_results = {}
         if uncached_requests and llm_helper.network_calls_enabled:
-            # --- NEW: Batching and parallel execution logic ---
             all_batches = [uncached_requests[i:i + llm_batch_size] for i in range(0, len(uncached_requests), llm_batch_size)]
             print(f"  -> Submitting {len(uncached_requests)} requests to LLM in {len(all_batches)} batches using {llm_threads} threads...")
 
             with ThreadPoolExecutor(max_workers=llm_threads) as executor:
-                # Submit all batches to the executor
                 future_to_batch = {
                     executor.submit(llm_helper.get_batch_unit_replacements, batch, time_period_context): batch
                     for batch in all_batches
                 }
-
                 processed_requests = 0
-                total_requests_to_process = len(uncached_requests)
-
                 for future in as_completed(future_to_batch):
                     batch = future_to_batch[future]
                     processed_requests += len(batch)
-                    print(f"  -> LLM progress: {processed_requests}/{total_requests_to_process} requests completed for this tier.")
+                    print(f"  -> LLM progress: {processed_requests}/{len(uncached_requests)} requests completed for this tier.")
                     try:
                         batch_results = future.result()
                         if batch_results:
                             network_llm_results.update(batch_results)
                     except Exception as exc:
                         print(f"  -> ERROR: A batch of {len(batch)} requests generated an exception: {exc}")
-                        # Optionally, log the failing batch requests for debugging
-                        for req in batch:
-                            print(f"    - Failed request ID: {req.get('id', 'N/A')}")
-            # --- END NEW ---
 
         final_llm_results = {**cached_results, **network_llm_results}
 
         if final_llm_results:
             print(f"\nApplying {len(final_llm_results)} suggestions for this tier...")
-            newly_failed_requests = []
             processed_req_ids = set()
 
             for req_id, suggestion in final_llm_results.items():
@@ -319,25 +301,35 @@ def run_iterative_llm_pass(llm_helper, all_llm_failures_to_process, time_period_
                     continue
 
                 chosen_unit = suggestion.get("chosen_unit")
-                chosen_composition = suggestion.get("chosen_composition") # NEW: For LevyComposition
+                chosen_composition = suggestion.get("chosen_composition")
 
-                if chosen_unit or chosen_composition: # A non-None result is considered a success
-                    # ... (apply the result to the XML element) ...
+                if chosen_unit or chosen_composition:
+                    # Apply the result
+                    if chosen_unit:
+                        req_data['element'].set('key', chosen_unit)
+                        print(f"    -> SUCCESS: Replaced unit for '{req_id}' with '{chosen_unit}'.")
+                    elif chosen_composition:
+                        # For LevyComposition, we don't set a key. The result is used in the low-confidence pass.
+                        print(f"    -> SUCCESS: Received levy composition for '{req_id}'. It will be applied in the next pass.")
                     llm_replacements_made += 1
-                else: # A None result is a failure for this tier
-                    newly_failed_requests.append(req_data)
+                else: # A None result is a failure for this tier, add it back to be retried
+                    faction_name = req_data['faction_element'].get('name')
+                    failures_by_faction[faction_name].append(req_data)
 
-            # Determine which of the original requests were not processed at all (e.g., network error)
+            # Add back any requests that failed due to network errors etc.
             for req in requests_for_this_tier:
                 if req['id'] not in processed_req_ids:
-                    newly_failed_requests.append(element_map[req['id']])
+                    req_data = element_map[req['id']]
+                    faction_name = req_data['faction_element'].get('name')
+                    failures_by_faction[faction_name].append(req_data)
 
-            remaining_failures = failures_for_next_tier + newly_failed_requests
-        else:
-            remaining_failures = failures_for_next_tier + [element_map[req['id']] for req in requests_for_this_tier]
+    # After all tiers, any remaining failures in failures_by_faction are the final failures.
+    final_failures = []
+    for faction_failures in failures_by_faction.values():
+        final_failures.extend(faction_failures)
 
     print(f"\nTotal LLM replacements made across all tiers: {llm_replacements_made}.")
-    return llm_replacements_made, remaining_failures
+    return llm_replacements_made, final_failures
 
 def run_llm_roster_review_pass(root, llm_helper, time_period_context, llm_threads, llm_batch_size,
                                 faction_pool_cache, all_units, excluded_units_set,
