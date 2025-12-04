@@ -443,10 +443,15 @@ def run_llm_roster_review_pass(root, llm_helper, time_period_context, llm_thread
 
         print(f"  -> Applying {len(corrections)} corrections for faction '{faction_name}'...")
         for correction in corrections:
-            tag_to_find = correction['tag']
-            identifier = correction['identifier']
-            current_unit_from_llm = correction['current_unit']
-            suggested_unit = correction['suggested_unit']
+            # Validate correction object structure
+            tag_to_find = correction.get('tag')
+            identifier = correction.get('identifier')
+            current_unit_from_llm = correction.get('current_unit')
+            suggested_unit = correction.get('suggested_unit')
+
+            if not (tag_to_find and current_unit_from_llm and suggested_unit and isinstance(identifier, dict)):
+                print(f"    -> WARNING: Invalid correction object received from LLM. Skipping. Data: {correction}")
+                continue
 
             # --- Improved Matching Logic ---
             element_to_modify = None
@@ -473,6 +478,18 @@ def run_llm_roster_review_pass(root, llm_helper, time_period_context, llm_thread
                     # Only print the warning if the key is actually different
                     if original_key != current_unit_from_llm:
                         print(f"    -> WARNING: Found unique element for ID {identifier} in '{faction_name}', but its key has changed (expected '{current_unit_from_llm}', found '{original_key}'). Applying correction anyway.")
+                elif len(potential_matches) > 1:
+                    # Tie-breaker: if multiple elements match the identifier, try to match by current_unit_from_llm key
+                    key_filtered_matches = [
+                        child for child in potential_matches
+                        if child.get('key') == current_unit_from_llm
+                    ]
+                    if len(key_filtered_matches) == 1:
+                        element_to_modify = key_filtered_matches[0]
+                        log_current_unit = current_unit_from_llm
+                        print(f"    -> INFO: Resolved ambiguous identifier for ID {identifier} in '{faction_name}' by matching current_unit '{current_unit_from_llm}'.")
+                    else:
+                        print(f"    -> WARNING: Ambiguous identifier for ID {identifier} in '{faction_name}'. Multiple or no elements match after key filtering. Cannot apply correction.")
 
             if element_to_modify:
                 element_to_modify.set('key', suggested_unit)
