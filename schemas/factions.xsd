@@ -10,14 +10,14 @@
               <xs:element name="General" maxOccurs="unbounded" minOccurs="0">
                 <xs:complexType>
                   <xs:attribute name="key" type="xs:string" use="required" />
-                  <xs:attribute name="rank" type="xs:integer" use="required" />
+                  <xs:attribute name="rank" type="xs:integer" use="optional" />
                   <xs:attribute name="num_guns" type="xs:integer" use="optional" />
                 </xs:complexType>
               </xs:element>
               <xs:element name="Knights" maxOccurs="unbounded" minOccurs="0">
                 <xs:complexType>
                   <xs:attribute name="key" type="xs:string" use="required" />
-                  <xs:attribute name="rank" type="xs:integer" use="required" />
+                  <xs:attribute name="rank" type="xs:integer" use="optional" />
                   <xs:attribute name="num_guns" type="xs:integer" use="optional" />
                 </xs:complexType>
               </xs:element>
