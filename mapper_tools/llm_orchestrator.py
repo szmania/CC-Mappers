@@ -5,6 +5,7 @@ from mapper_tools import faction_xml_utils
 from mapper_tools import unit_management
 from mapper_tools import unit_selector
 from mapper_tools import ck3_to_attila_mappings as mappings
+from mapper_tools import shared_utils
 
 def _build_llm_request_object(failure_data, unit_pool_for_request, screen_name_to_faction_key_map, faction_to_subculture_map, unit_to_class_map, unit_stats_map):
     """
@@ -544,11 +545,16 @@ def run_llm_roster_review_pass(root, llm_helper, time_period_context, llm_thread
                             print(f"    -> WARNING: Correction object missing '__review_id__'. Skipping. Data: {correction}")
                             continue
 
-                        # Sanitize the tag from the LLM to prevent XPath errors.
-                        sanitized_tag = tag_to_find
-                        if ':' in tag_to_find:
-                            sanitized_tag = tag_to_find.split(':')[0]
-                            print(f"    -> WARNING: LLM returned a tag with a colon '{tag_to_find}'. Sanitizing to '{sanitized_tag}' for XPath search.")
+                        # Sanitize and validate the tag from the LLM to prevent XPath errors.
+                        valid_tags = ['General', 'Knights', 'Levies', 'Garrison', 'MenAtArm']
+                        sanitized_tag = shared_utils.find_best_fuzzy_match(tag_to_find, valid_tags, threshold=0.7)
+
+                        if not sanitized_tag:
+                            print(f"    -> WARNING: LLM returned an invalid or unrecognizable tag '{tag_to_find}'. Skipping correction.")
+                            continue
+
+                        if sanitized_tag != tag_to_find:
+                                print(f"    -> WARNING: LLM returned a potentially malformed tag '{tag_to_find}'. Sanitized to '{sanitized_tag}' via fuzzy matching.")
 
                         element_to_modify = faction_element.find(f".//{sanitized_tag}[@__review_id__='{review_id}']")
 
