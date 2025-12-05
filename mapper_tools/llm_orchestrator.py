@@ -615,3 +615,101 @@ def run_llm_roster_review_pass(root, llm_helper, time_period_context, llm_thread
     print("Temporary '__review_id__' attributes removed.")
 
     return total_corrections_applied
+
+# NEW: LLM Subculture Assignment Pass
+def run_llm_subculture_pass(root, llm_helper, time_period_context, llm_threads, llm_batch_size,
+                            faction_to_subculture_map, subculture_to_factions_map, screen_name_to_faction_key_map):
+    """
+    Identifies factions missing subcultures, queries the LLM for assignments, and applies them.
+    """
+    if not llm_helper or not llm_helper.network_calls_enabled:
+        print("\n--- Skipping LLM Subculture Assignment Pass ---")
+        print("LLM Subculture Assignment requires network calls to be enabled.")
+        return 0
+
+    print("\n--- Starting LLM Subculture Assignment Pass ---")
+
+    subcultures_assigned_count = 0
+    subculture_requests = []
+    faction_elements_to_process = {} # Map faction_name to XML element
+
+    # Get all available subcultures from the existing map
+    all_available_subcultures = sorted(list(subculture_to_factions_map.keys()))
+    if not all_available_subcultures:
+        print("  -> WARNING: No available subcultures found in the Attila DB. LLM cannot assign subcultures.")
+        return 0
+
+    # 1. Identify factions missing subcultures
+    for faction_element in root.findall('Faction'):
+        faction_name = faction_element.get('name')
+        if not faction_name or faction_name == "Default":
+            continue
+
+        faction_key = screen_name_to_faction_key_map.get(faction_name)
+        if not faction_key:
+            # This faction name might be a fuzzy match, or not in the DB at all.
+            # For now, we only process factions that have a known key.
+            continue
+
+        # Check if the faction already has a subculture attribute set in the XML
+        # or if it's already in the faction_to_subculture_map (meaning it's in the DB)
+        if faction_key not in faction_to_subculture_map:
+            req_id = f"subculture|{faction_name}"
+            subculture_requests.append({
+                'id': req_id,
+                'faction': faction_name,
+                'available_subcultures': all_available_subcultures,
+                'validation_pool': all_available_subcultures # For cache validation
+            })
+            faction_elements_to_process[req_id] = faction_element
+
+    if not subculture_requests:
+        print("  -> No factions found missing subcultures. Skipping LLM assignment.")
+        return 0
+
+    print(f"  -> Found {len(subculture_requests)} factions missing subcultures. Attempting LLM assignment.")
+
+    # 2. Filter requests against cache
+    cached_results, uncached_requests, cache_modified = llm_helper.filter_requests_against_cache(subculture_requests)
+    if cache_modified:
+        llm_helper.save_cache()
+
+    print(f"  -> Found {len(cached_results)} valid cached results. {len(uncached_requests)} requests require LLM call.")
+
+    network_llm_results = {}
+    if uncached_requests:
+        all_batches = [uncached_requests[i:i + llm_batch_size] for i in range(0, len(uncached_requests), llm_batch_size)]
+        print(f"  -> Submitting {len(uncached_requests)} subculture requests to LLM in {len(all_batches)} batches using {llm_threads} threads...")
+
+        with ThreadPoolExecutor(max_workers=llm_threads) as executor:
+            future_to_batch = {
+                executor.submit(llm_helper.get_batch_subculture_assignments, batch, time_period_context): batch
+                for batch in all_batches
+            }
+            processed_requests = 0
+            for future in as_completed(future_to_batch):
+                processed_requests += len(future_to_batch[future])
+                print(f"  -> LLM subculture progress: {processed_requests}/{len(uncached_requests)} requests completed.")
+                try:
+                    batch_results = future.result()
+                    if batch_results:
+                        network_llm_results.update(batch_results)
+                except Exception as exc:
+                    print(f"  -> ERROR: A subculture batch generated an exception: {exc}")
+
+    # 3. Apply results
+    final_results = {**cached_results, **network_llm_results}
+
+    for req_id, result_data in final_results.items():
+        chosen_subculture = result_data.get("chosen_subculture")
+        faction_element = faction_elements_to_process.get(req_id)
+
+        if faction_element and chosen_subculture:
+            faction_element.set('subculture', chosen_subculture)
+            subcultures_assigned_count += 1
+            print(f"    -> Assigned subculture '{chosen_subculture}' to faction '{faction_element.get('name')}' via LLM.")
+        elif faction_element:
+            print(f"    -> WARNING: LLM failed to assign a valid subculture for faction '{faction_element.get('name')}' (Request ID: {req_id}).")
+
+    print(f"\nLLM Subculture Assignment Pass complete. Assigned {subcultures_assigned_count} subcultures.")
+    return subcultures_assigned_count
