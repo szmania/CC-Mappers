@@ -152,7 +152,12 @@ def validate_xml_with_schema(xml_root, schema_path):
     try:
         schema_doc = etree.parse(schema_path)
         schema = etree.XMLSchema(schema_doc)
-        schema.assertValid(xml_root)
+
+        # Convert standard ElementTree object to lxml Element object for validation
+        xml_string = ET.tostring(xml_root, encoding='utf-8')
+        lxml_doc = etree.fromstring(xml_string)
+
+        schema.assertValid(lxml_doc)
         return True, None
     except etree.DocumentInvalid as e:
         return False, str(e)
