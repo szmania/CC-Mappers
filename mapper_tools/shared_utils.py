@@ -8,12 +8,42 @@ from collections import defaultdict
 import sys
 from PIL import Image # For coastal province detection
 from lxml import etree # For XML schema validation
+import hashlib # Added for calculate_sha256
+import random # Added for _generate_nearby_coords
 
 # --- Constants ---
 # Prefixes to remove for cleaner fuzzy matching
 COMMON_PREFIXES = ['ck3_', 'att_', 'wonder_', 'building_', 'terrain_', 'subculture_']
 
 # --- Helper Functions ---
+
+def find_files(directory, filename):
+    """
+    Recursively searches for a file with the given filename within a directory.
+    Returns a list of full paths to all matching files.
+    """
+    found_files = []
+    for root, _, files in os.walk(directory):
+        if filename in files:
+            found_files.append(os.path.join(root, filename))
+    return found_files
+
+def calculate_sha256(file_path):
+    """
+    Calculates the SHA-256 hash of a file.
+    Reads the file in chunks to handle large files efficiently.
+    Returns the hexadecimal digest of the hash, or None if the file cannot be read.
+    """
+    sha256_hash = hashlib.sha256()
+    try:
+        with open(file_path, "rb") as f:
+            # Read and update hash string value in blocks of 4K
+            for byte_block in iter(lambda: f.read(4096), b""):
+                sha256_hash.update(byte_block)
+        return sha256_hash.hexdigest()
+    except IOError as e:
+        print(f"Error reading file '{file_path}' for SHA-256 calculation: {e}")
+        return None
 
 def _clean_name_for_fuzzy_match(name):
     """Cleans a name for fuzzy matching by lowercasing, replacing underscores, and removing common prefixes."""
@@ -368,7 +398,7 @@ def get_attila_land_bridge_presets(attila_presets_dir, map_index):
     for a specific map_index.
     """
     land_bridge_presets = []
-    if not os.exists(attila_presets_dir):
+    if not os.path.exists(attila_presets_dir):
         print(f"Warning: Attila presets directory not found at '{attila_presets_dir}'. Skipping land bridge preset extraction.")
         return land_bridge_presets
 
