@@ -651,8 +651,9 @@ def run_llm_subculture_pass(root, llm_helper, time_period_context, llm_threads, 
             # For now, we only process factions that have a known key.
             continue
 
-        # Check if the faction already has a subculture attribute set in the XML
-        # or if it's already in the faction_to_subculture_map (meaning it's in the DB)
+        # A subculture request is needed if the faction does not have a subculture defined in the Attila DB.
+        # We intentionally ignore any 'subculture' attribute that may already exist in the XML,
+        # as the DB and LLM cache are the sources of truth.
         if faction_key not in faction_to_subculture_map:
             req_id = f"subculture|{faction_name}"
             subculture_requests.append({
