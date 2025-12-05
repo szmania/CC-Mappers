@@ -1,5 +1,6 @@
 from collections import defaultdict
 from concurrent.futures import ThreadPoolExecutor, as_completed
+import xml.etree.ElementTree as ET # Added import for ElementTree
 
 from mapper_tools import faction_xml_utils
 from mapper_tools import unit_management
@@ -88,21 +89,27 @@ def _build_llm_request_object(failure_data, unit_pool_for_request, screen_name_t
         'validation_pool': sorted(list(unit_pool_for_request)), # Full pool for this tier for validation
         'primary_candidates': primary_candidates,
         'secondary_candidates': [key for score, key in secondary_candidates_with_scores],
-        'tier': failure_data['tier']
+        'tier': failure_data['tier'],
+        'faction_element': failure_data['faction_element'], # Keep reference to parent faction element
+        'tag_name': tag_name, # Keep tag_name for element creation
     }
 
     if tag_name == 'MenAtArm':
         llm_request_obj['maa_type'] = failure_data['maa_definition_name']
         llm_request_obj['expected_attila_classes'] = expected_attila_classes
+        if 'element' in failure_data: # Only add if it exists
+            llm_request_obj['element'] = failure_data['element']
     else:
         llm_request_obj.update({
-            'tag_name': tag_name,
             'unit_role_description': failure_data['unit_role_description'],
             'rank': failure_data.get('rank'),
             'level': failure_data.get('level'),
             'garrison_slot': failure_data.get('garrison_slot'),
             'levy_slot': failure_data.get('levy_slot')
         })
+        if 'element' in failure_data: # Only add if it exists
+            llm_request_obj['element'] = failure_data['element']
+
 
     return req_id, llm_request_obj
 
@@ -360,14 +367,38 @@ def run_iterative_llm_pass(llm_helper, all_llm_failures_to_process, time_period_
                 chosen_unit = suggestion.get("chosen_unit")
                 chosen_composition = suggestion.get("chosen_composition")
 
-                if chosen_unit or chosen_composition:
-                    # Apply the result
-                    if chosen_unit:
-                        req_data['element'].set('key', chosen_unit)
+                if chosen_unit:
+                    element_to_modify = req_data.get('element')
+                    if element_to_modify is not None:
+                        # Existing tag, update key
+                        element_to_modify.set('key', chosen_unit)
                         print(f"    -> SUCCESS: Replaced unit for '{req_id}' with '{chosen_unit}'.")
-                    elif chosen_composition:
-                        # For LevyComposition, we don't set a key. The result is used in the low-confidence pass.
-                        print(f"    -> SUCCESS: Received levy composition for '{req_id}'. It will be applied in the next pass.")
+                    else:
+                        # Missing tag, create new element
+                        faction_element = req_data['faction_element']
+                        tag_name = req_data['tag_name']
+                        attrs = {'key': chosen_unit}
+
+                        if req_data.get('rank'):
+                            attrs['rank'] = str(req_data['rank'])
+                        if req_data.get('level'):
+                            attrs['level'] = str(req_data['level'])
+                            # If creating a Garrison tag, add percentage and max
+                            if tag_name == 'Garrison':
+                                attrs['percentage'] = '0'
+                                attrs['max'] = 'LEVY'
+                        if req_data.get('levy_slot'): # Levies also need percentage and max
+                            attrs['percentage'] = '0'
+                            attrs['max'] = 'LEVY'
+                        if tag_name == 'MenAtArm' and req_data.get('maa_type'): # Use 'maa_type' from req_data for 'type' attribute
+                            attrs['type'] = req_data['maa_type']
+
+                        ET.SubElement(faction_element, tag_name, attrs)
+                        print(f"    -> SUCCESS: Created missing <{tag_name}> tag for '{req_id}' and set key to '{chosen_unit}'.")
+                    llm_replacements_made += 1
+                elif chosen_composition:
+                    # For LevyComposition, we don't set a key. The result is used in the low-confidence pass.
+                    print(f"    -> SUCCESS: Received levy composition for '{req_id}'. It will be applied in the next pass.")
                     llm_replacements_made += 1
                 else: # A None result is a failure for this tier, add it back to be retried
                     faction_name = req_data['faction_element'].get('name')
