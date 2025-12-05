@@ -600,6 +600,22 @@ def run_llm_roster_review_pass(root, llm_helper, time_period_context, llm_thread
                         if sanitized_tag != tag_to_find:
                                 print(f"    -> WARNING: LLM returned a potentially malformed tag '{tag_to_find}'. Sanitized to '{sanitized_tag}' via fuzzy matching.")
 
+                        # --- NEW: Uniqueness Validation ---
+                        all_current_keys_in_faction = {
+                            el.get('key') for el in faction_element if el.get('key')
+                        }
+                        # We must temporarily exclude the key of the very unit we are about to change
+                        # to allow for valid self-replacement or swapping with another unit that will also be changed.
+                        # First, find the element that *would* be changed.
+                        element_being_changed = faction_element.find(f".//{sanitized_tag}[@__review_id__='{review_id}']")
+                        if element_being_changed is not None and element_being_changed.get('key') in all_current_keys_in_faction:
+                            all_current_keys_in_faction.remove(element_being_changed.get('key'))
+
+                        if suggested_unit in all_current_keys_in_faction:
+                            print(f"    -> WARNING: LLM suggested unit '{suggested_unit}' for faction '{faction_name}', but this unit is already in use by another tag in this faction. Skipping correction to prevent duplicates.")
+                            continue # Skip this correction
+                        # --- END NEW ---
+
                         element_to_modify = faction_element.find(f".//{sanitized_tag}[@__review_id__='{review_id}']")
 
                         if element_to_modify is not None:
