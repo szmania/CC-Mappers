@@ -4,6 +4,7 @@ from mapper_tools import unit_management
 from mapper_tools import faction_json_utils
 from mapper_tools import llm_orchestrator
 from mapper_tools import ck3_to_attila_mappings as mappings
+from mapper_tools import unit_selector
 
 def run_high_confidence_unit_pass(root, tier, unit_variant_map, ck3_maa_definitions, unit_to_class_map, unit_to_description_map,
                                    screen_name_to_faction_key_map, faction_key_to_units_map, faction_to_subculture_map,
@@ -323,7 +324,7 @@ def run_low_confidence_unit_pass(root, failures, ck3_maa_definitions, unit_to_cl
                         if levy_keys_in_faction:
                             global_pool = global_pool - levy_keys_in_faction
                         # Use a lenient threshold for the global fallback to ensure we get the best possible match
-                        found_key = unit_selector._find_replacement_for_maa(internal_type, global_pool, unit_to_class_map, tier, unit_variant_map, unit_to_description_map, threshold=0.0)
+                        found_key = unit_selector._find_replacement_for_maa(internal_pool, global_pool, unit_to_class_map, tier, unit_variant_map, unit_to_description_map, threshold=0.0)
                 # --- END: Gradual Fallback Logic ---
 
                 if found_key:
