@@ -544,7 +544,13 @@ def run_llm_roster_review_pass(root, llm_helper, time_period_context, llm_thread
                             print(f"    -> WARNING: Correction object missing '__review_id__'. Skipping. Data: {correction}")
                             continue
 
-                        element_to_modify = faction_element.find(f".//{tag_to_find}[@__review_id__='{review_id}']")
+                        # Sanitize the tag from the LLM to prevent XPath errors.
+                        sanitized_tag = tag_to_find
+                        if ':' in tag_to_find:
+                            sanitized_tag = tag_to_find.split(':')[0]
+                            print(f"    -> WARNING: LLM returned a tag with a colon '{tag_to_find}'. Sanitizing to '{sanitized_tag}' for XPath search.")
+
+                        element_to_modify = faction_element.find(f".//{sanitized_tag}[@__review_id__='{review_id}']")
 
                         if element_to_modify is not None:
                             original_key = element_to_modify.get('key')
