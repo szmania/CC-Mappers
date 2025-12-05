@@ -324,7 +324,7 @@ def run_low_confidence_unit_pass(root, failures, ck3_maa_definitions, unit_to_cl
                         if levy_keys_in_faction:
                             global_pool = global_pool - levy_keys_in_faction
                         # Use a lenient threshold for the global fallback to ensure we get the best possible match
-                        found_key = unit_selector._find_replacement_for_maa(internal_pool, global_pool, unit_to_class_map, tier, unit_variant_map, unit_to_description_map, threshold=0.0)
+                        found_key = unit_selector._find_replacement_for_maa(internal_type, global_pool, unit_to_class_map, tier, unit_variant_map, unit_to_description_map, threshold=0.0)
                 # --- END: Gradual Fallback Logic ---
 
                 if found_key:
