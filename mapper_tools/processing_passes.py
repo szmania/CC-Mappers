@@ -195,6 +195,10 @@ def run_low_confidence_unit_pass(root, failures, ck3_maa_definitions, unit_to_cl
     replacements_made = 0
     remaining_failures = []
 
+    # Ensure excluded_units_set is a set to prevent TypeErrors
+    if excluded_units_set is None:
+        excluded_units_set = set()
+
     # If a faction_pool_cache is not provided, create a local one for this pass.
     if faction_pool_cache is None:
         faction_pool_cache = {}
