@@ -6,6 +6,7 @@ from mapper_tools import unit_management
 from mapper_tools import unit_selector
 from mapper_tools import ck3_to_attila_mappings as mappings
 from mapper_tools import shared_utils
+import re
 
 def _build_llm_request_object(failure_data, unit_pool_for_request, screen_name_to_faction_key_map, faction_to_subculture_map, unit_to_class_map, unit_stats_map):
     """
@@ -544,6 +545,18 @@ def run_llm_roster_review_pass(root, llm_helper, time_period_context, llm_thread
                         if not review_id:
                             print(f"    -> WARNING: Correction object missing '__review_id__'. Skipping. Data: {correction}")
                             continue
+                        # Sanitize review_id to handle potential LLM malformations (e.g., adding quotes).
+                        # It should be a string of digits.
+                        original_review_id = str(review_id) # Ensure it's a string for processing
+                        sanitized_review_id = re.sub(r'\D', '', original_review_id)
+                        if sanitized_review_id != original_review_id:
+                            print(f"    -> WARNING: Sanitized malformed '__review_id__' from LLM. Original: '{original_review_id}', Used: '{sanitized_review_id}'.")
+                        
+                        if not sanitized_review_id:
+                            print(f"    -> WARNING: Sanitized '__review_id__' is empty. Skipping. Original: '{original_review_id}'")
+                            continue
+                        
+                        review_id = sanitized_review_id
 
                         # Sanitize and validate the tag from the LLM to prevent XPath errors.
                         valid_tags = ['General', 'Knights', 'Levies', 'Garrison', 'MenAtArm']
