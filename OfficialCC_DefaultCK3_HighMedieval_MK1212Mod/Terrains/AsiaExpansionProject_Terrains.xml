@@ -1,4 +1,41 @@
 <?xml version='1.0' encoding='utf-8'?>
 <Terrains>
-  <Map name="main_attila_map" />
+  <Map name="terrain/battles/main_attila_map/" />
+  <Settlement_Maps_Unique>
+    <Settlement_Unique battle_type="settlement_standard">
+      <Variant key="att_eastern_city_port_constantinople">
+        <Map x="0.51" y="0.485" />
+      </Variant>
+    </Settlement_Unique>
+    <Settlement_Unique battle_type="settlement_standard">
+      <Variant key="att_sassanid_city_ctesiphon">
+        <Map x="0.721" y="0.654" />
+      </Variant>
+    </Settlement_Unique>
+    <Settlement_Unique battle_type="settlement_standard">
+      <Variant key="att_western_city_port_ravenna">
+        <Map x="0.322" y="0.426" />
+      </Variant>
+    </Settlement_Unique>
+    <Settlement_Unique battle_type="settlement_standard">
+      <Variant key="att_western_city_rome">
+        <Map x="0.307" y="0.473" />
+      </Variant>
+    </Settlement_Unique>
+  </Settlement_Maps_Unique>
+  <Siege_Engines>
+    <Siege_Engine key="battering_ram_heavy" type="battering_rams" siege_effort_cost="2" />
+    <Siege_Engine key="battering_ram_light" type="battering_rams" siege_effort_cost="1" />
+    <Siege_Engine key="battering_ram_medium" type="battering_rams" siege_effort_cost="2" />
+    <Siege_Engine key="mk_siege_tower_15m_fire_siphon" type="15m_siege_towers" siege_effort_cost="7" />
+    <Siege_Engine key="mk_siege_tower_8m_fire_siphon" type="8m_siege_towers" siege_effort_cost="7" />
+    <Siege_Engine key="siege_ladder_15m" type="15m_siege_ladders" siege_effort_cost="2" />
+    <Siege_Engine key="siege_ladder_8m" type="8m_siege_ladders" siege_effort_cost="2" />
+    <Siege_Engine key="siege_tower_15m_heavy" type="15m_siege_towers" siege_effort_cost="4" />
+    <Siege_Engine key="siege_tower_15m_light" type="15m_siege_towers" siege_effort_cost="3" />
+    <Siege_Engine key="siege_tower_15m_medium" type="15m_siege_towers" siege_effort_cost="3" />
+    <Siege_Engine key="siege_tower_8m_heavy" type="8m_siege_towers" siege_effort_cost="4" />
+    <Siege_Engine key="siege_tower_8m_light" type="8m_siege_towers" siege_effort_cost="3" />
+    <Siege_Engine key="siege_tower_8m_medium" type="8m_siege_towers" siege_effort_cost="3" />
+  </Siege_Engines>
 </Terrains>

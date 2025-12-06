@@ -1,314 +1,39 @@
 <?xml version='1.0' encoding='utf-8'?>
 <Terrains>
-  <Map name="main_attila_map" />
-  <Settlement_Maps>
-    <Settlement faction="Default" battle_type="settlement_standard">
-      <Variant key="att_western_city_a" is_unique_settlement="False">
-        <Map x="0.153" y="0.225" />
-      </Variant>
-      <Variant key="att_western_city_c" is_unique_settlement="False">
-        <Map x="0.08800001" y="0.578" />
-      </Variant>
-      <Variant key="att_western_city_b" is_unique_settlement="False">
-        <Map x="0.238" y="0.324" />
-      </Variant>
-    </Settlement>
-    <Settlement faction="Default" battle_type="settlement_unfortified">
-      <Variant key="att_western_city_c_minor" is_unique_settlement="False">
-        <Map x="0.07600001" y="0.471" />
-      </Variant>
-      <Variant key="att_western_city_a_minor" is_unique_settlement="False">
-        <Map x="0.167" y="0.332" overridden_x="0.167" overridden_y="0.332" />
-      </Variant>
-      <Variant key="att_western_city_b_minor" is_unique_settlement="False">
-        <Map x="0.37" y="0.381" />
-      </Variant>
-    </Settlement>
-    <Settlement faction="Beyond the Wall" battle_type="settlement_standard">
-      <Variant key="att_western_city_b" is_unique_settlement="False">
-        <Map x="0.238" y="0.324" />
-      </Variant>
-      <Variant key="att_western_city_a" is_unique_settlement="False">
-        <Map x="0.153" y="0.225" />
-      </Variant>
-      <Variant key="att_western_city_c" is_unique_settlement="False">
-        <Map x="0.08800001" y="0.578" />
-      </Variant>
-    </Settlement>
-    <Settlement faction="Beyond the Wall" battle_type="settlement_unfortified">
-      <Variant key="att_western_city_c_minor" is_unique_settlement="False">
-        <Map x="0.07600001" y="0.471" />
-      </Variant>
-      <Variant key="att_western_city_b_minor" is_unique_settlement="False">
-        <Map x="0.37" y="0.381" />
-      </Variant>
-      <Variant key="att_western_city_a_minor" is_unique_settlement="False">
-        <Map x="0.167" y="0.332" overridden_x="0.167" overridden_y="0.332" />
-      </Variant>
-    </Settlement>
-    <Settlement faction="Dorne" battle_type="settlement_standard">
-      <Variant key="att_western_city_b" is_unique_settlement="False">
-        <Map x="0.238" y="0.324" />
-      </Variant>
-      <Variant key="att_western_city_c" is_unique_settlement="False">
-        <Map x="0.08800001" y="0.578" />
-      </Variant>
-      <Variant key="att_western_city_a" is_unique_settlement="False">
-        <Map x="0.153" y="0.225" />
-      </Variant>
-    </Settlement>
-    <Settlement faction="Dorne" battle_type="settlement_unfortified">
-      <Variant key="att_western_city_b_minor" is_unique_settlement="False">
-        <Map x="0.37" y="0.381" />
-      </Variant>
-      <Variant key="att_western_city_a_minor" is_unique_settlement="False">
-        <Map x="0.167" y="0.332" overridden_x="0.167" overridden_y="0.332" />
-      </Variant>
-      <Variant key="att_western_city_c_minor" is_unique_settlement="False">
-        <Map x="0.07600001" y="0.471" />
-      </Variant>
-    </Settlement>
-    <Settlement faction="Essos" battle_type="settlement_standard">
-      <Variant key="att_western_city_c" is_unique_settlement="False">
-        <Map x="0.08800001" y="0.578" />
-      </Variant>
-      <Variant key="att_western_city_b" is_unique_settlement="False">
-        <Map x="0.238" y="0.324" />
-      </Variant>
-      <Variant key="att_western_city_a" is_unique_settlement="False">
-        <Map x="0.153" y="0.225" />
-      </Variant>
-    </Settlement>
-    <Settlement faction="Essos" battle_type="settlement_unfortified">
-      <Variant key="att_western_city_c_minor" is_unique_settlement="False">
-        <Map x="0.07600001" y="0.471" />
-      </Variant>
-      <Variant key="att_western_city_b_minor" is_unique_settlement="False">
-        <Map x="0.37" y="0.381" />
-      </Variant>
-      <Variant key="att_western_city_a_minor" is_unique_settlement="False">
-        <Map x="0.167" y="0.332" overridden_x="0.167" overridden_y="0.332" />
-      </Variant>
-    </Settlement>
-    <Settlement faction="House Velaryon" battle_type="settlement_standard">
-      <Variant key="att_sassanid_city_b" is_unique_settlement="False">
-        <Map x="0.882" y="0.455" />
-      </Variant>
-      <Variant key="att_sassanid_city_c" is_unique_settlement="False">
-        <Map x="0.72" y="0.875" />
-      </Variant>
-      <Variant key="att_sassanid_city_a" is_unique_settlement="False" besieged_deployment_zone_width="1200" besieged_deployment_zone_height="1200">
-        <Map x="0.872" y="0.596" />
-      </Variant>
-    </Settlement>
-    <Settlement faction="House Velaryon" battle_type="settlement_unfortified">
-      <Variant key="att_sassanid_city_a_minor" is_unique_settlement="False">
-        <Map x="0.719" y="0.6980001" />
-      </Variant>
-      <Variant key="att_sassanid_city_b_minor" is_unique_settlement="False">
-        <Map x="0.901" y="0.614" />
-      </Variant>
-      <Variant key="att_sassanid_city_c_minor" is_unique_settlement="False">
-        <Map x="0.767" y="0.521" />
-      </Variant>
-    </Settlement>
-    <Settlement faction="The Crownlands" battle_type="settlement_standard">
-      <Variant key="att_western_city_a" is_unique_settlement="False">
-        <Map x="0.153" y="0.225" />
-      </Variant>
-      <Variant key="att_western_city_b" is_unique_settlement="False">
-        <Map x="0.238" y="0.324" />
-      </Variant>
-      <Variant key="att_western_city_c" is_unique_settlement="False">
-        <Map x="0.08800001" y="0.578" />
-      </Variant>
-    </Settlement>
-    <Settlement faction="The Crownlands" battle_type="settlement_unfortified">
-      <Variant key="att_western_city_a_minor" is_unique_settlement="False">
-        <Map x="0.167" y="0.332" overridden_x="0.167" overridden_y="0.332" />
-      </Variant>
-      <Variant key="att_western_city_b_minor" is_unique_settlement="False">
-        <Map x="0.37" y="0.381" />
-      </Variant>
-      <Variant key="att_western_city_c_minor" is_unique_settlement="False">
-        <Map x="0.07600001" y="0.471" />
-      </Variant>
-    </Settlement>
-    <Settlement faction="The Iron Islands" battle_type="settlement_standard">
-      <Variant key="att_western_city_c" is_unique_settlement="False">
-        <Map x="0.08800001" y="0.578" />
-      </Variant>
-      <Variant key="att_western_city_a" is_unique_settlement="False">
-        <Map x="0.153" y="0.225" />
-      </Variant>
-      <Variant key="att_western_city_b" is_unique_settlement="False">
-        <Map x="0.238" y="0.324" />
-      </Variant>
-    </Settlement>
-    <Settlement faction="The Iron Islands" battle_type="settlement_unfortified">
-      <Variant key="att_western_city_b_minor" is_unique_settlement="False">
-        <Map x="0.37" y="0.381" />
-      </Variant>
-      <Variant key="att_western_city_a_minor" is_unique_settlement="False">
-        <Map x="0.167" y="0.332" overridden_x="0.167" overridden_y="0.332" />
-      </Variant>
-      <Variant key="att_western_city_c_minor" is_unique_settlement="False">
-        <Map x="0.07600001" y="0.471" />
-      </Variant>
-    </Settlement>
-    <Settlement faction="The Night's Watch" battle_type="settlement_standard">
-      <Variant key="att_nordic_city_b" is_unique_settlement="False">
-        <Map x="0.282" y="0.267" />
-      </Variant>
-      <Variant key="att_nordic_city_c" is_unique_settlement="False">
-        <Map x="0.352" y="0.262" />
-      </Variant>
-      <Variant key="att_nordic_city_a" is_unique_settlement="False">
-        <Map x="0.105" y="0.08800001" />
-      </Variant>
-    </Settlement>
-    <Settlement faction="The Night's Watch" battle_type="settlement_unfortified">
-      <Variant key="att_nordic_city_c_minor" is_unique_settlement="False">
-        <Map x="0.435" y="0.248" />
-      </Variant>
-      <Variant key="att_nordic_city_a_minor" is_unique_settlement="False">
-        <Map x="0.339" y="0.349" />
-      </Variant>
-      <Variant key="att_nordic_city_b_minor" is_unique_settlement="False">
-        <Map x="0.49" y="0.343" />
-      </Variant>
-    </Settlement>
-    <Settlement faction="The North" battle_type="settlement_standard">
-      <Variant key="att_western_city_b" is_unique_settlement="False">
-        <Map x="0.238" y="0.324" />
-      </Variant>
-      <Variant key="att_western_city_c" is_unique_settlement="False">
-        <Map x="0.08800001" y="0.578" />
-      </Variant>
-      <Variant key="att_western_city_a" is_unique_settlement="False">
-        <Map x="0.153" y="0.225" />
-      </Variant>
-    </Settlement>
-    <Settlement faction="The North" battle_type="settlement_unfortified">
-      <Variant key="att_western_city_c_minor" is_unique_settlement="False">
-        <Map x="0.07600001" y="0.471" />
-      </Variant>
-      <Variant key="att_western_city_b_minor" is_unique_settlement="False">
-        <Map x="0.37" y="0.381" />
-      </Variant>
-      <Variant key="att_western_city_a_minor" is_unique_settlement="False">
-        <Map x="0.167" y="0.332" overridden_x="0.167" overridden_y="0.332" />
-      </Variant>
-    </Settlement>
-    <Settlement faction="The Reach" battle_type="settlement_standard">
-      <Variant key="att_western_city_a" is_unique_settlement="False">
-        <Map x="0.153" y="0.225" />
-      </Variant>
-      <Variant key="att_western_city_b" is_unique_settlement="False">
-        <Map x="0.238" y="0.324" />
-      </Variant>
-      <Variant key="att_western_city_c" is_unique_settlement="False">
-        <Map x="0.08800001" y="0.578" />
-      </Variant>
-    </Settlement>
-    <Settlement faction="The Reach" battle_type="settlement_unfortified">
-      <Variant key="att_western_city_a_minor" is_unique_settlement="False">
-        <Map x="0.167" y="0.332" overridden_x="0.167" overridden_y="0.332" />
-      </Variant>
-      <Variant key="att_western_city_c_minor" is_unique_settlement="False">
-        <Map x="0.07600001" y="0.471" />
-      </Variant>
-      <Variant key="att_western_city_b_minor" is_unique_settlement="False">
-        <Map x="0.37" y="0.381" />
-      </Variant>
-    </Settlement>
-    <Settlement faction="The Riverlands" battle_type="settlement_standard">
-      <Variant key="att_western_city_c" is_unique_settlement="False">
-        <Map x="0.08800001" y="0.578" />
-      </Variant>
-      <Variant key="att_western_city_a" is_unique_settlement="False">
-        <Map x="0.153" y="0.225" />
-      </Variant>
-      <Variant key="att_western_city_b" is_unique_settlement="False">
-        <Map x="0.238" y="0.324" />
-      </Variant>
-    </Settlement>
-    <Settlement faction="The Riverlands" battle_type="settlement_unfortified">
-      <Variant key="att_western_city_a_minor" is_unique_settlement="False">
-        <Map x="0.167" y="0.332" overridden_x="0.167" overridden_y="0.332" />
-      </Variant>
-      <Variant key="att_western_city_c_minor" is_unique_settlement="False">
-        <Map x="0.07600001" y="0.471" />
-      </Variant>
-      <Variant key="att_western_city_b_minor" is_unique_settlement="False">
-        <Map x="0.37" y="0.381" />
-      </Variant>
-    </Settlement>
-    <Settlement faction="The Stormlands" battle_type="settlement_standard">
-      <Variant key="att_western_city_b" is_unique_settlement="False">
-        <Map x="0.238" y="0.324" />
-      </Variant>
-      <Variant key="att_western_city_c" is_unique_settlement="False">
-        <Map x="0.08800001" y="0.578" />
-      </Variant>
-      <Variant key="att_western_city_a" is_unique_settlement="False">
-        <Map x="0.153" y="0.225" />
-      </Variant>
-    </Settlement>
-    <Settlement faction="The Stormlands" battle_type="settlement_unfortified">
-      <Variant key="att_western_city_a_minor" is_unique_settlement="False">
-        <Map x="0.167" y="0.332" overridden_x="0.167" overridden_y="0.332" />
-      </Variant>
-      <Variant key="att_western_city_b_minor" is_unique_settlement="False">
-        <Map x="0.37" y="0.381" />
-      </Variant>
-      <Variant key="att_western_city_c_minor" is_unique_settlement="False">
-        <Map x="0.07600001" y="0.471" />
-      </Variant>
-    </Settlement>
-    <Settlement faction="The Vale" battle_type="settlement_standard">
-      <Variant key="att_western_city_c" is_unique_settlement="False">
-        <Map x="0.08800001" y="0.578" />
-      </Variant>
-      <Variant key="att_western_city_b" is_unique_settlement="False">
-        <Map x="0.238" y="0.324" />
-      </Variant>
-      <Variant key="att_western_city_a" is_unique_settlement="False">
-        <Map x="0.153" y="0.225" />
-      </Variant>
-    </Settlement>
-    <Settlement faction="The Vale" battle_type="settlement_unfortified">
-      <Variant key="att_western_city_a_minor" is_unique_settlement="False">
-        <Map x="0.167" y="0.332" overridden_x="0.167" overridden_y="0.332" />
-      </Variant>
-      <Variant key="att_western_city_b_minor" is_unique_settlement="False">
-        <Map x="0.37" y="0.381" />
-      </Variant>
-      <Variant key="att_western_city_c_minor" is_unique_settlement="False">
-        <Map x="0.07600001" y="0.471" />
-      </Variant>
-    </Settlement>
-    <Settlement faction="The Westerlands" battle_type="settlement_standard">
-      <Variant key="att_western_city_b" is_unique_settlement="False">
-        <Map x="0.238" y="0.324" />
-      </Variant>
-      <Variant key="att_western_city_c" is_unique_settlement="False">
-        <Map x="0.08800001" y="0.578" />
-      </Variant>
-      <Variant key="att_western_city_a" is_unique_settlement="False">
-        <Map x="0.153" y="0.225" />
-      </Variant>
-    </Settlement>
-    <Settlement faction="The Westerlands" battle_type="settlement_unfortified">
-      <Variant key="att_western_city_a_minor" is_unique_settlement="False">
-        <Map x="0.167" y="0.332" overridden_x="0.167" overridden_y="0.332" />
-      </Variant>
-      <Variant key="att_western_city_b_minor" is_unique_settlement="False">
-        <Map x="0.37" y="0.381" />
-      </Variant>
-      <Variant key="att_western_city_c_minor" is_unique_settlement="False">
-        <Map x="0.07600001" y="0.471" />
-      </Variant>
-    </Settlement>
-  </Settlement_Maps>
+  <Map name="terrain/battles/main_attila_map/" />
+  <Settlement_Maps_Unique>
+    <Settlement_Unique battle_type="settlement_standard">
+      <Variant key="att_eastern_city_port_constantinople">
+        <Map x="0.51" y="0.485" />
+      </Variant>
+    </Settlement_Unique>
+    <Settlement_Unique battle_type="settlement_standard">
+      <Variant key="att_sassanid_city_ctesiphon">
+        <Map x="0.721" y="0.654" />
+      </Variant>
+    </Settlement_Unique>
+    <Settlement_Unique battle_type="settlement_standard">
+      <Variant key="att_western_city_port_ravenna">
+        <Map x="0.322" y="0.426" />
+      </Variant>
+    </Settlement_Unique>
+    <Settlement_Unique battle_type="settlement_standard">
+      <Variant key="att_western_city_rome">
+        <Map x="0.307" y="0.473" />
+      </Variant>
+    </Settlement_Unique>
+  </Settlement_Maps_Unique>
+  <Siege_Engines>
+    <Siege_Engine key="battering_ram_heavy" type="battering_rams" siege_effort_cost="4" />
+    <Siege_Engine key="battering_ram_light" type="battering_rams" siege_effort_cost="3" />
+    <Siege_Engine key="battering_ram_medium" type="battering_rams" siege_effort_cost="4" />
+    <Siege_Engine key="siege_ladder_15m" type="15m_siege_ladders" siege_effort_cost="3" />
+    <Siege_Engine key="siege_ladder_8m" type="8m_siege_ladders" siege_effort_cost="3" />
+    <Siege_Engine key="siege_tower_15m_heavy" type="15m_siege_towers" siege_effort_cost="7" />
+    <Siege_Engine key="siege_tower_15m_light" type="15m_siege_towers" siege_effort_cost="5" />
+    <Siege_Engine key="siege_tower_15m_medium" type="15m_siege_towers" siege_effort_cost="6" />
+    <Siege_Engine key="siege_tower_8m_heavy" type="8m_siege_towers" siege_effort_cost="7" />
+    <Siege_Engine key="siege_tower_8m_light" type="8m_siege_towers" siege_effort_cost="5" />
+    <Siege_Engine key="siege_tower_8m_medium" type="8m_siege_towers" siege_effort_cost="6" />
+  </Siege_Engines>
 </Terrains>
