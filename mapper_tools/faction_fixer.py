@@ -903,7 +903,7 @@ def main():
     parser.add_argument("--llm-api-key", help="The API key for the LLM service.")
     parser.add_argument("--llm-cache-dir", default="mapper_tools/llm_cache", help="Directory for LLM cache files.")
     parser.add_argument("--llm-cache-tag", help="A unique tag for partitioning the LLM cache (e.g., 'AGOT'). If set without --use-llm, enables cache-only mode.")
-    parser.add_argument("--llm-batch-size", type=int, default=8, help="The maximum number of unit replacement requests to send to the LLM in a single batch.")
+    parser.add_argument("--llm-batch-size", type=int, default=50, help="The maximum number of unit replacement requests to send to the LLM in a single batch.")
     parser.add_argument("--llm-force-refresh", action='store_true', help="If set, the LLM will ignore existing cache entries for the current run and re-query for all requests, but will still save new results to the cache.")
     parser.add_argument("--clear-llm-cache-units-file", help="Path to a text file containing unit keys to recache, one per line. LLM cache entries for these specific units will be cleared and re-queried.")
     parser.add_argument("--llm-clear-null-cache", action='store_true', help="If set, clears all 'null' entries from all LLM cache files before processing.")

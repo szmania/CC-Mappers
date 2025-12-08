@@ -129,6 +129,15 @@ def run_llm_unit_assignment_pass(llm_helper, all_llm_failures_to_process, time_p
         print(f"  -> WARNING: Number of LLM requests ({len(all_llm_failures_to_process)}) exceeds threshold of {MAX_LLM_FAILURES_THRESHOLD}.")
         print("  -> This usually indicates a problem with the input data (e.g., TSV files) or configuration, causing the high-confidence pass to fail for most units.")
         print("  -> Skipping LLM pass to prevent hanging. Proceeding directly to low-confidence procedural fallback.")
+        
+        # Log detailed information about the failures to help diagnose
+        failure_types = defaultdict(int)
+        for failure in all_llm_failures_to_process:
+            tag_name = failure.get('tag_name', 'unknown')
+            failure_types[tag_name] += 1
+        
+        print(f"  -> Failure breakdown by type: {dict(failure_types)}")
+        
         return 0, all_llm_failures_to_process
 
     llm_replacements_made = 0
@@ -203,18 +212,29 @@ def run_llm_unit_assignment_pass(llm_helper, all_llm_failures_to_process, time_p
 
     network_unit_results = {}
     if uncached_unit_requests and llm_helper.network_calls_enabled:
-        unit_batches = [uncached_unit_requests[i:i + llm_batch_size] for i in range(0, len(uncached_unit_requests), llm_batch_size)]
-        print(f"  -> Submitting {len(uncached_unit_requests)} unit requests to LLM in {len(unit_batches)} batches using {llm_threads} threads...")
-        with ThreadPoolExecutor(max_workers=llm_threads) as executor:
-            future_to_batch = {executor.submit(llm_helper.get_batch_unit_replacements, batch, time_period_context): batch for batch in unit_batches}
-            processed_requests = 0
-            for future in as_completed(future_to_batch):
-                processed_requests += len(future_to_batch[future])
-                print(f"  -> LLM unit progress: {processed_requests}/{len(uncached_unit_requests)} requests completed.")
-                try:
-                    network_unit_results.update(future.result())
-                except Exception as exc:
-                    print(f"  -> ERROR: A unit batch generated an exception: {exc}")
+        # Group requests by maa_type for more efficient processing
+        requests_by_type = defaultdict(list)
+        for req in uncached_unit_requests:
+            if req.get('maa_type'):
+                requests_by_type[req['maa_type']].append(req)
+            else:
+                requests_by_type['other'].append(req)
+    
+        # Process batches by type for better LLM efficiency
+        network_unit_results = {}
+        for req_type, type_requests in requests_by_type.items():
+            type_batches = [type_requests[i:i + llm_batch_size] for i in range(0, len(type_requests), llm_batch_size)]
+            print(f"  -> Submitting {len(type_requests)} '{req_type}' requests to LLM in {len(type_batches)} batches using {llm_threads} threads...")
+            with ThreadPoolExecutor(max_workers=llm_threads) as executor:
+                future_to_batch = {executor.submit(llm_helper.get_batch_unit_replacements, batch, time_period_context): batch for batch in type_batches}
+                processed_requests = 0
+                for future in as_completed(future_to_batch):
+                    processed_requests += len(future_to_batch[future])
+                    print(f"  -> LLM '{req_type}' progress: {processed_requests}/{len(type_requests)} requests completed.")
+                    try:
+                        network_unit_results.update(future.result())
+                    except Exception as exc:
+                        print(f"  -> ERROR: A '{req_type}' batch generated an exception: {exc}")
     final_unit_results = {**cached_unit_results, **network_unit_results}
 
     # --- Levy Request Pipeline ---
@@ -225,18 +245,26 @@ def run_llm_unit_assignment_pass(llm_helper, all_llm_failures_to_process, time_p
 
     network_levy_results = {}
     if uncached_levy_requests and llm_helper.network_calls_enabled:
-        levy_batches = [uncached_levy_requests[i:i + llm_batch_size] for i in range(0, len(uncached_levy_requests), llm_batch_size)]
-        print(f"  -> Submitting {len(uncached_levy_requests)} levy requests to LLM in {len(levy_batches)} batches using {llm_threads} threads...")
-        with ThreadPoolExecutor(max_workers=llm_threads) as executor:
-            future_to_batch = {executor.submit(llm_helper.get_batch_levy_compositions, batch, time_period_context): batch for batch in levy_batches}
-            processed_requests = 0
-            for future in as_completed(future_to_batch):
-                processed_requests += len(future_to_batch[future])
-                print(f"  -> LLM levy progress: {processed_requests}/{len(uncached_levy_requests)} requests completed.")
-                try:
-                    network_levy_results.update(future.result())
-                except Exception as exc:
-                    print(f"  -> ERROR: A levy batch generated an exception: {exc}")
+        # Group levy requests by faction for more efficient processing
+        levy_requests_by_faction = defaultdict(list)
+        for req in uncached_levy_requests:
+            levy_requests_by_faction[req['faction']].append(req)
+    
+        # Process batches by faction for better LLM efficiency
+        network_levy_results = {}
+        for faction_name, faction_requests in levy_requests_by_faction.items():
+            faction_batches = [faction_requests[i:i + llm_batch_size] for i in range(0, len(faction_requests), llm_batch_size)]
+            print(f"  -> Submitting {len(faction_requests)} levy requests for faction '{faction_name}' to LLM in {len(faction_batches)} batches using {llm_threads} threads...")
+            with ThreadPoolExecutor(max_workers=llm_threads) as executor:
+                future_to_batch = {executor.submit(llm_helper.get_batch_levy_compositions, batch, time_period_context): batch for batch in faction_batches}
+                processed_requests = 0
+                for future in as_completed(future_to_batch):
+                    processed_requests += len(future_to_batch[future])
+                    print(f"  -> LLM levy progress for '{faction_name}': {processed_requests}/{len(faction_requests)} requests completed.")
+                    try:
+                        network_levy_results.update(future.result())
+                    except Exception as exc:
+                        print(f"  -> ERROR: A levy batch for '{faction_name}' generated an exception: {exc}")
     final_levy_results = {**cached_levy_results, **network_levy_results}
 
     # 4. Apply results and collect final failures
@@ -402,24 +430,31 @@ def run_llm_roster_review_pass(root, llm_helper, time_period_context, llm_thread
 
         network_llm_results = {}
         if uncached_requests:
-            all_batches = [uncached_requests[i:i + llm_batch_size] for i in range(0, len(uncached_requests), llm_batch_size)]
-            print(f"  -> Submitting {len(uncached_requests)} review requests to LLM in {len(all_batches)} batches using {llm_threads} threads...")
-
-            with ThreadPoolExecutor(max_workers=llm_threads) as executor:
-                future_to_batch = {
-                    executor.submit(llm_helper.get_batch_roster_reviews, batch, time_period_context): batch
-                    for batch in all_batches
-                }
-                processed_requests = 0
-                for future in as_completed(future_to_batch):
-                    processed_requests += len(future_to_batch[future])
-                    print(f"  -> LLM review progress: {processed_requests}/{len(uncached_requests)} requests completed.")
-                    try:
-                        batch_results = future.result()
-                        if batch_results:
-                            network_llm_results.update(batch_results)
-                    except Exception as exc:
-                        print(f"  -> ERROR: A review batch generated an exception: {exc}")
+            # Group review requests by faction for more efficient processing
+            review_requests_by_faction = defaultdict(list)
+            for req in uncached_requests:
+                review_requests_by_faction[req['faction']].append(req)
+    
+            # Process batches by faction for better LLM efficiency
+            network_llm_results = {}
+            for faction_name, faction_requests in review_requests_by_faction.items():
+                faction_batches = [faction_requests[i:i + llm_batch_size] for i in range(0, len(faction_requests), llm_batch_size)]
+                print(f"  -> Submitting {len(faction_requests)} review requests for faction '{faction_name}' to LLM in {len(faction_batches)} batches using {llm_threads} threads...")
+                with ThreadPoolExecutor(max_workers=llm_threads) as executor:
+                    future_to_batch = {
+                        executor.submit(llm_helper.get_batch_roster_reviews, batch, time_period_context): batch
+                        for batch in faction_batches
+                    }
+                    processed_requests = 0
+                    for future in as_completed(future_to_batch):
+                        processed_requests += len(future_to_batch[future])
+                        print(f"  -> LLM review progress for '{faction_name}': {processed_requests}/{len(faction_requests)} requests completed.")
+                        try:
+                            batch_results = future.result()
+                            if batch_results:
+                                network_llm_results.update(batch_results)
+                        except Exception as exc:
+                            print(f"  -> ERROR: A review batch for '{faction_name}' generated an exception: {exc}")
 
         # 5. Apply corrections and collect failures for next attempt
         final_results = {**cached_results, **network_llm_results}
