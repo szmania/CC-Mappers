@@ -342,6 +342,13 @@ def run_llm_roster_review_pass(root, llm_helper, time_period_context, llm_thread
         print("ERROR: LLM Roster Review requires network calls to be enabled.")
         return 0
 
+    # Check threshold for roster review as well
+    if len(initial_review_requests) > MAX_LLM_FAILURES_THRESHOLD:
+        print(f"\n--- WARNING: Skipping LLM Roster Review Pass ---")
+        print(f"Number of review requests ({len(initial_review_requests)}) exceeds threshold of {MAX_极LLM_FAILURES_THRESHOLD}.")
+        print("This indicates a potential configuration issue or extremely large mod.")
+        return 0
+
     print("\n--- Starting LLM Roster Review Pass ---")
     
     MAX_REVIEW_RETRIES = 3
