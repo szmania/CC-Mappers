@@ -75,8 +75,7 @@ def update_subcultures_only(factions_xml_path, llm_helper, time_period_context, 
 
     # Cache faction elements for single-pass processing
     all_faction_elements = list(root.findall('Faction'))
-    # faction_by_name_cache is not directly used in this function, but kept for consistency if needed later.
-    # faction_by_name_cache = {f.get('name'): f for f in all_faction_elements if f.get('name')}
+    faction_by_name_cache = {f.get('name'): f for f in all_faction_elements if f.get('name')}
 
     llm_subcultures_assigned_count = 0
     if llm_helper and not no_subculture:
@@ -346,7 +345,7 @@ def process_units_xml(units_xml_path, categorized_units, all_units, general_unit
     # --- NEW: Consolidated Initial XML Cleaning Pass ---
     print("\nRunning initial XML cleaning and validation pass...")
     (invalid_maa_removed_count, duplicate_maa_removed_count, maa_levy_conflicts_fixed,
-     excluded_keys_removed_count, stale_keys_removed_count, porcentage_rename_count) = _run_initial_xml_cleaning_pass(root, excluded_units_set, all_units)
+     excluded_keys_removed_count, stale_keys_removed_count, porcentage_rename_count) = _run_initial_xml_cleaning_pass(root, excluded_units_set, all_units, all_faction_elements)
 
     # NEW: Conditionally remove keys from procedurally-assigned units to force re-evaluation
     procedural_keys_removed_count = 0
@@ -371,19 +370,19 @@ def process_units_xml(units_xml_path, categorized_units, all_units, general_unit
     # NEW: Remove explicitly excluded factions
     removed_excluded_factions_count = 0
     if excluded_factions:
-        removed_excluded_factions_count = faction_xml_utils.remove_excluded_factions(root, excluded_factions, screen_name_to_faction_key_map)
+        removed_excluded_factions_count = faction_xml_utils.remove_excluded_factions(root, excluded_factions, screen_name_to_faction_key_map, all_faction_elements)
         if removed_excluded_factions_count > 0:
             _recache_factions() # Re-cache after removals
 
     # NEW: Prune factions not in Cultures.xml (NOW runs after name correction)
-    factions_removed_count = faction_xml_utils.remove_factions_not_in_cultures(root, culture_factions, screen_name_to_faction_key_map)
+    factions_removed_count = faction_xml_utils.remove_factions_not_in_cultures(root, culture_factions, screen_name_to_faction_key_map, all_faction_elements)
     if factions_removed_count > 0:
         _recache_factions() # Re-cache after removals
 
     # NEW: Prune factions present in main mod that have no new MenAtArm types
     factions_removed_from_main_mod, removed_faction_names_for_sync = 0, set()
     if is_submod_mode:
-        factions_removed_from_main_mod, removed_faction_names_for_sync = faction_xml_utils.remove_factions_in_main_mod(root, main_mod_faction_maa_map)
+        factions_removed_from_main_mod, removed_faction_names_for_sync = faction_xml_utils.remove_factions_in_main_mod(root, main_mod_faction_maa_map, all_faction_elements)
         if factions_removed_from_main_mod > 0:
             _recache_factions() # Re-cache after removals
 
@@ -391,7 +390,7 @@ def process_units_xml(units_xml_path, categorized_units, all_units, general_unit
     if default_created > 0:
         _recache_factions() # Re-cache after addition
 
-    factions_added = faction_xml_utils.sync_factions_from_cultures(root, culture_factions, explicitly_removed_factions=removed_faction_names_for_sync)
+    factions_added = faction_xml_utils.sync_factions_from_cultures(root, culture_factions, explicitly_removed_factions=removed_faction_names_for_sync, all_faction_elements=all_faction_elements)
     if factions_added > 0:
         _recache_factions() # Re-cache after additions
 
@@ -649,14 +648,14 @@ def process_units_xml(units_xml_path, categorized_units, all_units, general_unit
     )
 
     # NEW: Merge duplicate factions AFTER adding and renaming.
-    merged_duplicates_count = faction_xml_utils.merge_duplicate_factions(root, screen_name_to_faction_key_map)
+    merged_duplicates_count = faction_xml_utils.merge_duplicate_factions(root, screen_name_to_faction_key_map, all_faction_elements)
     if merged_duplicates_count > 0:
         _recache_factions() # Re-cache after removals
 
     # NEW: Re-run duplicate removal for MenAtArm after merging factions
     if merged_duplicates_count > 0:
         print(f"\nRe-running duplicate MenAtArm removal after merging {merged_duplicates_count} factions...")
-        post_merge_maa_removed_count = faction_xml_utils.remove_duplicate_men_at_arm_tags(root)
+        post_merge_maa_removed_count = faction_xml_utils.remove_duplicate_men_at_arm_tags(root, all_faction_elements)
         if post_merge_maa_removed_count > 0:
             duplicate_maa_removed_count += post_merge_maa_removed_count
 
