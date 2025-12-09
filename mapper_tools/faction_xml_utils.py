@@ -505,45 +505,56 @@ def get_cached_faction_working_pool(faction_name, faction_pool_cache, screen_nam
     Caches the unfiltered tiered pools.
     Returns the combined working pool, log string, and the unfiltered tiered pools.
     """
-    cache_key = faction_name
+    # Create a comprehensive cache key that includes exclusions and required classes
+    # This ensures different filtering requirements get different cached results
+    cache_key_parts = [faction_name]
+    if excluded_units_set:
+        cache_key_parts.append("excl:" + ",".join(sorted(excluded_units_set)))
+    if required_classes and unit_to_class_map:
+        cache_key_parts.append("classes:" + ",".join(sorted(required_classes)))
+    cache_key = "|".join(cache_key_parts)
 
     if cache_key not in faction_pool_cache:
-        # Generate unfiltered tiered pools
+        # Generate unfiltered tiered pools without any exclusions or class filtering
         unfiltered_tiered_pools, tiered_log_strings = get_all_tiered_pools(
             faction_name, faction_pool_cache, screen_name_to_faction_key_map, faction_key_to_units_map,
             faction_to_subculture_map, subculture_to_factions_map, faction_key_to_screen_name_map,
-            culture_to_faction_map, excluded_units_set, faction_to_heritage_map,
+            culture_to_faction_map, set(), faction_to_heritage_map,  # Use empty excluded_units_set for base cache
             heritage_to_factions_map, faction_to_heritages_map
         )
-        faction_pool_cache[cache_key] = (unfiltered_tiered_pools, tiered_log_strings)
+        
+        # Apply exclusions and class filtering to create the final working pool
+        working_pool = set()
+        filtered_log_strings = []
+        for i, pool in enumerate(unfiltered_tiered_pools):
+            filtered_pool = pool
+            if excluded_units_set:
+                filtered_pool = filtered_pool - excluded_units_set
+            if filtered_pool:
+                working_pool.update(filtered_pool)
+                filtered_log_strings.append(tiered_log_strings[i])
+
+        # Apply required_classes filtering if specified
+        if required_classes and unit_to_class_map:
+            initial_size = len(working_pool)
+            filtered_by_class_pool = set()
+            for unit_key in working_pool:
+                unit_class = unit_to_class_map.get(unit_key)
+                if unit_class and unit_class in required_classes:
+                    filtered_by_class_pool.add(unit_key)
+            working_pool = filtered_by_class_pool
+            if len(working_pool) < initial_size:
+                print(f"    -> {log_prefix} Further filtered pool by required classes {required_classes}. Reduced from {initial_size} to {len(working_pool)} units.")
+
+        # Cache the final result
+        faction_pool_cache[cache_key] = (working_pool, "; ".join(filtered_log_strings))
     else:
-        unfiltered_tiered_pools, tiered_log_strings = faction_pool_cache[cache_key]
-
-    # Apply exclusions dynamically
-    working_pool = set()
-    filtered_log_strings = []
-    for i, pool in enumerate(unfiltered_tiered_pools):
-        filtered_pool = pool - excluded_units_set
-        if filtered_pool:
-            working_pool.update(filtered_pool)
-            filtered_log_strings.append(tiered_log_strings[i])
-
-    # Apply required_classes filtering if specified
-    if required_classes and unit_to_class_map:
-        initial_size = len(working_pool)
-        filtered_by_class_pool = set()
-        for unit_key in working_pool:
-            unit_class = unit_to_class_map.get(unit_key)
-            if unit_class and unit_class in required_classes:
-                filtered_by_class_pool.add(unit_key)
-        working_pool = filtered_by_class_pool
-        if len(working_pool) < initial_size:
-            print(f"    -> {log_prefix} Further filtered pool by required classes {required_classes}. Reduced from {initial_size} to {len(working_pool)} units.")
-
+        working_pool, filtered_log_strings_combined = faction_pool_cache[cache_key]
+        filtered_log_strings = filtered_log_strings_combined.split("; ")
 
     log_faction_str = f"{log_prefix} Faction '{faction_name}' (Pools: {'; '.join(filtered_log_strings)})"
 
-    return working_pool, log_faction_str, unfiltered_tiered_pools
+    return working_pool, log_faction_str, None  # Return None for unfiltered_tiered_pools as they're not needed
 
 
 def conditionally_remove_procedural_keys(root, llm_helper, tier, faction_pool_cache, screen_name_to_faction_key_map,
