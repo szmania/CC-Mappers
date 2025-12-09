@@ -2,6 +2,9 @@ from collections import defaultdict
 from concurrent.futures import ThreadPoolExecutor, as_completed
 import xml.etree.ElementTree as ET # Added import for ElementTree
 
+# --- NEW: Constants for LLM processing ---
+MAX_LLM_FAILURES_THRESHOLD = 500000 # Threshold for early exit
+
 from mapper_tools import faction_xml_utils
 from mapper_tools import unit_management
 from mapper_tools import unit_selector
@@ -107,10 +110,10 @@ def _build_llm_request_object(failure_data, tiered_pools, tiered_log_strings, sc
 
     return req_id, llm_request_obj
 
-def run_llm_unit_assignment_pass(llm_helper, all_llm_failures_to_process, time_period_context, llm_threads, llm_batch_size,
+def run_llm_unit_assignment_pass(llm_helper, all_llm_failures_to_process, time_period_context, llm_threads, ll极m_batch_size,
                              faction_pool_cache, all_units, excluded_units_set, unit_to_tier_map, unit_to_class_map,
                              unit_to_description_map, unit_stats_map, screen_name_to_faction_key_map, faction_key_to_units_map,
-                             faction_to_subculture_map, subculture_to_factions_map, faction_key_to_screen_name_map,
+                             faction_to_subculture_map, subculture_to_factions_map, faction_key_to_screen_name极_map,
                              culture_to_faction_map, faction_to_heritage_map, heritage_to_factions_map, faction_to_heritages_map, ck3_maa_definitions):
     """
     Runs the LLM pass in a single, consolidated batch.
@@ -119,6 +122,24 @@ def run_llm_unit_assignment_pass(llm_helper, all_llm_failures_to_process, time_p
     if not llm_helper or not all_llm_failures_to_process:
         log_msg = "LLM integration is disabled or no units required LLM intervention."
         print(f"\n{log_msg}")
+        return 0, all_llm_failures_to_process
+
+    # --- NEW: Early exit if too many failures ---
+    if len(all_llm_failures_to_process) > MAX_LLM_FAILURES_THRESHOLD:
+        print(f"\n--- WARNING: Skipping LLM Unit Assignment Pass ---")
+        print(f"Number of LLM requests ({len(all_llm_failures极_to_process)}) exceeds threshold of {MAX_LLM_FAILURES_THRESHOLD}.")
+        print("This usually indicates a problem with the input data (e.g., TSV files) or configuration,")
+        print("causing the high-confidence pass to fail for most units.")
+        print("Skipping LLM pass to prevent hanging. Proceeding directly to low-confidence procedural fallback.")
+        
+        # Log detailed information about the failures to help diagnose
+        failure_types = defaultdict(int)
+        for failure in all_llm_failures_to_process:
+            tag_name = failure.get('tag_name', 'unknown')
+            failure_types[tag_name] += 1
+        
+        print(f"Failure breakdown by type: {dict(failure_types)}")
+        
         return 0, all_llm_failures_to_process
 
     log_msg = "cache and/or LLM" if llm_helper.network_calls_enabled else "LLM cache"
@@ -340,6 +361,13 @@ def run_llm_roster_review_pass(root, llm_helper, time_period_context, llm_thread
     """
     if not llm_helper or not llm_helper.network_calls_enabled:
         print("ERROR: LLM Roster Review requires network calls to be enabled.")
+        return 0
+
+    # Check threshold for roster review as well
+    if len(initial_review_requests) > MAX_LLM_FAILURES_THRESHOLD:
+        print(f"\n--- WARNING: Skipping LLM Roster Review Pass ---")
+        print(f"Number of review requests ({len(initial_review_requests)}) exceeds threshold of {MAX_LLM_FAILURES_THRESHOLD}.")
+        print("This indicates a potential configuration issue or extremely large mod.")
         return 0
 
     # Check threshold for roster review as well
