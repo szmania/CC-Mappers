@@ -142,6 +142,24 @@ def run_llm_unit_assignment_pass(llm_helper, all_llm_failures_to_process, time_p
         
         return 0, all_llm_failures_to_process
 
+    # --- NEW: Early exit if too many failures ---
+    if len(all_llm_failures_to_process) > MAX_LLM_FAILURES_THRESHOLD:
+        print(f"\n--- WARNING: Skipping LLM Unit Assignment Pass ---")
+        print(f"Number of LLM requests ({len(all_llm_failures_to_process)}) exceeds threshold of {MAX_LLM_FAILURES_THRESHOLD}.")
+        print("This usually indicates a problem with the input data (e.g., TSV files) or configuration,")
+        print("causing the high-confidence pass to fail for most units.")
+        print("Skipping LLM pass to prevent hanging. Proceeding directly to low-confidence procedural fallback.")
+        
+        # Log detailed information about the failures to help diagnose
+        failure_types = defaultdict(int)
+        for failure in all_llm_failures_to_process:
+            tag_name = failure.get('tag_name', 'unknown')
+            failure_types[tag_name] += 1
+        
+        print(f"Failure breakdown by type: {dict(failure_types)}")
+        
+        return 0, all_llm_failures_to_process
+
     log_msg = "cache and/or LLM" if llm_helper.network_calls_enabled else "LLM cache"
     print(f"\n--- Running Single-Pass LLM Unit Assignment for {len(all_llm_failures_to_process)} units using {log_msg} ---")
 
