@@ -264,38 +264,28 @@ def run_llm_unit_assignment_pass(llm_helper, all_llm_failures_to_process, time_p
         if len(deduplicated_requests) < len(uncached_unit_requests):
             print(f"  -> Deduplication reduced requests from {len(uncached_unit_requests)} to {len(deduplicated_requests)}")
         
-        # Group requests by faction culture for more efficient processing
-        requests_by_culture = defaultdict(list)
+        # Group requests by request type for more efficient processing
+        requests_by_type = defaultdict(list)
         for req in deduplicated_requests:
-            faction_name = req.get('faction')
-            # Try to determine culture from various sources
-            culture = None
-            if faction_name and faction_to_json_map:
-                json_data = faction_to_json_map.get(faction_name)
-                if json_data:
-                    culture = json_data.get('culture')
-            if not culture and faction_name and faction_culture_map:
-                culture = faction_culture_map.get(faction_name)
-            
-            culture_key = culture or 'unknown'
-            requests_by_culture[culture_key].append(req)
+            request_type = req.get('tag_name')
+            requests_by_type[request_type].append(req)
         
-        # Process batches by culture for better LLM efficiency
+        # Process batches by type for better LLM efficiency
         network_unit_results = {}
-        for culture_key, culture_requests in requests_by_culture.items():
+        for request_type, type_requests in requests_by_type.items():
             # Use larger batch size for better efficiency
-            culture_batches = [culture_requests[i:i + llm_batch_size] for i in range(0, len(culture_requests), llm_batch_size)]
-            print(f"  -> Submitting {len(culture_requests)} '{culture_key}' culture requests to LLM in {len(culture_batches)} batches using {llm_threads} threads...")
+            type_batches = [type_requests[i:i + llm_batch_size] for i in range(0, len(type_requests), llm_batch_size)]
+            print(f"  -> Submitting {len(type_requests)} '{request_type}' requests to LLM in {len(type_batches)} batches using {llm_threads} threads...")
             with ThreadPoolExecutor(max_workers=llm_threads) as executor:
-                future_to_batch = {executor.submit(llm_helper.get_batch_unit_replacements, batch, time_period_context): batch for batch in culture_batches}
+                future_to_batch = {executor.submit(llm_helper.get_batch_unit_replacements, batch, time_period_context): batch for batch in type_batches}
                 processed_requests = 0
                 for future in as_completed(future_to_batch):
                     processed_requests += len(future_to_batch[future])
-                    print(f"  -> LLM '{culture_key}' culture progress: {processed_requests}/{len(culture_requests)} requests completed.")
+                    print(f"  -> LLM '{request_type}' progress: {processed_requests}/{len(type_requests)} requests completed.")
                     try:
                         network_unit_results.update(future.result())
                     except Exception as exc:
-                        print(f"  -> ERROR: A '{culture_key}' culture batch generated an exception: {exc}")
+                        print(f"  -> ERROR: A '{request_type}' batch generated an exception: {exc}")
     final_unit_results = {**cached_unit_results, **network_unit_results}
 
     # --- Levy Request Pipeline ---
@@ -306,14 +296,27 @@ def run_llm_unit_assignment_pass(llm_helper, all_llm_failures_to_process, time_p
 
     network_levy_results = {}
     if uncached_levy_requests and llm_helper.network_calls_enabled:
+        # Remove duplicate levy requests
+        unique_levy_requests = {}
+        for req in uncached_levy_requests:
+            # Create a unique key based on the request content to deduplicate
+            req_key = (req.get('faction'), req.get('tier'), tuple(req.get('available_levy_categories', [])))
+            if req_key not in unique_levy_requests:
+                unique_levy_requests[req_key] = req
+        
+        deduplicated_levy_requests = list(unique_levy_requests.values())
+        if len(deduplicated_levy_requests) < len(uncached_levy_requests):
+            print(f"  -> Deduplication reduced levy requests from {len(uncached_levy_requests)} to {len(deduplicated_levy_requests)}")
+        
         # Group levy requests by faction for more efficient processing
         levy_requests_by_faction = defaultdict(list)
-        for req in uncached_levy_requests:
+        for req in deduplicated_levy_requests:
             levy_requests_by_faction[req['faction']].append(req)
     
         # Process batches by faction for better LLM efficiency
         network_levy_results = {}
         for faction_name, faction_requests in levy_requests_by_faction.items():
+            # Use larger batch size for better efficiency
             faction_batches = [faction_requests[i:i + llm_batch_size] for i in range(0, len(faction_requests), llm_batch_size)]
             print(f"  -> Submitting {len(faction_requests)} levy requests for faction '{faction_name}' to LLM in {len(faction_batches)} batches using {llm_threads} threads...")
             with ThreadPoolExecutor(max_workers=llm_threads) as executor:
