@@ -75,7 +75,8 @@ def update_subcultures_only(factions_xml_path, llm_helper, time_period_context, 
 
     # Cache faction elements for single-pass processing
     all_faction_elements = list(root.findall('Faction'))
-    faction_by_name_cache = {f.get('name'): f for f in all_faction_elements if f.get('name')}
+    # faction_by_name_cache is not directly used in this function, but kept for consistency if needed later.
+    # faction_by_name_cache = {f.get('name'): f for f in all_faction_elements if f.get('name')}
 
     llm_subcultures_assigned_count = 0
     if llm_helper and not no_subculture:
@@ -415,7 +416,8 @@ def process_units_xml(units_xml_path, categorized_units, all_units, general_unit
         faction_to_heritage_map=faction_to_heritage_map, heritage_to_factions_map=heritage_to_factions_map, faction_to_heritages_map=faction_to_heritages_map, # Passed heritage maps
         first_pass_threshold=first_pass_threshold, # Pass the new threshold
         llm_helper=llm_helper,
-        faction_to_json_map=faction_to_json_map
+        faction_to_json_map=faction_to_json_map,
+        all_faction_elements=all_faction_elements # Pass cached elements
     )
 
     # Start collecting all failures for the LLM pass
@@ -426,7 +428,7 @@ def process_units_xml(units_xml_path, categorized_units, all_units, general_unit
     if no_garrison:
         print("\n--no-garrison flag is set. Removing all <Garrison> tags...")
         tags_removed = 0
-        for faction_element in root.findall('Faction'):
+        for faction_element in all_faction_elements: # Use cached elements
             for garrison_element in list(faction_element.findall('Garrison')):
                 faction_element.remove(garrison_element)
                 tags_removed += 1
@@ -642,7 +644,8 @@ def process_units_xml(units_xml_path, categorized_units, all_units, general_unit
         subculture_to_factions_map=subculture_to_factions_map,
         faction_key_to_screen_name_map=faction_key_to_screen_name_map,
         culture_to_faction_map=culture_to_faction_map,
-        faction_to_heritages_map=faction_to_heritages_map
+        faction_to_heritages_map=faction_to_heritages_map,
+        all_faction_elements=all_faction_elements # Pass cached elements
     )
 
     # NEW: Merge duplicate factions AFTER adding and renaming.
@@ -753,7 +756,7 @@ def process_units_xml(units_xml_path, categorized_units, all_units, general_unit
 
     # Final validation step (First Pass)
     print("\nRunning initial XML validation...")
-    initial_validation_failures = faction_xml_utils.validate_final_faction_completeness(root, ck3_maa_definitions, culture_factions, no_garrison_flag=no_garrison, main_mod_faction_maa_map=main_mod_faction_maa_map, is_submod_mode=is_submod_mode, unit_to_class_map=unit_to_class_map, unit_categories=unit_categories)
+    initial_validation_failures = faction_xml_utils.validate_final_faction_completeness(root, ck3_maa_definitions, culture_factions, no_garrison_flag=no_garrison, main_mod_faction_maa_map=main_mod_faction_maa_map, is_submod_mode=is_submod_mode, unit_to_class_map=unit_to_class_map, unit_categories=unit_categories, all_faction_elements=all_faction_elements)
 
     if initial_validation_failures:
         print(f"\n--- Initial XML Validation Failed ({len(initial_validation_failures)} issues found). Attempting final fix pass... ---")
@@ -786,7 +789,8 @@ def process_units_xml(units_xml_path, categorized_units, all_units, general_unit
             faction_culture_map=faction_culture_map,
             llm_helper=llm_helper, # NEW
             unit_to_training_level=unit_to_training_level, # NEW
-            faction_elite_units=defaultdict(set) # NEW
+            faction_elite_units=defaultdict(set), # NEW
+            all_faction_elements=all_faction_elements # Pass cached elements
         )
         total_changes += final_fixes_applied
         print(f"Attempted to fix {len(initial_validation_failures)} issues, applied {final_fixes_applied} fixes.")
@@ -812,7 +816,7 @@ def process_units_xml(units_xml_path, categorized_units, all_units, general_unit
 
         # Second validation pass after attempting fixes
         print("\nRunning second XML validation after fix attempt...")
-        final_validation_failures = faction_xml_utils.validate_final_faction_completeness(root, ck3_maa_definitions, culture_factions, no_garrison_flag=no_garrison, main_mod_faction_maa_map=main_mod_faction_maa_map, is_submod_mode=is_submod_mode, unit_to_class_map=unit_to_class_map, unit_categories=unit_categories)
+        final_validation_failures = faction_xml_utils.validate_final_faction_completeness(root, ck3_maa_definitions, culture_factions, no_garrison_flag=no_garrison, main_mod_faction_maa_map=main_mod_faction_maa_map, is_submod_mode=is_submod_mode, unit_to_class_map=unit_to_class_map, unit_categories=unit_categories, all_faction_elements=all_faction_elements)
 
         if final_validation_failures:
             print("\n--- XML VALIDATION FAILED AFTER FINAL FIX ATTEMPT ---")
