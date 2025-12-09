@@ -345,7 +345,7 @@ def process_units_xml(units_xml_path, categorized_units, all_units, general_unit
     # --- NEW: Consolidated Initial XML Cleaning Pass ---
     print("\nRunning initial XML cleaning and validation pass...")
     (invalid_maa_removed_count, duplicate_maa_removed_count, maa_levy_conflicts_fixed,
-     excluded_keys_removed_count, stale_keys_removed_count, porcentage_rename_count) = _run_initial_xml_cleaning_pass(root, excluded_units_set, all_units, all_faction_elements)
+     excluded_keys_removed_count, stale_keys_removed_count, porcentage_rename_count) = _run_initial_xml_cleaning_pass(root, excluded_units_set, all_units)
 
     # NEW: Conditionally remove keys from procedurally-assigned units to force re-evaluation
     procedural_keys_removed_count = 0
