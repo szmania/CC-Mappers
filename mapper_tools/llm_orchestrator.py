@@ -251,29 +251,51 @@ def run_llm_unit_assignment_pass(llm_helper, all_llm_failures_to_process, time_p
 
     network_unit_results = {}
     if uncached_unit_requests and llm_helper.network_calls_enabled:
-        # Group requests by maa_type for more efficient processing
-        requests_by_type = defaultdict(list)
+        # Remove duplicate requests to avoid processing identical requests multiple times
+        unique_requests = {}
         for req in uncached_unit_requests:
-            if req.get('maa_type'):
-                requests_by_type[req['maa_type']].append(req)
-            else:
-                requests_by_type['other'].append(req)
-    
-        # Process batches by type for better LLM efficiency
+            # Create a unique key based on the request content to deduplicate
+            req_key = (req.get('faction'), req.get('tag_name'), req.get('maa_type'), 
+                      req.get('rank'), req.get('level'), tuple(req.get('validation_pool', [])))
+            if req_key not in unique_requests:
+                unique_requests[req_key] = req
+        
+        deduplicated_requests = list(unique_requests.values())
+        if len(deduplicated_requests) < len(uncached_unit_requests):
+            print(f"  -> Deduplication reduced requests from {len(uncached_unit_requests)} to {len(deduplicated_requests)}")
+        
+        # Group requests by faction culture for more efficient processing
+        requests_by_culture = defaultdict(list)
+        for req in deduplicated_requests:
+            faction_name = req.get('faction')
+            # Try to determine culture from various sources
+            culture = None
+            if faction_name and faction_to_json_map:
+                json_data = faction_to_json_map.get(faction_name)
+                if json_data:
+                    culture = json_data.get('culture')
+            if not culture and faction_name and faction_culture_map:
+                culture = faction_culture_map.get(faction_name)
+            
+            culture_key = culture or 'unknown'
+            requests_by_culture[culture_key].append(req)
+        
+        # Process batches by culture for better LLM efficiency
         network_unit_results = {}
-        for req_type, type_requests in requests_by_type.items():
-            type_batches = [type_requests[i:i + llm_batch_size] for i in range(0, len(type_requests), llm_batch_size)]
-            print(f"  -> Submitting {len(type_requests)} '{req_type}' requests to LLM in {len(type_batches)} batches using {llm_threads} threads...")
+        for culture_key, culture_requests in requests_by_culture.items():
+            # Use larger batch size for better efficiency
+            culture_batches = [culture_requests[i:i + llm_batch_size] for i in range(0, len(culture_requests), llm_batch_size)]
+            print(f"  -> Submitting {len(culture_requests)} '{culture_key}' culture requests to LLM in {len(culture_batches)} batches using {llm_threads} threads...")
             with ThreadPoolExecutor(max_workers=llm_threads) as executor:
-                future_to_batch = {executor.submit(llm_helper.get_batch_unit_replacements, batch, time_period_context): batch for batch in type_batches}
+                future_to_batch = {executor.submit(llm_helper.get_batch_unit_replacements, batch, time_period_context): batch for batch in culture_batches}
                 processed_requests = 0
                 for future in as_completed(future_to_batch):
                     processed_requests += len(future_to_batch[future])
-                    print(f"  -> LLM '{req_type}' progress: {processed_requests}/{len(type_requests)} requests completed.")
+                    print(f"  -> LLM '{culture_key}' culture progress: {processed_requests}/{len(culture_requests)} requests completed.")
                     try:
                         network_unit_results.update(future.result())
                     except Exception as exc:
-                        print(f"  -> ERROR: A '{req_type}' batch generated an exception: {exc}")
+                        print(f"  -> ERROR: A '{culture_key}' culture batch generated an exception: {exc}")
     final_unit_results = {**cached_unit_results, **network_unit_results}
 
     # --- Levy Request Pipeline ---
