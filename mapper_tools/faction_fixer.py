@@ -534,7 +534,7 @@ def process_units_xml(units_xml_path, categorized_units, all_units, general_unit
     # --- LLM Pass (Consolidated requests for all failures) ---
     llm_replacements = 0
     if llm_helper and all_parallel_failures and len(all_parallel_failures) < MAX_LLM_FAILURES_THRESHOLD:
-        llm_replacements = llm_orchestrator.run_llm_unit_assignment_pass(
+        llm_replacements, llm_final_failures = llm_orchestrator.run_llm_unit_assignment_pass(
             llm_helper, all_parallel_failures, time_period_context, llm_threads, llm_batch_size,
             faction_pool_cache, all_units, excluded_units_set, unit_to_tier_map, unit_to_class_map,
             unit_to_description_map, unit_stats_map, screen_name_to_faction_key_map, faction_key_to_units_map,
