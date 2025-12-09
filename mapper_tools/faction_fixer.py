@@ -29,9 +29,9 @@ from mapper_tools import faction_json_utils
 from mapper_tools import llm_orchestrator
 
 # --- NEW: Constants for LLM processing ---
-LLM_MAX_UNITS_PER_BATCH = 60 # The maximum total number of candidate units to include in a single batch prompt to control its size.
+LLM_MAX_UNITS_PER_BATCH = 100 # Increased from 60 to reduce network calls
 LLM_POOL_MIN_SIZE = 15
-MAX_LLM_FAILURES_THRESHOLD = 500000
+MAX_LLM_FAILURES_THRESHOLD = 500000 # Threshold for early exit
 
 
 # --- DELETED: Logging Setup (Moved to shared_utils) ---
