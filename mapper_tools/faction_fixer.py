@@ -177,7 +177,7 @@ def _run_initial_xml_cleaning_pass(root, excluded_units_set, all_units):
             excluded_keys_removed_count, stale_keys_removed_count, porcentage_rename_count)
 
 
-def _run_attribute_management_pass(root, ck3_maa_definitions, unit_to_class_map, unit_categories, unit_to_num_guns_map, no_siege):
+def _run_attribute_management_pass(root, ck3_maa_definitions, unit_to_class_map, unit_categories, unit_to_num_guns_map, no_siege, all_faction_elements):
     """
     Consolidated pass to manage all unit attributes in a single loop.
     Handles 'max', 'siege', 'siege_engine_per_unit', and 'num_guns'.
@@ -187,7 +187,9 @@ def _run_attribute_management_pass(root, ck3_maa_definitions, unit_to_class_map,
     num_guns_attr_count = 0
     max_attr_count = 0
 
-    for faction in root.findall('Faction'):
+    factions_to_iterate = all_faction_elements if all_faction_elements is not None else root.findall('Faction')
+
+    for faction in factions_to_iterate:
         s, se, ng, m = _run_attribute_management_pass_for_faction(
             faction, ck3_maa_definitions, unit_to_class_map, unit_categories, unit_to_num_guns_map, no_siege
         )
@@ -408,4 +410,118 @@ def process_units_xml(units_xml_path, categorized_units, all_units, general_unit
     high_confidence_replacements, high_confidence_failures = processing_passes.run_high_confidence_unit_pass(
         root, tier, unit_variant_map, ck3_maa_definitions, unit_to_class_map, unit_to_description_map,
         screen_name_to_faction_key_map, faction_key_to_units_map, faction_to_subculture_map,
-        subModel API Response Error. Please retry the previous request
+        subculture_to_factions_map, faction_key_to_screen_name_map, culture_to_faction_map,
+        faction_culture_map, categorized_units, unit_categories, unit_stats_map, all_units,
+        excluded_units_set=excluded_units_set, faction_pool_cache=faction_pool_cache,
+        faction_to_heritage_map=faction_to_heritage_map, heritage_to_factions_map=heritage_to_factions_map,
+        faction_to_heritages_map=faction_to_heritages_map, first_pass_threshold=first_pass_threshold,
+        llm_helper=llm_helper, faction_to_json_map=faction_to_json_map, all_faction_elements=all_faction_elements
+    )
+    total_changes += high_confidence_replacements
+
+    # Stage 2: LLM Pass (Consolidated requests for all failures)
+    llm_failures = high_confidence_failures
+    llm_replacements = 0
+    if llm_helper and llm_failures and len(llm_failures) < MAX_LLM_FAILURES_THRESHOLD:
+        llm_replacements = llm_orchestrator.run_llm_unit_assignment_pass(
+            root, llm_failures, llm_helper, time_period_context, llm_threads, llm_batch_size,
+            screen_name_to_faction_key_map, faction_key_to_units_map, faction_to_subculture_map,
+            subculture_to_factions_map, faction_key_to_screen_name_map, culture_to_faction_map,
+            faction_to_heritage_map, heritage_to_factions_map, faction_to_heritages_map,
+            unit_to_class_map, unit_categories, unit_to_description_map, unit_stats_map,
+            unit_variant_map, ck3_maa_definitions, tier, faction_pool_cache,
+            excluded_units_set, all_units, faction_to_json_map, faction_culture_map,
+            unit_to_training_level, faction_elite_units
+        )
+        total_changes += llm_replacements
+        # LLM pass modifies llm_failures list in place, removing successful assignments.
+
+    # Stage 3: Low-Confidence Procedural Fallback (for LLM failures or skipped LLM)
+    low_confidence_replacements = processing_passes.run_low_confidence_unit_pass(
+        root, llm_failures, ck3_maa_definitions, unit_to_class_map, unit_variant_map, unit_to_description_map,
+        categorized_units, unit_categories, unit_stats_map, all_units, excluded_units_set=excluded_units_set,
+        faction_to_heritage_map=faction_to_heritage_map, heritage_to_factions_map=heritage_to_factions_map,
+        screen_name_to_faction_key_map=screen_name_to_faction_key_map, faction_key_to_units_map=faction_key_to_units_map,
+        llm_helper=llm_helper, unit_to_training_level=unit_to_training_level, faction_elite_units=faction_elite_units,
+        faction_to_json_map=faction_to_json_map, faction_culture_map=faction_culture_map, faction_pool_cache=faction_pool_cache,
+        faction_to_subculture_map=faction_to_subculture_map, subculture_to_factions_map=subculture_to_factions_map,
+        faction_key_to_screen_name_map=faction_key_to_screen_name_map, culture_to_faction_map=culture_to_faction_map,
+        faction_to_heritages_map=faction_to_heritages_map, all_faction_elements=all_faction_elements
+    )
+    total_changes += low_confidence_replacements
+
+    # --- Generals and Knights Pass (Must run after MAA assignment to avoid conflicts) ---
+    general_knight_changes, general_knight_failures = unit_management.manage_all_generals_and_knights(
+        root, general_units, categorized_units, unit_categories, unit_to_class_map, unit_to_description_map,
+        unit_stats_map, unit_to_training_level, tier, unit_variant_map, ck3_maa_definitions,
+        screen_name_to_faction_key_map, faction_key_to_units_map, faction_to_subculture_map,
+        subculture_to_factions_map, faction_key_to_screen_name_map, culture_to_faction_map,
+        faction_to_heritage_map, heritage_to_factions_map, faction_to_heritages_map,
+        excluded_units_set, faction_pool_cache, faction_to_json_map, faction_culture_map, all_units,
+        all_faction_elements=all_faction_elements
+    )
+    total_changes += general_knight_changes
+    llm_failures.extend(general_knight_failures) # Add new failures for final fix pass
+
+    # --- Levy and Garrison Structure Passes ---
+    if not no_garrison:
+        levy_changes, levy_failures = processing_passes.ensure_levy_structure_and_percentages(
+            root, unit_categories, screen_name_to_faction_key_map, faction_key_to_units_map, template_faction_unit_pool,
+            faction_to_subculture_map, subculture_to_factions_map, faction_key_to_screen_name_map, culture_to_faction_map,
+            unit_to_class_map, faction_to_json_map, all_units, unit_to_training_level, tier, faction_elite_units,
+            excluded_units_set, faction_pool_cache, faction_to_heritage_map, heritage_to_factions_map,
+            faction_to_heritages_map, destructive_on_failure=False, faction_culture_map=faction_culture_map,
+            is_submod_mode=is_submod_mode, factions_in_main_mod=factions_in_main_mod, all_faction_elements=all_faction_elements
+        )
+        total_changes += levy_changes
+        llm_failures.extend(levy_failures)
+
+        garrison_changes, garrison_failures = processing_passes.ensure_garrison_structure(
+            root, unit_categories, screen_name_to_faction_key_map, faction_key_to_units_map, template_faction_unit_pool,
+            faction_to_subculture_map, subculture_to_factions_map, faction_key_to_screen_name_map, culture_to_faction_map,
+            unit_to_class_map, general_units, unit_to_training_level, tier, unit_to_tier_map, excluded_units_set,
+            faction_pool_cache, faction_to_heritage_map, heritage_to_factions_map, faction_to_heritages_map,
+            destructive_on_failure=False, faction_to_json_map=faction_to_json_map, all_units=all_units,
+            faction_culture_map=faction_culture_map, is_submod_mode=is_submod_mode, factions_in_main_mod=factions_in_main_mod, all_faction_elements=all_faction_elements
+        )
+        total_changes += garrison_changes
+        llm_failures.extend(garrison_failures)
+
+    # --- Final Validation and Fix Pass ---
+    # This pass attempts to fix any remaining issues (e.g., missing 'max' attributes, missing keys in General/Knights/Levies/Garrison)
+    # It uses the accumulated llm_failures list (which now includes General/Knight/Levy/Garrison failures)
+    final_fix_changes = processing_passes.run_final_fix_pass(
+        root, llm_failures, categorized_units, all_units, unit_categories, tier, unit_variant_map, ck3_maa_definitions,
+        unit_to_description_map, unit_stats_map, general_units, unit_to_class_map, excluded_units_set,
+        screen_name_to_faction_key_map, faction_key_to_units_map, faction_to_subculture_map, subculture_to_factions_map,
+        faction_key_to_screen_name_map, culture_to_faction_map, faction_to_heritage_map, heritage_to_factions_map,
+        faction_to_heritages_map, faction_pool_cache, faction_to_json_map, faction_culture_map, llm_helper,
+        unit_to_training_level, faction_elite_units, all_faction_elements=all_faction_elements
+    )
+    total_changes += final_fix_changes
+
+    # --- Final Attribute Management Pass ---
+    print("\nRunning final attribute management pass...")
+    s, se, ng, m = _run_attribute_management_pass(
+        root, ck3_maa_definitions, unit_to_class_map, unit_categories, unit_to_num_guns_map, no_siege, all_faction_elements
+    )
+    total_changes += s + se + ng + m
+    print(f"  -> Applied {s} siege, {se} siege_engine_per_unit, {ng} num_guns, and {m} max attribute changes.")
+
+    # --- Final Normalization Pass ---
+    # This pass ensures Levy/Garrison percentages sum to 100% and removes any remaining invalid tags.
+    print("\nRunning final normalization pass...")
+    normalization_changes = unit_management.normalize_all_levy_percentages(root, all_faction_elements=all_faction_elements)
+    total_changes += normalization_changes
+    print(f"  -> Applied {normalization_changes} normalization changes.")
+
+    # --- Final XML Output ---
+    if total_changes > 0 or submod_tag_added or submod_addon_for_added:
+        print(f"\nProcessing complete. Applied {total_changes} total changes. Saving file...")
+        shared_utils.indent_xml(root)
+        tree.write(units_xml_path, encoding='utf-8', xml_declaration=True)
+        print(f"Successfully updated '{units_xml_path}'.")
+    else:
+        print("\nProcessing complete. No changes were made to the XML content.")
+
+    return total_changes
