@@ -127,19 +127,19 @@ def run_llm_unit_assignment_pass(llm_helper, all_llm_failures_to_process, time_p
     # --- NEW: Early exit if too many failures ---
     if len(all_llm_failures_to_process) > MAX_LLM_FAILURES_THRESHOLD:
         print(f"\n--- WARNING: Skipping LLM Unit Assignment Pass ---")
-        print(f"Number of LLM requests ({len(all_llm_failures极_to_process)}) exceeds threshold of {MAX_LLM_FAILURES_THRESHOLD}.")
+        print(f"Number of LLM requests ({len(all_llm_failures_to_process)}) exceeds threshold of {MAX_LLM_FAILURES_THRESHOLD}.")
         print("This usually indicates a problem with the input data (e.g., TSV files) or configuration,")
         print("causing the high-confidence pass to fail for most units.")
         print("Skipping LLM pass to prevent hanging. Proceeding directly to low-confidence procedural fallback.")
-        
+
         # Log detailed information about the failures to help diagnose
         failure_types = defaultdict(int)
         for failure in all_llm_failures_to_process:
             tag_name = failure.get('tag_name', 'unknown')
             failure_types[tag_name] += 1
-        
+
         print(f"Failure breakdown by type: {dict(failure_types)}")
-        
+
         return 0, all_llm_failures_to_process
 
     # --- NEW: Early exit if too many failures ---
@@ -149,15 +149,15 @@ def run_llm_unit_assignment_pass(llm_helper, all_llm_failures_to_process, time_p
         print("This usually indicates a problem with the input data (e.g., TSV files) or configuration,")
         print("causing the high-confidence pass to fail for most units.")
         print("Skipping LLM pass to prevent hanging. Proceeding directly to low-confidence procedural fallback.")
-        
+
         # Log detailed information about the failures to help diagnose
         failure_types = defaultdict(int)
         for failure in all_llm_failures_to_process:
             tag_name = failure.get('tag_name', 'unknown')
             failure_types[tag_name] += 1
-        
+
         print(f"Failure breakdown by type: {dict(failure_types)}")
-        
+
         return 0, all_llm_failures_to_process
 
     log_msg = "cache and/or LLM" if llm_helper.network_calls_enabled else "LLM cache"
@@ -168,15 +168,15 @@ def run_llm_unit_assignment_pass(llm_helper, all_llm_failures_to_process, time_p
         print(f"  -> WARNING: Number of LLM requests ({len(all_llm_failures_to_process)}) exceeds threshold of {MAX_LLM_FAILURES_THRESHOLD}.")
         print("  -> This usually indicates a problem with the input data (e.g., TSV files) or configuration, causing the high-confidence pass to fail for most units.")
         print("  -> Skipping LLM pass to prevent hanging. Proceeding directly to low-confidence procedural fallback.")
-        
+
         # Log detailed information about the failures to help diagnose
         failure_types = defaultdict(int)
         for failure in all_llm_failures_to_process:
             tag_name = failure.get('tag_name', 'unknown')
             failure_types[tag_name] += 1
-        
+
         print(f"  -> Failure breakdown by type: {dict(failure_types)}")
-        
+
         return 0, all_llm_failures_to_process
 
     llm_replacements_made = 0
@@ -256,10 +256,10 @@ def run_llm_unit_assignment_pass(llm_helper, all_llm_failures_to_process, time_p
         for req in uncached_unit_requests:
             # Include more fields in the deduplication key to catch more duplicates
             req_key = (
-                req.get('faction'), 
-                req.get('tag_name'), 
-                req.get('maa_type'), 
-                req.get('rank'), 
+                req.get('faction'),
+                req.get('tag_name'),
+                req.get('maa_type'),
+                req.get('rank'),
                 req.get('level'),
                 req.get('garrison_slot'),
                 req.get('levy_slot'),
@@ -268,11 +268,11 @@ def run_llm_unit_assignment_pass(llm_helper, all_llm_failures_to_process, time_p
             )
             if req_key not in unique_requests:
                 unique_requests[req_key] = req
-        
+
         deduplicated_requests = list(unique_requests.values())
         if len(deduplicated_requests) < len(uncached_unit_requests):
             print(f"  -> Deduplication reduced unit requests from {len(uncached_unit_requests)} to {len(deduplicated_requests)}")
-        
+
         # Smart batching: Group by multiple criteria for better context
         # Group by faction culture first, then by request type
         requests_by_culture_and_type = defaultdict(list)
@@ -281,11 +281,11 @@ def run_llm_unit_assignment_pass(llm_helper, all_llm_failures_to_process, time_p
             faction_key = screen_name_to_faction_key_map.get(faction_name)
             subculture = faction_to_subculture_map.get(faction_key) if faction_key else None
             request_type = req.get('tag_name', 'unknown')
-            
+
             # Create a grouping key that combines culture and type
             group_key = f"{subculture or 'no_culture'}|{request_type}"
             requests_by_culture_and_type[group_key].append(req)
-        
+
         # Process batches with optimal grouping
         network_unit_results = {}
         for group_key, group_requests in requests_by_culture_and_type.items():
@@ -294,10 +294,10 @@ def run_llm_unit_assignment_pass(llm_helper, all_llm_failures_to_process, time_p
             batch_size = min(100, llm_batch_size)
             group_batches = [group_requests[i:i + batch_size] for i in range(0, len(group_requests), batch_size)]
             print(f"  -> Submitting {len(group_requests)} '{request_type}' requests for subculture '{subculture}' to LLM in {len(group_batches)} batches (batch size: {batch_size})...")
-            
+
             with ThreadPoolExecutor(max_workers=llm_threads) as executor:
                 future_to_batch = {
-                    executor.submit(llm_helper.get_batch_unit_replacements, batch, time_period_context): batch 
+                    executor.submit(llm_helper.get_batch_unit_replacements, batch, time_period_context): batch
                     for batch in group_batches
                 }
                 processed_requests = 0
@@ -327,16 +327,16 @@ def run_llm_unit_assignment_pass(llm_helper, all_llm_failures_to_process, time_p
             req_key = (req.get('faction'), req.get('tier'), tuple(req.get('available_levy_categories', [])))
             if req_key not in unique_levy_requests:
                 unique_levy_requests[req_key] = req
-        
+
         deduplicated_levy_requests = list(unique_levy_requests.values())
         if len(deduplicated_levy_requests) < len(uncached_levy_requests):
             print(f"  -> Deduplication reduced levy requests from {len(uncached_levy_requests)} to {len(deduplicated_levy_requests)}")
-        
+
         # Group levy requests by faction for more efficient processing
         levy_requests_by_faction = defaultdict(list)
         for req in deduplicated_levy_requests:
             levy_requests_by_faction[req['faction']].append(req)
-    
+
         # Process batches by faction for better LLM efficiency
         network_levy_results = {}
         for faction_name, faction_requests in levy_requests_by_faction.items():
@@ -393,7 +393,7 @@ def run_llm_unit_assignment_pass(llm_helper, all_llm_failures_to_process, time_p
 
                 if tag_name == 'MenAtArm' and req_data.get('maa_type'):
                     attrs['type'] = req_data['maa_type']
-                
+
                 ET.SubElement(faction_element, tag_name, attrs)
                 print(f"    -> SUCCESS: Created missing <{tag_name}> tag for '{req_id}' and set key to '{chosen_unit}'.")
             llm_replacements_made += 1
@@ -445,10 +445,10 @@ def run_llm_roster_review_pass(root, llm_helper, time_period_context, llm_thread
         return 0
 
     print("\n--- Starting LLM Roster Review Pass ---")
-    
+
     MAX_REVIEW_RETRIES = 3
     total_corrections_applied = 0
-    
+
     # 1. Inject Temporary Unique IDs
     temp_id_counter = 0
     tags_to_review = ['General', 'Knights', 'Levies', 'Garrison', 'MenAtArm']
@@ -515,7 +515,7 @@ def run_llm_roster_review_pass(root, llm_helper, time_period_context, llm_thread
         return 0
 
     requests_to_process = list(initial_review_requests)
-    
+
     for attempt in range(MAX_REVIEW_RETRIES):
         if not requests_to_process:
             print(f"\nAll roster review requests processed successfully after {attempt} attempts.")
@@ -536,7 +536,7 @@ def run_llm_roster_review_pass(root, llm_helper, time_period_context, llm_thread
             review_requests_by_faction = defaultdict(list)
             for req in uncached_requests:
                 review_requests_by_faction[req['faction']].append(req)
-    
+
             # Process batches by faction for better LLM efficiency
             network_llm_results = {}
             for faction_name, faction_requests in review_requests_by_faction.items():
@@ -598,11 +598,11 @@ def run_llm_roster_review_pass(root, llm_helper, time_period_context, llm_thread
                         sanitized_review_id = re.sub(r'\D', '', original_review_id)
                         if sanitized_review_id != original_review_id:
                             print(f"    -> WARNING: Sanitized malformed '__review_id__' from LLM. Original: '{original_review_id}', Used: '{sanitized_review_id}'.")
-                        
+
                         if not sanitized_review_id:
                             print(f"    -> WARNING: Sanitized '__review_id__' is empty. Skipping. Original: '{original_review_id}'")
                             continue
-                        
+
                         review_id = sanitized_review_id
 
                         # Sanitize and validate the tag from the LLM to prevent XPath errors.
@@ -638,7 +638,7 @@ def run_llm_roster_review_pass(root, llm_helper, time_period_context, llm_thread
                             original_key = element_to_modify.get('key')
                             if original_key != current_unit_from_llm:
                                 print(f"    -> WARNING: Element for ID '{review_id}' in '{faction_name}' has changed key (expected '{current_unit_from_llm}', found '{original_key}'). Applying correction anyway.")
-                            
+
                             element_to_modify.set('key', suggested_unit)
                             total_corrections_applied += 1
                             print(f"    - Changed <{tag_to_find}> (ID: {review_id}): '{original_key}' -> '{suggested_unit}'. Reason: {correction.get('reason', 'N/A')}")
@@ -665,7 +665,7 @@ def run_llm_roster_review_pass(root, llm_helper, time_period_context, llm_thread
                 requests_for_next_attempt.append(req)
 
         requests_to_process = requests_for_next_attempt
-        
+
         if requests_to_process and attempt == MAX_REVIEW_RETRIES - 1:
             print(f"\n--- WARNING: {len(requests_to_process)} roster review requests still failed after {MAX_REVIEW_RETRIES} attempts. ---")
             for req in requests_to_process:
