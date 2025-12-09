@@ -408,6 +408,11 @@ def process_units_xml(units_xml_path, categorized_units, all_units, general_unit
     # --- Unit Assignment Pipeline ---
     # Process factions in parallel where possible
     print("\nProcessing factions in parallel...")
+    
+    # Clear faction_pool_cache before parallel processing to free memory
+    faction_pool_cache.clear()
+    print("  -> Cleared faction pool cache before parallel processing")
+    
     from concurrent.futures import ThreadPoolExecutor, as_completed
     import threading
     
