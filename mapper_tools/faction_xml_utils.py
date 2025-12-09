@@ -167,13 +167,17 @@ def remove_excluded_factions(root, excluded_factions, screen_name_to_faction_key
         root.remove(faction_element)
     return removed_count
 
-def remove_factions_not_in_cultures(root, culture_factions, screen_name_to_faction_key_map):
+def remove_factions_not_in_cultures(root, culture_factions, screen_name_to_faction_key_map, all_faction_elements=None):
     """
     Removes factions from the XML that are not present in the culture_factions set.
     """
     removed_count = 0
     factions_to_remove = []
-    for faction_element in root.findall('Faction'):
+    
+    # Use cached faction elements if provided, otherwise find them normally
+    factions_to_iterate = all_faction_elements if all_faction_elements is not None else root.findall('Faction')
+    
+    for faction_element in factions_to_iterate:
         faction_name = faction_element.get('name')
         if faction_name == "Default":
             continue # Always keep the Default faction
