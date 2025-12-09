@@ -493,7 +493,8 @@ def get_all_tiered_pools(faction_name, faction_pool_cache, screen_name_to_factio
 def get_cached_faction_working_pool(faction_name, faction_pool_cache, screen_name_to_faction_key_map, faction_key_to_units_map,
                                     faction_to_subculture_map, subculture_to_factions_map, faction_key_to_screen_name_map,
                                     culture_to_faction_map, excluded_units_set, faction_to_heritage_map,
-                                    heritage_to_factions_map, faction_to_heritages_map, log_prefix=""):
+                                    heritage_to_factions_map, faction_to_heritages_map, log_prefix="",
+                                    required_classes=None, unit_to_class_map=None): # Added required_classes and unit_to_class_map
     """
     Retrieves or generates the tiered unit pools for a faction, applying exclusions.
     Caches the unfiltered tiered pools.
@@ -521,6 +522,19 @@ def get_cached_faction_working_pool(faction_name, faction_pool_cache, screen_nam
         if filtered_pool:
             working_pool.update(filtered_pool)
             filtered_log_strings.append(tiered_log_strings[i])
+
+    # Apply required_classes filtering if specified
+    if required_classes and unit_to_class_map:
+        initial_size = len(working_pool)
+        filtered_by_class_pool = set()
+        for unit_key in working_pool:
+            unit_class = unit_to_class_map.get(unit_key)
+            if unit_class and unit_class in required_classes:
+                filtered_by_class_pool.add(unit_key)
+        working_pool = filtered_by_class_pool
+        if len(working_pool) < initial_size:
+            print(f"    -> {log_prefix} Further filtered pool by required classes {required_classes}. Reduced from {initial_size} to {len(working_pool)} units.")
+
 
     log_faction_str = f"{log_prefix} Faction '{faction_name}' (Pools: {'; '.join(filtered_log_strings)})"
 
