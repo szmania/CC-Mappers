@@ -440,6 +440,12 @@ def get_all_tiered_pools(faction_name, faction_pool_cache, screen_name_to_factio
     if not faction_key:
         return [], [] # Cannot determine pools without a faction key
 
+    # Create a cache key for the unfiltered tiered pools
+    cache_key = f"{faction_name}_unfiltered_tiered_pools"
+    
+    if cache_key in faction_pool_cache:
+        return faction_pool_cache[cache_key]
+
     tiered_pools = []
     tiered_log_strings = []
 
@@ -491,6 +497,10 @@ def get_all_tiered_pools(faction_name, faction_pool_cache, screen_name_to_factio
     # If `all_units` is not passed, this tier might be skipped or handled differently.
     # For now, this function only builds pools based on faction_key_to_units_map.
     # The global pool will be added by the caller if needed.
+
+    # Cache the result
+    cache_key = f"{faction_name}_unfiltered_tiered_pools"
+    faction_pool_cache[cache_key] = (tiered_pools, tiered_log_strings)
 
     return tiered_pools, tiered_log_strings
 
