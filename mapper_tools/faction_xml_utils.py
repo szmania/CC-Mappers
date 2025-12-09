@@ -499,7 +499,7 @@ def get_all_tiered_pools(faction_name, faction_pool_cache, screen_name_to_factio
     # The global pool will be added by the caller if needed.
 
     # Cache the result
-    cache_key = f"{faction_name}_unfilter极
+    faction_pool_cache[cache_key] = (tiered_pools, tiered_log_strings)
 
     return tiered_pools, tiered_log_strings
 
