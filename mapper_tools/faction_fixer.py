@@ -29,7 +29,7 @@ from mapper_tools import faction_json_utils
 from mapper_tools import llm_orchestrator
 
 # --- NEW: Constants for LLM processing ---
-LLM_MAX_UNITS_PER_BATCH = 100 # Increased from 60 to reduce network calls
+LLM_MAX_UNITS_PER_BATCH = 200 # Increased from 60 to reduce network calls
 LLM_POOL_MIN_SIZE = 15
 MAX_LLM_FAILURES_THRESHOLD = 500000 # Threshold for early exit
 
@@ -340,7 +340,7 @@ def process_units_xml(units_xml_path, categorized_units, all_units, general_unit
     # NEW: Prune factions present in main mod that have no new MenAtArm types
     factions_removed_from_main_mod, removed_faction_names_for_sync = 0, set()
     if is_submod_mode:
-        factions_removed_from_main_mod, removed_faction_names_for_sync = faction_xml_utils.remove_factions_in_main_mod(root, main_mod_faction_maa_map, screen_name_to_faction_key_map)
+        factions_removed_from_main_mod, removed_faction_names_for_sync = faction_xml_utils.remove_factions_in_main_mod(root, main_mod_faction_maa_map)
 
     default_created = faction_xml_utils.create_default_faction_if_missing(root, categorized_units, unit_categories, general_units, template_faction_unit_pool, all_units, tier, unit_variant_map, unit_to_tier_map, variant_to_base_map, ck3_maa_definitions, unit_to_class_map=unit_to_class_map, unit_to_description_map=unit_to_description_map, unit_stats_map=unit_stats_map, excluded_units_set=excluded_units_set, is_submod_mode=is_submod_mode)
 
@@ -903,7 +903,7 @@ def main():
     parser.add_argument("--llm-api-key", help="The API key for the LLM service.")
     parser.add_argument("--llm-cache-dir", default="mapper_tools/llm_cache", help="Directory for LLM cache files.")
     parser.add_argument("--llm-cache-tag", help="A unique tag for partitioning the LLM cache (e.g., 'AGOT'). If set without --use-llm, enables cache-only mode.")
-    parser.add_argument("--llm-batch-size", type=int, default=100, help="The maximum number of unit replacement requests to send to the LLM in a single batch.")
+    parser.add_argument("--llm-batch-size", type=int, default=200, help="The maximum number of unit replacement requests to send to the LLM in a single batch.")
     parser.add_argument("--llm-force-refresh", action='store_true', help="If set, the LLM will ignore existing cache entries for the current run and re-query for all requests, but will still save new results to the cache.")
     parser.add_argument("--clear-llm-cache-units-file", help="Path to a text file containing unit keys to recache, one per line. LLM cache entries for these specific units will be cleared and re-queried.")
     parser.add_argument("--llm-clear-null-cache", action='store_true', help="If set, clears all 'null' entries from all LLM cache files before processing.")
