@@ -73,11 +73,16 @@ def update_subcultures_only(factions_xml_path, llm_helper, time_period_context, 
         print(f"Error: Factions XML file not found at '{factions_xml_path}'. Aborting subculture update.")
         raise
 
+    # Cache faction elements for single-pass processing
+    all_faction_elements = list(root.findall('Faction'))
+    faction_by_name_cache = {f.get('name'): f for f in all_faction_elements if f.get('name')}
+
     llm_subcultures_assigned_count = 0
     if llm_helper and not no_subculture:
         llm_subcultures_assigned_count = llm_orchestrator.run_llm_subculture_pass(
             root, llm_helper, time_period_context, llm_threads, llm_batch_size,
-            faction_to_subculture_map, subculture_to_factions_map, screen_name_to_faction_key_map
+            faction_to_subculture_map, subculture_to_factions_map, screen_name_to_faction_key_map,
+            all_faction_elements=all_faction_elements # Pass cached elements
         )
         if llm_subcultures_assigned_count > 0:
             total_changes += llm_subcultures_assigned_count
@@ -89,7 +94,8 @@ def update_subcultures_only(factions_xml_path, llm_helper, time_period_context, 
         most_common_faction_key=most_common_faction_key, faction_key_to_screen_name_map=faction_key_to_screen_name_map,
         culture_to_faction_map=culture_to_faction_map,
         faction_to_heritage_map=faction_to_heritage_map, heritage_to_factions_map=heritage_to_factions_map,
-        faction_to_heritages_map=faction_to_heritages_map
+        faction_to_heritages_map=faction_to_heritages_map,
+        all_faction_elements=all_faction_elements # Pass cached elements
     )
     if subculture_attr_count > 0:
         total_changes += subculture_attr_count
@@ -306,6 +312,16 @@ def process_units_xml(units_xml_path, categorized_units, all_units, general_unit
         print(f"Error parsing XML file {units_xml_path}: {e}. Skipping.")
         raise
 
+    # Cache faction elements for single-pass processing
+    all_faction_elements = list(root.findall('Faction'))
+    faction_by_name_cache = {f.get('name'): f for f in all_faction_elements if f.get('name')}
+
+    def _recache_factions():
+        nonlocal all_faction_elements, faction_by_name_cache
+        all_faction_elements = list(root.findall('Faction'))
+        faction_by_name_cache = {f.get('name'): f for f in all_faction_elements if f.get('name')}
+        print("  -> Faction cache re-populated.")
+
     # NEW: Add submod_tag if provided
     submod_tag_added = False
     if submod_tag:
@@ -347,6 +363,7 @@ def process_units_xml(units_xml_path, categorized_units, all_units, general_unit
     factions_fixed, faction_name_map = faction_xml_utils.validate_and_fix_faction_names(root, faction_key_to_screen_name_map, unit_to_faction_key_map, culture_factions)
     if factions_fixed > 0:
         print(f"Corrected {factions_fixed} faction names via fuzzy matching.")
+        _recache_factions() # Re-cache after potential removals/renames
     else:
         print("All faction names are already valid.")
 
@@ -354,18 +371,28 @@ def process_units_xml(units_xml_path, categorized_units, all_units, general_unit
     removed_excluded_factions_count = 0
     if excluded_factions:
         removed_excluded_factions_count = faction_xml_utils.remove_excluded_factions(root, excluded_factions, screen_name_to_faction_key_map)
+        if removed_excluded_factions_count > 0:
+            _recache_factions() # Re-cache after removals
 
     # NEW: Prune factions not in Cultures.xml (NOW runs after name correction)
     factions_removed_count = faction_xml_utils.remove_factions_not_in_cultures(root, culture_factions, screen_name_to_faction_key_map)
+    if factions_removed_count > 0:
+        _recache_factions() # Re-cache after removals
 
     # NEW: Prune factions present in main mod that have no new MenAtArm types
     factions_removed_from_main_mod, removed_faction_names_for_sync = 0, set()
     if is_submod_mode:
         factions_removed_from_main_mod, removed_faction_names_for_sync = faction_xml_utils.remove_factions_in_main_mod(root, main_mod_faction_maa_map)
+        if factions_removed_from_main_mod > 0:
+            _recache_factions() # Re-cache after removals
 
     default_created = faction_xml_utils.create_default_faction_if_missing(root, categorized_units, unit_categories, general_units, template_faction_unit_pool, all_units, tier, unit_variant_map, unit_to_tier_map, variant_to_base_map, ck3_maa_definitions, unit_to_class_map=unit_to_class_map, unit_to_description_map=unit_to_description_map, unit_stats_map=unit_stats_map, excluded_units_set=excluded_units_set, is_submod_mode=is_submod_mode)
+    if default_created > 0:
+        _recache_factions() # Re-cache after addition
 
     factions_added = faction_xml_utils.sync_factions_from_cultures(root, culture_factions, explicitly_removed_factions=removed_faction_names_for_sync)
+    if factions_added > 0:
+        _recache_factions() # Re-cache after additions
 
     # NEW: Sync all MenAtArm unit tags from Default to other factions
     # This must happen BEFORE the unit assignment pipeline to ensure all MAA tags exist.
@@ -435,7 +462,7 @@ def process_units_xml(units_xml_path, categorized_units, all_units, general_unit
 
 
     print("\n--- Starting Consolidated Faction Processing Loop ---")
-    for faction in root.findall('Faction'):
+    for faction in all_faction_elements: # Use the cached list of faction elements
         faction_name = faction.get('name')
         if faction_name == "Default":
             continue
@@ -620,6 +647,8 @@ def process_units_xml(units_xml_path, categorized_units, all_units, general_unit
 
     # NEW: Merge duplicate factions AFTER adding and renaming.
     merged_duplicates_count = faction_xml_utils.merge_duplicate_factions(root, screen_name_to_faction_key_map)
+    if merged_duplicates_count > 0:
+        _recache_factions() # Re-cache after removals
 
     # NEW: Re-run duplicate removal for MenAtArm after merging factions
     if merged_duplicates_count > 0:
@@ -671,7 +700,8 @@ def process_units_xml(units_xml_path, categorized_units, all_units, general_unit
     if llm_helper and not no_subculture:
         llm_subcultures_assigned_count = llm_orchestrator.run_llm_subculture_pass(
             root, llm_helper, time_period_context, llm_threads, llm_batch_size,
-            faction_to_subculture_map, subculture_to_factions_map, screen_name_to_faction_key_map
+            faction_to_subculture_map, subculture_to_factions_map, screen_name_to_faction_key_map,
+            all_faction_elements=all_faction_elements # Pass cached elements
         )
         if llm_subcultures_assigned_count > 0:
             total_changes += llm_subcultures_assigned_count
@@ -685,6 +715,8 @@ def process_units_xml(units_xml_path, categorized_units, all_units, general_unit
 
     # NEW: Ensure Default faction is first
     default_moved_count = faction_xml_utils.ensure_default_faction_is_first(root)
+    if default_moved_count > 0:
+        _recache_factions() # Re-cache after reordering
 
     # NEW: Final scrub of excluded units before validation to ensure none slip through.
     # This forces reprocessing of any slots that were filled with an.
@@ -1507,12 +1539,15 @@ def main():
                 print(f"Error parsing XML file {args.factions_xml_path} for review: {e}. Aborting review.")
                 raise
             review_faction_pool_cache = {}
+            # Cache faction elements for the review pass
+            all_faction_elements_review = list(root.findall('Faction'))
             review_changes = llm_orchestrator.run_llm_roster_review_pass(
                 root, llm_helper, time_period_context, args.llm_threads, args.llm_batch_size,
                 review_faction_pool_cache, all_units, excluded_units_set, screen_name_to_faction_key_map,
                 faction_key_to_units_map, faction_to_subculture_map, subculture_to_factions_map,
                 faction_key_to_screen_name_map, culture_to_faction_map, faction_to_heritage_map,
-                heritage_to_factions_map, faction_to_heritages_map, ck3_maa_definitions
+                heritage_to_factions_map, faction_to_heritages_map, ck3_maa_definitions,
+                all_faction_elements=all_faction_elements_review # Pass cached elements
             )
             if review_changes > 0:
                 print(f"\nLLM Roster Review applied {review_changes} corrections. Saving file...")

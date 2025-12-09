@@ -386,7 +386,7 @@ def run_llm_roster_review_pass(root, llm_helper, time_period_context, llm_thread
                                 screen_name_to_faction_key_map, faction_key_to_units_map,
                                 faction_to_subculture_map, subculture_to_factions_map, faction_key_to_screen_name_map,
                                 culture_to_faction_map, faction_to_heritage_map, heritage_to_factions_map,
-                                faction_to_heritages_map, ck3_maa_definitions):
+                                faction_to_heritages_map, ck3_maa_definitions, all_faction_elements=None): # Added all_faction_elements
     """
     Runs the LLM Roster Review pass. It gathers the current roster for each faction,
     sends it to the LLM for thematic and cultural review, and applies the suggested corrections.
@@ -401,10 +401,13 @@ def run_llm_roster_review_pass(root, llm_helper, time_period_context, llm_thread
     MAX_REVIEW_RETRIES = 3
     total_corrections_applied = 0
 
+    # Determine which list of factions to iterate over
+    factions_to_iterate = all_faction_elements if all_faction_elements is not None else root.findall('Faction')
+
     # 1. Inject Temporary Unique IDs
     temp_id_counter = 0
     tags_to_review = ['General', 'Knights', 'Levies', 'Garrison', 'MenAtArm']
-    for faction in root.findall('Faction'):
+    for faction in factions_to_iterate:
         for child in faction:
             if child.tag in tags_to_review:
                 child.set('__review_id__', str(temp_id_counter))
@@ -413,7 +416,7 @@ def run_llm_roster_review_pass(root, llm_helper, time_period_context, llm_thread
     initial_review_requests = []
     faction_element_map = {} # Maps faction name to its XML element
 
-    for faction in root.findall('Faction'):
+    for faction in factions_to_iterate:
         faction_name = faction.get('name')
         if faction_name == "Default":
             continue
@@ -640,7 +643,8 @@ def run_llm_roster_review_pass(root, llm_helper, time_period_context, llm_thread
 
 # NEW: LLM Subculture Assignment Pass
 def run_llm_subculture_pass(root, llm_helper, time_period_context, llm_threads, llm_batch_size,
-                            faction_to_subculture_map, subculture_to_factions_map, screen_name_to_faction_key_map):
+                            faction_to_subculture_map, subculture_to_factions_map, screen_name_to_faction_key_map,
+                            all_faction_elements=None): # Added all_faction_elements
     """
     Identifies factions missing subcultures, queries the LLM for assignments, and applies them.
     """
@@ -661,8 +665,11 @@ def run_llm_subculture_pass(root, llm_helper, time_period_context, llm_threads, 
         print("  -> WARNING: No available subcultures found in the Attila DB. LLM cannot assign subcultures.")
         return 0
 
+    # Determine which list of factions to iterate over
+    factions_to_iterate = all_faction_elements if all_faction_elements is not None else root.findall('Faction')
+
     # 1. Identify factions missing subcultures
-    for faction_element in root.findall('Faction'):
+    for faction_element in factions_to_iterate:
         faction_name = faction_element.get('name')
         if not faction_name or faction_name == "Default":
             continue

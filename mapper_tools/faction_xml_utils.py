@@ -84,7 +84,7 @@ def get_faction_heritage_maps_from_xml(cultures_xml_path):
     except ET.ParseError as e:
         print(f"Error parsing Cultures XML file {cultures_xml_path}: {e}")
         return {}, defaultdict(list)
-    return faction_to_heritage_map, heritage_to_factions_map
+    return faction_to_heritage_map, defaultdict(list)
 
 def create_faction_to_heritages_map(heritage_to_factions_map):
     """
@@ -483,7 +483,6 @@ def get_all_tiered_pools(faction_name, faction_pool_cache, screen_name_to_factio
     # This is typically passed as `all_units` to the main function, but for caching,
     # we need to ensure it's available. For now, assume it's passed in.
     # If `all_units` is not passed, this tier might be skipped or handled differently.
-    # For this function, we'll assume `all_units` is available from the outer scope if needed.
     # For now, this function only builds pools based on faction_key_to_units_map.
     # The global pool will be added by the caller if needed.
 
@@ -593,7 +592,7 @@ def conditionally_remove_procedural_keys(root, llm_helper, tier, faction_pool_ca
     return removed_count
 
 
-def ensure_subculture_attributes(root, screen_name_to_faction_key_map, faction_to_subculture_map, no_subculture, most_common_faction_key, faction_key_to_screen_name_map, culture_to_faction_map, faction_to_heritage_map, heritage_to_factions_map, faction_to_heritages_map):
+def ensure_subculture_attributes(root, screen_name_to_faction_key_map, faction_to_subculture_map, no_subculture, most_common_faction_key, faction_key_to_screen_name_map, culture_to_faction_map, faction_to_heritage_map, heritage_to_factions_map, faction_to_heritages_map, all_faction_elements=None): # Added all_faction_elements
     """
     Ensures all factions have a 'subculture' attribute. If missing, attempts to assign one
     based on existing mappings or a fallback to the most common subculture.
@@ -604,7 +603,10 @@ def ensure_subculture_attributes(root, screen_name_to_faction_key_map, faction_t
         return 0
 
     added_count = 0
-    for faction in root.findall('Faction'):
+    # Determine which list of factions to iterate over
+    factions_to_iterate = all_faction_elements if all_faction_elements is not None else root.findall('Faction')
+
+    for faction in factions_to_iterate:
         added_count += _ensure_subculture_attributes_for_faction(
             faction, screen_name_to_faction_key_map, faction_to_subculture_map,
             most_common_faction_key, faction_key_to_screen_name_map, culture_to_faction_map,
