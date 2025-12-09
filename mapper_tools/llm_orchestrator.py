@@ -251,41 +251,64 @@ def run_llm_unit_assignment_pass(llm_helper, all_llm_failures_to_process, time_p
 
     network_unit_results = {}
     if uncached_unit_requests and llm_helper.network_calls_enabled:
-        # Remove duplicate requests to avoid processing identical requests multiple times
+        # Enhanced deduplication: Create a more comprehensive unique key
         unique_requests = {}
         for req in uncached_unit_requests:
-            # Create a unique key based on the request content to deduplicate
-            req_key = (req.get('faction'), req.get('tag_name'), req.get('maa_type'), 
-                      req.get('rank'), req.get('level'), tuple(req.get('validation_pool', [])))
+            # Include more fields in the deduplication key to catch more duplicates
+            req_key = (
+                req.get('faction'), 
+                req.get('tag_name'), 
+                req.get('maa_type'), 
+                req.get('rank'), 
+                req.get('level'),
+                req.get('garrison_slot'),
+                req.get('levy_slot'),
+                tuple(sorted(req.get('validation_pool', []))),
+                tuple(sorted(req.get('prioritized_candidates', {}).keys())) if req.get('prioritized_candidates') else ()
+            )
             if req_key not in unique_requests:
                 unique_requests[req_key] = req
         
         deduplicated_requests = list(unique_requests.values())
         if len(deduplicated_requests) < len(uncached_unit_requests):
-            print(f"  -> Deduplication reduced requests from {len(uncached_unit_requests)} to {len(deduplicated_requests)}")
+            print(f"  -> Deduplication reduced unit requests from {len(uncached_unit_requests)} to {len(deduplicated_requests)}")
         
-        # Group requests by request type for more efficient processing
-        requests_by_type = defaultdict(list)
+        # Smart batching: Group by multiple criteria for better context
+        # Group by faction culture first, then by request type
+        requests_by_culture_and_type = defaultdict(list)
         for req in deduplicated_requests:
-            request_type = req.get('tag_name')
-            requests_by_type[request_type].append(req)
+            faction_name = req.get('faction', '')
+            faction_key = screen_name_to_faction_key_map.get(faction_name)
+            subculture = faction_to_subculture_map.get(faction_key) if faction_key else None
+            request_type = req.get('tag_name', 'unknown')
+            
+            # Create a grouping key that combines culture and type
+            group_key = f"{subculture or 'no_culture'}|{request_type}"
+            requests_by_culture_and_type[group_key].append(req)
         
-        # Process batches by type for better LLM efficiency
+        # Process batches with optimal grouping
         network_unit_results = {}
-        for request_type, type_requests in requests_by_type.items():
-            # Use larger batch size for better efficiency
-            type_batches = [type_requests[i:i + llm_batch_size] for i in range(0, len(type_requests), llm_batch_size)]
-            print(f"  -> Submitting {len(type_requests)} '{request_type}' requests to LLM in {len(type_batches)} batches using {llm_threads} threads...")
+        for group_key, group_requests in requests_by_culture_and_type.items():
+            subculture, request_type = group_key.split('|', 1)
+            # Use larger batch size (up to 100) for better efficiency
+            group_batches = [group_requests[i:i + min(100, llm_batch_size)] for i in range(0, len(group_requests), min(100, llm_batch_size))]
+            print(f"  -> Submitting {len(group_requests)} '{request_type}' requests for subculture '{subculture}' to LLM in {len(group_batches)} batches...")
+            
             with ThreadPoolExecutor(max_workers=llm_threads) as executor:
-                future_to_batch = {executor.submit(llm_helper.get_batch_unit_replacements, batch, time_period_context): batch for batch in type_batches}
+                future_to_batch = {
+                    executor.submit(llm_helper.get_batch_unit_replacements, batch, time_period_context): batch 
+                    for batch in group_batches
+                }
                 processed_requests = 0
                 for future in as_completed(future_to_batch):
                     processed_requests += len(future_to_batch[future])
-                    print(f"  -> LLM '{request_type}' progress: {processed_requests}/{len(type_requests)} requests completed.")
+                    print(f"  -> LLM '{request_type}' progress for subculture '{subculture}': {processed_requests}/{len(group_requests)} requests completed.")
                     try:
-                        network_unit_results.update(future.result())
+                        batch_results = future.result()
+                        if batch_results:
+                            network_unit_results.update(batch_results)
                     except Exception as exc:
-                        print(f"  -> ERROR: A '{request_type}' batch generated an exception: {exc}")
+                        print(f"  -> ERROR: A '{request_type}' batch for subculture '{subculture}' generated an exception: {exc}")
     final_unit_results = {**cached_unit_results, **network_unit_results}
 
     # --- Levy Request Pipeline ---
