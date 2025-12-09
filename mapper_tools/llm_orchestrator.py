@@ -291,8 +291,9 @@ def run_llm_unit_assignment_pass(llm_helper, all_llm_failures_to_process, time_p
         for group_key, group_requests in requests_by_culture_and_type.items():
             subculture, request_type = group_key.split('|', 1)
             # Use larger batch size (up to 100) for better efficiency
-            group_batches = [group_requests[i:i + min(100, llm_batch_size)] for i in range(0, len(group_requests), min(100, llm_batch_size))]
-            print(f"  -> Submitting {len(group_requests)} '{request_type}' requests for subculture '{subculture}' to LLM in {len(group_batches)} batches...")
+            batch_size = min(100, llm_batch_size)
+            group_batches = [group_requests[i:i + batch_size] for i in range(0, len(group_requests), batch_size)]
+            print(f"  -> Submitting {len(group_requests)} '{request_type}' requests for subculture '{subculture}' to LLM in {len(group_batches)} batches (batch size: {batch_size})...")
             
             with ThreadPoolExecutor(max_workers=llm_threads) as executor:
                 future_to_batch = {
