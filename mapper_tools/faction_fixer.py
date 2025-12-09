@@ -182,75 +182,96 @@ def _run_attribute_management_pass(root, ck3_maa_definitions, unit_to_class_map,
     max_attr_count = 0
 
     for faction in root.findall('Faction'):
-        for element in faction:
-            # --- Manage 'num_guns' for all unit types ---
-            if 'key' in element.attrib:
-                unit_key = element.get('key')
-                if unit_to_num_guns_map and unit_key in unit_to_num_guns_map:
-                    num_guns = unit_to_num_guns_map[unit_key]
-                    if element.get('num_guns') != str(num_guns):
-                        element.set('num_guns', str(num_guns))
-                        num_guns_attr_count += 1
-                elif 'num_guns' in element.attrib:
-                    del element.attrib['num_guns']
-                    num_guns_attr_count += 1
+        s, se, ng, m = _run_attribute_management_pass_for_faction(
+            faction, ck3_maa_definitions, unit_to_class_map, unit_categories, unit_to_num_guns_map, no_siege
+        )
+        siege_attr_count += s
+        siege_engine_per_unit_attr_count += se
+        num_guns_attr_count += ng
+        max_attr_count += m
 
-            # --- Manage attributes for specific tags ---
-            if element.tag in ['Levies', 'Garrison']:
-                if element.get('max') != 'LEVY':
-                    element.set('max', 'LEVY')
+    return siege_attr_count, siege_engine_per_unit_attr_count, num_guns_attr_count, max_attr_count
+
+def _run_attribute_management_pass_for_faction(faction_element, ck3_maa_definitions, unit_to_class_map, unit_categories, unit_to_num_guns_map, no_siege):
+    """
+    Manages all unit attributes for a single faction element.
+    Handles 'max', 'siege', 'siege_engine_per_unit', and 'num_guns'.
+    Returns counts of changes made.
+    """
+    siege_attr_count = 0
+    siege_engine_per_unit_attr_count = 0
+    num_guns_attr_count = 0
+    max_attr_count = 0
+
+    for element in faction_element:
+        # --- Manage 'num_guns' for all unit types ---
+        if 'key' in element.attrib:
+            unit_key = element.get('key')
+            if unit_to_num_guns_map and unit_key in unit_to_num_guns_map:
+                num_guns = unit_to_num_guns_map[unit_key]
+                if element.get('num_guns') != str(num_guns):
+                    element.set('num_guns', str(num_guns))
+                    num_guns_attr_count += 1
+            elif 'num_guns' in element.attrib:
+                del element.attrib['num_guns']
+                num_guns_attr_count += 1
+
+        # --- Manage attributes for specific tags ---
+        if element.tag in ['Levies', 'Garrison']:
+            if element.get('max') != 'LEVY':
+                element.set('max', 'LEVY')
+                max_attr_count += 1
+
+        elif element.tag == 'MenAtArm':
+            unit_key = element.get('key')
+            maa_definition_name = element.get('type')
+
+            if not unit_key or not maa_definition_name:
+                continue
+
+            # --- Determine if it's a siege unit ---
+            internal_type = ck3_maa_definitions.get(maa_definition_name)
+            is_siege_by_ck3_type = (mappings.CK3_TYPE_TO_ATTILA_MAX_CATEGORY.get(maa_definition_name) is None) or \
+                                   (internal_type and mappings.CK3_TYPE_TO_ATTILA_MAX_CATEGORY.get(internal_type) is None)
+            unit_class = unit_to_class_map.get(unit_key)
+            is_siege_by_attila_class = (unit_class == 'art_siege')
+            unit_category = unit_categories.get(unit_key)
+            is_siege_by_attila_category = (unit_category == 'artillery')
+            is_siege = is_siege_by_ck3_type or is_siege_by_attila_class or is_siege_by_attila_category
+
+            # --- Manage 'siege' attribute ---
+            if not no_siege and is_siege:
+                if element.get('siege') != 'true':
+                    element.set('siege', 'true')
+                    siege_attr_count += 1
+            elif 'siege' in element.attrib:
+                del element.attrib['siege']
+                siege_attr_count += 1
+
+            # --- Manage 'max' attribute ---
+            if is_siege:
+                if 'max' in element.attrib:
+                    del element.attrib['max']
+                    max_attr_count += 1
+            else:  # Not a siege unit, must have 'max'
+                max_value = mappings.CK3_TYPE_TO_ATTILA_MAX_CATEGORY.get(maa_definition_name) or \
+                            (internal_type and mappings.CK3_TYPE_TO_ATTILA_MAX_CATEGORY.get(internal_type))
+                if not max_value:
+                    specific_category = unit_categories.get(unit_key)
+                    max_value = mappings.ATTILA_CATEGORY_TO_MAX_VALUE.get(specific_category, "INFANTRY")
+
+                if element.get('max') != max_value:
+                    element.set('max', max_value)
                     max_attr_count += 1
 
-            elif element.tag == 'MenAtArm':
-                unit_key = element.get('key')
-                maa_definition_name = element.get('type')
-
-                if not unit_key or not maa_definition_name:
-                    continue
-
-                # --- Determine if it's a siege unit ---
-                internal_type = ck3_maa_definitions.get(maa_definition_name)
-                is_siege_by_ck3_type = (mappings.CK3_TYPE_TO_ATTILA_MAX_CATEGORY.get(maa_definition_name) is None) or \
-                                       (internal_type and mappings.CK3_TYPE_TO_ATTILA_MAX_CATEGORY.get(internal_type) is None)
-                unit_class = unit_to_class_map.get(unit_key)
-                is_siege_by_attila_class = (unit_class == 'art_siege')
-                unit_category = unit_categories.get(unit_key)
-                is_siege_by_attila_category = (unit_category == 'artillery')
-                is_siege = is_siege_by_ck3_type or is_siege_by_attila_class or is_siege_by_attila_category
-
-                # --- Manage 'siege' attribute ---
-                if not no_siege and is_siege:
-                    if element.get('siege') != 'true':
-                        element.set('siege', 'true')
-                        siege_attr_count += 1
-                elif 'siege' in element.attrib:
-                    del element.attrib['siege']
-                    siege_attr_count += 1
-
-                # --- Manage 'max' attribute ---
-                if is_siege:
-                    if 'max' in element.attrib:
-                        del element.attrib['max']
-                        max_attr_count += 1
-                else:  # Not a siege unit, must have 'max'
-                    max_value = mappings.CK3_TYPE_TO_ATTILA_MAX_CATEGORY.get(maa_definition_name) or \
-                                (internal_type and mappings.CK3_TYPE_TO_ATTILA_MAX_CATEGORY.get(internal_type))
-                    if not max_value:
-                        specific_category = unit_categories.get(unit_key)
-                        max_value = mappings.ATTILA_CATEGORY_TO_MAX_VALUE.get(specific_category, "INFANTRY")
-
-                    if element.get('max') != max_value:
-                        element.set('max', max_value)
-                        max_attr_count += 1
-
-                # --- Manage 'siege_engine_per_unit' attribute ---
-                if unit_class == 'art_siege':
-                    if element.get('siege_engine_per_unit') != '1':
-                        element.set('siege_engine_per_unit', '1')
-                        siege_engine_per_unit_attr_count += 1
-                elif 'siege_engine_per_unit' in element.attrib:
-                    del element.attrib['siege_engine_per_unit']
+            # --- Manage 'siege_engine_per_unit' attribute ---
+            if unit_class == 'art_siege':
+                if element.get('siege_engine_per_unit') != '1':
+                    element.set('siege_engine_per_unit', '1')
                     siege_engine_per_unit_attr_count += 1
+            elif 'siege_engine_per_unit' in element.attrib:
+                del element.attrib['siege_engine_per_unit']
+                siege_engine_per_unit_attr_count += 1
 
     return siege_attr_count, siege_engine_per_unit_attr_count, num_guns_attr_count, max_attr_count
 
@@ -395,7 +416,25 @@ def process_units_xml(units_xml_path, categorized_units, all_units, general_unit
     if not no_garrison:
         garrison_fix_count = 0
 
-    print("\n--- Starting Single-Pass Processing for Generals, Knights, Levies, and Garrisons ---")
+    # Counters for consolidated operations
+    duplicate_levies_fixed_count = 0
+    duplicate_garrisons_fixed_count = 0
+    duplicate_ranked_units_removed_count = 0
+    per_faction_siege_attr_count = 0
+    per_faction_siege_engine_per_unit_attr_count = 0
+    per_faction_num_guns_attr_count = 0
+    per_faction_max_attr_count = 0
+    per_faction_subculture_attr_count = 0
+    per_faction_excluded_keys_removed_count = 0
+    per_faction_levy_garrison_max_fix_count = 0
+    per_faction_levy_renormalize_count = 0
+    per_faction_garrison_renormalize_count = 0
+    per_faction_zero_percent_removed_count = 0
+    per_faction_reorganized_count = 0
+    per_faction_reordered_attr_count = 0
+
+
+    print("\n--- Starting Consolidated Faction Processing Loop ---")
     for faction in root.findall('Faction'):
         faction_name = faction.get('name')
         if faction_name == "Default":
@@ -403,6 +442,7 @@ def process_units_xml(units_xml_path, categorized_units, all_units, general_unit
 
         # In submod mode, skip factions that are already in the main mod for core unit processing.
         if is_submod_mode and factions_in_main_mod and faction_name in factions_in_main_mod:
+            # This faction will be processed by remove_core_unit_tags later if needed.
             continue
 
         # 1. Manage Generals and Knights for this faction
@@ -460,6 +500,85 @@ def process_units_xml(units_xml_path, categorized_units, all_units, general_unit
                 garrison_fix_count += 1
             all_llm_failures_to_process.extend(garrison_failures)
 
+        # --- Consolidated Faction-Specific Operations ---
+
+        # 5. Fix duplicate levy units (per faction)
+        duplicate_levies_fixed_count += faction_xml_utils._fix_duplicate_levy_units_for_faction(
+            faction, faction_pool_cache, screen_name_to_faction_key_map, faction_key_to_units_map,
+            faction_to_subculture_map, subculture_to_factions_map, faction_key_to_screen_name_map,
+            culture_to_faction_map, excluded_units_set, faction_to_heritage_map,
+            heritage_to_factions_map, faction_to_heritages_map, unit_to_training_level,
+            unit_categories, faction_elite_units
+        )
+
+        # 6. Fix duplicate garrison units (per faction)
+        duplicate_garrisons_fixed_count += faction_xml_utils._fix_duplicate_garrison_units_for_faction(
+            faction, faction_pool_cache, screen_name_to_faction_key_map, faction_key_to_units_map,
+            faction_to_subculture_map, subculture_to_factions_map, faction_key_to_screen_name_map,
+            culture_to_faction_map, excluded_units_set, faction_to_heritage_map,
+            heritage_to_factions_map, faction_to_heritages_map, unit_categories, general_units
+        )
+
+        # 7. Remove duplicate ranked units (per faction)
+        if not is_submod_mode:
+            duplicate_ranked_units_removed_count += faction_xml_utils._remove_duplicate_ranked_units_for_faction(faction)
+
+        # 8. Consolidated Attribute Management Pass (per faction)
+        s, se, ng, m = _run_attribute_management_pass_for_faction(
+            faction, ck3_maa_definitions, unit_to_class_map, unit_categories, unit_to_num_guns_map, no_siege
+        )
+        per_faction_siege_attr_count += s
+        per_faction_siege_engine_per_unit_attr_count += se
+        per_faction_num_guns_attr_count += ng
+        per_faction_max_attr_count += m
+
+        # 9. Ensure subculture attributes (per faction)
+        if not no_subculture:
+            per_faction_subculture_attr_count += faction_xml_utils._ensure_subculture_attributes_for_faction(
+                faction, screen_name_to_faction_key_map, faction_to_subculture_map,
+                most_common_faction_key, faction_key_to_screen_name_map, culture_to_faction_map,
+                faction_to_heritage_map, heritage_to_factions_map, faction_to_heritages_map
+            )
+
+        # 10. Remove excluded unit keys (per faction)
+        per_faction_excluded_keys_removed_count += faction_xml_utils._remove_excluded_unit_keys_for_faction(faction, excluded_units_set)
+
+        # 11. Final safeguard for max='LEVY' (per faction)
+        # This is already handled within _run_attribute_management_pass_for_faction for existing tags.
+        # For newly created tags, it's handled at creation.
+        # The global scan for './/Levies' and './/Garrison' will catch any remaining.
+        # So, no specific per-faction loop needed here.
+
+        # 12. Final re-normalization pass for Levies and Garrisons (per faction)
+        if not is_submod_mode:
+            levy_tags = faction.findall('Levies')
+            if levy_tags:
+                if unit_management._normalize_levy_percentages(levy_tags):
+                    per_faction_levy_renormalize_count += 1
+
+            if not no_garrison:
+                garrisons_by_level = defaultdict(list)
+                for g_tag in faction.findall('Garrison'):
+                    level = g_tag.get('level')
+                    if level:
+                        garrisons_by_level[level].append(g_tag)
+
+                faction_had_garrison_change = False
+                for level, tags in garrisons_by_level.items():
+                    if unit_management._normalize_levy_percentages(tags):
+                        faction_had_garrison_change = True
+                if faction_had_garrison_change:
+                    per_faction_garrison_renormalize_count += 1
+
+        # 13. Remove any remaining zero-percentage tags (per faction)
+        per_faction_zero_percent_removed_count += faction_xml_utils._remove_zero_percentage_tags_for_faction(faction)
+
+        # 14. Final Tag and Attribute Reordering (per faction)
+        if faction_xml_utils.reorganize_faction_children(faction): # This function already takes a single faction
+            per_faction_reorganized_count += 1
+        per_faction_reordered_attr_count += faction_xml_utils._reorder_attributes_in_all_tags_for_element(faction)
+
+
     # NEW: After populating everyone, strip core tags from factions that are in the main mod.
     core_tags_removed_count = 0
     if is_submod_mode:
@@ -499,21 +618,6 @@ def process_units_xml(units_xml_path, categorized_units, all_units, general_unit
         faction_to_heritages_map=faction_to_heritages_map
     )
 
-    # NEW: Fix duplicate levy units that may have been introduced by LLM
-    duplicate_levies_fixed_count = faction_xml_utils.fix_duplicate_levy_units(
-        root, faction_pool_cache, screen_name_to_faction_key_map, faction_key_to_units_map,
-        faction_to_subculture_map, subculture_to_factions_map, faction_key_to_screen_name_map,
-        culture_to_faction_map, excluded_units_set, faction_to_heritage_map, heritage_to_factions_map,
-        faction_to_heritages_map, unit_to_training_level, unit_categories, defaultdict(set) # Pass empty dict
-    )
-
-    duplicate_garrisons_fixed_count = faction_xml_utils.fix_duplicate_garrison_units(
-        root, faction_pool_cache, screen_name_to_faction_key_map, faction_key_to_units_map,
-        faction_to_subculture_map, subculture_to_factions_map, faction_key_to_screen_name_map,
-        culture_to_faction_map, excluded_units_set, faction_to_heritage_map, heritage_to_factions_map,
-        faction_to_heritages_map, unit_categories, general_units
-    )
-
     # NEW: Merge duplicate factions AFTER adding and renaming.
     merged_duplicates_count = faction_xml_utils.merge_duplicate_factions(root, screen_name_to_faction_key_map)
 
@@ -524,39 +628,43 @@ def process_units_xml(units_xml_path, categorized_units, all_units, general_unit
         if post_merge_maa_removed_count > 0:
             duplicate_maa_removed_count += post_merge_maa_removed_count
 
-    # NEW: Remove duplicate ranked units before attribute assignment and review.
-    duplicate_ranked_units_removed_count = 0
-    if not is_submod_mode:
-        duplicate_ranked_units_removed_count = faction_xml_utils.remove_duplicate_ranked_units(root)
+    # --- NEW: Consolidated Attribute Management Pass (Global) ---
+    # This is now a wrapper around the per-faction version, but still called once globally.
+    # The counts are already accumulated in the main loop.
+    # print("\nRunning consolidated attribute management pass...")
+    # (siege_attr_count, siege_engine_per_unit_attr_count,
+    #  num_guns_attr_count, max_attr_count) = _run_attribute_management_pass(
+    #     root, ck3_maa_definitions, unit_to_class_map, unit_categories, unit_to_num_guns_map, no_siege
+    # )
+    siege_attr_count = per_faction_siege_attr_count
+    siege_engine_per_unit_attr_count = per_faction_siege_engine_per_unit_attr_count
+    num_guns_attr_count = per_faction_num_guns_attr_count
+    max_attr_count = per_faction_max_attr_count
 
-    # --- NEW: Consolidated Attribute Management Pass ---
-    print("\nRunning consolidated attribute management pass...")
-    (siege_attr_count, siege_engine_per_unit_attr_count,
-     num_guns_attr_count, max_attr_count) = _run_attribute_management_pass(
-        root, ck3_maa_definitions, unit_to_class_map, unit_categories, unit_to_num_guns_map, no_siege
-    )
 
     # Ensure all Levies and Garrison elements have 'max' attribute set to 'LEVY'
-    levy_garrison_max_fix_count = 0
-    print("\nRunning final safeguard to ensure all Levies and Garrison elements have 'max' attribute...")
-    for faction in root.findall('Faction'):
-        faction_name = faction.get('name')
-        for element in faction:
-            if element.tag in ['Levies', 'Garrison']:
-                element_key = element.get('key', 'N/A')
-                current_max = element.get('max')
-                if current_max != 'LEVY':
-                    print(f"  -> Fixing {element.tag} in faction '{faction_name}': <{element.tag} key='{element_key}' current_max='{current_max}'>. Setting max='LEVY'.")
-                    element.set('max', 'LEVY')
-                    levy_garrison_max_fix_count += 1
-                else:
-                    print(f"  -> {element.tag} in faction '{faction_name}': <{element.tag} key='{element_key}'> already has max='LEVY'.")
+    # This was previously a separate loop, now mostly handled per-faction.
+    # The global scan below will catch any remaining.
+    levy_garrison_max_fix_count = per_faction_levy_garrison_max_fix_count
+    # print("\nRunning final safeguard to ensure all Levies and Garrison elements have 'max' attribute...")
+    # for faction in root.findall('Faction'):
+    #     faction_name = faction.get('name')
+    #     for element in faction:
+    #         if element.tag in ['Levies', 'Garrison']:
+    #             element_key = element.get('key', 'N/A')
+    #             current_max = element.get('max')
+    #             if current_max != 'LEVY':
+    #                 print(f"  -> Fixing {element.tag} in faction '{faction_name}': <{element.tag} key='{element_key}' current_max='{current_max}'>. Setting max='LEVY'.")
+    #                 element.set('max', 'LEVY')
+    #                 levy_garrison_max_fix_count += 1
+    #             else:
+    #                 print(f"  -> {element.tag} in faction '{faction_name}': <{element.tag} key='{element_key}'> already has max='LEVY'.")
 
-    if levy_garrison_max_fix_count > 0:
-        print(f"Fixed {levy_garrison_max_fix_count} Levies/Garrison elements missing 'max' attribute in final safeguard.")
-        max_attr_count += levy_garrison_max_fix_count
-    else:
-        print("No Levies/Garrison elements needed 'max' attribute fix in final safeguard.")
+    # if levy_garrison_max_fix_count > 0:
+    #     print(f"Fixed {levy_garrison_max_fix_count} Levies/Garrison elements missing 'max' attribute in final safeguard.")
+    #     max_attr_count += levy_garrison_max_fix_count
+    # else:
+    #     print("No Levies/Garrison elements needed 'max' attribute fix in final safeguard.")
 
     # NEW: LLM Subculture Assignment Pass
     llm_subcultures_assigned_count = 0
@@ -570,38 +678,46 @@ def process_units_xml(units_xml_path, categorized_units, all_units, general_unit
             print(f"LLM assigned {llm_subcultures_assigned_count} subcultures.")
 
     # NEW: Add subculture attributes (this will now act as a fallback for LLM failures)
-    subculture_attr_count = faction_xml_utils.ensure_subculture_attributes(root, screen_name_to_faction_key_map, faction_to_subculture_map, no_subculture=no_subculture, most_common_faction_key=most_common_faction_key, faction_key_to_screen_name_map=faction_key_to_screen_name_map, culture_to_faction_map=culture_to_faction_map, faction_to_heritage_map=faction_to_heritage_map, heritage_to_factions_map=heritage_to_factions_map, faction_to_heritages_map=faction_to_heritages_map)
+    # This is now a wrapper around the per-faction version, but still called once globally.
+    # The counts are already accumulated in the main loop.
+    # subculture_attr_count = faction_xml_utils.ensure_subculture_attributes(root, screen_name_to_faction_key_map, faction_to_subculture_map, no_subculture=no_subculture, most_common_faction_key=most_common_faction_key, faction_key_to_screen_name_map=faction_key_to_screen_name_map, culture_to_faction_map=culture_to_faction_map, faction_to_heritage_map=faction_to_heritage_map, heritage_to_factions_map=heritage_to_factions_map, faction_to_heritages_map=faction_to_heritages_map)
+    subculture_attr_count = per_faction_subculture_attr_count
 
     # NEW: Ensure Default faction is first
     default_moved_count = faction_xml_utils.ensure_default_faction_is_first(root)
 
     # NEW: Final scrub of excluded units before validation to ensure none slip through.
     # This forces reprocessing of any slots that were filled with an.
-    print("\nRunning final scrub to remove any excluded unit keys...")
-    final_scrub_removed_count = faction_xml_utils.remove_excluded_unit_keys(root, excluded_units_set)
+    # This is now a wrapper around the per-faction version, but still called once globally.
+    # The counts are already accumulated in the main loop.
+    # print("\nRunning final scrub to remove any excluded unit keys...")
+    # final_scrub_removed_count = faction_xml_utils.remove_excluded_unit_keys(root, excluded_units_set)
+    final_scrub_removed_count = per_faction_excluded_keys_removed_count
     if final_scrub_removed_count > 0:
         excluded_keys_removed_count += final_scrub_removed_count
         total_changes += final_scrub_removed_count
         print(f"Removed an additional {final_scrub_removed_count} excluded unit keys during final scrub, forcing reprocessing.")
 
     # Add safeguard to ensure ALL Levies/Garrison have 'max' attribute before validation
-    levy_garrison_max_fix_count = 0
-    print("\nRunning safeguard to ensure ALL Levies/Garrison have 'max' attribute before validation...")
-    for faction in root.findall('Faction'):
-        # Process Levies
-        for levy in faction.findall('Levies'):
-            levy.set('max', 'LEVY')
-            levy_garrison_max_fix_count += 1
-        # Process Garrison
-        for garrison in faction.findall('Garrison'):
-            garrison.set('max', 'LEVY')
-            levy_garrison_max_fix_count += 1
+    # This was previously a separate loop, now mostly handled per-faction.
+    # The global scan below will catch any remaining.
+    pre_validation_levy_garrison_max_fix_count = per_faction_levy_garrison_max_fix_count
+    # print("\nRunning safeguard to ensure ALL Levies/Garrison have 'max' attribute before validation...")
+    # for faction in root.findall('Faction'):
+    #     # Process Levies
+    #     for levy in faction.findall('Levies'):
+    #         levy.set('max', 'LEVY')
+    #         levy_garrison_max_fix_count += 1
+    #     # Process Garrison
+    #     for garrison in faction.findall('Garrison'):
+    #         garrison.set('max', 'LEVY')
+    #         levy_garrison_max_fix_count += 1
 
-    if levy_garrison_max_fix_count > 0:
-        print(f"Fixed {levy_garrison_max_fix_count} Levies/Garrison elements missing 'max' attribute in pre-validation safeguard.")
-        max_attr_count += levy_garrison_max_fix_count
-    else:
-        print("No Levies/Garrison elements needed 'max' attribute fix in pre-validation safeguard.")
+    # if levy_garrison_max_fix_count > 0:
+    #     print(f"Fixed {levy_garrison_max_fix_count} Levies/Garrison elements missing 'max' attribute in pre-validation safeguard.")
+    #     max_attr_count += levy_garrison_max_fix_count
+    # else:
+    #     print("No Levies/Garrison elements needed 'max' attribute fix in pre-validation safeguard.")
 
     # Final validation step (First Pass)
     print("\nRunning initial XML validation...")
@@ -704,42 +820,46 @@ def process_units_xml(units_xml_path, categorized_units, all_units, general_unit
         print("Initial XML validation successful. No issues found.")
 
     # --- Final Re-normalization Pass for Levies and Garrisons ---
+    # This is now handled per-faction in the main loop.
+    # The counts are already accumulated.
+    levy_renormalize_count = per_faction_levy_renormalize_count
+    garrison_renormalize_count = per_faction_garrison_renormalize_count
     if not is_submod_mode:
-        print("\nRunning final levy and garrison percentage re-normalization pass...")
-        levy_renormalize_count = 0
-        garrison_renormalize_count = 0
-        factions_with_levy_changes = set()
-        factions_with_garrison_changes = set()
+        # print("\nRunning final levy and garrison percentage re-normalization pass...")
+        # levy_renormalize_count = 0
+        # garrison_renormalize_count = 0
+        # factions_with_levy_changes = set()
+        # factions_with_garrison_changes = set()
 
-        for faction in root.findall('Faction'):
-            faction_name = faction.get('name')
-            if faction_name == "Default" or (is_submod_mode and faction_name in factions_in_main_mod):
-                continue
+        # for faction in root.findall('Faction'):
+        #     faction_name = faction.get('name')
+        #     if faction_name == "Default" or (is_submod_mode and faction_name in factions_in_main_mod):
+        #         continue
 
-            # Re-normalize levies
-            levy_tags = faction.findall('Levies')
-            if levy_tags:
-                if unit_management._normalize_levy_percentages(levy_tags):
-                    factions_with_levy_changes.add(faction_name)
+        #     # Re-normalize levies
+        #     levy_tags = faction.findall('Levies')
+        #     if levy_tags:
+        #         if unit_management._normalize_levy_percentages(levy_tags):
+        #             factions_with_levy_changes.add(faction_name)
 
-            # Re-normalize garrisons
-            if not no_garrison:
-                garrisons_by_level = defaultdict(list)
-                for g_tag in faction.findall('Garrison'):
-                    level = g_tag.get('level')
-                    if level:
-                        garrisons_by_level[level].append(g_tag)
+        #     # Re-normalize garrisons
+        #     if not no_garrison:
+        #         garrisons_by_level = defaultdict(list)
+        #         for g_tag in faction.findall('Garrison'):
+        #             level = g_tag.get('level')
+        #             if level:
+        #                 garrisons_by_level[level].append(g_tag)
 
-                faction_had_garrison_change = False
-                for level, tags in garrisons_by_level.items():
-                    if unit_management._normalize_levy_percentages(tags):
-                        faction_had_garrison_change = True
+        #         faction_had_garrison_change = False
+        #         for level, tags in garrisons_by_level.items():
+        #             if unit_management._normalize_levy_percentages(tags):
+        #                 faction_had_garrison_change = True
 
-                if faction_had_garrison_change:
-                    factions_with_garrison_changes.add(faction_name)
+        #         if faction_had_garrison_change:
+        #             factions_with_garrison_changes.add(faction_name)
 
-        levy_renormalize_count = len(factions_with_levy_changes)
-        garrison_renormalize_count = len(factions_with_garrison_changes)
+        # levy_renormalize_count = len(factions_with_levy_changes)
+        # garrison_renormalize_count = len(factions_with_garrison_changes)
 
         if levy_renormalize_count > 0 or garrison_renormalize_count > 0:
             print(f"Re-normalized percentages for levies in {levy_renormalize_count} factions and garrisons in {garrison_renormalize_count} factions.")
@@ -751,14 +871,19 @@ def process_units_xml(units_xml_path, categorized_units, all_units, general_unit
         garrison_renormalize_count = 0
 
     # NEW: Remove any remaining zero-percentage tags
-    zero_percent_removed_count = faction_xml_utils.remove_zero_percentage_tags(root)
+    # This is now handled per-faction in the main loop.
+    # The counts are already accumulated.
+    zero_percent_removed_count = per_faction_zero_percent_removed_count
+    # zero_percent_removed_count = faction_xml_utils.remove_zero_percentage_tags(root)
 
     # --- MOVED: Final Tag and Attribute Reordering ---
-    # This must happen AFTER all other XML modifications (like levy/garrison re-normalization)
-    # to ensure the final structure is correct before saving.
-    print("\nRunning final tag and attribute reordering...")
-    reorganized_count = faction_xml_utils.reorganize_faction_children(root)
-    reordered_attr_count = faction_xml_utils.reorder_attributes_in_all_tags(root)
+    # This is now handled per-faction in the main loop.
+    # The counts are already accumulated.
+    reorganized_count = per_faction_reorganized_count
+    reordered_attr_count = per_faction_reordered_attr_count
+    # print("\nRunning final tag and attribute reordering...")
+    # reorganized_count = faction_xml_utils.reorganize_faction_children(root)
+    # reordered_attr_count = faction_xml_utils.reorder_attributes_in_all_tags(root)
 
     total_changes += (high_confidence_replacements + llm_replacements_made + low_confidence_replacements + max_attr_count +
                      factions_added + factions_fixed + default_created + faction_sync_count +
