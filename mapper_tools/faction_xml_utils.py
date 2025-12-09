@@ -504,10 +504,7 @@ def get_all_tiered_pools(faction_name, faction_pool_cache, screen_name_to_factio
     
     # Limit cache size to prevent memory issues
     max_cache_size = 1000
-    if len(faction_pool_cache) > max_cache_size:
-        # Remove oldest entries (assuming insertion order is preserved in Python 3.7+)
-        oldest_key = next(iter(faction_pool_cache))
-        del faction_pool_cache[oldest_key]
+    if len(faction极
 
     return tiered_pools, tiered_log_strings
 
