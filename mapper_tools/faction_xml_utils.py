@@ -199,7 +199,7 @@ def remove_factions_not_in_cultures(root, culture_factions, screen_name_to_facti
         root.remove(faction_element)
     return removed_count
 
-def remove_factions_in_main_mod(root, main_mod_faction_maa_map):
+def remove_factions_in_main_mod(root, main_mod_faction_maa_map, all_faction_elements=None):
     """
     In submod mode, removes factions from the submod XML that are present in the main mod
     AND have no new MenAtArm types defined in the submod.
@@ -212,7 +212,10 @@ def remove_factions_in_main_mod(root, main_mod_faction_maa_map):
     if not main_mod_faction_maa_map:
         return 0, removed_faction_names_for_sync
 
-    for faction_element in root.findall('Faction'):
+    # Use cached faction elements if provided, otherwise find them normally
+    factions_to_iterate = all_faction_elements if all_faction_elements is not None else root.findall('Faction')
+    
+    for faction_element in factions_to_iterate:
         faction_name = faction_element.get('name')
         if faction_name == "Default":
             continue
