@@ -284,12 +284,14 @@ def create_default_faction_if_missing(root, categorized_units, unit_categories, 
         return default_created
     return 0
 
-def sync_factions_from_cultures(root, culture_factions, explicitly_removed_factions=None):
+def sync_factions_from_cultures(root, culture_factions, explicitly_removed_factions=None, all_faction_elements=None):
     """
     Adds any factions present in culture_factions but missing from the XML.
     """
     added_count = 0
-    existing_faction_names = {f.get('name') for f in root.findall('Faction')}
+    # Use cached faction elements if provided, otherwise find them normally
+    factions_to_iterate = all_faction_elements if all_faction_elements is not None else root.findall('Faction')
+    existing_faction_names = {f.get('name') for f in factions_to_iterate}
     if explicitly_removed_factions is None:
         explicitly_removed_factions = set()
 
