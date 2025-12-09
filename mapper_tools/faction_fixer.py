@@ -292,13 +292,17 @@ def process_units_xml(units_xml_path, categorized_units, all_units, general_unit
                       excluded_factions=None, unit_to_class_map=None, faction_to_subculture_map=None, subculture_to_factions_map=None,
                       culture_to_faction_map=None, unit_to_description_map=None, unit_stats_map=None,
                       faction_culture_map=None, llm_helper=None, excluded_units_set=None, unit_to_num_guns_map=None, llm_batch_size=50, no_siege=False, no_subculture=False, no_garrison=False, most_common_faction_key=None, main_mod_faction_maa_map=None, llm_threads=1,
-                      faction_to_heritage_map=None, heritage_to_factions_map=None, faction_to_heritages_map=None, first_pass_threshold=0.90, is_submod_mode=False, submod_addon_tag=None, faction_to_json_map=None, time_period_context="", force_procedural_recache=False): # Added heritage maps and first_pass_threshold, is_submod_mode
+                      faction_to_heritage_map=None, heritage_to_factions_map=None, faction_to_heritages_map=None, first_pass_threshold=0.90, is_submod_mode=False, submod_addon_tag=None, faction_to_json_map=None, time_period_context="", force_procedural_recache=False, faction_elite_units=None): # Added heritage maps and first_pass_threshold, is_submod_mode, faction_elite_units
     """
     Processes a single Attila Factions XML file to fix and update unit entries.
     """
     total_changes = 0 # Initialize total_changes here
     faction_pool_cache = {} # Initialize the cache for this run
     print(f"\nProcessing file: {units_xml_path}")
+
+    # Initialize faction_elite_units if not provided
+    if faction_elite_units is None:
+        faction_elite_units = defaultdict(set)
 
     # Define factions_in_main_mod early
     factions_in_main_mod = set()
