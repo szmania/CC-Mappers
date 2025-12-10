@@ -11,6 +11,8 @@ import csv
 import sys
 import datetime
 import hashlib
+import threading
+import copy
 
 try:
     from lxml import etree as lxml_etree
@@ -439,24 +441,18 @@ def process_units_xml(units_xml_path, categorized_units, all_units, general_unit
     faction_pool_cache.clear()
     print("  -> Cleared faction pool cache before parallel processing")
 
-    from concurrent.futures import ThreadPoolExecutor, as_completed
-    import threading
-
     # Create a lock for thread-safe access to the XML tree
     xml_lock = threading.Lock()
 
     # Prepare a list of faction elements to process
     factions_to_process = list(all_faction_elements)
 
-    # Function to process a single faction
+    # Function to process a single faction with proper parameter passing
     def process_faction(faction_element):
         faction_name = faction_element.get('name')
         print(f"  -> Processing faction: '{faction_name}'")
 
         # Create a local copy of the faction element for thread-safe processing
-        # We'll process it in isolation and return the modified element
-        # Make a deep copy to avoid modifying the original during processing
-        import copy
         try:
             faction_copy = copy.deepcopy(faction_element)
             if faction_copy is None:
@@ -474,7 +470,7 @@ def process_units_xml(units_xml_path, categorized_units, all_units, general_unit
         # Process MenAtArm units for this faction
         try:
             high_confidence_replacements, high_confidence_failures = processing_passes.run_high_confidence_unit_pass(
-                None, tier, unit_variant_map, ck3_maa_definitions, unit_to_class_map, unit_to_description_map,
+                faction_copy, tier, unit_variant_map, ck3_maa_definitions, unit_to_class_map, unit_to_description_map,
                 screen_name_to_faction_key_map, faction_key_to_units_map, faction_to_subculture_map,
                 subculture_to_factions_map, faction_key_to_screen_name_map, culture_to_faction_map,
                 faction_culture_map, categorized_units, unit_categories, unit_stats_map, all_units,
@@ -490,7 +486,7 @@ def process_units_xml(units_xml_path, categorized_units, all_units, general_unit
         # Process Generals and Knights for this faction
         try:
             general_knight_changes, general_knight_failures = unit_management.manage_all_generals_and_knights(
-                None, categorized_units, general_units, unit_stats_map, unit_categories,
+                faction_copy, categorized_units, general_units, unit_stats_map, unit_categories,
                 screen_name_to_faction_key_map, faction_key_to_units_map, template_faction_unit_pool,
                 faction_to_subculture_map=faction_to_subculture_map, subculture_to_factions_map=subculture_to_factions_map,
                 faction_key_to_screen_name_map=faction_key_to_screen_name_map, culture_to_faction_map=culture_to_faction_map,
@@ -510,7 +506,7 @@ def process_units_xml(units_xml_path, categorized_units, all_units, general_unit
         if not no_garrison:
             try:
                 levy_changes, levy_failures = processing_passes.ensure_levy_structure_and_percentages(
-                    None, unit_categories, screen_name_to_faction_key_map, faction_key_to_units_map, template_faction_unit_pool,
+                    faction_copy, unit_categories, screen_name_to_faction_key_map, faction_key_to_units_map, template_faction_unit_pool,
                     faction_to_subculture_map, subculture_to_factions_map, faction_key_to_screen_name_map, culture_to_faction_map,
                     unit_to_class_map, faction_to_json_map, all_units, unit_to_training_level, tier, faction_elite_units,
                     excluded_units_set, faction_pool_cache, faction_to_heritage_map, heritage_to_factions_map,
@@ -523,7 +519,7 @@ def process_units_xml(units_xml_path, categorized_units, all_units, general_unit
 
             try:
                 garrison_changes, garrison_failures = processing_passes.ensure_garrison_structure(
-                    None, unit_categories, screen_name_to_faction_key_map, faction_key_to_units_map, template_faction_unit_pool,
+                    faction_copy, unit_categories, screen_name_to_faction_key_map, faction_key_to_units_map, template_faction_unit_pool,
                     faction_to_subculture_map, subculture_to_factions_map, faction_key_to_screen_name_map, culture_to_faction_map,
                     unit_to_class_map, general_units, unit_to_training_level, tier, unit_to_tier_map, excluded_units_set,
                     faction_pool_cache, faction_to_heritage_map, heritage_to_factions_map, faction_to_heritages_map,
@@ -540,7 +536,7 @@ def process_units_xml(units_xml_path, categorized_units, all_units, general_unit
         # Apply final fixes for this faction
         try:
             final_fix_changes = processing_passes.run_final_fix_pass(
-                None, all_failures, categorized_units, all_units, unit_categories, tier, unit_variant_map, ck3_maa_definitions,
+                faction_copy, all_failures, categorized_units, all_units, unit_categories, tier, unit_variant_map, ck3_maa_definitions,
                 unit_to_description_map, unit_stats_map, general_units, unit_to_class_map, excluded_units_set,
                 screen_name_to_faction_key_map, faction_key_to_units_map, faction_to_subculture_map, subculture_to_factions_map,
                 faction_key_to_screen_name_map, culture_to_faction_map, faction_to_heritage_map, heritage_to_factions_map,
@@ -577,14 +573,15 @@ def process_units_xml(units_xml_path, categorized_units, all_units, general_unit
                 # Continue processing other factions instead of failing completely
                 continue
 
-    # Replace original faction elements with processed ones
-    for original_faction, processed_faction in processed_factions:
-        # Find the position of the original faction
-        for i, child in enumerate(root):
-            if child is original_faction:
-                # Replace the element
-                root[i] = processed_faction
-                break
+    # Replace original faction elements with processed ones using thread-safe operations
+    with xml_lock:
+        for original_faction, processed_faction in processed_factions:
+            # Find the position of the original faction
+            for i, child in enumerate(root):
+                if child is original_faction:
+                    # Replace the element
+                    root[i] = processed_faction
+                    break
 
     total_changes += total_parallel_changes
 
