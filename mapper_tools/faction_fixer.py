@@ -13,6 +13,9 @@ import datetime
 import hashlib
 import threading
 import copy
+import gc
+import psutil
+import os
 
 try:
     from lxml import etree as lxml_etree
@@ -34,6 +37,47 @@ from mapper_tools import llm_orchestrator
 LLM_MAX_UNITS_PER_BATCH = 200 # Increased from 60 to reduce network calls
 LLM_POOL_MIN_SIZE = 15
 MAX_LLM_FAILURES_THRESHOLD = 500000 # Threshold for early exit
+
+# --- NEW: Memory optimization constants ---
+MEMORY_THRESHOLD_MB = 1000  # Trigger cleanup if memory usage exceeds 1GB
+CACHE_CLEAR_THRESHOLD = 100  # Clear cache after processing 100 factions
+LARGE_FACTION_THRESHOLD = 50  # Consider factions with >50 units as large
+
+
+# --- NEW: Memory monitoring and cleanup functions ---
+def get_memory_usage_mb():
+    """Get current memory usage in MB."""
+    process = psutil.Process(os.getpid())
+    return process.memory_info().rss / 1024 / 1024
+
+def should_trigger_cleanup():
+    """Check if memory cleanup should be triggered."""
+    return get_memory_usage_mb() > MEMORY_THRESHOLD_MB
+
+def clear_memory_caches(faction_pool_cache, processed_factions_count):
+    """
+    Clear internal caches to free memory.
+    Called periodically during processing to prevent memory buildup.
+    """
+    if should_trigger_cleanup() or (processed_factions_count % CACHE_CLEAR_THRESHOLD == 0):
+        print(f"  -> Memory cleanup triggered (processed {processed_factions_count} factions, memory: {get_memory_usage_mb():.1f}MB)")
+        
+        # Clear faction pool cache
+        faction_pool_cache.clear()
+        
+        # Force garbage collection
+        gc.collect()
+        
+        print(f"  -> Memory cleanup complete (memory after cleanup: {get_memory_usage_mb():.1f}MB)")
+
+def optimize_data_structures():
+    """
+    Optimize data structures for memory efficiency.
+    Convert large lists to more memory-efficient alternatives where appropriate.
+    """
+    # This function can be expanded to optimize specific data structures
+    # For now, it's a placeholder for future optimizations
+    pass
 
 
 # --- DELETED: Logging Setup (Moved to shared_utils) ---
@@ -558,6 +602,7 @@ def process_units_xml(units_xml_path, categorized_units, all_units, general_unit
     total_parallel_changes = 0
     all_parallel_failures = []
     processed_factions = []
+    processed_factions_count = 0
 
     with ThreadPoolExecutor(max_workers=llm_threads) as executor:
         future_to_faction = {executor.submit(process_faction, faction): faction for faction in factions_to_process}
@@ -567,6 +612,11 @@ def process_units_xml(units_xml_path, categorized_units, all_units, general_unit
                 total_parallel_changes += faction_changes
                 all_parallel_failures.extend(faction_failures)
                 processed_factions.append((original_faction, processed_faction))
+                processed_factions_count += 1
+                
+                # Memory optimization: Clear caches periodically during processing
+                clear_memory_caches(faction_pool_cache, processed_factions_count)
+                
             except Exception as exc:
                 faction_name = future_to_faction[future].get('name', 'Unknown')
                 print(f"Faction '{faction_name}' processing generated an exception: {exc}")
