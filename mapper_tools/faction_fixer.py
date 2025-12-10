@@ -880,14 +880,6 @@ def main():
         except FileNotFoundError:
             print(f"Warning: Exclude units file not found at '{args.exclude_units_file}'. No units will be excluded.")
 
-    # Clear LLM cache for excluded units to prevent them from being suggested
-    if llm_helper and excluded_units_set:
-        print(f"Clearing LLM cache for {len(excluded_units_set)} excluded units...")
-        for unit_key in excluded_units_set:
-            llm_helper.clear_unit_from_cache(unit_key)
-        llm_helper.save_cache()  # Save the cache after clearing
-        print("LLM cache cleared for excluded units.")
-
     # Validate all_units
     if not all_units:
         print("Could not load any valid land unit keys from land_units_tables. Aborting.")
@@ -1014,6 +1006,14 @@ def main():
         except Exception as e:
             print(f"Error initializing LLM Helper: {e}")
             llm_helper = None
+
+    # --- Clear LLM cache for excluded units to prevent them from being suggested ---
+    if llm_helper and excluded_units_set:
+        print(f"Clearing LLM cache for {len(excluded_units_set)} excluded units...")
+        for unit_key in excluded_units_set:
+            llm_helper.clear_unit_from_cache(unit_key)
+        llm_helper.save_cache()  # Save the cache after clearing
+        print("LLM cache cleared for excluded units.")
 
     # --- Final validation and print summaries for loaded data ---
     if not categorized_units: print("Could not load main unit data from TSV files. Aborting."); return
