@@ -212,20 +212,16 @@ def _run_attribute_management_pass_for_faction(faction_element, ck3_maa_definiti
     max_attr_count = 0
 
     for element in faction_element:
-        # --- Manage 'num_guns' for all unit types ---
-        if 'key' in element.attrib:
-            unit_key = element.get('key')
-            if unit_to_num_guns_map and unit_key in unit_to_num_guns_map:
-                num_guns = unit_to_num_guns_map[unit_key]
-                if element.get('num_guns') != str(num_guns):
-                    element.set('num_guns', str(num_guns))
-                    num_guns_attr_count += 1
-            elif 'num_guns' in element.attrib:
-                del element.attrib['num_guns']
-                num_guns_attr_count += 1
-
         # --- Manage attributes for specific tags ---
         if element.tag in ['Levies', 'Garrison']:
+            # --- Manage 'num_guns' for Levies/Garrison ---
+            if 'key' in element.attrib:
+                unit_key = element.get('key')
+                # These units should NOT have num_guns attribute
+                if 'num_guns' in element.attrib:
+                    del element.attrib['num_guns']
+                    num_guns_attr_count += 1
+            
             if element.get('max') != 'LEVY':
                 element.set('max', 'LEVY')
                 max_attr_count += 1
@@ -248,13 +244,39 @@ def _run_attribute_management_pass_for_faction(faction_element, ck3_maa_definiti
             is_siege = is_siege_by_ck3_type or is_siege_by_attila_class or is_siege_by_attila_category
 
             # --- Manage 'siege' attribute ---
+            siege_attr_changed = False
             if not no_siege and is_siege:
                 if element.get('siege') != 'true':
                     element.set('siege', 'true')
                     siege_attr_count += 1
+                    siege_attr_changed = True
             elif 'siege' in element.attrib:
                 del element.attrib['siege']
                 siege_attr_count += 1
+                siege_attr_changed = True
+
+            # --- Manage 'num_guns' attribute ---
+            if 'key' in element.attrib:
+                unit_key = element.get('key')
+                # Check if unit will be a siege unit after attribute management
+                will_be_siege_unit = (not no_siege and is_siege) or element.get('siege') == 'true'
+                
+                if will_be_siege_unit:
+                    # Siege units should have num_guns attribute
+                    if unit_to_num_guns_map and unit_key in unit_to_num_guns_map:
+                        num_guns = unit_to_num_guns_map[unit_key]
+                        if element.get('num_guns') != str(num_guns):
+                            element.set('num_guns', str(num_guns))
+                            num_guns_attr_count += 1
+                    elif 'num_guns' not in element.attrib:
+                        # Set default num_guns for siege units if not found in map
+                        element.set('num_guns', '1')
+                        num_guns_attr_count += 1
+                else:
+                    # Non-siege units should NOT have num_guns attribute
+                    if 'num_guns' in element.attrib:
+                        del element.attrib['num_guns']
+                        num_guns_attr_count += 1
 
             # --- Manage 'max' attribute ---
             if is_siege:
