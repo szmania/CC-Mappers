@@ -15,7 +15,9 @@ import threading
 import copy
 import gc
 import psutil
-import os
+import time
+import functools
+from typing import Optional, Dict, Any
 
 try:
     from lxml import etree as lxml_etree
@@ -42,6 +44,11 @@ MAX_LLM_FAILURES_THRESHOLD = 500000 # Threshold for early exit
 MEMORY_THRESHOLD_MB = 1000  # Trigger cleanup if memory usage exceeds 1GB
 CACHE_CLEAR_THRESHOLD = 100  # Clear cache after processing 100 factions
 LARGE_FACTION_THRESHOLD = 50  # Consider factions with >50 units as large
+
+# --- NEW: Performance monitoring constants ---
+PERFORMANCE_MONITORING_ENABLED = True
+PERFORMANCE_LOG_THRESHOLD_SECONDS = 5.0  # Log functions that take longer than this
+PROGRESS_UPDATE_INTERVAL = 10  # Update progress every N factions processed
 
 
 # --- NEW: Memory monitoring and cleanup functions ---
@@ -79,6 +86,139 @@ def optimize_data_structures():
     # For now, it's a placeholder for future optimizations
     pass
 
+# --- NEW: Performance monitoring classes and functions ---
+class PerformanceMonitor:
+    """Centralized performance monitoring and logging."""
+    
+    def __init__(self, enabled: bool = True):
+        self.enabled = enabled
+        self.function_timings = defaultdict(list)
+        self.start_times = {}
+        self.total_operations = 0
+        self.completed_operations = 0
+        self.operation_start_time = None
+        
+    def start_operation(self, operation_name: str, total_items: Optional[int] = None):
+        """Start timing a major operation."""
+        if not self.enabled:
+            return
+            
+        self.operation_start_time = time.time()
+        self.total_operations = total_items or 0
+        self.completed_operations = 0
+        print(f"\n[PERF] Starting operation: {operation_name}")
+        if total_items:
+            print(f"[PERF] Expected items to process: {total_items}")
+            
+    def update_progress(self, operation_name: str, completed: int, current_item: str = ""):
+        """Update progress for current operation."""
+        if not self.enabled or not self.operation_start_time:
+            return
+            
+        self.completed_operations = completed
+        
+        if completed % PROGRESS_UPDATE_INTERVAL == 0 or completed == self.total_operations:
+            elapsed = time.time() - self.operation_start_time
+            
+            if self.total_operations > 0:
+                progress_pct = (completed / self.total_operations) * 100
+                if completed > 0:
+                    estimated_total_time = elapsed * (self.total_operations / completed)
+                    remaining_time = estimated_total_time - elapsed
+                    
+                    print(f"[PERF] {operation_name}: {completed}/{self.total_operations} ({progress_pct:.1f}%) - "
+                          f"Elapsed: {elapsed:.1f}s, ETA: {remaining_time:.1f}s")
+                else:
+                    print(f"[PERF] {operation_name}: {completed}/{self.total_operations} - Elapsed: {elapsed:.1f}s")
+            else:
+                print(f"[PERF] {operation_name}: {completed} completed - Elapsed: {elapsed:.1f}s")
+                
+    def end_operation(self, operation_name: str):
+        """End timing a major operation."""
+        if not self.enabled or not self.operation_start_time:
+            return
+            
+        elapsed = time.time() - self.operation_start_time
+        print(f"[PERF] Completed operation: {operation_name} - Total time: {elapsed:.2f}s")
+        
+        if elapsed > PERFORMANCE_LOG_THRESHOLD_SECONDS:
+            print(f"[PERF] WARNING: Operation '{operation_name}' took {elapsed:.2f}s (threshold: {PERFORMANCE_LOG_THRESHOLD_SECONDS}s)")
+            
+        self.operation_start_time = None
+        
+    def time_function(self, func_name: str):
+        """Decorator to time function execution."""
+        def decorator(func):
+            @functools.wraps(func)
+            def wrapper(*args, **kwargs):
+                if not self.enabled:
+                    return func(*args, **kwargs)
+                    
+                start_time = time.time()
+                try:
+                    result = func(*args, **kwargs)
+                    elapsed = time.time() - start_time
+                    
+                    self.function_timings[func_name].append(elapsed)
+                    
+                    if elapsed > PERFORMANCE_LOG_THRESHOLD_SECONDS:
+                        print(f"[PERF] SLOW FUNCTION: {func_name} took {elapsed:.2f}s")
+                        
+                    return result
+                except Exception as e:
+                    elapsed = time.time() - start_time
+                    print(f"[PERF] ERROR in {func_name} after {elapsed:.2f}s: {e}")
+                    raise
+                    
+            return wrapper
+        return decorator
+    
+    def get_function_stats(self, func_name: str) -> Dict[str, float]:
+        """Get statistics for a specific function."""
+        if func_name not in self.function_timings:
+            return {}
+            
+        timings = self.function_timings[func_name]
+        if not timings:
+            return {}
+            
+        return {
+            'total_calls': len(timings),
+            'total_time': sum(timings),
+            'average_time': sum(timings) / len(timings),
+            'min_time': min(timings),
+            'max_time': max(timings)
+        }
+    
+    def print_summary(self):
+        """Print performance summary."""
+        if not self.enabled:
+            return
+            
+        print("\n" + "="*60)
+        print("PERFORMANCE SUMMARY")
+        print("="*60)
+        
+        for func_name, timings in self.function_timings.items():
+            if timings:
+                stats = self.get_function_stats(func_name)
+                print(f"\n{func_name}:")
+                print(f"  Total calls: {stats['total_calls']}")
+                print(f"  Total time: {stats['total_time']:.2f}s")
+                print(f"  Average time: {stats['average_time']:.3f}s")
+                print(f"  Min time: {stats['min_time']:.3f}s")
+                print(f"  Max time: {stats['max_time']:.3f}s")
+        
+        print("\n" + "="*60)
+
+# Global performance monitor instance
+perf_monitor = PerformanceMonitor(enabled=PERFORMANCE_MONITORING_ENABLED)
+
+# Convenience decorator
+def timed_function(func_name: str = None):
+    """Decorator to time function execution."""
+    return perf_monitor.time_function(func_name or func.__name__ if 'func' in locals() else 'unknown_function')
+
 
 # --- DELETED: Logging Setup (Moved to shared_utils) ---
 
@@ -99,6 +239,7 @@ def _load_data_in_parallel(tasks_to_run):
     return results
 
 
+@timed_function("update_subcultures_only")
 def update_subcultures_only(factions_xml_path, llm_helper, time_period_context, llm_threads, llm_batch_size,
                             faction_to_subculture_map, subculture_to_factions_map, screen_name_to_faction_key_map,
                             no_subculture, most_common_faction_key, faction_key_to_screen_name_map, culture_to_faction_map,
@@ -125,6 +266,7 @@ def update_subcultures_only(factions_xml_path, llm_helper, time_period_context, 
 
     llm_subcultures_assigned_count = 0
     if llm_helper and not no_subculture:
+        perf_monitor.start_operation("LLM Subculture Assignment")
         llm_subcultures_assigned_count = llm_orchestrator.run_llm_subculture_pass(
             root, llm_helper, time_period_context, llm_threads, llm_batch_size,
             faction_to_subculture_map, subculture_to_factions_map, screen_name_to_faction_key_map,
@@ -133,8 +275,10 @@ def update_subcultures_only(factions_xml_path, llm_helper, time_period_context, 
         if llm_subcultures_assigned_count > 0:
             total_changes += llm_subcultures_assigned_count
             print(f"LLM assigned {llm_subcultures_assigned_count} subcultures.")
+        perf_monitor.end_operation("LLM Subculture Assignment")
 
     # Add subculture attributes (this will now act as a fallback for LLM failures)
+    perf_monitor.start_operation("Ensure Subculture Attributes")
     subculture_attr_count = faction_xml_utils.ensure_subculture_attributes(
         root, screen_name_to_faction_key_map, faction_to_subculture_map, no_subculture=no_subculture,
         most_common_faction_key=most_common_faction_key, faction_key_to_screen_name_map=faction_key_to_screen_name_map,
@@ -146,6 +290,7 @@ def update_subcultures_only(factions_xml_path, llm_helper, time_period_context, 
     if subculture_attr_count > 0:
         total_changes += subculture_attr_count
         print(f"Procedural fallback assigned/updated {subculture_attr_count} subculture attributes.")
+    perf_monitor.end_operation("Ensure Subculture Attributes")
 
     if total_changes > 0:
         print(f"\nSubculture update pass complete. Applied {total_changes} changes. Saving file...")
@@ -154,6 +299,9 @@ def update_subcultures_only(factions_xml_path, llm_helper, time_period_context, 
         print(f"Successfully updated '{factions_xml_path}'.")
     else:
         print("\nSubculture update pass complete. No changes were made.")
+
+    # Print performance summary
+    perf_monitor.print_summary()
 
     return total_changes
 
@@ -352,6 +500,7 @@ def _run_attribute_management_pass_for_faction(faction_element, ck3_maa_definiti
     return siege_attr_count, siege_engine_per_unit_attr_count, num_guns_attr_count, max_attr_count
 
 
+@timed_function("process_units_xml")
 def process_units_xml(units_xml_path, categorized_units, all_units, general_units, unit_categories,
                       faction_key_to_screen_name_map, unit_to_faction_key_map,
                       template_faction_unit_pool, culture_factions, tier=None, unit_variant_map=None,
@@ -604,6 +753,9 @@ def process_units_xml(units_xml_path, categorized_units, all_units, general_unit
     processed_factions = []
     processed_factions_count = 0
 
+    # Start performance monitoring for faction processing
+    perf_monitor.start_operation("Process Factions", len(factions_to_process))
+
     with ThreadPoolExecutor(max_workers=llm_threads) as executor:
         future_to_faction = {executor.submit(process_faction, faction): faction for faction in factions_to_process}
         for future in as_completed(future_to_faction):
@@ -614,6 +766,9 @@ def process_units_xml(units_xml_path, categorized_units, all_units, general_unit
                 processed_factions.append((original_faction, processed_faction))
                 processed_factions_count += 1
                 
+                # Update progress
+                perf_monitor.update_progress("Process Factions", processed_factions_count, original_faction.get('name', 'Unknown'))
+                
                 # Memory optimization: Clear caches periodically during processing
                 clear_memory_caches(faction_pool_cache, processed_factions_count)
                 
@@ -622,6 +777,9 @@ def process_units_xml(units_xml_path, categorized_units, all_units, general_unit
                 print(f"Faction '{faction_name}' processing generated an exception: {exc}")
                 # Continue processing other factions instead of failing completely
                 continue
+
+    # End performance monitoring for faction processing
+    perf_monitor.end_operation("Process Factions")
 
     # Replace original faction elements with processed ones using thread-safe operations
     with xml_lock:
@@ -638,6 +796,7 @@ def process_units_xml(units_xml_path, categorized_units, all_units, general_unit
     # --- LLM Pass (Consolidated requests for all failures) ---
     llm_replacements = 0
     if llm_helper and all_parallel_failures and len(all_parallel_failures) < MAX_LLM_FAILURES_THRESHOLD:
+        perf_monitor.start_operation("LLM Unit Assignment Pass", len(all_parallel_failures))
         llm_replacements, llm_final_failures = llm_orchestrator.run_llm_unit_assignment_pass(
             llm_helper, all_parallel_failures, time_period_context, llm_threads, llm_batch_size,
             faction_pool_cache, all_units, excluded_units_set, unit_to_tier_map, unit_to_class_map,
@@ -647,8 +806,10 @@ def process_units_xml(units_xml_path, categorized_units, all_units, general_unit
             ck3_maa_definitions
         )
         total_changes += llm_replacements
+        perf_monitor.end_operation("LLM Unit Assignment Pass")
 
     # --- Low-Confidence Procedural Fallback (for LLM failures) ---
+    perf_monitor.start_operation("Low-Confidence Procedural Fallback")
     low_confidence_replacements = processing_passes.run_low_confidence_unit_pass(
         root, all_parallel_failures, ck3_maa_definitions, unit_to_class_map, unit_variant_map, unit_to_description_map,
         categorized_units, unit_categories, unit_stats_map, all_units, excluded_units_set=excluded_units_set,
@@ -661,21 +822,26 @@ def process_units_xml(units_xml_path, categorized_units, all_units, general_unit
         faction_to_heritages_map=faction_to_heritages_map, all_faction_elements=all_faction_elements
     )
     total_changes += low_confidence_replacements
+    perf_monitor.end_operation("Low-Confidence Procedural Fallback")
 
     # --- Final Attribute Management Pass ---
     print("\nRunning final attribute management pass...")
+    perf_monitor.start_operation("Final Attribute Management Pass")
     s, se, ng, m = _run_attribute_management_pass(
         root, ck3_maa_definitions, unit_to_class_map, unit_categories, unit_to_num_guns_map, no_siege, all_faction_elements
     )
     total_changes += s + se + ng + m
     print(f"  -> Applied {s} siege, {se} siege_engine_per_unit, {ng} num_guns, and {m} max attribute changes.")
+    perf_monitor.end_operation("Final Attribute Management Pass")
 
     # --- Final Normalization Pass ---
     # This pass ensures Levy/Garrison percentages sum to 100% and removes any remaining invalid tags.
     print("\nRunning final normalization pass...")
+    perf_monitor.start_operation("Final Normalization Pass")
     normalization_changes = unit_management.normalize_all_levy_percentages(root, all_faction_elements)
     total_changes += normalization_changes
     print(f"  -> Applied {normalization_changes} normalization changes.")
+    perf_monitor.end_operation("Final Normalization Pass")
 
     # --- Final XML Output ---
     # Final validation: Remove any remaining excluded units from output
@@ -698,6 +864,9 @@ def process_units_xml(units_xml_path, categorized_units, all_units, general_unit
         print(f"Successfully updated '{units_xml_path}'.")
     else:
         print("\nProcessing complete. No changes were made to the XML content.")
+
+    # Print performance summary
+    perf_monitor.print_summary()
 
     return total_changes
 
