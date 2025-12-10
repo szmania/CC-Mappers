@@ -335,6 +335,12 @@ def run_llm_unit_assignment_pass(llm_helper, all_llm_failures_to_process, time_p
         chosen_unit = suggestion.get("chosen_unit")
         chosen_composition = suggestion.get("chosen_composition")
 
+        # Filter LLM results against excluded units
+        if chosen_unit and excluded_units_set and chosen_unit in excluded_units_set:
+            print(f"    -> WARNING: LLM suggested excluded unit '{chosen_unit}'. Skipping and treating as failure.")
+            final_failures.append(req_data)  # Add back to failures
+            continue
+
         if chosen_unit:
             element_to_modify = req_data.get('element')
             if element_to_modify is not None:

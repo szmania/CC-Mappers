@@ -628,6 +628,19 @@ def process_units_xml(units_xml_path, categorized_units, all_units, general_unit
     print(f"  -> Applied {normalization_changes} normalization changes.")
 
     # --- Final XML Output ---
+    # Final validation: Remove any remaining excluded units from output
+    excluded_removed_in_final_check = 0
+    if excluded_units_set:
+        for faction in root.findall('Faction'):
+            for element in list(faction):  # Use list() to avoid modification during iteration
+                if element.get('key') in excluded_units_set:
+                    if element.tag in ['General', 'Knights', 'Levies', 'Garrison', 'MenAtArm']:
+                        faction.remove(element)
+                        excluded_removed_in_final_check += 1
+        if excluded_removed_in_final_check > 0:
+            total_changes += excluded_removed_in_final_check
+            print(f"Final validation: Removed {excluded_removed_in_final_check} excluded units from output.")
+
     if total_changes > 0 or submod_tag_added or submod_addon_for_added:
         print(f"\nProcessing complete. Applied {total_changes} total changes. Saving file...")
         shared_utils.indent_xml(root)
@@ -866,6 +879,14 @@ def main():
             print(f"Loaded {len(excluded_units_set)} unit keys to exclude from all unit selections from '{args.exclude_units_file}'.")
         except FileNotFoundError:
             print(f"Warning: Exclude units file not found at '{args.exclude_units_file}'. No units will be excluded.")
+
+    # Clear LLM cache for excluded units to prevent them from being suggested
+    if llm_helper and excluded_units_set:
+        print(f"Clearing LLM cache for {len(excluded_units_set)} excluded units...")
+        for unit_key in excluded_units_set:
+            llm_helper.clear_unit_from_cache(unit_key)
+        llm_helper.save_cache()  # Save the cache after clearing
+        print("LLM cache cleared for excluded units.")
 
     # Validate all_units
     if not all_units:

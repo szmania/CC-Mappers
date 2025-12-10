@@ -564,6 +564,13 @@ def get_cached_faction_working_pool(faction_name, faction_pool_cache, screen_nam
         working_pool, filtered_log_strings_combined = faction_pool_cache[cache_key]
         filtered_log_strings = filtered_log_strings_combined.split("; ")
 
+    # Ensure excluded units are always removed from the working pool
+    if excluded_units_set:
+        initial_size = len(working_pool)
+        working_pool = working_pool - excluded_units_set
+        if len(working_pool) < initial_size:
+            print(f"    -> {log_prefix} Final exclusion filter removed {initial_size - len(working_pool)} units. Pool now has {len(working_pool)} units.")
+
     log_faction_str = f"{log_prefix} Faction '{faction_name}' (Pools: {'; '.join(filtered_log_strings)})"
 
     return working_pool, log_faction_str, None  # Return None for unfiltered_tiered_pools as they're not needed
