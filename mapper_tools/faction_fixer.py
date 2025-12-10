@@ -451,14 +451,14 @@ def process_units_xml(units_xml_path, categorized_units, all_units, general_unit
 
         # Process Generals and Knights for this faction
         general_knight_changes, general_knight_failures = unit_management.manage_all_generals_and_knights(
-            None, categorized_units, general_units, unit_stats_map, unit_categories, 
+            None, categorized_units, general_units, unit_stats_map, unit_categories,
             screen_name_to_faction_key_map, faction_key_to_units_map, template_faction_unit_pool,
-            faction_to_subculture_map=faction_to_subculture_map, subculture_to_factions_map=subculture_to_factions_map, 
-            faction_key_to_screen_name_map=faction_key_to_screen_name_map, culture_to_faction_map=culture_to_faction_map, 
-            tier=tier, unit_to_tier_map=unit_to_tier_map, faction_to_json_map=faction_to_json_map, 
-            all_units=all_units, unit_to_training_level=unit_to_training_level, excluded_units_set=excluded_units_set, 
-            faction_to_heritage_map=faction_to_heritage_map, heritage_to_factions_map=heritage_to_factions_map, 
-            faction_to_heritages_map=faction_to_heritages_map, faction_culture_map=faction_culture_map, 
+            faction_to_subculture_map=faction_to_subculture_map, subculture_to_factions_map=subculture_to_factions_map,
+            faction_key_to_screen_name_map=faction_key_to_screen_name_map, culture_to_faction_map=culture_to_faction_map,
+            tier=tier, unit_to_tier_map=unit_to_tier_map, faction_to_json_map=faction_to_json_map,
+            all_units=all_units, unit_to_training_level=unit_to_training_level, excluded_units_set=excluded_units_set,
+            faction_to_heritage_map=faction_to_heritage_map, heritage_to_factions_map=heritage_to_factions_map,
+            faction_to_heritages_map=faction_to_heritages_map, faction_culture_map=faction_culture_map,
             is_submod_mode=is_submod_mode, factions_in_main_mod=factions_in_main_mod, all_faction_elements=[faction_copy]
         )
 
@@ -519,6 +519,7 @@ def process_units_xml(units_xml_path, categorized_units, all_units, general_unit
                 processed_factions.append((original_faction, processed_faction))
             except Exception as exc:
                 print(f"Faction processing generated an exception: {exc}")
+                raise exc
 
     # Replace original faction elements with processed ones
     for original_faction, processed_faction in processed_factions:
@@ -919,6 +920,7 @@ def main():
     if args.llm_cache_tag:
         try:
             from mapper_tools.llm_helper import LLMHelper
+
             network_calls_for_units = args.use_llm and not args.llm_update_mappings_only
             llm_helper = LLMHelper(
                 model=args.llm_model, cache_dir=args.llm_cache_dir, api_base=args.llm_api_base,
