@@ -896,4 +896,258 @@ def main():
                 faction_culture_map = json.load(f)
             print(f"Loaded {len(faction_culture_map)} entries from faction-culture map: '{args.faction_culture_map}'.")
         except FileNotFoundError:
-            print(f"Error: Faction
+            print(f"Error: Faction-culture map file not found at '{args.faction_culture_map}'. Proceeding without it.")
+            raise
+        except json.JSONDecodeError as e:
+            print(f"Error: Could not decode JSON from '{args.faction_culture_map}': {e}. Proceeding without it.")
+            raise
+
+    # Pre-calculate a definitive mapping from each faction to its JSON data group.
+    faction_to_json_map = {}
+    if faction_culture_map:
+        print("\nPre-calculating definitive faction-to-JSON-group mappings...")
+        faction_to_culture_list_map = shared_utils.get_faction_to_culture_list_map_from_xml(args.cultures_xml_path)
+        culture_to_json_group_key_map = {}
+        for group_key, group_data in faction_culture_map.items():
+            for culture_name in group_data.get("cultures", []):
+                culture_to_json_group_key_map[culture_name.lower()] = group_key
+        for faction_name in culture_factions:
+            json_group_key, json_group_data = shared_utils.find_best_fuzzy_match_in_dict(faction_name, faction_culture_map, threshold=0.80)
+            if json_group_data:
+                faction_to_json_map[faction_name] = json_group_data
+                print(f"  - Mapped faction '{faction_name}' to JSON group '{json_group_key}' via direct name match.")
+                continue
+            faction_cultures = faction_to_culture_list_map.get(faction_name, [])
+            if not faction_cultures:
+                continue
+            possible_group_keys = []
+            for culture in faction_cultures:
+                group_key = culture_to_json_group_key_map.get(culture.lower())
+                if group_key:
+                    possible_group_keys.append(group_key)
+            if possible_group_keys:
+                most_common_group_key = Counter(possible_group_keys).most_common(1)[0][0]
+                faction_to_json_map[faction_name] = faction_culture_map[most_common_group_key]
+                print(f"  - Mapped faction '{faction_name}' to JSON group '{most_common_group_key}' via reverse culture lookup.")
+        print(f"Successfully created {len(faction_to_json_map)} definitive faction-to-JSON mappings.")
+
+    # --- Group 2: Data sources dependent on all_units ---
+    group2_tasks = {
+        'unit_stats_map': (shared_utils.get_unit_stats_map, [tsv_dir, land_units_tsv_dir, all_units]),
+        'unit_to_tier_map': (shared_utils.get_unit_to_tier_map, [tsv_dir, all_units]),
+        'categorized_units': (shared_utils.get_tsv_units, [tsv_dir, all_units]),
+        'general_units': (shared_utils.get_general_units, [permissions_tsv_dir, all_units]),
+    }
+    g2_results = _load_data_in_parallel(group2_tasks)
+    unit_stats_map = g2_results['unit_stats_map']
+    unit_to_tier_map = g2_results['unit_to_tier_map']
+    categorized_units = g2_results['categorized_units']
+    general_units = g2_results['general_units']
+
+    # --- Group 3: Data sources dependent on Group 1 & 2 results ---
+    unit_variant_map = shared_utils.get_unit_variant_map(unit_variants_tables_dir, all_units, unit_to_tier_map)
+    print("  -> Loaded unit_variant_map")
+    variant_to_base_map = shared_utils.create_variant_to_base_map(unit_variant_map)
+
+    # --- Initialize LLM Helper (after loading necessary data) ---
+    llm_helper = None
+    if args.llm_cache_tag:
+        try:
+            from mapper_tools.llm_helper import LLMHelper
+
+            network_calls_for_units = args.use_llm and not args.llm_update_mappings_only
+            llm_helper = LLMHelper(
+                model=args.llm_model, cache_dir=args.llm_cache_dir, api_base=args.llm_api_base,
+                api_key=args.llm_api_key, cache_tag=args.llm_cache_tag, force_refresh=args.llm_force_refresh,
+                units_to_recache=units_to_recache, excluded_units_set=excluded_units_set,
+                network_calls_enabled=network_calls_for_units, unit_to_screen_name_map=unit_to_screen_name_map,
+                use_g4f=args.g4f, clear_null_cache=args.llm_clear_null_cache, faction_to_json_map=faction_to_json_map,
+                faction_culture_map=faction_culture_map, all_units=all_units, unit_to_class_map=unit_to_class_map
+            )
+            if network_calls_for_units:
+                print("LLM Helper initialized (network calls ENABLED for unit replacement).")
+            else:
+                print("LLM Helper initialized (cache-only mode for unit replacement, network calls DISABLED).")
+        except ImportError:
+            print("Warning: 'litellm' or 'g4f' library not found. Please install required libraries to use the LLM feature.")
+            llm_helper = None
+        except Exception as e:
+            print(f"Error initializing LLM Helper: {e}")
+            llm_helper = None
+
+    # --- Final validation and print summaries for loaded data ---
+    if not categorized_units: print("Could not load main unit data from TSV files. Aborting."); return
+    if general_units is None: print("Warning: Could not load general-eligible units. General tags will not be processed correctly."); general_units = set()
+    if not unit_categories: print("Warning: Could not load unit categories. Category-based matching will be disabled."); unit_categories = {}
+    if not unit_to_class_map: print("Warning: Could not load unit classes. High-precision matching will be disabled."); unit_to_class_map = {}
+    if not unit_to_description_map: print("Warning: Could not load unit descriptions. Thematic matching will be less accurate."); unit_to_description_map = {}
+    if not unit_to_training_level: print("Warning: Could not load unit training levels. Levy identification will be less accurate."); unit_to_training_level = {}
+    if not faction_key_to_screen_name_map: print("Warning: Could not load faction key to screen name map. Faction name validation will be skipped.")
+    if not unit_to_faction_key_map: print("Warning: Could not load unit to faction key map. Faction name validation will be skipped.")
+    if not unit_variant_map and tier_arg: print(f"Tier '{tier_arg}' was specified, but no unit variant data was loaded. Tier-based selection will be disabled.")
+    if not ck3_maa_definitions: print("Warning: Could not load CK3 Men-at-Arms definitions. MAA processing will be limited."); ck3_maa_definitions = {}
+
+    # --- LLM Mapping Update Logic ---
+    if (args.use_llm or args.llm_update_mappings_only) and args.llm_cache_tag:
+        print("\nChecking for new CK3 Men-at-Arms types to map...")
+        all_ck3_maa_definitions = set(ck3_maa_definitions.keys())
+        missing_types = all_ck3_maa_definitions - set(mappings.CK3_TYPE_TO_ATTILA_ROLES.keys())
+        if missing_types:
+            print(f"Found {len(missing_types)} new CK3 MAA types: {', '.join(sorted(list(missing_types)))}")
+            all_attila_classes = set(unit_to_class_map.values())
+            all_attila_roles = set(categorized_units.keys())
+            all_attila_max_categories = set(mappings.MAX_TO_CATEGORY.keys())
+            llm_requests = []
+            for maa_definition_name in sorted(list(missing_types)):
+                internal_type = ck3_maa_definitions.get(maa_definition_name)
+                llm_requests.append({
+                    'id': maa_definition_name, 'ck3_maa_definition': maa_definition_name,
+                    'ck3_internal_type': internal_type, 'attila_classes': list(all_attila_classes),
+                    'attila_roles': list(all_attila_roles), 'attila_max_categories': list(all_attila_max_categories)
+                })
+            mapping_helper = llm_helper
+            if mapping_helper and not mapping_helper.network_calls_enabled:
+                print("  -> Main LLM Helper has network calls disabled for unit replacement. Initializing a temporary LLM Helper for mapping updates.")
+                try:
+                    from mapper_tools.llm_helper import LLMHelper
+                    mapping_helper = LLMHelper(
+                        model=args.llm_model, cache_dir=args.llm_cache_dir, api_base=args.llm_api_base,
+                        api_key=args.llm_api_key, cache_tag=args.llm_cache_tag, force_refresh=args.llm_force_refresh,
+                        units_to_recache=units_to_recache, excluded_units_set=excluded_units_set,
+                        network_calls_enabled=True, use_g4f=args.g4f
+                    )
+                except Exception as e:
+                    print(f"  -> ERROR: Could not initialize temporary LLM Helper for mapping updates: {e}. Skipping mapping updates.")
+                    mapping_helper = None
+            if mapping_helper:
+                new_mappings = mapping_helper.get_batch_mapping_updates(llm_requests)
+                if new_mappings:
+                    print(f"LLM provided {len(new_mappings)} new mappings. Updating and saving...")
+                    updated = False
+                    for ck3_type, mapping_data in new_mappings.items():
+                        mappings.CK3_TYPE_TO_ATTILA_CLASS[ck3_type] = mapping_data['attila_class']
+                        mappings.CK3_TYPE_TO_ATTILA_ROLES[ck3_type] = mapping_data['attila_roles']
+                        mappings.CK3_TYPE_TO_ATTILA_MAX_CATEGORY[ck3_type] = mapping_data['attila_max_category']
+                        updated = True
+                    if updated:
+                        mappings.save_mappings()
+                else:
+                    print("LLM did not provide any valid new mappings.")
+            else:
+                print("Skipping LLM mapping updates due to initialization error.")
+        else:
+            print("All CK3 MAA types are already present in the mappings file.")
+
+    # --- Print final load summaries ---
+    print(f"Loaded {len(categorized_units)} categorized units from TSV files.")
+    print(f"Loaded {len(general_units)} unique general-eligible units.")
+    print(f"Loaded {len(unit_categories)} unit categories from land_units TSV files.")
+    print(f"Loaded {len(unit_to_class_map)} unit class mappings from land_units TSV files.")
+    print(f"Loaded {len(unit_to_description_map)} unit descriptions from land_units TSV files.")
+    print(f"Loaded num_guns for {len(unit_to_num_guns_map)} units from land_units.tsv.")
+    print(f"Loaded {len(unit_to_training_level)} unit training levels from land_units TSV files.")
+    print(f"Loaded {len(faction_key_to_screen_name_map)} faction key to screen name mappings.")
+    print(f"Loaded {len(unit_to_faction_key_map)} unit to faction key mappings.")
+    print(f"Loaded {len(unit_variant_map)} base units with variants from unit_variants TSV files.")
+    print(f"Loaded {len(variant_to_base_map)} variant to base unit mappings.")
+    print(f"Loaded {len(ck3_maa_definitions)} CK3 Men-at-Arms definitions.")
+
+    # --- Template Pool and Sub/Heritage Map Creation ---
+    template_faction_unit_pool = all_units
+    most_common_faction_key = None
+    most_common_faction_name = shared_utils.get_most_common_faction_from_cultures(args.cultures_xml_path)
+    if most_common_faction_name:
+        most_common_faction_key = screen_name_to_faction_key_map.get(most_common_faction_name)
+        if most_common_faction_key:
+            print(f"\nFound most common faction in Cultures.xml: '{most_common_faction_name}' (key: {most_common_faction_key}).")
+            representative_pool = faction_key_to_units_map.get(most_common_faction_key)
+            if representative_pool:
+                template_faction_unit_pool = representative_pool
+                print(f"Using a representative pool of {len(template_faction_unit_pool)} units from '{most_common_faction_name}' for template creation.")
+            else:
+                print(f"  -> WARNING: Could not find unit pool for most common faction '{most_common_faction_name}'. Falling back to global pool of {len(all_units)} units.")
+        else:
+            print(f"  -> WARNING: Could not find a faction key for the most common faction name '{most_common_faction_name}'. Falling back to global pool.")
+    else:
+        print(f"\nWARNING: Could not determine most common faction from Cultures.xml. Falling back to global pool of {len(all_units)} units for template creation.")
+
+    faction_to_heritages_map = shared_utils.create_faction_to_heritages_map(heritage_to_factions_map)
+    is_submod_mode = bool(args.factions_xml_path_main_mod)
+    main_mod_faction_maa_map = None
+    if is_submod_mode:
+        print(f"\n--- Submod Mode Enabled ---")
+        print(f"Loading main mod faction data from: {args.factions_xml_path_main_mod}")
+        main_mod_faction_maa_map = shared_utils.get_main_mod_faction_maa_map(args.factions_xml_path_main_mod)
+        if main_mod_faction_maa_map:
+            print(f"Loaded MenAtArm definitions for {len(main_mod_faction_maa_map)} factions from the main mod.")
+        else:
+            print("Warning: Could not load any faction data from the main mod's Factions.xml.")
+
+    # --- Main Execution Logic ---
+    if args.update_subcultures_only:
+        if not llm_helper:
+            print("ERROR: LLM Helper is not initialized. Subculture update requires LLM functionality (--llm-cache-tag is required).")
+            return
+        update_subcultures_only(
+            args.factions_xml_path, llm_helper, time_period_context, args.llm_threads, args.llm_batch_size,
+            faction_to_subculture_map, subculture_to_factions_map, screen_name_to_faction_key_map,
+            args.no_subculture, most_common_faction_key, faction_key_to_screen_name_map, culture_to_faction_map,
+            faction_to_heritage_map, heritage_to_factions_map, faction_to_heritages_map
+        )
+        return
+
+    run_fix = not args.llm_review_rosters_only
+    run_review = not args.fix_rosters_only
+
+    if run_fix:
+        print("\n--- Starting Roster Fixing Pass ---")
+        process_units_xml(
+            args.factions_xml_path, categorized_units, all_units, general_units, unit_categories,
+            faction_key_to_screen_name_map, unit_to_faction_key_map, template_faction_unit_pool,
+            culture_factions, tier_arg, unit_variant_map, unit_to_tier_map, variant_to_base_map,
+            unit_to_training_level, ck3_maa_definitions, screen_name_to_faction_key_map,
+            faction_key_to_units_map, args.submod_tag, excluded_factions_set, unit_to_class_map,
+            faction_to_subculture_map, subculture_to_factions_map, culture_to_faction_map,
+            unit_to_description_map, unit_stats_map, faction_culture_map, llm_helper,
+            excluded_units_set, unit_to_num_guns_map, llm_batch_size=args.llm_batch_size,
+            no_siege=args.no_siege, no_subculture=args.no_subculture, no_garrison=args.no_garrison,
+            most_common_faction_key=most_common_faction_key, main_mod_faction_maa_map=main_mod_faction_maa_map,
+            llm_threads=args.llm_threads, faction_to_heritage_map=faction_to_heritage_map,
+            heritage_to_factions_map=heritage_to_factions_map, faction_to_heritages_map=faction_to_heritages_map,
+            first_pass_threshold=args.first_pass_threshold, is_submod_mode=is_submod_mode,
+            submod_addon_tag=args.submod_addon_tag, faction_to_json_map=faction_to_json_map,
+            time_period_context=time_period_context, force_procedural_recache=args.force_procedural_recache
+        )
+
+    if run_review:
+        if not llm_helper or not llm_helper.network_calls_enabled:
+            print("\n--- Skipping LLM Roster Review Pass ---")
+            print("ERROR: LLM Roster Review requires --use-llm and --llm-cache-tag to be configured with network calls enabled.")
+        else:
+            try:
+                tree = ET.parse(args.factions_xml_path)
+                root = tree.getroot()
+            except ET.ParseError as e:
+                print(f"Error parsing XML file {args.factions_xml_path} for review: {e}. Aborting review.")
+                raise
+            review_faction_pool_cache = {}
+            # Cache faction elements for the review pass
+            all_faction_elements_review = list(root.findall('Faction'))
+            review_changes = llm_orchestrator.run_llm_roster_review_pass(
+                root, llm_helper, time_period_context, args.llm_threads, args.llm_batch_size,
+                review_faction_pool_cache, all_units, excluded_units_set, screen_name_to_faction_key_map,
+                faction_key_to_units_map, faction_to_subculture_map, subculture_to_factions_map,
+                faction_key_to_screen_name_map, culture_to_faction_map, faction_to_heritage_map,
+                heritage_to_factions_map, faction_to_heritages_map, ck3_maa_definitions,
+                all_faction_elements=all_faction_elements_review # Pass cached elements
+            )
+            if review_changes > 0:
+                print(f"\nLLM Roster Review applied {review_changes} corrections. Saving file...")
+                shared_utils.indent_xml(root)
+                tree.write(args.factions_xml_path, encoding='utf-8', xml_declaration=True)
+                print(f"Successfully saved updated rosters to '{args.factions_xml_path}'.")
+            else:
+                print("\nLLM Roster Review complete. No changes were made.")
+
+if __name__ == "__main__":
+    main()
