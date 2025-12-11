@@ -859,6 +859,19 @@ def process_units_xml(units_xml_path, categorized_units, all_units, general_unit
 
     if total_changes > 0 or submod_tag_added or submod_addon_for_added:
         print(f"\nProcessing complete. Applied {total_changes} total changes. Saving file...")
+        
+        # Reorganize faction children to enforce order
+        print("Reorganizing faction children to enforce element order...")
+        faction_xml_utils.reorganize_faction_children(root)
+        
+        # Validate XML against schema
+        print("Validating final XML against schema...")
+        is_valid, error_message = shared_utils.validate_xml_with_schema(root, 'schemas/factions.xsd')
+        if not is_valid:
+            print(f"XML VALIDATION FAILED: {error_message}")
+            raise Exception("XML validation failed. Halting execution.")
+        print("XML validation passed.")
+        
         shared_utils.indent_xml(root)
         tree.write(units_xml_path, encoding='utf-8', xml_declaration=True)
         print(f"Successfully updated '{units_xml_path}'.")
