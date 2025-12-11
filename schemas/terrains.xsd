@@ -14,7 +14,7 @@
       <xs:element name="Map" type="MapCoords" />
     </xs:sequence>
     <xs:attribute name="key" type="xs:string" use="required" />
-    <xs:attribute name="is_unique_settlement" type="xs:string" use="optional" />
+    <xs:attribute name="is_unique_settlement" type="xs:boolean" use="optional" />
     <xs:attribute name="besieger_orientations" type="xs:string" use="optional" />
     <xs:attribute name="besieged_deployment_zone_width" type="xs:decimal" use="optional" />
     <xs:attribute name="besieged_deployment_zone_height" type="xs:decimal" use="optional" />
