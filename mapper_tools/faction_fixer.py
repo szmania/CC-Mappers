@@ -1415,6 +1415,24 @@ def main():
             )
             if review_changes > 0:
                 print(f"\nLLM Roster Review applied {review_changes} corrections. Saving file...")
+                
+                # Run final normalization pass
+                print("Running final normalization pass...")
+                normalization_changes = unit_management.normalize_all_levy_percentages(root, all_faction_elements_review)
+                print(f"  -> Applied {normalization_changes} normalization changes.")
+                
+                # Reorganize faction children to enforce order
+                print("Reorganizing faction children to enforce element order...")
+                faction_xml_utils.reorganize_faction_children(root)
+                
+                # Validate XML against schema
+                print("Validating final XML against schema...")
+                is_valid, error_message = shared_utils.validate_xml_with_schema(root, 'schemas/factions.xsd')
+                if not is_valid:
+                    print(f"XML VALIDATION FAILED: {error_message}")
+                    raise Exception("XML validation failed. Halting execution.")
+                print("XML validation passed.")
+                
                 shared_utils.indent_xml(root)
                 tree.write(args.factions_xml_path, encoding='utf-8', xml_declaration=True)
                 print(f"Successfully saved updated rosters to '{args.factions_xml_path}'.")
