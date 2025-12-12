@@ -68,13 +68,13 @@ def clear_memory_caches(faction_pool_cache, processed_factions_count):
     """
     if should_trigger_cleanup() or (processed_factions_count % CACHE_CLEAR_THRESHOLD == 0):
         print(f"  -> Memory cleanup triggered (processed {processed_factions_count} factions, memory: {get_memory_usage_mb():.1f}MB)")
-        
+
         # Clear faction pool cache
         faction_pool_cache.clear()
-        
+
         # Force garbage collection
         gc.collect()
-        
+
         print(f"  -> Memory cleanup complete (memory after cleanup: {get_memory_usage_mb():.1f}MB)")
 
 def optimize_data_structures():
@@ -89,7 +89,7 @@ def optimize_data_structures():
 # --- NEW: Performance monitoring classes and functions ---
 class PerformanceMonitor:
     """Centralized performance monitoring and logging."""
-    
+
     def __init__(self, enabled: bool = True):
         self.enabled = enabled
         self.function_timings = defaultdict(list)
@@ -97,55 +97,55 @@ class PerformanceMonitor:
         self.total_operations = 0
         self.completed_operations = 0
         self.operation_start_time = None
-        
+
     def start_operation(self, operation_name: str, total_items: Optional[int] = None):
         """Start timing a major operation."""
         if not self.enabled:
             return
-            
+
         self.operation_start_time = time.time()
         self.total_operations = total_items or 0
         self.completed_operations = 0
         print(f"\n[PERF] Starting operation: {operation_name}")
         if total_items:
             print(f"[PERF] Expected items to process: {total_items}")
-            
+
     def update_progress(self, operation_name: str, completed: int, current_item: str = ""):
         """Update progress for current operation."""
         if not self.enabled or not self.operation_start_time:
             return
-            
+
         self.completed_operations = completed
-        
+
         if completed % PROGRESS_UPDATE_INTERVAL == 0 or completed == self.total_operations:
             elapsed = time.time() - self.operation_start_time
-            
+
             if self.total_operations > 0:
                 progress_pct = (completed / self.total_operations) * 100
                 if completed > 0:
                     estimated_total_time = elapsed * (self.total_operations / completed)
                     remaining_time = estimated_total_time - elapsed
-                    
+
                     print(f"[PERF] {operation_name}: {completed}/{self.total_operations} ({progress_pct:.1f}%) - "
                           f"Elapsed: {elapsed:.1f}s, ETA: {remaining_time:.1f}s")
                 else:
                     print(f"[PERF] {operation_name}: {completed}/{self.total_operations} - Elapsed: {elapsed:.1f}s")
             else:
                 print(f"[PERF] {operation_name}: {completed} completed - Elapsed: {elapsed:.1f}s")
-                
+
     def end_operation(self, operation_name: str):
         """End timing a major operation."""
         if not self.enabled or not self.operation_start_time:
             return
-            
+
         elapsed = time.time() - self.operation_start_time
         print(f"[PERF] Completed operation: {operation_name} - Total time: {elapsed:.2f}s")
-        
+
         if elapsed > PERFORMANCE_LOG_THRESHOLD_SECONDS:
             print(f"[PERF] WARNING: Operation '{operation_name}' took {elapsed:.2f}s (threshold: {PERFORMANCE_LOG_THRESHOLD_SECONDS}s)")
-            
+
         self.operation_start_time = None
-        
+
     def time_function(self, func_name: str):
         """Decorator to time function execution."""
         def decorator(func):
@@ -153,35 +153,35 @@ class PerformanceMonitor:
             def wrapper(*args, **kwargs):
                 if not self.enabled:
                     return func(*args, **kwargs)
-                    
+
                 start_time = time.time()
                 try:
                     result = func(*args, **kwargs)
                     elapsed = time.time() - start_time
-                    
+
                     self.function_timings[func_name].append(elapsed)
-                    
+
                     if elapsed > PERFORMANCE_LOG_THRESHOLD_SECONDS:
                         print(f"[PERF] SLOW FUNCTION: {func_name} took {elapsed:.2f}s")
-                        
+
                     return result
                 except Exception as e:
                     elapsed = time.time() - start_time
                     print(f"[PERF] ERROR in {func_name} after {elapsed:.2f}s: {e}")
                     raise
-                    
+
             return wrapper
         return decorator
-    
+
     def get_function_stats(self, func_name: str) -> Dict[str, float]:
         """Get statistics for a specific function."""
         if func_name not in self.function_timings:
             return {}
-            
+
         timings = self.function_timings[func_name]
         if not timings:
             return {}
-            
+
         return {
             'total_calls': len(timings),
             'total_time': sum(timings),
@@ -189,16 +189,16 @@ class PerformanceMonitor:
             'min_time': min(timings),
             'max_time': max(timings)
         }
-    
+
     def print_summary(self):
         """Print performance summary."""
         if not self.enabled:
             return
-            
+
         print("\n" + "="*60)
         print("PERFORMANCE SUMMARY")
         print("="*60)
-        
+
         for func_name, timings in self.function_timings.items():
             if timings:
                 stats = self.get_function_stats(func_name)
@@ -208,7 +208,7 @@ class PerformanceMonitor:
                 print(f"  Average time: {stats['average_time']:.3f}s")
                 print(f"  Min time: {stats['min_time']:.3f}s")
                 print(f"  Max time: {stats['max_time']:.3f}s")
-        
+
         print("\n" + "="*60)
 
 # Global performance monitor instance
@@ -415,7 +415,7 @@ def _run_attribute_management_pass_for_faction(faction_element, ck3_maa_definiti
                 if 'num_guns' in element.attrib:
                     del element.attrib['num_guns']
                     num_guns_attr_count += 1
-            
+
             if element.get('max') != 'LEVY':
                 element.set('max', 'LEVY')
                 max_attr_count += 1
@@ -454,7 +454,7 @@ def _run_attribute_management_pass_for_faction(faction_element, ck3_maa_definiti
                 unit_key = element.get('key')
                 # Check if unit will be a siege unit after attribute management
                 will_be_siege_unit = (not no_siege and is_siege) or element.get('siege') == 'true'
-                
+
                 if will_be_siege_unit:
                     # Siege units should have num_guns attribute
                     if unit_to_num_guns_map and unit_key in unit_to_num_guns_map:
@@ -765,13 +765,13 @@ def process_units_xml(units_xml_path, categorized_units, all_units, general_unit
                 all_parallel_failures.extend(faction_failures)
                 processed_factions.append((original_faction, processed_faction))
                 processed_factions_count += 1
-                
+
                 # Update progress
                 perf_monitor.update_progress("Process Factions", processed_factions_count, original_faction.get('name', 'Unknown'))
-                
+
                 # Memory optimization: Clear caches periodically during processing
                 clear_memory_caches(faction_pool_cache, processed_factions_count)
-                
+
             except Exception as exc:
                 faction_name = future_to_faction[future].get('name', 'Unknown')
                 print(f"Faction '{faction_name}' processing generated an exception: {exc}")
@@ -859,18 +859,18 @@ def process_units_xml(units_xml_path, categorized_units, all_units, general_unit
 
     if total_changes > 0 or submod_tag_added or submod_addon_for_added:
         print(f"\nProcessing complete. Applied {total_changes} total changes. Saving file...")
-        
+
         # Reorganize faction children to enforce order
         print("Reorganizing faction children to enforce element order...")
         faction_xml_utils.reorganize_faction_children(root)
-        
+
         # NEW: Pre-validation cleanup to remove factions missing a name attribute.
         factions_to_remove = [f for f in root.findall('Faction') if 'name' not in f.attrib or not f.get('name')]
         if factions_to_remove:
             print(f"  -> PRE-VALIDATION CLEANUP: Found and removed {len(factions_to_remove)} <Faction> elements missing the required 'name' attribute.")
             for faction in factions_to_remove:
                 root.remove(faction)
-        
+
         # Validate XML against schema
         print("Validating final XML against schema...")
         is_valid, error_message = shared_utils.validate_xml_with_schema(root, 'schemas/factions.xsd')
@@ -878,7 +878,7 @@ def process_units_xml(units_xml_path, categorized_units, all_units, general_unit
             print(f"XML VALIDATION FAILED: {error_message}")
             raise Exception("XML validation failed. Halting execution.")
         print("XML validation passed.")
-        
+
         shared_utils.indent_xml(root)
         tree.write(units_xml_path, encoding='utf-8', xml_declaration=True)
         print(f"Successfully updated '{units_xml_path}'.")
