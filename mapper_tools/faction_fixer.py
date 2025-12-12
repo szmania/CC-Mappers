@@ -864,6 +864,13 @@ def process_units_xml(units_xml_path, categorized_units, all_units, general_unit
         print("Reorganizing faction children to enforce element order...")
         faction_xml_utils.reorganize_faction_children(root)
         
+        # NEW: Pre-validation cleanup to remove factions missing a name attribute.
+        factions_to_remove = [f for f in root.findall('Faction') if 'name' not in f.attrib or not f.get('name')]
+        if factions_to_remove:
+            print(f"  -> PRE-VALIDATION CLEANUP: Found and removed {len(factions_to_remove)} <Faction> elements missing the required 'name' attribute.")
+            for faction in factions_to_remove:
+                root.remove(faction)
+        
         # Validate XML against schema
         print("Validating final XML against schema...")
         is_valid, error_message = shared_utils.validate_xml_with_schema(root, 'schemas/factions.xsd')
@@ -1426,6 +1433,13 @@ def main():
             # Save the file if the review or the normalization pass made any changes.
             if review_changes > 0 or normalization_changes > 0:
                 print(f"\nProcessing complete. Applied {review_changes} review corrections and {normalization_changes} normalization changes. Saving file...")
+
+                # NEW: Pre-validation cleanup to remove factions missing a name attribute.
+                factions_to_remove = [f for f in root.findall('Faction') if 'name' not in f.attrib or not f.get('name')]
+                if factions_to_remove:
+                    print(f"  -> PRE-VALIDATION CLEANUP: Found and removed {len(factions_to_remove)} <Faction> elements missing the required 'name' attribute.")
+                    for faction in factions_to_remove:
+                        root.remove(faction)
 
                 # Validate XML against schema before saving
                 print("Validating final XML against schema...")
