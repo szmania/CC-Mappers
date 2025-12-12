@@ -1104,7 +1104,8 @@ def reorganize_faction_children(root):
         for tag_name in desired_order:
             new_children_order.extend(grouped_children[tag_name])
             # Remove these from grouped_children to identify any unexpected tags
-            del grouped_children[tag_name]
+            if tag_name in grouped_children:
+                del grouped_children[tag_name]
 
         # Add any remaining (unexpected) tags at the end
         for tag_name in sorted(grouped_children.keys()):
@@ -1112,9 +1113,12 @@ def reorganize_faction_children(root):
 
         # Check if the order has changed
         if new_children_order != current_children:
-            faction.clear() # Remove all existing children
+            # Remove all existing children without clearing the faction element itself
+            for child in list(faction):
+                faction.remove(child)
+            # Add children back in the new order
             for child in new_children_order:
-                faction.append(child) # Add children back in the new order
+                faction.append(child)
             reorganized_count += 1
 
     if reorganized_count > 0:

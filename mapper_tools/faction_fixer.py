@@ -1434,6 +1434,18 @@ def main():
             if review_changes > 0 or normalization_changes > 0:
                 print(f"\nProcessing complete. Applied {review_changes} review corrections and {normalization_changes} normalization changes. Saving file...")
 
+                # NEW: Pre-validation cleanup to remove MenAtArm tags missing required 'key' attribute
+                men_at_arms_to_remove = []
+                for faction in root.findall('Faction'):
+                    for maa in faction.findall('MenAtArm'):
+                        if 'key' not in maa.attrib or not maa.get('key'):
+                            men_at_arms_to_remove.append((faction, maa))
+                
+                if men_at_arms_to_remove:
+                    for faction, maa in men_at_arms_to_remove:
+                        faction.remove(maa)
+                    print(f"  -> PRE-VALIDATION CLEANUP: Found and removed {len(men_at_arms_to_remove)} <MenAtArm> elements missing the required 'key' attribute.")
+
                 # NEW: Pre-validation cleanup to remove factions missing a name attribute.
                 factions_to_remove = [f for f in root.findall('Faction') if 'name' not in f.attrib or not f.get('name')]
                 if factions_to_remove:
