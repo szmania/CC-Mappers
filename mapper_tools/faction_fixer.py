@@ -1413,31 +1413,33 @@ def main():
                 heritage_to_factions_map, faction_to_heritages_map, ck3_maa_definitions,
                 all_faction_elements=all_faction_elements_review # Pass cached elements
             )
-            if review_changes > 0:
-                print(f"\nLLM Roster Review applied {review_changes} corrections. Saving file...")
-                
-                # Run final normalization pass
-                print("Running final normalization pass...")
-                normalization_changes = unit_management.normalize_all_levy_percentages(root, all_faction_elements_review)
+            # Run final normalization pass after review, as it can fix schema issues like missing percentages.
+            print("\nRunning final normalization pass...")
+            normalization_changes = unit_management.normalize_all_levy_percentages(root, all_faction_elements_review)
+            if normalization_changes > 0:
                 print(f"  -> Applied {normalization_changes} normalization changes.")
-                
-                # Reorganize faction children to enforce order
-                print("Reorganizing faction children to enforce element order...")
-                faction_xml_utils.reorganize_faction_children(root)
-                
-                # Validate XML against schema
+
+            # Reorganize faction children to enforce order
+            print("Reorganizing faction children to enforce element order...")
+            faction_xml_utils.reorganize_faction_children(root)
+
+            # Save the file if the review or the normalization pass made any changes.
+            if review_changes > 0 or normalization_changes > 0:
+                print(f"\nProcessing complete. Applied {review_changes} review corrections and {normalization_changes} normalization changes. Saving file...")
+
+                # Validate XML against schema before saving
                 print("Validating final XML against schema...")
                 is_valid, error_message = shared_utils.validate_xml_with_schema(root, 'schemas/factions.xsd')
                 if not is_valid:
                     print(f"XML VALIDATION FAILED: {error_message}")
                     raise Exception("XML validation failed. Halting execution.")
                 print("XML validation passed.")
-                
+
                 shared_utils.indent_xml(root)
                 tree.write(args.factions_xml_path, encoding='utf-8', xml_declaration=True)
                 print(f"Successfully saved updated rosters to '{args.factions_xml_path}'.")
             else:
-                print("\nLLM Roster Review complete. No changes were made.")
+                print("\nLLM Roster Review and normalization complete. No changes were made.")
 
 if __name__ == "__main__":
     main()
