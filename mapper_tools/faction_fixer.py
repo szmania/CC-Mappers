@@ -971,16 +971,17 @@ def format_factions_xml_only(factions_xml_path, all_units, excluded_units_set, c
     print("\nPerforming pre-validation cleanup...")
     perf_monitor.start_operation("Pre-validation Cleanup")
     
-    # Remove MenAtArm tags missing required 'key' attribute
-    men_at_arms_to_remove = []
+    # Remove unit tags missing required 'key' attribute
+    keyless_tags_removed = 0
+    unit_tags_to_check = ['General', 'Knights', 'Levies', 'Garrison', 'MenAtArm']
     for faction in root.findall('Faction'):
-        for maa in faction.findall('MenAtArm'):
-            if 'key' not in maa.attrib or not maa.get('key'):
-                men_at_arms_to_remove.append((faction, maa))
-    if men_at_arms_to_remove:
-        for faction, maa in men_at_arms_to_remove:
-            faction.remove(maa)
-        print(f"  -> Removed {len(men_at_arms_to_remove)} <MenAtArm> elements missing the required 'key' attribute.")
+        for tag_name in unit_tags_to_check:
+            for element in list(faction.findall(tag_name)):
+                if 'key' not in element.attrib or not element.get('key'):
+                    faction.remove(element)
+                    keyless_tags_removed += 1
+    if keyless_tags_removed > 0:
+        print(f"  -> Removed {keyless_tags_removed} unit elements missing the required 'key' attribute.")
 
     # Remove factions missing required 'name' attribute
     factions_to_remove = [f for f in root.findall('Faction') if 'name' not in f.attrib or not f.get('name')]
