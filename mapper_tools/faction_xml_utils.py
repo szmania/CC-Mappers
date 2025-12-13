@@ -1144,11 +1144,14 @@ def _reorder_attributes_in_all_tags_for_element(element):
     if not element.attrib:
         return 0
 
-    # Define a desired order for attributes
-    desired_order = [
-        'name', 'key', 'type', 'rank', 'level', 'percentage', 'max', 'siege',
-        'siege_engine_per_unit', 'num_guns', 'subculture', 'submod_tag', 'submod_addon_tag'
-    ]
+    # Define a desired order for attributes, with special handling for MenAtArm
+    if element.tag == 'MenAtArm':
+        desired_order = ['type', 'key', 'max', 'siege', 'siege_engine_per_unit', 'num_guns']
+    else:
+        desired_order = [
+            'name', 'key', 'type', 'rank', 'level', 'percentage', 'max', 'siege',
+            'siege_engine_per_unit', 'num_guns', 'subculture', 'submod_tag', 'submod_addon_tag'
+        ]
 
     # Get current attributes and sort them based on desired_order, then alphabetically
     current_attribs = list(element.attrib.items())
