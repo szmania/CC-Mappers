@@ -891,6 +891,122 @@ def process_units_xml(units_xml_path, categorized_units, all_units, general_unit
     return total_changes
 
 
+@timed_function("format_factions_xml_only")
+def format_factions_xml_only(factions_xml_path, all_units, excluded_units_set, ck3_maa_definitions,
+                             unit_to_class_map, unit_categories, unit_to_num_guns_map, no_siege):
+    """
+    Performs a formatting-only pass on the Factions XML.
+    This includes cleaning, attribute management, normalization, reordering, and validation.
+    """
+    print(f"\n--- Starting Formatting-Only Pass for '{factions_xml_path}' ---")
+    changes_made = False
+
+    try:
+        tree = ET.parse(factions_xml_path)
+        root = tree.getroot()
+    except ET.ParseError as e:
+        print(f"Error parsing XML file {factions_xml_path}: {e}. Aborting formatting.")
+        raise
+    except FileNotFoundError:
+        print(f"Error: Factions XML file not found at '{factions_xml_path}'. Aborting formatting.")
+        raise
+
+    # Get initial state for change detection
+    initial_xml_string = ET.tostring(root, encoding='unicode')
+
+    # --- Run Cleaning and Formatting Passes ---
+    print("\nRunning initial XML cleaning pass...")
+    perf_monitor.start_operation("Initial XML Cleaning Pass")
+    _run_initial_xml_cleaning_pass(root, excluded_units_set, all_units)
+    perf_monitor.end_operation("Initial XML Cleaning Pass")
+
+    # Cache faction elements for passes that need them
+    all_faction_elements_format = list(root.findall('Faction'))
+
+    print("\nRunning attribute management pass...")
+    perf_monitor.start_operation("Attribute Management Pass")
+    _run_attribute_management_pass(
+        root, ck3_maa_definitions, unit_to_class_map, unit_categories, unit_to_num_guns_map, no_siege, all_faction_elements_format
+    )
+    perf_monitor.end_operation("Attribute Management Pass")
+
+    print("\nRunning normalization pass...")
+    perf_monitor.start_operation("Normalization Pass")
+    unit_management.normalize_all_levy_percentages(root, all_faction_elements_format)
+    perf_monitor.end_operation("Normalization Pass")
+
+    print("\nRemoving duplicate ranked units...")
+    perf_monitor.start_operation("Remove Duplicate Ranked Units")
+    faction_xml_utils.remove_duplicate_ranked_units(root)
+    perf_monitor.end_operation("Remove Duplicate Ranked Units")
+
+    print("\nRemoving zero percentage tags...")
+    perf_monitor.start_operation("Remove Zero Percentage Tags")
+    faction_xml_utils.remove_zero_percentage_tags(root)
+    perf_monitor.end_operation("Remove Zero Percentage Tags")
+
+    print("\nReorganizing faction children...")
+    perf_monitor.start_operation("Reorganize Faction Children")
+    faction_xml_utils.reorganize_faction_children(root)
+    perf_monitor.end_operation("Reorganize Faction Children")
+
+    print("\nReordering attributes in all tags...")
+    perf_monitor.start_operation("Reorder Attributes")
+    faction_xml_utils.reorder_attributes_in_all_tags(root)
+    perf_monitor.end_operation("Reorder Attributes")
+
+    # --- Pre-validation Cleanup ---
+    print("\nPerforming pre-validation cleanup...")
+    perf_monitor.start_operation("Pre-validation Cleanup")
+    
+    # Remove MenAtArm tags missing required 'key' attribute
+    men_at_arms_to_remove = []
+    for faction in root.findall('Faction'):
+        for maa in faction.findall('MenAtArm'):
+            if 'key' not in maa.attrib or not maa.get('key'):
+                men_at_arms_to_remove.append((faction, maa))
+    if men_at_arms_to_remove:
+        for faction, maa in men_at_arms_to_remove:
+            faction.remove(maa)
+        print(f"  -> Removed {len(men_at_arms_to_remove)} <MenAtArm> elements missing the required 'key' attribute.")
+
+    # Remove factions missing required 'name' attribute
+    factions_to_remove = [f for f in root.findall('Faction') if 'name' not in f.attrib or not f.get('name')]
+    if factions_to_remove:
+        print(f"  -> Found and removed {len(factions_to_remove)} <Faction> elements missing the required 'name' attribute.")
+        for faction in factions_to_remove:
+            root.remove(faction)
+    perf_monitor.end_operation("Pre-validation Cleanup")
+
+    # --- Validation ---
+    print("\nValidating formatted XML against schema...")
+    perf_monitor.start_operation("Schema Validation")
+    is_valid, error_message = shared_utils.validate_xml_with_schema(root, 'schemas/factions.xsd')
+    if not is_valid:
+        print(f"XML VALIDATION FAILED: {error_message}")
+        raise Exception("XML validation failed after formatting. Halting execution.")
+    print("XML validation passed.")
+    perf_monitor.end_operation("Schema Validation")
+
+    # --- Save if Changed ---
+    final_xml_string = ET.tostring(root, encoding='unicode')
+    if final_xml_string != initial_xml_string:
+        changes_made = True
+
+    if changes_made:
+        print(f"\nFormatting complete. Changes detected. Saving file...")
+        shared_utils.indent_xml(root)
+        tree.write(factions_xml_path, encoding='utf-8', xml_declaration=True)
+        print(f"Successfully formatted and saved '{factions_xml_path}'.")
+    else:
+        print("\nFormatting complete. No changes were made to the XML content.")
+
+    # Print performance summary
+    perf_monitor.print_summary()
+
+    return changes_made
+
+
 def main():
     shared_utils.setup_logging()
 
@@ -916,6 +1032,7 @@ def main():
     parser.add_argument("--no-garrison", action='store_true', help="If set, do not add garrison units and remove any existing <Garrison> tags.")
     # LLM Arguments
     parser.add_argument("--use-llm", action='store_true', help="Enable LLM network calls to fix missing units. Requires --llm-cache-tag.")
+    parser.add_argument("--format-xml-only", action='store_true', help="Run only a formatting pass on the Factions XML (adds/removes attributes, reorders tags).")
     parser.add_argument("--g4f", action='store_true', help="Use the g4f library for LLM calls instead of litellm.")
     parser.add_argument("--llm-model", default="ollama/llama3", help="The model name to use with the LLM helper (e.g., 'ollama/llama3', 'gpt-4').")
     parser.add_argument("--llm-api-base", help="The base URL for the LLM API server (for local models).")
@@ -1372,6 +1489,19 @@ def main():
             faction_to_subculture_map, subculture_to_factions_map, screen_name_to_faction_key_map,
             args.no_subculture, most_common_faction_key, faction_key_to_screen_name_map, culture_to_faction_map,
             faction_to_heritage_map, heritage_to_factions_map, faction_to_heritages_map
+        )
+        return
+
+    if args.format_xml_only:
+        format_factions_xml_only(
+            args.factions_xml_path,
+            all_units,
+            excluded_units_set,
+            ck3_maa_definitions,
+            unit_to_class_map,
+            unit_categories,
+            unit_to_num_guns_map,
+            args.no_siege
         )
         return
 
