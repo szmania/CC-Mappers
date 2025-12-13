@@ -1550,6 +1550,17 @@ def main():
                 heritage_to_factions_map, faction_to_heritages_map, ck3_maa_definitions,
                 all_faction_elements=all_faction_elements_review # Pass cached elements
             )
+            
+            # Run attribute management pass after review to ensure all tags have required attributes
+            print("\nRunning attribute management pass after review...")
+            s, se, ng, m = _run_attribute_management_pass(
+                root, ck3_maa_definitions, unit_to_class_map, unit_categories, unit_to_num_guns_map, args.no_siege, all_faction_elements_review
+            )
+            # Add the number of attribute changes to the total changes for this run
+            if s + se + ng + m > 0:
+                review_changes += s + se + ng + m
+                print(f"  -> Applied {s} siege, {se} siege_engine_per_unit, {ng} num_guns, and {m} max attribute changes.")
+
             # Run final normalization pass after review, as it can fix schema issues like missing percentages.
             print("\nRunning final normalization pass...")
             normalization_changes = unit_management.normalize_all_levy_percentages(root, all_faction_elements_review)
