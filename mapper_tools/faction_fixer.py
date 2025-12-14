@@ -1227,7 +1227,7 @@ def main():
     units_to_recache = set()
     if args.clear_llm_cache_units_file:
         try:
-            with open(args.clear_llm_cache_units_file, 'r', encoding='utf-8') as f:
+            with open(args.clear_llm_cache_units_file, 'r', encoding='utf-8-sig') as f:
                 for line in f:
                     line = line.strip()
                     if line and not line.startswith('#'):
@@ -1240,7 +1240,7 @@ def main():
     excluded_units_set = set()
     if args.exclude_units_file:
         try:
-            with open(args.exclude_units_file, 'r', encoding='utf-8') as f:
+            with open(args.exclude_units_file, 'r', encoding='utf-8-sig') as f:
                 for line in f:
                     line = line.strip()
                     if line and not line.startswith('#'):
@@ -1293,7 +1293,7 @@ def main():
     faction_culture_map = {}
     if args.faction_culture_map:
         try:
-            with open(args.faction_culture_map, 'r', encoding='utf-8') as f:
+            with open(args.faction_culture_map, 'r', encoding='utf-8-sig') as f:
                 faction_culture_map = json.load(f)
             print(f"Loaded {len(faction_culture_map)} entries from faction-culture map: '{args.faction_culture_map}'.")
         except FileNotFoundError:
