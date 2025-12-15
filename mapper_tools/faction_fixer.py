@@ -1557,6 +1557,18 @@ def main():
             except ET.ParseError as e:
                 print(f"Error parsing XML file {args.factions_xml_path} for review: {e}. Aborting review.")
                 raise
+
+            # Proactively remove any excluded units before review
+            if excluded_units_set:
+                print("\n--- Pre-Review Cleanup: Removing Excluded Units ---")
+                keys_removed_for_review = faction_xml_utils.remove_excluded_unit_keys(root, excluded_units_set)
+                if keys_removed_for_review > 0:
+                    print(f"Removed {keys_removed_for_review} keys for excluded units to force re-evaluation during review.")
+                    # This change will be picked up by the review pass, which will now see empty slots.
+                    # We need to ensure the review pass handles key-less tags.
+                else:
+                    print("No excluded units found in the current roster.")
+
             review_faction_pool_cache = {}
             # Cache faction elements for the review pass
             all_faction_elements_review = list(root.findall('Faction'))

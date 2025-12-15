@@ -443,14 +443,14 @@ def run_llm_roster_review_pass(root, llm_helper, time_period_context, llm_thread
             if child.tag in tags_to_review:
                 unit_key = child.get('key')
                 review_id = child.get('__review_id__') # Get the temporary ID
-                if not unit_key or not review_id:
+                if not review_id:
                     continue
 
                 # Simplify the LLM Request Identifier
                 identifier = {'__review_id__': review_id}
 
                 roster[child.tag].append({
-                    "current_unit": unit_key,
+                    "current_unit": unit_key, # This will be None (json: null) if key was removed
                     "identifier": identifier
                 })
 
