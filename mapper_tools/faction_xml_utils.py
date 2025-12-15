@@ -143,13 +143,14 @@ def validate_and_fix_faction_names(root, faction_key_to_screen_name_map, unit_to
 
     return fixed_count, faction_name_map
 
-def remove_excluded_factions(root, excluded_factions, screen_name_to_faction_key_map):
+def remove_excluded_factions(root, excluded_factions, screen_name_to_faction_key_map, all_faction_elements=None):
     """
     Removes factions from the XML that are in the excluded_factions set.
     """
     removed_count = 0
     factions_to_remove = []
-    for faction_element in root.findall('Faction'):
+    factions_to_iterate = all_faction_elements if all_faction_elements is not None else root.findall('Faction')
+    for faction_element in factions_to_iterate:
         faction_name = faction_element.get('name')
         if faction_name in excluded_factions:
             factions_to_remove.append(faction_element)
