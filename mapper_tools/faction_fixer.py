@@ -313,7 +313,7 @@ def _run_initial_xml_cleaning_pass(root, excluded_units_set, all_units):
     """
     invalid_maa_removed_count = 0
     duplicate_maa_removed_count = 0
-    maa_levy_conflicts_fixed = 0
+    unit_role_conflicts_fixed = 0
     excluded_keys_removed_count = 0
     stale_keys_removed_count = 0
     porcentage_rename_count = 0
@@ -359,15 +359,20 @@ def _run_initial_xml_cleaning_pass(root, excluded_units_set, all_units):
             else:
                 seen_maa_types.add(maa_type)
 
-        # Fix conflicts where a MenAtArm key is also a Levy key
-        levy_keys = {levy.get('key') for levy in faction.findall('Levies') if levy.get('key')}
-        if levy_keys:
-            for maa in faction.findall('MenAtArm'):
-                if 'key' in maa.attrib and maa.get('key') in levy_keys:
-                    del maa.attrib['key']
-                    maa_levy_conflicts_fixed += 1
+        # Fix conflicts where a unit is used in both low-tier and high-tier roles
+        levy_garrison_keys = set()
+        levy_garrison_keys.update({levy.get('key') for levy in faction.findall('Levies') if levy.get('key')})
+        levy_garrison_keys.update({garrison.get('key') for garrison in faction.findall('Garrison') if garrison.get('key')})
+        
+        if levy_garrison_keys:
+            # Check MenAtArm, Knights, and General tags for conflicts
+            for tag_name in ['MenAtArm', 'Knights', 'General']:
+                for element in faction.findall(tag_name):
+                    if 'key' in element.attrib and element.get('key') in levy_garrison_keys:
+                        del element.attrib['key']
+                        unit_role_conflicts_fixed += 1
 
-    return (invalid_maa_removed_count, duplicate_maa_removed_count, maa_levy_conflicts_fixed,
+    return (invalid_maa_removed_count, duplicate_maa_removed_count, unit_role_conflicts_fixed,
             excluded_keys_removed_count, stale_keys_removed_count, porcentage_rename_count)
 
 
@@ -567,7 +572,7 @@ def process_units_xml(units_xml_path, categorized_units, all_units, general_unit
 
     # --- NEW: Consolidated Initial XML Cleaning Pass ---
     print("\nRunning initial XML cleaning and validation pass...")
-    (invalid_maa_removed_count, duplicate_maa_removed_count, maa_levy_conflicts_fixed,
+    (invalid_maa_removed_count, duplicate_maa_removed_count, unit_role_conflicts_fixed,
      excluded_keys_removed_count, stale_keys_removed_count, porcentage_rename_count) = _run_initial_xml_cleaning_pass(root, excluded_units_set, all_units)
 
     # NEW: Conditionally remove keys from procedurally-assigned units to force re-evaluation
