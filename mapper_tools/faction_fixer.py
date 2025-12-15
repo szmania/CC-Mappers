@@ -814,27 +814,38 @@ def process_units_xml(units_xml_path, categorized_units, all_units, general_unit
     print("\nFixing duplicate levy and garrison units...")
     perf_monitor.start_operation("Fix Duplicate Units")
     duplicate_levy_changes = faction_xml_utils.fix_duplicate_levy_units(
-        root, unit_to_training_level, unit_categories, screen_name_to_faction_key_map,
-        faction_key_to_units_map, faction_to_subculture_map, subculture_to_factions_map,
-        faction_key_to_screen_name_map, culture_to_faction_map, unit_to_class_map,
-        general_units, unit_to_tier_map, excluded_units_set, faction_pool_cache,
-        faction_to_heritage_map, heritage_to_factions_map, faction_to_heritages_map,
-        destructive_on_failure=False, faction_to_json_map=faction_to_json_map,
-        all_units=all_units, faction_culture_map=faction_culture_map,
-        is_submod_mode=is_submod_mode, factions_in_main_mod=factions_in_main_mod,
-        all_faction_elements=all_faction_elements
+        root=root,
+        faction_pool_cache=faction_pool_cache,
+        screen_name_to_faction_key_map=screen_name_to_faction_key_map,
+        faction_key_to_units_map=faction_key_to_units_map,
+        faction_to_subculture_map=faction_to_subculture_map,
+        subculture_to_factions_map=subculture_to_factions_map,
+        faction_key_to_screen_name_map=faction_key_to_screen_name_map,
+        culture_to_faction_map=culture_to_faction_map,
+        excluded_units_set=excluded_units_set,
+        faction_to_heritage_map=faction_to_heritage_map,
+        heritage_to_factions_map=heritage_to_factions_map,
+        faction_to_heritages_map=faction_to_heritages_map,
+        unit_to_training_level=unit_to_training_level,
+        unit_categories=unit_categories,
+        faction_elite_units=faction_elite_units
     )
 
     duplicate_garrison_changes = faction_xml_utils.fix_duplicate_garrison_units(
-        root, unit_to_training_level, unit_categories, screen_name_to_faction_key_map,
-        faction_key_to_units_map, faction_to_subculture_map, subculture_to_factions_map,
-        faction_key_to_screen_name_map, culture_to_faction_map, unit_to_class_map,
-        general_units, unit_to_tier_map, excluded_units_set, faction_pool_cache,
-        faction_to_heritage_map, heritage_to_factions_map, faction_to_heritages_map,
-        destructive_on_failure=False, faction_to_json_map=faction_to_json_map,
-        all_units=all_units, faction_culture_map=faction_culture_map,
-        is_submod_mode=is_submod_mode, factions_in_main_mod=factions_in_main_mod,
-        all_faction_elements=all_faction_elements
+        root=root,
+        faction_pool_cache=faction_pool_cache,
+        screen_name_to_faction_key_map=screen_name_to_faction_key_map,
+        faction_key_to_units_map=faction_key_to_units_map,
+        faction_to_subculture_map=faction_to_subculture_map,
+        subculture_to_factions_map=subculture_to_factions_map,
+        faction_key_to_screen_name_map=faction_key_to_screen_name_map,
+        culture_to_faction_map=culture_to_faction_map,
+        excluded_units_set=excluded_units_set,
+        faction_to_heritage_map=faction_to_heritage_map,
+        heritage_to_factions_map=heritage_to_factions_map,
+        faction_to_heritages_map=faction_to_heritages_map,
+        unit_categories=unit_categories,
+        general_units=general_units
     )
 
     duplicate_changes = duplicate_levy_changes + duplicate_garrison_changes
@@ -1504,6 +1515,7 @@ def main():
         print(f"\nWARNING: Could not determine most common faction from Cultures.xml. Falling back to global pool of {len(all_units)} units for template creation.")
 
     faction_to_heritages_map = shared_utils.create_faction_to_heritages_map(heritage_to_factions_map)
+    faction_elite_units = defaultdict(set)
     is_submod_mode = bool(args.factions_xml_path_main_mod)
     main_mod_faction_maa_map = None
     factions_in_main_mod = set()
@@ -1564,7 +1576,7 @@ def main():
             first_pass_threshold=args.first_pass_threshold, is_submod_mode=is_submod_mode,
             submod_addon_tag=args.submod_addon_tag, faction_to_json_map=faction_to_json_map,
             time_period_context=time_period_context, force_procedural_recache=args.force_procedural_recache,
-            factions_in_main_mod=factions_in_main_mod
+            factions_in_main_mod=factions_in_main_mod, faction_elite_units=faction_elite_units
         )
 
     if run_review:
@@ -1605,26 +1617,37 @@ def main():
             # Run procedural duplicate fixing after review
             print("\nRunning procedural duplicate fixing pass after review...")
             duplicate_levy_changes = faction_xml_utils.fix_duplicate_levy_units(
-                root, unit_to_training_level, unit_categories, screen_name_to_faction_key_map,
-                faction_key_to_units_map, faction_to_subculture_map, subculture_to_factions_map,
-                faction_key_to_screen_name_map, culture_to_faction_map, unit_to_class_map,
-                general_units, unit_to_tier_map, excluded_units_set, review_faction_pool_cache,
-                faction_to_heritage_map, heritage_to_factions_map, faction_to_heritages_map,
-                destructive_on_failure=False, faction_to_json_map=faction_to_json_map,
-                all_units=all_units, faction_culture_map=faction_culture_map,
-                is_submod_mode=is_submod_mode, factions_in_main_mod=factions_in_main_mod,
-                all_faction_elements=all_faction_elements_review
+                root=root,
+                faction_pool_cache=review_faction_pool_cache,
+                screen_name_to_faction_key_map=screen_name_to_faction_key_map,
+                faction_key_to_units_map=faction_key_to_units_map,
+                faction_to_subculture_map=faction_to_subculture_map,
+                subculture_to_factions_map=subculture_to_factions_map,
+                faction_key_to_screen_name_map=faction_key_to_screen_name_map,
+                culture_to_faction_map=culture_to_faction_map,
+                excluded_units_set=excluded_units_set,
+                faction_to_heritage_map=faction_to_heritage_map,
+                heritage_to_factions_map=heritage_to_factions_map,
+                faction_to_heritages_map=faction_to_heritages_map,
+                unit_to_training_level=unit_to_training_level,
+                unit_categories=unit_categories,
+                faction_elite_units=faction_elite_units
             )
             duplicate_garrison_changes = faction_xml_utils.fix_duplicate_garrison_units(
-                root, unit_to_training_level, unit_categories, screen_name_to_faction_key_map,
-                faction_key_to_units_map, faction_to_subculture_map, subculture_to_factions_map,
-                faction_key_to_screen_name_map, culture_to_faction_map, unit_to_class_map,
-                general_units, unit_to_tier_map, excluded_units_set, review_faction_pool_cache,
-                faction_to_heritage_map, heritage_to_factions_map, faction_to_heritages_map,
-                destructive_on_failure=False, faction_to_json_map=faction_to_json_map,
-                all_units=all_units, faction_culture_map=faction_culture_map,
-                is_submod_mode=is_submod_mode, factions_in_main_mod=factions_in_main_mod,
-                all_faction_elements=all_faction_elements_review
+                root=root,
+                faction_pool_cache=review_faction_pool_cache,
+                screen_name_to_faction_key_map=screen_name_to_faction_key_map,
+                faction_key_to_units_map=faction_key_to_units_map,
+                faction_to_subculture_map=faction_to_subculture_map,
+                subculture_to_factions_map=subculture_to_factions_map,
+                faction_key_to_screen_name_map=faction_key_to_screen_name_map,
+                culture_to_faction_map=culture_to_faction_map,
+                excluded_units_set=excluded_units_set,
+                faction_to_heritage_map=faction_to_heritage_map,
+                heritage_to_factions_map=heritage_to_factions_map,
+                faction_to_heritages_map=faction_to_heritages_map,
+                unit_categories=unit_categories,
+                general_units=general_units
             )
             review_changes += duplicate_levy_changes + duplicate_garrison_changes
 
