@@ -1601,28 +1601,41 @@ def main():
             print("Reorganizing faction children to enforce element order...")
             faction_xml_utils.reorganize_faction_children(root)
 
-            # Save the file if the review or the normalization pass made any changes.
-            if review_changes > 0 or normalization_changes > 0:
-                print(f"\nProcessing complete. Applied {review_changes} review corrections and {normalization_changes} normalization changes. Saving file...")
-
-                # NEW: Pre-validation cleanup to remove any unit tags missing a 'key' attribute.
-                keyless_tags_removed = 0
-                unit_tags_to_check = ['General', 'Knights', 'Levies', 'Garrison', 'MenAtArm']
+            # --- Final Validation and Cleanup ---
+            # NEW: Final validation to remove any unit tags with excluded keys
+            excluded_removed_in_final_check = 0
+            if excluded_units_set:
                 for faction in root.findall('Faction'):
-                    for tag_name in unit_tags_to_check:
-                        for element in list(faction.findall(tag_name)):
-                            if 'key' not in element.attrib or not element.get('key'):
+                    for element in list(faction):  # Use list() to avoid modification during iteration
+                        if element.get('key') in excluded_units_set:
+                            if element.tag in ['General', 'Knights', 'Levies', 'Garrison', 'MenAtArm']:
                                 faction.remove(element)
-                                keyless_tags_removed += 1
-                if keyless_tags_removed > 0:
-                    print(f"  -> PRE-VALIDATION CLEANUP: Found and removed {keyless_tags_removed} unit elements missing the required 'key' attribute.")
+                                excluded_removed_in_final_check += 1
+                if excluded_removed_in_final_check > 0:
+                    print(f"Final validation: Removed {excluded_removed_in_final_check} excluded units from output.")
 
-                # NEW: Pre-validation cleanup to remove factions missing a name attribute.
-                factions_to_remove = [f for f in root.findall('Faction') if 'name' not in f.attrib or not f.get('name')]
-                if factions_to_remove:
-                    print(f"  -> PRE-VALIDATION CLEANUP: Found and removed {len(factions_to_remove)} <Faction> elements missing the required 'name' attribute.")
-                    for faction in factions_to_remove:
-                        root.remove(faction)
+            # NEW: Pre-validation cleanup to remove any unit tags missing a 'key' attribute.
+            keyless_tags_removed = 0
+            unit_tags_to_check = ['General', 'Knights', 'Levies', 'Garrison', 'MenAtArm']
+            for faction in root.findall('Faction'):
+                for tag_name in unit_tags_to_check:
+                    for element in list(faction.findall(tag_name)):
+                        if 'key' not in element.attrib or not element.get('key'):
+                            faction.remove(element)
+                            keyless_tags_removed += 1
+            if keyless_tags_removed > 0:
+                print(f"  -> PRE-VALIDATION CLEANUP: Found and removed {keyless_tags_removed} unit elements missing the required 'key' attribute.")
+
+            # NEW: Pre-validation cleanup to remove factions missing a name attribute.
+            factions_to_remove = [f for f in root.findall('Faction') if 'name' not in f.attrib or not f.get('name')]
+            if factions_to_remove:
+                print(f"  -> PRE-VALIDATION CLEANUP: Found and removed {len(factions_to_remove)} <Faction> elements missing the required 'name' attribute.")
+                for faction in factions_to_remove:
+                    root.remove(faction)
+
+            # Save the file if any changes were made including cleanup
+            if review_changes > 0 or normalization_changes > 0 or keyless_tags_removed > 0 or excluded_removed_in_final_check > 0:
+                print(f"\nProcessing complete. Applied {review_changes} review corrections, {normalization_changes} normalization changes, and performed {keyless_tags_removed + excluded_removed_in_final_check} cleanup removals. Saving file...")
 
                 # Validate XML against schema before saving
                 print("Validating final XML against schema...")
