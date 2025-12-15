@@ -313,7 +313,6 @@ def _run_initial_xml_cleaning_pass(root, excluded_units_set, all_units):
     """
     invalid_maa_removed_count = 0
     duplicate_maa_removed_count = 0
-    unit_role_conflicts_fixed = 0
     excluded_keys_removed_count = 0
     stale_keys_removed_count = 0
     porcentage_rename_count = 0
@@ -359,20 +358,7 @@ def _run_initial_xml_cleaning_pass(root, excluded_units_set, all_units):
             else:
                 seen_maa_types.add(maa_type)
 
-        # Fix conflicts where a unit is used in both low-tier and high-tier roles
-        levy_garrison_keys = set()
-        levy_garrison_keys.update({levy.get('key') for levy in faction.findall('Levies') if levy.get('key')})
-        levy_garrison_keys.update({garrison.get('key') for garrison in faction.findall('Garrison') if garrison.get('key')})
-        
-        if levy_garrison_keys:
-            # Check MenAtArm, Knights, and General tags for conflicts
-            for tag_name in ['MenAtArm', 'Knights', 'General']:
-                for element in faction.findall(tag_name):
-                    if 'key' in element.attrib and element.get('key') in levy_garrison_keys:
-                        del element.attrib['key']
-                        unit_role_conflicts_fixed += 1
-
-    return (invalid_maa_removed_count, duplicate_maa_removed_count, unit_role_conflicts_fixed,
+    return (invalid_maa_removed_count, duplicate_maa_removed_count,
             excluded_keys_removed_count, stale_keys_removed_count, porcentage_rename_count)
 
 
@@ -514,7 +500,7 @@ def process_units_xml(units_xml_path, categorized_units, all_units, general_unit
                       excluded_factions=None, unit_to_class_map=None, faction_to_subculture_map=None, subculture_to_factions_map=None,
                       culture_to_faction_map=None, unit_to_description_map=None, unit_stats_map=None,
                       faction_culture_map=None, llm_helper=None, excluded_units_set=None, unit_to_num_guns_map=None, llm_batch_size=50, no_siege=False, no_subculture=False, no_garrison=False, most_common_faction_key=None, main_mod_faction_maa_map=None, llm_threads=1,
-                      faction_to_heritage_map=None, heritage_to_factions_map=None, faction_to_heritages_map=None, first_pass_threshold=0.90, is_submod_mode=False, submod_addon_tag=None, faction_to_json_map=None, time_period_context="", force_procedural_recache=False, faction_elite_units=None): # Added heritage maps and first_pass_threshold, is_submod_mode, faction_elite_units
+                      faction_to_heritage_map=None, heritage_to_factions_map=None, faction_to_heritages_map=None, first_pass_threshold=0.90, is_submod_mode=False, submod_addon_tag=None, faction_to_json_map=None, time_period_context="", force_procedural_recache=False, faction_elite_units=None, factions_in_main_mod=None): # Added heritage maps and first_pass_threshold, is_submod_mode, faction_elite_units
     """
     Processes a single Attila Factions XML file to fix and update unit entries.
     """
@@ -525,11 +511,6 @@ def process_units_xml(units_xml_path, categorized_units, all_units, general_unit
     # Initialize faction_elite_units if not provided
     if faction_elite_units is None:
         faction_elite_units = defaultdict(set)
-
-    # Define factions_in_main_mod early
-    factions_in_main_mod = set()
-    if is_submod_mode:
-        factions_in_main_mod = set(main_mod_faction_maa_map.keys()) if main_mod_faction_maa_map else set()
 
     # The file is guaranteed to exist by prompt_to_create_xml in main.
     # The try-except block below will handle parsing errors.
@@ -572,7 +553,7 @@ def process_units_xml(units_xml_path, categorized_units, all_units, general_unit
 
     # --- NEW: Consolidated Initial XML Cleaning Pass ---
     print("\nRunning initial XML cleaning and validation pass...")
-    (invalid_maa_removed_count, duplicate_maa_removed_count, unit_role_conflicts_fixed,
+    (invalid_maa_removed_count, duplicate_maa_removed_count,
      excluded_keys_removed_count, stale_keys_removed_count, porcentage_rename_count) = _run_initial_xml_cleaning_pass(root, excluded_units_set, all_units)
 
     # NEW: Conditionally remove keys from procedurally-assigned units to force re-evaluation
@@ -829,6 +810,39 @@ def process_units_xml(units_xml_path, categorized_units, all_units, general_unit
     total_changes += low_confidence_replacements
     perf_monitor.end_operation("Low-Confidence Procedural Fallback")
 
+    # --- Fix Duplicate Units (Moved to run after all assignment passes) ---
+    print("\nFixing duplicate levy and garrison units...")
+    perf_monitor.start_operation("Fix Duplicate Units")
+    duplicate_levy_changes = faction_xml_utils.fix_duplicate_levy_units(
+        root, unit_to_training_level, unit_categories, screen_name_to_faction_key_map,
+        faction_key_to_units_map, faction_to_subculture_map, subculture_to_factions_map,
+        faction_key_to_screen_name_map, culture_to_faction_map, unit_to_class_map,
+        general_units, unit_to_tier_map, excluded_units_set, faction_pool_cache,
+        faction_to_heritage_map, heritage_to_factions_map, faction_to_heritages_map,
+        destructive_on_failure=False, faction_to_json_map=faction_to_json_map,
+        all_units=all_units, faction_culture_map=faction_culture_map,
+        is_submod_mode=is_submod_mode, factions_in_main_mod=factions_in_main_mod,
+        all_faction_elements=all_faction_elements
+    )
+
+    duplicate_garrison_changes = faction_xml_utils.fix_duplicate_garrison_units(
+        root, unit_to_training_level, unit_categories, screen_name_to_faction_key_map,
+        faction_key_to_units_map, faction_to_subculture_map, subculture_to_factions_map,
+        faction_key_to_screen_name_map, culture_to_faction_map, unit_to_class_map,
+        general_units, unit_to_tier_map, excluded_units_set, faction_pool_cache,
+        faction_to_heritage_map, heritage_to_factions_map, faction_to_heritages_map,
+        destructive_on_failure=False, faction_to_json_map=faction_to_json_map,
+        all_units=all_units, faction_culture_map=faction_culture_map,
+        is_submod_mode=is_submod_mode, factions_in_main_mod=factions_in_main_mod,
+        all_faction_elements=all_faction_elements
+    )
+
+    duplicate_changes = duplicate_levy_changes + duplicate_garrison_changes
+    total_changes += duplicate_changes
+    perf_monitor.end_operation("Fix Duplicate Units")
+    if duplicate_changes > 0:
+        print(f"  -> Fixed {duplicate_changes} duplicate unit assignments.")
+
     # --- Final Attribute Management Pass ---
     print("\nRunning final attribute management pass...")
     perf_monitor.start_operation("Final Attribute Management Pass")
@@ -844,8 +858,12 @@ def process_units_xml(units_xml_path, categorized_units, all_units, general_unit
     print("\nRunning final normalization pass...")
     perf_monitor.start_operation("Final Normalization Pass")
     normalization_changes = unit_management.normalize_all_levy_percentages(root, all_faction_elements)
+
+    # Remove any tags with zero percentage after normalization
+    zero_percentage_removals = faction_xml_utils.remove_zero_percentage_tags(root)
+    normalization_changes += zero_percentage_removals
     total_changes += normalization_changes
-    print(f"  -> Applied {normalization_changes} normalization changes.")
+    print(f"  -> Applied {normalization_changes} normalization changes ({zero_percentage_removals} zero-percentage tags removed).")
     perf_monitor.end_operation("Final Normalization Pass")
 
     # --- Final XML Output ---
@@ -975,7 +993,7 @@ def format_factions_xml_only(factions_xml_path, all_units, excluded_units_set, c
     # --- Pre-validation Cleanup ---
     print("\nPerforming pre-validation cleanup...")
     perf_monitor.start_operation("Pre-validation Cleanup")
-    
+
     # Remove unit tags missing required 'key' attribute
     keyless_tags_removed = 0
     unit_tags_to_check = ['General', 'Knights', 'Levies', 'Garrison', 'MenAtArm']
@@ -1488,12 +1506,14 @@ def main():
     faction_to_heritages_map = shared_utils.create_faction_to_heritages_map(heritage_to_factions_map)
     is_submod_mode = bool(args.factions_xml_path_main_mod)
     main_mod_faction_maa_map = None
+    factions_in_main_mod = set()
     if is_submod_mode:
         print(f"\n--- Submod Mode Enabled ---")
         print(f"Loading main mod faction data from: {args.factions_xml_path_main_mod}")
         main_mod_faction_maa_map = shared_utils.get_main_mod_faction_maa_map(args.factions_xml_path_main_mod)
         if main_mod_faction_maa_map:
             print(f"Loaded MenAtArm definitions for {len(main_mod_faction_maa_map)} factions from the main mod.")
+            factions_in_main_mod = set(main_mod_faction_maa_map.keys())
         else:
             print("Warning: Could not load any faction data from the main mod's Factions.xml.")
 
@@ -1543,7 +1563,8 @@ def main():
             heritage_to_factions_map=heritage_to_factions_map, faction_to_heritages_map=faction_to_heritages_map,
             first_pass_threshold=args.first_pass_threshold, is_submod_mode=is_submod_mode,
             submod_addon_tag=args.submod_addon_tag, faction_to_json_map=faction_to_json_map,
-            time_period_context=time_period_context, force_procedural_recache=args.force_procedural_recache
+            time_period_context=time_period_context, force_procedural_recache=args.force_procedural_recache,
+            factions_in_main_mod=factions_in_main_mod
         )
 
     if run_review:
@@ -1580,7 +1601,33 @@ def main():
                 heritage_to_factions_map, faction_to_heritages_map, ck3_maa_definitions,
                 all_faction_elements=all_faction_elements_review # Pass cached elements
             )
-            
+
+            # Run procedural duplicate fixing after review
+            print("\nRunning procedural duplicate fixing pass after review...")
+            duplicate_levy_changes = faction_xml_utils.fix_duplicate_levy_units(
+                root, unit_to_training_level, unit_categories, screen_name_to_faction_key_map,
+                faction_key_to_units_map, faction_to_subculture_map, subculture_to_factions_map,
+                faction_key_to_screen_name_map, culture_to_faction_map, unit_to_class_map,
+                general_units, unit_to_tier_map, excluded_units_set, review_faction_pool_cache,
+                faction_to_heritage_map, heritage_to_factions_map, faction_to_heritages_map,
+                destructive_on_failure=False, faction_to_json_map=faction_to_json_map,
+                all_units=all_units, faction_culture_map=faction_culture_map,
+                is_submod_mode=is_submod_mode, factions_in_main_mod=factions_in_main_mod,
+                all_faction_elements=all_faction_elements_review
+            )
+            duplicate_garrison_changes = faction_xml_utils.fix_duplicate_garrison_units(
+                root, unit_to_training_level, unit_categories, screen_name_to_faction_key_map,
+                faction_key_to_units_map, faction_to_subculture_map, subculture_to_factions_map,
+                faction_key_to_screen_name_map, culture_to_faction_map, unit_to_class_map,
+                general_units, unit_to_tier_map, excluded_units_set, review_faction_pool_cache,
+                faction_to_heritage_map, heritage_to_factions_map, faction_to_heritages_map,
+                destructive_on_failure=False, faction_to_json_map=faction_to_json_map,
+                all_units=all_units, faction_culture_map=faction_culture_map,
+                is_submod_mode=is_submod_mode, factions_in_main_mod=factions_in_main_mod,
+                all_faction_elements=all_faction_elements_review
+            )
+            review_changes += duplicate_levy_changes + duplicate_garrison_changes
+
             # Run attribute management pass after review to ensure all tags have required attributes
             print("\nRunning attribute management pass after review...")
             s, se, ng, m = _run_attribute_management_pass(
@@ -1594,6 +1641,8 @@ def main():
             # Run final normalization pass after review, as it can fix schema issues like missing percentages.
             print("\nRunning final normalization pass...")
             normalization_changes = unit_management.normalize_all_levy_percentages(root, all_faction_elements_review)
+            zero_percentage_removals = faction_xml_utils.remove_zero_percentage_tags(root)
+            normalization_changes += zero_percentage_removals
             if normalization_changes > 0:
                 print(f"  -> Applied {normalization_changes} normalization changes.")
 
