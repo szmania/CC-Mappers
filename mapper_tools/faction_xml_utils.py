@@ -279,13 +279,13 @@ def create_default_faction_if_missing(root, categorized_units, unit_categories, 
 
         # Add some generic General, Knights, Levies, Garrison tags
         # These will be filled in by the unit assignment passes
-        ET.SubElement(default_faction, 'General', rank='1', key='placeholder_general_1')
-        ET.SubElement(default_faction, 'General', rank='2', key='placeholder_general_2')
-        ET.SubElement(default_faction, 'Knights', rank='1', key='placeholder_knights_1')
-        ET.SubElement(default_faction, 'Levies', percentage='100', max='LEVY', key='placeholder_levy_1')
-        ET.SubElement(default_faction, 'Garrison', percentage='100', max='LEVY', level='1', key='placeholder_garrison_1')
+        ET.SubElement(default_faction, 'General', rank='1')
+        ET.SubElement(default_faction, 'General', rank='2')
+        ET.SubElement(default_faction, 'Knights', rank='1')
+        ET.SubElement(default_faction, 'Levies', percentage='100', max='LEVY')
+        ET.SubElement(default_faction, 'Garrison', percentage='100', max='LEVY', level='1')
 
-        print("  -> Default faction created with placeholder units.")
+        print("  -> Default faction created with empty unit tags.")
         return default_created
     return 0
 
@@ -344,33 +344,33 @@ def sync_faction_structure_from_default(root, categorized_units, unit_categories
         current_maa_types = {maa.get('type') for maa in faction.findall('MenAtArm') if maa.get('type')}
         for maa_type in default_maa_types:
             if maa_type not in current_maa_types:
-                ET.SubElement(faction, 'MenAtArm', type=maa_type, key='placeholder_maa')
+                ET.SubElement(faction, 'MenAtArm', type=maa_type)
                 synced_count += 1
 
         # Sync General tags
         current_general_ranks = {int(g.get('rank')) for g in faction.findall('General') if g.get('rank')}
         for rank in default_general_ranks:
             if rank not in current_general_ranks:
-                ET.SubElement(faction, 'General', rank=str(rank), key='placeholder_general')
+                ET.SubElement(faction, 'General', rank=str(rank))
                 synced_count += 1
 
         # Sync Knights tags
         current_knights_ranks = {int(k.get('rank')) for k in faction.findall('Knights') if k.get('rank')}
         for rank in default_knights_ranks:
             if rank not in current_knights_ranks:
-                ET.SubElement(faction, 'Knights', rank=str(rank), key='placeholder_knights')
+                ET.SubElement(faction, 'Knights', rank=str(rank))
                 synced_count += 1
 
         # Sync Levies tag
         if has_default_levies and not faction.find('Levies'):
-            ET.SubElement(faction, 'Levies', percentage='100', max='LEVY', key='placeholder_levy')
+            ET.SubElement(faction, 'Levies', percentage='100', max='LEVY')
             synced_count += 1
 
         # Sync Garrison tags
         current_garrison_levels = {int(g.get('level')) for g in faction.findall('Garrison') if g.get('level')}
         for level in default_garrison_levels:
             if level not in current_garrison_levels:
-                ET.SubElement(faction, 'Garrison', percentage='100', max='LEVY', level=str(level), key='placeholder_garrison')
+                ET.SubElement(faction, 'Garrison', percentage='100', max='LEVY', level=str(level))
                 synced_count += 1
 
     if synced_count > 0:
