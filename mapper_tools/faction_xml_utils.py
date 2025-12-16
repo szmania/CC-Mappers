@@ -5,6 +5,7 @@ import Levenshtein
 import os
 import json
 import random
+import hashlib
 
 from mapper_tools import shared_utils
 from mapper_tools import ck3_to_attila_mappings as mappings
@@ -174,10 +175,10 @@ def remove_factions_not_in_cultures(root, culture_factions, screen_name_to_facti
     """
     removed_count = 0
     factions_to_remove = []
-    
+
     # Use cached faction elements if provided, otherwise find them normally
     factions_to_iterate = all_faction_elements if all_faction_elements is not None else root.findall('Faction')
-    
+
     for faction_element in factions_to_iterate:
         faction_name = faction_element.get('name')
         if faction_name == "Default":
@@ -215,7 +216,7 @@ def remove_factions_in_main_mod(root, main_mod_faction_maa_map, all_faction_elem
 
     # Use cached faction elements if provided, otherwise find them normally
     factions_to_iterate = all_faction_elements if all_faction_elements is not None else root.findall('Faction')
-    
+
     for faction_element in factions_to_iterate:
         faction_name = faction_element.get('name')
         if faction_name == "Default":
@@ -446,7 +447,7 @@ def get_all_tiered_pools(faction_name, faction_pool_cache, screen_name_to_factio
 
     # Create a cache key for the unfiltered tiered pools
     cache_key = f"{faction_name}_unfiltered_tiered_pools"
-    
+
     if cache_key in faction_pool_cache:
         return faction_pool_cache[cache_key]
 
@@ -518,25 +519,29 @@ def get_cached_faction_working_pool(faction_name, faction_pool_cache, screen_nam
     Caches the unfiltered tiered pools.
     Returns the combined working pool, log string, and the unfiltered tiered pools.
     """
-    # Create a comprehensive cache key that includes exclusions and required classes
-    # This ensures different filtering requirements get different cached results
+    # 1. Get unfiltered pools (this is cached internally by get_all_tiered_pools)
+    unfiltered_tiered_pools, tiered_log_strings = get_all_tiered_pools(
+        faction_name, faction_pool_cache, screen_name_to_faction_key_map, faction_key_to_units_map,
+        faction_to_subculture_map, subculture_to_factions_map, faction_key_to_screen_name_map,
+        culture_to_faction_map, set(), faction_to_heritage_map,
+        heritage_to_factions_map, faction_to_heritages_map
+    )
+
+    # 2. Create a cache key for the *filtered* result
     cache_key_parts = [faction_name]
     if excluded_units_set:
-        cache_key_parts.append("excl:" + ",".join(sorted(excluded_units_set)))
+        # Use a hash of the sorted set to keep the key length manageable
+        excl_hash = hashlib.sha1(','.join(sorted(list(excluded_units_set))).encode()).hexdigest()[:8]
+        cache_key_parts.append(f"excl_{excl_hash}")
     if required_classes and unit_to_class_map:
         cache_key_parts.append("classes:" + ",".join(sorted(required_classes)))
     cache_key = "|".join(cache_key_parts)
 
-    if cache_key not in faction_pool_cache:
-        # Generate unfiltered tiered pools without any exclusions or class filtering
-        unfiltered_tiered_pools, tiered_log_strings = get_all_tiered_pools(
-            faction_name, faction_pool_cache, screen_name_to_faction_key_map, faction_key_to_units_map,
-            faction_to_subculture_map, subculture_to_factions_map, faction_key_to_screen_name_map,
-            culture_to_faction_map, set(), faction_to_heritage_map,  # Use empty excluded_units_set for base cache
-            heritage_to_factions_map, faction_to_heritages_map
-        )
-        
-        # Apply exclusions and class filtering to create the final working pool
+    # 3. Check if the filtered result is already cached
+    if cache_key in faction_pool_cache:
+        working_pool, log_string_for_pool = faction_pool_cache[cache_key]
+    else:
+        # 4. If not, create the filtered pool and cache it
         working_pool = set()
         filtered_log_strings = []
         for i, pool in enumerate(unfiltered_tiered_pools):
@@ -545,36 +550,26 @@ def get_cached_faction_working_pool(faction_name, faction_pool_cache, screen_nam
                 filtered_pool = filtered_pool - excluded_units_set
             if filtered_pool:
                 working_pool.update(filtered_pool)
-                filtered_log_strings.append(tiered_log_strings[i])
+                if i < len(tiered_log_strings):
+                    filtered_log_strings.append(tiered_log_strings[i])
 
         # Apply required_classes filtering if specified
         if required_classes and unit_to_class_map:
             initial_size = len(working_pool)
-            filtered_by_class_pool = set()
-            for unit_key in working_pool:
-                unit_class = unit_to_class_map.get(unit_key)
-                if unit_class and unit_class in required_classes:
-                    filtered_by_class_pool.add(unit_key)
+            filtered_by_class_pool = {
+                unit_key for unit_key in working_pool
+                if unit_to_class_map.get(unit_key) in required_classes
+            }
             working_pool = filtered_by_class_pool
             if len(working_pool) < initial_size:
                 print(f"    -> {log_prefix} Further filtered pool by required classes {required_classes}. Reduced from {initial_size} to {len(working_pool)} units.")
 
-        # Cache the final result
-        faction_pool_cache[cache_key] = (working_pool, "; ".join(filtered_log_strings))
-    else:
-        working_pool, filtered_log_strings_combined = faction_pool_cache[cache_key]
-        filtered_log_strings = filtered_log_strings_combined.split("; ")
+        log_string_for_pool = "; ".join(filtered_log_strings)
+        faction_pool_cache[cache_key] = (working_pool, log_string_for_pool)
 
-    # Ensure excluded units are always removed from the working pool
-    if excluded_units_set:
-        initial_size = len(working_pool)
-        working_pool = working_pool - excluded_units_set
-        if len(working_pool) < initial_size:
-            print(f"    -> {log_prefix} Final exclusion filter removed {initial_size - len(working_pool)} units. Pool now has {len(working_pool)} units.")
-
-    log_faction_str = f"{log_prefix} Faction '{faction_name}' (Pools: {'; '.join(filtered_log_strings)})"
-
-    return working_pool, log_faction_str, None  # Return None for unfiltered_tiered_pools as they're not needed
+    # 5. Construct final log string and return
+    log_faction_str = f"{log_prefix} Faction '{faction_name}' (Pools: {log_string_for_pool})"
+    return working_pool, log_faction_str, unfiltered_tiered_pools
 
 
 def conditionally_remove_procedural_keys(root, llm_helper, tier, faction_pool_cache, screen_name_to_faction_key_map,
@@ -914,6 +909,26 @@ def _fix_duplicate_garrison_units_for_faction(faction_element, faction_pool_cach
                 faction_element.remove(duplicate_garrison)
                 fixed_for_faction += 1
                 # print(f"    - Removed duplicate garrison '{original_key}' (no suitable replacement found).")
+
+        # Ensure minimum of 3 unique garrison units per level
+        units_to_add = 3 - len(seen_garrison_keys)
+        for _ in range(units_to_add):
+            # Find a new unit, excluding already assigned ones
+            new_unit = unit_selector.find_best_garrison_replacement(
+                current_garrison_pool, unit_categories,
+                exclude_units=seen_garrison_keys
+            )
+            if new_unit:
+                # Create new Garrison element
+                ET.SubElement(faction_element, 'Garrison', {
+                    'level': level,
+                    'key': new_unit,
+                    'percentage': '0',
+                    'max': 'LEVY'
+                })
+                seen_garrison_keys.add(new_unit)
+                fixed_for_faction += 1
+                # print(f"    - Added new garrison unit '{new_unit}' to level '{level}'.")
 
     return fixed_for_faction
 
