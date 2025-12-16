@@ -682,20 +682,22 @@ def process_units_xml(units_xml_path, categorized_units, all_units, general_unit
         # Process Levies and Garrisons for this faction
         levy_changes, levy_failures = (0, [])
         garrison_changes, garrison_failures = (0, [])
-        if not no_garrison:
-            try:
-                levy_changes, levy_failures = processing_passes.ensure_levy_structure_and_percentages(
-                    faction_copy, unit_categories, screen_name_to_faction_key_map, faction_key_to_units_map, template_faction_unit_pool,
-                    faction_to_subculture_map, subculture_to_factions_map, faction_key_to_screen_name_map, culture_to_faction_map,
-                    unit_to_class_map, faction_to_json_map, all_units, unit_to_training_level, tier, faction_elite_units,
-                    excluded_units_set, faction_pool_cache, faction_to_heritage_map, heritage_to_factions_map,
-                    faction_to_heritages_map, destructive_on_failure=False, faction_culture_map=faction_culture_map,
-                    is_submod_mode=is_submod_mode, factions_in_main_mod=factions_in_main_mod, all_faction_elements=[faction_copy]
-                )
-            except Exception as e:
-                print(f"    -> ERROR: Exception during levy pass for faction '{faction_name}': {e}")
-                levy_changes, levy_failures = 0, []
 
+        # Process Levies for this faction
+        try:
+            levy_changes, levy_failures = processing_passes.ensure_levy_structure_and_percentages(
+                faction_copy, unit_categories, screen_name_to_faction_key_map, faction_key_to_units_map, template_faction_unit_pool,
+                faction_to_subculture_map, subculture_to_factions_map, faction_key_to_screen_name_map, culture_to_faction_map,
+                unit_to_class_map, faction_to_json_map, all_units, unit_to_training_level, tier, faction_elite_units,
+                excluded_units_set, faction_pool_cache, faction_to_heritage_map, heritage_to_factions_map,
+                faction_to_heritages_map, destructive_on_failure=False, faction_culture_map=faction_culture_map,
+                is_submod_mode=is_submod_mode, factions_in_main_mod=factions_in_main_mod, all_faction_elements=[faction_copy]
+            )
+        except Exception as e:
+            print(f"    -> ERROR: Exception during levy pass for faction '{faction_name}': {e}")
+            levy_changes, levy_failures = 0, []
+
+        if not no_garrison:
             try:
                 garrison_changes, garrison_failures = processing_passes.ensure_garrison_structure(
                     faction_copy, unit_categories, screen_name_to_faction_key_map, faction_key_to_units_map, template_faction_unit_pool,
@@ -1406,9 +1408,11 @@ def main():
         except ImportError:
             print("Warning: 'litellm' or 'g4f' library not found. Please install required libraries to use the LLM feature.")
             llm_helper = None
+            raise
         except Exception as e:
             print(f"Error initializing LLM Helper: {e}")
             llm_helper = None
+            raise e
 
     # --- Clear LLM cache for excluded units to prevent them from being suggested ---
     if llm_helper and excluded_units_set:

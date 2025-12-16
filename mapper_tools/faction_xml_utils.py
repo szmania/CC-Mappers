@@ -499,7 +499,6 @@ def get_all_tiered_pools(faction_name, faction_pool_cache, screen_name_to_factio
     # Tier 5: Global pool (all units)
     # This is typically passed as `all_units` to the main function, but for caching,
     # we need to ensure it's available. For now, assume it's passed in.
-    # If `all_units` is not passed, this tier might be skipped or handled differently.
     # For now, this function only builds pools based on faction_key_to_units_map.
     # The global pool will be added by the caller if needed.
 
