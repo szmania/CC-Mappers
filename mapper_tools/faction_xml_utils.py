@@ -307,7 +307,7 @@ def sync_factions_from_cultures(root, culture_factions, explicitly_removed_facti
             added_count += 1
     return added_count
 
-def sync_faction_structure_from_default(root, categorized_units, unit_categories, general_units, template_faction_unit_pool, all_units, tier, unit_variant_map, unit_to_tier_map, variant_to_base_map, ck3_maa_definitions, screen_name_to_faction_key_map, faction_key_to_units_map, unit_to_class_map, faction_to_subculture_map, subculture_to_factions_map, faction_key_to_screen_name_map, culture_to_faction_map=None, unit_to_description_map=None, unit_stats_map=None, main_mod_faction_maa_map=None, excluded_units_set=None, faction_pool_cache=None, faction_to_heritage_map=None, heritage_to_factions_map=None, faction_to_heritages_map=None):
+def sync_faction_structure_from_default(root, categorized_units, unit_categories, general_units, template_faction_unit_pool, all_units, tier, unit_variant_map, unit_to_tier_map, variant_to_base_map, ck3_maa_definitions, screen_name_to_faction_key_map, faction_key_to_units_map, unit_to_class_map, faction_to_subculture_map, subculture_to_factions_map, faction_key_to_screen_name_map, culture_to_faction_map=None, unit_to_description_map=None, unit_stats_map=None, main_mod_faction_maa_map=None, excluded_units_set=None, faction_pool_cache=None, faction_to_heritage_map=None, heritage_to_factions_map=None, faction_to_heritages_map=None, unit_to_training_level=None):
     """
     Ensures all factions have the same basic structure (e.g., MenAtArm tags for all CK3 MAA types)
     as the 'Default' faction, or a comprehensive set if Default is empty.
@@ -363,8 +363,45 @@ def sync_faction_structure_from_default(root, categorized_units, unit_categories
 
         # Sync Levies tag
         if has_default_levies and not faction.find('Levies'):
-            ET.SubElement(faction, 'Levies', percentage='100', max='LEVY')
-            synced_count += 1
+            # Get the faction's working pool for levy selection
+            faction_name = faction.get('name')
+            if faction_name and faction_pool_cache is not None and unit_to_training_level is not None:
+                try:
+                    working_pool, _, _ = get_cached_faction_working_pool(
+                        faction_name, faction_pool_cache, screen_name_to_faction_key_map, faction_key_to_units_map,
+                        faction_to_subculture_map, subculture_to_factions_map, faction_key_to_screen_name_map,
+                        culture_to_faction_map, excluded_units_set, faction_to_heritage_map,
+                        heritage_to_factions_map, faction_to_heritages_map, log_prefix="(Levy Sync)",
+                        required_classes={'inf_spear', 'inf_melee', 'inf_heavy', 'inf_bow', 'inf_sling', 'inf_javelin'}, 
+                        unit_to_class_map=unit_to_class_map
+                    )
+                    
+                    # Find a suitable levy unit from the faction's pool
+                    levy_unit_key = None
+                    if working_pool:
+                        from mapper_tools import unit_selector
+                        levy_unit_key = unit_selector.find_best_levy_replacement(
+                            working_pool, unit_to_training_level, unit_categories
+                        )
+                    
+                    if levy_unit_key:
+                        ET.SubElement(faction, 'Levies', percentage='100', max='LEVY', key=levy_unit_key)
+                        print(f"  -> Added missing <Levies> tag for faction '{faction_name}' with unit '{levy_unit_key}'.")
+                        synced_count += 1
+                    else:
+                        print(f"  -> WARNING: Could not find a suitable levy unit for faction '{faction_name}'. "
+                              f"Adding <Levies> tag without key (will fail validation).")
+                        ET.SubElement(faction, 'Levies', percentage='100', max='LEVY')
+                        synced_count += 1
+                except Exception as e:
+                    print(f"  -> ERROR: Failed to add <Levies> tag for faction '{faction_name}': {e}")
+                    # Fallback to creating the tag without a key
+                    ET.SubElement(faction, 'Levies', percentage='100', max='LEVY')
+                    synced_count += 1
+            else:
+                # Fallback when we don't have the necessary data
+                ET.SubElement(faction, 'Levies', percentage='100', max='LEVY')
+                synced_count += 1
 
         # Sync Garrison tags
         current_garrison_levels = {int(g.get('level')) for g in faction.findall('Garrison') if g.get('level')}
