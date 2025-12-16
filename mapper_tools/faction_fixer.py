@@ -612,6 +612,16 @@ def process_units_xml(units_xml_path, categorized_units, all_units, general_unit
     if is_submod_mode:
         maa_tags_removed_from_submod = faction_xml_utils.remove_maa_tags_present_in_main_mod(root, main_mod_faction_maa_map)
 
+    # --- NEW: Validate faction structure ---
+    print("\nValidating faction structure...")
+    is_valid, validation_errors = faction_xml_utils.validate_faction_structure(root, is_submod_mode, no_garrison)
+    if not is_valid:
+        print("\n=== FACTION STRUCTURE VALIDATION FAILED ===")
+        for error in validation_errors:
+            print(f"  - {error}")
+        raise Exception("Faction structure validation failed. Please fix the issues above before continuing.")
+    print("Faction structure validation passed.")
+
     # --- Unit Assignment Pipeline ---
     # Process factions in parallel where possible
     print("\nProcessing factions in parallel...")

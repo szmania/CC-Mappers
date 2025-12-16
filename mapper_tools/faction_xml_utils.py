@@ -408,6 +408,35 @@ def remove_maa_tags_present_in_main_mod(root, main_mod_faction_maa_map):
         print(f"Removed {removed_count} MenAtArm tags from submod factions that are present in the main mod.")
     return removed_count
 
+def validate_faction_structure(root, is_submod_mode, no_garrison):
+    """
+    Validates that each faction (except Default) has all required core unit tags.
+    In submod mode, this validation is skipped.
+    Returns (is_valid, errors) where is_valid is a boolean and errors is a list of strings.
+    """
+    if is_submod_mode:
+        print("\nSkipping faction structure validation in submod mode.")
+        return True, []
+
+    required_tags = ['General', 'Knights', 'MenAtArm', 'Levies']
+    if not no_garrison:
+        required_tags.append('Garrison')
+
+    errors = []
+    factions_to_validate = [f for f in root.findall('Faction') if f.get('name') != 'Default']
+
+    for faction in factions_to_validate:
+        faction_name = faction.get('name')
+        for tag in required_tags:
+            if not faction.findall(tag):
+                errors.append(f"Faction '{faction_name}' is missing required <{tag}> element(s).")
+
+    if errors:
+        return False, errors
+
+    print("\nAll factions have the required core unit structure.")
+    return True, []
+
 def remove_core_unit_tags(root, factions_in_main_mod):
     """
     In submod mode, removes General, Knights, Levies, and Garrison tags from factions
