@@ -1729,7 +1729,7 @@ def main():
 
             # NEW: Pre-validation cleanup to populate or remove any unit tags missing a 'key' attribute.
             populated, removed = faction_xml_utils.populate_or_remove_keyless_tags(
-                root, faction_pool_cache, screen_name_to_faction_key_map, faction_key_to_units_map,
+                root, review_faction_pool_cache, screen_name_to_faction_key_map, faction_key_to_units_map,
                 faction_to_subculture_map, subculture_to_factions_map, faction_key_to_screen_name_map,
                 culture_to_faction_map, excluded_units_set, faction_to_heritage_map,
                 heritage_to_factions_map, faction_to_heritages_map,
@@ -1737,7 +1737,7 @@ def main():
                 faction_elite_units, ck3_maa_definitions, unit_to_class_map, unit_to_description_map
             )
             if populated > 0:
-                total_changes += populated
+                review_changes += populated
 
             # NEW: Pre-validation cleanup to remove factions missing a name attribute.
             factions_to_remove = [f for f in root.findall('Faction') if 'name' not in f.attrib or not f.get('name')]
@@ -1747,8 +1747,8 @@ def main():
                     root.remove(faction)
 
             # Save the file if any changes were made including cleanup
-            if review_changes > 0 or normalization_changes > 0 or keyless_tags_removed > 0 or excluded_removed_in_final_check > 0:
-                print(f"\nProcessing complete. Applied {review_changes} review corrections, {normalization_changes} normalization changes, and performed {keyless_tags_removed + excluded_removed_in_final_check} cleanup removals. Saving file...")
+            if review_changes > 0 or normalization_changes > 0 or removed > 0 or excluded_removed_in_final_check > 0:
+                print(f"\nProcessing complete. Applied {review_changes} review corrections, {normalization_changes} normalization changes, and performed {removed + excluded_removed_in_final_check} cleanup removals. Saving file...")
 
                 # Validate XML against schema before saving
                 print("Validating final XML against schema...")
