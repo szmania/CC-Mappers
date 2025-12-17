@@ -1294,20 +1294,29 @@ def populate_or_remove_keyless_tags(root, faction_pool_cache, screen_name_to_fac
                             rank_int = int(general_rank) if general_rank else 1
                         except ValueError:
                             rank_int = 1
-                        new_key = unit_selector.find_best_general(
-                            working_pool, unit_stats_map, unit_categories, general_units,
-                            rank=rank_int, exclude_units=used_units
-                        )
+                        # Create a pool of general-eligible units from the working pool
+                        general_pool = {unit for unit in working_pool if unit in general_units} - used_units
+                        if general_pool:
+                            new_key = unit_selector.select_best_unit_from_pool(
+                                general_pool, rank=rank_int, unit_stats_map=unit_stats_map
+                            )
                     elif tag_name == 'Knights':
                         knight_rank = element.get('rank')
                         try:
                             rank_int = int(knight_rank) if knight_rank else 1
                         except ValueError:
                             rank_int = 1
-                        new_key = unit_selector.find_best_knight(
-                            working_pool, unit_stats_map, unit_categories,
-                            rank=rank_int, exclude_units=used_units
-                        )
+                        # Prioritize heavy/shock cavalry for knights
+                        knight_class_priorities = ['cav_shock', 'cav_heavy', 'cav_melee']
+                        for knight_class in knight_class_priorities:
+                            class_pool = {unit for unit in working_pool if unit_to_class_map.get(unit) == knight_class}
+                            available_pool = class_pool - used_units
+                            if available_pool:
+                                new_key = unit_selector.select_best_unit_from_pool(
+                                    available_pool, rank=rank_int, unit_stats_map=unit_stats_map
+                                )
+                                if new_key:
+                                    break # Use the first found suitable unit
                     elif tag_name == 'Levies':
                         faction_elites = faction_elite_units.get(faction_name, set()) if faction_elite_units else set()
                         new_key = unit_selector.find_best_levy_replacement(
