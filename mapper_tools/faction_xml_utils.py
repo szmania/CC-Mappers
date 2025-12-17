@@ -321,18 +321,20 @@ def sync_faction_structure_from_default(root, categorized_units, unit_categories
     default_general_ranks = {int(g.get('rank')) for g in default_faction.findall('General') if g.get('rank')}
     default_knights_ranks = {int(k.get('rank')) for k in default_faction.findall('Knights') if k.get('rank')}
     default_garrison_levels = {int(g.get('level')) for g in default_faction.findall('Garrison') if g.get('level')}
-    has_default_levies = bool(default_faction.find('Levies'))
 
     # If Default faction is empty, generate a comprehensive set of MAA types
     if not default_maa_types:
         print("INFO: Default faction has no MenAtArm types. Generating a comprehensive set for syncing.")
         for ck3_maa_type in ck3_maa_definitions.keys():
             default_maa_types.add(ck3_maa_type)
-        # Also ensure basic ranked units, levies, garrisons are covered
+    
+    # Ensure basic ranked units and garrisons are covered if missing
+    if not default_general_ranks:
         default_general_ranks.update([1, 2])
+    if not default_knights_ranks:
         default_knights_ranks.update([1])
+    if not default_garrison_levels:
         default_garrison_levels.update([1])
-        has_default_levies = True
 
     synced_count = 0
     for faction in root.findall('Faction'):
@@ -362,7 +364,7 @@ def sync_faction_structure_from_default(root, categorized_units, unit_categories
                 synced_count += 1
 
         # Sync Levies tag
-        if has_default_levies and not faction.find('Levies'):
+        if not faction.find('Levies'):
             # Get the faction's working pool for levy selection
             faction_name = faction.get('name')
             if faction_name and faction_pool_cache is not None and unit_to_training_level is not None:
