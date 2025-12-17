@@ -1719,17 +1719,17 @@ def main():
                 if excluded_removed_in_final_check > 0:
                     print(f"Final validation: Removed {excluded_removed_in_final_check} excluded units from output.")
 
-            # NEW: Pre-validation cleanup to remove any unit tags missing a 'key' attribute.
-            keyless_tags_removed = 0
-            unit_tags_to_check = ['General', 'Knights', 'Levies', 'Garrison', 'MenAtArm']
-            for faction in root.findall('Faction'):
-                for tag_name in unit_tags_to_check:
-                    for element in list(faction.findall(tag_name)):
-                        if 'key' not in element.attrib or not element.get('key'):
-                            faction.remove(element)
-                            keyless_tags_removed += 1
-            if keyless_tags_removed > 0:
-                print(f"  -> PRE-VALIDATION CLEANUP: Found and removed {keyless_tags_removed} unit elements missing the required 'key' attribute.")
+            # NEW: Pre-validation cleanup to populate or remove any unit tags missing a 'key' attribute.
+            populated, removed = faction_xml_utils.populate_or_remove_keyless_tags(
+                root, faction_pool_cache, screen_name_to_faction_key_map, faction_key_to_units_map,
+                faction_to_subculture_map, subculture_to_factions_map, faction_key_to_screen_name_map,
+                culture_to_faction_map, excluded_units_set, faction_to_heritage_map,
+                heritage_to_factions_map, faction_to_heritages_map,
+                general_units, unit_stats_map, unit_categories, unit_to_training_level,
+                faction_elite_units, ck3_maa_definitions, unit_to_class_map, unit_to_description_map
+            )
+            if populated > 0:
+                total_changes += populated
 
             # NEW: Pre-validation cleanup to remove factions missing a name attribute.
             factions_to_remove = [f for f in root.findall('Faction') if 'name' not in f.attrib or not f.get('name')]

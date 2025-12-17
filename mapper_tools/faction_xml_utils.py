@@ -1250,3 +1250,137 @@ def _reorder_attributes_in_all_tags_for_element(element):
             element.set(key, value) # Add them back in the desired order
         return 1
     return 0
+
+
+def populate_or_remove_keyless_tags(root, faction_pool_cache, screen_name_to_faction_key_map, faction_key_to_units_map,
+                                    faction_to_subculture_map, subculture_to_factions_map, faction_key_to_screen_name_map,
+                                    culture_to_faction_map, excluded_units_set, faction_to_heritage_map,
+                                    heritage_to_factions_map, faction_to_heritages_map,
+                                    # unit selection specific args
+                                    general_units, unit_stats_map, unit_categories, unit_to_training_level,
+                                    faction_elite_units, ck3_maa_definitions, unit_to_class_map, unit_to_description_map):
+    """
+    Finds unit tags missing a 'key' attribute and attempts to populate them using appropriate unit selectors.
+    If a suitable unit cannot be found, the tag is removed to ensure XML validity.
+    Returns the number of keys populated and tags removed.
+    """
+    populated_count = 0
+    removed_count = 0
+    unit_tags_to_check = ['General', 'Knights', 'Levies', 'Garrison', 'MenAtArm']
+
+    for faction in root.findall('Faction'):
+        faction_name = faction.get('name')
+        if not faction_name or faction_name == 'Default':
+            continue
+
+        working_pool, _, _ = get_cached_faction_working_pool(
+            faction_name, faction_pool_cache, screen_name_to_faction_key_map, faction_key_to_units_map,
+            faction_to_subculture_map, subculture_to_factions_map, faction_key_to_screen_name_map,
+            culture_to_faction_map, excluded_units_set, faction_to_heritage_map,
+            heritage_to_factions_map, faction_to_heritages_map
+        )
+        used_units = {el.get('key') for el in faction if el.get('key')}
+
+        for tag_name in unit_tags_to_check:
+            for element in list(faction.findall(tag_name)):
+                if 'key' not in element.attrib or not element.get('key'):
+                    new_key = None
+                    # Import unit_selector locally to avoid circular import issues
+                    from mapper_tools import unit_selector
+
+                    if tag_name == 'General':
+                        general_rank = element.get('rank')
+                        try:
+                            rank_int = int(general_rank) if general_rank else 1
+                        except ValueError:
+                            rank_int = 1
+                        new_key = unit_selector.find_best_general(
+                            working_pool, unit_stats_map, unit_categories, general_units,
+                            rank=rank_int, exclude_units=used_units
+                        )
+                    elif tag_name == 'Knights':
+                        knight_rank = element.get('rank')
+                        try:
+                            rank_int = int(knight_rank) if knight_rank else 1
+                        except ValueError:
+                            rank_int = 1
+                        new_key = unit_selector.find_best_knight(
+                            working_pool, unit_stats_map, unit_categories,
+                            rank=rank_int, exclude_units=used_units
+                        )
+                    elif tag_name == 'Levies':
+                        faction_elites = faction_elite_units.get(faction_name, set()) if faction_elite_units else set()
+                        new_key = unit_selector.find_best_levy_replacement(
+                            working_pool, unit_to_training_level, unit_categories,
+                            exclude_units=used_units | faction_elites
+                        )
+                    elif tag_name == 'Garrison':
+                        garrison_level = element.get('level')
+                        try:
+                            level_int = int(garrison_level) if garrison_level else 1
+                        except ValueError:
+                            level_int = 1
+                        new_key = unit_selector.find_best_garrison_replacement(
+                            working_pool, unit_categories,
+                            level=level_int, exclude_units=used_units | general_units
+                        )
+                    elif tag_name == 'MenAtArm':
+                        maa_type = element.get('type')
+                        if maa_type:
+                            # Use high-confidence logic similar to processing_passes.py
+                            internal_type = ck3_maa_definitions.get(maa_type)
+                            expected_attila_classes = mappings.CK3_TYPE_TO_ATTILA_CLASS.get(maa_type) or \
+                                                      (mappings.CK3_TYPE_TO_ATTILA_CLASS.get(internal_type) if internal_type else None)
+
+                            # Tiered selection logic
+                            tiered_candidates = []
+                            if working_pool:
+                                # Tier 1: Exact class match
+                                if expected_attila_classes:
+                                    tier1_pool = {u for u in working_pool if unit_to_class_map.get(u) in expected_attila_classes}
+                                    if tier1_pool:
+                                        tiered_candidates.append(('Class Match', tier1_pool))
+
+                                # Tier 2: Category match
+                                attila_roles = mappings.CK3_TYPE_TO_ATTILA_ROLES.get(maa_type) or \
+                                               (mappings.CK3_TYPE_TO_ATTILA_ROLES.get(internal_type) if internal_type else [])
+                                tier2_pool = set()
+                                for role in attila_roles:
+                                    tier2_pool.update(categorized_units.get(role, []))
+                                tier2_pool &= working_pool
+                                if tier2_pool:
+                                    tiered_candidates.append(('Role Match', tier2_pool))
+
+                                # Tier 3: Description keywords
+                                if unit_to_description_map:
+                                    tier3_pool = unit_selector.find_units_by_keywords(working_pool, unit_to_description_map, [maa_type, internal_type])
+                                    if tier3_pool:
+                                        tiered_candidates.append(('Description Keywords', tier3_pool))
+
+                                # Select from the highest priority tier
+                                for tier_name, candidate_pool in tiered_candidates:
+                                    filtered_pool = candidate_pool - used_units
+                                    if filtered_pool:
+                                        new_key = unit_selector.select_best_unit_by_tier(
+                                            filtered_pool, unit_to_tier_map, tier=None # Use default tier logic
+                                        )
+                                        if new_key:
+                                            # print(f"    - Found keyless MAA replacement '{new_key}' for type '{maa_type}' (Pool: {tier_name}).")
+                                            break # Stop searching tiers once a unit is found
+
+                    # If a new key was found and it's not already used, assign it
+                    if new_key and new_key not in used_units:
+                        element.set('key', new_key)
+                        used_units.add(new_key)
+                        populated_count += 1
+                    else:
+                        # If no suitable key was found, remove the element
+                        faction.remove(element)
+                        removed_count += 1
+
+    if populated_count > 0:
+        print(f"  -> PRE-VALIDATION: Populated {populated_count} unit elements missing the 'key' attribute.")
+    if removed_count > 0:
+        print(f"  -> PRE-VALIDATION: Removed {removed_count} keyless unit elements that could not be populated.")
+
+    return populated_count, removed_count
