@@ -1613,14 +1613,31 @@ def main():
                 keys_removed_for_review = faction_xml_utils.remove_excluded_unit_keys(root, excluded_units_set)
                 if keys_removed_for_review > 0:
                     print(f"Removed {keys_removed_for_review} keys for excluded units to force re-evaluation during review.")
-                    # This change will be picked up by the review pass, which will now see empty slots.
-                    # We need to ensure the review pass handles key-less tags.
                 else:
                     print("No excluded units found in the current roster.")
 
             review_faction_pool_cache = {}
             # Cache faction elements for the review pass
             all_faction_elements_review = list(root.findall('Faction'))
+
+            # --- Ensure base structure before review ---
+            print("\n--- Pre-Review: Synchronizing Faction Structure ---")
+            faction_sync_count = faction_xml_utils.sync_faction_structure_from_default(
+                root, categorized_units, unit_categories, general_units, template_faction_unit_pool, all_units,
+                tier_arg, unit_variant_map, unit_to_tier_map, variant_to_base_map, ck3_maa_definitions,
+                screen_name_to_faction_key_map, faction_key_to_units_map, unit_to_class_map,
+                faction_to_subculture_map, subculture_to_factions_map, faction_key_to_screen_name_map,
+                culture_to_faction_map=culture_to_faction_map, unit_to_description_map=unit_to_description_map,
+                unit_stats_map=unit_stats_map, main_mod_faction_maa_map=main_mod_faction_maa_map,
+                excluded_units_set=excluded_units_set, faction_pool_cache=review_faction_pool_cache,
+                faction_to_heritage_map=faction_to_heritage_map, heritage_to_factions_map=heritage_to_factions_map,
+                faction_to_heritages_map=faction_to_heritages_map, unit_to_training_level=unit_to_training_level
+            )
+            if faction_sync_count > 0:
+                print(f"Synchronized {faction_sync_count} missing tags to ensure structural integrity.")
+                # Re-cache elements if structure changed
+                all_faction_elements_review = list(root.findall('Faction'))
+
             review_changes = llm_orchestrator.run_llm_roster_review_pass(
                 root, llm_helper, time_period_context, args.llm_threads, args.llm_batch_size,
                 review_faction_pool_cache, all_units, excluded_units_set, screen_name_to_faction_key_map,
