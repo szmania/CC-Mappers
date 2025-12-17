@@ -910,6 +910,10 @@ def process_units_xml(units_xml_path, categorized_units, all_units, general_unit
         print("Reorganizing faction children to enforce element order...")
         faction_xml_utils.reorganize_faction_children(root)
 
+        # Reorder attributes within all tags to a consistent order
+        print("Reordering attributes within all tags to enforce consistent order...")
+        faction_xml_utils.reorder_attributes_in_all_tags(root)
+
         # NEW: Pre-validation cleanup to remove factions missing a name attribute.
         factions_to_remove = [f for f in root.findall('Faction') if 'name' not in f.attrib or not f.get('name')]
         if factions_to_remove:
@@ -1705,6 +1709,10 @@ def main():
             # Reorganize faction children to enforce order
             print("Reorganizing faction children to enforce element order...")
             faction_xml_utils.reorganize_faction_children(root)
+
+            # Reorder attributes within all tags to a consistent order
+            print("Reordering attributes within all tags to enforce consistent order...")
+            faction_xml_utils.reorder_attributes_in_all_tags(root)
 
             # --- Final Validation and Cleanup ---
             # NEW: Final validation to remove any unit tags with excluded keys
