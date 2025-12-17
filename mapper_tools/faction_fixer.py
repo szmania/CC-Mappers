@@ -1727,11 +1727,12 @@ def main():
 
                 # Validate XML against schema before saving
                 print("Validating final XML against schema...")
-                is_valid, error_message = shared_utils.validate_xml_with_schema(root, 'schemas/factions.xsd')
+                schema_path = shared_utils.detect_factions_schema(root)
+                is_valid, error_message = shared_utils.validate_xml_with_schema(root, schema_path)
                 if not is_valid:
                     print(f"XML VALIDATION FAILED: {error_message}")
                     raise Exception("XML validation failed. Halting execution.")
-                print("XML validation passed.")
+                print(f"XML validation passed using schema: {schema_path}")
 
                 shared_utils.indent_xml(root)
                 tree.write(args.factions_xml_path, encoding='utf-8', xml_declaration=True)
