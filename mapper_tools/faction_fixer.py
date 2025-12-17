@@ -931,11 +931,12 @@ def process_units_xml(units_xml_path, categorized_units, all_units, general_unit
 
         # Validate XML against schema
         print("Validating final XML against schema...")
-        is_valid, error_message = shared_utils.validate_xml_with_schema(root, 'schemas/factions.xsd')
+        schema_path = shared_utils.detect_factions_schema(root)
+        is_valid, error_message = shared_utils.validate_xml_with_schema(root, schema_path)
         if not is_valid:
             print(f"XML VALIDATION FAILED: {error_message}")
             raise Exception("XML validation failed. Halting execution.")
-        print("XML validation passed.")
+        print(f"XML validation passed using schema: {schema_path}")
 
         shared_utils.indent_xml(root)
         tree.write(units_xml_path, encoding='utf-8', xml_declaration=True)
@@ -1040,11 +1041,12 @@ def format_factions_xml_only(factions_xml_path, all_units, excluded_units_set, c
     # --- Validation ---
     print("\nValidating formatted XML against schema...")
     perf_monitor.start_operation("Schema Validation")
-    is_valid, error_message = shared_utils.validate_xml_with_schema(root, 'schemas/factions.xsd')
+    schema_path = shared_utils.detect_factions_schema(root)
+    is_valid, error_message = shared_utils.validate_xml_with_schema(root, schema_path)
     if not is_valid:
         print(f"XML VALIDATION FAILED: {error_message}")
         raise Exception("XML validation failed after formatting. Halting execution.")
-    print("XML validation passed.")
+    print(f"XML validation passed using schema: {schema_path}")
     perf_monitor.end_operation("Schema Validation")
 
     # --- Save if Changed ---
