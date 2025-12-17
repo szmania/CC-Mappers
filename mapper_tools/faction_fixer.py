@@ -217,7 +217,7 @@ perf_monitor = PerformanceMonitor(enabled=PERFORMANCE_MONITORING_ENABLED)
 # Convenience decorator
 def timed_function(func_name: str = None):
     """Decorator to time function execution."""
-    return perf_monitor.time_function(func_name or func.__name__ if 'func' in locals() else 'unknown_function')
+    return perf_monitor.time_function(func_name or func_name if 'func' in locals() else 'unknown_function')
 
 
 # --- DELETED: Logging Setup (Moved to shared_utils) ---
