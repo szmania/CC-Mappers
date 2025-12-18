@@ -502,8 +502,19 @@ def run_llm_roster_review_pass(root, llm_helper, time_period_context, llm_thread
         network_llm_results = {}
         if uncached_requests:
             # Create batches from all uncached requests for true parallel processing
-            all_batches = [uncached_requests[i:i + llm_batch_size] for i in range(0, len(uncached_requests), llm_batch_size)]
-            print(f"  -> Submitting {len(uncached_requests)} total review requests to LLM in {len(all_batches)} batches using {llm_threads} threads...")
+            # Dynamically adjust batch size to better utilize threads, while respecting the max batch size.
+            num_requests = len(uncached_requests)
+            # We want at least as many batches as threads, if possible, without making batches too small.
+            # A batch size of 1 is the minimum.
+            # Calculate a batch size that would create roughly `llm_threads` batches.
+            ideal_batch_size = (num_requests + llm_threads - 1) // llm_threads if llm_threads > 0 else num_requests
+
+            # Use the smaller of the user's configured max batch size and our ideal size.
+            # But don't go below 1.
+            effective_batch_size = max(1, min(llm_batch_size, ideal_batch_size))
+
+            all_batches = [uncached_requests[i:i + effective_batch_size] for i in range(0, len(uncached_requests), effective_batch_size)]
+            print(f"  -> Submitting {len(uncached_requests)} total review requests to LLM in {len(all_batches)} batches using {llm_threads} threads (effective batch size: {effective_batch_size})...")
 
             with ThreadPoolExecutor(max_workers=llm_threads) as executor:
                 future_to_batch = {
