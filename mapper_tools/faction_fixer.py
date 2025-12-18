@@ -1715,6 +1715,23 @@ def main():
             faction_xml_utils.reorder_attributes_in_all_tags(root)
 
             # --- Final Validation and Cleanup ---
+            # NEW: Final structural integrity check to add any missing required tags.
+            print("\n--- Pre-Review: Ensuring Final Structural Integrity ---")
+            structural_adds = faction_xml_utils.ensure_required_tags_exist(
+                root, review_faction_pool_cache, screen_name_to_faction_key_map, faction_key_to_units_map,
+                faction_to_subculture_map, subculture_to_factions_map, faction_key_to_screen_name_map,
+                culture_to_faction_map, excluded_units_set, faction_to_heritage_map,
+                heritage_to_factions_map, faction_to_heritages_map,
+                general_units, unit_stats_map, unit_categories, unit_to_training_level,
+                faction_elite_units, ck3_maa_definitions, unit_to_class_map, unit_to_description_map,
+                categorized_units, unit_to_tier_map, all_units
+            )
+            if structural_adds > 0:
+                review_changes += structural_adds
+                # After adding tags, we MUST reorganize again to ensure correct order
+                print("Reorganizing faction children after adding missing tags...")
+                faction_xml_utils.reorganize_faction_children(root)
+
             # NEW: Final validation to remove any unit tags with excluded keys
             excluded_removed_in_final_check = 0
             if excluded_units_set:

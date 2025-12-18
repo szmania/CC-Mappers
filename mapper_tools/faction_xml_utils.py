@@ -1409,3 +1409,102 @@ def populate_or_remove_keyless_tags(root, faction_pool_cache, screen_name_to_fac
         print(f"  -> PRE-VALIDATION: Removed {removed_count} keyless unit elements that could not be populated.")
 
     return populated_count, removed_count
+
+
+def ensure_required_tags_exist(root, faction_pool_cache, screen_name_to_faction_key_map, faction_key_to_units_map,
+                               faction_to_subculture_map, subculture_to_factions_map, faction_key_to_screen_name_map,
+                               culture_to_faction_map, excluded_units_set, faction_to_heritage_map,
+                               heritage_to_factions_map, faction_to_heritages_map,
+                               general_units, unit_stats_map, unit_categories, unit_to_training_level,
+                               faction_elite_units, ck3_maa_definitions, unit_to_class_map, unit_to_description_map,
+                               categorized_units, unit_to_tier_map, all_units):
+    """
+    Ensures every faction has at least one of each required core unit tag.
+    If a tag is missing, it creates one and populates it with a suitable unit.
+    This is a final pre-validation step to guarantee structural integrity.
+    """
+    required_tags = ['General', 'Knights', 'Levies', 'Garrison', 'MenAtArm']
+    added_count = 0
+
+    for faction in root.findall('Faction'):
+        faction_name = faction.get('name')
+        if not faction_name:
+            continue
+
+        used_units = {el.get('key') for el in faction if el.get('key')}
+
+        for tag_name in required_tags:
+            if not faction.find(tag_name):
+                print(f"  -> PRE-VALIDATION: Faction '{faction_name}' is missing required <{tag_name}> tag. Attempting to create and populate.")
+
+                # This logic is a simplified version of populate_or_remove_keyless_tags, focused on creation
+                new_key = None
+                from mapper_tools import unit_selector
+
+                # Get the working pool for this faction
+                working_pool, _, _ = get_cached_faction_working_pool(
+                    faction_name, faction_pool_cache, screen_name_to_faction_key_map, faction_key_to_units_map,
+                    faction_to_subculture_map, subculture_to_factions_map, faction_key_to_screen_name_map,
+                    culture_to_faction_map, excluded_units_set, faction_to_heritage_map,
+                    heritage_to_factions_map, faction_to_heritages_map
+                )
+                available_pool = working_pool - used_units
+
+                if tag_name == 'General':
+                    general_pool = {unit for unit in available_pool if unit in general_units}
+                    if general_pool:
+                        new_key = unit_selector.select_best_unit_from_pool(general_pool, rank=1, unit_stats_map=unit_stats_map)
+                elif tag_name == 'Knights':
+                    knight_pool = {unit for unit in available_pool if unit_to_class_map.get(unit) in ['cav_shock', 'cav_heavy', 'cav_melee']}
+                    if knight_pool:
+                        new_key = unit_selector.select_best_unit_from_pool(knight_pool, rank=1, unit_stats_map=unit_stats_map)
+                elif tag_name == 'Levies':
+                    faction_elites = faction_elite_units.get(faction_name, set()) if faction_elite_units else set()
+                    new_key = unit_selector.find_best_levy_replacement(available_pool, unit_to_training_level, unit_categories, exclude_units=faction_elites)
+                elif tag_name == 'Garrison':
+                    new_key = unit_selector.find_best_garrison_replacement(available_pool, unit_categories, exclude_units=general_units)
+                elif tag_name == 'MenAtArm':
+                    # For a missing MAA, we have to pick a generic type and find a unit for it.
+                    maa_type = 'heavy_infantry'
+                    if 'heavy_infantry' not in ck3_maa_definitions:
+                        maa_type = next(iter(ck3_maa_definitions), None)
+
+                    if maa_type:
+                        internal_type = ck3_maa_definitions.get(maa_type)
+                        expected_classes = mappings.CK3_TYPE_TO_ATTILA_CLASS.get(maa_type) or (mappings.CK3_TYPE_TO_ATTILA_CLASS.get(internal_type) if internal_type else None)
+                        if expected_classes:
+                            class_pool = {u for u in available_pool if unit_to_class_map.get(u) in expected_classes}
+                            if class_pool:
+                                new_key = unit_selector.select_best_unit_by_tier(class_pool, unit_to_tier_map)
+
+                # If no ideal unit was found, use the global fallback
+                if not new_key:
+                    print(f"    -> PRE-VALIDATION: Could not find ideal unit for new <{tag_name}> in faction '{faction_name}'. Attempting global fallback.")
+                    global_fallback_pool = all_units - (excluded_units_set if excluded_units_set else set()) - used_units
+                    if global_fallback_pool:
+                        new_key = random.choice(list(global_fallback_pool))
+                        print(f"    -> PRE-VALIDATION: Assigned random global unit '{new_key}' as last resort.")
+
+                if new_key:
+                    attrs = {'key': new_key}
+                    if tag_name == 'General': attrs['rank'] = '1'
+                    elif tag_name == 'Knights': attrs['rank'] = '1'
+                    elif tag_name == 'Levies': attrs.update({'percentage': '100', 'max': 'LEVY'})
+                    elif tag_name == 'Garrison': attrs.update({'percentage': '100', 'max': 'LEVY', 'level': '1'})
+                    elif tag_name == 'MenAtArm':
+                        maa_type = 'heavy_infantry'
+                        if 'heavy_infantry' not in ck3_maa_definitions:
+                            maa_type = next(iter(ck3_maa_definitions), "generic_men_at_arms")
+                        attrs['type'] = maa_type
+
+                    ET.SubElement(faction, tag_name, attrs)
+                    used_units.add(new_key)
+                    added_count += 1
+                    print(f"    -> Successfully added and populated <{tag_name}> for '{faction_name}'.")
+                else:
+                    print(f"    -> CRITICAL: Could not find any unit to populate missing <{tag_name}> for '{faction_name}'. This will likely cause validation to fail.")
+
+        if added_count > 0:
+            print(f"  -> PRE-VALIDATION: Added and populated {added_count} missing required unit tags.")
+
+    return added_count
