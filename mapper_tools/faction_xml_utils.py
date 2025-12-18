@@ -1258,7 +1258,8 @@ def populate_or_remove_keyless_tags(root, faction_pool_cache, screen_name_to_fac
                                     heritage_to_factions_map, faction_to_heritages_map,
                                     # unit selection specific args
                                     general_units, unit_stats_map, unit_categories, unit_to_training_level,
-                                    faction_elite_units, ck3_maa_definitions, unit_to_class_map, unit_to_description_map):
+                                    faction_elite_units, ck3_maa_definitions, unit_to_class_map, unit_to_description_map,
+                                    categorized_units, unit_to_tier_map):
     """
     Finds unit tags missing a 'key' attribute and attempts to populate them using appropriate unit selectors.
     If a suitable unit cannot be found, the tag is removed to ensure XML validity.

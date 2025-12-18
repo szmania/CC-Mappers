@@ -1734,7 +1734,8 @@ def main():
                 culture_to_faction_map, excluded_units_set, faction_to_heritage_map,
                 heritage_to_factions_map, faction_to_heritages_map,
                 general_units, unit_stats_map, unit_categories, unit_to_training_level,
-                faction_elite_units, ck3_maa_definitions, unit_to_class_map, unit_to_description_map
+                faction_elite_units, ck3_maa_definitions, unit_to_class_map, unit_to_description_map,
+                categorized_units, unit_to_tier_map
             )
             if populated > 0:
                 review_changes += populated
