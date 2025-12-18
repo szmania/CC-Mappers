@@ -360,7 +360,7 @@ def run_llm_unit_assignment_pass(llm_helper, all_llm_failures_to_process, time_p
                     attrs['percentage'] = '0' # Default percentage
                     attrs['max'] = 'LEVY' # Schema requires max
                 elif tag_name == 'Levies':
-                    attrs['percentage'] = '0' # Default percentage
+                    attrs['percentage'] = '100' # Default percentage, will be normalized later
                     attrs['max'] = 'LEVY' # Schema requires max
 
                 if tag_name == 'MenAtArm' and req_data.get('maa_type'):
@@ -430,7 +430,7 @@ def run_llm_roster_review_pass(root, llm_helper, time_period_context, llm_thread
         faction_element_map[faction_name] = faction
 
         # 1. Get the local unit pool for this faction
-        local_unit_pool, _, _ = faction_xml_utils.get_cached_faction_working_pool(
+        local_unit_pool, _, unfiltered_tiered_pools = faction_xml_utils.get_cached_faction_working_pool(
             faction_name, faction_pool_cache, screen_name_to_faction_key_map, faction_key_to_units_map,
             faction_to_subculture_map, subculture_to_factions_map, faction_key_to_screen_name_map,
             culture_to_faction_map, excluded_units_set, faction_to_heritage_map, heritage_to_factions_map,
@@ -468,7 +468,8 @@ def run_llm_roster_review_pass(root, llm_helper, time_period_context, llm_thread
             'faction': faction_name,
             'subculture': subculture,
             'roster': roster,
-            'local_unit_pool': local_unit_pool
+            'local_unit_pool': local_unit_pool,
+            'tiered_pools': unfiltered_tiered_pools
         })
 
     if not initial_review_requests:
