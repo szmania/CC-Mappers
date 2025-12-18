@@ -1227,10 +1227,20 @@ def _reorder_attributes_in_all_tags_for_element(element):
     if not element.attrib:
         return 0
 
-    # Define a desired order for attributes, with special handling for MenAtArm
-    if element.tag == 'MenAtArm':
+    # Define a desired order for attributes for each tag type
+    if element.tag == 'Faction':
+        desired_order = ['name', 'subculture']
+    elif element.tag == 'General':
+        desired_order = ['key', 'rank', 'num_guns']
+    elif element.tag == 'Knights':
+        desired_order = ['key', 'rank', 'num_guns']
+    elif element.tag == 'Levies':
+        desired_order = ['key', 'percentage', 'max', 'num_guns']
+    elif element.tag == 'Garrison':
+        desired_order = ['key', 'level', 'percentage', 'max', 'num_guns']
+    elif element.tag == 'MenAtArm':
         desired_order = ['type', 'key', 'max', 'siege', 'siege_engine_per_unit', 'num_guns']
-    else:
+    else: # Generic order for other tags like <Factions>
         desired_order = [
             'name', 'key', 'type', 'rank', 'level', 'percentage', 'max', 'siege',
             'siege_engine_per_unit', 'num_guns', 'subculture', 'submod_tag', 'submod_addon_tag'

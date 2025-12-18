@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning" vc:minVersion="1.1">
 
   <xs:element name="Factions">
     <xs:complexType>
@@ -8,7 +8,7 @@
         <xs:element name="Faction" maxOccurs="unbounded" minOccurs="1">
           <xs:complexType>
             <!-- Enforce presence of all core unit types in the main schema -->
-            <xs:sequence maxOccurs="unbounded">
+            <xs:sequence>
               <xs:element name="General" minOccurs="1" maxOccurs="unbounded">
                 <xs:complexType>
                   <xs:attribute name="key" type="xs:string" use="required"/>
@@ -53,6 +53,7 @@
             </xs:sequence>
             <xs:attribute name="name" type="xs:string" use="required"/>
             <xs:attribute name="subculture" type="xs:string" use="optional"/>
+            <xs:assert test="sum(Levies/@percentage) = 100"/>
           </xs:complexType>
         </xs:element>
       </xs:sequence>
