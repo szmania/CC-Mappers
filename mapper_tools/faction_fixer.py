@@ -1710,10 +1710,6 @@ def main():
             print("Reorganizing faction children to enforce element order...")
             faction_xml_utils.reorganize_faction_children(root)
 
-            # Reorder attributes within all tags to a consistent order
-            print("Reordering attributes within all tags to enforce consistent order...")
-            faction_xml_utils.reorder_attributes_in_all_tags(root)
-
             # --- Final Validation and Cleanup ---
             # NEW: Final structural integrity check to add any missing required tags.
             print("\n--- Pre-Review: Ensuring Final Structural Integrity ---")
@@ -1776,6 +1772,10 @@ def main():
                     print(f"XML VALIDATION FAILED: {error_message}")
                     raise Exception("XML validation failed. Halting execution.")
                 print(f"XML validation passed using schema: {schema_path}")
+
+                # Reorder attributes within all tags to a consistent order (moved to end)
+                print("Reordering attributes within all tags to enforce consistent order...")
+                faction_xml_utils.reorder_attributes_in_all_tags(root)
 
                 shared_utils.indent_xml(root)
                 tree.write(args.factions_xml_path, encoding='utf-8', xml_declaration=True)

@@ -987,12 +987,7 @@ def _fix_duplicate_garrison_units_for_faction(faction_element, faction_pool_cach
             )
             if new_unit:
                 # Create new Garrison element
-                ET.SubElement(faction_element, 'Garrison', {
-                    'level': level,
-                    'key': new_unit,
-                    'percentage': '0',
-                    'max': 'LEVY'
-                })
+                ET.SubElement(faction_element, 'Garrison', key=new_unit, level=level, percentage='0', max='LEVY')
                 seen_garrison_keys.add(new_unit)
                 fixed_for_faction += 1
                 # print(f"    - Added new garrison unit '{new_unit}' to level '{level}'.")
@@ -1496,18 +1491,21 @@ def ensure_required_tags_exist(root, faction_pool_cache, screen_name_to_faction_
                         print(f"    -> PRE-VALIDATION: Assigned random global unit '{new_key}' as last resort.")
 
                 if new_key:
-                    attrs = {'key': new_key}
-                    if tag_name == 'General': attrs['rank'] = '1'
-                    elif tag_name == 'Knights': attrs['rank'] = '1'
-                    elif tag_name == 'Levies': attrs.update({'percentage': '100', 'max': 'LEVY'})
-                    elif tag_name == 'Garrison': attrs.update({'level': '1', 'percentage': '100', 'max': 'LEVY'})
+                    if tag_name == 'General':
+                        ET.SubElement(faction, tag_name, key=new_key, rank='1')
+                    elif tag_name == 'Knights':
+                        ET.SubElement(faction, tag_name, key=new_key, rank='1')
+                    elif tag_name == 'Levies':
+                        ET.SubElement(faction, tag_name, key=new_key, percentage='100', max='LEVY')
+                    elif tag_name == 'Garrison':
+                        ET.SubElement(faction, tag_name, key=new_key, level='1', percentage='100', max='LEVY')
                     elif tag_name == 'MenAtArm':
                         maa_type = 'heavy_infantry'
                         if 'heavy_infantry' not in ck3_maa_definitions:
                             maa_type = next(iter(ck3_maa_definitions), "generic_men_at_arms")
-                        attrs['type'] = maa_type
+                        # For MenAtArm, 'type' should come before 'key'
+                        ET.SubElement(faction, tag_name, type=maa_type, key=new_key)
 
-                    ET.SubElement(faction, tag_name, attrs)
                     used_units.add(new_key)
                     added_count += 1
                     print(f"    -> Successfully added and populated <{tag_name}> for '{faction_name}'.")
