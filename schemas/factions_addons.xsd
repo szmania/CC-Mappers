@@ -4,26 +4,24 @@
   <xs:element name="Factions">
     <xs:complexType>
       <xs:sequence>
-        <!-- Enforce at least one Faction element in the main schema -->
-        <xs:element name="Faction" maxOccurs="unbounded" minOccurs="1">
+        <xs:element name="Faction" maxOccurs="unbounded" minOccurs="0">
           <xs:complexType>
-            <!-- Enforce presence of all core unit types in the main schema -->
-            <xs:sequence maxOccurs="unbounded">
-              <xs:element name="General" minOccurs="1" maxOccurs="unbounded">
+            <xs:choice maxOccurs="unbounded">
+              <xs:element name="General" minOccurs="0" maxOccurs="unbounded">
                 <xs:complexType>
                   <xs:attribute name="key" type="xs:string" use="required"/>
                   <xs:attribute name="rank" type="xs:integer" use="optional"/>
                   <xs:attribute name="num_guns" type="xs:integer" use="optional"/>
                 </xs:complexType>
               </xs:element>
-              <xs:element name="Knights" minOccurs="1" maxOccurs="unbounded">
+              <xs:element name="Knights" minOccurs="0" maxOccurs="unbounded">
                 <xs:complexType>
                   <xs:attribute name="key" type="xs:string" use="required"/>
                   <xs:attribute name="rank" type="xs:integer" use="optional"/>
                   <xs:attribute name="num_guns" type="xs:integer" use="optional"/>
                 </xs:complexType>
               </xs:element>
-              <xs:element name="Levies" minOccurs="1" maxOccurs="unbounded">
+              <xs:element name="Levies" minOccurs="0" maxOccurs="unbounded">
                 <xs:complexType>
                   <xs:attribute name="key" type="xs:string" use="required"/>
                   <xs:attribute name="percentage" type="xs:integer" use="required"/>
@@ -31,7 +29,7 @@
                   <xs:attribute name="num_guns" type="xs:integer" use="optional"/>
                 </xs:complexType>
               </xs:element>
-              <xs:element name="Garrison" minOccurs="1" maxOccurs="unbounded">
+              <xs:element name="Garrison" minOccurs="0" maxOccurs="unbounded">
                 <xs:complexType>
                   <xs:attribute name="key" type="xs:string" use="required"/>
                   <xs:attribute name="percentage" type="xs:integer" use="required"/>
@@ -40,7 +38,7 @@
                   <xs:attribute name="num_guns" type="xs:integer" use="optional"/>
                 </xs:complexType>
               </xs:element>
-              <xs:element name="MenAtArm" minOccurs="1" maxOccurs="unbounded">
+              <xs:element name="MenAtArm" minOccurs="0" maxOccurs="unbounded">
                 <xs:complexType>
                   <xs:attribute name="type" type="xs:string" use="required"/>
                   <xs:attribute name="key" type="xs:string" use="required"/>
@@ -50,7 +48,7 @@
                   <xs:attribute name="num_guns" type="xs:integer" use="optional"/>
                 </xs:complexType>
               </xs:element>
-            </xs:sequence>
+            </xs:choice>
             <xs:attribute name="name" type="xs:string" use="required"/>
             <xs:attribute name="subculture" type="xs:string" use="optional"/>
           </xs:complexType>
