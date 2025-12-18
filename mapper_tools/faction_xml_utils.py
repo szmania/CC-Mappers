@@ -283,7 +283,7 @@ def create_default_faction_if_missing(root, categorized_units, unit_categories, 
         ET.SubElement(default_faction, 'General', rank='2')
         ET.SubElement(default_faction, 'Knights', rank='1')
         ET.SubElement(default_faction, 'Levies', percentage='100', max='LEVY')
-        ET.SubElement(default_faction, 'Garrison', percentage='100', max='LEVY', level='1')
+        ET.SubElement(default_faction, 'Garrison', level='1', percentage='100', max='LEVY')
 
         print("  -> Default faction created with empty unit tags.")
         return default_created
