@@ -1259,7 +1259,7 @@ def populate_or_remove_keyless_tags(root, faction_pool_cache, screen_name_to_fac
                                     # unit selection specific args
                                     general_units, unit_stats_map, unit_categories, unit_to_training_level,
                                     faction_elite_units, ck3_maa_definitions, unit_to_class_map, unit_to_description_map,
-                                    categorized_units, unit_to_tier_map):
+                                    categorized_units, unit_to_tier_map, all_units):
     """
     Finds unit tags missing a 'key' attribute and attempts to populate them using appropriate unit selectors.
     If a suitable unit cannot be found, the tag is removed to ensure XML validity.
@@ -1271,7 +1271,7 @@ def populate_or_remove_keyless_tags(root, faction_pool_cache, screen_name_to_fac
 
     for faction in root.findall('Faction'):
         faction_name = faction.get('name')
-        if not faction_name or faction_name == 'Default':
+        if not faction_name:
             continue
 
         working_pool, _, _ = get_cached_faction_working_pool(
@@ -1378,13 +1378,28 @@ def populate_or_remove_keyless_tags(root, faction_pool_cache, screen_name_to_fac
                                             # print(f"    - Found keyless MAA replacement '{new_key}' for type '{maa_type}' (Pool: {tier_name}).")
                                             break # Stop searching tiers once a unit is found
 
-                    # If a new key was found and it's not already used, assign it
-                    if new_key and new_key not in used_units:
+                    # If the ideal search found a unit that's already used, nullify it to trigger the fallback.
+                    if new_key and new_key in used_units:
+                        new_key = None
+
+                    # If no unique ideal unit was found, attempt a global last-resort fallback.
+                    if not new_key:
+                        print(f"    -> PRE-VALIDATION: Could not find ideal unit for keyless <{tag_name}> in faction '{faction_name}'. Attempting global fallback.")
+                        global_fallback_pool = all_units - (excluded_units_set if excluded_units_set else set()) - used_units
+                        if global_fallback_pool:
+                            new_key = random.choice(list(global_fallback_pool))
+                            print(f"    -> PRE-VALIDATION: Assigned random global unit '{new_key}' as last resort.")
+
+                    # After all attempts, if a key was found, assign it. Otherwise, log a critical failure.
+                    if new_key:
                         element.set('key', new_key)
                         used_units.add(new_key)
                         populated_count += 1
                     else:
-                        # If no suitable key was found, remove the element
+                        # This is a critical failure state where no units are available at all.
+                        # We will remove the tag to prevent a key-validation error, but this will likely cause a missing-element error.
+                        # This is unavoidable if all unit pools are empty.
+                        print(f"  -> PRE-VALIDATION: CRITICAL - No units available in any pool for <{tag_name}> in faction '{faction_name}'. Removing tag.")
                         faction.remove(element)
                         removed_count += 1
 
