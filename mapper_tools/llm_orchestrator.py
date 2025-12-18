@@ -501,31 +501,26 @@ def run_llm_roster_review_pass(root, llm_helper, time_period_context, llm_thread
 
         network_llm_results = {}
         if uncached_requests:
-            # Group review requests by faction for more efficient processing
-            review_requests_by_faction = defaultdict(list)
-            for req in uncached_requests:
-                review_requests_by_faction[req['faction']].append(req)
+            # Create batches from all uncached requests for true parallel processing
+            all_batches = [uncached_requests[i:i + llm_batch_size] for i in range(0, len(uncached_requests), llm_batch_size)]
+            print(f"  -> Submitting {len(uncached_requests)} total review requests to LLM in {len(all_batches)} batches using {llm_threads} threads...")
 
-            # Process batches by faction for better LLM efficiency
-            network_llm_results = {}
-            for faction_name, faction_requests in review_requests_by_faction.items():
-                faction_batches = [faction_requests[i:i + llm_batch_size] for i in range(0, len(faction_requests), llm_batch_size)]
-                print(f"  -> Submitting {len(faction_requests)} review requests for faction '{faction_name}' to LLM in {len(faction_batches)} batches using {llm_threads} threads...")
-                with ThreadPoolExecutor(max_workers=llm_threads) as executor:
-                    future_to_batch = {
-                        executor.submit(llm_helper.get_batch_roster_reviews, batch, time_period_context): batch
-                        for batch in faction_batches
-                    }
-                    processed_requests = 0
-                    for future in as_completed(future_to_batch):
-                        processed_requests += len(future_to_batch[future])
-                        print(f"  -> LLM review progress for '{faction_name}': {processed_requests}/{len(faction_requests)} requests completed.")
-                        try:
-                            batch_results = future.result()
-                            if batch_results:
-                                network_llm_results.update(batch_results)
-                        except Exception as exc:
-                            print(f"  -> ERROR: A review batch for '{faction_name}' generated an exception: {exc}")
+            with ThreadPoolExecutor(max_workers=llm_threads) as executor:
+                future_to_batch = {
+                    executor.submit(llm_helper.get_batch_roster_reviews, batch, time_period_context): batch
+                    for batch in all_batches
+                }
+                processed_requests = 0
+                for future in as_completed(future_to_batch):
+                    processed_requests += len(future_to_batch[future])
+                    print(f"  -> LLM review progress: {processed_requests}/{len(uncached_requests)} requests completed.")
+                    try:
+                        batch_results = future.result()
+                        if batch_results:
+                            network_llm_results.update(batch_results)
+                    except Exception as exc:
+                        # It's hard to know which faction failed here, but we can log the exception
+                        print(f"  -> ERROR: A review batch generated an exception: {exc}")
 
         # 5. Apply corrections and collect failures for next attempt
         final_results = {**cached_results, **network_llm_results}
