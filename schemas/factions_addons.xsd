@@ -51,7 +51,6 @@
             </xs:choice>
             <xs:attribute name="name" type="xs:string" use="required"/>
             <xs:attribute name="subculture" type="xs:string" use="optional"/>
-            <xs:assert test="sum(Levies/@percentage) = 100"/>
           </xs:complexType>
         </xs:element>
       </xs:sequence>
