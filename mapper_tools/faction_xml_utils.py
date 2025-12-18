@@ -387,7 +387,7 @@ def sync_faction_structure_from_default(root, categorized_units, unit_categories
                         )
                     
                     if levy_unit_key:
-                        ET.SubElement(faction, 'Levies', percentage='100', max='LEVY', key=levy_unit_key)
+                        ET.SubElement(faction, 'Levies', key=levy_unit_key, percentage='100', max='LEVY')
                         print(f"  -> Added missing <Levies> tag for faction '{faction_name}' with unit '{levy_unit_key}'.")
                         synced_count += 1
                     else:
@@ -409,7 +409,7 @@ def sync_faction_structure_from_default(root, categorized_units, unit_categories
         current_garrison_levels = {int(g.get('level')) for g in faction.findall('Garrison') if g.get('level')}
         for level in default_garrison_levels:
             if level not in current_garrison_levels:
-                ET.SubElement(faction, 'Garrison', percentage='100', max='LEVY', level=str(level))
+                ET.SubElement(faction, 'Garrison', level=str(level), percentage='100', max='LEVY')
                 synced_count += 1
 
     if synced_count > 0:
@@ -1500,7 +1500,7 @@ def ensure_required_tags_exist(root, faction_pool_cache, screen_name_to_faction_
                     if tag_name == 'General': attrs['rank'] = '1'
                     elif tag_name == 'Knights': attrs['rank'] = '1'
                     elif tag_name == 'Levies': attrs.update({'percentage': '100', 'max': 'LEVY'})
-                    elif tag_name == 'Garrison': attrs.update({'percentage': '100', 'max': 'LEVY', 'level': '1'})
+                    elif tag_name == 'Garrison': attrs.update({'level': '1', 'percentage': '100', 'max': 'LEVY'})
                     elif tag_name == 'MenAtArm':
                         maa_type = 'heavy_infantry'
                         if 'heavy_infantry' not in ck3_maa_definitions:
