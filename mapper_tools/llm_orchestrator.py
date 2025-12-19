@@ -550,75 +550,98 @@ def run_llm_roster_review_pass(root, llm_helper, time_period_context, llm_thread
 
             if result_data['status'] == 'success':
                 if corrections:
-                    print(f"  -> Applying {len(corrections)} corrections for faction '{faction_name}' (Attempt {attempt + 1})...")
+                    print(f"  -> Validating {len(corrections)} proposed corrections for faction '{faction_name}' (Attempt {attempt + 1})...")
+
+                    # --- NEW: Transactional Change Validation and Application ---
+                    validated_changes = {}  # Maps review_id -> (element_to_modify, suggested_unit, original_correction_dict, sanitized_tag)
+                    proposed_final_keys = set()
+                    is_transaction_valid = True
+
+                    # 1. Gather all review IDs that are part of this transaction
+                    all_review_ids_in_corrections = set()
+                    for c in corrections:
+                        identifier = c.get('identifier')
+                        if isinstance(identifier, dict):
+                            review_id = identifier.get('__review_id__')
+                            if review_id is not None:
+                                # Sanitize review_id to handle potential LLM malformations
+                                original_review_id = str(review_id)
+                                sanitized_review_id = re.sub(r'\D', '', original_review_id)
+                                if sanitized_review_id:
+                                    all_review_ids_in_corrections.add(sanitized_review_id)
+
+                    # 2. Populate the set of keys that will remain unchanged
+                    for child in faction_element:
+                        child_review_id = child.get('__review_id__')
+                        if child_review_id not in all_review_ids_in_corrections and child.get('key'):
+                            proposed_final_keys.add(child.get('key'))
+
+                    # 3. Validate all proposed changes against each other and against the unchanged keys
                     for correction in corrections:
-                        # Validate correction object structure
+                        # --- Start: Sanitization and validation of one correction ---
                         tag_to_find = correction.get('tag')
                         identifier = correction.get('identifier')
                         current_unit_from_llm = correction.get('current_unit')
                         suggested_unit = correction.get('suggested_unit')
 
-                        if not (tag_to_find and current_unit_from_llm and suggested_unit and isinstance(identifier, dict)):
-                            print(f"    -> WARNING: Invalid correction object received from LLM. Skipping. Data: {correction}")
-                            continue
+                        if not (tag_to_find and suggested_unit and isinstance(identifier, dict)):
+                            print(f"    -> VALIDATION FAILED: Invalid correction object received from LLM. Skipping. Data: {correction}")
+                            is_transaction_valid = False
+                            break
 
-                        # Replace the Element Matching Logic
                         review_id = identifier.get('__review_id__')
                         if not review_id:
-                            print(f"    -> WARNING: Correction object missing '__review_id__'. Skipping. Data: {correction}")
-                            continue
-                        # Sanitize review_id to handle potential LLM malformations (e.g., adding quotes).
-                        # It should be a string of digits.
-                        original_review_id = str(review_id) # Ensure it's a string for processing
+                            print(f"    -> VALIDATION FAILED: Correction object missing '__review_id__'. Skipping. Data: {correction}")
+                            is_transaction_valid = False
+                            break
+                        
+                        original_review_id = str(review_id)
                         sanitized_review_id = re.sub(r'\D', '', original_review_id)
-                        if sanitized_review_id != original_review_id:
-                            print(f"    -> WARNING: Sanitized malformed '__review_id__' from LLM. Original: '{original_review_id}', Used: '{sanitized_review_id}'.")
-
                         if not sanitized_review_id:
-                            print(f"    -> WARNING: Sanitized '__review_id__' is empty. Skipping. Original: '{original_review_id}'")
-                            continue
-
+                            print(f"    -> VALIDATION FAILED: Sanitized '__review_id__' is empty. Original: '{original_review_id}'")
+                            is_transaction_valid = False
+                            break
                         review_id = sanitized_review_id
 
-                        # Sanitize and validate the tag from the LLM to prevent XPath errors.
                         valid_tags = ['General', 'Knights', 'Levies', 'Garrison', 'MenAtArm']
                         sanitized_tag = shared_utils.find_best_fuzzy_match(tag_to_find, valid_tags, threshold=0.7)
-
                         if not sanitized_tag:
-                            print(f"    -> WARNING: LLM returned an invalid or unrecognizable tag '{tag_to_find}'. Skipping correction.")
-                            continue
+                            print(f"    -> VALIDATION FAILED: LLM returned an invalid or unrecognizable tag '{tag_to_find}'.")
+                            is_transaction_valid = False
+                            break
+                        # --- End: Sanitization ---
 
-                        if sanitized_tag != tag_to_find:
-                                print(f"    -> WARNING: LLM returned a potentially malformed tag '{tag_to_find}'. Sanitized to '{sanitized_tag}' via fuzzy matching.")
-
-                        # --- NEW: Uniqueness Validation ---
-                        all_current_keys_in_faction = {
-                            el.get('key') for el in faction_element if el.get('key')
-                        }
-                        # We must temporarily exclude the key of the very unit we are about to change
-                        # to allow for valid self-replacement or swapping with another unit that will also be changed.
-                        # First, find the element that *would* be changed.
-                        element_being_changed = faction_element.find(f".//{sanitized_tag}[@__review_id__='{review_id}']")
-                        if element_being_changed is not None and element_being_changed.get('key') in all_current_keys_in_faction:
-                            all_current_keys_in_faction.remove(element_being_changed.get('key'))
-
-                        if suggested_unit in all_current_keys_in_faction:
-                            print(f"    -> WARNING: LLM suggested unit '{suggested_unit}' for faction '{faction_name}', but this unit is already in use by another tag in this faction. Skipping correction to prevent duplicates.")
-                            continue # Skip this correction
-                        # --- END NEW ---
+                        # Check for duplicates in the proposed final state
+                        if suggested_unit in proposed_final_keys:
+                            print(f"    -> VALIDATION FAILED: LLM suggested unit '{suggested_unit}' which would create a duplicate in the final roster. Rejecting all changes for this faction.")
+                            is_transaction_valid = False
+                            break
+                        proposed_final_keys.add(suggested_unit)
 
                         element_to_modify = faction_element.find(f".//{sanitized_tag}[@__review_id__='{review_id}']")
+                        if element_to_modify is None:
+                            print(f"    -> VALIDATION FAILED: Could not find element with review_id '{review_id}' and tag '{sanitized_tag}'. Rejecting all changes.")
+                            is_transaction_valid = False
+                            break
+                        
+                        validated_changes[review_id] = (element_to_modify, suggested_unit, correction, sanitized_tag)
 
-                        if element_to_modify is not None:
+                    # 4. If validation passed, apply all changes
+                    if is_transaction_valid:
+                        print(f"  -> Validation successful. Applying {len(validated_changes)} corrections for faction '{faction_name}'.")
+                        for review_id, (element_to_modify, suggested_unit, original_correction, sanitized_tag) in validated_changes.items():
                             original_key = element_to_modify.get('key')
+                            current_unit_from_llm = original_correction.get('current_unit')
+
                             if original_key != current_unit_from_llm:
                                 print(f"    -> WARNING: Element for ID '{review_id}' in '{faction_name}' has changed key (expected '{current_unit_from_llm}', found '{original_key}'). Applying correction anyway.")
 
                             element_to_modify.set('key', suggested_unit)
                             total_corrections_applied += 1
-                            print(f"    - Changed <{tag_to_find}> (ID: {review_id}): '{original_key}' -> '{suggested_unit}'. Reason: {correction.get('reason', 'N/A')}")
-                        else:
-                            print(f"    -> WARNING: Could not find matching element for correction in '{faction_name}': Tag={tag_to_find}, ID={review_id}, current_unit='{current_unit_from_llm}'")
+                            print(f"    - Changed <{sanitized_tag}> (ID: {review_id}): '{original_key}' -> '{suggested_unit}'. Reason: {original_correction.get('reason', 'N/A')}")
+                    else:
+                        print(f"  -> Transaction for faction '{faction_name}' failed validation. No changes applied.")
+                    # --- END NEW ---
                 else:
                     print(f"  -> Faction '{faction_name}' reviewed successfully, no corrections suggested (Attempt {attempt + 1}).")
             else: # status == 'failure'
