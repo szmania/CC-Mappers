@@ -1819,16 +1819,28 @@ def main():
                     raise Exception("XML validation failed. Halting execution.")
                 print(f"XML validation passed using schema: {schema_path}")
 
-                # --- NEW: Final percentage validation ---
+                # --- Final percentage validation and auto-fix ---
                 print("\nPerforming final validation of Levy/Garrison percentages...")
                 percentages_valid, percentage_errors = faction_xml_utils.validate_levy_garrison_percentages(root)
                 if not percentages_valid:
-                    print("\n--- CRITICAL: Levy/Garrison Percentage Validation FAILED ---")
+                    print("\n--- WARNING: Levy/Garrison Percentage Validation FAILED. Attempting automatic fix... ---")
                     for error in percentage_errors:
                         print(f"  - {error}")
-                    raise Exception("Percentage validation failed. XML file will not be written to prevent corruption.")
+
+                    print("  -> Re-running percentage normalization...")
+                    unit_management.normalize_all_levy_percentages(root)
+
+                    print("  -> Re-validating percentages after fix...")
+                    percentages_valid, percentage_errors = faction_xml_utils.validate_levy_garrison_percentages(root)
+                    if not percentages_valid:
+                        print("\n--- CRITICAL: Automatic fix FAILED. Levy/Garrison Percentage Validation still fails. ---")
+                        for error in percentage_errors:
+                            print(f"  - {error}")
+                        raise Exception("Percentage validation failed after automatic fix. XML file will not be written to prevent corruption.")
+                    else:
+                        print("--- SUCCESS: Automatic fix for percentages was successful. ---")
+
                 print("Levy/Garrison percentage validation passed.")
-                # --- END NEW ---
 
                 # --- Final percentage validation and auto-fix ---
                 print("\nPerforming final validation of Levy/Garrison percentages...")
