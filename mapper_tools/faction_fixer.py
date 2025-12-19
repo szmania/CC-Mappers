@@ -219,6 +219,82 @@ def timed_function(func_name: str):
     """Decorator to time function execution."""
     return perf_monitor.time_function(func_name)
 
+def _parse_and_recover_factions_xml(xml_path: str) -> tuple[ET.ElementTree, ET.Element]:
+    """
+    Parses a potentially corrupt Factions XML file, handling 'junk after document element' errors.
+
+    This function first attempts a standard parse. If that fails with a specific
+    'junk after document element' error, it switches to a recovery mode. In recovery,
+    it reads the file as text, uses regular expressions to find all <Faction>...</Faction>
+    blocks, and reconstructs a new, clean in-memory XML tree from them. It also
+    attempts to preserve attributes from the original <Factions> root tag.
+
+    Args:
+        xml_path (str): The file path to the Factions XML file.
+
+    Returns:
+        tuple[ET.ElementTree, ET.Element]: A tuple containing the parsed ElementTree
+                                           and its root element.
+
+    Raises:
+        ET.ParseError: If the file is unrecoverable or contains a different
+                       type of XML syntax error.
+    """
+    try:
+        # First, try to parse it normally. If it works, great.
+        tree = ET.parse(xml_path)
+        return tree, tree.getroot()
+    except ET.ParseError as e:
+        if "junk after document element" in str(e):
+            print(f"Warning: Detected 'junk after document element' in '{xml_path}'. Attempting recovery...")
+
+            with open(xml_path, 'r', encoding='utf-8') as f:
+                content = f.read()
+
+            # Use regex to find all <Faction>...</Faction> blocks.
+            # The DOTALL flag is crucial for multi-line Faction blocks.
+            faction_strings = re.findall(r'<Faction\b.*?<\/Faction>', content, re.DOTALL)
+
+            if not faction_strings:
+                print("Recovery failed: No <Faction> elements could be found in the corrupted file.")
+                raise e  # Re-raise original error
+
+            # Create a new, clean root element
+            new_root = ET.Element('Factions')
+
+            # Try to recover attributes from the first <Factions> tag found
+            factions_tag_match = re.search(r'<Factions([^>]*)>', content)
+            if factions_tag_match:
+                attrs_str = factions_tag_match.group(1)
+                # This regex is simple but should be sufficient for the expected attributes.
+                attrs = re.findall(r'(\w+)=["\']([^"\']*)["\']', attrs_str)
+                for key, value in attrs:
+                    new_root.set(key, value)
+
+            # Parse each found <Faction> string and append it to the new root
+            parsed_count = 0
+            for faction_str in faction_strings:
+                try:
+                    # We need to ensure the string is clean before parsing
+                    faction_element = ET.fromstring(faction_str.strip())
+                    new_root.append(faction_element)
+                    parsed_count += 1
+                except ET.ParseError as parse_err:
+                    print(f"  -> Warning: Skipping a malformed <Faction> block during recovery: {parse_err}")
+
+            if parsed_count == 0:
+                print("Recovery failed: Found Faction-like blocks but could not parse any of them.")
+                raise e
+
+            print(f"Recovery successful: Rebuilt XML with {parsed_count} <Faction> elements.")
+
+            # Create a new ElementTree object
+            new_tree = ET.ElementTree(new_root)
+            return new_tree, new_root
+        else:
+            # Some other parse error occurred, re-raise it.
+            raise e
+
 
 # --- DELETED: Logging Setup (Moved to shared_utils) ---
 
@@ -251,10 +327,9 @@ def update_subcultures_only(factions_xml_path, llm_helper, time_period_context, 
     total_changes = 0
 
     try:
-        tree = ET.parse(factions_xml_path)
-        root = tree.getroot()
+        tree, root = _parse_and_recover_factions_xml(factions_xml_path)
     except ET.ParseError as e:
-        print(f"Error parsing XML file {factions_xml_path}: {e}. Aborting subculture update.")
+        print(f"Error parsing XML file {factions_xml_path} even after recovery attempt: {e}. Aborting subculture update.")
         raise
     except FileNotFoundError:
         print(f"Error: Factions XML file not found at '{factions_xml_path}'. Aborting subculture update.")
@@ -515,10 +590,9 @@ def process_units_xml(units_xml_path, categorized_units, all_units, general_unit
     # The file is guaranteed to exist by prompt_to_create_xml in main.
     # The try-except block below will handle parsing errors.
     try:
-        tree = ET.parse(units_xml_path)
-        root = tree.getroot()
+        tree, root = _parse_and_recover_factions_xml(units_xml_path)
     except ET.ParseError as e:
-        print(f"Error parsing XML file {units_xml_path}: {e}. Skipping.")
+        print(f"Error parsing XML file {units_xml_path} even after recovery attempt: {e}. Skipping.")
         raise
 
     # Cache faction elements for single-pass processing
@@ -907,10 +981,9 @@ def format_factions_xml_only(factions_xml_path, all_units, excluded_units_set, c
     changes_made = False
 
     try:
-        tree = ET.parse(factions_xml_path)
-        root = tree.getroot()
+        tree, root = _parse_and_recover_factions_xml(factions_xml_path)
     except ET.ParseError as e:
-        print(f"Error parsing XML file {factions_xml_path}: {e}. Aborting formatting.")
+        print(f"Error parsing XML file {factions_xml_path} even after recovery attempt: {e}. Aborting formatting.")
         raise
     except FileNotFoundError:
         print(f"Error: Factions XML file not found at '{factions_xml_path}'. Aborting formatting.")
