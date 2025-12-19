@@ -1143,19 +1143,27 @@ def remove_zero_percentage_tags(root):
 def _remove_zero_percentage_tags_for_faction(faction_element):
     """
     Removes <Levies> and <Garrison> tags within a single faction that have a 'percentage' attribute of '0'.
+    For Levies, it ensures at least one tag remains to satisfy the schema.
     Returns the count of tags removed for this faction.
     """
     removed_for_faction = 0
-    tags_to_remove = []
-    for element in faction_element.findall('Levies') + faction_element.findall('Garrison'):
-        percentage = element.get('percentage')
-        if percentage == '0':
-            tags_to_remove.append(element)
 
-    for tag in tags_to_remove:
+    # Handle Levies separately to ensure at least one remains for schema compliance.
+    levy_tags = faction_element.findall('Levies')
+    if levy_tags:
+        levies_to_remove = [tag for tag in levy_tags if tag.get('percentage') == '0']
+        # Only remove zero-percentage levies if it won't result in removing ALL levy tags.
+        if len(levies_to_remove) < len(levy_tags):
+            for tag in levies_to_remove:
+                faction_element.remove(tag)
+                removed_for_faction += 1
+
+    # Handle Garrisons: these can all be safely removed as they are not required for base schema validity.
+    garrison_tags_to_remove = [tag for tag in faction_element.findall('Garrison') if tag.get('percentage') == '0']
+    for tag in garrison_tags_to_remove:
         faction_element.remove(tag)
         removed_for_faction += 1
-        # print(f"    - Removed <{tag.tag}> with 0% percentage from faction '{faction_element.get('name')}'.")
+
     return removed_for_faction
 
 
