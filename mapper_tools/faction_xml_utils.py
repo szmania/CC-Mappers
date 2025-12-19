@@ -1227,6 +1227,7 @@ def reorganize_faction_children(root):
     """
     Reorganizes the child elements within each <Faction> tag to a consistent order:
     General, Knights, Levies, Garrison, MenAtArm.
+    Also sorts tags within each group by their attributes.
     Returns the count of factions that had their children reorganized.
     """
     reorganized_count = 0
@@ -1244,14 +1245,32 @@ def reorganize_faction_children(root):
 
         new_children_order = []
         for tag_name in desired_order:
-            new_children_order.extend(grouped_children[tag_name])
+            children_for_tag = grouped_children[tag_name]
+            
+            # Sort children within each tag group by their attributes
+            if tag_name in ['General', 'Knights']:
+                # Sort by rank (numeric), then by key for stability
+                children_for_tag.sort(key=lambda el: (int(el.get('rank', '0')), el.get('key', '')))
+            elif tag_name == 'Garrison':
+                # Sort by level (numeric), then by key for stability
+                children_for_tag.sort(key=lambda el: (int(el.get('level', '0')), el.get('key', '')))
+            elif tag_name == 'MenAtArm':
+                # Sort by type for deterministic order
+                children_for_tag.sort(key=lambda el: el.get('type', ''))
+            elif tag_name == 'Levies':
+                # Sort by key for deterministic order
+                children_for_tag.sort(key=lambda el: el.get('key', ''))
+            
+            new_children_order.extend(children_for_tag)
             # Remove these from grouped_children to identify any unexpected tags
             if tag_name in grouped_children:
                 del grouped_children[tag_name]
 
-        # Add any remaining (unexpected) tags at the end
+        # Add any remaining (unexpected) tags at the end, sorted by key
         for tag_name in sorted(grouped_children.keys()):
-            new_children_order.extend(grouped_children[tag_name])
+            remaining_children = grouped_children[tag_name]
+            remaining_children.sort(key=lambda el: el.get('key', ''))
+            new_children_order.extend(remaining_children)
 
         # Check if the order has changed
         if new_children_order != current_children:
