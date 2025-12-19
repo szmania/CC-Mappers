@@ -1776,23 +1776,11 @@ def main():
                 review_changes += s + se + ng + m
                 print(f"  -> Applied {s} siege, {se} siege_engine_per_unit, {ng} num_guns, and {m} max attribute changes.")
 
-            # Run final normalization pass after review...
-            print("\nRunning final normalization pass...")
-            zero_percentage_removals = faction_xml_utils.remove_zero_percentage_tags(root)
-            if zero_percentage_removals > 0:
-                print(f"  -> Removed {zero_percentage_removals} zero-percentage tags before normalization.")
-
-            normalization_changes = unit_management.normalize_all_levy_percentages(root, all_faction_elements_review)
-            if normalization_changes > 0:
-                print(f"  -> Normalized percentages for {normalization_changes} factions.")
-
-            # Reorganize faction children to enforce order
-            print("Reorganizing faction children to enforce element order...")
-            faction_xml_utils.reorganize_faction_children(root)
-
             # --- Final Validation and Cleanup ---
-            # NEW: Final structural integrity check to add any missing required tags.
-            print("\n--- Pre-Review: Ensuring Final Structural Integrity ---")
+            print("\n--- Final Validation and Cleanup after Review ---")
+
+            # 1. Ensure final structural integrity by adding any missing required tags.
+            print("Ensuring final structural integrity...")
             structural_adds = faction_xml_utils.ensure_required_tags_exist(
                 root, review_faction_pool_cache, screen_name_to_faction_key_map, faction_key_to_units_map,
                 faction_to_subculture_map, subculture_to_factions_map, faction_key_to_screen_name_map,
@@ -1804,23 +1792,12 @@ def main():
             )
             if structural_adds > 0:
                 review_changes += structural_adds
-                # After adding tags, we MUST reorganize again to ensure correct order
+                # After adding tags, we MUST reorganize to ensure correct order before populating keys
                 print("Reorganizing faction children after adding missing tags...")
                 faction_xml_utils.reorganize_faction_children(root)
 
-            # NEW: Final validation to remove any unit tags with excluded keys
-            excluded_removed_in_final_check = 0
-            if excluded_units_set:
-                for faction in root.findall('Faction'):
-                    for element in list(faction):  # Use list() to avoid modification during iteration
-                        if element.get('key') in excluded_units_set:
-                            if element.tag in ['General', 'Knights', 'Levies', 'Garrison', 'MenAtArm']:
-                                faction.remove(element)
-                                excluded_removed_in_final_check += 1
-                if excluded_removed_in_final_check > 0:
-                    print(f"Final validation: Removed {excluded_removed_in_final_check} excluded units from output.")
-
-            # NEW: Pre-validation cleanup to populate or remove any unit tags missing a 'key' attribute.
+            # 2. Populate any remaining keyless tags or remove them if no unit can be found.
+            print("Populating or removing keyless tags...")
             populated, removed = faction_xml_utils.populate_or_remove_keyless_tags(
                 root, review_faction_pool_cache, screen_name_to_faction_key_map, faction_key_to_units_map,
                 faction_to_subculture_map, subculture_to_factions_map, faction_key_to_screen_name_map,
@@ -1833,15 +1810,36 @@ def main():
             if populated > 0:
                 review_changes += populated
 
-            # NEW: Pre-validation cleanup to remove factions missing a name attribute.
+            # 3. Remove factions missing a name attribute.
             factions_to_remove = [f for f in root.findall('Faction') if 'name' not in f.attrib or not f.get('name')]
             if factions_to_remove:
                 print(f"  -> PRE-VALIDATION CLEANUP: Found and removed {len(factions_to_remove)} <Faction> elements missing the required 'name' attribute.")
                 for faction in factions_to_remove:
                     root.remove(faction)
 
+            # 4. Run final normalization pass.
+            print("\nRunning final normalization pass...")
+            zero_percentage_removals = faction_xml_utils.remove_zero_percentage_tags(root)
+            if zero_percentage_removals > 0:
+                print(f"  -> Removed {zero_percentage_removals} zero-percentage tags before normalization.")
+
+            normalization_changes = unit_management.normalize_all_levy_percentages(root, all_faction_elements_review)
+            if normalization_changes > 0:
+                print(f"  -> Normalized percentages for {normalization_changes} factions.")
+
+            # 5. Final reorganization and attribute ordering before save.
+            print("Reorganizing faction children to enforce element order...")
+            faction_xml_utils.reorganize_faction_children(root)
+
+            # Final check for excluded units before saving
+            excluded_removed_in_final_check = 0
+            if excluded_units_set:
+                excluded_removed_in_final_check = faction_xml_utils.remove_excluded_unit_keys(root, excluded_units_set)
+                if excluded_removed_in_final_check > 0:
+                    print(f"Final validation: Removed {excluded_removed_in_final_check} keys for excluded units from output.")
+
             # Save the file if any changes were made including cleanup
-            if review_changes > 0 or normalization_changes > 0 or removed > 0 or excluded_removed_in_final_check > 0:
+            if review_changes > 0 or normalization_changes > 0 or removed > 0:
                 print(f"\nProcessing complete. Applied {review_changes} review corrections, {normalization_changes} normalization changes, and performed {removed + excluded_removed_in_final_check} cleanup removals. Saving file...")
 
                 # Validate XML against schema before saving
