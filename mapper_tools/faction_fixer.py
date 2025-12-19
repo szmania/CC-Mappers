@@ -893,24 +893,46 @@ def process_units_xml(units_xml_path, categorized_units, all_units, general_unit
     if total_changes > 0 or submod_tag_added or submod_addon_for_added:
         print(f"\nProcessing complete. Applied {total_changes} total changes. Saving file...")
 
-        # NEW: Pre-validation cleanup to remove factions missing a name attribute.
+        # --- Final Validation and Cleanup ---
+        print("\n--- Pre-Save Validation and Cleanup ---")
+
+        # Ensure structural integrity by adding any missing required tags.
+        print("Ensuring final structural integrity...")
+        structural_adds = faction_xml_utils.ensure_required_tags_exist(
+            root, faction_pool_cache, screen_name_to_faction_key_map, faction_key_to_units_map,
+            faction_to_subculture_map, subculture_to_factions_map, faction_key_to_screen_name_map,
+            culture_to_faction_map, excluded_units_set, faction_to_heritage_map,
+            heritage_to_factions_map, faction_to_heritages_map,
+            general_units, unit_stats_map, unit_categories, unit_to_training_level,
+            faction_elite_units, ck3_maa_definitions, unit_to_class_map, unit_to_description_map,
+            categorized_units, unit_to_tier_map, all_units
+        )
+        if structural_adds > 0:
+            total_changes += structural_adds
+            # After adding tags, we MUST reorganize again to ensure correct order before populating keys
+            print("Reorganizing faction children after adding missing tags...")
+            faction_xml_utils.reorganize_faction_children(root)
+
+        # Populate any remaining keyless tags or remove them if no unit can be found.
+        print("Populating or removing keyless tags...")
+        populated, removed = faction_xml_utils.populate_or_remove_keyless_tags(
+            root, faction_pool_cache, screen_name_to_faction_key_map, faction_key_to_units_map,
+            faction_to_subculture_map, subculture_to_factions_map, faction_key_to_screen_name_map,
+            culture_to_faction_map, excluded_units_set, faction_to_heritage_map,
+            heritage_to_factions_map, faction_to_heritages_map,
+            general_units, unit_stats_map, unit_categories, unit_to_training_level,
+            faction_elite_units, ck3_maa_definitions, unit_to_class_map, unit_to_description_map,
+            categorized_units, unit_to_tier_map, all_units
+        )
+        if populated > 0:
+            total_changes += populated
+        
+        # Remove factions missing a name attribute.
         factions_to_remove = [f for f in root.findall('Faction') if 'name' not in f.attrib or not f.get('name')]
         if factions_to_remove:
             print(f"  -> PRE-VALIDATION CLEANUP: Found and removed {len(factions_to_remove)} <Faction> elements missing the required 'name' attribute.")
             for faction in factions_to_remove:
                 root.remove(faction)
-
-        # NEW: Pre-validation cleanup to remove any unit tags missing a 'key' attribute.
-        keyless_tags_removed = 0
-        unit_tags_to_check = ['General', 'Knights', 'Levies', 'Garrison', 'MenAtArm']
-        for faction in root.findall('Faction'):
-            for tag_name in unit_tags_to_check:
-                for element in list(faction.findall(tag_name)):
-                    if 'key' not in element.attrib or not element.get('key'):
-                        faction.remove(element)
-                        keyless_tags_removed += 1
-        if keyless_tags_removed > 0:
-            print(f"  -> PRE-VALIDATION CLEANUP: Found and removed {keyless_tags_removed} unit elements missing the required 'key' attribute.")
 
         # --- Final Normalization Pass ---
         # This pass ensures Levy/Garrison percentages sum to 100% and removes any remaining invalid tags.
