@@ -215,9 +215,9 @@ class PerformanceMonitor:
 perf_monitor = PerformanceMonitor(enabled=PERFORMANCE_MONITORING_ENABLED)
 
 # Convenience decorator
-def timed_function(func_name: str = None):
+def timed_function(func_name: str):
     """Decorator to time function execution."""
-    return perf_monitor.time_function(func_name or func_name if 'func' in locals() else 'unknown_function')
+    return perf_monitor.time_function(func_name)
 
 
 # --- DELETED: Logging Setup (Moved to shared_utils) ---
@@ -890,117 +890,10 @@ def process_units_xml(units_xml_path, categorized_units, all_units, general_unit
             total_changes += excluded_removed_in_final_check
             print(f"Final validation: Removed {excluded_removed_in_final_check} excluded units from output.")
 
-    if total_changes > 0 or submod_tag_added or submod_addon_for_added:
-        print(f"\nProcessing complete. Applied {total_changes} total changes. Saving file...")
-
-        # --- Final Validation and Cleanup ---
-        print("\n--- Pre-Save Validation and Cleanup ---")
-
-        # Ensure structural integrity by adding any missing required tags.
-        print("Ensuring final structural integrity...")
-        structural_adds = faction_xml_utils.ensure_required_tags_exist(
-            root, faction_pool_cache, screen_name_to_faction_key_map, faction_key_to_units_map,
-            faction_to_subculture_map, subculture_to_factions_map, faction_key_to_screen_name_map,
-            culture_to_faction_map, excluded_units_set, faction_to_heritage_map,
-            heritage_to_factions_map, faction_to_heritages_map,
-            general_units, unit_stats_map, unit_categories, unit_to_training_level,
-            faction_elite_units, ck3_maa_definitions, unit_to_class_map, unit_to_description_map,
-            categorized_units, unit_to_tier_map, all_units
-        )
-        if structural_adds > 0:
-            total_changes += structural_adds
-            # After adding tags, we MUST reorganize again to ensure correct order before populating keys
-            print("Reorganizing faction children after adding missing tags...")
-            faction_xml_utils.reorganize_faction_children(root)
-
-        # Populate any remaining keyless tags or remove them if no unit can be found.
-        print("Populating or removing keyless tags...")
-        populated, removed = faction_xml_utils.populate_or_remove_keyless_tags(
-            root, faction_pool_cache, screen_name_to_faction_key_map, faction_key_to_units_map,
-            faction_to_subculture_map, subculture_to_factions_map, faction_key_to_screen_name_map,
-            culture_to_faction_map, excluded_units_set, faction_to_heritage_map,
-            heritage_to_factions_map, faction_to_heritages_map,
-            general_units, unit_stats_map, unit_categories, unit_to_training_level,
-            faction_elite_units, ck3_maa_definitions, unit_to_class_map, unit_to_description_map,
-            categorized_units, unit_to_tier_map, all_units
-        )
-        if populated > 0:
-            total_changes += populated
-        
-        # Remove factions missing a name attribute.
-        factions_to_remove = [f for f in root.findall('Faction') if 'name' not in f.attrib or not f.get('name')]
-        if factions_to_remove:
-            print(f"  -> PRE-VALIDATION CLEANUP: Found and removed {len(factions_to_remove)} <Faction> elements missing the required 'name' attribute.")
-            for faction in factions_to_remove:
-                root.remove(faction)
-
-        # --- Final Normalization Pass ---
-        # This pass ensures Levy/Garrison percentages sum to 100% and removes any remaining invalid tags.
-        print("\nRunning final normalization pass...")
-        perf_monitor.start_operation("Final Normalization Pass")
-        
-        # Remove any tags with zero percentage before normalization
-        zero_percentage_removals = faction_xml_utils.remove_zero_percentage_tags(root)
-        if zero_percentage_removals > 0:
-            print(f"  -> Removed {zero_percentage_removals} zero-percentage tags before normalization.")
-
-        # Normalize all levy and garrison percentages to sum to 100%
-        normalization_changes = unit_management.normalize_all_levy_percentages(root)
-        if normalization_changes > 0:
-            print(f"  -> Normalized percentages for {normalization_changes} factions.")
-
-        perf_monitor.end_operation("Final Normalization Pass")
-
-        # Reorganize faction children to enforce order
-        print("Reorganizing faction children to enforce element order...")
-        faction_xml_utils.reorganize_faction_children(root)
-
-        # Reorder attributes within all tags to a consistent order
-        print("Reordering attributes within all tags to enforce consistent order...")
-        faction_xml_utils.reorder_attributes_in_all_tags(root)
-
-        # Validate XML against schema
-        print("Validating final XML against schema...")
-        schema_path = shared_utils.detect_factions_schema(os.path.basename(units_xml_path), root)
-        is_valid, error_message = shared_utils.validate_xml_with_schema(root, schema_path)
-        if not is_valid:
-            print(f"XML VALIDATION FAILED: {schema_path} - {error_message}")
-            raise Exception("XML validation failed. Halting execution.")
-        print(f"XML validation passed using schema: {schema_path}")
-
-        # --- Final percentage validation and auto-fix ---
-        print("\nPerforming final validation of Levy/Garrison percentages...")
-        percentages_valid, percentage_errors = faction_xml_utils.validate_levy_garrison_percentages(root)
-        if not percentages_valid:
-            print("\n--- WARNING: Levy/Garrison Percentage Validation FAILED. Attempting automatic fix... ---")
-            for error in percentage_errors:
-                print(f"  - {error}")
-
-            print("  -> Re-running percentage normalization...")
-            unit_management.normalize_all_levy_percentages(root, all_faction_elements)
-
-            print("  -> Re-validating percentages after fix...")
-            percentages_valid, percentage_errors = faction_xml_utils.validate_levy_garrison_percentages(root)
-            if not percentages_valid:
-                print("\n--- CRITICAL: Automatic fix FAILED. Levy/Garrison Percentage Validation still fails. ---")
-                for error in percentage_errors:
-                    print(f"  - {error}")
-                raise Exception("Percentage validation failed after automatic fix. XML file will not be written to prevent corruption.")
-            else:
-                print("--- SUCCESS: Automatic fix for percentages was successful. ---")
-
-        print("Levy/Garrison percentage validation passed.")
-
-        shared_utils.indent_xml(root)
-        tree.write(units_xml_path, encoding='utf-8', xml_declaration=True)
-        print(f"Successfully updated '{units_xml_path}'.")
-    else:
-        print("\nProcessing complete. No changes were made to the XML content.")
-
     # Print performance summary
     perf_monitor.print_summary()
 
-    return total_changes
+    return total_changes, tree, root
 
 
 @timed_function("format_factions_xml_only")
@@ -1628,6 +1521,10 @@ def main():
             print("Warning: Could not load any faction data from the main mod's Factions.xml.")
 
     # --- Main Execution Logic ---
+    tree = None
+    root = None
+    total_changes = 0
+
     if args.update_subcultures_only:
         if not llm_helper:
             print("ERROR: LLM Helper is not initialized. Subculture update requires LLM functionality (--llm-cache-tag is required).")
@@ -1658,7 +1555,7 @@ def main():
 
     if run_fix:
         print("\n--- Starting Roster Fixing Pass ---")
-        process_units_xml(
+        fix_changes, tree, root = process_units_xml(
             args.factions_xml_path, categorized_units, all_units, general_units, unit_categories,
             faction_key_to_screen_name_map, unit_to_faction_key_map, template_faction_unit_pool,
             culture_factions, tier_arg, unit_variant_map, unit_to_tier_map, variant_to_base_map,
@@ -1676,18 +1573,20 @@ def main():
             time_period_context=time_period_context, force_procedural_recache=args.force_procedural_recache,
             factions_in_main_mod=factions_in_main_mod, faction_elite_units=faction_elite_units
         )
+        total_changes += fix_changes
 
     if run_review:
         if not llm_helper or not llm_helper.network_calls_enabled:
             print("\n--- Skipping LLM Roster Review Pass ---")
             print("ERROR: LLM Roster Review requires --use-llm and --llm-cache-tag to be configured with network calls enabled.")
         else:
-            try:
-                tree = ET.parse(args.factions_xml_path)
-                root = tree.getroot()
-            except ET.ParseError as e:
-                print(f"Error parsing XML file {args.factions_xml_path} for review: {e}. Aborting review.")
-                raise
+            if tree is None or root is None:
+                try:
+                    tree = ET.parse(args.factions_xml_path)
+                    root = tree.getroot()
+                except ET.ParseError as e:
+                    print(f"Error parsing XML file {args.factions_xml_path} for review: {e}. Aborting review.")
+                    raise
 
             # Proactively remove any excluded units before review
             if excluded_units_set:
@@ -1728,6 +1627,7 @@ def main():
                 heritage_to_factions_map, faction_to_heritages_map, ck3_maa_definitions,
                 all_faction_elements=all_faction_elements_review # Pass cached elements
             )
+            total_changes += review_changes
 
             # Run procedural duplicate fixing after review
             print("\nRunning procedural duplicate fixing pass after review...")
@@ -1764,7 +1664,7 @@ def main():
                 unit_categories=unit_categories,
                 general_units=general_units
             )
-            review_changes += duplicate_levy_changes + duplicate_garrison_changes
+            total_changes += duplicate_levy_changes + duplicate_garrison_changes
 
             # Run attribute management pass after review to ensure all tags have required attributes
             print("\nRunning attribute management pass after review...")
@@ -1773,7 +1673,7 @@ def main():
             )
             # Add the number of attribute changes to the total changes for this run
             if s + se + ng + m > 0:
-                review_changes += s + se + ng + m
+                total_changes += s + se + ng + m
                 print(f"  -> Applied {s} siege, {se} siege_engine_per_unit, {ng} num_guns, and {m} max attribute changes.")
 
             # --- Final Validation and Cleanup ---
@@ -1791,7 +1691,7 @@ def main():
                 categorized_units, unit_to_tier_map, all_units
             )
             if structural_adds > 0:
-                review_changes += structural_adds
+                total_changes += structural_adds
                 # After adding tags, we MUST reorganize to ensure correct order before populating keys
                 print("Reorganizing faction children after adding missing tags...")
                 faction_xml_utils.reorganize_faction_children(root)
@@ -1808,7 +1708,7 @@ def main():
                 categorized_units, unit_to_tier_map, all_units
             )
             if populated > 0:
-                review_changes += populated
+                total_changes += populated
 
             # 3. Remove factions missing a name attribute.
             factions_to_remove = [f for f in root.findall('Faction') if 'name' not in f.attrib or not f.get('name')]
@@ -1838,51 +1738,51 @@ def main():
                 if excluded_removed_in_final_check > 0:
                     print(f"Final validation: Removed {excluded_removed_in_final_check} keys for excluded units from output.")
 
-            # Save the file if any changes were made including cleanup
-            if review_changes > 0 or normalization_changes > 0 or removed > 0:
-                print(f"\nProcessing complete. Applied {review_changes} review corrections, {normalization_changes} normalization changes, and performed {removed + excluded_removed_in_final_check} cleanup removals. Saving file...")
+    if tree and root:
+        if total_changes > 0:
+            print(f"\n--- Finalizing and Saving XML File ({total_changes} total changes detected) ---")
+            # Reorganize faction children to enforce order
+            print("Reorganizing faction children to enforce element order...")
+            faction_xml_utils.reorganize_faction_children(root)
 
-                # Validate XML against schema before saving
-                print("Validating final XML against schema...")
-                schema_path = shared_utils.detect_factions_schema(os.path.basename(args.factions_xml_path), root)
-                is_valid, error_message = shared_utils.validate_xml_with_schema(root, schema_path)
-                if not is_valid:
-                    print(f"XML VALIDATION FAILED: {schema_path} - {error_message}")
-                    raise Exception("XML validation failed. Halting execution.")
-                print(f"XML validation passed using schema: {schema_path}")
+            # Reorder attributes within all tags to a consistent order
+            print("Reordering attributes within all tags to enforce consistent order...")
+            faction_xml_utils.reorder_attributes_in_all_tags(root)
 
-                # --- Final percentage validation and auto-fix ---
-                print("\nPerforming final validation of Levy/Garrison percentages...")
+            # Validate XML against schema
+            print("Validating final XML against schema...")
+            schema_path = shared_utils.detect_factions_schema(os.path.basename(args.factions_xml_path), root)
+            is_valid, error_message = shared_utils.validate_xml_with_schema(root, schema_path)
+            if not is_valid:
+                print(f"XML VALIDATION FAILED: {schema_path} - {error_message}")
+                raise Exception("XML validation failed. Halting execution.")
+            print(f"XML validation passed using schema: {schema_path}")
+
+            # Final percentage validation and auto-fix
+            print("\nPerforming final validation of Levy/Garrison percentages...")
+            percentages_valid, percentage_errors = faction_xml_utils.validate_levy_garrison_percentages(root)
+            if not percentages_valid:
+                print("\n--- WARNING: Levy/Garrison Percentage Validation FAILED. Attempting automatic fix... ---")
+                for error in percentage_errors:
+                    print(f"  - {error}")
+                unit_management.normalize_all_levy_percentages(root)
                 percentages_valid, percentage_errors = faction_xml_utils.validate_levy_garrison_percentages(root)
                 if not percentages_valid:
-                    print("\n--- WARNING: Levy/Garrison Percentage Validation FAILED. Attempting automatic fix... ---")
+                    print("\n--- CRITICAL: Automatic fix FAILED. Levy/Garrison Percentage Validation still fails. ---")
                     for error in percentage_errors:
                         print(f"  - {error}")
+                    raise Exception("Percentage validation failed after automatic fix. XML file will not be written.")
+                else:
+                    print("--- SUCCESS: Automatic fix for percentages was successful. ---")
+            
+            print("Levy/Garrison percentage validation passed.")
+            
+            shared_utils.indent_xml(root)
+            tree.write(args.factions_xml_path, encoding='utf-8', xml_declaration=True)
+            print(f"Successfully saved all changes to '{args.factions_xml_path}'.")
+        else:
+            print("\nProcessing complete. No changes were made to the XML content.")
 
-                    print("  -> Re-running percentage normalization...")
-                    unit_management.normalize_all_levy_percentages(root, all_faction_elements_review)
-
-                    print("  -> Re-validating percentages after fix...")
-                    percentages_valid, percentage_errors = faction_xml_utils.validate_levy_garrison_percentages(root)
-                    if not percentages_valid:
-                        print("\n--- CRITICAL: Automatic fix FAILED. Levy/Garrison Percentage Validation still fails. ---")
-                        for error in percentage_errors:
-                            print(f"  - {error}")
-                        raise Exception("Percentage validation failed after automatic fix. XML file will not be written to prevent corruption.")
-                    else:
-                        print("--- SUCCESS: Automatic fix for percentages was successful. ---")
-
-                print("Levy/Garrison percentage validation passed.")
-
-                # Reorder attributes within all tags to a consistent order (moved to end)
-                print("Reordering attributes within all tags to enforce consistent order...")
-                faction_xml_utils.reorder_attributes_in_all_tags(root)
-
-                shared_utils.indent_xml(root)
-                tree.write(args.factions_xml_path, encoding='utf-8', xml_declaration=True)
-                print(f"Successfully saved updated rosters to '{args.factions_xml_path}'.")
-            else:
-                print("\nLLM Roster Review and normalization complete. No changes were made.")
 
 if __name__ == "__main__":
     main()
