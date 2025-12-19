@@ -476,6 +476,62 @@ def validate_faction_structure(root, is_submod_mode, no_garrison):
     print("\nAll factions have the required core unit structure.")
     return True, []
 
+def validate_levy_garrison_percentages(root: ET.Element) -> tuple[bool, list]:
+    """
+    Validates that the sum of percentages for Levies and Garrisons (per level) in each faction equals 100.
+    
+    Args:
+        root (ET.Element): The root element of the parsed Factions XML.
+        
+    Returns:
+        tuple[bool, list]: A tuple where the first element is True if all percentages are valid,
+                           and the second element is a list of error messages for any invalid sums.
+    """
+    errors = []
+    for faction in root.findall('Faction'):
+        faction_name = faction.get('name', 'Unknown Faction')
+
+        # Validate Levies
+        levy_tags = faction.findall('Levies')
+        if levy_tags: # Only validate if there are levy tags
+            total_levy_percentage = 0
+            for tag in levy_tags:
+                try:
+                    perc = int(tag.get('percentage', 0))
+                    total_levy_percentage += perc
+                except (ValueError, TypeError):
+                    # If percentage is invalid, we can't validate the sum correctly.
+                    # This is an error state, but let's focus on the sum check.
+                    # The schema validation should ideally catch invalid percentage formats.
+                    # For now, treat invalid percentage as 0 for sum calculation.
+                    pass 
+            if total_levy_percentage != 100:
+                errors.append(f"Faction '{faction_name}': Sum of Levy percentages is {total_levy_percentage}, expected 100.")
+
+        # Validate Garrisons by level
+        garrison_tags = faction.findall('Garrison')
+        garrisons_by_level = defaultdict(list)
+        for g_tag in garrison_tags:
+            level = g_tag.get('level')
+            if level:
+                garrisons_by_level[level].append(g_tag)
+
+        for level, tags in garrisons_by_level.items():
+             if tags: # Only validate if there are garrison tags for this level
+                total_garrison_percentage = 0
+                for tag in tags:
+                    try:
+                        perc = int(tag.get('percentage', 0))
+                        total_garrison_percentage += perc
+                    except (ValueError, TypeError):
+                        # Similar to levy, treat invalid percentage as 0 for sum calculation.
+                        pass
+                if total_garrison_percentage != 100:
+                    errors.append(f"Faction '{faction_name}': Sum of Garrison (level {level}) percentages is {total_garrison_percentage}, expected 100.")
+
+    is_valid = len(errors) == 0
+    return is_valid, errors
+
 def remove_core_unit_tags(root, factions_in_main_mod):
     """
     In submod mode, removes General, Knights, Levies, and Garrison tags from factions

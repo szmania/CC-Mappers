@@ -1070,6 +1070,17 @@ def format_factions_xml_only(factions_xml_path, all_units, excluded_units_set, c
 
     if changes_made:
         print(f"\nFormatting complete. Changes detected. Saving file...")
+         # --- NEW: Final percentage validation ---
+        print("\nPerforming final validation of Levy/Garrison percentages...")
+        percentages_valid, percentage_errors = faction_xml_utils.validate_levy_garrison_percentages(root)
+        if not percentages_valid:
+            print("\n--- CRITICAL: Levy/Garrison Percentage Validation FAILED ---")
+            for error in percentage_errors:
+                print(f"  - {error}")
+            raise Exception("Percentage validation failed. XML file will not be written to prevent corruption.")
+        print("Levy/Garrison percentage validation passed.")
+        # --- END NEW ---
+       
         shared_utils.indent_xml(root)
         tree.write(factions_xml_path, encoding='utf-8', xml_declaration=True)
         print(f"Successfully formatted and saved '{factions_xml_path}'.")
@@ -1708,13 +1719,15 @@ def main():
                 review_changes += s + se + ng + m
                 print(f"  -> Applied {s} siege, {se} siege_engine_per_unit, {ng} num_guns, and {m} max attribute changes.")
 
-            # Run final normalization pass after review, as it can fix schema issues like missing percentages.
+            # Run final normalization pass after review...
             print("\nRunning final normalization pass...")
-            normalization_changes = unit_management.normalize_all_levy_percentages(root, all_faction_elements_review)
             zero_percentage_removals = faction_xml_utils.remove_zero_percentage_tags(root)
-            normalization_changes += zero_percentage_removals
+            if zero_percentage_removals > 0:
+                print(f"  -> Removed {zero_percentage_removals} zero-percentage tags before normalization.")
+
+            normalization_changes = unit_management.normalize_all_levy_percentages(root, all_faction_elements_review)
             if normalization_changes > 0:
-                print(f"  -> Applied {normalization_changes} normalization changes.")
+                print(f"  -> Normalized percentages for {normalization_changes} factions.")
 
             # Reorganize faction children to enforce order
             print("Reorganizing faction children to enforce element order...")
@@ -1782,6 +1795,17 @@ def main():
                     print(f"XML VALIDATION FAILED: {schema_path} - {error_message}")
                     raise Exception("XML validation failed. Halting execution.")
                 print(f"XML validation passed using schema: {schema_path}")
+
+                # --- NEW: Final percentage validation ---
+                print("\nPerforming final validation of Levy/Garrison percentages...")
+                percentages_valid, percentage_errors = faction_xml_utils.validate_levy_garrison_percentages(root)
+                if not percentages_valid:
+                    print("\n--- CRITICAL: Levy/Garrison Percentage Validation FAILED ---")
+                    for error in percentage_errors:
+                        print(f"  - {error}")
+                    raise Exception("Percentage validation failed. XML file will not be written to prevent corruption.")
+                print("Levy/Garrison percentage validation passed.")
+                # --- END NEW ---
 
                 # Reorder attributes within all tags to a consistent order (moved to end)
                 print("Reordering attributes within all tags to enforce consistent order...")
