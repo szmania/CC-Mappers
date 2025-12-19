@@ -946,6 +946,17 @@ def process_units_xml(units_xml_path, categorized_units, all_units, general_unit
             raise Exception("XML validation failed. Halting execution.")
         print(f"XML validation passed using schema: {schema_path}")
 
+        # --- NEW: Final percentage validation ---
+        print("\nPerforming final validation of Levy/Garrison percentages...")
+        percentages_valid, percentage_errors = faction_xml_utils.validate_levy_garrison_percentages(root)
+        if not percentages_valid:
+            print("\n--- CRITICAL: Levy/Garrison Percentage Validation FAILED ---")
+            for error in percentage_errors:
+                print(f"  - {error}")
+            raise Exception("Percentage validation failed. XML file will not be written to prevent corruption.")
+        print("Levy/Garrison percentage validation passed.")
+        # --- END NEW ---
+
         shared_utils.indent_xml(root)
         tree.write(units_xml_path, encoding='utf-8', xml_declaration=True)
         print(f"Successfully updated '{units_xml_path}'.")
@@ -1795,6 +1806,17 @@ def main():
                     print(f"XML VALIDATION FAILED: {schema_path} - {error_message}")
                     raise Exception("XML validation failed. Halting execution.")
                 print(f"XML validation passed using schema: {schema_path}")
+
+                # --- NEW: Final percentage validation ---
+                print("\nPerforming final validation of Levy/Garrison percentages...")
+                percentages_valid, percentage_errors = faction_xml_utils.validate_levy_garrison_percentages(root)
+                if not percentages_valid:
+                    print("\n--- CRITICAL: Levy/Garrison Percentage Validation FAILED ---")
+                    for error in percentage_errors:
+                        print(f"  - {error}")
+                    raise Exception("Percentage validation failed. XML file will not be written to prevent corruption.")
+                print("Levy/Garrison percentage validation passed.")
+                # --- END NEW ---
 
                 # --- NEW: Final percentage validation ---
                 print("\nPerforming final validation of Levy/Garrison percentages...")
