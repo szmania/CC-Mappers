@@ -880,7 +880,7 @@ def process_units_xml(units_xml_path, categorized_units, all_units, general_unit
     # This pass ensures Levy/Garrison percentages sum to 100% and removes any remaining invalid tags.
     print("\nRunning final normalization pass...")
     perf_monitor.start_operation("Final Normalization Pass")
-    normalization_changes = unit_management.normalize_all_levy_percentages(root, all_faction_elements)
+    normalization_changes = unit_management.normalize_all_levy_percentages(root)
 
     # Remove any tags with zero percentage after normalization
     zero_percentage_removals = faction_xml_utils.remove_zero_percentage_tags(root)
@@ -935,10 +935,10 @@ def process_units_xml(units_xml_path, categorized_units, all_units, general_unit
 
         # Validate XML against schema
         print("Validating final XML against schema...")
-        schema_path = shared_utils.detect_factions_schema(units_xml_path, root)
+        schema_path = shared_utils.detect_factions_schema(os.path.basename(units_xml_path), root)
         is_valid, error_message = shared_utils.validate_xml_with_schema(root, schema_path)
         if not is_valid:
-            print(f"XML VALIDATION FAILED: {error_message}")
+            print(f"XML VALIDATION FAILED: {schema_path} - {error_message}")
             raise Exception("XML validation failed. Halting execution.")
         print(f"XML validation passed using schema: {schema_path}")
 
@@ -1045,7 +1045,7 @@ def format_factions_xml_only(factions_xml_path, all_units, excluded_units_set, c
     # --- Validation ---
     print("\nValidating formatted XML against schema...")
     perf_monitor.start_operation("Schema Validation")
-    schema_path = shared_utils.detect_factions_schema(factions_xml_path, root)
+    schema_path = shared_utils.detect_factions_schema(os.path.basename(factions_xml_path), root)
     is_valid, error_message = shared_utils.validate_xml_with_schema(root, schema_path)
     if not is_valid:
         print(f"XML VALIDATION FAILED: {error_message}")
@@ -1766,10 +1766,10 @@ def main():
 
                 # Validate XML against schema before saving
                 print("Validating final XML against schema...")
-                schema_path = shared_utils.detect_factions_schema(args.factions_xml_path, root)
+                schema_path = shared_utils.detect_factions_schema(os.path.basename(args.factions_xml_path), root)
                 is_valid, error_message = shared_utils.validate_xml_with_schema(root, schema_path)
                 if not is_valid:
-                    print(f"XML VALIDATION FAILED: {error_message}")
+                    print(f"XML VALIDATION FAILED: {schema_path} - {error_message}")
                     raise Exception("XML validation failed. Halting execution.")
                 print(f"XML validation passed using schema: {schema_path}")
 
