@@ -876,20 +876,7 @@ def process_units_xml(units_xml_path, categorized_units, all_units, general_unit
     print(f"  -> Applied {s} siege, {se} siege_engine_per_unit, {ng} num_guns, and {m} max attribute changes.")
     perf_monitor.end_operation("Final Attribute Management Pass")
 
-    # --- Final Normalization Pass ---
-    # This pass ensures Levy/Garrison percentages sum to 100% and removes any remaining invalid tags.
-    print("\nRunning final normalization pass...")
-    perf_monitor.start_operation("Final Normalization Pass")
-    normalization_changes = unit_management.normalize_all_levy_percentages(root)
-
-    # Remove any tags with zero percentage after normalization
-    zero_percentage_removals = faction_xml_utils.remove_zero_percentage_tags(root)
-    normalization_changes += zero_percentage_removals
-    total_changes += normalization_changes
-    print(f"  -> Applied {normalization_changes} normalization changes ({zero_percentage_removals} zero-percentage tags removed).")
-    perf_monitor.end_operation("Final Normalization Pass")
-
-    # --- Final XML Output ---
+    # --- Final XML Output Preparation ---
     # Final validation: Remove any remaining excluded units from output
     excluded_removed_in_final_check = 0
     if excluded_units_set:
@@ -905,14 +892,6 @@ def process_units_xml(units_xml_path, categorized_units, all_units, general_unit
 
     if total_changes > 0 or submod_tag_added or submod_addon_for_added:
         print(f"\nProcessing complete. Applied {total_changes} total changes. Saving file...")
-
-        # Reorganize faction children to enforce order
-        print("Reorganizing faction children to enforce element order...")
-        faction_xml_utils.reorganize_faction_children(root)
-
-        # Reorder attributes within all tags to a consistent order
-        print("Reordering attributes within all tags to enforce consistent order...")
-        faction_xml_utils.reorder_attributes_in_all_tags(root)
 
         # NEW: Pre-validation cleanup to remove factions missing a name attribute.
         factions_to_remove = [f for f in root.findall('Faction') if 'name' not in f.attrib or not f.get('name')]
@@ -932,6 +911,31 @@ def process_units_xml(units_xml_path, categorized_units, all_units, general_unit
                         keyless_tags_removed += 1
         if keyless_tags_removed > 0:
             print(f"  -> PRE-VALIDATION CLEANUP: Found and removed {keyless_tags_removed} unit elements missing the required 'key' attribute.")
+
+        # --- Final Normalization Pass ---
+        # This pass ensures Levy/Garrison percentages sum to 100% and removes any remaining invalid tags.
+        print("\nRunning final normalization pass...")
+        perf_monitor.start_operation("Final Normalization Pass")
+        
+        # Remove any tags with zero percentage before normalization
+        zero_percentage_removals = faction_xml_utils.remove_zero_percentage_tags(root)
+        if zero_percentage_removals > 0:
+            print(f"  -> Removed {zero_percentage_removals} zero-percentage tags before normalization.")
+
+        # Normalize all levy and garrison percentages to sum to 100%
+        normalization_changes = unit_management.normalize_all_levy_percentages(root)
+        if normalization_changes > 0:
+            print(f"  -> Normalized percentages for {normalization_changes} factions.")
+
+        perf_monitor.end_operation("Final Normalization Pass")
+
+        # Reorganize faction children to enforce order
+        print("Reorganizing faction children to enforce element order...")
+        faction_xml_utils.reorganize_faction_children(root)
+
+        # Reorder attributes within all tags to a consistent order
+        print("Reordering attributes within all tags to enforce consistent order...")
+        faction_xml_utils.reorder_attributes_in_all_tags(root)
 
         # Validate XML against schema
         print("Validating final XML against schema...")
@@ -993,30 +997,10 @@ def format_factions_xml_only(factions_xml_path, all_units, excluded_units_set, c
     )
     perf_monitor.end_operation("Attribute Management Pass")
 
-    print("\nRunning normalization pass...")
-    perf_monitor.start_operation("Normalization Pass")
-    unit_management.normalize_all_levy_percentages(root, all_faction_elements_format)
-    perf_monitor.end_operation("Normalization Pass")
-
     print("\nRemoving duplicate ranked units...")
     perf_monitor.start_operation("Remove Duplicate Ranked Units")
     faction_xml_utils.remove_duplicate_ranked_units(root)
     perf_monitor.end_operation("Remove Duplicate Ranked Units")
-
-    print("\nRemoving zero percentage tags...")
-    perf_monitor.start_operation("Remove Zero Percentage Tags")
-    faction_xml_utils.remove_zero_percentage_tags(root)
-    perf_monitor.end_operation("Remove Zero Percentage Tags")
-
-    print("\nReorganizing faction children...")
-    perf_monitor.start_operation("Reorganize Faction Children")
-    faction_xml_utils.reorganize_faction_children(root)
-    perf_monitor.end_operation("Reorganize Faction Children")
-
-    print("\nReordering attributes in all tags...")
-    perf_monitor.start_operation("Reorder Attributes")
-    faction_xml_utils.reorder_attributes_in_all_tags(root)
-    perf_monitor.end_operation("Reorder Attributes")
 
     # --- Pre-validation Cleanup ---
     print("\nPerforming pre-validation cleanup...")
@@ -1041,6 +1025,32 @@ def format_factions_xml_only(factions_xml_path, all_units, excluded_units_set, c
         for faction in factions_to_remove:
             root.remove(faction)
     perf_monitor.end_operation("Pre-validation Cleanup")
+
+    # --- Final Normalization Pass ---
+    print("\nRunning final normalization pass...")
+    perf_monitor.start_operation("Final Normalization Pass")
+    
+    # Remove any tags with zero percentage before normalization
+    zero_percentage_removals = faction_xml_utils.remove_zero_percentage_tags(root)
+    if zero_percentage_removals > 0:
+        print(f"  -> Removed {zero_percentage_removals} zero-percentage tags before normalization.")
+
+    # Normalize all levy and garrison percentages to sum to 100%
+    normalization_changes = unit_management.normalize_all_levy_percentages(root)
+    if normalization_changes > 0:
+        print(f"  -> Normalized percentages for {normalization_changes} factions.")
+
+    perf_monitor.end_operation("Final Normalization Pass")
+
+    print("\nReorganizing faction children...")
+    perf_monitor.start_operation("Reorganize Faction Children")
+    faction_xml_utils.reorganize_faction_children(root)
+    perf_monitor.end_operation("Reorganize Faction Children")
+
+    print("\nReordering attributes in all tags...")
+    perf_monitor.start_operation("Reorder Attributes")
+    faction_xml_utils.reorder_attributes_in_all_tags(root)
+    perf_monitor.end_operation("Reorder Attributes")
 
     # --- Validation ---
     print("\nValidating formatted XML against schema...")
