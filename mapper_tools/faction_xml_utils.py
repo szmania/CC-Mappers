@@ -1337,7 +1337,7 @@ def populate_or_remove_keyless_tags(root, faction_pool_cache, screen_name_to_fac
                             level_int = 1
                         new_key = unit_selector.find_best_garrison_replacement(
                             working_pool, unit_categories,
-                            level=level_int, exclude_units=used_units | general_units
+                            exclude_units=used_units | general_units
                         )
                     elif tag_name == 'MenAtArm':
                         maa_type = element.get('type')
