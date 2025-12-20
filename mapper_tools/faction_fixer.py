@@ -697,180 +697,105 @@ def process_units_xml(units_xml_path, categorized_units, all_units, general_unit
     print("Faction structure validation passed.")
 
     # --- Unit Assignment Pipeline ---
-    # Process factions in parallel where possible
-    print("\nProcessing factions in parallel...")
+    # Process all factions sequentially with procedural passes, collecting all failures
+    print("\nRunning sequential procedural passes on all factions...")
 
-    # Clear faction_pool_cache before parallel processing to free memory
+    # Clear faction_pool_cache before processing to free memory
     faction_pool_cache.clear()
-    print("  -> Cleared faction pool cache before parallel processing")
+    print("  -> Cleared faction pool cache before processing")
 
-    # Create a lock for thread-safe access to the XML tree
-    xml_lock = threading.Lock()
+    # Initialize counters for procedural passes
+    all_procedural_failures = []
+    total_procedural_changes = 0
 
-    # Prepare a list of faction elements to process
-    factions_to_process = list(all_faction_elements)
-
-    # Function to process a single faction with proper parameter passing
-    def process_faction(faction_element):
-        faction_name = faction_element.get('name')
-        print(f"  -> Processing faction: '{faction_name}'")
-
-        # Create a local copy of the faction element for thread-safe processing
-        try:
-            faction_copy = copy.deepcopy(faction_element)
-            if faction_copy is None:
-                print(f"    -> ERROR: Failed to create deep copy of faction '{faction_name}'. Skipping processing.")
-                return faction_element, faction_element, 0, []
-        except Exception as e:
-            print(f"    -> ERROR: Exception during deep copy of faction '{faction_name}': {e}. Skipping processing.")
-            return faction_element, faction_element, 0, []
-
-        # Validate that the faction_copy has the expected structure
-        if not faction_copy.tag == 'Faction' or not faction_copy.get('name'):
-            print(f"    -> ERROR: Invalid faction copy for '{faction_name}'. Skipping processing.")
-            return faction_element, faction_element, 0, []
-
-        # Process MenAtArm units for this faction
-        try:
-            high_confidence_replacements, high_confidence_failures = processing_passes.run_high_confidence_unit_pass(
-                faction_copy, tier, unit_variant_map, ck3_maa_definitions, unit_to_class_map, unit_to_description_map,
-                screen_name_to_faction_key_map, faction_key_to_units_map, faction_to_subculture_map,
-                subculture_to_factions_map, faction_key_to_screen_name_map, culture_to_faction_map,
-                faction_culture_map, categorized_units, unit_categories, unit_stats_map, all_units,
-                excluded_units_set=excluded_units_set, faction_pool_cache=faction_pool_cache,
-                faction_to_heritage_map=faction_to_heritage_map, heritage_to_factions_map=heritage_to_factions_map,
-                faction_to_heritages_map=faction_to_heritages_map, first_pass_threshold=first_pass_threshold,
-                llm_helper=llm_helper, faction_to_json_map=faction_to_json_map, all_faction_elements=[faction_copy]
-            )
-        except Exception as e:
-            print(f"    -> ERROR: Exception during high confidence pass for faction '{faction_name}': {e}")
-            high_confidence_replacements, high_confidence_failures = 0, []
-
-        # Process Generals and Knights for this faction
-        try:
-            general_knight_changes, general_knight_failures = unit_management.manage_all_generals_and_knights(
-                faction_copy, categorized_units, general_units, unit_stats_map, unit_categories,
-                screen_name_to_faction_key_map, faction_key_to_units_map, template_faction_unit_pool,
-                faction_to_subculture_map=faction_to_subculture_map, subculture_to_factions_map=subculture_to_factions_map,
-                faction_key_to_screen_name_map=faction_key_to_screen_name_map, culture_to_faction_map=culture_to_faction_map,
-                tier=tier, unit_to_tier_map=unit_to_tier_map, faction_to_json_map=faction_to_json_map,
-                all_units=all_units, unit_to_training_level=unit_to_training_level, excluded_units_set=excluded_units_set,
-                faction_to_heritage_map=faction_to_heritage_map, heritage_to_factions_map=heritage_to_factions_map,
-                faction_to_heritages_map=faction_to_heritages_map, faction_culture_map=faction_culture_map,
-                is_submod_mode=is_submod_mode, factions_in_main_mod=factions_in_main_mod, all_faction_elements=[faction_copy]
-            )
-        except Exception as e:
-            print(f"    -> ERROR: Exception during generals/knights pass for faction '{faction_name}': {e}")
-            general_knight_changes, general_knight_failures = 0, []
-
-        # Process Levies and Garrisons for this faction
-        levy_changes, levy_failures = (0, [])
-        garrison_changes, garrison_failures = (0, [])
-
-        # Process Levies for this faction
-        try:
-            levy_changes, levy_failures = processing_passes.ensure_levy_structure_and_percentages(
-                faction_copy, unit_categories, screen_name_to_faction_key_map, faction_key_to_units_map, template_faction_unit_pool,
-                faction_to_subculture_map, subculture_to_factions_map, faction_key_to_screen_name_map, culture_to_faction_map,
-                unit_to_class_map, faction_to_json_map, all_units, unit_to_training_level, tier, faction_elite_units,
-                excluded_units_set, faction_pool_cache, faction_to_heritage_map, heritage_to_factions_map,
-                faction_to_heritages_map, destructive_on_failure=False, faction_culture_map=faction_culture_map,
-                is_submod_mode=is_submod_mode, factions_in_main_mod=factions_in_main_mod, all_faction_elements=[faction_copy]
-            )
-        except Exception as e:
-            print(f"    -> ERROR: Exception during levy pass for faction '{faction_name}': {e}")
-            levy_changes, levy_failures = 0, []
-
-        if not no_garrison:
-            try:
-                garrison_changes, garrison_failures = processing_passes.ensure_garrison_structure(
-                    faction_copy, unit_categories, screen_name_to_faction_key_map, faction_key_to_units_map, template_faction_unit_pool,
-                    faction_to_subculture_map, subculture_to_factions_map, faction_key_to_screen_name_map, culture_to_faction_map,
-                    unit_to_class_map, general_units, unit_to_training_level, tier, unit_to_tier_map, excluded_units_set,
-                    faction_pool_cache, faction_to_heritage_map, heritage_to_factions_map, faction_to_heritages_map,
-                    destructive_on_failure=False, faction_to_json_map=faction_to_json_map, all_units=all_units,
-                    faction_culture_map=faction_culture_map, is_submod_mode=is_submod_mode, factions_in_main_mod=factions_in_main_mod, all_faction_elements=[faction_copy]
-                )
-            except Exception as e:
-                print(f"    -> ERROR: Exception during garrison pass for faction '{faction_name}': {e}")
-                garrison_changes, garrison_failures = 0, []
-
-        # Collect all failures for this faction
-        all_failures = high_confidence_failures + general_knight_failures + levy_failures + garrison_failures
-
-        # Apply final fixes for this faction
-        try:
-            final_fix_changes = processing_passes.run_final_fix_pass(
-                faction_copy, all_failures, categorized_units, all_units, unit_categories, tier, unit_variant_map, ck3_maa_definitions,
-                unit_to_description_map, unit_stats_map, general_units, unit_to_class_map, excluded_units_set,
-                screen_name_to_faction_key_map, faction_key_to_units_map, faction_to_subculture_map, subculture_to_factions_map,
-                faction_key_to_screen_name_map, culture_to_faction_map, faction_to_heritage_map, heritage_to_factions_map,
-                faction_to_heritages_map, faction_pool_cache, faction_to_json_map, faction_culture_map, llm_helper,
-                unit_to_training_level, faction_elite_units, all_faction_elements=[faction_copy]
-            )
-        except Exception as e:
-            print(f"    -> ERROR: Exception during final fix pass for faction '{faction_name}': {e}")
-            final_fix_changes = 0
-
-        total_faction_changes = (
-            high_confidence_replacements + general_knight_changes +
-            levy_changes + garrison_changes + final_fix_changes
+    # Run high-confidence unit pass on all factions
+    perf_monitor.start_operation("High Confidence Unit Pass")
+    try:
+        high_confidence_changes, high_confidence_failures = processing_passes.run_high_confidence_unit_pass(
+            root, tier, unit_variant_map, ck3_maa_definitions, unit_to_class_map, unit_to_description_map,
+            screen_name_to_faction_key_map, faction_key_to_units_map, faction_to_subculture_map,
+            subculture_to_factions_map, faction_key_to_screen_name_map, culture_to_faction_map,
+            faction_culture_map, categorized_units, unit_categories, unit_stats_map, all_units,
+            excluded_units_set=excluded_units_set, faction_pool_cache=faction_pool_cache,
+            faction_to_heritage_map=faction_to_heritage_map, heritage_to_factions_map=heritage_to_factions_map,
+            faction_to_heritages_map=faction_to_heritages_map, first_pass_threshold=first_pass_threshold,
+            llm_helper=llm_helper, faction_to_json_map=faction_to_json_map, all_faction_elements=all_faction_elements
         )
+        total_procedural_changes += high_confidence_changes
+        all_procedural_failures.extend(high_confidence_failures)
+        print(f"  -> High-confidence pass: {high_confidence_changes} changes, {len(high_confidence_failures)} failures")
+    except Exception as e:
+        print(f"  -> ERROR: Exception during high confidence pass: {e}")
+    perf_monitor.end_operation("High Confidence Unit Pass")
 
-        return faction_element, faction_copy, total_faction_changes, all_failures
+    # Run generals and knights management on all factions
+    perf_monitor.start_operation("Manage Generals and Knights")
+    try:
+        general_knight_changes, general_knight_failures = unit_management.manage_all_generals_and_knights(
+            root, categorized_units, general_units, unit_stats_map, unit_categories,
+            screen_name_to_faction_key_map, faction_key_to_units_map, template_faction_unit_pool,
+            faction_to_subculture_map=faction_to_subculture_map, subculture_to_factions_map=subculture_to_factions_map,
+            faction_key_to_screen_name_map=faction_key_to_screen_name_map, culture_to_faction_map=culture_to_faction_map,
+            tier=tier, unit_to_tier_map=unit_to_tier_map, faction_to_json_map=faction_to_json_map,
+            all_units=all_units, unit_to_training_level=unit_to_training_level, excluded_units_set=excluded_units_set,
+            faction_to_heritage_map=faction_to_heritage_map, heritage_to_factions_map=heritage_to_factions_map,
+            faction_to_heritages_map=faction_to_heritages_map, faction_culture_map=faction_culture_map,
+            is_submod_mode=is_submod_mode, factions_in_main_mod=factions_in_main_mod, all_faction_elements=all_faction_elements
+        )
+        total_procedural_changes += general_knight_changes
+        all_procedural_failures.extend(general_knight_failures)
+        print(f"  -> Generals/Knights pass: {general_knight_changes} changes, {len(general_knight_failures)} failures")
+    except Exception as e:
+        print(f"  -> ERROR: Exception during generals/knights pass: {e}")
+    perf_monitor.end_operation("Manage Generals and Knights")
 
-    # Process factions in parallel
-    total_parallel_changes = 0
-    all_parallel_failures = []
-    processed_factions = []
-    processed_factions_count = 0
+    # Run levy structure and percentages on all factions
+    perf_monitor.start_operation("Ensure Levy Structure")
+    try:
+        levy_changes, levy_failures = processing_passes.ensure_levy_structure_and_percentages(
+            root, unit_categories, screen_name_to_faction_key_map, faction_key_to_units_map, template_faction_unit_pool,
+            faction_to_subculture_map, subculture_to_factions_map, faction_key_to_screen_name_map, culture_to_faction_map,
+            unit_to_class_map, faction_to_json_map, all_units, unit_to_training_level, tier, faction_elite_units,
+            excluded_units_set, faction_pool_cache, faction_to_heritage_map, heritage_to_factions_map,
+            faction_to_heritages_map, destructive_on_failure=True, faction_culture_map=faction_culture_map,
+            is_submod_mode=is_submod_mode, factions_in_main_mod=factions_in_main_mod, all_faction_elements=all_faction_elements
+        )
+        total_procedural_changes += levy_changes
+        all_procedural_failures.extend(levy_failures)
+        print(f"  -> Levy pass: {levy_changes} changes, {len(levy_failures)} failures")
+    except Exception as e:
+        print(f"  -> ERROR: Exception during levy pass: {e}")
+    perf_monitor.end_operation("Ensure Levy Structure")
 
-    # Start performance monitoring for faction processing
-    perf_monitor.start_operation("Process Factions", len(factions_to_process))
+    # Run garrison structure on all factions (if not disabled)
+    if not no_garrison:
+        perf_monitor.start_operation("Ensure Garrison Structure")
+        try:
+            garrison_changes, garrison_failures = processing_passes.ensure_garrison_structure(
+                root, unit_categories, screen_name_to_faction_key_map, faction_key_to_units_map, template_faction_unit_pool,
+                faction_to_subculture_map, subculture_to_factions_map, faction_key_to_screen_name_map, culture_to_faction_map,
+                unit_to_class_map, general_units, unit_to_training_level, tier, unit_to_tier_map, excluded_units_set,
+                faction_pool_cache, faction_to_heritage_map, heritage_to_factions_map, faction_to_heritages_map,
+                destructive_on_failure=True, faction_to_json_map=faction_to_json_map, all_units=all_units,
+                faction_culture_map=faction_culture_map, is_submod_mode=is_submod_mode, factions_in_main_mod=factions_in_main_mod, all_faction_elements=all_faction_elements
+            )
+            total_procedural_changes += garrison_changes
+            all_procedural_failures.extend(garrison_failures)
+            print(f"  -> Garrison pass: {garrison_changes} changes, {len(garrison_failures)} failures")
+        except Exception as e:
+            print(f"  -> ERROR: Exception during garrison pass: {e}")
+        perf_monitor.end_operation("Ensure Garrison Structure")
 
-    with ThreadPoolExecutor(max_workers=llm_threads) as executor:
-        future_to_faction = {executor.submit(process_faction, faction): faction for faction in factions_to_process}
-        for future in as_completed(future_to_faction):
-            try:
-                original_faction, processed_faction, faction_changes, faction_failures = future.result()
-                total_parallel_changes += faction_changes
-                all_parallel_failures.extend(faction_failures)
-                processed_factions.append((original_faction, processed_faction))
-                processed_factions_count += 1
-
-                # Update progress
-                perf_monitor.update_progress("Process Factions", processed_factions_count, original_faction.get('name', 'Unknown'))
-
-                # Memory optimization: Clear caches periodically during processing
-                clear_memory_caches(faction_pool_cache, processed_factions_count)
-
-            except Exception as exc:
-                faction_name = future_to_faction[future].get('name', 'Unknown')
-                print(f"Faction '{faction_name}' processing generated an exception: {exc}")
-                # Continue processing other factions instead of failing completely
-                continue
-
-    # End performance monitoring for faction processing
-    perf_monitor.end_operation("Process Factions")
-
-    # Replace original faction elements with processed ones using thread-safe operations
-    with xml_lock:
-        for original_faction, processed_faction in processed_factions:
-            # Find the position of the original faction
-            for i, child in enumerate(root):
-                if child is original_faction:
-                    # Replace the element
-                    root[i] = processed_faction
-                    break
-
-    total_changes += total_parallel_changes
+    # Add procedural changes to total
+    total_changes += total_procedural_changes
+    print(f"\nSequential procedural passes complete: {total_procedural_changes} changes, {len(all_procedural_failures)} total failures")
 
     # --- LLM Pass (Consolidated requests for all failures) ---
     llm_replacements = 0
-    if llm_helper and all_parallel_failures and len(all_parallel_failures) < MAX_LLM_FAILURES_THRESHOLD:
-        perf_monitor.start_operation("LLM Unit Assignment Pass", len(all_parallel_failures))
+    if llm_helper and all_procedural_failures and len(all_procedural_failures) < MAX_LLM_FAILURES_THRESHOLD:
+        perf_monitor.start_operation("LLM Unit Assignment Pass", len(all_procedural_failures))
         llm_replacements, llm_final_failures = llm_orchestrator.run_llm_unit_assignment_pass(
-            llm_helper, all_parallel_failures, time_period_context, llm_threads, llm_batch_size,
+            llm_helper, all_procedural_failures, time_period_context, llm_threads, llm_batch_size,
             faction_pool_cache, all_units, excluded_units_set, unit_to_tier_map, unit_to_class_map,
             unit_to_description_map, unit_stats_map, screen_name_to_faction_key_map, faction_key_to_units_map,
             faction_to_subculture_map, subculture_to_factions_map, faction_key_to_screen_name_map,
@@ -878,12 +803,14 @@ def process_units_xml(units_xml_path, categorized_units, all_units, general_unit
             ck3_maa_definitions
         )
         total_changes += llm_replacements
+        # Update failures for next pass
+        all_procedural_failures = llm_final_failures
         perf_monitor.end_operation("LLM Unit Assignment Pass")
 
     # --- Low-Confidence Procedural Fallback (for LLM failures) ---
     perf_monitor.start_operation("Low-Confidence Procedural Fallback")
     low_confidence_replacements = processing_passes.run_low_confidence_unit_pass(
-        root, all_parallel_failures, ck3_maa_definitions, unit_to_class_map, unit_variant_map, unit_to_description_map,
+        root, all_procedural_failures, ck3_maa_definitions, unit_to_class_map, unit_variant_map, unit_to_description_map,
         categorized_units, unit_categories, unit_stats_map, all_units, excluded_units_set=excluded_units_set,
         faction_to_heritage_map=faction_to_heritage_map, heritage_to_factions_map=heritage_to_factions_map,
         screen_name_to_faction_key_map=screen_name_to_faction_key_map, faction_key_to_units_map=faction_key_to_units_map,

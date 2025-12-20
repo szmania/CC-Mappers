@@ -789,3 +789,90 @@ def populate_or_remove_keyless_tags(root, faction_pool_cache, screen_name_to_fac
         print(f"  -> PRE-VALIDATION: Removed {removed_count} keyless unit elements that could not be populated.")
 
     return populated_count, removed_count
+
+
+def validate_faction_unit_tags(root, is_submod_mode, no_garrison, ck3_maa_definitions, unit_to_class_map, unit_categories):
+    """
+    Validates all faction unit tags for structural integrity.
+    Checks for missing tags, missing key attributes, and missing max attributes.
+    Returns a list of validation failures for the final fix pass.
+    """
+    validation_failures = []
+    
+    for faction in root.findall('Faction'):
+        faction_name = faction.get('name')
+        if not faction_name or faction_name == "Default":
+            continue
+            
+        # Skip factions that are managed by main mod in submod mode
+        # Note: This would need to be passed in if needed, but for now we check all factions
+        
+        # Check for missing required tags
+        required_tags = ['General', 'Knights', 'Levies', 'MenAtArm']
+        if not no_garrison:
+            required_tags.append('Garrison')
+            
+        for tag_name in required_tags:
+            elements = faction.findall(tag_name)
+            if not elements:
+                # Missing tag entirely
+                validation_failures.append({
+                    'faction_element': faction,
+                    'tag_name': tag_name,
+                    'element': None,
+                    'validation_error': 'missing_tag',
+                    'unit_role_description': f"A required {tag_name} unit"
+                })
+            else:
+                # Check for missing key attributes
+                for element in elements:
+                    if 'key' not in element.attrib or not element.get('key'):
+                        # Missing key attribute
+                        unit_role_description = f"A {tag_name} unit"
+                        if tag_name == 'MenAtArm':
+                            maa_type = element.get('type')
+                            if maa_type:
+                                unit_role_description = maa_type
+                                
+                        validation_failures.append({
+                            'faction_element': faction,
+                            'tag_name': tag_name,
+                            'element': element,
+                            'validation_error': 'missing_key_attribute',
+                            'unit_role_description': unit_role_description,
+                            'rank': element.get('rank'),
+                            'level': element.get('level')
+                        })
+                        
+        # Check MenAtArm tags for missing max attributes (non-siege units)
+        maa_elements = faction.findall('MenAtArm')
+        for element in maa_elements:
+            unit_key = element.get('key')
+            maa_definition_name = element.get('type')
+            
+            if not unit_key or not maa_definition_name:
+                # Skip if key or type is missing (already caught above)
+                continue
+                
+            # Determine if this is a siege unit
+            internal_type = ck3_maa_definitions.get(maa_definition_name) if ck3_maa_definitions else None
+            is_siege_by_ck3_type = (mappings.CK3_TYPE_TO_ATTILA_MAX_CATEGORY.get(maa_definition_name) is None) or \
+                                   (internal_type and mappings.CK3_TYPE_TO_ATTILA_MAX_CATEGORY.get(internal_type) is None)
+            unit_class = unit_to_class_map.get(unit_key) if unit_to_class_map else None
+            is_siege_by_attila_class = (unit_class == 'art_siege')
+            unit_category = unit_categories.get(unit_key) if unit_categories else None
+            is_siege_by_attila_category = (unit_category == 'artillery')
+            is_siege = is_siege_by_ck3_type or is_siege_by_attila_class or is_siege_by_attila_category
+            
+            # Non-siege units must have 'max' attribute
+            if not is_siege and ('max' not in element.attrib or not element.get('max')):
+                validation_failures.append({
+                    'faction_element': faction,
+                    'tag_name': 'MenAtArm',
+                    'element': element,
+                    'validation_error': 'missing_max_attribute',
+                    'unit_role_description': maa_definition_name,
+                    'maa_definition_name': maa_definition_name
+                })
+                
+    return validation_failures
