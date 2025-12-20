@@ -791,6 +791,49 @@ def populate_or_remove_keyless_tags(root, faction_pool_cache, screen_name_to_fac
     return populated_count, removed_count
 
 
+def validate_and_fix_faction_names(root: ET.Element, faction_key_to_screen_name_map: dict[str, str], unit_to_faction_key_map: dict[str, str], culture_factions: set[str]) -> tuple[int, dict[str, str]]:
+    """
+    Validates faction names in the XML against a set of known valid faction names from Cultures.xml.
+    Attempts to fix incorrect names using fuzzy matching. It does NOT remove factions.
+
+    Args:
+        root (ET.Element): The root element of the Factions XML tree.
+        faction_key_to_screen_name_map (dict[str, str]): Map from faction key to screen name (from DB).
+        unit_to_faction_key_map (dict[str, str]): Map from unit key to faction key (from DB).
+        culture_factions (set[str]): A set of all valid faction screen names from the Cultures.xml file.
+
+    Returns:
+        tuple[int, dict[str, str]]: A tuple containing:
+            - The number of faction names that were corrected.
+            - A dictionary mapping old faction names to their new corrected names.
+    """
+    factions_fixed = 0
+    faction_name_map = {}
+
+    # Create a set of valid faction names for quick lookup
+    valid_faction_names = set(culture_factions)
+
+    for faction_element in root.findall('Faction'):
+        original_name = faction_element.get('name')
+        if not original_name or original_name == "Default":
+            continue
+
+        if original_name not in valid_faction_names:
+            # Name is not in the source of truth (Cultures.xml)
+            # Try to find a fuzzy match
+            best_match = shared_utils.find_best_fuzzy_match(original_name, valid_faction_names, threshold=0.85)
+
+            if best_match:
+                print(f"  -> Fixing faction name: Found fuzzy match for '{original_name}'. Renaming to '{best_match}'.")
+                faction_element.set('name', best_match)
+                faction_name_map[original_name] = best_match
+                factions_fixed += 1
+            else:
+                print(f"  -> WARNING: No valid fuzzy match found for faction '{original_name}'. It may be removed in a later step.")
+
+    return factions_fixed, faction_name_map
+
+
 def validate_faction_unit_tags(root, is_submod_mode, no_garrison, ck3_maa_definitions, unit_to_class_map, unit_categories):
     """
     Validates all faction unit tags for structural integrity.
