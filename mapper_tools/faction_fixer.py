@@ -1043,6 +1043,61 @@ def format_factions_xml_only(factions_xml_path, all_units, excluded_units_set, c
     return changes_made
 
 
+def _get_naval_only_land_units(main_units_tsv_dir: str) -> set[str]:
+    """
+    Parses main_units_tables to find land units that are exclusively used
+    as the land representation of a naval unit.
+
+    A unit is considered "naval-only" if it appears in the 'land_unit' column
+    for a naval unit, but does NOT have its own primary entry as a land unit
+    (i.e., a row where it is in the 'unit' column and 'is_naval' is false).
+
+    Args:
+        main_units_tsv_dir (str): Path to the directory containing main_units_tables TSV files.
+
+    Returns:
+        set[str]: A set of unit keys that are naval-only land units.
+    """
+    if not os.path.isdir(main_units_tsv_dir):
+        print(f"Warning: main_units_tables directory not found at '{main_units_tsv_dir}'. Cannot identify naval-only units.")
+        return set()
+
+    primary_land_units = set()
+    land_units_for_naval = set()
+
+    for filename in os.listdir(main_units_tsv_dir):
+        if filename.endswith(".tsv"):
+            file_path = os.path.join(main_units_tsv_dir, filename)
+            try:
+                with open(file_path, 'r', encoding='utf-8-sig') as f:
+                    reader = csv.DictReader(f, delimiter='\t')
+                    for row in reader:
+                        unit_key = row.get('unit')
+                        is_naval = row.get('is_naval', 'false').lower() == 'true'
+                        land_unit = row.get('land_unit')
+
+                        if is_naval:
+                            # This is a naval unit row. If it has a land_unit, record it.
+                            if land_unit:
+                                land_units_for_naval.add(land_unit)
+                        else:
+                            # This is a land unit row. Record its primary key.
+                            if unit_key:
+                                primary_land_units.add(unit_key)
+            except Exception as e:
+                print(f"Warning: Could not process file '{file_path}': {e}")
+                continue
+
+    # A unit is a "naval-only land unit" if it's used as a land_unit for a naval vessel,
+    # but it does not have its own primary entry as a land unit.
+    naval_only_land_units = land_units_for_naval - primary_land_units
+    
+    if naval_only_land_units:
+        print(f"Identified {len(naval_only_land_units)} naval-only land units to be excluded.")
+
+    return naval_only_land_units
+
+
 def main():
     shared_utils.setup_logging()
 
@@ -1149,6 +1204,7 @@ def main():
         'faction_key_to_screen_name_map': (shared_utils.get_faction_key_to_screen_name_map, [faction_tables_dir]),
         'culture_factions': (shared_utils.get_factions_from_cultures_xml, [args.cultures_xml_path]),
         'all_units': (shared_utils.get_all_land_units_keys, [land_units_tsv_dir]),
+        'naval_only_land_units': (_get_naval_only_land_units, [tsv_dir]),
         'unit_to_screen_name_map': (shared_utils.get_unit_screen_name_map, [args.attila_text_path]),
         'culture_to_faction_map': (shared_utils.get_culture_to_faction_map_from_xml, [args.cultures_xml_path]),
         'unit_categories': (shared_utils.get_unit_land_categories, [land_units_tsv_dir]),
@@ -1168,6 +1224,7 @@ def main():
     faction_key_to_screen_name_map = g1_results['faction_key_to_screen_name_map']
     culture_factions = g1_results['culture_factions']
     all_units = g1_results['all_units']
+    naval_only_land_units = g1_results['naval_only_land_units']
     unit_to_screen_name_map = g1_results['unit_to_screen_name_map']
     culture_to_faction_map = g1_results['culture_to_faction_map']
     unit_categories = g1_results['unit_categories']
@@ -1246,6 +1303,12 @@ def main():
         culture_factions = culture_factions - excluded_factions_set
         print(f"Removed {len(excluded_factions_set)} excluded factions from the culture_factions set for validation.")
 
+    # --- NEW: Exclude naval-only land units from the main unit pool ---
+    if naval_only_land_units:
+        original_unit_count = len(all_units)
+        all_units = all_units - naval_only_land_units
+        print(f"Removed {original_unit_count - len(all_units)} naval-only land units from the main unit pool.")
+
     # Load units to recache
     units_to_recache = set()
     if args.clear_llm_cache_units_file:
@@ -1276,7 +1339,7 @@ def main():
     if not all_units:
         print("Could not load any valid land unit keys from land_units_tables. Aborting.")
         return
-    print(f"Loaded {len(all_units)} definitive valid unit keys from land_units_tables.")
+    print(f"Loaded {len(all_units)} definitive valid land unit keys from land_units_tables.")
 
     # Validate faction_key_to_units_map
     if not faction_key_to_units_map:
