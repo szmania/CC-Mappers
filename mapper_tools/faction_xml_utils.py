@@ -649,43 +649,37 @@ def merge_duplicate_factions(root, screen_name_to_faction_key_map):
     return merged_count
 
 
-def remove_factions_not_in_cultures(root: ET.Element, culture_factions: set[str], screen_name_to_faction_key_map: dict[str, str], all_faction_elements: list[ET.Element]) -> int:
-        """
-        Removes factions from the XML tree that are not present in the provided set of valid culture factions.
-        This acts as a pruning step to enforce Cultures.xml as the source of truth.
+def remove_factions_not_in_cultures(root, culture_factions, screen_name_to_faction_key_map, all_faction_elements=None):
+    """
+    Removes factions from the XML that are not present in the culture_factions set.
+    """
+    removed_count = 0
+    factions_to_remove = []
 
-        Args:
-            root (ET.Element): The root <Factions> element of the XML tree.
-            culture_factions (set[str]): A set of all valid faction screen names from Cultures.xml.
-            screen_name_to_faction_key_map (dict[str, str]): A map from screen name to faction key.
-            all_faction_elements (list[ET.Element]): A list of all <Faction> elements to process.
+    # Use cached faction elements if provided, otherwise find them normally
+    factions_to_iterate = all_faction_elements if all_faction_elements is not None else root.findall('Faction')
 
-        Returns:
-            int: The number of factions that were removed.
-        """
-        removed_count = 0
-        factions_to_remove = []
+    for faction_element in factions_to_iterate:
+        faction_name = faction_element.get('name')
+        if faction_name == "Default":
+            continue # Always keep the Default faction
 
-        for faction_element in all_faction_elements:
-            faction_name = faction_element.get('name')
-            if not faction_name or faction_name == "Default":
-                continue
-
-            if faction_name not in culture_factions:
+        if faction_name not in culture_factions:
+            # Check if the faction_name is actually a faction_key and its screen name is in culture_factions
+            # This handles cases where the XML might use keys instead of screen names
+            is_valid_by_key = False
+            for db_key, db_screen_name in screen_name_to_faction_key_map.items():
+                if faction_name == db_key and db_screen_name in culture_factions:
+                    is_valid_by_key = True
+                    break
+            if not is_valid_by_key:
                 factions_to_remove.append(faction_element)
+                print(f"  -> Removing faction '{faction_name}' not found in Cultures.xml.")
+                removed_count += 1
 
-        for faction_element in factions_to_remove:
-            faction_name = faction_element.get('name')
-            print(f"  -> Pruning faction '{faction_name}' as it is not defined in any Cultures.xml file.")
-            root.remove(faction_element)
-            removed_count += 1
-
-        if removed_count > 0:
-            print(f"Pruned {removed_count} factions that are not present in the Cultures.xml source of truth.")
-        else:
-            print("All factions in the XML are valid against the Cultures.xml source of truth.")
-
-        return removed_count
+    for faction_element in factions_to_remove:
+        root.remove(faction_element)
+    return removed_count
 
 
 def populate_or_remove_keyless_tags(root, faction_pool_cache, screen_name_to_faction_key_map, faction_key_to_units_map,
@@ -847,47 +841,49 @@ def populate_or_remove_keyless_tags(root, faction_pool_cache, screen_name_to_fac
     return populated_count, removed_count
 
 
-def validate_and_fix_faction_names(root: ET.Element, faction_key_to_screen_name_map: dict[str, str], unit_to_faction_key_map: dict[str, str], culture_factions: set[str]) -> tuple[int, dict[str, str]]:
+def validate_and_fix_faction_names(root, faction_key_to_screen_name_map, unit_to_faction_key_map, culture_factions):
     """
-    Validates faction names in the XML against a set of known valid faction names from Cultures.xml.
-    Attempts to fix incorrect names using fuzzy matching. It does NOT remove factions.
-
-    Args:
-        root (ET.Element): The root element of the Factions XML tree.
-        faction_key_to_screen_name_map (dict[str, str]): Map from faction key to screen name (from DB).
-        unit_to_faction_key_map (dict[str, str]): Map from unit key to faction key (from DB).
-        culture_factions (set[str]): A set of all valid faction screen names from the Cultures.xml file.
-
-    Returns:
-        tuple[int, dict[str, str]]: A tuple containing:
-            - The number of faction names that were corrected.
-            - A dictionary mapping old faction names to their new corrected names.
+    Validates faction names in the XML against known faction names from the DB and Cultures.xml.
+    Attempts to fix fuzzy matches and removes invalid factions.
+    Returns the number of factions fixed and a map of old_name -> new_name.
     """
-    factions_fixed = 0
+    fixed_count = 0
     faction_name_map = {}
+    valid_db_faction_names = set(faction_key_to_screen_name_map.values())
+    all_valid_faction_names = valid_db_faction_names.union(culture_factions)
 
-    # Create a set of valid faction names for quick lookup
-    valid_faction_names = set(culture_factions)
+    factions_to_process = list(root.findall('Faction')) # Create a copy to iterate while modifying
 
-    for faction_element in root.findall('Faction'):
-        original_name = faction_element.get('name')
-        if not original_name or original_name == "Default":
+    for faction_element in factions_to_process:
+        current_name = faction_element.get('name')
+        if not current_name:
+            print(f"  -> WARNING: Faction element found without a 'name' attribute. Removing.")
+            root.remove(faction_element)
+            fixed_count += 1
             continue
 
-        if original_name not in valid_faction_names:
-            # Name is not in the source of truth (Cultures.xml)
-            # Try to find a fuzzy match
-            best_match = shared_utils.find_best_fuzzy_match(original_name, valid_faction_names, threshold=0.85)
+        if current_name in all_valid_faction_names:
+            continue # Name is already valid
 
-            if best_match:
-                print(f"  -> Fixing faction name: Found fuzzy match for '{original_name}'. Renaming to '{best_match}'.")
-                faction_element.set('name', best_match)
-                faction_name_map[original_name] = best_match
-                factions_fixed += 1
-            else:
-                print(f"  -> WARNING: No valid fuzzy match found for faction '{original_name}'. It may be removed in a later step.")
+        # Attempt fuzzy matching
+        best_match, score = shared_utils.find_best_fuzzy_match(current_name, list(all_valid_faction_names), threshold=0.8)
 
-    return factions_fixed, faction_name_map
+        if best_match and score > 0.8: # A good enough match
+            print(f"  -> INFO: Faction name '{current_name}' fuzzy-matched to '{best_match}' (score: {score:.2f}). Updating.")
+            faction_element.set('name', best_match)
+            faction_name_map[current_name] = best_match
+            fixed_count += 1
+        else:
+            # If no good match, check if it's a valid key that just doesn't have a screen name
+            if current_name in faction_key_to_screen_name_map:
+                # It's a valid key, but not a screen name. Keep it as is.
+                continue
+            # If it's not a valid screen name and not a valid key, remove it.
+            print(f"  -> WARNING: Faction '{current_name}' is not a valid faction name or key and could not be fuzzy-matched. Removing.")
+            root.remove(faction_element)
+            fixed_count += 1
+
+    return fixed_count, faction_name_map
 
 
 def validate_faction_unit_tags(root, is_submod_mode, no_garrison, ck3_maa_definitions, unit_to_class_map, unit_categories):
@@ -975,3 +971,778 @@ def validate_faction_unit_tags(root, is_submod_mode, no_garrison, ck3_maa_defini
                 })
 
     return validation_failures
+
+
+def _ensure_subculture_attributes_for_faction(faction_element, screen_name_to_faction_key_map, faction_to_subculture_map, most_common_faction_key, faction_key_to_screen_name_map, culture_to_faction_map, faction_to_heritage_map, heritage_to_factions_map, faction_to_heritages_map):
+    """
+    Ensures a single faction has a 'subculture' attribute.
+    Returns 1 if a subculture was added/updated, 0 otherwise.
+    """
+    faction_name = faction_element.get('name')
+    if faction_name == "Default":
+        return 0
+
+    current_subculture = faction_element.get('subculture')
+    faction_key = screen_name_to_faction_key_map.get(faction_name)
+
+    if faction_key and faction_key in faction_to_subculture_map:
+        # Use the subculture from the DB if available
+        db_subculture = faction_to_subculture_map[faction_key]
+        if current_subculture != db_subculture:
+            faction_element.set('subculture', db_subculture)
+            # print(f"  -> Set subculture for '{faction_name}' to '{db_subculture}' (from DB).")
+            return 1
+    elif not current_subculture:
+        # Attempt to infer subculture from heritage or culture if not in DB map
+        assigned_subculture = None
+        if faction_key:
+            heritages = faction_to_heritages_map.get(faction_key, [])
+            for heritage_name in heritages:
+                # Try to find a subculture associated with this heritage
+                # This is a heuristic, as there's no direct heritage->subculture map
+                # We'll look for factions in this heritage that *do* have a subculture
+                for h_faction_key in heritage_to_factions_map.get(heritage_name, []):
+                    if h_faction_key in faction_to_subculture_map:
+                        assigned_subculture = faction_to_subculture_map[h_faction_key]
+                        # print(f"  -> Inferred subculture for '{faction_name}' to '{assigned_subculture}' (from heritage '{heritage_name}').")
+                        break
+                if assigned_subculture:
+                    break
+
+        if not assigned_subculture:
+            # Fallback to the most common subculture if all else fails
+            if most_common_faction_key and most_common_faction_key in faction_to_subculture_map:
+                assigned_subculture = faction_to_subculture_map[most_common_faction_key]
+                # print(f"  -> Fallback: Set subculture for '{faction_name}' to '{assigned_subculture}' (most common).")
+            elif faction_to_subculture_map:
+                # If no most common, pick any available subculture
+                assigned_subculture = next(iter(faction_to_subculture_map.values()))
+                # print(f"  -> Fallback: Set subculture for '{faction_name}' to '{assigned_subculture}' (any available).")
+
+        if assigned_subculture:
+            faction_element.set('subculture', assigned_subculture)
+            return 1
+    return 0
+
+
+def _fix_duplicate_garrison_units_for_faction(faction_element, faction_pool_cache, screen_name_to_faction_key_map, faction_key_to_units_map,
+                                              faction_to_subculture_map, subculture_to_factions_map, faction_key_to_screen_name_map,
+                                              culture_to_faction_map, excluded_units_set, faction_to_heritage_map,
+                                              heritage_to_factions_map, faction_to_heritages_map, unit_categories, general_units):
+    """
+    Identifies and fixes duplicate Garrison units within a single faction, replacing them with suitable alternatives.
+    Returns the number of fixes made for this faction.
+    """
+    fixed_for_faction = 0
+    faction_name = faction_element.get('name')
+
+    garrison_tags = faction_element.findall('Garrison')
+    if not garrison_tags:
+        return 0
+
+    garrisons_by_level = defaultdict(list)
+    for g_tag in garrison_tags:
+        level = g_tag.get('level')
+        if level:
+            garrisons_by_level[level].append(g_tag)
+
+    for level, tags_at_level in garrisons_by_level.items():
+        seen_garrison_keys = set()
+        duplicates_to_fix = []
+
+        for garrison in tags_at_level:
+            key = garrison.get('key')
+            if key and key in seen_garrison_keys:
+                duplicates_to_fix.append(garrison)
+            elif key:
+                seen_garrison_keys.add(key)
+
+        if not duplicates_to_fix:
+            continue
+
+        print(f"  -> Fixing {len(duplicates_to_fix)} duplicate garrison units at level '{level}' in faction '{faction_name}'.")
+
+        # Get the working pool for this faction
+        working_pool, _, _ = get_cached_faction_working_pool(
+            faction_name, faction_pool_cache, screen_name_to_faction_key_map, faction_key_to_units_map,
+            faction_to_subculture_map, subculture_to_factions_map, faction_key_to_screen_name_map,
+            culture_to_faction_map, excluded_units_set, faction_to_heritage_map,
+            heritage_to_factions_map, faction_to_heritages_map, log_prefix=f"(Duplicate Garrisons L{level})"
+        )
+
+        # Exclude general units from the garrison pool
+        current_garrison_pool = working_pool - general_units
+
+        for duplicate_garrison in duplicates_to_fix:
+            original_key = duplicate_garrison.get('key')
+            # Try to find a replacement unit
+            replacement_unit = unit_selector.find_best_garrison_replacement(
+                current_garrison_pool, unit_categories,
+                exclude_units=seen_garrison_keys # Exclude already assigned garrisons
+            )
+
+            if replacement_unit:
+                duplicate_garrison.set('key', replacement_unit)
+                seen_garrison_keys.add(replacement_unit) # Add new unit to seen list
+                fixed_for_faction += 1
+                # print(f"    - Replaced duplicate garrison '{original_key}' with '{replacement_unit}'.")
+            else:
+                # If no suitable replacement, remove the duplicate tag entirely
+                faction_element.remove(duplicate_garrison)
+                fixed_for_faction += 1
+                # print(f"    - Removed duplicate garrison '{original_key}' (no suitable replacement found).")
+
+        # Ensure minimum of 3 unique garrison units per level
+        units_to_add = 3 - len(seen_garrison_keys)
+        for _ in range(units_to_add):
+            # Find a new unit, excluding already assigned ones
+            new_unit = unit_selector.find_best_garrison_replacement(
+                current_garrison_pool, unit_categories,
+                exclude_units=seen_garrison_keys
+            )
+            if new_unit:
+                # Create new Garrison element
+                ET.SubElement(faction_element, 'Garrison', key=new_unit, level=level, percentage='0', max='LEVY')
+                seen_garrison_keys.add(new_unit)
+                fixed_for_faction += 1
+                # print(f"    - Added new garrison unit '{new_unit}' to level '{level}'.")
+
+    return fixed_for_faction
+
+
+def _fix_duplicate_levy_units_for_faction(faction_element, faction_pool_cache, screen_name_to_faction_key_map, faction_key_to_units_map,
+                                          faction_to_subculture_map, subculture_to_factions_map, faction_key_to_screen_name_map,
+                                          culture_to_faction_map, excluded_units_set, faction_to_heritage_map,
+                                          heritage_to_factions_map, faction_to_heritages_map, unit_to_training_level,
+                                          unit_categories, faction_elite_units):
+    """
+    Identifies and fixes duplicate Levy units within a single faction, replacing them with suitable alternatives.
+    Returns the number of fixes made for this faction.
+    """
+    fixed_for_faction = 0
+    faction_name = faction_element.get('name')
+
+    levy_tags = faction_element.findall('Levies')
+    if not levy_tags:
+        return 0
+
+    seen_levy_keys = set()
+    duplicates_to_fix = []
+
+    for levy in levy_tags:
+        key = levy.get('key')
+        if key and key in seen_levy_keys:
+            duplicates_to_fix.append(levy)
+        elif key:
+            seen_levy_keys.add(key)
+
+    if not duplicates_to_fix:
+        return 0
+
+    print(f"  -> Fixing {len(duplicates_to_fix)} duplicate levy units in faction '{faction_name}'.")
+
+    # Get the working pool for this faction
+    working_pool, _, _ = get_cached_faction_working_pool(
+        faction_name, faction_pool_cache, screen_name_to_faction_key_map, faction_key_to_units_map,
+        faction_to_subculture_map, subculture_to_factions_map, faction_key_to_screen_name_map,
+        culture_to_faction_map, excluded_units_set, faction_to_heritage_map,
+        heritage_to_factions_map, faction_to_heritages_map, log_prefix="(Duplicate Levies)"
+    )
+
+    # Exclude elite units from the levy pool
+    current_levy_pool = working_pool - faction_elite_units
+
+    for duplicate_levy in duplicates_to_fix:
+        original_key = duplicate_levy.get('key')
+        # Try to find a replacement unit
+        replacement_unit = unit_selector.find_best_levy_replacement(
+            current_levy_pool, unit_to_training_level, unit_categories,
+            exclude_units=seen_levy_keys # Exclude already assigned levies
+        )
+
+        if replacement_unit:
+            duplicate_levy.set('key', replacement_unit)
+            seen_levy_keys.add(replacement_unit) # Add new unit to seen list
+            fixed_for_faction += 1
+            # print(f"    - Replaced duplicate levy '{original_key}' with '{replacement_unit}'.")
+        else:
+            # If no suitable replacement, remove the duplicate tag entirely
+            faction_element.remove(duplicate_levy)
+            fixed_for_faction += 1
+            # print(f"    - Removed duplicate levy '{original_key}' (no suitable replacement found).")
+
+    return fixed_for_faction
+
+
+def _reorder_attributes_in_all_tags_for_element(element):
+    """
+    Reorders attributes within a single XML element to a consistent order.
+    Returns 1 if attributes were reordered, 0 otherwise.
+    """
+    if not element.attrib:
+        return 0
+
+    # Define a desired order for attributes for each tag type
+    if element.tag == 'Faction':
+        desired_order = ['name', 'subculture']
+    elif element.tag == 'General':
+        desired_order = ['key', 'rank', 'num_guns']
+    elif element.tag == 'Knights':
+        desired_order = ['key', 'rank', 'num_guns']
+    elif element.tag == 'Levies':
+        desired_order = ['key', 'percentage', 'max', 'num_guns']
+    elif element.tag == 'Garrison':
+        desired_order = ['key', 'level', 'percentage', 'max', 'num_guns']
+    elif element.tag == 'MenAtArm':
+        desired_order = ['type', 'key', 'max', 'siege', 'siege_engine_per_unit', 'num_guns']
+    else: # Generic order for other tags like <Factions>
+        desired_order = [
+            'name', 'key', 'type', 'rank', 'level', 'percentage', 'max', 'siege',
+            'siege_engine_per_unit', 'num_guns', 'subculture', 'submod_tag', 'submod_addon_tag'
+        ]
+
+    # Get current attributes and sort them based on desired_order, then alphabetically
+    current_attribs = list(element.attrib.items())
+    sorted_attribs = sorted(current_attribs, key=lambda item: (
+        desired_order.index(item[0]) if item[0] in desired_order else len(desired_order),
+        item[0] # Secondary sort by name for attributes not in desired_order
+    ))
+
+    # Check if the order has changed
+    if list(element.attrib.items()) != sorted_attribs:
+        element.attrib.clear() # Clear existing attributes
+        for key, value in sorted_attribs:
+            element.set(key, value) # Add them back in the desired order
+        return 1
+    return 0
+
+
+def _remove_duplicate_ranked_units_for_faction(faction_element):
+    """
+    Removes duplicate General and Knights units within a single faction based on their 'rank' attribute.
+    Returns the count of units removed for this faction.
+    """
+    removed_for_faction = 0
+
+    # Process Generals
+    seen_general_ranks = set()
+    generals_to_remove = []
+    for general in faction_element.findall('General'):
+        rank = general.get('rank')
+        if rank:
+            if rank in seen_general_ranks:
+                generals_to_remove.append(general)
+            else:
+                seen_general_ranks.add(rank)
+    for general in generals_to_remove:
+        faction_element.remove(general)
+        removed_for_faction += 1
+
+    # Process Knights
+    seen_knights_ranks = set()
+    knights_to_remove = []
+    for knight in faction_element.findall('Knights'):
+        rank = knight.get('rank')
+        if rank:
+            if rank in seen_knights_ranks:
+                knights_to_remove.append(knight)
+            else:
+                seen_knights_ranks.add(rank)
+    for knight in knights_to_remove:
+        faction_element.remove(knight)
+        removed_for_faction += 1
+
+    if removed_for_faction > 0:
+        print(f"  -> Removed {removed_for_faction} duplicate ranked units from faction '{faction_element.get('name')}'.")
+    return removed_for_faction
+
+
+def _remove_excluded_unit_keys_for_faction(faction_element, excluded_units_set):
+    """
+    Removes the 'key' attribute from any unit tags within a single faction
+    whose key is in the excluded_units_set.
+    Returns the count of keys removed for this faction.
+    """
+    removed_for_faction = 0
+    for element in faction_element.iter():
+        if element.tag in ['General', 'Knights', 'Levies', 'Garrison', 'MenAtArm']:
+            unit_key = element.get('key')
+            if unit_key and unit_key in excluded_units_set:
+                del element.attrib['key']
+                removed_for_faction += 1
+    return removed_for_faction
+
+
+def _remove_zero_percentage_tags_for_faction(faction_element):
+    """
+    Removes <Levies> and <Garrison> tags within a single faction that have a 'percentage' attribute of '0'.
+    For Levies, it ensures at least one tag remains to satisfy the schema.
+    Returns the count of tags removed for this faction.
+    """
+    removed_for_faction = 0
+
+    # Handle Levies separately to ensure at least one remains for schema compliance.
+    levy_tags = faction_element.findall('Levies')
+    if levy_tags:
+        levies_to_remove = [tag for tag in levy_tags if tag.get('percentage') == '0']
+        # Only remove zero-percentage levies if it won't result in removing ALL levy tags.
+        if len(levies_to_remove) < len(levy_tags):
+            for tag in levies_to_remove:
+                faction_element.remove(tag)
+                removed_for_faction += 1
+
+    # Handle Garrisons: these can all be safely removed as they are not required for base schema validity.
+    garrison_tags_to_remove = [tag for tag in faction_element.findall('Garrison') if tag.get('percentage') == '0']
+    for tag in garrison_tags_to_remove:
+        faction_element.remove(tag)
+        removed_for_faction += 1
+
+    return removed_for_faction
+
+
+def remove_core_unit_tags(root, factions_in_main_mod):
+    """
+    In submod mode, removes General, Knights, Levies, and Garrison tags from factions
+    that are also present in the main mod. This ensures the submod only adds MAA.
+    """
+    removed_count = 0
+    tags_to_remove = ['General', 'Knights', 'Levies', 'Garrison']
+
+    for faction_element in root.findall('Faction'):
+        faction_name = faction_element.get('name')
+        if faction_name == "Default":
+            continue
+
+        if faction_name in factions_in_main_mod:
+            for tag_name in tags_to_remove:
+                for unit_tag in list(faction_element.findall(tag_name)):
+                    faction_element.remove(unit_tag)
+                    removed_count += 1
+            # print(f"  -> Removed core unit tags (General, Knights, Levies, Garrison) from faction '{faction_name}' (present in main mod).")
+
+    if removed_count > 0:
+        print(f"Removed {removed_count} core unit tags from submod factions that are present in the main mod.")
+    return removed_count
+
+
+def remove_duplicate_men_at_arm_tags(root):
+    """
+    Removes duplicate MenAtArm tags within each faction based on their 'type' attribute.
+    """
+    removed_count = 0
+    for faction in root.findall('Faction'):
+        seen_maa_types = set()
+        maa_tags_to_remove = []
+        for maa in faction.findall('MenAtArm'):
+            maa_type = maa.get('type')
+            if maa_type:
+                if maa_type in seen_maa_types:
+                    maa_tags_to_remove.append(maa)
+                else:
+                    seen_maa_types.add(maa_type)
+        for maa in maa_tags_to_remove:
+            faction.remove(maa)
+            removed_count += 1
+    return removed_count
+
+
+def remove_duplicate_ranked_units(root):
+    """
+    Removes duplicate General and Knights units within each faction based on their 'rank' attribute.
+    If multiple units have the same rank, only the first one is kept.
+    """
+    total_removed_count = 0
+    for faction in root.findall('Faction'):
+        total_removed_count += _remove_duplicate_ranked_units_for_faction(faction)
+    return total_removed_count
+
+
+def remove_excluded_factions(root, excluded_factions, screen_name_to_faction_key_map, all_faction_elements=None):
+    """
+    Removes factions from the XML that are in the excluded_factions set.
+    """
+    removed_count = 0
+    factions_to_remove = []
+    factions_to_iterate = all_faction_elements if all_faction_elements is not None else root.findall('Faction')
+    for faction_element in factions_to_iterate:
+        faction_name = faction_element.get('name')
+        if faction_name in excluded_factions:
+            factions_to_remove.append(faction_element)
+            print(f"  -> Removing excluded faction: '{faction_name}'")
+            removed_count += 1
+        else:
+            # Also check if the faction key is in the excluded list (if screen_name_to_faction_key_map is available)
+            faction_key = screen_name_to_faction_key_map.get(faction_name)
+            if faction_key and faction_key in excluded_factions: # Assuming excluded_factions can also contain keys
+                factions_to_remove.append(faction_element)
+                print(f"  -> Removing excluded faction (by key): '{faction_name}' (key: {faction_key})")
+                removed_count += 1
+
+    for faction_element in factions_to_remove:
+        root.remove(faction_element)
+    return removed_count
+
+
+def remove_excluded_unit_keys(root, excluded_units_set):
+    """
+    Removes the 'key' attribute from any unit tags whose key is in the excluded_units_set.
+    This forces re-selection for those slots.
+    """
+    removed_count = 0
+    for faction in root.findall('Faction'):
+        removed_count += _remove_excluded_unit_keys_for_faction(faction, excluded_units_set)
+    return removed_count
+
+
+def remove_factions_in_main_mod(root, main_mod_faction_maa_map, all_faction_elements=None):
+    """
+    In submod mode, removes factions from the submod XML that are present in the main mod
+    AND have no new MenAtArm types defined in the submod.
+    Returns the count of removed factions and a set of their names for syncing.
+    """
+    removed_count = 0
+    removed_faction_names_for_sync = set()
+    factions_to_remove = []
+
+    if not main_mod_faction_maa_map:
+        return 0, removed_faction_names_for_sync
+
+    # Use cached faction elements if provided, otherwise find them normally
+    factions_to_iterate = all_faction_elements if all_faction_elements is not None else root.findall('Faction')
+
+    for faction_element in factions_to_iterate:
+        faction_name = faction_element.get('name')
+        if faction_name == "Default":
+            continue
+
+        if faction_name in main_mod_faction_maa_map:
+            # Check if this faction has any MenAtArm tags that are *not* in the main mod's definition
+            submod_maa_types = {maa.get('type') for maa in faction_element.findall('MenAtArm') if maa.get('type')}
+            main_mod_maa_types = main_mod_faction_maa_map.get(faction_name, set())
+
+            new_maa_types_in_submod = submod_maa_types - main_mod_maa_types
+
+            if not new_maa_types_in_submod:
+                factions_to_remove.append(faction_element)
+                removed_faction_names_for_sync.add(faction_name)
+                print(f"  -> Removing faction '{faction_name}' from submod as it's in main mod and has no new MenAtArm types.")
+                removed_count += 1
+
+    for faction_element in factions_to_remove:
+        root.remove(faction_element)
+
+    return removed_count, removed_faction_names_for_sync
+
+
+def remove_maa_tags_present_in_main_mod(root, main_mod_faction_maa_map):
+    """
+    In submod mode, removes MenAtArm tags from submod factions if they are already
+    defined in the main mod's Factions.xml.
+    """
+    removed_count = 0
+    if not main_mod_faction_maa_map:
+        return 0
+
+    for faction_element in root.findall('Faction'):
+        faction_name = faction_element.get('name')
+        if faction_name == "Default":
+            continue
+
+        main_mod_maa_types = main_mod_faction_maa_map.get(faction_name)
+        if main_mod_maa_types:
+            maa_tags_to_remove = []
+            for maa_tag in faction_element.findall('MenAtArm'):
+                maa_type = maa_tag.get('type')
+                if maa_type and maa_type in main_mod_maa_types:
+                    maa_tags_to_remove.append(maa_tag)
+
+            for maa_tag in maa_tags_to_remove:
+                faction_element.remove(maa_tag)
+                removed_count += 1
+                # print(f"  -> Removed MenAtArm type '{maa_tag.get('type')}' from faction '{faction_name}' (present in main mod).")
+
+    if removed_count > 0:
+        print(f"Removed {removed_count} MenAtArm tags from submod factions that are present in the main mod.")
+    return removed_count
+
+
+def remove_zero_percentage_tags(root):
+    """
+    Removes <Levies> and <Garrison> tags that have a 'percentage' attribute of '0'.
+    """
+    total_removed_count = 0
+    for faction in root.findall('Faction'):
+        total_removed_count += _remove_zero_percentage_tags_for_faction(faction)
+    return total_removed_count
+
+
+def reorder_attributes_in_all_tags(root):
+    """
+    Reorders attributes within all XML tags to a consistent order.
+    Returns the count of tags that had their attributes reordered.
+    """
+    reordered_attr_count = 0
+    for element in root.iter():
+        reordered_attr_count += _reorder_attributes_in_all_tags_for_element(element)
+    return reordered_attr_count
+
+
+def reorganize_faction_children(root):
+    """
+    Reorganizes the child elements within each <Faction> tag to a consistent order:
+    General, Knights, Levies, Garrison, MenAtArm.
+    Also sorts tags within each group by their attributes.
+    Returns the count of factions that had their children reorganized.
+    """
+    reorganized_count = 0
+    desired_order = ['General', 'Knights', 'Levies', 'Garrison', 'MenAtArm']
+
+    for faction in root.findall('Faction'):
+        current_children = list(faction)
+        if not current_children:
+            continue
+
+        # Create a dictionary to group children by tag name
+        grouped_children = defaultdict(list)
+        for child in current_children:
+            grouped_children[child.tag].append(child)
+
+        new_children_order = []
+        for tag_name in desired_order:
+            children_for_tag = grouped_children[tag_name]
+            
+            # Sort children within each tag group by their attributes
+            if tag_name in ['General', 'Knights']:
+                # Sort by rank (numeric), then by key for stability
+                children_for_tag.sort(key=lambda el: (int(el.get('rank', '0')), el.get('key', '')))
+            elif tag_name == 'Garrison':
+                # Sort by level (numeric), then by key for stability
+                children_for_tag.sort(key=lambda el: (int(el.get('level', '0')), el.get('key', '')))
+            elif tag_name == 'MenAtArm':
+                # Sort by type for deterministic order
+                children_for_tag.sort(key=lambda el: el.get('type', ''))
+            elif tag_name == 'Levies':
+                # Sort by key for deterministic order
+                children_for_tag.sort(key=lambda el: el.get('key', ''))
+            
+            new_children_order.extend(children_for_tag)
+            # Remove these from grouped_children to identify any unexpected tags
+            if tag_name in grouped_children:
+                del grouped_children[tag_name]
+
+        # Add any remaining (unexpected) tags at the end, sorted by key
+        for tag_name in sorted(grouped_children.keys()):
+            remaining_children = grouped_children[tag_name]
+            remaining_children.sort(key=lambda el: el.get('key', ''))
+            new_children_order.extend(remaining_children)
+
+        # Check if the order has changed
+        if new_children_order != current_children:
+            # Remove all existing children without clearing the faction element itself
+            for child in list(faction):
+                faction.remove(child)
+            # Add children back in the new order
+            for child in new_children_order:
+                faction.append(child)
+            reorganized_count += 1
+
+    if reorganized_count > 0:
+        print(f"Reorganized children for {reorganized_count} factions.")
+    return reorganized_count
+
+
+def sync_faction_structure_from_default(root, categorized_units, unit_categories, general_units, template_faction_unit_pool, all_units, tier, unit_variant_map, unit_to_tier_map, variant_to_base_map, ck3_maa_definitions, screen_name_to_faction_key_map, faction_key_to_units_map, unit_to_class_map, faction_to_subculture_map, subculture_to_factions_map, faction_key_to_screen_name_map, culture_to_faction_map=None, unit_to_description_map=None, unit_stats_map=None, main_mod_faction_maa_map=None, excluded_units_set=None, faction_pool_cache=None, faction_to_heritage_map=None, heritage_to_factions_map=None, faction_to_heritages_map=None, unit_to_training_level=None):
+    """
+    Ensures all factions have the same basic structure (e.g., MenAtArm tags for all CK3 MAA types)
+    as the 'Default' faction, or a comprehensive set if Default is empty.
+    """
+    default_faction = root.find("Faction[@name='Default']")
+    if default_faction is None:
+        print("WARNING: 'Default' faction not found. Cannot sync structure.")
+        return 0
+
+    default_maa_types = {maa.get('type') for maa in default_faction.findall('MenAtArm') if maa.get('type')}
+    default_general_ranks = {int(g.get('rank')) for g in default_faction.findall('General') if g.get('rank')}
+    default_knights_ranks = {int(k.get('rank')) for k in default_faction.findall('Knights') if k.get('rank')}
+    default_garrison_levels = {int(g.get('level')) for g in default_faction.findall('Garrison') if g.get('level')}
+
+    # If Default faction is empty, generate a comprehensive set of MAA types
+    if not default_maa_types:
+        print("INFO: Default faction has no MenAtArm types. Generating a comprehensive set for syncing.")
+        for ck3_maa_type in ck3_maa_definitions.keys():
+            default_maa_types.add(ck3_maa_type)
+    
+    # Ensure basic ranked units and garrisons are covered if missing
+    if not default_general_ranks:
+        default_general_ranks.update([1, 2])
+    if not default_knights_ranks:
+        default_knights_ranks.update([1])
+    if not default_garrison_levels:
+        default_garrison_levels.update([1])
+
+    synced_count = 0
+    for faction in root.findall('Faction'):
+        faction_name = faction.get('name')
+        if faction_name == "Default":
+            continue
+
+        # Sync MenAtArm tags
+        current_maa_types = {maa.get('type') for maa in faction.findall('MenAtArm') if maa.get('type')}
+        for maa_type in default_maa_types:
+            if maa_type not in current_maa_types:
+                ET.SubElement(faction, 'MenAtArm', type=maa_type)
+                synced_count += 1
+
+        # Sync General tags
+        current_general_ranks = {int(g.get('rank')) for g in faction.findall('General') if g.get('rank')}
+        for rank in default_general_ranks:
+            if rank not in current_general_ranks:
+                ET.SubElement(faction, 'General', rank=str(rank))
+                synced_count += 1
+
+        # Sync Knights tags
+        current_knights_ranks = {int(k.get('rank')) for k in faction.findall('Knights') if k.get('rank')}
+        for rank in default_knights_ranks:
+            if rank not in current_knights_ranks:
+                ET.SubElement(faction, 'Knights', rank=str(rank))
+                synced_count += 1
+
+        # Sync Levies tag
+        if not faction.find('Levies'):
+            # Get the faction's working pool for levy selection
+            faction_name = faction.get('name')
+            if faction_name and faction_pool_cache is not None and unit_to_training_level is not None:
+                try:
+                    working_pool, _, _ = get_cached_faction_working_pool(
+                        faction_name, faction_pool_cache, screen_name_to_faction_key_map, faction_key_to_units_map,
+                        faction_to_subculture_map, subculture_to_factions_map, faction_key_to_screen_name_map,
+                        culture_to_faction_map, excluded_units_set, faction_to_heritage_map,
+                        heritage_to_factions_map, faction_to_heritages_map, log_prefix="(Levy Sync)",
+                        required_classes={'inf_spear', 'inf_melee', 'inf_heavy', 'inf_bow', 'inf_sling', 'inf_javelin'}, 
+                        unit_to_class_map=unit_to_class_map
+                    )
+                    
+                    # Find a suitable levy unit from the faction's pool
+                    levy_unit_key = None
+                    if working_pool:
+                        from mapper_tools import unit_selector
+                        levy_unit_key = unit_selector.find_best_levy_replacement(
+                            working_pool, unit_to_training_level, unit_categories
+                        )
+                    
+                    if levy_unit_key:
+                        ET.SubElement(faction, 'Levies', key=levy_unit_key, percentage='100', max='LEVY')
+                        print(f"  -> Added missing <Levies> tag for faction '{faction_name}' with unit '{levy_unit_key}'.")
+                        synced_count += 1
+                    else:
+                        print(f"  -> WARNING: Could not find a suitable levy unit for faction '{faction_name}'. "
+                              f"Adding <Levies> tag without key (will fail validation).")
+                        ET.SubElement(faction, 'Levies', percentage='100', max='LEVY')
+                        synced_count += 1
+                except Exception as e:
+                    print(f"  -> ERROR: Failed to add <Levies> tag for faction '{faction_name}': {e}")
+                    # Fallback to creating the tag without a key
+                    ET.SubElement(faction, 'Levies', percentage='100', max='LEVY')
+                    synced_count += 1
+            else:
+                # Fallback when we don't have the necessary data
+                ET.SubElement(faction, 'Levies', percentage='100', max='LEVY')
+                synced_count += 1
+
+        # Sync Garrison tags
+        current_garrison_levels = {int(g.get('level')) for g in faction.findall('Garrison') if g.get('level')}
+        for level in default_garrison_levels:
+            if level not in current_garrison_levels:
+                ET.SubElement(faction, 'Garrison', level=str(level), percentage='100', max='LEVY')
+                synced_count += 1
+
+    if synced_count > 0:
+        print(f"Synced {synced_count} MenAtArm, General, Knights, Levies, and Garrison tags from Default faction.")
+    return synced_count
+
+
+def validate_faction_structure(root, is_submod_mode, no_garrison):
+    """
+    Validates that each faction (except Default) has all required core unit tags.
+    In submod mode, this validation is skipped.
+    Returns (is_valid, errors) where is_valid is a boolean and errors is a list of strings.
+    """
+    if is_submod_mode:
+        print("\nSkipping faction structure validation in submod mode.")
+        return True, []
+
+    required_tags = ['General', 'Knights', 'MenAtArm', 'Levies']
+    if not no_garrison:
+        required_tags.append('Garrison')
+
+    errors = []
+    factions_to_validate = [f for f in root.findall('Faction') if f.get('name') != 'Default']
+
+    for faction in factions_to_validate:
+        faction_name = faction.get('name')
+        for tag in required_tags:
+            if not faction.findall(tag):
+                errors.append(f"Faction '{faction_name}' is missing required <{tag}> element(s).")
+
+    if errors:
+        return False, errors
+
+    print("\nAll factions have the required core unit structure.")
+    return True, []
+
+
+def validate_levy_garrison_percentages(root: ET.Element) -> tuple[bool, list]:
+    """
+    Validates that the sum of percentages for Levies and Garrisons (per level) in each faction equals 100.
+    
+    Args:
+        root (ET.Element): The root element of the parsed Factions XML.
+        
+    Returns:
+        tuple[bool, list]: A tuple where the first element is True if all percentages are valid,
+                           and the second element is a list of error messages for any invalid sums.
+    """
+    errors = []
+    for faction in root.findall('Faction'):
+        faction_name = faction.get('name', 'Unknown Faction')
+
+        # Validate Levies
+        levy_tags = faction.findall('Levies')
+        if levy_tags: # Only validate if there are levy tags
+            total_levy_percentage = 0
+            for tag in levy_tags:
+                try:
+                    perc = int(tag.get('percentage', 0))
+                    total_levy_percentage += perc
+                except (ValueError, TypeError):
+                    # If percentage is invalid, we can't validate the sum correctly.
+                    # This is an error state, but let's focus on the sum check.
+                    # The schema validation should ideally catch invalid percentage formats.
+                    # For now, treat invalid percentage as 0 for sum calculation.
+                    pass 
+            if total_levy_percentage != 100:
+                errors.append(f"Faction '{faction_name}': Sum of Levy percentages is {total_levy_percentage}, expected 100.")
+
+        # Validate Garrisons by level
+        garrison_tags = faction.findall('Garrison')
+        garrisons_by_level = defaultdict(list)
+        for g_tag in garrison_tags:
+            level = g_tag.get('level')
+            if level:
+                garrisons_by_level[level].append(g_tag)
+
+        for level, tags in garrisons_by_level.items():
+             if tags: # Only validate if there are garrison tags for this level
+                total_garrison_percentage = 0
+                for tag in tags:
+                    try:
+                        perc = int(tag.get('percentage', 0))
+                        total_garrison_percentage += perc
+                    except (ValueError, TypeError):
+                        # Similar to levy, treat invalid percentage as 0 for sum calculation.
+                        pass
+                if total_garrison_percentage != 100:
+                    errors.append(f"Faction '{faction_name}': Sum of Garrison (level {level}) percentages is {total_garrison_percentage}, expected 100.")
+
+    is_valid = len(errors) == 0
+    return is_valid, errors
