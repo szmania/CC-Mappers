@@ -632,6 +632,45 @@ def merge_duplicate_factions(root, screen_name_to_faction_key_map):
     return merged_count
 
 
+def remove_factions_not_in_cultures(root: ET.Element, culture_factions: set[str], screen_name_to_faction_key_map: dict[str, str], all_faction_elements: list[ET.Element]) -> int:
+        """
+        Removes factions from the XML tree that are not present in the provided set of valid culture factions.
+        This acts as a pruning step to enforce Cultures.xml as the source of truth.
+    
+        Args:
+            root (ET.Element): The root <Factions> element of the XML tree.
+            culture_factions (set[str]): A set of all valid faction screen names from Cultures.xml.
+            screen_name_to_faction_key_map (dict[str, str]): A map from screen name to faction key.
+            all_faction_elements (list[ET.Element]): A list of all <Faction> elements to process.
+    
+        Returns:
+            int: The number of factions that were removed.
+        """
+        removed_count = 0
+        factions_to_remove = []
+    
+        for faction_element in all_faction_elements:
+            faction_name = faction_element.get('name')
+            if not faction_name or faction_name == "Default":
+                continue
+    
+            if faction_name not in culture_factions:
+                factions_to_remove.append(faction_element)
+    
+        for faction_element in factions_to_remove:
+            faction_name = faction_element.get('name')
+            print(f"  -> Pruning faction '{faction_name}' as it is not defined in any Cultures.xml file.")
+            root.remove(faction_element)
+            removed_count += 1
+    
+        if removed_count > 0:
+            print(f"Pruned {removed_count} factions that are not present in the Cultures.xml source of truth.")
+        else:
+            print("All factions in the XML are valid against the Cultures.xml source of truth.")
+    
+        return removed_count
+
+
 def populate_or_remove_keyless_tags(root, faction_pool_cache, screen_name_to_faction_key_map, faction_key_to_units_map,
                                     faction_to_subculture_map, subculture_to_factions_map, faction_key_to_screen_name_map,
                                     culture_to_faction_map, excluded_units_set, faction_to_heritage_map,
