@@ -1303,6 +1303,9 @@ def main():
         culture_factions = culture_factions - excluded_factions_set
         print(f"Removed {len(excluded_factions_set)} excluded factions from the culture_factions set for validation.")
 
+    # Initialize excluded units set
+    excluded_units_set = set()
+
     # Add naval-only land units to global exclusions
     if naval_only_land_units:
         excluded_units_set.update(naval_only_land_units)
@@ -1322,7 +1325,6 @@ def main():
             print(f"Warning: File for --clear-llm-cache-units-file not found at '{args.clear_llm_cache_units_file}'. No units will be specifically recached.")
 
     # Load excluded units file
-    excluded_units_set = set()
     if args.exclude_units_file:
         try:
             with open(args.exclude_units_file, 'r', encoding='utf-8-sig') as f:
