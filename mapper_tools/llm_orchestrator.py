@@ -312,27 +312,29 @@ def run_llm_unit_assignment_pass(llm_helper, all_llm_failures_to_process, time_p
         if len(deduplicated_levy_requests) < len(uncached_levy_requests):
             print(f"  -> Deduplication reduced levy requests from {len(uncached_levy_requests)} to {len(deduplicated_levy_requests)}")
 
-        # Group levy requests by faction for more efficient processing
-        levy_requests_by_faction = defaultdict(list)
-        for req in deduplicated_levy_requests:
-            levy_requests_by_faction[req['faction']].append(req)
+        # --- PARALLEL LEVY REQUEST PROCESSING ---
+        # Batch all deduplicated levy requests together for maximum parallelism
+        all_levy_batches = [deduplicated_levy_requests[i:i + llm_batch_size] for i in range(0, len(deduplicated_levy_requests), llm_batch_size)]
+        print(f"  -> Submitting {len(deduplicated_levy_requests)} levy requests to LLM in {len(all_levy_batches)} batches using {llm_threads} threads...")
 
-        # Process batches by faction for better LLM efficiency
+        # Process all levy batches in parallel
         network_levy_results = {}
-        for faction_name, faction_requests in levy_requests_by_faction.items():
-            # Use larger batch size for better efficiency
-            faction_batches = [faction_requests[i:i + llm_batch_size] for i in range(0, len(faction_requests), llm_batch_size)]
-            print(f"  -> Submitting {len(faction_requests)} levy requests for faction '{faction_name}' to LLM in {len(faction_batches)} batches using {llm_threads} threads...")
-            with ThreadPoolExecutor(max_workers=llm_threads) as executor:
-                future_to_batch = {executor.submit(llm_helper.get_batch_levy_compositions, batch, time_period_context): batch for batch in faction_batches}
-                processed_requests = 0
-                for future in as_completed(future_to_batch):
-                    processed_requests += len(future_to_batch[future])
-                    print(f"  -> LLM levy progress for '{faction_name}': {processed_requests}/{len(faction_requests)} requests completed.")
-                    try:
-                        network_levy_results.update(future.result())
-                    except Exception as exc:
-                        print(f"  -> ERROR: A levy batch for '{faction_name}' generated an exception: {exc}")
+        processed_levy_requests = 0
+        with ThreadPoolExecutor(max_workers=llm_threads) as executor:
+            future_to_batch = {
+                executor.submit(llm_helper.get_batch_levy_compositions, batch, time_period_context): batch
+                for batch in all_levy_batches
+            }
+            for future in as_completed(future_to_batch):
+                batch = future_to_batch[future]
+                processed_levy_requests += len(batch)
+                print(f"  -> LLM levy progress: {processed_levy_requests}/{len(deduplicated_levy_requests)} requests completed.")
+                try:
+                    network_levy_results.update(future.result())
+                except Exception as exc:
+                    # Log the exception; specific faction tracking is lost but overall progress is shown
+                    print(f"  -> ERROR: A levy batch generated an exception: {exc}")
+        # --- END PARALLEL LEVY REQUEST PROCESSING ---
     final_levy_results = {**cached_levy_results, **network_levy_results}
 
     # 4. Apply results and collect final failures
