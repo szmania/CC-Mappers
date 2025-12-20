@@ -113,6 +113,23 @@ def create_default_faction_if_missing(root, categorized_units, unit_categories, 
         return default_created
     return 0
 
+def sync_factions_from_cultures(root, culture_factions, explicitly_removed_factions=None, all_faction_elements=None):
+    """
+    Adds any factions present in culture_factions but missing from the XML.
+    """
+    added_count = 0
+    # Use cached faction elements if provided, otherwise find them normally
+    factions_to_iterate = all_faction_elements if all_faction_elements is not None else root.findall('Faction')
+    existing_faction_names = {f.get('name') for f in factions_to_iterate}
+    if explicitly_removed_factions is None:
+        explicitly_removed_factions = set()
+
+    for faction_name in sorted(list(culture_factions)):
+        if faction_name not in existing_faction_names and faction_name not in explicitly_removed_factions:
+            ET.SubElement(root, 'Faction', name=faction_name)
+            print(f"  -> Added missing faction: '{faction_name}' from Cultures.xml.")
+            added_count += 1
+    return added_count
 
 def create_faction_to_heritages_map(heritage_to_factions_map):
     """
@@ -636,38 +653,38 @@ def remove_factions_not_in_cultures(root: ET.Element, culture_factions: set[str]
         """
         Removes factions from the XML tree that are not present in the provided set of valid culture factions.
         This acts as a pruning step to enforce Cultures.xml as the source of truth.
-    
+
         Args:
             root (ET.Element): The root <Factions> element of the XML tree.
             culture_factions (set[str]): A set of all valid faction screen names from Cultures.xml.
             screen_name_to_faction_key_map (dict[str, str]): A map from screen name to faction key.
             all_faction_elements (list[ET.Element]): A list of all <Faction> elements to process.
-    
+
         Returns:
             int: The number of factions that were removed.
         """
         removed_count = 0
         factions_to_remove = []
-    
+
         for faction_element in all_faction_elements:
             faction_name = faction_element.get('name')
             if not faction_name or faction_name == "Default":
                 continue
-    
+
             if faction_name not in culture_factions:
                 factions_to_remove.append(faction_element)
-    
+
         for faction_element in factions_to_remove:
             faction_name = faction_element.get('name')
             print(f"  -> Pruning faction '{faction_name}' as it is not defined in any Cultures.xml file.")
             root.remove(faction_element)
             removed_count += 1
-    
+
         if removed_count > 0:
             print(f"Pruned {removed_count} factions that are not present in the Cultures.xml source of truth.")
         else:
             print("All factions in the XML are valid against the Cultures.xml source of truth.")
-    
+
         return removed_count
 
 
@@ -880,20 +897,20 @@ def validate_faction_unit_tags(root, is_submod_mode, no_garrison, ck3_maa_defini
     Returns a list of validation failures for the final fix pass.
     """
     validation_failures = []
-    
+
     for faction in root.findall('Faction'):
         faction_name = faction.get('name')
         if not faction_name or faction_name == "Default":
             continue
-            
+
         # Skip factions that are managed by main mod in submod mode
         # Note: This would need to be passed in if needed, but for now we check all factions
-        
+
         # Check for missing required tags
         required_tags = ['General', 'Knights', 'Levies', 'MenAtArm']
         if not no_garrison:
             required_tags.append('Garrison')
-            
+
         for tag_name in required_tags:
             elements = faction.findall(tag_name)
             if not elements:
@@ -915,7 +932,7 @@ def validate_faction_unit_tags(root, is_submod_mode, no_garrison, ck3_maa_defini
                             maa_type = element.get('type')
                             if maa_type:
                                 unit_role_description = maa_type
-                                
+
                         validation_failures.append({
                             'faction_element': faction,
                             'tag_name': tag_name,
@@ -925,17 +942,17 @@ def validate_faction_unit_tags(root, is_submod_mode, no_garrison, ck3_maa_defini
                             'rank': element.get('rank'),
                             'level': element.get('level')
                         })
-                        
+
         # Check MenAtArm tags for missing max attributes (non-siege units)
         maa_elements = faction.findall('MenAtArm')
         for element in maa_elements:
             unit_key = element.get('key')
             maa_definition_name = element.get('type')
-            
+
             if not unit_key or not maa_definition_name:
                 # Skip if key or type is missing (already caught above)
                 continue
-                
+
             # Determine if this is a siege unit
             internal_type = ck3_maa_definitions.get(maa_definition_name) if ck3_maa_definitions else None
             is_siege_by_ck3_type = (mappings.CK3_TYPE_TO_ATTILA_MAX_CATEGORY.get(maa_definition_name) is None) or \
@@ -945,7 +962,7 @@ def validate_faction_unit_tags(root, is_submod_mode, no_garrison, ck3_maa_defini
             unit_category = unit_categories.get(unit_key) if unit_categories else None
             is_siege_by_attila_category = (unit_category == 'artillery')
             is_siege = is_siege_by_ck3_type or is_siege_by_attila_class or is_siege_by_attila_category
-            
+
             # Non-siege units must have 'max' attribute
             if not is_siege and ('max' not in element.attrib or not element.get('max')):
                 validation_failures.append({
@@ -956,5 +973,5 @@ def validate_faction_unit_tags(root, is_submod_mode, no_garrison, ck3_maa_defini
                     'unit_role_description': maa_definition_name,
                     'maa_definition_name': maa_definition_name
                 })
-                
+
     return validation_failures
