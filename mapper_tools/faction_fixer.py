@@ -1303,11 +1303,10 @@ def main():
         culture_factions = culture_factions - excluded_factions_set
         print(f"Removed {len(excluded_factions_set)} excluded factions from the culture_factions set for validation.")
 
-    # --- NEW: Exclude naval-only land units from the main unit pool ---
+    # Add naval-only land units to global exclusions
     if naval_only_land_units:
-        original_unit_count = len(all_units)
-        all_units = all_units - naval_only_land_units
-        print(f"Removed {original_unit_count - len(all_units)} naval-only land units from the main unit pool.")
+        excluded_units_set.update(naval_only_land_units)
+        print(f"Added {len(naval_only_land_units)} naval-only land units to the global exclusion set.")
 
     # Load units to recache
     units_to_recache = set()
