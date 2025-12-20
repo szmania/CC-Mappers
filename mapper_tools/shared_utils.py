@@ -38,12 +38,14 @@ except ImportError:
 
 class Tee:
     """A class to redirect stdout to both console and a log file, prefixing console output."""
-    def __init__(self, log_filename):
+    def __init__(self, log_filename, run_timestamp, run_pid):
         self.terminal = sys.stdout
         self.log_file_path = log_filename
         self.log = open(log_filename, "w", encoding='utf-8')
         self.line_started = False
         self.lock = threading.Lock() # Add a lock for thread safety
+        self.run_timestamp = run_timestamp
+        self.run_pid = run_pid
 
     def write(self, message: str):
         """
@@ -53,14 +55,14 @@ class Tee:
             # Don't add a timestamp to empty lines or just newlines
             if message.strip():
                 # Get current time with milliseconds
-                timestamp = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S.%f')[:-3]
-                # Prepend timestamp to the message
-                message_with_timestamp = f"{timestamp} | {message}"
+                line_timestamp = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S.%f')[:-3]
+                # Prepend run identifier and timestamp to the message
+                message_with_identifier = f"[{self.run_timestamp}_pid{self.run_pid}] {line_timestamp} | {message}"
             else:
-                message_with_timestamp = message
+                message_with_identifier = message
 
-            self.log.write(message_with_timestamp)
-            self.terminal.write(message_with_timestamp)
+            self.log.write(message_with_identifier)
+            self.terminal.write(message_with_identifier)
             self.flush()
 
     def flush(self):
@@ -80,7 +82,7 @@ def setup_logging():
     log_filename = os.path.join(log_dir, f"faction_fixer_run_{timestamp}_pid{pid}.log")
 
     # Redirect stdout and stderr to our Tee object
-    tee = Tee(log_filename)
+    tee = Tee(log_filename, timestamp, pid)
     sys.stdout = tee
     sys.stderr = tee
 
