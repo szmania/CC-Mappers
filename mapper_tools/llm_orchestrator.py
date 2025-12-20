@@ -252,30 +252,44 @@ def run_llm_unit_assignment_pass(llm_helper, all_llm_failures_to_process, time_p
             group_key = f"{subculture or 'no_culture'}|{request_type}"
             requests_by_culture_and_type[group_key].append(req)
 
-        # Process batches with optimal grouping
-        network_unit_results = {}
+        # --- PARALLEL UNIT REQUEST PROCESSING ---
+        # Collect all batches first
+        all_unit_batches = []
+        batch_to_group_info = {}
+        total_unit_requests = 0
         for group_key, group_requests in requests_by_culture_and_type.items():
             subculture, request_type = group_key.split('|', 1)
             # Use larger batch size (up to 200) for better efficiency
             batch_size = llm_batch_size
             group_batches = [group_requests[i:i + batch_size] for i in range(0, len(group_requests), batch_size)]
-            print(f"  -> Submitting {len(group_requests)} '{request_type}' requests for subculture '{subculture}' to LLM in {len(group_batches)} batches (batch size: {batch_size})...")
+            all_unit_batches.extend(group_batches)
+            for batch in group_batches:
+                batch_to_group_info[id(batch)] = (subculture, request_type, len(group_requests)) # Store total requests for this group
+            total_unit_requests += len(group_requests)
 
-            with ThreadPoolExecutor(max_workers=llm_threads) as executor:
-                future_to_batch = {
-                    executor.submit(llm_helper.get_batch_unit_replacements, batch, time_period_context): batch
-                    for batch in group_batches
-                }
-                processed_requests = 0
-                for future in as_completed(future_to_batch):
-                    processed_requests += len(future_to_batch[future])
-                    print(f"  -> LLM '{request_type}' progress for subculture '{subculture}': {processed_requests}/{len(group_requests)} requests completed.")
-                    try:
-                        batch_results = future.result()
-                        if batch_results:
-                            network_unit_results.update(batch_results)
-                    except Exception as exc:
-                        print(f"  -> ERROR: A '{request_type}' batch for subculture '{subculture}' generated an exception: {exc}")
+        print(f"  -> Submitting {total_unit_requests} unit requests to LLM in {len(all_unit_batches)} total batches using {llm_threads} threads...")
+
+        # Process all batches in parallel
+        network_unit_results = {}
+        group_progress = defaultdict(int) # Track progress per group
+        with ThreadPoolExecutor(max_workers=llm_threads) as executor:
+            future_to_batch = {
+                executor.submit(llm_helper.get_batch_unit_replacements, batch, time_period_context): batch
+                for batch in all_unit_batches
+            }
+            for future in as_completed(future_to_batch):
+                batch = future_to_batch[future]
+                batch_id = id(batch)
+                subculture, request_type, total_group_requests = batch_to_group_info[batch_id]
+                group_progress[(subculture, request_type)] += len(batch)
+                print(f"  -> LLM unit progress for '{request_type}' (subculture '{subculture}'): {group_progress[(subculture, request_type)]}/{total_group_requests} requests completed.")
+                try:
+                    batch_results = future.result()
+                    if batch_results:
+                        network_unit_results.update(batch_results)
+                except Exception as exc:
+                    print(f"  -> ERROR: A unit batch for '{request_type}' (subculture '{subculture}') generated an exception: {exc}")
+        # --- END PARALLEL UNIT REQUEST PROCESSING ---
     final_unit_results = {**cached_unit_results, **network_unit_results}
 
     # --- Levy Request Pipeline ---
