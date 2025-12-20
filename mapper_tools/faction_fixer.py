@@ -878,18 +878,18 @@ def process_units_xml(units_xml_path, categorized_units, all_units, general_unit
     perf_monitor.end_operation("Final Attribute Management Pass")
 
     # --- Final XML Output Preparation ---
-    # Final validation: Remove any remaining excluded units from output
+    # Final validation: Remove keys for any remaining excluded units
     excluded_removed_in_final_check = 0
     if excluded_units_set:
         for faction in root.findall('Faction'):
             for element in list(faction):  # Use list() to avoid modification during iteration
                 if element.get('key') in excluded_units_set:
                     if element.tag in ['General', 'Knights', 'Levies', 'Garrison', 'MenAtArm']:
-                        faction.remove(element)
+                        del element.attrib['key']
                         excluded_removed_in_final_check += 1
         if excluded_removed_in_final_check > 0:
             total_changes += excluded_removed_in_final_check
-            print(f"Final validation: Removed {excluded_removed_in_final_check} excluded units from output.")
+            print(f"Final validation: Removed keys for {excluded_removed_in_final_check} excluded units from output.")
 
     # Print performance summary
     perf_monitor.print_summary()
