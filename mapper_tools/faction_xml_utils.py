@@ -198,13 +198,23 @@ def ensure_required_tags_exist(root, faction_pool_cache, screen_name_to_faction_
                 available_pool = working_pool - used_units
 
                 if tag_name == 'General':
-                    general_pool = {unit for unit in available_pool if unit in general_units}
-                    if general_pool:
-                        new_key = unit_selector.select_best_unit_from_pool(general_pool, rank=1, unit_stats_map=unit_stats_map)
+                    # Use the more robust candidate pool function for Generals
+                    from mapper_tools import unit_management
+                    general_candidate_pool = unit_management._get_candidate_pool_for_tag('General', available_pool, general_units, categorized_units, unit_categories, unit_to_training_level)
+                    if general_candidate_pool:
+                        # Select the best unit from the candidate pool based on stats
+                        general_candidate_pool_with_stats = {unit for unit in general_candidate_pool if unit in available_pool}
+                        if general_candidate_pool_with_stats:
+                            new_key = unit_selector.select_best_unit_from_pool(general_candidate_pool_with_stats, rank=1, unit_stats_map=unit_stats_map)
                 elif tag_name == 'Knights':
-                    knight_pool = {unit for unit in available_pool if unit_to_class_map.get(unit) in ['cav_shock', 'cav_heavy', 'cav_melee']}
-                    if knight_pool:
-                        new_key = unit_selector.select_best_unit_from_pool(knight_pool, rank=1, unit_stats_map=unit_stats_map)
+                    # Use the more robust candidate pool function for Knights
+                    from mapper_tools import unit_management
+                    knight_candidate_pool = unit_management._get_candidate_pool_for_tag('Knights', available_pool, general_units, categorized_units, unit_categories, unit_to_training_level)
+                    if knight_candidate_pool:
+                        # Select the best unit from the candidate pool based on stats
+                        knight_candidate_pool_with_stats = {unit for unit in knight_candidate_pool if unit in available_pool}
+                        if knight_candidate_pool_with_stats:
+                            new_key = unit_selector.select_best_unit_from_pool(knight_candidate_pool_with_stats, rank=1, unit_stats_map=unit_stats_map)
                 elif tag_name == 'Levies':
                     faction_elites = faction_elite_units.get(faction_name, set()) if faction_elite_units else set()
                     new_key = unit_selector.find_best_levy_replacement(available_pool, unit_to_training_level, unit_categories, exclude_units=faction_elites)
