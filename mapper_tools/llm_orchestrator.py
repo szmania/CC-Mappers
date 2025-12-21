@@ -408,7 +408,7 @@ def run_llm_roster_review_pass(root, llm_helper, time_period_context, llm_thread
                                 screen_name_to_faction_key_map, faction_key_to_units_map,
                                 faction_to_subculture_map, subculture_to_factions_map, faction_key_to_screen_name_map,
                                 culture_to_faction_map, faction_to_heritage_map, heritage_to_factions_map,
-                                faction_to_heritages_map, ck3_maa_definitions, all_faction_elements=None): # Added all_faction_elements
+                                faction_to_heritages_map, ck3_maa_definitions, is_core_file=True, all_faction_elements=None): # Added is_core_file and all_faction_elements
     """
     Runs the LLM Roster Review pass. It gathers the current roster for each faction,
     sends it to the LLM for thematic and cultural review, and applies the suggested corrections.
@@ -428,7 +428,12 @@ def run_llm_roster_review_pass(root, llm_helper, time_period_context, llm_thread
 
     # 1. Inject Temporary Unique IDs
     temp_id_counter = 0
-    tags_to_review = ['General', 'Knights', 'Levies', 'Garrison', 'MenAtArm']
+    # Determine which tags to review based on whether this is a core file
+    if is_core_file:
+        tags_to_review = ['General', 'Knights', 'Levies', 'Garrison', 'MenAtArm']
+    else:
+        tags_to_review = ['MenAtArm']
+        
     for faction in factions_to_iterate:
         for child in faction:
             if child.tag in tags_to_review:
