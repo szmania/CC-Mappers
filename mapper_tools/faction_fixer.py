@@ -219,6 +219,30 @@ def timed_function(func_name: str):
     """Decorator to time function execution."""
     return perf_monitor.time_function(func_name)
 
+def is_core_factions_file(xml_path: str, root: ET.Element) -> bool:
+    """
+    Determines if the given Factions XML file is a 'core' file.
+
+    A file is considered 'core' if:
+    1. Its filename starts with 'OfficialCC_'.
+    2. Its filename starts with 'Submod_' AND the root <Factions> tag has a 'submod_tag' attribute.
+
+    All other files are considered 'add-on' files.
+
+    Args:
+        xml_path (str): The path to the XML file.
+        root (ET.Element): The root element of the parsed XML.
+
+    Returns:
+        bool: True if the file is a core file, False otherwise.
+    """
+    filename = os.path.basename(xml_path)
+    if filename.startswith('OfficialCC_'):
+        return True
+    if filename.startswith('Submod_') and 'submod_tag' in root.attrib:
+        return True
+    return False
+
 def _parse_and_recover_factions_xml(xml_path: str) -> tuple[ET.ElementTree, ET.Element]:
     """
     Parses a potentially corrupt Factions XML file, handling 'junk after document element' errors.
@@ -575,7 +599,7 @@ def process_units_xml(units_xml_path, categorized_units, all_units, general_unit
                       excluded_factions=None, unit_to_class_map=None, faction_to_subculture_map=None, subculture_to_factions_map=None,
                       culture_to_faction_map=None, unit_to_description_map=None, unit_stats_map=None,
                       faction_culture_map=None, llm_helper=None, excluded_units_set=None, unit_to_num_guns_map=None, llm_batch_size=50, no_siege=False, no_subculture=False, no_garrison=False, most_common_faction_key=None, main_mod_faction_maa_map=None, llm_threads=1,
-                      faction_to_heritage_map=None, heritage_to_factions_map=None, faction_to_heritages_map=None, first_pass_threshold=0.90, is_submod_mode=False, submod_addon_tag=None, faction_to_json_map=None, time_period_context="", force_procedural_recache=False, faction_elite_units=None, factions_in_main_mod=None): # Added heritage maps and first_pass_threshold, is_submod_mode, faction_elite_units
+                      faction_to_heritage_map=None, heritage_to_factions_map=None, faction_to_heritages_map=None, first_pass_threshold=0.90, is_submod_mode=False, submod_addon_tag=None, faction_to_json_map=None, time_period_context="", force_procedural_recache=False, is_core_file=True, faction_elite_units=None, factions_in_main_mod=None): # Added heritage maps and first_pass_threshold, is_submod_mode, faction_elite_units
     """
     Processes a single Attila Factions XML file to fix and update unit entries.
     """
@@ -679,7 +703,7 @@ def process_units_xml(units_xml_path, categorized_units, all_units, general_unit
 
     # NEW: Sync all MenAtArm unit tags from Default to other factions
     # This must happen BEFORE the unit assignment pipeline to ensure all MAA tags exist.
-    faction_sync_count = faction_xml_utils.sync_faction_structure_from_default(root, categorized_units, unit_categories, general_units, template_faction_unit_pool, all_units, tier, unit_variant_map, unit_to_tier_map, variant_to_base_map, ck3_maa_definitions, screen_name_to_faction_key_map, faction_key_to_units_map, unit_to_class_map, faction_to_subculture_map, subculture_to_factions_map, faction_key_to_screen_name_map, culture_to_faction_map=culture_to_faction_map, unit_to_description_map=unit_to_description_map, unit_stats_map=unit_stats_map, main_mod_faction_maa_map=main_mod_faction_maa_map, excluded_units_set=excluded_units_set, faction_pool_cache=faction_pool_cache, faction_to_heritage_map=faction_to_heritage_map, heritage_to_factions_map=heritage_to_factions_map, faction_to_heritages_map=faction_to_heritages_map, unit_to_training_level=unit_to_training_level)
+    faction_sync_count = faction_xml_utils.sync_faction_structure_from_default(root, categorized_units, unit_categories, general_units, template_faction_unit_pool, all_units, tier, unit_variant_map, unit_to_tier_map, variant_to_base_map, ck3_maa_definitions, screen_name_to_faction_key_map, faction_key_to_units_map, unit_to_class_map, faction_to_subculture_map, subculture_to_factions_map, faction_key_to_screen_name_map, culture_to_faction_map=culture_to_faction_map, unit_to_description_map=unit_to_description_map, unit_stats_map=unit_stats_map, main_mod_faction_maa_map=main_mod_faction_maa_map, excluded_units_set=excluded_units_set, faction_pool_cache=faction_pool_cache, faction_to_heritage_map=faction_to_heritage_map, heritage_to_factions_map=heritage_to_factions_map, faction_to_heritages_map=faction_to_heritages_map, unit_to_training_level=unit_to_training_level, is_core_file=is_core_file)
 
     # NEW: In submod mode, remove MenAtArm tags that are already defined in the main mod.
     maa_tags_removed_from_submod = 0
@@ -688,7 +712,7 @@ def process_units_xml(units_xml_path, categorized_units, all_units, general_unit
 
     # --- NEW: Validate faction structure ---
     print("\nValidating faction structure...")
-    is_valid, validation_errors = faction_xml_utils.validate_faction_structure(root, is_submod_mode, no_garrison)
+    is_valid, validation_errors = faction_xml_utils.validate_faction_structure(root, is_core_file, no_garrison)
     if not is_valid:
         print("\n=== FACTION STRUCTURE VALIDATION FAILED ===")
         for error in validation_errors:
@@ -728,63 +752,64 @@ def process_units_xml(units_xml_path, categorized_units, all_units, general_unit
         print(f"  -> ERROR: Exception during high confidence pass: {e}")
     perf_monitor.end_operation("High Confidence Unit Pass")
 
-    # Run generals and knights management on all factions
-    perf_monitor.start_operation("Manage Generals and Knights")
-    try:
-        general_knight_changes, general_knight_failures = unit_management.manage_all_generals_and_knights(
-            root, categorized_units, general_units, unit_stats_map, unit_categories,
-            screen_name_to_faction_key_map, faction_key_to_units_map, template_faction_unit_pool,
-            faction_to_subculture_map=faction_to_subculture_map, subculture_to_factions_map=subculture_to_factions_map,
-            faction_key_to_screen_name_map=faction_key_to_screen_name_map, culture_to_faction_map=culture_to_faction_map,
-            tier=tier, unit_to_tier_map=unit_to_tier_map, faction_to_json_map=faction_to_json_map,
-            all_units=all_units, unit_to_training_level=unit_to_training_level, excluded_units_set=excluded_units_set,
-            faction_to_heritage_map=faction_to_heritage_map, heritage_to_factions_map=heritage_to_factions_map,
-            faction_to_heritages_map=faction_to_heritages_map, faction_culture_map=faction_culture_map,
-            is_submod_mode=is_submod_mode, factions_in_main_mod=factions_in_main_mod, all_faction_elements=all_faction_elements
-        )
-        total_procedural_changes += general_knight_changes
-        all_procedural_failures.extend(general_knight_failures)
-        print(f"  -> Generals/Knights pass: {general_knight_changes} changes, {len(general_knight_failures)} failures")
-    except Exception as e:
-        print(f"  -> ERROR: Exception during generals/knights pass: {e}")
-    perf_monitor.end_operation("Manage Generals and Knights")
-
-    # Run levy structure and percentages on all factions
-    perf_monitor.start_operation("Ensure Levy Structure")
-    try:
-        levy_changes, levy_failures = processing_passes.ensure_levy_structure_and_percentages(
-            root, unit_categories, screen_name_to_faction_key_map, faction_key_to_units_map, template_faction_unit_pool,
-            faction_to_subculture_map, subculture_to_factions_map, faction_key_to_screen_name_map, culture_to_faction_map,
-            unit_to_class_map, faction_to_json_map, all_units, unit_to_training_level, tier, faction_elite_units,
-            excluded_units_set, faction_pool_cache, faction_to_heritage_map, heritage_to_factions_map,
-            faction_to_heritages_map, destructive_on_failure=True, faction_culture_map=faction_culture_map,
-            is_submod_mode=is_submod_mode, factions_in_main_mod=factions_in_main_mod, all_faction_elements=all_faction_elements
-        )
-        total_procedural_changes += levy_changes
-        all_procedural_failures.extend(levy_failures)
-        print(f"  -> Levy pass: {levy_changes} changes, {len(levy_failures)} failures")
-    except Exception as e:
-        print(f"  -> ERROR: Exception during levy pass: {e}")
-    perf_monitor.end_operation("Ensure Levy Structure")
-
-    # Run garrison structure on all factions (if not disabled)
-    if not no_garrison:
-        perf_monitor.start_operation("Ensure Garrison Structure")
+    if is_core_file:
+        # Run generals and knights management on all factions
+        perf_monitor.start_operation("Manage Generals and Knights")
         try:
-            garrison_changes, garrison_failures = processing_passes.ensure_garrison_structure(
+            general_knight_changes, general_knight_failures = unit_management.manage_all_generals_and_knights(
+                root, categorized_units, general_units, unit_stats_map, unit_categories,
+                screen_name_to_faction_key_map, faction_key_to_units_map, template_faction_unit_pool,
+                faction_to_subculture_map=faction_to_subculture_map, subculture_to_factions_map=subculture_to_factions_map,
+                faction_key_to_screen_name_map=faction_key_to_screen_name_map, culture_to_faction_map=culture_to_faction_map,
+                tier=tier, unit_to_tier_map=unit_to_tier_map, faction_to_json_map=faction_to_json_map,
+                all_units=all_units, unit_to_training_level=unit_to_training_level, excluded_units_set=excluded_units_set,
+                faction_to_heritage_map=faction_to_heritage_map, heritage_to_factions_map=heritage_to_factions_map,
+                faction_to_heritages_map=faction_to_heritages_map, faction_culture_map=faction_culture_map,
+                is_submod_mode=is_submod_mode, factions_in_main_mod=factions_in_main_mod, all_faction_elements=all_faction_elements
+            )
+            total_procedural_changes += general_knight_changes
+            all_procedural_failures.extend(general_knight_failures)
+            print(f"  -> Generals/Knights pass: {general_knight_changes} changes, {len(general_knight_failures)} failures")
+        except Exception as e:
+            print(f"  -> ERROR: Exception during generals/knights pass: {e}")
+        perf_monitor.end_operation("Manage Generals and Knights")
+
+        # Run levy structure and percentages on all factions
+        perf_monitor.start_operation("Ensure Levy Structure")
+        try:
+            levy_changes, levy_failures = processing_passes.ensure_levy_structure_and_percentages(
                 root, unit_categories, screen_name_to_faction_key_map, faction_key_to_units_map, template_faction_unit_pool,
                 faction_to_subculture_map, subculture_to_factions_map, faction_key_to_screen_name_map, culture_to_faction_map,
-                unit_to_class_map, general_units, unit_to_training_level, tier, unit_to_tier_map, excluded_units_set,
-                faction_pool_cache, faction_to_heritage_map, heritage_to_factions_map, faction_to_heritages_map,
-                destructive_on_failure=True, faction_to_json_map=faction_to_json_map, all_units=all_units,
-                faction_culture_map=faction_culture_map, is_submod_mode=is_submod_mode, factions_in_main_mod=factions_in_main_mod, all_faction_elements=all_faction_elements
+                unit_to_class_map, faction_to_json_map, all_units, unit_to_training_level, tier, faction_elite_units,
+                excluded_units_set, faction_pool_cache, faction_to_heritage_map, heritage_to_factions_map,
+                faction_to_heritages_map, destructive_on_failure=True, faction_culture_map=faction_culture_map,
+                is_submod_mode=is_submod_mode, factions_in_main_mod=factions_in_main_mod, all_faction_elements=all_faction_elements
             )
-            total_procedural_changes += garrison_changes
-            all_procedural_failures.extend(garrison_failures)
-            print(f"  -> Garrison pass: {garrison_changes} changes, {len(garrison_failures)} failures")
+            total_procedural_changes += levy_changes
+            all_procedural_failures.extend(levy_failures)
+            print(f"  -> Levy pass: {levy_changes} changes, {len(levy_failures)} failures")
         except Exception as e:
-            print(f"  -> ERROR: Exception during garrison pass: {e}")
-        perf_monitor.end_operation("Ensure Garrison Structure")
+            print(f"  -> ERROR: Exception during levy pass: {e}")
+        perf_monitor.end_operation("Ensure Levy Structure")
+
+        # Run garrison structure on all factions (if not disabled)
+        if not no_garrison:
+            perf_monitor.start_operation("Ensure Garrison Structure")
+            try:
+                garrison_changes, garrison_failures = processing_passes.ensure_garrison_structure(
+                    root, unit_categories, screen_name_to_faction_key_map, faction_key_to_units_map, template_faction_unit_pool,
+                    faction_to_subculture_map, subculture_to_factions_map, faction_key_to_screen_name_map, culture_to_faction_map,
+                    unit_to_class_map, general_units, unit_to_training_level, tier, unit_to_tier_map, excluded_units_set,
+                    faction_pool_cache, faction_to_heritage_map, heritage_to_factions_map, faction_to_heritages_map,
+                    destructive_on_failure=True, faction_to_json_map=faction_to_json_map, all_units=all_units,
+                    faction_culture_map=faction_culture_map, is_submod_mode=is_submod_mode, factions_in_main_mod=factions_in_main_mod, all_faction_elements=all_faction_elements
+                )
+                total_procedural_changes += garrison_changes
+                all_procedural_failures.extend(garrison_failures)
+                print(f"  -> Garrison pass: {garrison_changes} changes, {len(garrison_failures)} failures")
+            except Exception as e:
+                print(f"  -> ERROR: Exception during garrison pass: {e}")
+            perf_monitor.end_operation("Ensure Garrison Structure")
 
     # Add procedural changes to total
     total_changes += total_procedural_changes
@@ -918,6 +943,14 @@ def format_factions_xml_only(factions_xml_path, all_units, excluded_units_set, c
 
     # Get initial state for change detection
     initial_xml_string = ET.tostring(root, encoding='unicode')
+
+    # --- NEW: Determine if this is a core file and clean if not ---
+    is_core_file = is_core_factions_file(factions_xml_path, root)
+    if not is_core_file:
+        print(f"\nIdentified '{os.path.basename(factions_xml_path)}' as an ADD-ON file. Removing non-compliant core tags.")
+        removed_core_tags = faction_xml_utils.remove_core_tags_from_addon_file(root)
+        if removed_core_tags > 0:
+            print(f"  -> Removed {removed_core_tags} non-compliant core unit tags (General, Knights, Levies, Garrison).")
 
     # --- Run Cleaning and Formatting Passes ---
     print("\nRunning initial XML cleaning pass...")
@@ -1619,6 +1652,23 @@ def main():
 
     if run_fix:
         print("\n--- Starting Roster Fixing Pass ---")
+        # --- NEW: Determine if this is a core file ---
+        try:
+            _, temp_root = _parse_and_recover_factions_xml(args.factions_xml_path)
+            is_core_file = is_core_factions_file(args.factions_xml_path, temp_root)
+            if is_core_file:
+                print(f"\nIdentified '{os.path.basename(args.factions_xml_path)}' as a CORE file. All unit types will be processed.")
+            else:
+                print(f"\nIdentified '{os.path.basename(args.factions_xml_path)}' as an ADD-ON file. Only MenAtArm tags will be processed.")
+                # --- NEW: Remove non-compliant tags from add-on files ---
+                removed_core_tags = faction_xml_utils.remove_core_tags_from_addon_file(temp_root)
+                if removed_core_tags > 0:
+                    print(f"  -> Removed {removed_core_tags} non-compliant core unit tags (General, Knights, Levies, Garrison) from add-on file.")
+                    total_changes += removed_core_tags
+        except (ET.ParseError, FileNotFoundError):
+            # Error will be handled properly inside process_units_xml, assume core for now to avoid crash
+            is_core_file = True
+
         fix_changes, tree, root = process_units_xml(
             args.factions_xml_path, categorized_units, all_units, general_units, unit_categories,
             faction_key_to_screen_name_map, unit_to_faction_key_map, template_faction_unit_pool,
@@ -1635,7 +1685,7 @@ def main():
             first_pass_threshold=args.first_pass_threshold, is_submod_mode=is_submod_mode,
             submod_addon_tag=args.submod_addon_tag, faction_to_json_map=faction_to_json_map,
             time_period_context=time_period_context, force_procedural_recache=args.force_procedural_recache,
-            factions_in_main_mod=factions_in_main_mod, faction_elite_units=faction_elite_units
+            is_core_file=is_core_file, factions_in_main_mod=factions_in_main_mod, faction_elite_units=faction_elite_units
         )
         total_changes += fix_changes
 
@@ -1646,11 +1696,16 @@ def main():
         else:
             if tree is None or root is None:
                 try:
-                    tree = ET.parse(args.factions_xml_path)
-                    root = tree.getroot()
-                except ET.ParseError as e:
+                    tree, root = _parse_and_recover_factions_xml(args.factions_xml_path)
+                except (ET.ParseError, FileNotFoundError) as e:
                     print(f"Error parsing XML file {args.factions_xml_path} for review: {e}. Aborting review.")
                     raise
+
+            # --- NEW: Determine if this is a core file for review ---
+            is_core_file_for_review = is_core_factions_file(args.factions_xml_path, root)
+            if not is_core_file_for_review:
+                print(f"\nReviewing '{os.path.basename(args.factions_xml_path)}' as an ADD-ON file. Removing and ignoring core tags.")
+                faction_xml_utils.remove_core_tags_from_addon_file(root)
 
             # Proactively remove any excluded units before review
             if excluded_units_set:
@@ -1676,7 +1731,8 @@ def main():
                 unit_stats_map=unit_stats_map, main_mod_faction_maa_map=main_mod_faction_maa_map,
                 excluded_units_set=excluded_units_set, faction_pool_cache=review_faction_pool_cache,
                 faction_to_heritage_map=faction_to_heritage_map, heritage_to_factions_map=heritage_to_factions_map,
-                faction_to_heritages_map=faction_to_heritages_map, unit_to_training_level=unit_to_training_level
+                faction_to_heritages_map=faction_to_heritages_map, unit_to_training_level=unit_to_training_level,
+                is_core_file=is_core_file_for_review
             )
             if faction_sync_count > 0:
                 print(f"Synchronized {faction_sync_count} missing tags to ensure structural integrity.")
@@ -1689,7 +1745,8 @@ def main():
                 faction_key_to_units_map, faction_to_subculture_map, subculture_to_factions_map,
                 faction_key_to_screen_name_map, culture_to_faction_map, faction_to_heritage_map,
                 heritage_to_factions_map, faction_to_heritages_map, ck3_maa_definitions,
-                all_faction_elements=all_faction_elements_review # Pass cached elements
+                all_faction_elements=all_faction_elements_review, # Pass cached elements
+                is_core_file=is_core_file_for_review
             )
             total_changes += review_changes
 
@@ -1752,7 +1809,7 @@ def main():
                 heritage_to_factions_map, faction_to_heritages_map,
                 general_units, unit_stats_map, unit_categories, unit_to_training_level,
                 faction_elite_units, ck3_maa_definitions, unit_to_class_map, unit_to_description_map,
-                categorized_units, unit_to_tier_map, all_units
+                categorized_units, unit_to_tier_map, all_units, is_core_file=is_core_file_for_review
             )
             if structural_adds > 0:
                 total_changes += structural_adds

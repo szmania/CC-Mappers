@@ -164,13 +164,16 @@ def ensure_required_tags_exist(root, faction_pool_cache, screen_name_to_faction_
                                heritage_to_factions_map, faction_to_heritages_map,
                                general_units, unit_stats_map, unit_categories, unit_to_training_level,
                                faction_elite_units, ck3_maa_definitions, unit_to_class_map, unit_to_description_map,
-                               categorized_units, unit_to_tier_map, all_units):
+                               categorized_units, unit_to_tier_map, all_units, is_core_file=True):
     """
     Ensures every faction has at least one of each required core unit tag.
     If a tag is missing, it creates one and populates it with a suitable unit.
     This is a final pre-validation step to guarantee structural integrity.
     """
-    required_tags = ['General', 'Knights', 'Levies', 'Garrison', 'MenAtArm']
+    if is_core_file:
+        required_tags = ['General', 'Knights', 'Levies', 'Garrison', 'MenAtArm']
+    else:
+        required_tags = ['MenAtArm']
     added_count = 0
 
     for faction in root.findall('Faction'):
@@ -657,6 +660,29 @@ def merge_duplicate_factions(root, screen_name_to_faction_key_map):
     if merged_count > 0:
         print(f"Merged {merged_count} duplicate factions.")
     return merged_count
+
+
+def remove_core_tags_from_addon_file(root: ET.Element) -> int:
+    """
+    Removes General, Knights, Levies, and Garrison tags from the XML tree.
+    This is used to clean 'add-on' files that should only contain MenAtArm tags.
+
+    Args:
+        root (ET.Element): The root element of the XML tree.
+
+    Returns:
+        int: The number of tags removed.
+    """
+    removed_count = 0
+    tags_to_remove = ['General', 'Knights', 'Levies', 'Garrison']
+
+    for faction_element in root.findall('Faction'):
+        for tag_name in tags_to_remove:
+            for unit_tag in list(faction_element.findall(tag_name)):
+                faction_element.remove(unit_tag)
+                removed_count += 1
+
+    return removed_count
 
 
 def remove_factions_not_in_cultures(root, culture_factions, screen_name_to_faction_key_map, all_faction_elements=None):
@@ -1561,7 +1587,7 @@ def reorganize_faction_children(root):
     return reorganized_count
 
 
-def sync_faction_structure_from_default(root, categorized_units, unit_categories, general_units, template_faction_unit_pool, all_units, tier, unit_variant_map, unit_to_tier_map, variant_to_base_map, ck3_maa_definitions, screen_name_to_faction_key_map, faction_key_to_units_map, unit_to_class_map, faction_to_subculture_map, subculture_to_factions_map, faction_key_to_screen_name_map, culture_to_faction_map=None, unit_to_description_map=None, unit_stats_map=None, main_mod_faction_maa_map=None, excluded_units_set=None, faction_pool_cache=None, faction_to_heritage_map=None, heritage_to_factions_map=None, faction_to_heritages_map=None, unit_to_training_level=None):
+def sync_faction_structure_from_default(root, categorized_units, unit_categories, general_units, template_faction_unit_pool, all_units, tier, unit_variant_map, unit_to_tier_map, variant_to_base_map, ck3_maa_definitions, screen_name_to_faction_key_map, faction_key_to_units_map, unit_to_class_map, faction_to_subculture_map, subculture_to_factions_map, faction_key_to_screen_name_map, culture_to_faction_map=None, unit_to_description_map=None, unit_stats_map=None, main_mod_faction_maa_map=None, excluded_units_set=None, faction_pool_cache=None, faction_to_heritage_map=None, heritage_to_factions_map=None, faction_to_heritages_map=None, unit_to_training_level=None, is_core_file=True):
     """
     Ensures all factions have the same basic structure (e.g., MenAtArm tags for all CK3 MAA types)
     as the 'Default' faction, or a comprehensive set if Default is empty.
@@ -1603,82 +1629,83 @@ def sync_faction_structure_from_default(root, categorized_units, unit_categories
                 ET.SubElement(faction, 'MenAtArm', type=maa_type)
                 synced_count += 1
 
-        # Sync General tags
-        current_general_ranks = {int(g.get('rank')) for g in faction.findall('General') if g.get('rank')}
-        for rank in default_general_ranks:
-            if rank not in current_general_ranks:
-                ET.SubElement(faction, 'General', rank=str(rank))
-                synced_count += 1
+        if is_core_file:
+            # Sync General tags
+            current_general_ranks = {int(g.get('rank')) for g in faction.findall('General') if g.get('rank')}
+            for rank in default_general_ranks:
+                if rank not in current_general_ranks:
+                    ET.SubElement(faction, 'General', rank=str(rank))
+                    synced_count += 1
 
-        # Sync Knights tags
-        current_knights_ranks = {int(k.get('rank')) for k in faction.findall('Knights') if k.get('rank')}
-        for rank in default_knights_ranks:
-            if rank not in current_knights_ranks:
-                ET.SubElement(faction, 'Knights', rank=str(rank))
-                synced_count += 1
+            # Sync Knights tags
+            current_knights_ranks = {int(k.get('rank')) for k in faction.findall('Knights') if k.get('rank')}
+            for rank in default_knights_ranks:
+                if rank not in current_knights_ranks:
+                    ET.SubElement(faction, 'Knights', rank=str(rank))
+                    synced_count += 1
 
-        # Sync Levies tag
-        if not faction.find('Levies'):
-            # Get the faction's working pool for levy selection
-            faction_name = faction.get('name')
-            if faction_name and faction_pool_cache is not None and unit_to_training_level is not None:
-                try:
-                    working_pool, _, _ = get_cached_faction_working_pool(
-                        faction_name, faction_pool_cache, screen_name_to_faction_key_map, faction_key_to_units_map,
-                        faction_to_subculture_map, subculture_to_factions_map, faction_key_to_screen_name_map,
-                        culture_to_faction_map, excluded_units_set, faction_to_heritage_map,
-                        heritage_to_factions_map, faction_to_heritages_map, log_prefix="(Levy Sync)",
-                        required_classes={'inf_spear', 'inf_melee', 'inf_heavy', 'inf_bow', 'inf_sling', 'inf_javelin'}, 
-                        unit_to_class_map=unit_to_class_map
-                    )
-                    
-                    # Find a suitable levy unit from the faction's pool
-                    levy_unit_key = None
-                    if working_pool:
-                        from mapper_tools import unit_selector
-                        levy_unit_key = unit_selector.find_best_levy_replacement(
-                            working_pool, unit_to_training_level, unit_categories
+            # Sync Levies tag
+            if not faction.find('Levies'):
+                # Get the faction's working pool for levy selection
+                faction_name = faction.get('name')
+                if faction_name and faction_pool_cache is not None and unit_to_training_level is not None:
+                    try:
+                        working_pool, _, _ = get_cached_faction_working_pool(
+                            faction_name, faction_pool_cache, screen_name_to_faction_key_map, faction_key_to_units_map,
+                            faction_to_subculture_map, subculture_to_factions_map, faction_key_to_screen_name_map,
+                            culture_to_faction_map, excluded_units_set, faction_to_heritage_map,
+                            heritage_to_factions_map, faction_to_heritages_map, log_prefix="(Levy Sync)",
+                            required_classes={'inf_spear', 'inf_melee', 'inf_heavy', 'inf_bow', 'inf_sling', 'inf_javelin'}, 
+                            unit_to_class_map=unit_to_class_map
                         )
-                    
-                    if levy_unit_key:
-                        ET.SubElement(faction, 'Levies', key=levy_unit_key, percentage='100', max='LEVY')
-                        print(f"  -> Added missing <Levies> tag for faction '{faction_name}' with unit '{levy_unit_key}'.")
-                        synced_count += 1
-                    else:
-                        print(f"  -> WARNING: Could not find a suitable levy unit for faction '{faction_name}'. "
-                              f"Adding <Levies> tag without key (will fail validation).")
+                        
+                        # Find a suitable levy unit from the faction's pool
+                        levy_unit_key = None
+                        if working_pool:
+                            from mapper_tools import unit_selector
+                            levy_unit_key = unit_selector.find_best_levy_replacement(
+                                working_pool, unit_to_training_level, unit_categories
+                            )
+                        
+                        if levy_unit_key:
+                            ET.SubElement(faction, 'Levies', key=levy_unit_key, percentage='100', max='LEVY')
+                            print(f"  -> Added missing <Levies> tag for faction '{faction_name}' with unit '{levy_unit_key}'.")
+                            synced_count += 1
+                        else:
+                            print(f"  -> WARNING: Could not find a suitable levy unit for faction '{faction_name}'. "
+                                  f"Adding <Levies> tag without key (will fail validation).")
+                            ET.SubElement(faction, 'Levies', percentage='100', max='LEVY')
+                            synced_count += 1
+                    except Exception as e:
+                        print(f"  -> ERROR: Failed to add <Levies> tag for faction '{faction_name}': {e}")
+                        # Fallback to creating the tag without a key
                         ET.SubElement(faction, 'Levies', percentage='100', max='LEVY')
                         synced_count += 1
-                except Exception as e:
-                    print(f"  -> ERROR: Failed to add <Levies> tag for faction '{faction_name}': {e}")
-                    # Fallback to creating the tag without a key
+                else:
+                    # Fallback when we don't have the necessary data
                     ET.SubElement(faction, 'Levies', percentage='100', max='LEVY')
                     synced_count += 1
-            else:
-                # Fallback when we don't have the necessary data
-                ET.SubElement(faction, 'Levies', percentage='100', max='LEVY')
-                synced_count += 1
 
-        # Sync Garrison tags
-        current_garrison_levels = {int(g.get('level')) for g in faction.findall('Garrison') if g.get('level')}
-        for level in default_garrison_levels:
-            if level not in current_garrison_levels:
-                ET.SubElement(faction, 'Garrison', level=str(level), percentage='100', max='LEVY')
-                synced_count += 1
+            # Sync Garrison tags
+            current_garrison_levels = {int(g.get('level')) for g in faction.findall('Garrison') if g.get('level')}
+            for level in default_garrison_levels:
+                if level not in current_garrison_levels:
+                    ET.SubElement(faction, 'Garrison', level=str(level), percentage='100', max='LEVY')
+                    synced_count += 1
 
     if synced_count > 0:
         print(f"Synced {synced_count} MenAtArm, General, Knights, Levies, and Garrison tags from Default faction.")
     return synced_count
 
 
-def validate_faction_structure(root, is_submod_mode, no_garrison):
+def validate_faction_structure(root, is_core_file, no_garrison):
     """
     Validates that each faction (except Default) has all required core unit tags.
-    In submod mode, this validation is skipped.
+    For non-core files, this validation is skipped.
     Returns (is_valid, errors) where is_valid is a boolean and errors is a list of strings.
     """
-    if is_submod_mode:
-        print("\nSkipping faction structure validation in submod mode.")
+    if not is_core_file:
+        print("\nSkipping faction structure validation for add-on file.")
         return True, []
 
     required_tags = ['General', 'Knights', 'MenAtArm', 'Levies']
