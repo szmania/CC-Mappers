@@ -239,56 +239,51 @@ def run_llm_unit_assignment_pass(llm_helper, all_llm_failures_to_process, time_p
         if len(deduplicated_requests) < len(uncached_unit_requests):
             print(f"  -> Deduplication reduced unit requests from {len(uncached_unit_requests)} to {len(deduplicated_requests)}")
 
-        # Smart batching: Group by multiple criteria for better context
-        # Group by faction culture first, then by request type
+        # Group by culture and type for logging purposes
         requests_by_culture_and_type = defaultdict(list)
         for req in deduplicated_requests:
             faction_name = req.get('faction', '')
             faction_key = screen_name_to_faction_key_map.get(faction_name)
             subculture = faction_to_subculture_map.get(faction_key) if faction_key else None
             request_type = req.get('tag_name', 'unknown')
-
-            # Create a grouping key that combines culture and type
             group_key = f"{subculture or 'no_culture'}|{request_type}"
             requests_by_culture_and_type[group_key].append(req)
 
         # --- PARALLEL UNIT REQUEST PROCESSING ---
-        # Collect all batches first
-        all_unit_batches = []
-        batch_to_group_info = {}
-        total_unit_requests = 0
+        all_requests_to_process = deduplicated_requests
+        print(f"  -> Submitting {len(all_requests_to_process)} unit requests to LLM using {llm_threads} threads...")
+
+        network_unit_results_list = []
+        group_progress = defaultdict(int)
+        
+        req_id_to_group_info = {}
         for group_key, group_requests in requests_by_culture_and_type.items():
             subculture, request_type = group_key.split('|', 1)
-            # Use larger batch size (up to 200) for better efficiency
-            batch_size = llm_batch_size
-            group_batches = [group_requests[i:i + batch_size] for i in range(0, len(group_requests), batch_size)]
-            all_unit_batches.extend(group_batches)
-            for batch in group_batches:
-                batch_to_group_info[id(batch)] = (subculture, request_type, len(group_requests)) # Store total requests for this group
-            total_unit_requests += len(group_requests)
+            for req in group_requests:
+                req_id_to_group_info[req['id']] = (subculture, request_type, len(group_requests))
 
-        print(f"  -> Submitting {total_unit_requests} unit requests to LLM in {len(all_unit_batches)} total batches using {llm_threads} threads...")
-
-        # Process all batches in parallel
-        network_unit_results = {}
-        group_progress = defaultdict(int) # Track progress per group
         with ThreadPoolExecutor(max_workers=llm_threads) as executor:
-            future_to_batch = {
-                executor.submit(llm_helper.get_batch_unit_replacements, batch, time_period_context): batch
-                for batch in all_unit_batches
+            future_to_req_id = {
+                executor.submit(llm_helper.get_unit_replacement, req, time_period_context): req['id']
+                for req in all_requests_to_process
             }
-            for future in as_completed(future_to_batch):
-                batch = future_to_batch[future]
-                batch_id = id(batch)
-                subculture, request_type, total_group_requests = batch_to_group_info[batch_id]
-                group_progress[(subculture, request_type)] += len(batch)
+            for future in as_completed(future_to_req_id):
+                req_id = future_to_req_id[future]
+                subculture, request_type, total_group_requests = req_id_to_group_info[req_id]
+                group_progress[(subculture, request_type)] += 1
                 print(f"  -> LLM unit progress for '{request_type}' (subculture '{subculture}'): {group_progress[(subculture, request_type)]}/{total_group_requests} requests completed.")
                 try:
-                    batch_results = future.result()
-                    if batch_results:
-                        network_unit_results.update(batch_results)
+                    req_id_from_future, result_data = future.result()
+                    if result_data:
+                        network_unit_results_list.append((req_id_from_future, result_data))
                 except Exception as exc:
-                    print(f"  -> ERROR: A unit batch for '{request_type}' (subculture '{subculture}') generated an exception: {exc}")
+                    print(f"  -> ERROR: A unit request for '{request_type}' (subculture '{subculture}') generated an exception: {exc}")
+        
+        network_unit_results = dict(network_unit_results_list)
+        if network_unit_results:
+            with llm_helper.cache_lock:
+                llm_helper.cache.update(network_unit_results)
+            llm_helper.save_cache()
         # --- END PARALLEL UNIT REQUEST PROCESSING ---
     final_unit_results = {**cached_unit_results, **network_unit_results}
 
@@ -313,27 +308,32 @@ def run_llm_unit_assignment_pass(llm_helper, all_llm_failures_to_process, time_p
             print(f"  -> Deduplication reduced levy requests from {len(uncached_levy_requests)} to {len(deduplicated_levy_requests)}")
 
         # --- PARALLEL LEVY REQUEST PROCESSING ---
-        # Batch all deduplicated levy requests together for maximum parallelism
-        all_levy_batches = [deduplicated_levy_requests[i:i + llm_batch_size] for i in range(0, len(deduplicated_levy_requests), llm_batch_size)]
-        print(f"  -> Submitting {len(deduplicated_levy_requests)} levy requests to LLM in {len(all_levy_batches)} batches using {llm_threads} threads...")
+        all_requests_to_process = deduplicated_levy_requests
+        print(f"  -> Submitting {len(all_requests_to_process)} levy requests to LLM using {llm_threads} threads...")
 
-        # Process all levy batches in parallel
-        network_levy_results = {}
+        network_levy_results_list = []
         processed_levy_requests = 0
         with ThreadPoolExecutor(max_workers=llm_threads) as executor:
-            future_to_batch = {
-                executor.submit(llm_helper.get_batch_levy_compositions, batch, time_period_context): batch
-                for batch in all_levy_batches
+            future_to_req_id = {
+                executor.submit(llm_helper.get_levy_composition, req, time_period_context): req['id']
+                for req in all_requests_to_process
             }
-            for future in as_completed(future_to_batch):
-                batch = future_to_batch[future]
-                processed_levy_requests += len(batch)
-                print(f"  -> LLM levy progress: {processed_levy_requests}/{len(deduplicated_levy_requests)} requests completed.")
+            for future in as_completed(future_to_req_id):
+                req_id = future_to_req_id[future]
+                processed_levy_requests += 1
+                print(f"  -> LLM levy progress: {processed_levy_requests}/{len(all_requests_to_process)} requests completed.")
                 try:
-                    network_levy_results.update(future.result())
+                    req_id_from_future, result_data = future.result()
+                    if result_data:
+                        network_levy_results_list.append((req_id_from_future, result_data))
                 except Exception as exc:
-                    # Log the exception; specific faction tracking is lost but overall progress is shown
-                    print(f"  -> ERROR: A levy batch generated an exception: {exc}")
+                    print(f"  -> ERROR: A levy request for '{req_id}' generated an exception: {exc}")
+
+        network_levy_results = dict(network_levy_results_list)
+        if network_levy_results:
+            with llm_helper.cache_lock:
+                llm_helper.cache.update(network_levy_results)
+            llm_helper.save_cache()
         # --- END PARALLEL LEVY REQUEST PROCESSING ---
     final_levy_results = {**cached_levy_results, **network_levy_results}
 
@@ -517,37 +517,34 @@ def run_llm_roster_review_pass(root, llm_helper, time_period_context, llm_thread
 
         network_llm_results = {}
         if uncached_requests:
-            # Create batches from all uncached requests for true parallel processing
-            # Dynamically adjust batch size to better utilize threads, while respecting the max batch size.
-            num_requests = len(uncached_requests)
-            # We want at least as many batches as threads, if possible, without making batches too small.
-            # A batch size of 1 is the minimum.
-            # Calculate a batch size that would create roughly `llm_threads` batches.
-            ideal_batch_size = (num_requests + llm_threads - 1) // llm_threads if llm_threads > 0 else num_requests
-
-            # Use the smaller of the user's configured max batch size and our ideal size.
-            # But don't go below 1.
-            effective_batch_size = max(1, min(llm_batch_size, ideal_batch_size))
-
-            all_batches = [uncached_requests[i:i + effective_batch_size] for i in range(0, len(uncached_requests), effective_batch_size)]
-            print(f"  -> Submitting {len(uncached_requests)} total review requests to LLM in {len(all_batches)} batches using {llm_threads} threads (effective batch size: {effective_batch_size})...")
-
+            print(f"  -> Submitting {len(uncached_requests)} total review requests to LLM using {llm_threads} threads...")
+            network_llm_results_list = []
             with ThreadPoolExecutor(max_workers=llm_threads) as executor:
-                future_to_batch = {
-                    executor.submit(llm_helper.get_batch_roster_reviews, batch, time_period_context): batch
-                    for batch in all_batches
+                future_to_req_id = {
+                    executor.submit(llm_helper.get_roster_review, req, time_period_context): req['id']
+                    for req in uncached_requests
                 }
                 processed_requests = 0
-                for future in as_completed(future_to_batch):
-                    processed_requests += len(future_to_batch[future])
+                for future in as_completed(future_to_req_id):
+                    req_id = future_to_req_id[future]
+                    processed_requests += 1
                     print(f"  -> LLM review progress: {processed_requests}/{len(uncached_requests)} requests completed.")
                     try:
-                        batch_results = future.result()
-                        if batch_results:
-                            network_llm_results.update(batch_results)
+                        req_id_from_future, result_data = future.result()
+                        if result_data:
+                            network_llm_results_list.append((req_id_from_future, result_data))
                     except Exception as exc:
-                        # It's hard to know which faction failed here, but we can log the exception
-                        print(f"  -> ERROR: A review batch generated an exception: {exc}")
+                        print(f"  -> ERROR: A review request for '{req_id}' generated an exception: {exc}")
+            
+            network_llm_results = dict(network_llm_results_list)
+            # Cache successful results
+            successful_network_results = {
+                req_id: res for req_id, res in network_llm_results.items() if res.get("status") == "success"
+            }
+            if successful_network_results:
+                with llm_helper.cache_lock:
+                    llm_helper.cache.update(successful_network_results)
+                llm_helper.save_cache()
 
         # 5. Apply corrections and collect failures for next attempt
         final_results = {**cached_results, **network_llm_results}
@@ -620,7 +617,7 @@ def run_llm_roster_review_pass(root, llm_helper, time_period_context, llm_thread
                         review_id = sanitized_review_id
 
                         valid_tags = ['General', 'Knights', 'Levies', 'Garrison', 'MenAtArm']
-                        sanitized_tag = shared_utils.find_best_fuzzy_match(tag_to_find, valid_tags, threshold=0.7)
+                        sanitized_tag, _ = shared_utils.find_best_fuzzy_match(tag_to_find, valid_tags, threshold=0.7)
                         if not sanitized_tag:
                             print(f"    -> VALIDATION FAILED: LLM returned an invalid or unrecognizable tag '{tag_to_find}'.")
                             is_transaction_valid = False
@@ -760,24 +757,30 @@ def run_llm_subculture_pass(root, llm_helper, time_period_context, llm_threads, 
 
     network_llm_results = {}
     if uncached_requests:
-        all_batches = [uncached_requests[i:i + llm_batch_size] for i in range(0, len(uncached_requests), llm_batch_size)]
-        print(f"  -> Submitting {len(uncached_requests)} subculture requests to LLM in {len(all_batches)} batches using {llm_threads} threads...")
-
+        print(f"  -> Submitting {len(uncached_requests)} subculture requests to LLM using {llm_threads} threads...")
+        network_llm_results_list = []
         with ThreadPoolExecutor(max_workers=llm_threads) as executor:
-            future_to_batch = {
-                executor.submit(llm_helper.get_batch_subculture_assignments, batch, time_period_context): batch
-                for batch in all_batches
+            future_to_req_id = {
+                executor.submit(llm_helper.get_subculture_assignment, req, time_period_context): req['id']
+                for req in uncached_requests
             }
             processed_requests = 0
-            for future in as_completed(future_to_batch):
-                processed_requests += len(future_to_batch[future])
+            for future in as_completed(future_to_req_id):
+                req_id = future_to_req_id[future]
+                processed_requests += 1
                 print(f"  -> LLM subculture progress: {processed_requests}/{len(uncached_requests)} requests completed.")
                 try:
-                    batch_results = future.result()
-                    if batch_results:
-                        network_llm_results.update(batch_results)
+                    req_id_from_future, result_data = future.result()
+                    if result_data:
+                        network_llm_results_list.append((req_id_from_future, result_data))
                 except Exception as exc:
-                    print(f"  -> ERROR: A subculture batch generated an exception: {exc}")
+                    print(f"  -> ERROR: A subculture request for '{req_id}' generated an exception: {exc}")
+
+        network_llm_results = dict(network_llm_results_list)
+        if network_llm_results:
+            with llm_helper.cache_lock:
+                llm_helper.cache.update(network_llm_results)
+            llm_helper.save_cache()
 
     # 3. Apply results
     final_results = {**cached_results, **network_llm_results}
