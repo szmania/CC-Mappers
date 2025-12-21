@@ -255,9 +255,546 @@ def run_llm_unit_assignment_pass(llm_helper, all_llm_failures_to_process, time_p
 
         network_unit_results_list = []
         group_progress = defaultdict(int)
-        
+
         req_id_to_group_info = {}
         for group_key, group_requests in requests_by_culture_and_type.items():
             subculture, request_type = group_key.split('|', 1)
             for req in group_requests:
-                req_id_to_group_info[req['id']] = (subculture, request_type, len(
+                req_id_to_group_info[req['id']] = (subculture, request_type, len(group_requests))
+
+        with ThreadPoolExecutor(max_workers=llm_threads) as executor:
+            future_to_req_id = {
+                executor.submit(llm_helper.get_unit_replacement, req, time_period_context): req['id']
+                for req in all_requests_to_process
+            }
+            for future in as_completed(future_to_req_id):
+                req_id = future_to_req_id[future]
+                subculture, request_type, total_group_requests = req_id_to_group_info[req_id]
+                group_progress[(subculture, request_type)] += 1
+                print(f"  -> LLM unit progress for '{request_type}' (subculture '{subculture}'): {group_progress[(subculture, request_type)]}/{total_group_requests} requests completed.")
+                try:
+                    req_id_from_future, result_data = future.result()
+                    if result_data:
+                        network_unit_results_list.append((req_id_from_future, result_data))
+                except Exception as exc:
+                    print(f"  -> ERROR: A unit request for '{request_type}' (subculture '{subculture}') generated an exception: {exc}")
+
+        network_unit_results = dict(network_unit_results_list)
+        if network_unit_results:
+            with llm_helper.cache_lock:
+                llm_helper.cache.update(network_unit_results)
+            llm_helper.save_cache()
+        # --- END PARALLEL UNIT REQUEST PROCESSING ---
+    final_unit_results = {**cached_unit_results, **network_unit_results}
+
+    # --- Levy Request Pipeline ---
+    cached_levy_results, uncached_levy_requests, levy_cache_modified = llm_helper.filter_requests_against_cache(levy_requests)
+    if levy_cache_modified:
+        llm_helper.save_cache()
+    print(f"  -> Levy Requests: Found {len(cached_levy_results)} valid cached results. {len(uncached_levy_requests)} requests require LLM call.")
+
+    network_levy_results = {}
+    if uncached_levy_requests and llm_helper.network_calls_enabled:
+        # Remove duplicate levy requests
+        unique_levy_requests = {}
+        for req in uncached_levy_requests:
+            # Create a unique key based on the request content to deduplicate
+            req_key = (req.get('faction'), req.get('tier'), tuple(req.get('available_levy_categories', [])))
+            if req_key not in unique_levy_requests:
+                unique_levy_requests[req_key] = req
+
+        deduplicated_levy_requests = list(unique_levy_requests.values())
+        if len(deduplicated_levy_requests) < len(uncached_levy_requests):
+            print(f"  -> Deduplication reduced levy requests from {len(uncached_levy_requests)} to {len(deduplicated_levy_requests)}")
+
+        # --- PARALLEL LEVY REQUEST PROCESSING ---
+        all_requests_to_process = deduplicated_levy_requests
+        print(f"  -> Submitting {len(all_requests_to_process)} levy requests to LLM using {llm_threads} threads...")
+
+        network_levy_results_list = []
+        processed_levy_requests = 0
+        with ThreadPoolExecutor(max_workers=llm_threads) as executor:
+            future_to_req_id = {
+                executor.submit(llm_helper.get_levy_composition, req, time_period_context): req['id']
+                for req in all_requests_to_process
+            }
+            for future in as_completed(future_to_req_id):
+                req_id = future_to_req_id[future]
+                processed_levy_requests += 1
+                print(f"  -> LLM levy progress: {processed_levy_requests}/{len(all_requests_to_process)} requests completed.")
+                try:
+                    req_id_from_future, result_data = future.result()
+                    if result_data:
+                        network_levy_results_list.append((req_id_from_future, result_data))
+                except Exception as exc:
+                    print(f"  -> ERROR: A levy request for '{req_id}' generated an exception: {exc}")
+
+        network_levy_results = dict(network_levy_results_list)
+        if network_levy_results:
+            with llm_helper.cache_lock:
+                llm_helper.cache.update(network_levy_results)
+            llm_helper.save_cache()
+        # --- END PARALLEL LEVY REQUEST PROCESSING ---
+    final_levy_results = {**cached_levy_results, **network_levy_results}
+
+    # 4. Apply results and collect final failures
+    all_results = {**final_unit_results, **final_levy_results}
+    all_requests = unit_requests + levy_requests
+    processed_req_ids = set(all_results.keys())
+
+    for req_id, suggestion in all_results.items():
+        req_data = element_map.get(req_id)
+        if not req_data:
+            print(f"  -> WARNING: Could not find original request data for suggestion '{req_id}'.")
+            continue
+
+        chosen_unit = suggestion.get("chosen_unit")
+        chosen_composition = suggestion.get("chosen_composition")
+
+        # Filter LLM results against excluded units
+        if chosen_unit and excluded_units_set and chosen_unit in excluded_units_set:
+            print(f"    -> WARNING: LLM suggested excluded unit '{chosen_unit}'. Skipping and treating as failure.")
+            final_failures.append(req_data)  # Add back to failures
+            continue
+
+        if chosen_unit:
+            element_to_modify = req_data.get('element')
+            if element_to_modify is not None:
+                element_to_modify.set('key', chosen_unit)
+                print(f"    -> SUCCESS: Replaced unit for '{req_id}' with '{chosen_unit}'.")
+            else:
+                faction_element = req_data['faction_element']
+                tag_name = req_data['tag_name']
+                attrs = {'key': chosen_unit}
+                if req_data.get('rank'): attrs['rank'] = str(req_data['rank'])
+
+                if tag_name == 'Garrison':
+                    if 'level' in req_data:
+                        attrs['level'] = str(req_data['level'])
+                    else:
+                        attrs['level'] = '1' # Schema requires level, default to 1 if missing
+                    attrs['percentage'] = '0' # Default percentage
+                    attrs['max'] = 'LEVY' # Schema requires max
+                elif tag_name == 'Levies':
+                    attrs['percentage'] = '100' # Default percentage, will be normalized later
+                    attrs['max'] = 'LEVY' # Schema requires max
+
+                if tag_name == 'MenAtArm' and req_data.get('maa_type'):
+                    attrs['type'] = req_data['maa_type']
+
+                ET.SubElement(faction_element, tag_name, attrs)
+                print(f"    -> SUCCESS: Created missing <{tag_name}> tag for '{req_id}' and set key to '{chosen_unit}'.")
+            llm_replacements_made += 1
+        elif chosen_composition:
+            # Attach the composition to the original failure object for the low-confidence pass to use.
+            req_data['levy_composition_override'] = chosen_composition
+            final_failures.append(req_data) # Add back to failures so it can be processed by the next stage
+            print(f"    -> SUCCESS: Received levy composition for '{req_id}'. It will be applied in the next pass.")
+            llm_replacements_made += 1
+        else:
+            # LLM returned null, this is a final failure.
+            final_failures.append(req_data)
+
+    # Add back any requests that failed due to network errors etc.
+    for req in all_requests:
+        if req['id'] not in processed_req_ids:
+            final_failures.append(element_map[req['id']])
+
+    print(f"\nTotal LLM replacements made: {llm_replacements_made}.")
+    return llm_replacements_made, final_failures
+
+def run_llm_roster_review_pass(root, llm_helper, time_period_context, llm_threads, llm_batch_size,
+                                faction_pool_cache, all_units, excluded_units_set,
+                                screen_name_to_faction_key_map, faction_key_to_units_map,
+                                faction_to_subculture_map, subculture_to_factions_map, faction_key_to_screen_name_map,
+                                culture_to_faction_map, faction_to_heritage_map, heritage_to_factions_map,
+                                faction_to_heritages_map, ck3_maa_definitions, all_faction_elements=None): # Added all_faction_elements
+    """
+    Runs the LLM Roster Review pass. It gathers the current roster for each faction,
+    sends it to the LLM for thematic and cultural review, and applies the suggested corrections.
+    Includes a retry mechanism for failed requests.
+    """
+    if not llm_helper or not llm_helper.network_calls_enabled:
+        print("ERROR: LLM Roster Review requires network calls to be enabled.")
+        return 0
+
+    print("\n--- Starting LLM Roster Review Pass ---")
+
+    MAX_REVIEW_RETRIES = 3
+    total_corrections_applied = 0
+
+    # Determine which list of factions to iterate over
+    factions_to_iterate = all_faction_elements if all_faction_elements is not None else root.findall('Faction')
+
+    # 1. Inject Temporary Unique IDs
+    temp_id_counter = 0
+    tags_to_review = ['General', 'Knights', 'Levies', 'Garrison', 'MenAtArm']
+    for faction in factions_to_iterate:
+        for child in faction:
+            if child.tag in tags_to_review:
+                child.set('__review_id__', str(temp_id_counter))
+                temp_id_counter += 1
+
+    initial_review_requests = []
+    faction_element_map = {} # Maps faction name to its XML element
+
+    for faction in factions_to_iterate:
+        faction_name = faction.get('name')
+        if faction_name == "Default":
+            continue
+
+        faction_element_map[faction_name] = faction
+
+        # 1. Get the local unit pool for this faction
+        local_unit_pool, _, unfiltered_tiered_pools = faction_xml_utils.get_cached_faction_working_pool(
+            faction_name, faction_pool_cache, screen_name_to_faction_key_map, faction_key_to_units_map,
+            faction_to_subculture_map, subculture_to_factions_map, faction_key_to_screen_name_map,
+            culture_to_faction_map, excluded_units_set, faction_to_heritage_map, heritage_to_factions_map,
+            faction_to_heritages_map, log_prefix="(Roster Review)"
+        )
+
+        # 2. Build the structured roster object
+        roster = defaultdict(list)
+        for child in faction:
+            if child.tag in tags_to_review:
+                unit_key = child.get('key')
+                review_id = child.get('__review_id__') # Get the temporary ID
+                if not review_id:
+                    continue
+
+                # Simplify the LLM Request Identifier
+                identifier = {'__review_id__': review_id}
+
+                roster[child.tag].append({
+                    "current_unit": unit_key, # This will be None (json: null) if key was removed
+                    "identifier": identifier
+                })
+
+        if not roster:
+            print(f"  -> Skipping review for faction '{faction_name}' as it has no units.")
+            continue
+
+        # 3. Prepare the request
+        req_id = f"review|{faction_name}"
+        faction_key = screen_name_to_faction_key_map.get(faction_name)
+        subculture = faction_to_subculture_map.get(faction_key)
+
+        initial_review_requests.append({
+            'id': req_id,
+            'faction': faction_name,
+            'subculture': subculture,
+            'roster': roster,
+            'local_unit_pool': local_unit_pool,
+            'tiered_pools': unfiltered_tiered_pools
+        })
+
+    if not initial_review_requests:
+        print("No factions found to review.")
+        return 0
+
+    # Check threshold for roster review as well
+    if len(initial_review_requests) > MAX_LLM_FAILURES_THRESHOLD:
+        print(f"\n--- WARNING: Skipping LLM Roster Review Pass ---")
+        print(f"Number of review requests ({len(initial_review_requests)}) exceeds threshold of {MAX_LLM_FAILURES_THRESHOLD}.")
+        print("This indicates a potential configuration issue or extremely large mod.")
+        return 0
+
+    requests_to_process = list(initial_review_requests)
+
+    for attempt in range(MAX_REVIEW_RETRIES):
+        if not requests_to_process:
+            print(f"\nAll roster review requests processed successfully after {attempt} attempts.")
+            break
+
+        print(f"\n--- Running LLM Roster Review Attempt {attempt + 1}/{MAX_REVIEW_RETRIES} for {len(requests_to_process)} requests ---")
+
+        # 4. Filter against cache
+        cached_results, uncached_requests, cache_modified = llm_helper.filter_requests_against_cache(requests_to_process)
+        if cache_modified:
+            llm_helper.save_cache()
+
+        print(f"  -> Found {len(cached_results)} valid cached results. {len(uncached_requests)} requests require LLM call.")
+
+        network_llm_results = {}
+        if uncached_requests:
+            print(f"  -> Submitting {len(uncached_requests)} total review requests to LLM using {llm_threads} threads...")
+            network_llm_results_list = []
+            with ThreadPoolExecutor(max_workers=llm_threads) as executor:
+                future_to_req_id = {
+                    executor.submit(llm_helper.get_roster_review, req, time_period_context): req['id']
+                    for req in uncached_requests
+                }
+                processed_requests = 0
+                for future in as_completed(future_to_req_id):
+                    req_id = future_to_req_id[future]
+                    processed_requests += 1
+                    print(f"  -> LLM review progress: {processed_requests}/{len(uncached_requests)} requests completed.")
+                    try:
+                        req_id_from_future, result_data = future.result()
+                        if result_data:
+                            network_llm_results_list.append((req_id_from_future, result_data))
+                    except Exception as exc:
+                        print(f"  -> ERROR: A review request for '{req_id}' generated an exception: {exc}")
+
+            network_llm_results = dict(network_llm_results_list)
+            # Cache successful results
+            successful_network_results = {
+                req_id: res for req_id, res in network_llm_results.items() if res.get("status") == "success"
+            }
+            if successful_network_results:
+                with llm_helper.cache_lock:
+                    llm_helper.cache.update(successful_network_results)
+                llm_helper.save_cache()
+
+        # 5. Apply corrections and collect failures for next attempt
+        final_results = {**cached_results, **network_llm_results}
+        requests_for_next_attempt = []
+        processed_req_ids_this_attempt = set()
+
+        for req_id, result_data in final_results.items():
+            processed_req_ids_this_attempt.add(req_id)
+            faction_name = req_id.split('|')[1]
+            faction_element = faction_element_map.get(faction_name)
+            corrections = result_data.get("corrections", [])
+
+            if not faction_element:
+                print(f"  -> WARNING: Could not find faction element for '{faction_name}'. Skipping result for '{req_id}'.")
+                continue
+
+            if result_data['status'] == 'success':
+                if corrections:
+                    print(f"  -> Validating {len(corrections)} proposed corrections for faction '{faction_name}' (Attempt {attempt + 1})...")
+
+                    # --- NEW: Transactional Change Validation and Application ---
+                    validated_changes = {}  # Maps review_id -> (element_to_modify, suggested_unit, original_correction_dict, sanitized_tag)
+                    proposed_final_keys = set()
+                    is_transaction_valid = True
+
+                    # 1. Gather all review IDs that are part of this transaction
+                    all_review_ids_in_corrections = set()
+                    for c in corrections:
+                        identifier = c.get('identifier')
+                        if isinstance(identifier, dict):
+                            review_id = identifier.get('__review_id__')
+                            if review_id is not None:
+                                # Sanitize review_id to handle potential LLM malformations
+                                original_review_id = str(review_id)
+                                sanitized_review_id = re.sub(r'\D', '', original_review_id)
+                                if sanitized_review_id:
+                                    all_review_ids_in_corrections.add(sanitized_review_id)
+
+                    # 2. Populate the set of keys that will remain unchanged
+                    for child in faction_element:
+                        child_review_id = child.get('__review_id__')
+                        if child_review_id not in all_review_ids_in_corrections and child.get('key'):
+                            proposed_final_keys.add(child.get('key'))
+
+                    # 3. Validate all proposed changes against each other and against the unchanged keys
+                    for correction in corrections:
+                        # --- Start: Sanitization and validation of one correction ---
+                        tag_to_find = correction.get('tag')
+                        identifier = correction.get('identifier')
+                        current_unit_from_llm = correction.get('current_unit')
+                        suggested_unit = correction.get('suggested_unit')
+
+                        if not (tag_to_find and suggested_unit and isinstance(identifier, dict)):
+                            print(f"    -> VALIDATION FAILED: Invalid correction object received from LLM. Skipping. Data: {correction}")
+                            is_transaction_valid = False
+                            break
+
+                        review_id = identifier.get('__review_id__')
+                        if not review_id:
+                            print(f"    -> VALIDATION FAILED: Correction object missing '__review_id__'. Skipping. Data: {correction}")
+                            is_transaction_valid = False
+                            break
+
+                        original_review_id = str(review_id)
+                        sanitized_review_id = re.sub(r'\D', '', original_review_id)
+                        if not sanitized_review_id:
+                            print(f"    -> VALIDATION FAILED: Sanitized '__review_id__' is empty. Original: '{original_review_id}'")
+                            is_transaction_valid = False
+                            break
+                        review_id = sanitized_review_id
+
+                        valid_tags = ['General', 'Knights', 'Levies', 'Garrison', 'MenAtArm']
+                        sanitized_tag, _ = shared_utils.find_best_fuzzy_match(tag_to_find, valid_tags, threshold=0.7)
+                        if not sanitized_tag:
+                            print(f"    -> VALIDATION FAILED: LLM returned an invalid or unrecognizable tag '{tag_to_find}'.")
+                            is_transaction_valid = False
+                            break
+                        # --- End: Sanitization ---
+
+                        # Check for duplicates in the proposed final state
+                        if suggested_unit in proposed_final_keys:
+                            print(f"    -> VALIDATION FAILED: LLM suggested unit '{suggested_unit}' which would create a duplicate in the final roster. Rejecting all changes for this faction.")
+                            is_transaction_valid = False
+                            break
+                        proposed_final_keys.add(suggested_unit)
+
+                        element_to_modify = faction_element.find(f".//{sanitized_tag}[@__review_id__='{review_id}']")
+                        if element_to_modify is None:
+                            print(f"    -> VALIDATION FAILED: Could not find element with review_id '{review_id}' and tag '{sanitized_tag}'. Rejecting all changes.")
+                            is_transaction_valid = False
+                            break
+
+                        validated_changes[review_id] = (element_to_modify, suggested_unit, correction, sanitized_tag)
+
+                    # 4. If validation passed, apply all changes
+                    if is_transaction_valid:
+                        print(f"  -> Validation successful. Applying {len(validated_changes)} corrections for faction '{faction_name}'.")
+                        for review_id, (element_to_modify, suggested_unit, original_correction, sanitized_tag) in validated_changes.items():
+                            original_key = element_to_modify.get('key')
+                            current_unit_from_llm = original_correction.get('current_unit')
+
+                            if original_key != current_unit_from_llm:
+                                print(f"    -> WARNING: Element for ID '{review_id}' in '{faction_name}' has changed key (expected '{current_unit_from_llm}', found '{original_key}'). Applying correction anyway.")
+
+                            element_to_modify.set('key', suggested_unit)
+                            total_corrections_applied += 1
+                            print(f"    - Changed <{sanitized_tag}> (ID: {review_id}): '{original_key}' -> '{suggested_unit}'. Reason: {original_correction.get('reason', 'N/A')}")
+                    else:
+                        print(f"  -> Transaction for faction '{faction_name}' failed validation. No changes applied.")
+                    # --- END NEW ---
+                else:
+                    print(f"  -> Faction '{faction_name}' reviewed successfully, no corrections suggested (Attempt {attempt + 1}).")
+            else: # status == 'failure'
+                print(f"  -> Faction '{faction_name}' review FAILED (Attempt {attempt + 1}): {result_data.get('reason', 'No reason provided')}. Retrying...")
+                # Find the original request object to add to requests_for_next_attempt
+                original_request = next((req for req in requests_to_process if req['id'] == req_id), None)
+                if original_request:
+                    # NEW: Attach detailed invalid suggestions for the next retry attempt
+                    if result_data.get('invalid_suggestions'):
+                        original_request['retry_context'] = {'previous_errors': result_data['invalid_suggestions']}
+                    requests_for_next_attempt.append(original_request)
+                else:
+                    print(f"    -> WARNING: Original request for failed ID '{req_id}' not found in current batch. Cannot retry.")
+
+        # Identify requests that were in requests_to_process but did not appear in final_results (e.g., network errors)
+        for req in requests_to_process:
+            if req['id'] not in processed_req_ids_this_attempt:
+                print(f"  -> Faction '{req['faction']}' review FAILED at network level (Attempt {attempt + 1}). Retrying...")
+                requests_for_next_attempt.append(req)
+
+        requests_to_process = requests_for_next_attempt
+
+        if requests_to_process and attempt == MAX_REVIEW_RETRIES - 1:
+            print(f"\n--- WARNING: {len(requests_to_process)} roster review requests still failed after {MAX_REVIEW_RETRIES} attempts. ---")
+            for req in requests_to_process:
+                print(f"  - Faction '{req['faction']}' (ID: {req['id']})")
+
+    # 6. Clean Up Temporary IDs
+    print("\nCleaning up temporary '__review_id__' attributes...")
+    for elem in root.findall(".//*[@__review_id__]"):
+        del elem.attrib['__review_id__']
+    print("Temporary '__review_id__' attributes removed.")
+
+    return total_corrections_applied
+
+# NEW: LLM Subculture Assignment Pass
+def run_llm_subculture_pass(root, llm_helper, time_period_context, llm_threads, llm_batch_size,
+                            faction_to_subculture_map, subculture_to_factions_map, screen_name_to_faction_key_map,
+                            all_faction_elements=None): # Added all_faction_elements
+    """
+    Identifies factions missing subcultures, queries the LLM for assignments, and applies them.
+    """
+    if not llm_helper or not llm_helper.network_calls_enabled:
+        print("\n--- Skipping LLM Subculture Assignment Pass ---")
+        print("LLM Subculture Assignment requires network calls to be enabled.")
+        return 0
+
+    print("\n--- Starting LLM Subculture Assignment Pass ---")
+
+    subcultures_assigned_count = 0
+    subculture_requests = []
+    faction_elements_to_process = {} # Map faction_name to XML element
+
+    # Get all available subcultures from the existing map
+    all_available_subcultures = sorted(list(subculture_to_factions_map.keys()))
+    if not all_available_subcultures:
+        print("  -> WARNING: No available subcultures found in the Attila DB. LLM cannot assign subcultures.")
+        return 0
+
+    # Determine which list of factions to iterate over
+    factions_to_iterate = all_faction_elements if all_faction_elements is not None else root.findall('Faction')
+
+    # 1. Identify factions missing subcultures
+    for faction_element in factions_to_iterate:
+        faction_name = faction_element.get('name')
+        if not faction_name or faction_name == "Default":
+            continue
+
+        faction_key = screen_name_to_faction_key_map.get(faction_name)
+        if not faction_key:
+            # This faction name might be a fuzzy match, or not in the DB at all.
+            # For now, we only process factions that have a known key.
+            continue
+
+        # A subculture request is needed if the faction does not have a subculture defined in the Attila DB.
+        # We intentionally ignore any 'subculture' attribute that may already exist in the XML,
+        # as the DB and LLM cache are the sources of truth.
+        if faction_key not in faction_to_subculture_map:
+            req_id = f"subculture|{faction_name}"
+            subculture_requests.append({
+                'id': req_id,
+                'faction': faction_name,
+                'available_subcultures': all_available_subcultures,
+                'validation_pool': all_available_subcultures # For cache validation
+            })
+            faction_elements_to_process[req_id] = faction_element
+
+    if not subculture_requests:
+        print("  -> No factions found missing subcultures. Skipping LLM assignment.")
+        return 0
+
+    print(f"  -> Found {len(subculture_requests)} factions missing subcultures. Attempting LLM assignment.")
+
+    # 2. Filter requests against cache
+    cached_results, uncached_requests, cache_modified = llm_helper.filter_requests_against_cache(subculture_requests)
+    if cache_modified:
+        llm_helper.save_cache()
+
+    print(f"  -> Found {len(cached_results)} valid cached results. {len(uncached_requests)} requests require LLM call.")
+
+    network_llm_results = {}
+    if uncached_requests:
+        print(f"  -> Submitting {len(uncached_requests)} subculture requests to LLM using {llm_threads} threads...")
+        network_llm_results_list = []
+        with ThreadPoolExecutor(max_workers=llm_threads) as executor:
+            future_to_req_id = {
+                executor.submit(llm_helper.get_subculture_assignment, req, time_period_context): req['id']
+                for req in uncached_requests
+            }
+            processed_requests = 0
+            for future in as_completed(future_to_req_id):
+                req_id = future_to_req_id[future]
+                processed_requests += 1
+                print(f"  -> LLM subculture progress: {processed_requests}/{len(uncached_requests)} requests completed.")
+                try:
+                    req_id_from_future, result_data = future.result()
+                    if result_data:
+                        network_llm_results_list.append((req_id_from_future, result_data))
+                except Exception as exc:
+                    print(f"  -> ERROR: A subculture request for '{req_id}' generated an exception: {exc}")
+
+        network_llm_results = dict(network_llm_results_list)
+        if network_llm_results:
+            with llm_helper.cache_lock:
+                llm_helper.cache.update(network_llm_results)
+            llm_helper.save_cache()
+
+    # 3. Apply results
+    final_results = {**cached_results, **network_llm_results}
+
+    for req_id, result_data in final_results.items():
+        chosen_subculture = result_data.get("chosen_subculture")
+        faction_element = faction_elements_to_process.get(req_id)
+
+        if faction_element and chosen_subculture:
+            faction_element.set('subculture', chosen_subculture)
+            subcultures_assigned_count += 1
+            print(f"    -> Assigned subculture '{chosen_subculture}' to faction '{faction_element.get('name')}' via LLM.")
+        elif faction_element:
+            print(f"    -> WARNING: LLM failed to assign a valid subculture for faction '{faction_element.get('name')}' (Request ID: {req_id}).")
+
+    print(f"\nLLM Subculture Assignment Pass complete. Assigned {subcultures_assigned_count} subcultures.")
+    return subcultures_assigned_count
