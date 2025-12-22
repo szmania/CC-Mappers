@@ -1000,7 +1000,7 @@ def format_factions_xml_only(factions_xml_path, all_units, excluded_units_set, c
     # --- Final Normalization Pass ---
     print("\nRunning final normalization pass...")
     perf_monitor.start_operation("Final Normalization Pass")
-    
+
     # Remove any tags with zero percentage before normalization
     zero_percentage_removals = faction_xml_utils.remove_zero_percentage_tags(root)
     if zero_percentage_removals > 0:
@@ -1063,7 +1063,7 @@ def format_factions_xml_only(factions_xml_path, all_units, excluded_units_set, c
                 print("--- SUCCESS: Automatic fix for percentages was successful. ---")
 
         print("Levy/Garrison percentage validation passed.")
-       
+
         shared_utils.indent_xml(root)
         tree.write(factions_xml_path, encoding='utf-8', xml_declaration=True)
         print(f"Successfully formatted and saved '{factions_xml_path}'.")
@@ -1124,7 +1124,7 @@ def _get_naval_only_land_units(main_units_tsv_dir: str) -> set[str]:
     # A unit is a "naval-only land unit" if it's used as a land_unit for a naval vessel,
     # but it does not have its own primary entry as a land unit.
     naval_only_land_units = land_units_for_naval - primary_land_units
-    
+
     if naval_only_land_units:
         print(f"Identified {len(naval_only_land_units)} naval-only land units to be excluded.")
 
@@ -1895,9 +1895,9 @@ def main():
                     raise Exception("Percentage validation failed after automatic fix. XML file will not be written.")
                 else:
                     print("--- SUCCESS: Automatic fix for percentages was successful. ---")
-            
+
             print("Levy/Garrison percentage validation passed.")
-            
+
             shared_utils.indent_xml(root)
             tree.write(args.factions_xml_path, encoding='utf-8', xml_declaration=True)
             print(f"Successfully saved all changes to '{args.factions_xml_path}'.")
