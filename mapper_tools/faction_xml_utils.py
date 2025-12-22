@@ -203,7 +203,7 @@ def ensure_required_tags_exist(root, faction_pool_cache, screen_name_to_faction_
                 if tag_name == 'General':
                     # Use the more robust candidate pool function for Generals
                     from mapper_tools import unit_management
-                    general_candidate_pool = unit_management._get_candidate_pool_for_tag('General', working_pool, general_units, categorized_units, unit_categories, unit_to_training_level)
+                    general_candidate_pool = unit_management._get_candidate_pool_for_tag('General', working_pool, general_units, categorized_units, unit_categories, unit_to_training_level, unit_to_class_map=unit_to_class_map)
                     if general_candidate_pool:
                         # Filter for uniqueness after candidate selection to leverage full cultural pool
                         available_candidates = {unit for unit in general_candidate_pool if unit in available_pool}
@@ -1546,7 +1546,7 @@ def reorganize_faction_children(root):
         new_children_order = []
         for tag_name in desired_order:
             children_for_tag = grouped_children[tag_name]
-            
+
             # Sort children within each tag group by their attributes
             if tag_name in ['General', 'Knights']:
                 # Sort by rank (numeric), then by key for stability
@@ -1560,7 +1560,7 @@ def reorganize_faction_children(root):
             elif tag_name == 'Levies':
                 # Sort by key for deterministic order
                 children_for_tag.sort(key=lambda el: el.get('key', ''))
-            
+
             new_children_order.extend(children_for_tag)
             # Remove these from grouped_children to identify any unexpected tags
             if tag_name in grouped_children:
@@ -1607,7 +1607,7 @@ def sync_faction_structure_from_default(root, categorized_units, unit_categories
         print("INFO: Default faction has no MenAtArm types. Generating a comprehensive set for syncing.")
         for ck3_maa_type in ck3_maa_definitions.keys():
             default_maa_types.add(ck3_maa_type)
-    
+
     # Ensure basic ranked units and garrisons are covered if missing
     if not default_general_ranks:
         default_general_ranks.update([1, 2])
@@ -1655,10 +1655,10 @@ def sync_faction_structure_from_default(root, categorized_units, unit_categories
                             faction_to_subculture_map, subculture_to_factions_map, faction_key_to_screen_name_map,
                             culture_to_faction_map, excluded_units_set, faction_to_heritage_map,
                             heritage_to_factions_map, faction_to_heritages_map, log_prefix="(Levy Sync)",
-                            required_classes={'inf_spear', 'inf_melee', 'inf_heavy', 'inf_bow', 'inf_sling', 'inf_javelin', 'cav_melee', 'cav_missile'}, 
+                            required_classes={'inf_spr', 'inf_pik', 'inf_mel', 'inf_mis', 'cav_mel', 'cav_mis'},
                             unit_to_class_map=unit_to_class_map
                         )
-                        
+
                         # Find a suitable levy unit from the faction's pool
                         levy_unit_key = None
                         if working_pool:
@@ -1666,7 +1666,7 @@ def sync_faction_structure_from_default(root, categorized_units, unit_categories
                             levy_unit_key = unit_selector.find_best_levy_replacement(
                                 working_pool, unit_to_training_level, unit_categories
                             )
-                        
+
                         if levy_unit_key:
                             ET.SubElement(faction, 'Levies', key=levy_unit_key, percentage='100', max='LEVY')
                             print(f"  -> Added missing <Levies> tag for faction '{faction_name}' with unit '{levy_unit_key}'.")
@@ -1731,10 +1731,10 @@ def validate_faction_structure(root, is_core_file, no_garrison):
 def validate_levy_garrison_percentages(root: ET.Element) -> tuple[bool, list]:
     """
     Validates that the sum of percentages for Levies and Garrisons (per level) in each faction equals 100.
-    
+
     Args:
         root (ET.Element): The root element of the parsed Factions XML.
-        
+
     Returns:
         tuple[bool, list]: A tuple where the first element is True if all percentages are valid,
                            and the second element is a list of error messages for any invalid sums.
@@ -1756,7 +1756,7 @@ def validate_levy_garrison_percentages(root: ET.Element) -> tuple[bool, list]:
                     # This is an error state, but let's focus on the sum check.
                     # The schema validation should ideally catch invalid percentage formats.
                     # For now, treat invalid percentage as 0 for sum calculation.
-                    pass 
+                    pass
             if total_levy_percentage != 100:
                 errors.append(f"Faction '{faction_name}': Sum of Levy percentages is {total_levy_percentage}, expected 100.")
 
