@@ -704,6 +704,7 @@ def process_units_xml(units_xml_path, categorized_units, all_units, general_unit
     # NEW: Sync all MenAtArm unit tags from Default to other factions
     # This must happen BEFORE the unit assignment pipeline to ensure all MAA tags exist.
     faction_sync_count = faction_xml_utils.sync_faction_structure_from_default(root, categorized_units, unit_categories, general_units, template_faction_unit_pool, all_units, tier, unit_variant_map, unit_to_tier_map, variant_to_base_map, ck3_maa_definitions, screen_name_to_faction_key_map, faction_key_to_units_map, unit_to_class_map, faction_to_subculture_map, subculture_to_factions_map, faction_key_to_screen_name_map, culture_to_faction_map=culture_to_faction_map, unit_to_description_map=unit_to_description_map, unit_stats_map=unit_stats_map, main_mod_faction_maa_map=main_mod_faction_maa_map, excluded_units_set=excluded_units_set, faction_pool_cache=faction_pool_cache, faction_to_heritage_map=faction_to_heritage_map, heritage_to_factions_map=heritage_to_factions_map, faction_to_heritages_map=faction_to_heritages_map, unit_to_training_level=unit_to_training_level, is_core_file=is_core_file)
+    total_changes += faction_sync_count
 
     # NEW: In submod mode, remove MenAtArm tags that are already defined in the main mod.
     maa_tags_removed_from_submod = 0

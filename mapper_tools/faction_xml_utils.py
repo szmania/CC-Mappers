@@ -1597,16 +1597,10 @@ def sync_faction_structure_from_default(root, categorized_units, unit_categories
         print("WARNING: 'Default' faction not found. Cannot sync structure.")
         return 0
 
-    default_maa_types = {maa.get('type') for maa in default_faction.findall('MenAtArm') if maa.get('type')}
+    default_maa_types = set(ck3_maa_definitions.keys())
     default_general_ranks = {int(g.get('rank')) for g in default_faction.findall('General') if g.get('rank')}
     default_knights_ranks = {int(k.get('rank')) for k in default_faction.findall('Knights') if k.get('rank')}
     default_garrison_levels = {int(g.get('level')) for g in default_faction.findall('Garrison') if g.get('level')}
-
-    # If Default faction is empty, generate a comprehensive set of MAA types
-    if not default_maa_types:
-        print("INFO: Default faction has no MenAtArm types. Generating a comprehensive set for syncing.")
-        for ck3_maa_type in ck3_maa_definitions.keys():
-            default_maa_types.add(ck3_maa_type)
 
     # Ensure basic ranked units and garrisons are covered if missing
     if not default_general_ranks:
