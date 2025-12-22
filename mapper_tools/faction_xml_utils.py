@@ -1655,7 +1655,7 @@ def sync_faction_structure_from_default(root, categorized_units, unit_categories
                             faction_to_subculture_map, subculture_to_factions_map, faction_key_to_screen_name_map,
                             culture_to_faction_map, excluded_units_set, faction_to_heritage_map,
                             heritage_to_factions_map, faction_to_heritages_map, log_prefix="(Levy Sync)",
-                            required_classes={'inf_spear', 'inf_melee', 'inf_heavy', 'inf_bow', 'inf_sling', 'inf_javelin'}, 
+                            required_classes={'inf_spear', 'inf_melee', 'inf_heavy', 'inf_bow', 'inf_sling', 'inf_javelin', 'cav_melee', 'cav_missile'}, 
                             unit_to_class_map=unit_to_class_map
                         )
                         
