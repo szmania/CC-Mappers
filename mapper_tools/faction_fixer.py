@@ -765,7 +765,8 @@ def process_units_xml(units_xml_path, categorized_units, all_units, general_unit
                 all_units=all_units, unit_to_training_level=unit_to_training_level, excluded_units_set=excluded_units_set,
                 faction_to_heritage_map=faction_to_heritage_map, heritage_to_factions_map=heritage_to_factions_map,
                 faction_to_heritages_map=faction_to_heritages_map, faction_culture_map=faction_culture_map,
-                is_submod_mode=is_submod_mode, factions_in_main_mod=factions_in_main_mod, all_faction_elements=all_faction_elements
+                is_submod_mode=is_submod_mode, factions_in_main_mod=factions_in_main_mod, all_faction_elements=all_faction_elements,
+                unit_to_class_map=unit_to_class_map
             )
             total_procedural_changes += general_knight_changes
             all_procedural_failures.extend(general_knight_failures)
