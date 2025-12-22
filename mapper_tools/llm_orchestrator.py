@@ -161,8 +161,21 @@ def run_llm_unit_assignment_pass(llm_helper, all_llm_failures_to_process, time_p
     # 2. Generate requests for each failure.
     for faction_name, failures in failures_by_faction.items():
         # Get the complete, unfiltered tiered pools and log strings for this faction ONCE.
-        # The cache ensures this is a cheap operation after the first call.
-        unfiltered_tiered_pools, log_strings = faction_pool_cache.get(faction_name, ([], []))
+        # This will either retrieve from cache or generate and cache them.
+        unfiltered_tiered_pools, log_strings = faction_xml_utils.get_all_tiered_pools(
+            faction_name=faction_name,
+            faction_pool_cache=faction_pool_cache,
+            screen_name_to_faction_key_map=screen_name_to_faction_key_map,
+            faction_key_to_units_map=faction_key_to_units_map,
+            faction_to_subculture_map=faction_to_subculture_map,
+            subculture_to_factions_map=subculture_to_factions_map,
+            faction_key_to_screen_name_map=faction_key_to_screen_name_map,
+            culture_to_faction_map=culture_to_faction_map,
+            excluded_units_set=set(),  # No exclusions for unfiltered pools
+            faction_to_heritage_map=faction_to_heritage_map,
+            heritage_to_factions_map=heritage_to_factions_map,
+            faction_to_heritages_map=faction_to_heritages_map
+        )
 
         for failure_data in failures:
             # Apply global and request-specific exclusions to the tiered pools
