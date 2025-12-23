@@ -818,8 +818,8 @@ def populate_or_remove_keyless_tags(root, faction_pool_cache, screen_name_to_fac
                                         tiered_candidates.append(('Class Match', tier1_pool))
 
                                 # Tier 2: Category match
-                                attila_roles = mappings.CK3_TYPE_TO_ATTILA_ROLES.get(maa_type) or \
-                                               (mappings.CK3_TYPE_TO_ATTILA_ROLES.get(internal_type) if internal_type else [])
+                                attila_roles = mappings.CK3_TYPE_TO_ATTILA_ROLES.get(maa_type, []) or \
+                                               (mappings.CK3_TYPE_TO_ATTILA_ROLES.get(internal_type, []) if internal_type else [])
                                 tier2_pool = set()
                                 for role in attila_roles:
                                     tier2_pool.update(categorized_units.get(role, []))
@@ -1649,7 +1649,7 @@ def sync_faction_structure_from_default(root, categorized_units, unit_categories
                             faction_to_subculture_map, subculture_to_factions_map, faction_key_to_screen_name_map,
                             culture_to_faction_map, excluded_units_set, faction_to_heritage_map,
                             heritage_to_factions_map, faction_to_heritages_map, log_prefix="(Levy Sync)",
-                            required_classes={'inf_spr', 'inf_pik', 'inf_mel', 'inf_mis', 'cav_mel', 'cav_mis'},
+                            required_classes={ 'cav_mel', 'cav_mis', 'inf_mel', 'inf_mis', 'inf_pik', 'inf_spr'},
                             unit_to_class_map=unit_to_class_map
                         )
 
