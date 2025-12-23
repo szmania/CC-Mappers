@@ -1186,7 +1186,8 @@ def _fix_duplicate_levy_units_for_faction(faction_element, faction_pool_cache, s
     )
 
     # Exclude elite units from the levy pool
-    current_levy_pool = working_pool - faction_elite_units
+    faction_specific_elites = faction_elite_units.get(faction_name, set())
+    current_levy_pool = working_pool - faction_specific_elites
 
     for duplicate_levy in duplicates_to_fix:
         original_key = duplicate_levy.get('key')
