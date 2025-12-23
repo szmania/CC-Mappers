@@ -418,6 +418,7 @@ def run_low_confidence_unit_pass(root, failures, ck3_maa_definitions, unit_to_cl
             unit_to_description_map,
             tag_name,
             unit_role_description,
+            unit_to_class_map,
             rank=rank,
             level=level,
             unit_stats_map=unit_stats_map,
