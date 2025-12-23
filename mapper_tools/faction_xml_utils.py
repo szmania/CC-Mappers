@@ -209,6 +209,10 @@ def ensure_required_tags_exist(root, faction_pool_cache, screen_name_to_faction_
                         available_candidates = {unit for unit in general_candidate_pool if unit in available_pool}
                         if available_candidates:
                             new_key = unit_selector.select_best_unit_from_pool(available_candidates, rank=1, unit_stats_map=unit_stats_map)
+                        # Fallback: Any unit from the cultural pool
+                        if not new_key and available_pool:
+                            print(f"    -> PRE-VALIDATION: Could not find ideal {tag_name}. Falling back to any unit in faction's cultural pool.")
+                            new_key = unit_selector.select_best_unit_from_pool(available_pool, rank=1, unit_stats_map=unit_stats_map)
                 elif tag_name == 'Knights':
                     # Use the more robust candidate pool function for Knights
                     from mapper_tools import unit_management
@@ -218,6 +222,10 @@ def ensure_required_tags_exist(root, faction_pool_cache, screen_name_to_faction_
                         available_candidates = {unit for unit in knight_candidate_pool if unit in available_pool}
                         if available_candidates:
                             new_key = unit_selector.select_best_unit_from_pool(available_candidates, rank=1, unit_stats_map=unit_stats_map)
+                        # Fallback: Any unit from the cultural pool
+                        if not new_key and available_pool:
+                            print(f"    -> PRE-VALIDATION: Could not find ideal {tag_name}. Falling back to any unit in faction's cultural pool.")
+                            new_key = unit_selector.select_best_unit_from_pool(available_pool, rank=1, unit_stats_map=unit_stats_map)
                 elif tag_name == 'Levies':
                     faction_elites = faction_elite_units.get(faction_name, set()) if faction_elite_units else set()
                     new_key = unit_selector.find_best_levy_replacement(available_pool, unit_to_training_level, unit_categories, exclude_units=faction_elites)
@@ -236,6 +244,11 @@ def ensure_required_tags_exist(root, faction_pool_cache, screen_name_to_faction_
                             class_pool = {u for u in available_pool if unit_to_class_map.get(u) in expected_classes}
                             if class_pool:
                                 new_key = unit_selector.select_best_unit_by_tier(class_pool, unit_to_tier_map)
+
+                        # Fallback: Any unit from the cultural pool
+                        if not new_key and available_pool:
+                            print(f"    -> PRE-VALIDATION: Could not find ideal unit for MAA type '{maa_type}'. Falling back to any unit in faction's cultural pool.")
+                            new_key = unit_selector.select_best_unit_by_tier(available_pool, unit_to_tier_map)
 
                 # If no ideal unit was found, use the global fallback
                 if not new_key:
@@ -767,6 +780,12 @@ def populate_or_remove_keyless_tags(root, faction_pool_cache, screen_name_to_fac
                             new_key = unit_selector.select_best_unit_from_pool(
                                 general_pool, rank=rank_int, unit_stats_map=unit_stats_map
                             )
+                        # Fallback: Any unit from the cultural pool
+                        if not new_key and (working_pool - used_units):
+                            print(f"      -> Could not find ideal general unit. Falling back to any unit in the cultural pool.")
+                            new_key = unit_selector.select_best_unit_from_pool(
+                                working_pool - used_units, rank=rank_int, unit_stats_map=unit_stats_map
+                            )
                     elif tag_name == 'Knights':
                         knight_rank = element.get('rank')
                         try:
@@ -784,6 +803,22 @@ def populate_or_remove_keyless_tags(root, faction_pool_cache, screen_name_to_fac
                                 )
                                 if new_key:
                                     break # Use the first found suitable unit
+                        # Fallbacks: Any cavalry, then any unit from the cultural pool
+                        if not new_key:
+                            # Fallback 1: Any cavalry
+                            cav_pool = {unit for unit in working_pool if unit_to_class_map.get(unit, '').startswith('cav_')}
+                            available_cav_pool = cav_pool - used_units
+                            if available_cav_pool:
+                                print(f"      -> Could not find ideal knight unit. Falling back to any cavalry in the cultural pool.")
+                                new_key = unit_selector.select_best_unit_from_pool(
+                                    available_cav_pool, rank=rank_int, unit_stats_map=unit_stats_map
+                                )
+                            # Fallback 2: Any unit from the working pool
+                            if not new_key and (working_pool - used_units):
+                                print(f"      -> Could not find any cavalry. Falling back to any unit in the cultural pool.")
+                                new_key = unit_selector.select_best_unit_from_pool(
+                                    working_pool - used_units, rank=rank_int, unit_stats_map=unit_stats_map
+                                )
                     elif tag_name == 'Levies':
                         faction_elites = faction_elite_units.get(faction_name, set()) if faction_elite_units else set()
                         new_key = unit_selector.find_best_levy_replacement(
@@ -843,6 +878,12 @@ def populate_or_remove_keyless_tags(root, faction_pool_cache, screen_name_to_fac
                                         if new_key:
                                             # print(f"    - Found keyless MAA replacement '{new_key}' for type '{maa_type}' (Pool: {tier_name}).")
                                             break # Stop searching tiers once a unit is found
+                        # Fallback: Best-tiered unit from the cultural pool
+                        if not new_key and (working_pool - used_units):
+                            print(f"      -> Could not find ideal MAA unit for type '{maa_type}'. Falling back to best-tiered unit in the cultural pool.")
+                            new_key = unit_selector.select_best_unit_by_tier(
+                                working_pool - used_units, unit_to_tier_map, tier=None
+                            )
 
                     # If the ideal search found a unit that's already used, nullify it to trigger the fallback.
                     if new_key and new_key in used_units:
