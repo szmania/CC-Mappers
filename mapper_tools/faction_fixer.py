@@ -1614,6 +1614,11 @@ def main():
         else:
             print("Warning: Could not load any faction data from the main mod's Factions.xml.")
 
+    # --- Main Execution Logic ---
+    tree = None
+    root = None
+    total_changes = 0
+
     # --- NEW: Determine if this is a core file ---
     is_core_file = True  # Default to True in case of errors
     if run_fix or run_review:
@@ -1633,11 +1638,6 @@ def main():
             # Error will be handled properly inside process_units_xml, assume core for now to avoid crash
             print(f"\nWarning: Could not determine if '{os.path.basename(args.factions_xml_path)}' is core or add-on due to parsing error. Assuming CORE file.")
             is_core_file = True
-
-    # --- Main Execution Logic ---
-    tree = None
-    root = None
-    total_changes = 0
 
     if args.update_subcultures_only:
         if not llm_helper:
@@ -1669,23 +1669,6 @@ def main():
 
     if run_fix:
         print("\n--- Starting Roster Fixing Pass ---")
-        # --- NEW: Determine if this is a core file ---
-        try:
-            _, temp_root = _parse_and_recover_factions_xml(args.factions_xml_path)
-            is_core_file = is_core_factions_file(args.factions_xml_path, temp_root)
-            if is_core_file:
-                print(f"\nIdentified '{os.path.basename(args.factions_xml_path)}' as a CORE file. All unit types will be processed.")
-            else:
-                print(f"\nIdentified '{os.path.basename(args.factions_xml_path)}' as an ADD-ON file. Only MenAtArm tags will be processed.")
-                # --- NEW: Remove non-compliant tags from add-on files ---
-                removed_core_tags = faction_xml_utils.remove_core_tags_from_addon_file(temp_root)
-                if removed_core_tags > 0:
-                    print(f"  -> Removed {removed_core_tags} non-compliant core unit tags (General, Knights, Levies, Garrison) from add-on file.")
-                    total_changes += removed_core_tags
-        except (ET.ParseError, FileNotFoundError):
-            # Error will be handled properly inside process_units_xml, assume core for now to avoid crash
-            is_core_file = True
-
         fix_changes, tree, root = process_units_xml(
             args.factions_xml_path, categorized_units, all_units, general_units, unit_categories,
             faction_key_to_screen_name_map, unit_to_faction_key_map, template_faction_unit_pool,
