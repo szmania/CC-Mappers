@@ -1885,6 +1885,13 @@ def main():
                     print(f"Final validation: Removed {excluded_removed_in_final_check} keys for excluded units from output.")
 
     if tree and root:
+        # --- NEW: Final pass to remove duplicate MenAtArm tags ---
+        print("\nRunning final validation to remove duplicate MenAtArm tags...")
+        removed_duplicates = faction_xml_utils.remove_duplicate_men_at_arm_tags(root)
+        if removed_duplicates > 0:
+            total_changes += removed_duplicates
+        # --- END NEW ---
+
         if total_changes > 0:
             print(f"\n--- Finalizing and Saving XML File ({total_changes} total changes detected) ---")
             # Reorganize faction children to enforce order

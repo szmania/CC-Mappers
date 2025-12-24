@@ -1416,21 +1416,43 @@ def remove_core_unit_tags(root, factions_in_main_mod):
 def remove_duplicate_men_at_arm_tags(root):
     """
     Removes duplicate MenAtArm tags within each faction based on their 'type' attribute.
+    Uses a scoring system to determine which duplicate to keep.
     """
     removed_count = 0
     for faction in root.findall('Faction'):
-        seen_maa_types = set()
-        maa_tags_to_remove = []
+        maa_tags_by_type = defaultdict(list)
+        
+        # Collect all MenAtArm tags, grouping by type
         for maa in faction.findall('MenAtArm'):
             maa_type = maa.get('type')
             if maa_type:
-                if maa_type in seen_maa_types:
-                    maa_tags_to_remove.append(maa)
-                else:
-                    seen_maa_types.add(maa_type)
-        for maa in maa_tags_to_remove:
-            faction.remove(maa)
-            removed_count += 1
+                # Strip whitespace to correctly group types like "samurai " and "samurai"
+                maa_tags_by_type[maa_type.strip()].append(maa)
+
+        # For each type, find and remove duplicates, keeping the best one
+        for maa_type, maa_tags in maa_tags_by_type.items():
+            if len(maa_tags) > 1:
+                
+                def score_maa_tag(tag):
+                    score = 0
+                    if tag.get('key'): score += 10
+                    if 'max' in tag.attrib: score += 5
+                    score += len(tag.attrib)
+                    return score
+                
+                sorted_maa_tags = sorted(
+                    maa_tags, 
+                    key=lambda tag: (-score_maa_tag(tag), tag.get('key', ''))
+                )
+                
+                # Keep the best tag and remove the rest
+                best_tag = sorted_maa_tags[0]
+                for tag_to_remove in sorted_maa_tags[1:]:
+                    faction.remove(tag_to_remove)
+                    removed_count += 1
+
+    if removed_count > 0:
+        print(f"Final validation removed {removed_count} duplicate MenAtArm tags.")
     return removed_count
 
 
