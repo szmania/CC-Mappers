@@ -441,11 +441,22 @@ def _run_initial_xml_cleaning_pass(root, excluded_units_set, all_units):
         
         # First pass: collect all MenAtArm tags and remove those without 'type'
         for maa in list(faction.findall('MenAtArm')):  # Use list() to avoid modification during iteration
-            if 'type' not in maa.attrib or not maa.get('type'):
+            maa_type = maa.get('type')
+            if not maa_type:
                 faction.remove(maa)
                 invalid_maa_removed_count += 1
-            else:
-                maa_tags_by_type[maa.get('type')].append(maa)
+                continue
+                
+            clean_type = maa_type.strip()
+            if not clean_type:
+                faction.remove(maa)
+                invalid_maa_removed_count += 1
+                continue
+
+            if clean_type != maa_type:
+                maa.set('type', clean_type)
+
+            maa_tags_by_type[clean_type].append(maa)
         
         # Second pass: handle duplicates by scoring
         for maa_type, maa_tags in maa_tags_by_type.items():
@@ -1713,6 +1724,9 @@ def main():
                 except (ET.ParseError, FileNotFoundError) as e:
                     print(f"Error parsing XML file {args.factions_xml_path} for review: {e}. Aborting review.")
                     raise
+
+            print("\n--- Pre-Review Cleanup: Running initial XML cleaning pass ---")
+            _run_initial_xml_cleaning_pass(root, excluded_units_set, all_units)
 
             if not is_core_file:
                 print(f"\nReviewing '{os.path.basename(args.factions_xml_path)}' as an ADD-ON file. Removing and ignoring core tags.")
