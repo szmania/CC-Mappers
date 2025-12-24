@@ -706,12 +706,6 @@ def process_units_xml(units_xml_path, categorized_units, all_units, general_unit
     faction_sync_count = faction_xml_utils.sync_faction_structure_from_default(root, categorized_units, unit_categories, general_units, template_faction_unit_pool, all_units, tier, unit_variant_map, unit_to_tier_map, variant_to_base_map, ck3_maa_definitions, screen_name_to_faction_key_map, faction_key_to_units_map, unit_to_class_map, faction_to_subculture_map, subculture_to_factions_map, faction_key_to_screen_name_map, culture_to_faction_map=culture_to_faction_map, unit_to_description_map=unit_to_description_map, unit_stats_map=unit_stats_map, main_mod_faction_maa_map=main_mod_faction_maa_map, excluded_units_set=excluded_units_set, faction_pool_cache=faction_pool_cache, faction_to_heritage_map=faction_to_heritage_map, heritage_to_factions_map=heritage_to_factions_map, faction_to_heritages_map=faction_to_heritages_map, unit_to_training_level=unit_to_training_level, is_core_file=is_core_file)
     total_changes += faction_sync_count
 
-    # NEW: For add-on files in submod mode, remove MenAtArm tags that are already defined in the main mod.
-    maa_tags_removed_from_submod = 0
-    if is_submod_mode and not is_core_file:
-        print("\nProcessing as an add-on file: removing MenAtArm tags already present in the main mod...")
-        maa_tags_removed_from_submod = faction_xml_utils.remove_maa_tags_present_in_main_mod(root, main_mod_faction_maa_map)
-
     # --- NEW: Validate faction structure ---
     print("\nValidating faction structure...")
     is_valid, validation_errors = faction_xml_utils.validate_faction_structure(root, is_core_file, no_garrison)
@@ -1620,6 +1614,26 @@ def main():
         else:
             print("Warning: Could not load any faction data from the main mod's Factions.xml.")
 
+    # --- NEW: Determine if this is a core file ---
+    is_core_file = True  # Default to True in case of errors
+    if run_fix or run_review:
+        try:
+            _, temp_root = _parse_and_recover_factions_xml(args.factions_xml_path)
+            is_core_file = is_core_factions_file(args.factions_xml_path, temp_root)
+            if is_core_file:
+                print(f"\nIdentified '{os.path.basename(args.factions_xml_path)}' as a CORE file. All unit types will be processed.")
+            else:
+                print(f"\nIdentified '{os.path.basename(args.factions_xml_path)}' as an ADD-ON file. Only MenAtArm tags will be processed.")
+                # --- NEW: Remove non-compliant tags from add-on files ---
+                removed_core_tags = faction_xml_utils.remove_core_tags_from_addon_file(temp_root)
+                if removed_core_tags > 0:
+                    print(f"  -> Removed {removed_core_tags} non-compliant core unit tags (General, Knights, Levies, Garrison) from add-on file.")
+                    total_changes += removed_core_tags
+        except (ET.ParseError, FileNotFoundError):
+            # Error will be handled properly inside process_units_xml, assume core for now to avoid crash
+            print(f"\nWarning: Could not determine if '{os.path.basename(args.factions_xml_path)}' is core or add-on due to parsing error. Assuming CORE file.")
+            is_core_file = True
+
     # --- Main Execution Logic ---
     tree = None
     root = None
@@ -1704,9 +1718,7 @@ def main():
                     print(f"Error parsing XML file {args.factions_xml_path} for review: {e}. Aborting review.")
                     raise
 
-            # --- NEW: Determine if this is a core file for review ---
-            is_core_file_for_review = is_core_factions_file(args.factions_xml_path, root)
-            if not is_core_file_for_review:
+            if not is_core_file:
                 print(f"\nReviewing '{os.path.basename(args.factions_xml_path)}' as an ADD-ON file. Removing and ignoring core tags.")
                 faction_xml_utils.remove_core_tags_from_addon_file(root)
 
@@ -1735,7 +1747,7 @@ def main():
                 excluded_units_set=excluded_units_set, faction_pool_cache=review_faction_pool_cache,
                 faction_to_heritage_map=faction_to_heritage_map, heritage_to_factions_map=heritage_to_factions_map,
                 faction_to_heritages_map=faction_to_heritages_map, unit_to_training_level=unit_to_training_level,
-                is_core_file=is_core_file_for_review
+                is_core_file=is_core_file
             )
             if faction_sync_count > 0:
                 print(f"Synchronized {faction_sync_count} missing tags to ensure structural integrity.")
@@ -1749,7 +1761,7 @@ def main():
                 faction_key_to_screen_name_map, culture_to_faction_map, faction_to_heritage_map,
                 heritage_to_factions_map, faction_to_heritages_map, ck3_maa_definitions,
                 all_faction_elements=all_faction_elements_review, # Pass cached elements
-                is_core_file=is_core_file_for_review
+                is_core_file=is_core_file
             )
             total_changes += review_changes
 
@@ -1812,7 +1824,7 @@ def main():
                 heritage_to_factions_map, faction_to_heritages_map,
                 general_units, unit_stats_map, unit_categories, unit_to_training_level,
                 faction_elite_units, ck3_maa_definitions, unit_to_class_map, unit_to_description_map,
-                categorized_units, unit_to_tier_map, all_units, is_core_file=is_core_file_for_review
+                categorized_units, unit_to_tier_map, all_units, is_core_file=is_core_file
             )
             if structural_adds > 0:
                 total_changes += structural_adds
@@ -1906,6 +1918,14 @@ def main():
             print(f"Successfully saved all changes to '{args.factions_xml_path}'.")
         else:
             print("\nProcessing complete. No changes were made to the XML content.")
+
+
+    # --- Final Submod/Add-on Cleanup ---
+    if tree and root and is_submod_mode and not is_core_file:
+        print("\nFinalizing add-on file: removing MenAtArm tags already present in the main mod...")
+        maa_tags_removed_from_submod = faction_xml_utils.remove_maa_tags_present_in_main_mod(root, main_mod_faction_maa_map)
+        if maa_tags_removed_from_submod > 0:
+            total_changes += maa_tags_removed_from_submod
 
 
 if __name__ == "__main__":
