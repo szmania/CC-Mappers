@@ -1884,13 +1884,20 @@ def main():
                 if excluded_removed_in_final_check > 0:
                     print(f"Final validation: Removed {excluded_removed_in_final_check} keys for excluded units from output.")
 
-    if tree and root:
+    if tree is not None and root is not None:
         # --- NEW: Final pass to remove duplicate MenAtArm tags ---
         print("\nRunning final validation to remove duplicate MenAtArm tags...")
         removed_duplicates = faction_xml_utils.remove_duplicate_men_at_arm_tags(root)
         if removed_duplicates > 0:
             total_changes += removed_duplicates
         # --- END NEW ---
+
+        # --- Final Submod/Add-on Cleanup ---
+        if is_submod_mode and not is_core_file:
+            print("\nFinalizing add-on file: removing MenAtArm tags already present in the main mod...")
+            maa_tags_removed_from_submod = faction_xml_utils.remove_maa_tags_present_in_main_mod(root, main_mod_faction_maa_map)
+            if maa_tags_removed_from_submod > 0:
+                total_changes += maa_tags_removed_from_submod
 
         if total_changes > 0:
             print(f"\n--- Finalizing and Saving XML File ({total_changes} total changes detected) ---")
@@ -1935,14 +1942,6 @@ def main():
             print(f"Successfully saved all changes to '{args.factions_xml_path}'.")
         else:
             print("\nProcessing complete. No changes were made to the XML content.")
-
-
-    # --- Final Submod/Add-on Cleanup ---
-    if tree and root and is_submod_mode and not is_core_file:
-        print("\nFinalizing add-on file: removing MenAtArm tags already present in the main mod...")
-        maa_tags_removed_from_submod = faction_xml_utils.remove_maa_tags_present_in_main_mod(root, main_mod_faction_maa_map)
-        if maa_tags_removed_from_submod > 0:
-            total_changes += maa_tags_removed_from_submod
 
 
 if __name__ == "__main__":
