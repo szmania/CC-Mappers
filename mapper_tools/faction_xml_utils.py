@@ -190,6 +190,7 @@ def ensure_required_tags_exist(root, faction_pool_cache, screen_name_to_faction_
                 # This logic is a simplified version of populate_or_remove_keyless_tags, focused on creation
                 new_key = None
                 from mapper_tools import unit_selector
+                maa_type_for_fallback = None
 
                 # Get the working pool for this faction
                 working_pool, _, _ = get_cached_faction_working_pool(
@@ -236,6 +237,8 @@ def ensure_required_tags_exist(root, faction_pool_cache, screen_name_to_faction_
                     maa_type = 'heavy_infantry'
                     if 'heavy_infantry' not in ck3_maa_definitions:
                         maa_type = next(iter(ck3_maa_definitions), None)
+                    
+                    maa_type_for_fallback = maa_type
 
                     if maa_type:
                         internal_type = ck3_maa_definitions.get(maa_type)
@@ -255,8 +258,11 @@ def ensure_required_tags_exist(root, faction_pool_cache, screen_name_to_faction_
                     print(f"    -> PRE-VALIDATION: Could not find ideal unit for new <{tag_name}> in faction '{faction_name}'. Attempting global fallback.")
                     global_fallback_pool = all_units - (excluded_units_set if excluded_units_set else set()) - used_units
                     if global_fallback_pool:
-                        new_key = random.choice(list(global_fallback_pool))
-                        print(f"    -> PRE-VALIDATION: Assigned random global unit '{new_key}' as last resort.")
+                        new_key = unit_selector.select_global_fallback_unit(
+                            tag_name, global_fallback_pool, unit_to_training_level, unit_categories,
+                            unit_to_class_map, ck3_maa_definitions, maa_type=maa_type_for_fallback
+                        )
+                        print(f"    -> PRE-VALIDATION: Assigned thematic global unit '{new_key}' as last resort.")
 
                 if new_key:
                     if tag_name == 'General':
@@ -765,6 +771,7 @@ def populate_or_remove_keyless_tags(root, faction_pool_cache, screen_name_to_fac
             for element in list(faction.findall(tag_name)):
                 if 'key' not in element.attrib or not element.get('key'):
                     new_key = None
+                    maa_type = None
                     # Import unit_selector locally to avoid circular import issues
                     from mapper_tools import unit_selector
 
@@ -894,8 +901,11 @@ def populate_or_remove_keyless_tags(root, faction_pool_cache, screen_name_to_fac
                         print(f"    -> PRE-VALIDATION: Could not find ideal unit for keyless <{tag_name}> in faction '{faction_name}'. Attempting global fallback.")
                         global_fallback_pool = all_units - (excluded_units_set if excluded_units_set else set()) - used_units
                         if global_fallback_pool:
-                            new_key = random.choice(list(global_fallback_pool))
-                            print(f"    -> PRE-VALIDATION: Assigned random global unit '{new_key}' as last resort.")
+                            new_key = unit_selector.select_global_fallback_unit(
+                                tag_name, global_fallback_pool, unit_to_training_level, unit_categories,
+                                unit_to_class_map, ck3_maa_definitions, maa_type=maa_type
+                            )
+                            print(f"    -> PRE-VALIDATION: Assigned thematic global unit '{new_key}' as last resort.")
 
                     # After all attempts, if a key was found, assign it. Otherwise, log a critical failure.
                     if new_key:
