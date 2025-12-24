@@ -436,26 +436,42 @@ def _run_initial_xml_cleaning_pass(root, excluded_units_set, all_units):
 
     # Single pass over factions for structural cleaning
     for faction in root.findall('Faction'):
-        # Remove invalid MenAtArm tags (missing 'type')
-        all_maa_tags = faction.findall('MenAtArm')
-        valid_maa_tags = []
-        for maa in all_maa_tags:
+        # Remove invalid MenAtArm tags (missing 'type') and handle duplicates with scoring
+        maa_tags_by_type = defaultdict(list)
+        
+        # First pass: collect all MenAtArm tags and remove those without 'type'
+        for maa in list(faction.findall('MenAtArm')):  # Use list() to avoid modification during iteration
             if 'type' not in maa.attrib or not maa.get('type'):
                 faction.remove(maa)
                 invalid_maa_removed_count += 1
             else:
-                valid_maa_tags.append(maa)
-
-        # Remove duplicate MenAtArm tags (based on 'type')
-        seen_maa_types = set()
-        # Iterate over a copy as we are modifying the list
-        for maa in list(valid_maa_tags):
-            maa_type = maa.get('type')
-            if maa_type in seen_maa_types:
-                faction.remove(maa)
-                duplicate_maa_removed_count += 1
-            else:
-                seen_maa_types.add(maa_type)
+                maa_tags_by_type[maa.get('type')].append(maa)
+        
+        # Second pass: handle duplicates by scoring
+        for maa_type, maa_tags in maa_tags_by_type.items():
+            if len(maa_tags) > 1:
+                # Define scoring function for MenAtArm tags
+                def score_maa_tag(tag):
+                    score = 0
+                    if tag.get('key'):  # Prefer tags with a key
+                        score += 10
+                    if 'max' in tag.attrib:  # Prefer tags with max attribute
+                        score += 5
+                    # Use number of attributes as tie-breaker
+                    score += len(tag.attrib)
+                    return score
+                
+                # Sort tags by score (descending), with key as secondary criterion for deterministic behavior
+                sorted_maa_tags = sorted(
+                    maa_tags, 
+                    key=lambda tag: (-score_maa_tag(tag), tag.get('key', ''))
+                )
+                
+                # Keep the best tag and remove the rest
+                best_tag = sorted_maa_tags[0]
+                for tag_to_remove in sorted_maa_tags[1:]:
+                    faction.remove(tag_to_remove)
+                    duplicate_maa_removed_count += 1
 
     return (invalid_maa_removed_count, duplicate_maa_removed_count,
             excluded_keys_removed_count, stale_keys_removed_count, porcentage_rename_count)
