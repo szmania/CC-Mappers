@@ -1618,6 +1618,8 @@ def main():
     tree = None
     root = None
     total_changes = 0
+    run_fix = not args.llm_review_rosters_only
+    run_review = not args.fix_rosters_only
 
     # --- NEW: Determine if this is a core file ---
     is_core_file = True  # Default to True in case of errors
@@ -1629,11 +1631,6 @@ def main():
                 print(f"\nIdentified '{os.path.basename(args.factions_xml_path)}' as a CORE file. All unit types will be processed.")
             else:
                 print(f"\nIdentified '{os.path.basename(args.factions_xml_path)}' as an ADD-ON file. Only MenAtArm tags will be processed.")
-                # --- NEW: Remove non-compliant tags from add-on files ---
-                removed_core_tags = faction_xml_utils.remove_core_tags_from_addon_file(temp_root)
-                if removed_core_tags > 0:
-                    print(f"  -> Removed {removed_core_tags} non-compliant core unit tags (General, Knights, Levies, Garrison) from add-on file.")
-                    total_changes += removed_core_tags
         except (ET.ParseError, FileNotFoundError):
             # Error will be handled properly inside process_units_xml, assume core for now to avoid crash
             print(f"\nWarning: Could not determine if '{os.path.basename(args.factions_xml_path)}' is core or add-on due to parsing error. Assuming CORE file.")
