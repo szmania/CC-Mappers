@@ -14,7 +14,6 @@
       <xs:element name="Map" type="MapCoords" />
     </xs:sequence>
     <xs:attribute name="key" type="xs:string" use="required" />
-    <xs:attribute name="is_unique_settlement" type="xs:boolean" use="optional" />
     <xs:attribute name="besieger_orientations" type="xs:string" use="optional" />
     <xs:attribute name="besieged_deployment_zone_width" type="xs:decimal" use="optional" />
     <xs:attribute name="besieged_deployment_zone_height" type="xs:decimal" use="optional" />
@@ -25,7 +24,7 @@
   <xs:element name="Terrains">
     <xs:complexType>
       <xs:sequence>
-        <xs:element name="Map" minOccurs="0" maxOccurs="1">
+        <xs:element name="Map" minOccurs="1" maxOccurs="1">
           <xs:complexType>
             <xs:attribute name="name" type="xs:string" use="required" />
           </xs:complexType>
@@ -33,7 +32,7 @@
         <xs:element name="Historic_Maps" minOccurs="0" maxOccurs="1">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="Map" minOccurs="1" maxOccurs="unbounded">
+              <xs:element name="Map" minOccurs="0" maxOccurs="unbounded">
                 <xs:complexType>
                   <xs:attribute name="ck3_building_key" type="xs:string" use="required" />
                   <xs:attribute name="x" type="xs:decimal" use="required" />
@@ -48,7 +47,7 @@
         <xs:element name="Normal_Maps" minOccurs="0" maxOccurs="1">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="Terrain" minOccurs="1" maxOccurs="unbounded">
+              <xs:element name="Terrain" minOccurs="0" maxOccurs="unbounded">
                 <xs:complexType>
                   <xs:sequence>
                     <xs:element name="Map" minOccurs="1" maxOccurs="unbounded">
@@ -64,10 +63,10 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Settlement_Maps_Unique" minOccurs="0" maxOccurs="1">
+        <xs:element name="Settlement_Maps_Unique" minOccurs="1" maxOccurs="1">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="Settlement_Unique" minOccurs="1" maxOccurs="unbounded">
+              <xs:element name="Settlement_Unique" minOccurs="0" maxOccurs="unbounded">
                 <xs:complexType>
                   <xs:sequence>
                     <xs:element name="Variant" type="VariantType" />
@@ -79,10 +78,10 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Settlement_Maps" minOccurs="0" maxOccurs="1">
+        <xs:element name="Settlement_Maps" minOccurs="1" maxOccurs="1">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="Settlement" minOccurs="1" maxOccurs="unbounded">
+              <xs:element name="Settlement" minOccurs="0" maxOccurs="unbounded">
                 <xs:complexType>
                   <xs:sequence>
                     <xs:element name="Variant" type="VariantType" maxOccurs="unbounded" />
@@ -95,10 +94,10 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Siege_Engines" minOccurs="0" maxOccurs="1">
+        <xs:element name="Siege_Engines" minOccurs="1" maxOccurs="1">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="Siege_Engine" minOccurs="1" maxOccurs="unbounded">
+              <xs:element name="Siege_Engine" minOccurs="0" maxOccurs="unbounded">
                 <xs:complexType>
                   <xs:attribute name="key" type="xs:string" use="required" />
                   <xs:attribute name="type" type="xs:string" use="required" />
@@ -108,10 +107,10 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Land_Bridge_Maps" minOccurs="0" maxOccurs="1">
+        <xs:element name="Land_Bridge_Maps" minOccurs="1" maxOccurs="1">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="Land_Bridge" minOccurs="1" maxOccurs="unbounded">
+              <xs:element name="Land_Bridge" minOccurs="0" maxOccurs="unbounded">
                 <xs:complexType>
                   <xs:sequence>
                     <xs:element name="Variant" type="VariantType" />
@@ -126,10 +125,10 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Coastal_Maps" minOccurs="0" maxOccurs="1">
+        <xs:element name="Coastal_Maps" minOccurs="1" maxOccurs="1">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="Coastal" minOccurs="1" maxOccurs="unbounded">
+              <xs:element name="Coastal" minOccurs="0" maxOccurs="unbounded">
                 <xs:complexType>
                   <xs:sequence>
                     <xs:element name="Variant" type="VariantType" />
