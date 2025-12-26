@@ -27,6 +27,7 @@
     <General key="Vale_Arryn_MAA_Halberdiers" rank="1" />
     <General key="Westerlands_Brax_MAA_Crossbowmen" rank="1" />
     <General key="Westerlands_Crakehall_MAA_Halberdiers" rank="1" />
+    <General key="Westerlands_Lannister_MAA_Lance_Cavalry" rank="1" />
     <General key="Westerlands_Lefford_MAA_Swordsmen" rank="1" />
     <General key="BTW_Nights_Watch_MAA_Mounted_Swordsmen" rank="2" num_guns="0" />
     <General key="North_Hornwood_MAA_Lance_Cavalry" rank="3" num_guns="0" />
@@ -36,6 +37,7 @@
     <Knights key="Dorne_Martell_Heavy_Lancer" rank="1" />
     <Knights key="Dorne_Uller_Catapult" rank="1" />
     <Knights key="Dorne_Uller_MAA_Lance_Cavalry" rank="1" />
+    <Knights key="Dorne_Yronwood_MAA_Lance_Cavalry" rank="1" />
     <Knights key="Dorne_Yronwood_MAA_Pikemen" rank="1" />
     <Knights key="Essos_Targaryen_Catapult" rank="1" />
     <Knights key="House_Arryn_MAA_Outriders" rank="1" />
@@ -57,32 +59,31 @@
     <Knights key="Stormlands_Renly_MAA_Mounted_Swordsmen" rank="1" />
     <Knights key="Vale_Arryn_MAA_Longbowmen" rank="1" />
     <Knights key="Westerlands_Marbrand_MAA_Longbowmen" rank="1" />
-    <Levies key="House_Dragonstone_Catapult" percentage="100" max="LEVY" />
-    <Garrison key="Crownlands_Kings_Landing_Faith_Militant" level="1" percentage="4" max="LEVY" />
-    <Garrison key="Dorne_Dayne_Catapult" level="1" percentage="4" max="LEVY" />
-    <Garrison key="Dorne_Martell_MAA_Javelins" level="1" percentage="4" max="LEVY" />
-    <Garrison key="Dorne_Martell_Medium_MAA_Spears" level="1" percentage="4" max="LEVY" />
-    <Garrison key="House_Dragonstone_MAA_Outriders" level="1" percentage="4" max="LEVY" />
-    <Garrison key="House_Frey_Catapult" level="1" percentage="4" max="LEVY" />
-    <Garrison key="House_Frey_Cutthroats" level="1" percentage="4" max="LEVY" />
-    <Garrison key="House_Frey_Levy_bills" level="1" percentage="4" max="LEVY" />
-    <Garrison key="House_Frey_Milita_Crossbows_of_the_Twins" level="1" percentage="4" max="LEVY" />
-    <Garrison key="House_GreyJoy_Kraken_Guard" level="1" percentage="4" max="LEVY" />
-    <Garrison key="House_Lannister_Knights_Generic_Gen" level="1" percentage="4" max="LEVY" />
-    <Garrison key="House_Tully_MAA_Crossbowmen" level="1" percentage="4" max="LEVY" />
-    <Garrison key="House_bolton_flayers" level="1" percentage="4" max="LEVY" />
-    <Garrison key="North_Glover_MAA_Halberdiers" level="1" percentage="4" max="LEVY" />
-    <Garrison key="North_Glover_MAA_Longbowmen" level="1" percentage="4" max="LEVY" />
-    <Garrison key="North_Karstark_MAA_Swordsmen" level="1" percentage="4" max="LEVY" />
-    <Garrison key="North_Umber_MAA_Pikemen" level="1" percentage="4" max="LEVY" />
-    <Garrison key="Reach_Tarly_MAA_Mounted_Swordsmen" level="1" percentage="4" max="LEVY" />
-    <Garrison key="Reach_Tyrell_MAA_Halberdiers" level="1" percentage="4" max="LEVY" />
-    <Garrison key="Riverlands_Tully_MAA_Mounted_Swordsmen" level="1" percentage="4" max="LEVY" />
-    <Garrison key="Stormlands_Renly_MAA_Crossbowmen" level="1" percentage="4" max="LEVY" />
-    <Garrison key="Vale_Arryn_MAA_Crossbowmen" level="1" percentage="4" max="LEVY" />
-    <Garrison key="Vale_Arryn_MAA_Mounted_Swordsmen" level="1" percentage="4" max="LEVY" />
-    <Garrison key="Westerlands_Crakehall_MAA_Spearmen" level="1" percentage="4" max="LEVY" />
-    <Garrison key="Westerlands_Lannister_MAA_Billmen" level="1" percentage="4" max="LEVY" />
+    <Levies key="House_Frey_Crossbows_of_the_twins" percentage="100" max="LEVY" />
+    <Garrison key="Crownlands_Kings_Landing_Faith_Militant" level="1" percentage="2" max="LEVY" />
+    <Garrison key="Dorne_Martell_MAA_Javelins" level="1" percentage="2" max="LEVY" />
+    <Garrison key="Dorne_Martell_Medium_MAA_Spears" level="1" percentage="2" max="LEVY" />
+    <Garrison key="House_Dragonstone_MAA_Outriders" level="1" percentage="2" max="LEVY" />
+    <Garrison key="House_Frey_Cutthroats" level="1" percentage="2" max="LEVY" />
+    <Garrison key="House_Frey_Levy_bills" level="1" percentage="2" max="LEVY" />
+    <Garrison key="House_Frey_Milita_Crossbows_of_the_Twins" level="1" percentage="2" max="LEVY" />
+    <Garrison key="House_GreyJoy_Kraken_Guard" level="1" percentage="2" max="LEVY" />
+    <Garrison key="House_Lannister_Knights_Generic_Gen" level="1" percentage="2" max="LEVY" />
+    <Garrison key="House_Tully_MAA_Crossbowmen" level="1" percentage="2" max="LEVY" />
+    <Garrison key="House_bolton_flayers" level="1" percentage="2" max="LEVY" />
+    <Garrison key="North_Bolton_Catapult" level="1" percentage="51" max="LEVY" />
+    <Garrison key="North_Glover_MAA_Halberdiers" level="1" percentage="2" max="LEVY" />
+    <Garrison key="North_Glover_MAA_Longbowmen" level="1" percentage="2" max="LEVY" />
+    <Garrison key="North_Karstark_MAA_Swordsmen" level="1" percentage="2" max="LEVY" />
+    <Garrison key="North_Umber_MAA_Pikemen" level="1" percentage="2" max="LEVY" />
+    <Garrison key="Reach_Tarly_MAA_Mounted_Swordsmen" level="1" percentage="2" max="LEVY" />
+    <Garrison key="Reach_Tyrell_MAA_Halberdiers" level="1" percentage="2" max="LEVY" />
+    <Garrison key="Riverlands_Tully_MAA_Mounted_Swordsmen" level="1" percentage="2" max="LEVY" />
+    <Garrison key="Stormlands_Renly_MAA_Crossbowmen" level="1" percentage="2" max="LEVY" />
+    <Garrison key="Vale_Arryn_MAA_Crossbowmen" level="1" percentage="2" max="LEVY" />
+    <Garrison key="Vale_Arryn_MAA_Mounted_Swordsmen" level="1" percentage="3" max="LEVY" />
+    <Garrison key="Westerlands_Crakehall_MAA_Spearmen" level="1" percentage="3" max="LEVY" />
+    <Garrison key="Westerlands_Lannister_MAA_Billmen" level="1" percentage="3" max="LEVY" />
     <Garrison key="Essos_Targaryen_Dothraki_Bloodriders" level="2" percentage="25" max="LEVY" />
     <Garrison key="Essos_Targaryen_Unsullied_Pikemen" level="2" percentage="25" max="LEVY" />
     <Garrison key="Essos_Targaryen_Unsullied_Spearmen" level="2" percentage="25" max="LEVY" />
@@ -109,7 +110,7 @@
     <MenAtArm type="armored_footmen" key="BTW_Night_King_Army_Wight_Infantry" max="INFANTRY" />
     <MenAtArm type="armored_horsemen" key="Dorne_Dayne_MAA_Lance_Cavalry" max="CAVALRY" />
     <MenAtArm type="ayrudzi" key="BTW_White_Walkers" max="CAVALRY" />
-    <MenAtArm type="ballistrai" key="Vale_Royce_Catapult" siege="true" siege_engine_per_unit="1" num_guns="4" />
+    <MenAtArm type="ballistrai" key="House_Frey_Catapult" siege="true" siege_engine_per_unit="1" num_guns="5" />
     <MenAtArm type="barrow_knights" key="Dorne_Dayne_MAA_Lance_Cavalry" max="CAVALRY" />
     <MenAtArm type="battering_ram" key="House_GreyJoy_Catapult" siege="true" siege_engine_per_unit="1" num_guns="5" />
     <MenAtArm type="black_wall_chariots" key="Riverlands_Tully_Catapult" siege="true" siege_engine_per_unit="1" num_guns="4" />
@@ -168,7 +169,7 @@
     <MenAtArm type="maa_marauders" key="BTW_White_Walkers" max="CAVALRY" />
     <MenAtArm type="maa_poachers" key="North_Stark_Sworn_Spears" max="RANGED" />
     <MenAtArm type="maa_thieves" key="House_Bolton_Pikemen" max="INFANTRY" />
-    <MenAtArm type="mangonel" key="Vale_Royce_Catapult" siege="true" siege_engine_per_unit="1" num_guns="4" />
+    <MenAtArm type="mangonel" key="House_Frey_Catapult" siege="true" siege_engine_per_unit="1" num_guns="5" />
     <MenAtArm type="marcher_longbowmen" key="North_Karstark_MAA_Axemen" max="RANGED" />
     <MenAtArm type="market_guard" key="BTW_Night_King_Army_Wight_Infantry" max="INFANTRY" />
     <MenAtArm type="marsh_walker" key="House_Stark_Archers" max="INFANTRY" />
@@ -181,7 +182,7 @@
     <MenAtArm type="northern_spears" key="House_Bolton_Pikemen" max="INFANTRY" />
     <MenAtArm type="nw_rangers" key="Crownlands_Velaryon_Conscript_Swordsmen" max="RANGED" />
     <MenAtArm type="nw_trackers" key="BTW_White_Walkers" max="CAVALRY" />
-    <MenAtArm type="onager" key="Vale_Royce_Catapult" siege="true" siege_engine_per_unit="1" num_guns="4" />
+    <MenAtArm type="onager" key="House_Frey_Catapult" siege="true" siege_engine_per_unit="1" num_guns="5" />
     <MenAtArm type="ornate_helms" key="House_Bolton_Pikemen" max="INFANTRY" />
     <MenAtArm type="pass_pikes" key="House_Bolton_Pikemen" max="INFANTRY" />
     <MenAtArm type="pikemen_unit" key="House_Bolton_Pikemen" max="INFANTRY" />
@@ -206,7 +207,6 @@
     <MenAtArm type="skahazdahn_wardens" key="House_Stark_Archers" max="INFANTRY" />
     <MenAtArm type="skoutatoi" key="House_Bolton_Pikemen" max="INFANTRY" />
     <MenAtArm type="slave_legion" key="House_Stark_Archers" max="INFANTRY" />
-    <MenAtArm type="slave_legion" key="House_Lannister_levy_swords" />
     <MenAtArm type="smiths_axes" key="BTW_Night_King_Army_Wight_Infantry" max="INFANTRY" />
     <MenAtArm type="stair_guard" key="House_Bolton_Pikemen" max="INFANTRY" />
     <MenAtArm type="star_carved" key="BTW_Night_King_Army_Wight_Infantry" max="INFANTRY" />
@@ -222,7 +222,7 @@
     <MenAtArm type="tiger_cloaks" key="House_Bolton_Pikemen" max="INFANTRY" />
     <MenAtArm type="tolosi_slingers" key="House_Stark_Archers" max="RANGED" />
     <MenAtArm type="torch_bearers" key="House_GreyJoy_Catapult" siege="true" siege_engine_per_unit="1" num_guns="5" />
-    <MenAtArm type="trebuchet" key="Vale_Royce_Catapult" siege="true" siege_engine_per_unit="1" num_guns="4" />
+    <MenAtArm type="trebuchet" key="House_Frey_Catapult" siege="true" siege_engine_per_unit="1" num_guns="5" />
     <MenAtArm type="triarchs_herd" key="Crownlands_Kings_Landing_Golden_Company_Elephants" max="CAVALRY" />
     <MenAtArm type="unicorn_riders" key="BTW_White_Walkers" max="CAVALRY" />
     <MenAtArm type="unsullied" key="House_Bolton_Pikemen" max="INFANTRY" />
@@ -243,41 +243,38 @@
     <General key="BTW_Wildling_Guard_Axemen" rank="1" />
     <General key="House_GreyJoy_Mounted_Raiders_Generic_Gen" rank="1" />
     <General key="BTW_Wildling_Guard_Spearmen" rank="2" />
-    <General key="House_Arryn_Knights_Generic_Gen" rank="3" />
+    <General key="House_Lannister_Knights_Generic_Gen" rank="3" />
     <Knights key="BTW_Wildling_Guard_Axemen" rank="1" />
-    <Knights key="North_Umber_MAA_Mounted_Swordsmen" rank="1" />
-    <Levies key="Dorne_Dayne_Catapult" percentage="6" max="LEVY" />
-    <Levies key="House_Frey_Crossbows_of_the_twins" percentage="33" max="LEVY" />
-    <Levies key="House_Frey_Foot_Guards_Crossbows" percentage="7" max="LEVY" />
-    <Levies key="House_Frey_Squires" percentage="7" max="LEVY" />
-    <Levies key="Reach_Tarly_Catapult" percentage="33" max="LEVY" />
-    <Levies key="Stormlands_Renly_MAA_Swordsmen" percentage="7" max="LEVY" />
-    <Levies key="Vale_Royce_MAA_Spearmen" percentage="7" max="LEVY" />
-    <Garrison key="Dorne_Martell_Light_HA" level="1" percentage="2" max="LEVY" />
-    <Garrison key="Dorne_Martell_MAA_Spear" level="1" percentage="2" max="LEVY" />
-    <Garrison key="Dorne_Martell_MAA_Sword" level="1" percentage="2" max="LEVY" />
-    <Garrison key="Dorne_Uller_MAA_Axemen" level="1" percentage="2" max="LEVY" />
-    <Garrison key="Dorne_Uller_MAA_Longbowmen" level="1" percentage="2" max="LEVY" />
-    <Garrison key="Dorne_Yronwood_MAA_Lance_Cavalry" level="1" percentage="51" max="LEVY" />
-    <Garrison key="House_Frey_Foot_Guards" level="1" percentage="2" max="LEVY" />
-    <Garrison key="House_Lannister_levy_swords" level="1" percentage="2" max="LEVY" />
-    <Garrison key="House_Tully_MAA_Swordsmen" level="1" percentage="2" max="LEVY" />
-    <Garrison key="Iron_Islands_Greyjoy_MAA_Bowmen" level="1" percentage="2" max="LEVY" />
-    <Garrison key="Iron_Islands_Harlaw_MAA_Swordsmen" level="1" percentage="2" max="LEVY" />
-    <Garrison key="North_Bolton_MAA_Halberdiers" level="1" percentage="2" max="LEVY" />
-    <Garrison key="North_Mormont_MAA_Longbowmen" level="1" percentage="2" max="LEVY" />
-    <Garrison key="North_Stark_MAA_Halberdiers" level="1" percentage="2" max="LEVY" />
-    <Garrison key="North_Stark_MAA_Longbowmen" level="1" percentage="2" max="LEVY" />
-    <Garrison key="North_Stark_Militia_Hunters" level="1" percentage="2" max="LEVY" />
-    <Garrison key="North_Umber_MAA_Longbowmen" level="1" percentage="2" max="LEVY" />
-    <Garrison key="Reach_Tarly_MAA_Swordsmen" level="1" percentage="2" max="LEVY" />
-    <Garrison key="Riverlands_Frey_MAA_Longbowmen" level="1" percentage="2" max="LEVY" />
-    <Garrison key="Riverlands_Mallister_MAA_Lance_Cavalry" level="1" percentage="2" max="LEVY" />
-    <Garrison key="Riverlands_Tully_MAA_Spearmen" level="1" percentage="2" max="LEVY" />
-    <Garrison key="Riverlands_Tully_MAA_Swordsmen" level="1" percentage="2" max="LEVY" />
-    <Garrison key="Stormlands_Baratheon_MAA_Halberdiers" level="1" percentage="2" max="LEVY" />
-    <Garrison key="Stormlands_Renly_MAA_Crossbowmen" level="1" percentage="2" max="LEVY" />
-    <Garrison key="Vale_Royce_MAA_Pikemen" level="1" percentage="3" max="LEVY" />
+    <Knights key="North_Cerwyn_MAA_Mounted_Swordsmen" rank="1" />
+    <Levies key="House_Arryn_Light_Billmen" percentage="33" max="LEVY" />
+    <Levies key="House_Tyrell_MAA_Archers" percentage="11" max="LEVY" />
+    <Levies key="Stormlands_Renly_MAA_Crossbowmen" percentage="34" max="LEVY" />
+    <Levies key="Vale_MAA_Spear_Cav" percentage="11" max="LEVY" />
+    <Levies key="Westerlands_Crakehall_MAA_Lance_Cavalry" percentage="11" max="LEVY" />
+    <Garrison key="Dorne_Martell_Light_HA" level="1" percentage="1" max="LEVY" />
+    <Garrison key="Dorne_Martell_MAA_Spear" level="1" percentage="1" max="LEVY" />
+    <Garrison key="Dorne_Martell_MAA_Sword" level="1" percentage="1" max="LEVY" />
+    <Garrison key="Dorne_Uller_MAA_Axemen" level="1" percentage="1" max="LEVY" />
+    <Garrison key="Dorne_Uller_MAA_Longbowmen" level="1" percentage="1" max="LEVY" />
+    <Garrison key="Dorne_Yronwood_MAA_Lance_Cavalry" level="1" percentage="27" max="LEVY" />
+    <Garrison key="House_Frey_Foot_Guards" level="1" percentage="1" max="LEVY" />
+    <Garrison key="House_Lannister_levy_swords" level="1" percentage="1" max="LEVY" />
+    <Garrison key="Iron_Islands_Greyjoy_MAA_Bowmen" level="1" percentage="1" max="LEVY" />
+    <Garrison key="Iron_Islands_Harlaw_MAA_Swordsmen" level="1" percentage="1" max="LEVY" />
+    <Garrison key="North_Bolton_MAA_Halberdiers" level="1" percentage="1" max="LEVY" />
+    <Garrison key="North_Mormont_MAA_Longbowmen" level="1" percentage="1" max="LEVY" />
+    <Garrison key="North_Stark_MAA_Halberdiers" level="1" percentage="1" max="LEVY" />
+    <Garrison key="North_Stark_MAA_Longbowmen" level="1" percentage="1" max="LEVY" />
+    <Garrison key="North_Umber_MAA_Longbowmen" level="1" percentage="1" max="LEVY" />
+    <Garrison key="Reach_Tarly_MAA_Swordsmen" level="1" percentage="1" max="LEVY" />
+    <Garrison key="Riverlands_Frey_MAA_Longbowmen" level="1" percentage="1" max="LEVY" />
+    <Garrison key="Riverlands_Mallister_MAA_Lance_Cavalry" level="1" percentage="1" max="LEVY" />
+    <Garrison key="Riverlands_Tully_MAA_Spearmen" level="1" percentage="1" max="LEVY" />
+    <Garrison key="Riverlands_Tully_MAA_Swordsmen" level="1" percentage="1" max="LEVY" />
+    <Garrison key="Stormlands_Baratheon_MAA_Halberdiers" level="1" percentage="1" max="LEVY" />
+    <Garrison key="Stormlands_Renly_MAA_Crossbowmen" level="1" percentage="1" max="LEVY" />
+    <Garrison key="Vale_Royce_MAA_Pikemen" level="1" percentage="2" max="LEVY" />
+    <Garrison key="Westerlands_Brax_MAA_Lance_Cavalry" level="1" percentage="50" max="LEVY" />
     <Garrison key="House_Tully_Rangers" level="2" percentage="34" max="LEVY" />
     <Garrison key="Iron_Islands_Greyjoy_Guard_Swordsmen" level="2" percentage="33" max="LEVY" />
     <Garrison key="Reach_Tarly_MAA_Pikemen" level="2" percentage="33" max="LEVY" />
@@ -302,7 +299,7 @@
     <MenAtArm type="armored_footmen" key="BTW_Nights_Watch_MAA_Swordsmen" max="INFANTRY" />
     <MenAtArm type="armored_horsemen" key="BTW_Nights_Watch_MAA_Mounted_Swordsmen" max="CAVALRY" />
     <MenAtArm type="ayrudzi" key="Essos_Targaryen_Dothraki_Mounted_Archers" max="CAVALRY" />
-    <MenAtArm type="ballistrai" key="Vale_Royce_Catapult" siege="true" siege_engine_per_unit="1" num_guns="4" />
+    <MenAtArm type="ballistrai" key="House_Frey_Catapult" siege="true" siege_engine_per_unit="1" num_guns="5" />
     <MenAtArm type="barrow_knights" key="House_Stark_Outriders" max="CAVALRY" />
     <MenAtArm type="battering_ram" key="House_Stark_Catapult" siege="true" siege_engine_per_unit="1" num_guns="5" />
     <MenAtArm type="black_wall_chariots" key="Crownlands_Kings_Landing_Goldcloak_Mounted_Swordsmen" siege="true" num_guns="0" />
@@ -361,7 +358,7 @@
     <MenAtArm type="maa_marauders" key="House_Stark_Outriders" max="CAVALRY" />
     <MenAtArm type="maa_poachers" key="BTW_Wildling_MAA_Archers" max="RANGED" />
     <MenAtArm type="maa_thieves" key="North_Stark_MAA_Pikemen" max="INFANTRY" />
-    <MenAtArm type="mangonel" key="Vale_Royce_Catapult" siege="true" siege_engine_per_unit="1" num_guns="4" />
+    <MenAtArm type="mangonel" key="House_Frey_Catapult" siege="true" siege_engine_per_unit="1" num_guns="5" />
     <MenAtArm type="marcher_longbowmen" key="BTW_Nights_Watch_MAA_Swordsmen" max="RANGED" />
     <MenAtArm type="market_guard" key="BTW_Nights_Watch_MAA_Swordsmen" max="INFANTRY" />
     <MenAtArm type="marsh_walker" key="BTW_Wildling_Guard_Spearmen" max="INFANTRY" />
@@ -399,7 +396,6 @@
     <MenAtArm type="skahazdahn_wardens" key="BTW_Nights_Watch_MAA_Swordsmen" max="INFANTRY" />
     <MenAtArm type="skoutatoi" key="North_Stark_MAA_Pikemen" max="INFANTRY" />
     <MenAtArm type="slave_legion" key="BTW_Nights_Watch_MAA_Spearmen" max="INFANTRY" />
-    <MenAtArm type="slave_legion" key="BTW_Night_King_Army_Ancient_Wight_Infantry" />
     <MenAtArm type="smiths_axes" key="BTW_Wildling_Guard_Axemen" max="INFANTRY" />
     <MenAtArm type="stair_guard" key="North_Stark_MAA_Pikemen" max="INFANTRY" />
     <MenAtArm type="star_carved" key="BTW_Wildling_MAA_Swordsmen" max="INFANTRY" />
@@ -415,7 +411,7 @@
     <MenAtArm type="tiger_cloaks" key="House_Lannister_MAA_Pikemen" max="INFANTRY" />
     <MenAtArm type="tolosi_slingers" key="BTW_Wildling_MAA_Archers" max="RANGED" />
     <MenAtArm type="torch_bearers" key="North_Stark_Catapult" siege="true" siege_engine_per_unit="1" num_guns="4" />
-    <MenAtArm type="trebuchet" key="Vale_Royce_Catapult" siege="true" siege_engine_per_unit="1" num_guns="4" />
+    <MenAtArm type="trebuchet" key="House_Frey_Catapult" siege="true" siege_engine_per_unit="1" num_guns="5" />
     <MenAtArm type="triarchs_herd" key="Crownlands_Kings_Landing_Golden_Company_Elephants" max="CAVALRY" />
     <MenAtArm type="unicorn_riders" key="Essos_Targaryen_Dothraki_Mounted_Archers" max="CAVALRY" />
     <MenAtArm type="unsullied" key="Essos_Targaryen_Unsullied_Pikemen" max="INFANTRY" />
@@ -437,6 +433,7 @@
     <General key="Dorne_Martell_MAA_Sword" rank="1" />
     <General key="Dorne_Uller_MAA_Longbowmen" rank="1" />
     <General key="Dorne_Uller_MAA_Swordsmen" rank="1" />
+    <General key="Dorne_Yronwood_Catapult" rank="1" />
     <General key="Dorne_Yronwood_MAA_Pikemen" rank="1" />
     <General key="Essos_Targaryen_Unsullied_Pikemen" rank="1" />
     <General key="House_Crownlands_Commander_Barristan_Selmy" rank="1" />
@@ -467,6 +464,7 @@
     <Knights key="BTW_Nights_Watch_MAA_Crossbowmen" rank="1" />
     <Knights key="Dorne_Dayne_MAA_Spearmen" rank="1" />
     <Knights key="Dorne_Martell_Light_HA" rank="1" />
+    <Knights key="Dorne_Martell_Light_Pikemen" rank="1" />
     <Knights key="Dorne_Martell_MAA_Mounted_Swordsmen" rank="1" />
     <Knights key="Dorne_Uller_MAA_Halberdiers" rank="1" />
     <Knights key="Dorne_Uller_MAA_Lance_Cavalry" rank="1" />
@@ -493,40 +491,36 @@
     <Knights key="Stormlands_Renly_Stag_knights" rank="1" />
     <Knights key="Essos_Targaryen_Dothraki_Bloodriders" rank="2" />
     <Knights key="Dorne_Dayne_MAA_Lance_Cavalry" rank="3" />
-    <Levies key="Dorne_Martell_Light_Pikemen" percentage="33" max="LEVY" />
-    <Levies key="Dorne_Martell_MAA_Billmen" percentage="6" max="LEVY" />
-    <Levies key="Dorne_Martell_MAA_Mounted_Swordsmen" percentage="7" max="LEVY" />
-    <Levies key="Dorne_Martell_MAA_Sword" percentage="33" max="LEVY" />
-    <Levies key="Dorne_Martell_Royal_Spear" percentage="7" max="LEVY" />
-    <Levies key="Dorne_Uller_MAA_Longbowmen" percentage="7" max="LEVY" />
-    <Levies key="Dorne_Yronwood_MAA_Pikemen" percentage="7" max="LEVY" />
-    <Garrison key="Dorne_Dayne_MAA_Axemen" level="1" percentage="51" max="LEVY" />
-    <Garrison key="Dorne_Dayne_MAA_Mounted_Swordsmen" level="1" percentage="3" max="LEVY" />
-    <Garrison key="Dorne_Martell_MAA_Billmen" level="1" percentage="3" max="LEVY" />
-    <Garrison key="Dorne_Uller_Catapult" level="1" percentage="3" max="LEVY" />
-    <Garrison key="Dorne_Uller_MAA_Billmen" level="1" percentage="3" max="LEVY" />
-    <Garrison key="Dorne_Uller_MAA_Javelins" level="1" percentage="3" max="LEVY" />
-    <Garrison key="Dorne_Uller_MAA_Mounted_Swordsmen" level="1" percentage="3" max="LEVY" />
-    <Garrison key="Dorne_Uller_MAA_Pikemen" level="1" percentage="3" max="LEVY" />
-    <Garrison key="Dorne_Yronwood_Catapult" level="1" percentage="3" max="LEVY" />
-    <Garrison key="Dorne_Yronwood_MAA_Axemen" level="1" percentage="3" max="LEVY" />
-    <Garrison key="Dorne_Yronwood_MAA_Halberdiers" level="1" percentage="3" max="LEVY" />
-    <Garrison key="Dorne_Yronwood_MAA_Javelins" level="1" percentage="3" max="LEVY" />
-    <Garrison key="Dorne_Yronwood_MAA_Lance_Cavalry" level="1" percentage="3" max="LEVY" />
-    <Garrison key="Dorne_Yronwood_MAA_Longbowmen" level="1" percentage="3" max="LEVY" />
-    <Garrison key="Dorne_Yronwood_MAA_Spearmen" level="1" percentage="3" max="LEVY" />
-    <Garrison key="Dorne_Yronwood_MAA_Swordsmen" level="1" percentage="3" max="LEVY" />
-    <Garrison key="House_Dragonstone_MAA_Archers" level="1" percentage="2" max="LEVY" />
-    <Garrison key="Riverlands_Tully_Catapult" level="1" percentage="2" max="LEVY" />
-    <Garrison key="Dorne_Uller_MAA_Longbowmen" level="2" percentage="34" max="LEVY" />
-    <Garrison key="Essos_Targaryen_Unsullied_Spearmen" level="2" percentage="33" max="LEVY" />
-    <Garrison key="Essos_Targaryen_Unsullied_Swordsmen" level="2" percentage="33" max="LEVY" />
-    <Garrison key="Dorne_Martell_Royal_Pikemen" level="3" percentage="34" max="LEVY" />
-    <Garrison key="Dorne_Uller_MAA_Halberdiers" level="3" percentage="33" max="LEVY" />
-    <Garrison key="Essos_Targaryen_Unsullied_Pikemen" level="3" percentage="33" max="LEVY" />
-    <Garrison key="Dorne_Dayne_MAA_Swordsmen" level="4" percentage="34" max="LEVY" />
-    <Garrison key="Dorne_Martell_Medium_MAA_Sword" level="4" percentage="33" max="LEVY" />
-    <Garrison key="Dorne_Martell_Royal_Spear" level="4" percentage="33" max="LEVY" />
+    <Levies key="Dorne_Martell_Light_Javelin_MAA" percentage="33" max="LEVY" />
+    <Levies key="Dorne_Uller_Catapult" percentage="34" max="LEVY" />
+    <Levies key="Dorne_Uller_MAA_Longbowmen" percentage="11" max="LEVY" />
+    <Levies key="Dorne_Yronwood_MAA_Billmen" percentage="11" max="LEVY" />
+    <Levies key="Dorne_Yronwood_MAA_Longbowmen" percentage="11" max="LEVY" />
+    <Garrison key="Dorne_Dayne_MAA_Axemen" level="1" percentage="28" max="LEVY" />
+    <Garrison key="Dorne_Dayne_MAA_Billmen" level="1" percentage="50" max="LEVY" />
+    <Garrison key="Dorne_Dayne_MAA_Mounted_Swordsmen" level="1" percentage="1" max="LEVY" />
+    <Garrison key="Dorne_Martell_MAA_Billmen" level="1" percentage="1" max="LEVY" />
+    <Garrison key="Dorne_Uller_MAA_Billmen" level="1" percentage="1" max="LEVY" />
+    <Garrison key="Dorne_Uller_MAA_Javelins" level="1" percentage="1" max="LEVY" />
+    <Garrison key="Dorne_Uller_MAA_Mounted_Swordsmen" level="1" percentage="1" max="LEVY" />
+    <Garrison key="Dorne_Uller_MAA_Pikemen" level="1" percentage="2" max="LEVY" />
+    <Garrison key="Dorne_Yronwood_MAA_Axemen" level="1" percentage="2" max="LEVY" />
+    <Garrison key="Dorne_Yronwood_MAA_Halberdiers" level="1" percentage="2" max="LEVY" />
+    <Garrison key="Dorne_Yronwood_MAA_Javelins" level="1" percentage="2" max="LEVY" />
+    <Garrison key="Dorne_Yronwood_MAA_Lance_Cavalry" level="1" percentage="2" max="LEVY" />
+    <Garrison key="Dorne_Yronwood_MAA_Longbowmen" level="1" percentage="2" max="LEVY" />
+    <Garrison key="Dorne_Yronwood_MAA_Spearmen" level="1" percentage="2" max="LEVY" />
+    <Garrison key="Dorne_Yronwood_MAA_Swordsmen" level="1" percentage="2" max="LEVY" />
+    <Garrison key="House_Dragonstone_MAA_Archers" level="1" percentage="1" max="LEVY" />
+    <Garrison key="Dorne_Martell_Medium_MAA_Sword" level="2" percentage="34" max="LEVY" />
+    <Garrison key="Dorne_Uller_MAA_Swordsmen" level="2" percentage="33" max="LEVY" />
+    <Garrison key="Essos_Targaryen_Unsullied_Pikemen" level="2" percentage="33" max="LEVY" />
+    <Garrison key="Dorne_Martell_MAA_Pikemen" level="3" percentage="34" max="LEVY" />
+    <Garrison key="Dorne_Martell_MAA_Spear" level="3" percentage="33" max="LEVY" />
+    <Garrison key="Essos_Targaryen_Unsullied_Swordsmen" level="3" percentage="33" max="LEVY" />
+    <Garrison key="Dorne_Dayne_MAA_Javelins" level="4" percentage="34" max="LEVY" />
+    <Garrison key="Dorne_Dayne_MAA_Spearmen" level="4" percentage="33" max="LEVY" />
+    <Garrison key="Dorne_Martell_Royal_Pikemen" level="4" percentage="33" max="LEVY" />
     <MenAtArm type="accolade_maa_archers" key="Dorne_Martell_MAA_Longbowmen" max="RANGED" />
     <MenAtArm type="accolade_maa_cameliers" key="Dorne_Martell_Heavy_Lancer" max="CAVALRY" />
     <MenAtArm type="accolade_maa_crossbowers" key="Dorne_Martell_MAA_Longbowmen" max="RANGED" />
@@ -542,7 +536,7 @@
     <MenAtArm type="armored_footmen" key="Dorne_Martell_Medium_MAA_Sword" max="INFANTRY" />
     <MenAtArm type="armored_horsemen" key="Dorne_Martell_Heavy_Lancer" max="CAVALRY" />
     <MenAtArm type="ayrudzi" key="Dorne_Martell_MAA_Mounted_Archers" max="CAVALRY" />
-    <MenAtArm type="ballistrai" key="Vale_Royce_Catapult" siege="true" siege_engine_per_unit="1" num_guns="4" />
+    <MenAtArm type="ballistrai" key="House_Frey_Catapult" siege="true" siege_engine_per_unit="1" num_guns="5" />
     <MenAtArm type="barrow_knights" key="Dorne_Martell_Heavy_Lancer" max="CAVALRY" />
     <MenAtArm type="battering_ram" key="Dorne_Dayne_Catapult" siege="true" siege_engine_per_unit="1" num_guns="4" />
     <MenAtArm type="black_wall_chariots" key="Dorne_Martell_Heavy_Lancer" siege="true" num_guns="0" />
@@ -575,7 +569,7 @@
     <MenAtArm type="garden_guard" key="Dorne_Martell_Sunspear_Guards" max="INFANTRY" />
     <MenAtArm type="giant_regiment" key="Dorne_Martell_Catapult" siege="true" siege_engine_per_unit="1" num_guns="4" />
     <MenAtArm type="goldcloaks" key="Dorne_Martell_Medium_MAA_Sword" max="INFANTRY" />
-    <MenAtArm type="goldenheart_bowmen" key="Dorne_Martell_Medium_MAA_Sword" max="RANGED" />
+    <MenAtArm type="goldenheart_bowmen" key="Dorne_Yronwood_MAA_Swordsmen" max="RANGED" />
     <MenAtArm type="green_daggers" key="Dorne_Uller_MAA_Spearmen" max="INFANTRY" />
     <MenAtArm type="green_hand" key="Dorne_Martell_MAA_Lance_Cavalry" max="CAVALRY" />
     <MenAtArm type="greenblood_oars" key="Dorne_Martell_Medium_MAA_Sword" max="INFANTRY" />
@@ -601,7 +595,7 @@
     <MenAtArm type="maa_marauders" key="Dorne_Martell_MAA_Mounted_Archers" max="CAVALRY" />
     <MenAtArm type="maa_poachers" key="Dorne_Martell_Light_Javelin_MAA" max="RANGED" />
     <MenAtArm type="maa_thieves" key="Dorne_Dayne_MAA_Pikemen" max="INFANTRY" />
-    <MenAtArm type="mangonel" key="Vale_Royce_Catapult" siege="true" siege_engine_per_unit="1" num_guns="4" />
+    <MenAtArm type="mangonel" key="House_Frey_Catapult" siege="true" siege_engine_per_unit="1" num_guns="5" />
     <MenAtArm type="marcher_longbowmen" key="Dorne_Martell_MAA_Longbowmen" max="RANGED" />
     <MenAtArm type="market_guard" key="Dorne_Martell_Medium_MAA_Sword" max="INFANTRY" />
     <MenAtArm type="marsh_walker" key="Dorne_Martell_MAA_Spearmen" max="INFANTRY" />
@@ -614,7 +608,7 @@
     <MenAtArm type="northern_spears" key="Dorne_Martell_MAA_Pikemen" max="INFANTRY" />
     <MenAtArm type="nw_rangers" key="Dorne_Martell_Light_Javelin_MAA" max="RANGED" />
     <MenAtArm type="nw_trackers" key="Dorne_Martell_Light_Javelin_MAA" max="CAVALRY" />
-    <MenAtArm type="onager" key="Vale_Royce_Catapult" siege="true" siege_engine_per_unit="1" num_guns="4" />
+    <MenAtArm type="onager" key="House_Frey_Catapult" siege="true" siege_engine_per_unit="1" num_guns="5" />
     <MenAtArm type="ornate_helms" key="Dorne_Martell_Royal_Pikemen" max="INFANTRY" />
     <MenAtArm type="pass_pikes" key="Dorne_Martell_MAA_Pikemen" max="INFANTRY" />
     <MenAtArm type="pikemen_unit" key="Dorne_Martell_MAA_Pikemen" max="INFANTRY" />
@@ -639,7 +633,6 @@
     <MenAtArm type="skahazdahn_wardens" key="Dorne_Dayne_MAA_Swordsmen" max="INFANTRY" />
     <MenAtArm type="skoutatoi" key="Dorne_Martell_MAA_Pikemen" max="INFANTRY" />
     <MenAtArm type="slave_legion" key="Dorne_Martell_MAA_Sword" max="INFANTRY" />
-    <MenAtArm type="slave_legion" key="Dorne_Dayne_MAA_Billmen" />
     <MenAtArm type="smiths_axes" key="Dorne_Martell_MAA_Axemen" max="INFANTRY" />
     <MenAtArm type="stair_guard" key="Dorne_Martell_Royal_Pikemen" max="INFANTRY" />
     <MenAtArm type="star_carved" key="Dorne_Martell_Medium_MAA_Sword" max="INFANTRY" />
@@ -655,7 +648,7 @@
     <MenAtArm type="tiger_cloaks" key="Dorne_Martell_MAA_Pikemen" max="INFANTRY" />
     <MenAtArm type="tolosi_slingers" key="Dorne_Martell_MAA_Javelins" max="RANGED" />
     <MenAtArm type="torch_bearers" key="House_Martell_Catapult" siege="true" siege_engine_per_unit="1" num_guns="5" />
-    <MenAtArm type="trebuchet" key="Vale_Royce_Catapult" siege="true" siege_engine_per_unit="1" num_guns="4" />
+    <MenAtArm type="trebuchet" key="House_Frey_Catapult" siege="true" siege_engine_per_unit="1" num_guns="5" />
     <MenAtArm type="triarchs_herd" key="Crownlands_Kings_Landing_Golden_Company_Elephants" max="CAVALRY" />
     <MenAtArm type="unicorn_riders" key="Dorne_Martell_MAA_Mounted_Archers" max="CAVALRY" />
     <MenAtArm type="unsullied" key="Dorne_Martell_MAA_Pikemen" max="INFANTRY" />
@@ -695,6 +688,7 @@
     <General key="Iron_Islands_Greyjoy_MAA_Bowmen" rank="1" />
     <General key="North_Hornwood_MAA_Axemen" rank="1" />
     <General key="North_Hornwood_MAA_Longbowmen" rank="1" />
+    <General key="North_Hornwood_MAA_Spearmen" rank="1" />
     <General key="North_Karstark_Catapult" rank="1" />
     <General key="North_Stark_MAA_Pikemen" rank="1" />
     <General key="Reach_Tyrell_Catapult" rank="1" />
@@ -708,6 +702,7 @@
     <Knights key="Dorne_Martell_Light_HA" rank="1" />
     <Knights key="Dorne_Martell_MAA_Mounted_Archers" rank="1" />
     <Knights key="Dorne_Uller_MAA_Billmen" rank="1" />
+    <Knights key="Dorne_Uller_MAA_Mounted_Swordsmen" rank="1" />
     <Knights key="Dorne_Yronwood_MAA_Mounted_Swordsmen" rank="1" />
     <Knights key="Essos_Targaryen_Dothraki_Bloodriders" rank="1" />
     <Knights key="House_Dragonstone_Catapult" rank="1" />
@@ -733,45 +728,48 @@
     <Knights key="Westerlands_Marbrand_Catapult" rank="1" />
     <Knights key="Essos_Targaryen_Dothraki_Mounted_Archers" rank="2" num_guns="0" />
     <Knights key="Essos_Targaryen_Dothraki_Khalasar" rank="3" />
-    <Levies key="Dorne_Dayne_Catapult" percentage="33" max="LEVY" />
-    <Levies key="Dorne_Martell_Light_Pikemen" percentage="34" max="LEVY" />
-    <Levies key="House_GreyJoy_Mounted_Raiders" percentage="11" max="LEVY" />
-    <Levies key="Stormlands_Baratheon_MAA_Billmen" percentage="11" max="LEVY" />
-    <Levies key="Vale_Arryn_MAA_Spearmen" percentage="11" max="LEVY" />
-    <Garrison key="BTW_Nights_Watch_MAA_Mounted_Swordsmen" level="1" percentage="1" max="LEVY" />
-    <Garrison key="Dorne_Dayne_MAA_Billmen" level="1" percentage="1" max="LEVY" />
-    <Garrison key="Dorne_Yronwood_MAA_Swordsmen" level="1" percentage="1" max="LEVY" />
-    <Garrison key="House_Frey_Foot_Guards_Crossbows" level="1" percentage="1" max="LEVY" />
-    <Garrison key="House_GreyJoy_Mounted_Raiders" level="1" percentage="1" max="LEVY" />
-    <Garrison key="House_Stark_Archers" level="1" percentage="1" max="LEVY" />
-    <Garrison key="House_Tully_MAA_Archers" level="1" percentage="1" max="LEVY" />
-    <Garrison key="House_Tully_MAA_Outriders" level="1" percentage="1" max="LEVY" />
-    <Garrison key="House_Tully_Sworn_Spears_Shield" level="1" percentage="50" max="LEVY" />
-    <Garrison key="North_Cerwyn_MAA_Axemen" level="1" percentage="1" max="LEVY" />
-    <Garrison key="North_Umber_MAA_Crossbowmen" level="1" percentage="1" max="LEVY" />
-    <Garrison key="North_Umber_MAA_Lance_Cavalry" level="1" percentage="1" max="LEVY" />
-    <Garrison key="Reach_Tarly_MAA_Crossbowmen" level="1" percentage="1" max="LEVY" />
-    <Garrison key="Reach_Tyrell_MAA_Lance_Cavalry" level="1" percentage="1" max="LEVY" />
-    <Garrison key="Riverlands_Tully_Guard_Swordsmen" level="1" percentage="1" max="LEVY" />
-    <Garrison key="Riverlands_Tully_MAA_Crossbowmen" level="1" percentage="1" max="LEVY" />
-    <Garrison key="Stormlands_Dragonstone_MAA_Mounted_Swordsmen" level="1" percentage="1" max="LEVY" />
-    <Garrison key="Stormlands_Renly_MAA_Halberdiers" level="1" percentage="26" max="LEVY" />
-    <Garrison key="Vale_Arryn_MAA_Swordsmen" level="1" percentage="1" max="LEVY" />
-    <Garrison key="Vale_Royce_MAA_Mounted_Swordsmen" level="1" percentage="1" max="LEVY" />
-    <Garrison key="Vale_Royce_MAA_Swordsmen" level="1" percentage="1" max="LEVY" />
-    <Garrison key="Westerlands_Brax_MAA_Mounted_Swordsmen" level="1" percentage="1" max="LEVY" />
-    <Garrison key="Westerlands_Crakehall_MAA_Axemen" level="1" percentage="1" max="LEVY" />
-    <Garrison key="Westerlands_Crakehall_MAA_Mounted_Swordsmen" level="1" percentage="1" max="LEVY" />
-    <Garrison key="Westerlands_Lannister_Guard_Spearmen" level="1" percentage="2" max="LEVY" />
-    <Garrison key="BTW_Night_King_Army_Wight_Infantry" level="2" percentage="34" max="LEVY" />
-    <Garrison key="House_Tyrell_MAA_Archers" level="2" percentage="33" max="LEVY" />
-    <Garrison key="North_Glover_MAA_Swordsmen" level="2" percentage="33" max="LEVY" />
+    <Levies key="Dorne_Martell_MAA_Longbowmen" percentage="6" max="LEVY" />
+    <Levies key="House_GreyJoy_Mounted_Raiders" percentage="7" max="LEVY" />
+    <Levies key="House_Lannister_MAA_Pikemen" percentage="7" max="LEVY" />
+    <Levies key="House_Tully_Sworn_Shield" percentage="7" max="LEVY" />
+    <Levies key="House_bolton_knives_lord" percentage="33" max="LEVY" />
+    <Levies key="Riverlands_Mallister_Catapult" percentage="33" max="LEVY" />
+    <Levies key="Riverlands_Tully_MAA_Pikemen" percentage="7" max="LEVY" />
+    <Garrison key="BTW_Nights_Watch_MAA_Mounted_Swordsmen" level="1" percentage="4" max="LEVY" />
+    <Garrison key="Dorne_Dayne_MAA_Billmen" level="1" percentage="4" max="LEVY" />
+    <Garrison key="Dorne_Yronwood_MAA_Spearmen" level="1" percentage="4" max="LEVY" />
+    <Garrison key="Dorne_Yronwood_MAA_Swordsmen" level="1" percentage="4" max="LEVY" />
+    <Garrison key="House_Frey_Foot_Guards_Crossbows" level="1" percentage="4" max="LEVY" />
+    <Garrison key="House_GreyJoy_Mounted_Raiders" level="1" percentage="4" max="LEVY" />
+    <Garrison key="House_Stark_Archers" level="1" percentage="4" max="LEVY" />
+    <Garrison key="House_Tully_MAA_Archers" level="1" percentage="4" max="LEVY" />
+    <Garrison key="House_Tully_MAA_Outriders" level="1" percentage="4" max="LEVY" />
+    <Garrison key="House_Tully_Sworn_Spears_Shield" level="1" percentage="4" max="LEVY" />
+    <Garrison key="North_Cerwyn_MAA_Axemen" level="1" percentage="4" max="LEVY" />
+    <Garrison key="North_Umber_MAA_Crossbowmen" level="1" percentage="4" max="LEVY" />
+    <Garrison key="North_Umber_MAA_Lance_Cavalry" level="1" percentage="4" max="LEVY" />
+    <Garrison key="Reach_Tarly_MAA_Crossbowmen" level="1" percentage="4" max="LEVY" />
+    <Garrison key="Reach_Tyrell_MAA_Lance_Cavalry" level="1" percentage="4" max="LEVY" />
+    <Garrison key="Riverlands_Tully_Guard_Swordsmen" level="1" percentage="4" max="LEVY" />
+    <Garrison key="Riverlands_Tully_MAA_Crossbowmen" level="1" percentage="4" max="LEVY" />
+    <Garrison key="Stormlands_Dragonstone_MAA_Mounted_Swordsmen" level="1" percentage="4" max="LEVY" />
+    <Garrison key="Stormlands_Renly_MAA_Halberdiers" level="1" percentage="4" max="LEVY" />
+    <Garrison key="Vale_Arryn_MAA_Swordsmen" level="1" percentage="4" max="LEVY" />
+    <Garrison key="Vale_Royce_MAA_Mounted_Swordsmen" level="1" percentage="4" max="LEVY" />
+    <Garrison key="Vale_Royce_MAA_Swordsmen" level="1" percentage="4" max="LEVY" />
+    <Garrison key="Westerlands_Brax_MAA_Mounted_Swordsmen" level="1" percentage="3" max="LEVY" />
+    <Garrison key="Westerlands_Crakehall_MAA_Axemen" level="1" percentage="3" max="LEVY" />
+    <Garrison key="Westerlands_Crakehall_MAA_Mounted_Swordsmen" level="1" percentage="3" max="LEVY" />
+    <Garrison key="Westerlands_Lannister_Guard_Spearmen" level="1" percentage="3" max="LEVY" />
+    <Garrison key="Dorne_Martell_Royal_Pikemen" level="2" percentage="34" max="LEVY" />
+    <Garrison key="Iron_Islands_Harlaw_MAA_Axemen" level="2" percentage="33" max="LEVY" />
+    <Garrison key="Stormlands_Renly_MAA_Swordsmen" level="2" percentage="33" max="LEVY" />
     <Garrison key="North_Bolton_MAA_Spearmen" level="3" percentage="34" max="LEVY" />
     <Garrison key="Riverlands_Frey_MAA_Pikemen" level="3" percentage="33" max="LEVY" />
     <Garrison key="Stormlands_Baratheon_Guard_Swordsmen" level="3" percentage="33" max="LEVY" />
-    <Garrison key="Reach_Tarly_MAA_Billmen" level="4" percentage="34" max="LEVY" />
-    <Garrison key="Stormlands_Dondarrion_MAA_Billmen" level="4" percentage="33" max="LEVY" />
-    <Garrison key="Stormlands_Renly_MAA_Longbowmen" level="4" percentage="33" max="LEVY" />
+    <Garrison key="House_Dragonstone_MAA_Pikemen" level="4" percentage="34" max="LEVY" />
+    <Garrison key="North_Stark_Militia_Hunters" level="4" percentage="33" max="LEVY" />
+    <Garrison key="Riverlands_Mallister_MAA_Halberdiers" level="4" percentage="33" max="LEVY" />
     <MenAtArm type="accolade_maa_archers" key="House_Dragonstone_MAA_Archers" max="RANGED" />
     <MenAtArm type="accolade_maa_cameliers" key="Essos_Targaryen_Dothraki_Mounted_Archers" max="CAVALRY" />
     <MenAtArm type="accolade_maa_crossbowers" key="House_Dragonstone_MAA_Crossbowmen" max="RANGED" />
@@ -787,7 +785,7 @@
     <MenAtArm type="armored_footmen" key="Essos_Targaryen_Unsullied_Swordsmen" max="INFANTRY" />
     <MenAtArm type="armored_horsemen" key="Essos_Targaryen_Dothraki_Bloodriders" max="CAVALRY" />
     <MenAtArm type="ayrudzi" key="Essos_Targaryen_Dothraki_Mounted_Archers" max="CAVALRY" />
-    <MenAtArm type="ballistrai" key="Vale_Royce_Catapult" siege="true" siege_engine_per_unit="1" num_guns="4" />
+    <MenAtArm type="ballistrai" key="House_Frey_Catapult" siege="true" siege_engine_per_unit="1" num_guns="5" />
     <MenAtArm type="barrow_knights" key="Essos_Targaryen_Dothraki_Bloodriders" max="CAVALRY" />
     <MenAtArm type="battering_ram" key="Essos_Targaryen_Catapult" siege="true" siege_engine_per_unit="1" num_guns="4" />
     <MenAtArm type="black_wall_chariots" key="Essos_Targaryen_Dothraki_Bloodriders" siege="true" num_guns="0" />
@@ -846,7 +844,7 @@
     <MenAtArm type="maa_marauders" key="Essos_Targaryen_Dothraki_Mounted_Archers" max="CAVALRY" />
     <MenAtArm type="maa_poachers" key="North_Stark_Militia_Hunters" max="RANGED" />
     <MenAtArm type="maa_thieves" key="Crownlands_Velaryon_Conscript_Pikemen" max="INFANTRY" />
-    <MenAtArm type="mangonel" key="Vale_Royce_Catapult" siege="true" siege_engine_per_unit="1" num_guns="4" />
+    <MenAtArm type="mangonel" key="House_Frey_Catapult" siege="true" siege_engine_per_unit="1" num_guns="5" />
     <MenAtArm type="marcher_longbowmen" key="Crownlands_Velaryon_MAA_Longbowmen" max="RANGED" />
     <MenAtArm type="market_guard" key="Crownlands_Kings_Landing_Goldcloak_Swordsmen" max="INFANTRY" />
     <MenAtArm type="marsh_walker" key="Essos_Targaryen_Unsullied_Spearmen" max="INFANTRY" />
@@ -859,7 +857,7 @@
     <MenAtArm type="northern_spears" key="Essos_Targaryen_Unsullied_Pikemen" max="INFANTRY" />
     <MenAtArm type="nw_rangers" key="BTW_Nights_Watch_Guard_Rangers" max="RANGED" />
     <MenAtArm type="nw_trackers" key="Essos_Targaryen_Dothraki_Mounted_Archers" max="CAVALRY" />
-    <MenAtArm type="onager" key="Vale_Royce_Catapult" siege="true" siege_engine_per_unit="1" num_guns="4" />
+    <MenAtArm type="onager" key="House_Frey_Catapult" siege="true" siege_engine_per_unit="1" num_guns="5" />
     <MenAtArm type="ornate_helms" key="Dorne_Martell_Light_Pikemen" max="INFANTRY" />
     <MenAtArm type="pass_pikes" key="Essos_Targaryen_Unsullied_Pikemen" max="INFANTRY" />
     <MenAtArm type="pikemen_unit" key="Essos_Targaryen_Unsullied_Pikemen" max="INFANTRY" />
@@ -884,7 +882,6 @@
     <MenAtArm type="skahazdahn_wardens" key="Essos_Targaryen_Unsullied_Swordsmen" max="INFANTRY" />
     <MenAtArm type="skoutatoi" key="Stormlands_Baratheon_MAA_Pikemen" max="INFANTRY" />
     <MenAtArm type="slave_legion" key="Essos_Targaryen_Unsullied_Swordsmen" max="INFANTRY" />
-    <MenAtArm type="slave_legion" key="North_Stark_Guard_Swordsmen" />
     <MenAtArm type="smiths_axes" key="Crownlands_Velaryon_MAA_Axemen" max="INFANTRY" />
     <MenAtArm type="stair_guard" key="Crownlands_Velaryon_MAA_Pikemen" max="INFANTRY" />
     <MenAtArm type="star_carved" key="Essos_Targaryen_Unsullied_Swordsmen" max="INFANTRY" />
@@ -900,7 +897,7 @@
     <MenAtArm type="tiger_cloaks" key="Essos_Targaryen_Unsullied_Pikemen" max="INFANTRY" />
     <MenAtArm type="tolosi_slingers" key="Dorne_Dayne_MAA_Longbowmen" max="RANGED" />
     <MenAtArm type="torch_bearers" key="Essos_Targaryen_Catapult" siege="true" siege_engine_per_unit="1" num_guns="4" />
-    <MenAtArm type="trebuchet" key="Vale_Royce_Catapult" siege="true" siege_engine_per_unit="1" num_guns="4" />
+    <MenAtArm type="trebuchet" key="House_Frey_Catapult" siege="true" siege_engine_per_unit="1" num_guns="5" />
     <MenAtArm type="triarchs_herd" key="Essos_Targaryen_Unsullied_Swordsmen" max="CAVALRY" />
     <MenAtArm type="unicorn_riders" key="Essos_Targaryen_Dothraki_Mounted_Archers" max="CAVALRY" />
     <MenAtArm type="unsullied" key="Essos_Targaryen_Unsullied_Pikemen" max="INFANTRY" />
@@ -945,11 +942,13 @@
     <General key="Stormlands_Dragonstone_MAA_Pikemen" rank="1" />
     <General key="Stormlands_Renly_Stag_knights_Generic_Gen" rank="1" />
     <General key="Vale_Arryn_MAA_Axemen" rank="1" />
+    <General key="Vale_Arryn_MAA_Billmen" rank="1" />
     <General key="Westerlands_Crakehall_MAA_Pikemen" rank="1" />
     <General key="Crownlands_Velaryon_MAA_Lance_Cavalry" rank="2" />
     <General key="House_Dragonstone_Queensmen_Knights" rank="3" num_guns="0" />
     <Knights key="BTW_Nights_Watch_MAA_Mounted_Swordsmen" rank="1" />
     <Knights key="Dorne_Dayne_MAA_Longbowmen" rank="1" />
+    <Knights key="Dorne_Dayne_MAA_Mounted_Swordsmen" rank="1" />
     <Knights key="Dorne_Martell_Heavy_Lancer" rank="1" />
     <Knights key="Dorne_Martell_Light_HA" rank="1" />
     <Knights key="Dorne_Uller_MAA_Mounted_Swordsmen" rank="1" />
@@ -978,45 +977,46 @@
     <Knights key="Westerlands_Marbrand_MAA_Mounted_Swordsmen" rank="1" />
     <Knights key="Riverlands_Mallister_MAA_Mounted_Swordsmen" rank="2" />
     <Knights key="House_Arryn_MAA_Outriders" rank="3" />
-    <Levies key="House_Bolton_Catapult" percentage="33" max="LEVY" />
-    <Levies key="House_Dragonstone_MAA_Crossbowmen" percentage="34" max="LEVY" />
-    <Levies key="House_Lannister_MAA_Outriders" percentage="11" max="LEVY" />
-    <Levies key="North_Hornwood_MAA_Swordsmen" percentage="11" max="LEVY" />
-    <Levies key="Westerlands_Brax_MAA_Longbowmen" percentage="11" max="LEVY" />
-    <Garrison key="BTW_Wildling_MAA_Axemen" level="1" percentage="4" max="LEVY" />
-    <Garrison key="Crownlands_Velaryon_MAA_Halberdiers" level="1" percentage="4" max="LEVY" />
-    <Garrison key="Dorne_Martell_Light_Pikemen" level="1" percentage="4" max="LEVY" />
-    <Garrison key="Dorne_Uller_MAA_Longbowmen" level="1" percentage="4" max="LEVY" />
-    <Garrison key="Essos_Targaryen_Unsullied_Spearmen" level="1" percentage="4" max="LEVY" />
-    <Garrison key="House_GreyJoy_Trappers" level="1" percentage="4" max="LEVY" />
-    <Garrison key="House_Tully_MAA_Pikemen" level="1" percentage="4" max="LEVY" />
-    <Garrison key="House_Tully_MAA_Spearmen" level="1" percentage="4" max="LEVY" />
-    <Garrison key="Iron_Islands_Greyjoy_Guard_Swordsmen" level="1" percentage="4" max="LEVY" />
-    <Garrison key="Iron_Islands_Greyjoy_MAA_Lance_Cavalry" level="1" percentage="4" max="LEVY" />
-    <Garrison key="North_Bolton_MAA_Crossbowmen" level="1" percentage="4" max="LEVY" />
-    <Garrison key="North_Cerwyn_Catapult" level="1" percentage="4" max="LEVY" />
-    <Garrison key="North_Stark_MAA_Lance_Cavalry" level="1" percentage="4" max="LEVY" />
-    <Garrison key="North_Umber_MAA_Lance_Cavalry" level="1" percentage="4" max="LEVY" />
-    <Garrison key="Riverlands_Frey_MAA_Crossbowmen" level="1" percentage="4" max="LEVY" />
-    <Garrison key="Riverlands_Mallister_MAA_Spearmen" level="1" percentage="4" max="LEVY" />
-    <Garrison key="Riverlands_Tully_MAA_Axemen" level="1" percentage="4" max="LEVY" />
-    <Garrison key="Stormlands_Baratheon_MAA_Mounted_Swordsmen" level="1" percentage="4" max="LEVY" />
-    <Garrison key="Stormlands_Dondarrion_MAA_Swordsmen" level="1" percentage="4" max="LEVY" />
-    <Garrison key="Stormlands_Dragonstone_MAA_Longbowmen" level="1" percentage="4" max="LEVY" />
-    <Garrison key="Vale_Arryn_Guard_Spearmen" level="1" percentage="4" max="LEVY" />
-    <Garrison key="Vale_Arryn_MAA_Spearmen" level="1" percentage="4" max="LEVY" />
-    <Garrison key="Westerlands_Brax_MAA_Mounted_Swordsmen" level="1" percentage="4" max="LEVY" />
-    <Garrison key="Westerlands_Crakehall_MAA_Billmen" level="1" percentage="4" max="LEVY" />
-    <Garrison key="Westerlands_Marbrand_Catapult" level="1" percentage="4" max="LEVY" />
+    <Levies key="Dorne_Martell_MAA_Spear" percentage="33" max="LEVY" />
+    <Levies key="House_Arryn_MAA_Outriders" percentage="6" max="LEVY" />
+    <Levies key="House_Bolton_Spear_Recruits" percentage="33" max="LEVY" />
+    <Levies key="North_Cerwyn_MAA_Crossbowmen" percentage="7" max="LEVY" />
+    <Levies key="North_Hornwood_MAA_Halberdiers" percentage="7" max="LEVY" />
+    <Levies key="Riverlands_Tully_MAA_Pikemen" percentage="7" max="LEVY" />
+    <Levies key="Stormlands_Baratheon_MAA_Billmen" percentage="7" max="LEVY" />
+    <Garrison key="BTW_Wildling_MAA_Axemen" level="1" percentage="2" max="LEVY" />
+    <Garrison key="Crownlands_Velaryon_MAA_Halberdiers" level="1" percentage="2" max="LEVY" />
+    <Garrison key="Dorne_Martell_Light_Pikemen" level="1" percentage="2" max="LEVY" />
+    <Garrison key="Dorne_Uller_MAA_Longbowmen" level="1" percentage="2" max="LEVY" />
+    <Garrison key="Essos_Targaryen_Unsullied_Spearmen" level="1" percentage="2" max="LEVY" />
+    <Garrison key="House_GreyJoy_Trappers" level="1" percentage="2" max="LEVY" />
+    <Garrison key="House_Tully_MAA_Pikemen" level="1" percentage="2" max="LEVY" />
+    <Garrison key="House_Tully_MAA_Spearmen" level="1" percentage="2" max="LEVY" />
+    <Garrison key="Iron_Islands_Greyjoy_Guard_Swordsmen" level="1" percentage="2" max="LEVY" />
+    <Garrison key="Iron_Islands_Greyjoy_MAA_Lance_Cavalry" level="1" percentage="2" max="LEVY" />
+    <Garrison key="North_Bolton_MAA_Crossbowmen" level="1" percentage="2" max="LEVY" />
+    <Garrison key="North_Stark_MAA_Lance_Cavalry" level="1" percentage="2" max="LEVY" />
+    <Garrison key="North_Umber_MAA_Lance_Cavalry" level="1" percentage="2" max="LEVY" />
+    <Garrison key="Riverlands_Frey_MAA_Crossbowmen" level="1" percentage="2" max="LEVY" />
+    <Garrison key="Riverlands_Mallister_Catapult" level="1" percentage="51" max="LEVY" />
+    <Garrison key="Riverlands_Mallister_MAA_Spearmen" level="1" percentage="2" max="LEVY" />
+    <Garrison key="Riverlands_Tully_MAA_Axemen" level="1" percentage="2" max="LEVY" />
+    <Garrison key="Stormlands_Baratheon_MAA_Mounted_Swordsmen" level="1" percentage="2" max="LEVY" />
+    <Garrison key="Stormlands_Dondarrion_MAA_Swordsmen" level="1" percentage="2" max="LEVY" />
+    <Garrison key="Stormlands_Dragonstone_MAA_Longbowmen" level="1" percentage="2" max="LEVY" />
+    <Garrison key="Vale_Arryn_Guard_Spearmen" level="1" percentage="2" max="LEVY" />
+    <Garrison key="Vale_Arryn_MAA_Spearmen" level="1" percentage="3" max="LEVY" />
+    <Garrison key="Westerlands_Brax_MAA_Mounted_Swordsmen" level="1" percentage="3" max="LEVY" />
+    <Garrison key="Westerlands_Crakehall_MAA_Billmen" level="1" percentage="3" max="LEVY" />
     <Garrison key="Iron_Islands_Harlaw_MAA_Crossbowmen" level="2" percentage="34" max="LEVY" />
     <Garrison key="Iron_Islands_Harlaw_MAA_Swordsmen" level="2" percentage="33" max="LEVY" />
     <Garrison key="North_Stark_Guard_Swordsmen" level="2" percentage="33" max="LEVY" />
     <Garrison key="Crownlands_Kings_Landing_Golden_Company_Spearmen" level="3" percentage="33" max="LEVY" />
     <Garrison key="Crownlands_Velaryon_MAA_Crossbowmen" level="3" percentage="33" max="LEVY" />
     <Garrison key="Stormlands_Baratheon_MAA_Swordsmen" level="3" percentage="34" max="LEVY" />
-    <Garrison key="Crownlands_Kings_Landing_Golden_Company_Spearmen" level="4" percentage="33" max="LEVY" />
-    <Garrison key="Crownlands_Velaryon_MAA_Spearmen" level="4" percentage="33" max="LEVY" />
-    <Garrison key="Stormlands_Baratheon_MAA_Pikemen" level="4" percentage="34" max="LEVY" />
+    <Garrison key="BTW_Wildling_Guard_Spearmen" level="4" percentage="34" max="LEVY" />
+    <Garrison key="Dorne_Martell_Medium_MAA_Spears" level="4" percentage="33" max="LEVY" />
+    <Garrison key="North_Cerwyn_MAA_Halberdiers" level="4" percentage="33" max="LEVY" />
     <MenAtArm type="accolade_maa_archers" key="Crownlands_Kings_Landing_Goldcloak_Crossbowmen" max="RANGED" />
     <MenAtArm type="accolade_maa_cameliers" key="Crownlands_Kings_Landing_Goldcloak_Mounted_Swordsmen" max="CAVALRY" />
     <MenAtArm type="accolade_maa_crossbowers" key="Crownlands_Kings_Landing_Goldcloak_Crossbowmen" max="RANGED" />
@@ -1032,7 +1032,7 @@
     <MenAtArm type="armored_footmen" key="Crownlands_Kings_Landing_Goldcloak_Swordsmen" max="INFANTRY" />
     <MenAtArm type="armored_horsemen" key="Crownlands_Velaryon_MAA_Mounted_Swordsmen" max="CAVALRY" />
     <MenAtArm type="ayrudzi" key="House_Dragonstone_MAA_Outriders" max="CAVALRY" />
-    <MenAtArm type="ballistrai" key="Vale_Royce_Catapult" siege="true" siege_engine_per_unit="1" num_guns="4" />
+    <MenAtArm type="ballistrai" key="House_Frey_Catapult" siege="true" siege_engine_per_unit="1" num_guns="5" />
     <MenAtArm type="barrow_knights" key="House_Dragonstone_Knights" max="CAVALRY" />
     <MenAtArm type="battering_ram" key="Crownlands_Velaryon_Catapult" siege="true" siege_engine_per_unit="1" num_guns="4" />
     <MenAtArm type="black_wall_chariots" key="Crownlands_Kings_Landing_Goldcloak_Mounted_Swordsmen" siege="true" num_guns="0" />
@@ -1080,7 +1080,7 @@
     <MenAtArm type="hunters_of_the_moon" key="House_Dragonstone_MAA_Swordsmen" max="RANGED" />
     <MenAtArm type="indentured_legion" key="Crownlands_Kings_Landing_Goldcloak_Swordsmen" max="INFANTRY" />
     <MenAtArm type="iron_legion" key="Crownlands_Velaryon_MAA_Pikemen" max="INFANTRY" />
-    <MenAtArm type="ironborn_reavers" key="BTW_Night_King_Army_Ancient_Wight_Infantry" max="INFANTRY" />
+    <MenAtArm type="ironborn_reavers" key="Crownlands_Kings_Landing_Goldcloak_Swordsmen" max="INFANTRY" />
     <MenAtArm type="kheshig" key="Essos_Targaryen_Dothraki_Mounted_Archers" max="CAVALRY" />
     <MenAtArm type="laamp_settler_maa" key="House_Dragonstone_MAA_Swordsmen" max="RANGED" />
     <MenAtArm type="light_footmen" key="Crownlands_Kings_Landing_Goldcloak_Crossbowmen" max="INFANTRY" />
@@ -1091,7 +1091,7 @@
     <MenAtArm type="maa_marauders" key="Essos_Targaryen_Dothraki_Mounted_Archers" max="CAVALRY" />
     <MenAtArm type="maa_poachers" key="Crownlands_Velaryon_MAA_Longbowmen" max="RANGED" />
     <MenAtArm type="maa_thieves" key="Crownlands_Velaryon_MAA_Pikemen" max="INFANTRY" />
-    <MenAtArm type="mangonel" key="Vale_Royce_Catapult" siege="true" siege_engine_per_unit="1" num_guns="4" />
+    <MenAtArm type="mangonel" key="House_Frey_Catapult" siege="true" siege_engine_per_unit="1" num_guns="5" />
     <MenAtArm type="marcher_longbowmen" key="Crownlands_Velaryon_MAA_Swordsmen" max="RANGED" />
     <MenAtArm type="market_guard" key="Crownlands_Kings_Landing_Goldcloak_Swordsmen" max="INFANTRY" />
     <MenAtArm type="marsh_walker" key="House_Dragonstone_MAA_Spearmen" max="INFANTRY" />
@@ -1104,7 +1104,7 @@
     <MenAtArm type="northern_spears" key="North_Stark_MAA_Pikemen" max="INFANTRY" />
     <MenAtArm type="nw_rangers" key="BTW_Nights_Watch_Guard_Rangers" max="RANGED" />
     <MenAtArm type="nw_trackers" key="House_Dragonstone_MAA_Outriders" max="CAVALRY" />
-    <MenAtArm type="onager" key="Vale_Royce_Catapult" siege="true" siege_engine_per_unit="1" num_guns="4" />
+    <MenAtArm type="onager" key="House_Frey_Catapult" siege="true" siege_engine_per_unit="1" num_guns="5" />
     <MenAtArm type="ornate_helms" key="House_Dragonstone_MAA_Pikemen" max="INFANTRY" />
     <MenAtArm type="pass_pikes" key="Crownlands_Velaryon_MAA_Pikemen" max="INFANTRY" />
     <MenAtArm type="pikemen_unit" key="Crownlands_Velaryon_MAA_Pikemen" max="INFANTRY" />
@@ -1129,7 +1129,6 @@
     <MenAtArm type="skahazdahn_wardens" key="Crownlands_Kings_Landing_Goldcloak_Swordsmen" max="INFANTRY" />
     <MenAtArm type="skoutatoi" key="Crownlands_Velaryon_MAA_Pikemen" max="INFANTRY" />
     <MenAtArm type="slave_legion" key="House_Dragonstone_MAA_Swordsmen" max="INFANTRY" />
-    <MenAtArm type="slave_legion" key="House_Dragonstone_Kingsmen_Knights" />
     <MenAtArm type="smiths_axes" key="Crownlands_Velaryon_MAA_Axemen" max="INFANTRY" />
     <MenAtArm type="stair_guard" key="Crownlands_Velaryon_MAA_Pikemen" max="INFANTRY" />
     <MenAtArm type="star_carved" key="House_Dragonstone_MAA_Swordsmen" max="INFANTRY" />
@@ -1145,9 +1144,9 @@
     <MenAtArm type="tiger_cloaks" key="Crownlands_Velaryon_MAA_Pikemen" max="INFANTRY" />
     <MenAtArm type="tolosi_slingers" key="Crownlands_Kings_Landing_Goldcloak_Crossbowmen" max="RANGED" />
     <MenAtArm type="torch_bearers" key="Crownlands_Velaryon_Catapult" siege="true" siege_engine_per_unit="1" num_guns="4" />
-    <MenAtArm type="trebuchet" key="Vale_Royce_Catapult" siege="true" siege_engine_per_unit="1" num_guns="4" />
+    <MenAtArm type="trebuchet" key="House_Frey_Catapult" siege="true" siege_engine_per_unit="1" num_guns="5" />
     <MenAtArm type="triarchs_herd" key="Crownlands_Kings_Landing_Golden_Company_Elephants" max="CAVALRY" />
-    <MenAtArm type="unicorn_riders" key="BTW_White_Walkers" max="CAVALRY" />
+    <MenAtArm type="unicorn_riders" key="Essos_Targaryen_Dothraki_Mounted_Archers" max="CAVALRY" />
     <MenAtArm type="unsullied" key="Essos_Targaryen_Unsullied_Pikemen" max="INFANTRY" />
     <MenAtArm type="vale_heavy_infantry" key="Crownlands_Kings_Landing_Goldcloak_Swordsmen" max="INFANTRY" />
     <MenAtArm type="warriors_sons_heavy_cav" key="Crownlands_Velaryon_MAA_Lance_Cavalry" max="CAVALRY" />
@@ -1169,6 +1168,7 @@
     <General key="Dorne_Yronwood_MAA_Halberdiers" rank="1" />
     <General key="House_Arryn_MAA_Swordsmen" rank="1" />
     <General key="House_Crownlands_Commander_Hound" rank="1" />
+    <General key="House_GreyJoy_Ironmakers" rank="1" />
     <General key="House_GreyJoy_Mounted_Raiders_Generic_Gen" rank="1" />
     <General key="House_GreyJoy_Sword_Raiders" rank="1" />
     <General key="House_Stark_Archers" rank="1" />
@@ -1207,6 +1207,7 @@
     <Knights key="House_Lannister_Knights" rank="1" />
     <Knights key="House_Lannister_levy_spears" rank="1" />
     <Knights key="House_Tully_MAA_Outriders" rank="1" />
+    <Knights key="House_Tyrell_Rose_Knights_Mounted" rank="1" />
     <Knights key="House_bolton_Roose_Bolton" rank="1" />
     <Knights key="North_Hornwood_MAA_Swordsmen" rank="1" />
     <Knights key="North_Stark_MAA_Lance_Cavalry" rank="1" />
@@ -1223,43 +1224,43 @@
     <Knights key="Vale_MAA_Spear_Cav" rank="1" />
     <Knights key="Iron_Islands_Greyjoy_MAA_Mounted_Swordsmen" rank="2" num_guns="0" />
     <Knights key="Iron_Islands_Harlaw_MAA_Lance_Cavalry" rank="3" num_guns="0" />
-    <Levies key="House_GreyJoy_Drowned_Men" percentage="33" max="LEVY" />
-    <Levies key="House_GreyJoy_Ironmakers" percentage="11" max="LEVY" />
+    <Levies key="Dorne_Dayne_Catapult" percentage="33" max="LEVY" />
+    <Levies key="House_GreyJoy_Drowned_Men" percentage="34" max="LEVY" />
     <Levies key="House_GreyJoy_Mounted_Raiders_Generic_Gen" percentage="11" max="LEVY" />
-    <Levies key="House_bolton_knives_lord" percentage="34" max="LEVY" />
-    <Levies key="Iron_Islands_Harlaw_MAA_Crossbowmen" percentage="11" max="LEVY" />
-    <Garrison key="Crownlands_Velaryon_MAA_Crossbowmen" level="1" percentage="5" max="LEVY" />
-    <Garrison key="Dorne_Martell_MAA_Sword" level="1" percentage="5" max="LEVY" />
-    <Garrison key="Dorne_Uller_MAA_Axemen" level="1" percentage="5" max="LEVY" />
-    <Garrison key="House_Arryn_MAA_Pikemen" level="1" percentage="5" max="LEVY" />
-    <Garrison key="House_Arryn_MAA_Spearmen" level="1" percentage="5" max="LEVY" />
-    <Garrison key="House_Dragonstone_Knights" level="1" percentage="5" max="LEVY" />
-    <Garrison key="House_GreyJoy_Silenced_Men" level="1" percentage="5" max="LEVY" />
-    <Garrison key="House_Lannister_MAA_Longbowmen" level="1" percentage="5" max="LEVY" />
-    <Garrison key="House_Tully_MAA_Spearmen" level="1" percentage="5" max="LEVY" />
-    <Garrison key="House_Tyrell_MAA_Pikemen" level="1" percentage="5" max="LEVY" />
-    <Garrison key="Iron_Islands_Harlaw_MAA_Axemen" level="1" percentage="5" max="LEVY" />
-    <Garrison key="Iron_Islands_Harlaw_MAA_Billmen" level="1" percentage="5" max="LEVY" />
-    <Garrison key="Iron_Islands_Harlaw_MAA_Crossbowmen" level="1" percentage="4" max="LEVY" />
-    <Garrison key="Iron_Islands_Harlaw_MAA_Pikemen" level="1" percentage="4" max="LEVY" />
-    <Garrison key="Iron_Islands_Harlaw_MAA_Swordsmen" level="1" percentage="4" max="LEVY" />
-    <Garrison key="North_Glover_MAA_Swordsmen" level="1" percentage="4" max="LEVY" />
-    <Garrison key="Riverlands_Frey_MAA_Billmen" level="1" percentage="4" max="LEVY" />
-    <Garrison key="Riverlands_Mallister_Catapult" level="1" percentage="4" max="LEVY" />
-    <Garrison key="Riverlands_Tully_MAA_Halberdiers" level="1" percentage="4" max="LEVY" />
-    <Garrison key="Stormlands_Renly_MAA_Crossbowmen" level="1" percentage="4" max="LEVY" />
-    <Garrison key="Stormlands_Renly_MAA_Swordsmen" level="1" percentage="4" max="LEVY" />
-    <Garrison key="Westerlands_Crakehall_MAA_Halberdiers" level="1" percentage="4" max="LEVY" />
-    <Garrison key="House_GreyJoy_Drowned_Men" level="2" percentage="34" max="LEVY" />
+    <Levies key="House_GreyJoy_Silenced_Men" percentage="11" max="LEVY" />
+    <Levies key="Iron_Islands_Harlaw_MAA_Axemen" percentage="11" max="LEVY" />
+    <Garrison key="Crownlands_Velaryon_MAA_Crossbowmen" level="1" percentage="2" max="LEVY" />
+    <Garrison key="Dorne_Martell_MAA_Sword" level="1" percentage="2" max="LEVY" />
+    <Garrison key="Dorne_Uller_MAA_Axemen" level="1" percentage="2" max="LEVY" />
+    <Garrison key="House_Arryn_MAA_Pikemen" level="1" percentage="2" max="LEVY" />
+    <Garrison key="House_Arryn_MAA_Spearmen" level="1" percentage="2" max="LEVY" />
+    <Garrison key="House_Dragonstone_Knights" level="1" percentage="2" max="LEVY" />
+    <Garrison key="House_GreyJoy_Silenced_Men" level="1" percentage="2" max="LEVY" />
+    <Garrison key="House_Lannister_Catapult" level="1" percentage="51" max="LEVY" />
+    <Garrison key="House_Lannister_MAA_Longbowmen" level="1" percentage="2" max="LEVY" />
+    <Garrison key="House_Tully_MAA_Spearmen" level="1" percentage="3" max="LEVY" />
+    <Garrison key="House_Tyrell_MAA_Pikemen" level="1" percentage="4" max="LEVY" />
+    <Garrison key="Iron_Islands_Harlaw_MAA_Axemen" level="1" percentage="4" max="LEVY" />
+    <Garrison key="Iron_Islands_Harlaw_MAA_Billmen" level="1" percentage="4" max="LEVY" />
+    <Garrison key="Iron_Islands_Harlaw_MAA_Crossbowmen" level="1" percentage="2" max="LEVY" />
+    <Garrison key="Iron_Islands_Harlaw_MAA_Pikemen" level="1" percentage="2" max="LEVY" />
+    <Garrison key="Iron_Islands_Harlaw_MAA_Swordsmen" level="1" percentage="2" max="LEVY" />
+    <Garrison key="North_Glover_MAA_Swordsmen" level="1" percentage="2" max="LEVY" />
+    <Garrison key="Riverlands_Frey_MAA_Billmen" level="1" percentage="2" max="LEVY" />
+    <Garrison key="Riverlands_Tully_MAA_Halberdiers" level="1" percentage="2" max="LEVY" />
+    <Garrison key="Stormlands_Renly_MAA_Crossbowmen" level="1" percentage="2" max="LEVY" />
+    <Garrison key="Stormlands_Renly_MAA_Swordsmen" level="1" percentage="2" max="LEVY" />
+    <Garrison key="Westerlands_Crakehall_MAA_Halberdiers" level="1" percentage="2" max="LEVY" />
+    <Garrison key="House_GreyJoy_Archers" level="2" percentage="34" max="LEVY" />
     <Garrison key="House_GreyJoy_Kraken_Guard" level="2" percentage="33" max="LEVY" />
-    <Garrison key="House_GreyJoy_Spear_Raiders" level="2" percentage="33" max="LEVY" />
+    <Garrison key="Iron_Islands_Greyjoy_MAA_Axemen" level="2" percentage="33" max="LEVY" />
     <Garrison key="Iron_Islands_Greyjoy_MAA_Billmen" level="3" percentage="25" max="LEVY" />
     <Garrison key="Iron_Islands_Harlaw_MAA_Halberdiers" level="3" percentage="25" max="LEVY" />
     <Garrison key="Iron_Islands_Harlaw_MAA_Infantry" level="3" percentage="25" max="LEVY" />
     <Garrison key="Iron_Islands_Harlaw_MAA_Spearmen" level="3" percentage="25" max="LEVY" />
-    <Garrison key="Iron_Islands_Greyjoy_Guard_Spearmen" level="4" percentage="34" max="LEVY" />
+    <Garrison key="House_GreyJoy_Spear_Raiders" level="4" percentage="34" max="LEVY" />
+    <Garrison key="House_GreyJoy_Sword_Raiders" level="4" percentage="33" max="LEVY" />
     <Garrison key="Iron_Islands_Greyjoy_Guard_Swordsmen" level="4" percentage="33" max="LEVY" />
-    <Garrison key="Iron_Islands_Greyjoy_MAA_Crossbowmen" level="4" percentage="33" max="LEVY" />
     <MenAtArm type="accolade_maa_archers" key="Iron_Islands_Greyjoy_MAA_Bowmen" max="RANGED" />
     <MenAtArm type="accolade_maa_cameliers" key="Iron_Islands_Greyjoy_MAA_Lance_Cavalry" max="CAVALRY" />
     <MenAtArm type="accolade_maa_crossbowers" key="Iron_Islands_Greyjoy_MAA_Crossbowmen" max="RANGED" />
@@ -1275,7 +1276,7 @@
     <MenAtArm type="armored_footmen" key="Iron_Islands_Greyjoy_MAA_Infantry" max="INFANTRY" />
     <MenAtArm type="armored_horsemen" key="House_GreyJoy_Mounted_Raiders" max="CAVALRY" />
     <MenAtArm type="ayrudzi" key="House_GreyJoy_Mounted_Raiders" max="CAVALRY" />
-    <MenAtArm type="ballistrai" key="Vale_Royce_Catapult" siege="true" siege_engine_per_unit="1" num_guns="4" />
+    <MenAtArm type="ballistrai" key="House_Frey_Catapult" siege="true" siege_engine_per_unit="1" num_guns="5" />
     <MenAtArm type="barrow_knights" key="House_GreyJoy_Mounted_Raiders" max="CAVALRY" />
     <MenAtArm type="battering_ram" key="House_GreyJoy_Catapult" siege="true" siege_engine_per_unit="1" num_guns="5" />
     <MenAtArm type="black_wall_chariots" key="House_GreyJoy_Mounted_Raiders" siege="true" num_guns="0" />
@@ -1334,7 +1335,7 @@
     <MenAtArm type="maa_marauders" key="House_GreyJoy_Mounted_Raiders" max="CAVALRY" />
     <MenAtArm type="maa_poachers" key="House_GreyJoy_Trappers" max="RANGED" />
     <MenAtArm type="maa_thieves" key="Iron_Islands_Greyjoy_MAA_Pikemen" max="INFANTRY" />
-    <MenAtArm type="mangonel" key="Vale_Royce_Catapult" siege="true" siege_engine_per_unit="1" num_guns="4" />
+    <MenAtArm type="mangonel" key="House_Frey_Catapult" siege="true" siege_engine_per_unit="1" num_guns="5" />
     <MenAtArm type="marcher_longbowmen" key="Iron_Islands_Greyjoy_MAA_Bowmen" max="RANGED" />
     <MenAtArm type="market_guard" key="Iron_Islands_Greyjoy_Guard_Spearmen" max="INFANTRY" />
     <MenAtArm type="marsh_walker" key="Iron_Islands_Greyjoy_MAA_Spearmen" max="INFANTRY" />
@@ -1347,7 +1348,7 @@
     <MenAtArm type="northern_spears" key="Iron_Islands_Greyjoy_MAA_Spearmen" max="INFANTRY" />
     <MenAtArm type="nw_rangers" key="Iron_Islands_Greyjoy_MAA_Infantry" max="RANGED" />
     <MenAtArm type="nw_trackers" key="House_GreyJoy_Mounted_Raiders" max="CAVALRY" />
-    <MenAtArm type="onager" key="Vale_Royce_Catapult" siege="true" siege_engine_per_unit="1" num_guns="4" />
+    <MenAtArm type="onager" key="House_Frey_Catapult" siege="true" siege_engine_per_unit="1" num_guns="5" />
     <MenAtArm type="ornate_helms" key="Iron_Islands_Greyjoy_MAA_Pikemen" max="INFANTRY" />
     <MenAtArm type="pass_pikes" key="Iron_Islands_Greyjoy_MAA_Pikemen" max="INFANTRY" />
     <MenAtArm type="pikemen_unit" key="Iron_Islands_Greyjoy_MAA_Pikemen" max="INFANTRY" />
@@ -1372,7 +1373,6 @@
     <MenAtArm type="skahazdahn_wardens" key="Iron_Islands_Greyjoy_MAA_Axemen" max="INFANTRY" />
     <MenAtArm type="skoutatoi" key="Iron_Islands_Greyjoy_MAA_Pikemen" max="INFANTRY" />
     <MenAtArm type="slave_legion" key="Iron_Islands_Greyjoy_MAA_Spearmen" max="INFANTRY" />
-    <MenAtArm type="slave_legion" key="House_Lannister_levy_swords" />
     <MenAtArm type="smiths_axes" key="Iron_Islands_Greyjoy_MAA_Infantry" max="INFANTRY" />
     <MenAtArm type="stair_guard" key="Iron_Islands_Greyjoy_MAA_Pikemen" max="INFANTRY" />
     <MenAtArm type="star_carved" key="Iron_Islands_Greyjoy_MAA_Spearmen" max="INFANTRY" />
@@ -1388,7 +1388,7 @@
     <MenAtArm type="tiger_cloaks" key="Iron_Islands_Greyjoy_MAA_Pikemen" max="INFANTRY" />
     <MenAtArm type="tolosi_slingers" key="Iron_Islands_Greyjoy_MAA_Bowmen" max="RANGED" />
     <MenAtArm type="torch_bearers" key="Iron_Islands_Greyjoy_MAA_Swordsmen" siege="true" num_guns="0" />
-    <MenAtArm type="trebuchet" key="Vale_Royce_Catapult" siege="true" siege_engine_per_unit="1" num_guns="4" />
+    <MenAtArm type="trebuchet" key="House_Frey_Catapult" siege="true" siege_engine_per_unit="1" num_guns="5" />
     <MenAtArm type="triarchs_herd" key="Iron_Islands_Greyjoy_Guard_Swordsmen" max="CAVALRY" />
     <MenAtArm type="unicorn_riders" key="House_GreyJoy_Mounted_Raiders" max="CAVALRY" />
     <MenAtArm type="unsullied" key="Iron_Islands_Greyjoy_MAA_Pikemen" max="INFANTRY" />
@@ -1431,6 +1431,7 @@
     <General key="Riverlands_Tully_MAA_Spearmen" rank="1" />
     <General key="Stormlands_Dragonstone_MAA_Axemen" rank="1" />
     <General key="Stormlands_Renly_Stag_knights_Generic_Gen" rank="1" />
+    <General key="Vale_Arryn_Catapult" rank="1" />
     <General key="Vale_Arryn_MAA_Crossbowmen" rank="1" />
     <General key="Westerlands_Lannister_MAA_Billmen" rank="1" />
     <General key="Westerlands_Lefford_Catapult" rank="1" />
@@ -1451,6 +1452,7 @@
     <Knights key="North_Glover_MAA_Mounted_Swordsmen" rank="1" num_guns="0" />
     <Knights key="North_Hornwood_MAA_Mounted_Swordsmen" rank="1" />
     <Knights key="North_Karstark_MAA_Lance_Cavalry" rank="1" />
+    <Knights key="North_Umber_MAA_Mounted_Swordsmen" rank="1" />
     <Knights key="Reach_Tarly_MAA_Mounted_Swordsmen" rank="1" />
     <Knights key="Riverlands_Mallister_MAA_Billmen" rank="1" />
     <Knights key="Riverlands_Tully_MAA_Lance_Cavalry" rank="1" />
@@ -1466,38 +1468,37 @@
     <Knights key="Westerlands_Marbrand_MAA_Axemen" rank="1" />
     <Knights key="North_Umber_MAA_Lance_Cavalry" rank="2" num_guns="0" />
     <Knights key="North_Cerwyn_MAA_Lance_Cavalry" rank="3" num_guns="0" />
-    <Levies key="Dorne_Uller_MAA_Longbowmen" percentage="6" max="LEVY" />
-    <Levies key="House_Bolton_Spear_Recruits" percentage="33" max="LEVY" />
-    <Levies key="House_Tully_MAA_Crossbowmen" percentage="33" max="LEVY" />
-    <Levies key="Riverlands_Tully_Guard_Swordsmen" percentage="7" max="LEVY" />
-    <Levies key="Stormlands_Dragonstone_MAA_Pikemen" percentage="7" max="LEVY" />
-    <Levies key="Vale_MAA_Spear_Cav" percentage="7" max="LEVY" />
-    <Levies key="Westerlands_Lannister_Guard_Swordsmen" percentage="7" max="LEVY" />
-    <Garrison key="Crownlands_Velaryon_Conscript_Longbowmen" level="1" percentage="4" max="LEVY" />
-    <Garrison key="Crownlands_Velaryon_MAA_Billmen" level="1" percentage="4" max="LEVY" />
-    <Garrison key="Dorne_Martell_MAA_Longbowmen" level="1" percentage="4" max="LEVY" />
-    <Garrison key="Essos_Targaryen_Unsullied_Swordsmen" level="1" percentage="4" max="LEVY" />
-    <Garrison key="House_Dragonstone_MAA_Outriders" level="1" percentage="4" max="LEVY" />
-    <Garrison key="House_Dragonstone_MAA_Swordsmen" level="1" percentage="4" max="LEVY" />
-    <Garrison key="House_Frey_Mud_Crowlers" level="1" percentage="4" max="LEVY" />
-    <Garrison key="House_Tully_Sworn_Shield" level="1" percentage="4" max="LEVY" />
-    <Garrison key="House_Tyrell_Catapult" level="1" percentage="4" max="LEVY" />
-    <Garrison key="Iron_Islands_Greyjoy_Guard_Spearmen" level="1" percentage="4" max="LEVY" />
-    <Garrison key="Iron_Islands_Harlaw_MAA_Billmen" level="1" percentage="4" max="LEVY" />
-    <Garrison key="Iron_Islands_Harlaw_MAA_Swordsmen" level="1" percentage="4" max="LEVY" />
-    <Garrison key="North_Cerwyn_MAA_Axemen" level="1" percentage="4" max="LEVY" />
-    <Garrison key="North_Hornwood_MAA_Crossbowmen" level="1" percentage="4" max="LEVY" />
-    <Garrison key="North_Hornwood_MAA_Longbowmen" level="1" percentage="4" max="LEVY" />
-    <Garrison key="North_Mormont_MAA_Pikemen" level="1" percentage="4" max="LEVY" />
-    <Garrison key="North_Stark_MAA_Billmen" level="1" percentage="4" max="LEVY" />
-    <Garrison key="Reach_Tarly_MAA_Halberdiers" level="1" percentage="4" max="LEVY" />
-    <Garrison key="Riverlands_Mallister_MAA_Axemen" level="1" percentage="4" max="LEVY" />
-    <Garrison key="Riverlands_Tully_Guard_Swordsmen" level="1" percentage="4" max="LEVY" />
-    <Garrison key="Stormlands_Baratheon_MAA_Longbowmen" level="1" percentage="4" max="LEVY" />
-    <Garrison key="Stormlands_Dragonstone_MAA_Longbowmen" level="1" percentage="4" max="LEVY" />
-    <Garrison key="Stormlands_Renly_Stag_knights" level="1" percentage="4" max="LEVY" />
-    <Garrison key="Westerlands_Brax_MAA_Billmen" level="1" percentage="4" max="LEVY" />
-    <Garrison key="Westerlands_Marbrand_MAA_Mounted_Swordsmen" level="1" percentage="4" max="LEVY" />
+    <Levies key="House_Arryn_MAA_Archers" percentage="34" max="LEVY" />
+    <Levies key="House_GreyJoy_Chosen_Axes" percentage="8" max="LEVY" />
+    <Levies key="House_Lannister_MAA_Outriders" percentage="8" max="LEVY" />
+    <Levies key="House_Martell_Catapult" percentage="34" max="LEVY" />
+    <Levies key="House_Tyrell_MAA_Outriders" percentage="8" max="LEVY" />
+    <Levies key="North_Cerwyn_MAA_Pikemen" percentage="8" max="LEVY" />
+    <Garrison key="Crownlands_Velaryon_Conscript_Longbowmen" level="1" percentage="2" max="LEVY" />
+    <Garrison key="Crownlands_Velaryon_MAA_Billmen" level="1" percentage="2" max="LEVY" />
+    <Garrison key="Dorne_Martell_MAA_Longbowmen" level="1" percentage="2" max="LEVY" />
+    <Garrison key="Essos_Targaryen_Unsullied_Swordsmen" level="1" percentage="2" max="LEVY" />
+    <Garrison key="House_Dragonstone_MAA_Outriders" level="1" percentage="2" max="LEVY" />
+    <Garrison key="House_Dragonstone_MAA_Swordsmen" level="1" percentage="2" max="LEVY" />
+    <Garrison key="House_Frey_Mud_Crowlers" level="1" percentage="2" max="LEVY" />
+    <Garrison key="House_Tully_Sworn_Shield" level="1" percentage="2" max="LEVY" />
+    <Garrison key="Iron_Islands_Greyjoy_Guard_Spearmen" level="1" percentage="2" max="LEVY" />
+    <Garrison key="Iron_Islands_Harlaw_MAA_Billmen" level="1" percentage="2" max="LEVY" />
+    <Garrison key="Iron_Islands_Harlaw_MAA_Swordsmen" level="1" percentage="2" max="LEVY" />
+    <Garrison key="North_Cerwyn_MAA_Axemen" level="1" percentage="2" max="LEVY" />
+    <Garrison key="North_Hornwood_MAA_Crossbowmen" level="1" percentage="2" max="LEVY" />
+    <Garrison key="North_Hornwood_MAA_Longbowmen" level="1" percentage="2" max="LEVY" />
+    <Garrison key="North_Mormont_MAA_Pikemen" level="1" percentage="2" max="LEVY" />
+    <Garrison key="North_Stark_MAA_Billmen" level="1" percentage="2" max="LEVY" />
+    <Garrison key="Reach_Tarly_MAA_Halberdiers" level="1" percentage="2" max="LEVY" />
+    <Garrison key="Reach_Tyrell_MAA_Pikemen" level="1" percentage="51" max="LEVY" />
+    <Garrison key="Riverlands_Mallister_MAA_Axemen" level="1" percentage="2" max="LEVY" />
+    <Garrison key="Riverlands_Tully_Guard_Swordsmen" level="1" percentage="2" max="LEVY" />
+    <Garrison key="Stormlands_Baratheon_MAA_Longbowmen" level="1" percentage="2" max="LEVY" />
+    <Garrison key="Stormlands_Dragonstone_MAA_Longbowmen" level="1" percentage="2" max="LEVY" />
+    <Garrison key="Stormlands_Renly_Stag_knights" level="1" percentage="2" max="LEVY" />
+    <Garrison key="Westerlands_Brax_MAA_Billmen" level="1" percentage="2" max="LEVY" />
+    <Garrison key="Westerlands_Marbrand_MAA_Mounted_Swordsmen" level="1" percentage="3" max="LEVY" />
     <Garrison key="Dorne_Martell_Light_Javelin_MAA" level="2" percentage="34" max="LEVY" />
     <Garrison key="North_Karstark_MAA_Billmen" level="2" percentage="33" max="LEVY" />
     <Garrison key="Reach_Tyrell_MAA_Billmen" level="2" percentage="33" max="LEVY" />
@@ -1523,7 +1524,7 @@
     <MenAtArm type="armored_footmen" key="House_Stark_Sword_MAA" max="INFANTRY" />
     <MenAtArm type="armored_horsemen" key="House_Stark_Outriders" max="CAVALRY" />
     <MenAtArm type="ayrudzi" key="House_Stark_Outriders" max="CAVALRY" />
-    <MenAtArm type="ballistrai" key="Vale_Royce_Catapult" siege="true" siege_engine_per_unit="1" num_guns="4" />
+    <MenAtArm type="ballistrai" key="House_Frey_Catapult" siege="true" siege_engine_per_unit="1" num_guns="5" />
     <MenAtArm type="barrow_knights" key="House_Stark_Outriders" max="CAVALRY" />
     <MenAtArm type="battering_ram" key="North_Stark_Catapult" siege="true" siege_engine_per_unit="1" num_guns="4" />
     <MenAtArm type="black_wall_chariots" key="House_Stark_Outriders" siege="true" num_guns="0" />
@@ -1582,7 +1583,7 @@
     <MenAtArm type="maa_marauders" key="House_bolton_flayers" max="CAVALRY" />
     <MenAtArm type="maa_poachers" key="North_Stark_Militia_Hunters" max="RANGED" />
     <MenAtArm type="maa_thieves" key="North_Stark_MAA_Spearmen" max="INFANTRY" />
-    <MenAtArm type="mangonel" key="Vale_Royce_Catapult" siege="true" siege_engine_per_unit="1" num_guns="4" />
+    <MenAtArm type="mangonel" key="House_Frey_Catapult" siege="true" siege_engine_per_unit="1" num_guns="5" />
     <MenAtArm type="marcher_longbowmen" key="North_Stark_MAA_Longbowmen" max="RANGED" />
     <MenAtArm type="market_guard" key="North_Stark_Guard_Swordsmen" max="INFANTRY" />
     <MenAtArm type="marsh_walker" key="North_Stark_Guard_Spearmen" max="INFANTRY" />
@@ -1595,7 +1596,7 @@
     <MenAtArm type="northern_spears" key="North_Stark_MAA_Spearmen" max="INFANTRY" />
     <MenAtArm type="nw_rangers" key="BTW_Nights_Watch_Guard_Rangers" max="RANGED" />
     <MenAtArm type="nw_trackers" key="House_Arryn_MAA_Outriders" max="CAVALRY" />
-    <MenAtArm type="onager" key="Vale_Royce_Catapult" siege="true" siege_engine_per_unit="1" num_guns="4" />
+    <MenAtArm type="onager" key="House_Frey_Catapult" siege="true" siege_engine_per_unit="1" num_guns="5" />
     <MenAtArm type="ornate_helms" key="North_Stark_MAA_Pikemen" max="INFANTRY" />
     <MenAtArm type="pass_pikes" key="North_Stark_MAA_Pikemen" max="INFANTRY" />
     <MenAtArm type="pikemen_unit" key="North_Bolton_MAA_Pikemen" max="INFANTRY" />
@@ -1620,7 +1621,6 @@
     <MenAtArm type="skahazdahn_wardens" key="House_Stark_Sword_MAA" max="INFANTRY" />
     <MenAtArm type="skoutatoi" key="North_Stark_MAA_Pikemen" max="INFANTRY" />
     <MenAtArm type="slave_legion" key="House_Stark_Sword_MAA" max="INFANTRY" />
-    <MenAtArm type="slave_legion" key="Stormlands_Renly_Stag_Sentinels" />
     <MenAtArm type="smiths_axes" key="North_Stark_MAA_Axemen" max="INFANTRY" />
     <MenAtArm type="stair_guard" key="North_Stark_MAA_Pikemen" max="INFANTRY" />
     <MenAtArm type="star_carved" key="House_Stark_Sword_MAA" max="INFANTRY" />
@@ -1636,7 +1636,7 @@
     <MenAtArm type="tiger_cloaks" key="North_Stark_MAA_Pikemen" max="INFANTRY" />
     <MenAtArm type="tolosi_slingers" key="House_Stark_Archers" max="RANGED" />
     <MenAtArm type="torch_bearers" key="North_Stark_Catapult" siege="true" siege_engine_per_unit="1" num_guns="4" />
-    <MenAtArm type="trebuchet" key="Vale_Royce_Catapult" siege="true" siege_engine_per_unit="1" num_guns="4" />
+    <MenAtArm type="trebuchet" key="House_Frey_Catapult" siege="true" siege_engine_per_unit="1" num_guns="5" />
     <MenAtArm type="triarchs_herd" key="North_Stark_Winter_Wolves" max="CAVALRY" />
     <MenAtArm type="unicorn_riders" key="House_Stark_Outriders" max="CAVALRY" />
     <MenAtArm type="unsullied" key="North_Stark_MAA_Pikemen" max="INFANTRY" />
@@ -1671,6 +1671,7 @@
     <Knights key="House_Arryn_MAA_Crossbowmen" rank="1" />
     <Knights key="House_Frey_Squires" rank="1" />
     <Knights key="House_GreyJoy_Mounted_Raiders_Generic_Gen" rank="1" />
+    <Knights key="House_Stark_Outriders_Generic_Gen" rank="1" />
     <Knights key="House_Tyrell_Knights" rank="1" num_guns="0" />
     <Knights key="North_Cerwyn_MAA_Mounted_Swordsmen" rank="1" />
     <Knights key="North_Karstark_MAA_Crossbowmen" rank="1" />
@@ -1688,39 +1689,37 @@
     <Knights key="Westerlands_Marbrand_MAA_Mounted_Swordsmen" rank="1" />
     <Knights key="House_Tyrell_Rose_Knights_Mounted" rank="2" num_guns="0" />
     <Knights key="Reach_Tarly_MAA_Lance_Cavalry" rank="3" num_guns="0" />
-    <Levies key="House_Frey_Levy_bills" percentage="34" max="LEVY" />
-    <Levies key="House_Frey_Squires" percentage="8" max="LEVY" />
-    <Levies key="House_Martell_Archers" percentage="34" max="LEVY" />
-    <Levies key="North_Stark_MAA_Spearmen" percentage="8" max="LEVY" />
-    <Levies key="Westerlands_Brax_MAA_Crossbowmen" percentage="8" max="LEVY" />
-    <Levies key="Westerlands_Brax_MAA_Halberdiers" percentage="8" max="LEVY" />
+    <Levies key="House_Tully_MAA_Archers" percentage="33" max="LEVY" />
+    <Levies key="House_Tully_Rangers" percentage="11" max="LEVY" />
+    <Levies key="House_Tyrell_MAA_Archers" percentage="34" max="LEVY" />
+    <Levies key="Vale_MAA_Spear_Cav" percentage="11" max="LEVY" />
+    <Levies key="Westerlands_Crakehall_MAA_Lance_Cavalry" percentage="11" max="LEVY" />
     <Garrison key="BTW_Wildling_MAA_Axemen" level="1" percentage="1" max="LEVY" />
     <Garrison key="Crownlands_Kings_Landing_Goldcloak_Crossbowmen" level="1" percentage="1" max="LEVY" />
-    <Garrison key="Dorne_Martell_MAA_Halberdiers" level="1" percentage="2" max="LEVY" />
-    <Garrison key="Dorne_Uller_MAA_Axemen" level="1" percentage="2" max="LEVY" />
-    <Garrison key="Dorne_Yronwood_MAA_Mounted_Swordsmen" level="1" percentage="2" max="LEVY" />
-    <Garrison key="House_Bolton_Proven_Archers" level="1" percentage="2" max="LEVY" />
-    <Garrison key="House_Dragonstone_Catapult" level="1" percentage="2" max="LEVY" />
-    <Garrison key="House_Dragonstone_MAA_Pikemen" level="1" percentage="2" max="LEVY" />
-    <Garrison key="House_Lannister_MAA_Swordsmen" level="1" percentage="2" max="LEVY" />
-    <Garrison key="House_bolton_flayers" level="1" percentage="50" max="LEVY" />
-    <Garrison key="Iron_Islands_Greyjoy_MAA_Crossbowmen" level="1" percentage="2" max="LEVY" />
-    <Garrison key="Iron_Islands_Greyjoy_MAA_Halberdiers" level="1" percentage="2" max="LEVY" />
-    <Garrison key="Iron_Islands_Harlaw_MAA_Bowmen" level="1" percentage="2" max="LEVY" />
-    <Garrison key="North_Bolton_MAA_Spearmen" level="1" percentage="2" max="LEVY" />
-    <Garrison key="North_Cerwyn_Catapult" level="1" percentage="2" max="LEVY" />
-    <Garrison key="North_Hornwood_MAA_Mounted_Swordsmen" level="1" percentage="2" max="LEVY" />
-    <Garrison key="North_Mormont_MAA_Lance_Cavalry" level="1" percentage="2" max="LEVY" />
-    <Garrison key="North_Mormont_MAA_Swordsmen" level="1" percentage="2" max="LEVY" />
-    <Garrison key="North_Stark_MAA_Lance_Cavalry" level="1" percentage="2" max="LEVY" />
-    <Garrison key="North_Stark_Militia_Hunters" level="1" percentage="2" max="LEVY" />
-    <Garrison key="Riverlands_Frey_MAA_Axemen" level="1" percentage="2" max="LEVY" />
-    <Garrison key="Riverlands_Mallister_MAA_Lance_Cavalry" level="1" percentage="2" max="LEVY" />
-    <Garrison key="Riverlands_Tully_MAA_Pikemen" level="1" percentage="2" max="LEVY" />
-    <Garrison key="Stormlands_Baratheon_MAA_Crossbowmen" level="1" percentage="2" max="LEVY" />
-    <Garrison key="Stormlands_Dragonstone_MAA_Swordsmen" level="1" percentage="2" max="LEVY" />
-    <Garrison key="Vale_Arryn_MAA_Swordsmen" level="1" percentage="2" max="LEVY" />
-    <Garrison key="Westerlands_Brax_MAA_Crossbowmen" level="1" percentage="2" max="LEVY" />
+    <Garrison key="Dorne_Martell_MAA_Halberdiers" level="1" percentage="1" max="LEVY" />
+    <Garrison key="Dorne_Uller_MAA_Axemen" level="1" percentage="1" max="LEVY" />
+    <Garrison key="Dorne_Yronwood_MAA_Mounted_Swordsmen" level="1" percentage="1" max="LEVY" />
+    <Garrison key="House_Bolton_Proven_Archers" level="1" percentage="1" max="LEVY" />
+    <Garrison key="House_Dragonstone_MAA_Pikemen" level="1" percentage="1" max="LEVY" />
+    <Garrison key="House_Lannister_MAA_Swordsmen" level="1" percentage="1" max="LEVY" />
+    <Garrison key="House_bolton_flayers" level="1" percentage="26" max="LEVY" />
+    <Garrison key="Iron_Islands_Greyjoy_MAA_Crossbowmen" level="1" percentage="1" max="LEVY" />
+    <Garrison key="Iron_Islands_Greyjoy_MAA_Halberdiers" level="1" percentage="1" max="LEVY" />
+    <Garrison key="Iron_Islands_Harlaw_MAA_Bowmen" level="1" percentage="1" max="LEVY" />
+    <Garrison key="North_Bolton_MAA_Spearmen" level="1" percentage="1" max="LEVY" />
+    <Garrison key="North_Hornwood_MAA_Mounted_Swordsmen" level="1" percentage="1" max="LEVY" />
+    <Garrison key="North_Mormont_Catapult" level="1" percentage="50" max="LEVY" />
+    <Garrison key="North_Mormont_MAA_Lance_Cavalry" level="1" percentage="1" max="LEVY" />
+    <Garrison key="North_Mormont_MAA_Swordsmen" level="1" percentage="1" max="LEVY" />
+    <Garrison key="North_Stark_MAA_Lance_Cavalry" level="1" percentage="1" max="LEVY" />
+    <Garrison key="North_Stark_Militia_Hunters" level="1" percentage="1" max="LEVY" />
+    <Garrison key="Riverlands_Frey_MAA_Axemen" level="1" percentage="1" max="LEVY" />
+    <Garrison key="Riverlands_Mallister_MAA_Lance_Cavalry" level="1" percentage="1" max="LEVY" />
+    <Garrison key="Riverlands_Tully_MAA_Pikemen" level="1" percentage="1" max="LEVY" />
+    <Garrison key="Stormlands_Baratheon_MAA_Crossbowmen" level="1" percentage="1" max="LEVY" />
+    <Garrison key="Stormlands_Dragonstone_MAA_Swordsmen" level="1" percentage="1" max="LEVY" />
+    <Garrison key="Vale_Arryn_MAA_Swordsmen" level="1" percentage="1" max="LEVY" />
+    <Garrison key="Westerlands_Brax_MAA_Crossbowmen" level="1" percentage="1" max="LEVY" />
     <Garrison key="Iron_Islands_Greyjoy_MAA_Infantry" level="2" percentage="34" max="LEVY" />
     <Garrison key="Riverlands_Frey_MAA_Crossbowmen" level="2" percentage="33" max="LEVY" />
     <Garrison key="Westerlands_Marbrand_MAA_Billmen" level="2" percentage="33" max="LEVY" />
@@ -1745,7 +1744,7 @@
     <MenAtArm type="armored_footmen" key="House_Tyrell_MAA_Swordsmen" max="INFANTRY" />
     <MenAtArm type="armored_horsemen" key="House_Tyrell_Knights" max="CAVALRY" />
     <MenAtArm type="ayrudzi" key="Dorne_Martell_MAA_Mounted_Archers" max="CAVALRY" />
-    <MenAtArm type="ballistrai" key="Vale_Royce_Catapult" siege="true" siege_engine_per_unit="1" num_guns="4" />
+    <MenAtArm type="ballistrai" key="House_Frey_Catapult" siege="true" siege_engine_per_unit="1" num_guns="5" />
     <MenAtArm type="barrow_knights" key="House_Tyrell_Knights" max="CAVALRY" />
     <MenAtArm type="battering_ram" key="Reach_Tyrell_Catapult" siege="true" siege_engine_per_unit="1" num_guns="4" />
     <MenAtArm type="black_wall_chariots" key="Reach_Tyrell_MAA_Lance_Cavalry" siege="true" num_guns="0" />
@@ -1804,7 +1803,7 @@
     <MenAtArm type="maa_marauders" key="House_Tyrell_MAA_Outriders" max="CAVALRY" />
     <MenAtArm type="maa_poachers" key="House_Tyrell_MAA_Archers" max="RANGED" />
     <MenAtArm type="maa_thieves" key="House_Tyrell_MAA_Pikemen" max="INFANTRY" />
-    <MenAtArm type="mangonel" key="Vale_Royce_Catapult" siege="true" siege_engine_per_unit="1" num_guns="4" />
+    <MenAtArm type="mangonel" key="House_Frey_Catapult" siege="true" siege_engine_per_unit="1" num_guns="5" />
     <MenAtArm type="marcher_longbowmen" key="House_Tyrell_MAA_Swordsmen" max="RANGED" />
     <MenAtArm type="market_guard" key="House_Tyrell_MAA_Swordsmen" max="INFANTRY" />
     <MenAtArm type="marsh_walker" key="House_Tyrell_MAA_Archers" max="INFANTRY" />
@@ -1817,7 +1816,7 @@
     <MenAtArm type="northern_spears" key="Reach_Tyrell_MAA_Pikemen" max="INFANTRY" />
     <MenAtArm type="nw_rangers" key="House_Tyrell_MAA_Swordsmen" max="RANGED" />
     <MenAtArm type="nw_trackers" key="House_Tyrell_MAA_Outriders" max="CAVALRY" />
-    <MenAtArm type="onager" key="Vale_Royce_Catapult" siege="true" siege_engine_per_unit="1" num_guns="4" />
+    <MenAtArm type="onager" key="House_Frey_Catapult" siege="true" siege_engine_per_unit="1" num_guns="5" />
     <MenAtArm type="ornate_helms" key="Reach_Tyrell_MAA_Pikemen" max="INFANTRY" />
     <MenAtArm type="pass_pikes" key="House_Tyrell_MAA_Pikemen" max="INFANTRY" />
     <MenAtArm type="pikemen_unit" key="House_Tyrell_MAA_Pikemen" max="INFANTRY" />
@@ -1842,7 +1841,6 @@
     <MenAtArm type="skahazdahn_wardens" key="Reach_Tyrell_Guard_Swordsmen" max="INFANTRY" />
     <MenAtArm type="skoutatoi" key="House_Tyrell_MAA_Pikemen" max="INFANTRY" />
     <MenAtArm type="slave_legion" key="House_Tyrell_MAA_Swordsmen" max="INFANTRY" />
-    <MenAtArm type="slave_legion" key="North_Stark_Winter_Wolves" />
     <MenAtArm type="smiths_axes" key="Reach_Tyrell_MAA_Axemen" max="INFANTRY" />
     <MenAtArm type="stair_guard" key="House_Tyrell_MAA_Pikemen" max="INFANTRY" />
     <MenAtArm type="star_carved" key="House_Tyrell_MAA_Swordsmen" max="INFANTRY" />
@@ -1858,7 +1856,7 @@
     <MenAtArm type="tiger_cloaks" key="House_Tyrell_MAA_Pikemen" max="INFANTRY" />
     <MenAtArm type="tolosi_slingers" key="House_Tyrell_MAA_Archers" max="RANGED" />
     <MenAtArm type="torch_bearers" key="Crownlands_Kings_Landing_Peasants" siege="true" num_guns="0" />
-    <MenAtArm type="trebuchet" key="Vale_Royce_Catapult" siege="true" siege_engine_per_unit="1" num_guns="4" />
+    <MenAtArm type="trebuchet" key="House_Frey_Catapult" siege="true" siege_engine_per_unit="1" num_guns="5" />
     <MenAtArm type="triarchs_herd" key="House_Tyrell_MAA_Swordsmen" max="CAVALRY" />
     <MenAtArm type="unicorn_riders" key="House_Tyrell_MAA_Outriders" max="CAVALRY" />
     <MenAtArm type="unsullied" key="Reach_Tyrell_MAA_Pikemen" max="INFANTRY" />
@@ -1888,6 +1886,7 @@
     <General key="House_Frey_Crossing_Knights_Gen" rank="1" />
     <General key="House_GreyJoy_Mounted_Raiders_Generic_Gen" rank="1" />
     <General key="House_Lannister_Knights_Generic_Gen" rank="1" />
+    <General key="House_Lannister_MAA_Crossbowmen" rank="1" />
     <General key="House_Martell_Archers" rank="1" />
     <General key="House_Stark_Outriders_Generic_Gen" rank="1" />
     <General key="House_Tully_Knights_Generic_Gen" rank="1" />
@@ -1918,6 +1917,7 @@
     <Knights key="Iron_Islands_Greyjoy_MAA_Mounted_Swordsmen" rank="1" />
     <Knights key="North_Bolton_MAA_Mounted_Swordsmen" rank="1" />
     <Knights key="North_Cerwyn_MAA_Lance_Cavalry" rank="1" />
+    <Knights key="North_Karstark_MAA_Mounted_Swordsmen" rank="1" />
     <Knights key="Reach_Tyrell_MAA_Mounted_Swordsmen" rank="1" />
     <Knights key="Riverlands_Frey_MAA_Mounted_Swordsmen" rank="1" num_guns="0" />
     <Knights key="Stormlands_Baratheon_MAA_Axemen" rank="1" />
@@ -1936,36 +1936,37 @@
     <Knights key="Westerlands_Marbrand_MAA_Mounted_Swordsmen" rank="1" />
     <Knights key="House_Frey_Crossing_Knights" rank="2" num_guns="0" />
     <Knights key="House_Tully_Knights" rank="3" num_guns="0" />
-    <Levies key="Crownlands_Velaryon_Marine_Ship" percentage="33" max="LEVY" />
-    <Levies key="Dorne_Martell_MAA_Spear" percentage="11" max="LEVY" />
-    <Levies key="Dorne_Martell_Royal_Pikemen" percentage="11" max="LEVY" />
-    <Levies key="House_Arryn_MAA_Outriders" percentage="11" max="LEVY" />
+    <Levies key="House_Bolton_Bowmen" percentage="8" max="LEVY" />
+    <Levies key="House_Bolton_Proven_Archers" percentage="8" max="LEVY" />
+    <Levies key="House_Dragonstone_MAA_Outriders" percentage="8" max="LEVY" />
+    <Levies key="North_Bolton_MAA_Mounted_Swordsmen" percentage="8" max="LEVY" />
+    <Levies key="Riverlands_Mallister_Catapult" percentage="34" max="LEVY" />
     <Levies key="Stormlands_Renly_MAA_Archers" percentage="34" max="LEVY" />
-    <Garrison key="Dorne_Martell_Light_Javelin_MAA" level="1" percentage="4" max="LEVY" />
-    <Garrison key="Dorne_Martell_Light_Pikemen" level="1" percentage="4" max="LEVY" />
-    <Garrison key="Dorne_Martell_Royal_Spear" level="1" percentage="4" max="LEVY" />
-    <Garrison key="Dorne_Martell_Royal_Sword" level="1" percentage="4" max="LEVY" />
-    <Garrison key="Dorne_Uller_MAA_Halberdiers" level="1" percentage="4" max="LEVY" />
-    <Garrison key="House_Bolton_Spear_MAA" level="1" percentage="4" max="LEVY" />
-    <Garrison key="House_Dragonstone_Stag_Champions_Knights" level="1" percentage="4" max="LEVY" />
-    <Garrison key="House_GreyJoy_Kraken_Guard" level="1" percentage="4" max="LEVY" />
-    <Garrison key="House_Stark_Catapult" level="1" percentage="4" max="LEVY" />
-    <Garrison key="House_Stark_Spear_MAA" level="1" percentage="4" max="LEVY" />
-    <Garrison key="House_Tyrell_MAA_Crossbowmen" level="1" percentage="4" max="LEVY" />
-    <Garrison key="Iron_Islands_Greyjoy_MAA_Crossbowmen" level="1" percentage="4" max="LEVY" />
-    <Garrison key="Iron_Islands_Harlaw_MAA_Halberdiers" level="1" percentage="4" max="LEVY" />
-    <Garrison key="North_Hornwood_MAA_Longbowmen" level="1" percentage="4" max="LEVY" />
-    <Garrison key="North_Hornwood_MAA_Swordsmen" level="1" percentage="4" max="LEVY" />
-    <Garrison key="North_Karstark_MAA_Spearmen" level="1" percentage="4" max="LEVY" />
-    <Garrison key="North_Mormont_MAA_Crossbowmen" level="1" percentage="4" max="LEVY" />
-    <Garrison key="North_Mormont_MAA_Mounted_Swordsmen" level="1" percentage="4" max="LEVY" />
-    <Garrison key="Reach_Tarly_MAA_Halberdiers" level="1" percentage="4" max="LEVY" />
-    <Garrison key="Riverlands_Tully_MAA_Crossbowmen" level="1" percentage="4" max="LEVY" />
-    <Garrison key="Stormlands_Baratheon_MAA_Spearmen" level="1" percentage="4" max="LEVY" />
-    <Garrison key="Stormlands_Dragonstone_MAA_Lance_Cavalry" level="1" percentage="4" max="LEVY" />
-    <Garrison key="Stormlands_Renly_MAA_Swordsmen" level="1" percentage="4" max="LEVY" />
-    <Garrison key="Vale_Arryn_MAA_Pikemen" level="1" percentage="4" max="LEVY" />
-    <Garrison key="Vale_Royce_MAA_Billmen" level="1" percentage="4" max="LEVY" />
+    <Garrison key="Dorne_Martell_Light_Javelin_MAA" level="1" percentage="2" max="LEVY" />
+    <Garrison key="Dorne_Martell_Light_Pikemen" level="1" percentage="2" max="LEVY" />
+    <Garrison key="Dorne_Martell_Royal_Spear" level="1" percentage="2" max="LEVY" />
+    <Garrison key="Dorne_Martell_Royal_Sword" level="1" percentage="2" max="LEVY" />
+    <Garrison key="Dorne_Uller_MAA_Halberdiers" level="1" percentage="2" max="LEVY" />
+    <Garrison key="House_Bolton_Spear_MAA" level="1" percentage="2" max="LEVY" />
+    <Garrison key="House_Dragonstone_Stag_Champions_Knights" level="1" percentage="2" max="LEVY" />
+    <Garrison key="House_GreyJoy_Chosen_Swords" level="1" percentage="51" max="LEVY" />
+    <Garrison key="House_GreyJoy_Kraken_Guard" level="1" percentage="2" max="LEVY" />
+    <Garrison key="House_Stark_Spear_MAA" level="1" percentage="2" max="LEVY" />
+    <Garrison key="House_Tyrell_MAA_Crossbowmen" level="1" percentage="2" max="LEVY" />
+    <Garrison key="Iron_Islands_Greyjoy_MAA_Crossbowmen" level="1" percentage="2" max="LEVY" />
+    <Garrison key="Iron_Islands_Harlaw_MAA_Halberdiers" level="1" percentage="2" max="LEVY" />
+    <Garrison key="North_Hornwood_MAA_Longbowmen" level="1" percentage="2" max="LEVY" />
+    <Garrison key="North_Hornwood_MAA_Swordsmen" level="1" percentage="2" max="LEVY" />
+    <Garrison key="North_Karstark_MAA_Spearmen" level="1" percentage="2" max="LEVY" />
+    <Garrison key="North_Mormont_MAA_Crossbowmen" level="1" percentage="2" max="LEVY" />
+    <Garrison key="North_Mormont_MAA_Mounted_Swordsmen" level="1" percentage="2" max="LEVY" />
+    <Garrison key="Reach_Tarly_MAA_Halberdiers" level="1" percentage="2" max="LEVY" />
+    <Garrison key="Riverlands_Tully_MAA_Crossbowmen" level="1" percentage="2" max="LEVY" />
+    <Garrison key="Stormlands_Baratheon_MAA_Spearmen" level="1" percentage="2" max="LEVY" />
+    <Garrison key="Stormlands_Dragonstone_MAA_Lance_Cavalry" level="1" percentage="2" max="LEVY" />
+    <Garrison key="Stormlands_Renly_MAA_Swordsmen" level="1" percentage="2" max="LEVY" />
+    <Garrison key="Vale_Arryn_MAA_Pikemen" level="1" percentage="2" max="LEVY" />
+    <Garrison key="Vale_Royce_MAA_Billmen" level="1" percentage="3" max="LEVY" />
     <Garrison key="Iron_Islands_Greyjoy_Guard_Swordsmen" level="2" percentage="34" max="LEVY" />
     <Garrison key="North_Bolton_MAA_Crossbowmen" level="2" percentage="33" max="LEVY" />
     <Garrison key="Riverlands_Mallister_MAA_Billmen" level="2" percentage="33" max="LEVY" />
@@ -1991,7 +1992,7 @@
     <MenAtArm type="armored_footmen" key="House_Frey_Foot_Guards" max="INFANTRY" />
     <MenAtArm type="armored_horsemen" key="Riverlands_Tully_MAA_Lance_Cavalry" max="CAVALRY" />
     <MenAtArm type="ayrudzi" key="House_Frey_mounted_crossbowmen" max="CAVALRY" />
-    <MenAtArm type="ballistrai" key="Vale_Royce_Catapult" siege="true" siege_engine_per_unit="1" num_guns="4" />
+    <MenAtArm type="ballistrai" key="House_Frey_Catapult" siege="true" siege_engine_per_unit="1" num_guns="5" />
     <MenAtArm type="barrow_knights" key="House_Tully_Knights" max="CAVALRY" />
     <MenAtArm type="battering_ram" key="Riverlands_Tully_Catapult" siege="true" siege_engine_per_unit="1" num_guns="4" />
     <MenAtArm type="black_wall_chariots" key="House_Tully_Knights" siege="true" num_guns="0" />
@@ -2001,7 +2002,7 @@
     <MenAtArm type="cailin_archers" key="House_Tully_MAA_Swordsmen" max="RANGED" />
     <MenAtArm type="cape_watch" key="House_Frey_mounted_crossbowmen" max="CAVALRY" />
     <MenAtArm type="cataphract_archers" key="House_Tully_MAA_Outriders" max="CAVALRY" />
-    <MenAtArm type="clan_champions" key="BTW_Night_King_Army_Ancient_Wight_Infantry" max="INFANTRY" />
+    <MenAtArm type="clan_champions" key="House_Tully_MAA_Swordsmen" max="INFANTRY" />
     <MenAtArm type="cohort_of_the_three_thousand" key="Riverlands_Tully_MAA_Pikemen" max="INFANTRY" />
     <MenAtArm type="collared_bows" key="Riverlands_Tully_MAA_Swordsmen" max="RANGED" />
     <MenAtArm type="conrois" key="House_Tully_Knights" max="CAVALRY" />
@@ -2050,7 +2051,7 @@
     <MenAtArm type="maa_marauders" key="House_Frey_mounted_crossbowmen" max="CAVALRY" />
     <MenAtArm type="maa_poachers" key="House_Tully_Rangers" max="RANGED" />
     <MenAtArm type="maa_thieves" key="House_Tully_MAA_Pikemen" max="INFANTRY" />
-    <MenAtArm type="mangonel" key="Vale_Royce_Catapult" siege="true" siege_engine_per_unit="1" num_guns="4" />
+    <MenAtArm type="mangonel" key="House_Frey_Catapult" siege="true" siege_engine_per_unit="1" num_guns="5" />
     <MenAtArm type="marcher_longbowmen" key="House_Tully_MAA_Swordsmen" max="RANGED" />
     <MenAtArm type="market_guard" key="House_Frey_Foot_Guards" max="INFANTRY" />
     <MenAtArm type="marsh_walker" key="House_Frey_Mud_Crowlers" max="INFANTRY" />
@@ -2063,7 +2064,7 @@
     <MenAtArm type="northern_spears" key="House_Tully_MAA_Pikemen" max="INFANTRY" />
     <MenAtArm type="nw_rangers" key="House_Tully_Rangers" max="RANGED" />
     <MenAtArm type="nw_trackers" key="House_Frey_mounted_crossbowmen" max="CAVALRY" />
-    <MenAtArm type="onager" key="Vale_Royce_Catapult" siege="true" siege_engine_per_unit="1" num_guns="4" />
+    <MenAtArm type="onager" key="House_Frey_Catapult" siege="true" siege_engine_per_unit="1" num_guns="5" />
     <MenAtArm type="ornate_helms" key="Riverlands_Tully_MAA_Pikemen" max="INFANTRY" />
     <MenAtArm type="pass_pikes" key="Riverlands_Tully_MAA_Pikemen" max="INFANTRY" />
     <MenAtArm type="pikemen_unit" key="House_Tully_MAA_Pikemen" max="INFANTRY" />
@@ -2077,7 +2078,7 @@
     <MenAtArm type="riverlands_light_infantry" key="House_Tully_MAA_Swordsmen" max="INFANTRY" />
     <MenAtArm type="royal_crossbowmen" key="House_Tully_MAA_Crossbowmen" max="RANGED" />
     <MenAtArm type="ruby_spearwomen" key="Riverlands_Tully_MAA_Pikemen" max="INFANTRY" />
-    <MenAtArm type="sand_steeds" key="BTW_White_Walkers" max="CAVALRY" />
+    <MenAtArm type="sand_steeds" key="House_Frey_mounted_crossbowmen" max="CAVALRY" />
     <MenAtArm type="sarsfield_horse_archers" key="House_Frey_mounted_crossbowmen" max="CAVALRY" />
     <MenAtArm type="scorpions" key="House_Tully_Catapult" siege="true" siege_engine_per_unit="1" num_guns="5" />
     <MenAtArm type="sea_snakes" key="House_Tully_MAA_Swordsmen" max="INFANTRY" />
@@ -2088,7 +2089,6 @@
     <MenAtArm type="skahazdahn_wardens" key="House_Tully_MAA_Swordsmen" max="INFANTRY" />
     <MenAtArm type="skoutatoi" key="Riverlands_Tully_MAA_Pikemen" max="INFANTRY" />
     <MenAtArm type="slave_legion" key="House_Tully_MAA_Swordsmen" max="INFANTRY" />
-    <MenAtArm type="slave_legion" key="House_Arryn_Honor_Guards" />
     <MenAtArm type="smiths_axes" key="Riverlands_Frey_MAA_Axemen" max="INFANTRY" />
     <MenAtArm type="stair_guard" key="House_Tully_MAA_Pikemen" max="INFANTRY" />
     <MenAtArm type="star_carved" key="House_Tully_MAA_Swordsmen" max="INFANTRY" />
@@ -2104,7 +2104,7 @@
     <MenAtArm type="tiger_cloaks" key="Riverlands_Tully_MAA_Pikemen" max="INFANTRY" />
     <MenAtArm type="tolosi_slingers" key="Dorne_Martell_MAA_Javelins" max="RANGED" />
     <MenAtArm type="torch_bearers" key="House_Frey_Catapult" siege="true" siege_engine_per_unit="1" num_guns="5" />
-    <MenAtArm type="trebuchet" key="Vale_Royce_Catapult" siege="true" siege_engine_per_unit="1" num_guns="4" />
+    <MenAtArm type="trebuchet" key="House_Frey_Catapult" siege="true" siege_engine_per_unit="1" num_guns="5" />
     <MenAtArm type="triarchs_herd" key="Riverlands_Tully_Guard_Swordsmen" max="CAVALRY" />
     <MenAtArm type="unicorn_riders" key="House_Frey_mounted_crossbowmen" max="CAVALRY" />
     <MenAtArm type="unsullied" key="Essos_Targaryen_Unsullied_Pikemen" max="INFANTRY" />
@@ -2136,6 +2136,7 @@
     <General key="House_Frey_Spear_Sergeants" rank="1" />
     <General key="House_GreyJoy_Mounted_Raiders_Generic_Gen" rank="1" />
     <General key="House_Lannister_Knights_Generic_Gen" rank="1" />
+    <General key="House_Lannister_MAA_Crossbowmen" rank="1" />
     <General key="House_Stark_Outriders_Generic_Gen" rank="1" />
     <General key="House_Tully_Sworn_Spears_Shield" rank="1" />
     <General key="House_Tyrell_Knights_Generic_Gen" rank="1" />
@@ -2163,6 +2164,7 @@
     <Knights key="House_Frey_Levy_bills" rank="1" />
     <Knights key="House_Stark_Outriders" rank="1" />
     <Knights key="House_Tully_Rangers" rank="1" />
+    <Knights key="Iron_Islands_Harlaw_MAA_Mounted_Swordsmen" rank="1" />
     <Knights key="Iron_Islands_Harlaw_MAA_Spearmen" rank="1" />
     <Knights key="North_Cerwyn_MAA_Longbowmen" rank="1" />
     <Knights key="North_Karstark_MAA_Mounted_Swordsmen" rank="1" />
@@ -2182,39 +2184,40 @@
     <Knights key="Westerlands_Lefford_MAA_Halberdiers" rank="1" />
     <Knights key="Stormlands_Baratheon_MAA_Lance_Cavalry" rank="2" num_guns="0" />
     <Knights key="Stormlands_Renly_MAA_Lance_Cavalry" rank="3" num_guns="0" />
-    <Levies key="House_Arryn_Light_Billmen" percentage="6" max="LEVY" />
-    <Levies key="House_Arryn_MAA_Outriders" percentage="7" max="LEVY" />
-    <Levies key="House_GreyJoy_Drowned_Men" percentage="33" max="LEVY" />
-    <Levies key="House_bolton_knives_lord" percentage="33" max="LEVY" />
-    <Levies key="North_Cerwyn_MAA_Spearmen" percentage="7" max="LEVY" />
-    <Levies key="North_Glover_Catapult" percentage="7" max="LEVY" />
-    <Levies key="Westerlands_Brax_MAA_Halberdiers" percentage="7" max="LEVY" />
-    <Garrison key="BTW_Wildling_MAA_Archers" level="1" percentage="4" max="LEVY" />
-    <Garrison key="BTW_Wildling_MAA_Swordsmen" level="1" percentage="4" max="LEVY" />
-    <Garrison key="Crownlands_Kings_Landing_Goldcloak_Crossbowmen" level="1" percentage="4" max="LEVY" />
-    <Garrison key="Crownlands_Velaryon_Conscript_Pikemen" level="1" percentage="4" max="LEVY" />
-    <Garrison key="Crownlands_Velaryon_MAA_Longbowmen" level="1" percentage="4" max="LEVY" />
-    <Garrison key="Dorne_Dayne_MAA_Lance_Cavalry" level="1" percentage="4" max="LEVY" />
-    <Garrison key="Dorne_Martell_Heavy_Lancer" level="1" percentage="4" max="LEVY" />
-    <Garrison key="Dorne_Martell_Medium_MAA_Sword" level="1" percentage="4" max="LEVY" />
-    <Garrison key="House_Arryn_MAA_Mounted_Crossbowmen" level="1" percentage="4" max="LEVY" />
-    <Garrison key="House_Dragonstone_Knights" level="1" percentage="4" max="LEVY" />
-    <Garrison key="House_GreyJoy_Chosen_Axes" level="1" percentage="4" max="LEVY" />
-    <Garrison key="House_Tully_MAA_Spearmen" level="1" percentage="4" max="LEVY" />
-    <Garrison key="House_Tully_Sworn_Shield" level="1" percentage="4" max="LEVY" />
-    <Garrison key="House_Tyrell_Knights" level="1" percentage="4" max="LEVY" />
-    <Garrison key="Iron_Islands_Greyjoy_Guard_Spearmen" level="1" percentage="4" max="LEVY" />
-    <Garrison key="Iron_Islands_Greyjoy_MAA_Infantry" level="1" percentage="4" max="LEVY" />
-    <Garrison key="North_Karstark_MAA_Pikemen" level="1" percentage="4" max="LEVY" />
-    <Garrison key="North_Stark_Winter_Wolves" level="1" percentage="4" max="LEVY" />
-    <Garrison key="North_Umber_MAA_Billmen" level="1" percentage="4" max="LEVY" />
-    <Garrison key="Reach_Tarly_MAA_Pikemen" level="1" percentage="4" max="LEVY" />
-    <Garrison key="Reach_Tyrell_MAA_Axemen" level="1" percentage="4" max="LEVY" />
-    <Garrison key="Reach_Tyrell_MAA_Lance_Cavalry" level="1" percentage="4" max="LEVY" />
-    <Garrison key="Reach_Tyrell_MAA_Swordsmen" level="1" percentage="3" max="LEVY" />
-    <Garrison key="Riverlands_Tully_Guard_Spearmen" level="1" percentage="3" max="LEVY" />
-    <Garrison key="Westerlands_Brax_MAA_Halberdiers" level="1" percentage="3" max="LEVY" />
-    <Garrison key="Westerlands_Crakehall_MAA_Pikemen" level="1" percentage="3" max="LEVY" />
+    <Levies key="Dorne_Martell_Royal_Spear" percentage="6" max="LEVY" />
+    <Levies key="House_Bolton_Bowmen" percentage="33" max="LEVY" />
+    <Levies key="House_Dragonstone_MAA_Outriders" percentage="7" max="LEVY" />
+    <Levies key="House_Tully_MAA_Crossbowmen" percentage="33" max="LEVY" />
+    <Levies key="North_Hornwood_MAA_Swordsmen" percentage="7" max="LEVY" />
+    <Levies key="North_Karstark_MAA_Longbowmen" percentage="7" max="LEVY" />
+    <Levies key="Westerlands_Marbrand_MAA_Longbowmen" percentage="7" max="LEVY" />
+    <Garrison key="BTW_Wildling_MAA_Archers" level="1" percentage="1" max="LEVY" />
+    <Garrison key="BTW_Wildling_MAA_Swordsmen" level="1" percentage="1" max="LEVY" />
+    <Garrison key="Crownlands_Kings_Landing_Goldcloak_Crossbowmen" level="1" percentage="2" max="LEVY" />
+    <Garrison key="Crownlands_Velaryon_Conscript_Pikemen" level="1" percentage="2" max="LEVY" />
+    <Garrison key="Crownlands_Velaryon_MAA_Longbowmen" level="1" percentage="2" max="LEVY" />
+    <Garrison key="Dorne_Dayne_MAA_Lance_Cavalry" level="1" percentage="2" max="LEVY" />
+    <Garrison key="Dorne_Martell_Heavy_Lancer" level="1" percentage="2" max="LEVY" />
+    <Garrison key="Dorne_Martell_Medium_MAA_Sword" level="1" percentage="2" max="LEVY" />
+    <Garrison key="House_Arryn_MAA_Mounted_Crossbowmen" level="1" percentage="2" max="LEVY" />
+    <Garrison key="House_Dragonstone_Knights" level="1" percentage="2" max="LEVY" />
+    <Garrison key="House_GreyJoy_Chosen_Axes" level="1" percentage="2" max="LEVY" />
+    <Garrison key="House_Tully_MAA_Spearmen" level="1" percentage="2" max="LEVY" />
+    <Garrison key="House_Tully_Sworn_Shield" level="1" percentage="2" max="LEVY" />
+    <Garrison key="House_Tyrell_Knights" level="1" percentage="2" max="LEVY" />
+    <Garrison key="Iron_Islands_Greyjoy_Guard_Spearmen" level="1" percentage="2" max="LEVY" />
+    <Garrison key="Iron_Islands_Greyjoy_MAA_Infantry" level="1" percentage="2" max="LEVY" />
+    <Garrison key="North_Bolton_Guard_Spearmen" level="1" percentage="50" max="LEVY" />
+    <Garrison key="North_Karstark_MAA_Pikemen" level="1" percentage="2" max="LEVY" />
+    <Garrison key="North_Stark_Winter_Wolves" level="1" percentage="2" max="LEVY" />
+    <Garrison key="North_Umber_MAA_Billmen" level="1" percentage="2" max="LEVY" />
+    <Garrison key="Reach_Tarly_MAA_Pikemen" level="1" percentage="2" max="LEVY" />
+    <Garrison key="Reach_Tyrell_MAA_Axemen" level="1" percentage="2" max="LEVY" />
+    <Garrison key="Reach_Tyrell_MAA_Lance_Cavalry" level="1" percentage="2" max="LEVY" />
+    <Garrison key="Reach_Tyrell_MAA_Swordsmen" level="1" percentage="2" max="LEVY" />
+    <Garrison key="Riverlands_Tully_Guard_Spearmen" level="1" percentage="2" max="LEVY" />
+    <Garrison key="Westerlands_Brax_MAA_Halberdiers" level="1" percentage="2" max="LEVY" />
+    <Garrison key="Westerlands_Crakehall_MAA_Pikemen" level="1" percentage="2" max="LEVY" />
     <Garrison key="House_Dragonstone_MAA_Swordsmen" level="2" percentage="34" max="LEVY" />
     <Garrison key="House_Lannister_levy_swords" level="2" percentage="33" max="LEVY" />
     <Garrison key="North_Stark_MAA_Swordsmen" level="2" percentage="33" max="LEVY" />
@@ -2239,7 +2242,7 @@
     <MenAtArm type="armored_footmen" key="House_Stormlands_MAA_Swordsmen" max="INFANTRY" />
     <MenAtArm type="armored_horsemen" key="Stormlands_Renly_Stag_knights" max="CAVALRY" />
     <MenAtArm type="ayrudzi" key="House_Tyrell_MAA_Outriders" max="CAVALRY" />
-    <MenAtArm type="ballistrai" key="Vale_Royce_Catapult" siege="true" siege_engine_per_unit="1" num_guns="4" />
+    <MenAtArm type="ballistrai" key="House_Frey_Catapult" siege="true" siege_engine_per_unit="1" num_guns="5" />
     <MenAtArm type="barrow_knights" key="Stormlands_Renly_Stag_knights" max="CAVALRY" />
     <MenAtArm type="battering_ram" key="House_Stormlands_Catapult" siege="true" siege_engine_per_unit="1" num_guns="5" />
     <MenAtArm type="black_wall_chariots" key="Stormlands_Renly_Stag_knights" siege="true" num_guns="0" />
@@ -2298,7 +2301,7 @@
     <MenAtArm type="maa_marauders" key="Dorne_Martell_MAA_Mounted_Archers" max="CAVALRY" />
     <MenAtArm type="maa_poachers" key="Stormlands_Baratheon_MAA_Longbowmen" max="RANGED" />
     <MenAtArm type="maa_thieves" key="Stormlands_Baratheon_MAA_Pikemen" max="INFANTRY" />
-    <MenAtArm type="mangonel" key="Vale_Royce_Catapult" siege="true" siege_engine_per_unit="1" num_guns="4" />
+    <MenAtArm type="mangonel" key="House_Frey_Catapult" siege="true" siege_engine_per_unit="1" num_guns="5" />
     <MenAtArm type="marcher_longbowmen" key="House_Stormlands_MAA_Swordsmen" max="RANGED" />
     <MenAtArm type="market_guard" key="House_Stormlands_MAA_Swordsmen" max="INFANTRY" />
     <MenAtArm type="marsh_walker" key="Stormlands_Renly_MAA_Spearmen" max="INFANTRY" />
@@ -2311,7 +2314,7 @@
     <MenAtArm type="northern_spears" key="Stormlands_Renly_MAA_Pikemen" max="INFANTRY" />
     <MenAtArm type="nw_rangers" key="BTW_Nights_Watch_Guard_Rangers" max="RANGED" />
     <MenAtArm type="nw_trackers" key="House_Tyrell_MAA_Outriders" max="CAVALRY" />
-    <MenAtArm type="onager" key="Vale_Royce_Catapult" siege="true" siege_engine_per_unit="1" num_guns="4" />
+    <MenAtArm type="onager" key="House_Frey_Catapult" siege="true" siege_engine_per_unit="1" num_guns="5" />
     <MenAtArm type="ornate_helms" key="Stormlands_Renly_MAA_Pikemen" max="INFANTRY" />
     <MenAtArm type="pass_pikes" key="Stormlands_Renly_MAA_Pikemen" max="INFANTRY" />
     <MenAtArm type="pikemen_unit" key="Stormlands_Baratheon_MAA_Pikemen" max="INFANTRY" />
@@ -2336,7 +2339,6 @@
     <MenAtArm type="skahazdahn_wardens" key="Stormlands_Renly_Stag_Wardens" max="INFANTRY" />
     <MenAtArm type="skoutatoi" key="Stormlands_Renly_MAA_Pikemen" max="INFANTRY" />
     <MenAtArm type="slave_legion" key="Stormlands_Renly_MAA_Spearmen" max="INFANTRY" />
-    <MenAtArm type="slave_legion" key="House_GreyJoy_Kraken_Guard" />
     <MenAtArm type="smiths_axes" key="Stormlands_Baratheon_MAA_Axemen" max="INFANTRY" />
     <MenAtArm type="stair_guard" key="Stormlands_Renly_MAA_Pikemen" max="INFANTRY" />
     <MenAtArm type="star_carved" key="House_Stormlands_MAA_Swordsmen" max="INFANTRY" />
@@ -2344,7 +2346,7 @@
     <MenAtArm type="stepstone_sailors" key="House_Stormlands_MAA_Swordsmen" max="INFANTRY" />
     <MenAtArm type="stolen_spears" key="Stormlands_Baratheon_MAA_Pikemen" max="INFANTRY" />
     <MenAtArm type="storm_knights" key="Stormlands_Renly_Stag_knights" max="CAVALRY" />
-    <MenAtArm type="stormlands_heavy_infantry" key="BTW_Night_King_Army_Ancient_Wight_Infantry" max="INFANTRY" />
+    <MenAtArm type="stormlands_heavy_infantry" key="Stormlands_Renly_Stag_Wardens" max="INFANTRY" />
     <MenAtArm type="summer_knights" key="Stormlands_Renly_Stag_knights" max="CAVALRY" />
     <MenAtArm type="sun_guard" key="House_Stormlands_MAA_Swordsmen" max="INFANTRY" />
     <MenAtArm type="sun_spears" key="Stormlands_Renly_MAA_Pikemen" max="INFANTRY" />
@@ -2352,7 +2354,7 @@
     <MenAtArm type="tiger_cloaks" key="Stormlands_Baratheon_MAA_Pikemen" max="INFANTRY" />
     <MenAtArm type="tolosi_slingers" key="Stormlands_Renly_MAA_Archers" max="RANGED" />
     <MenAtArm type="torch_bearers" key="Stormlands_Renly_Catapult" siege="true" siege_engine_per_unit="1" num_guns="4" />
-    <MenAtArm type="trebuchet" key="Vale_Royce_Catapult" siege="true" siege_engine_per_unit="1" num_guns="4" />
+    <MenAtArm type="trebuchet" key="House_Frey_Catapult" siege="true" siege_engine_per_unit="1" num_guns="5" />
     <MenAtArm type="triarchs_herd" key="Crownlands_Kings_Landing_Golden_Company_Elephants" max="CAVALRY" />
     <MenAtArm type="unicorn_riders" key="House_Stormlands_Tyrell_Outriders" max="CAVALRY" />
     <MenAtArm type="unsullied" key="Stormlands_Baratheon_MAA_Pikemen" max="INFANTRY" />
@@ -2389,6 +2391,7 @@
     <General key="House_bolton_Roose_Bolton" rank="1" />
     <General key="Iron_Islands_Greyjoy_Catapult" rank="1" />
     <General key="Iron_Islands_Harlaw_MAA_Halberdiers" rank="1" />
+    <General key="North_Cerwyn_MAA_Axemen" rank="1" />
     <General key="North_Cerwyn_MAA_Mounted_Swordsmen" rank="1" />
     <General key="North_Mormont_MAA_Mounted_Swordsmen" rank="1" />
     <General key="North_Stark_MAA_Lance_Cavalry" rank="1" />
@@ -2423,6 +2426,7 @@
     <Knights key="North_Karstark_MAA_Billmen" rank="1" />
     <Knights key="North_Mormont_MAA_Swordsmen" rank="1" />
     <Knights key="North_Stark_MAA_Mounted_Swordsmen" rank="1" />
+    <Knights key="Reach_Tarly_MAA_Mounted_Swordsmen" rank="1" />
     <Knights key="Vale_Royce_MAA_Billmen" rank="1" />
     <Knights key="Vale_Royce_MAA_Lance_Cavalry" rank="1" num_guns="0" />
     <Knights key="Vale_Royce_MAA_Longbowmen" rank="1" />
@@ -2430,35 +2434,33 @@
     <Knights key="Westerlands_Marbrand_MAA_Mounted_Swordsmen" rank="1" />
     <Knights key="Vale_Arryn_Faction_Specialist_Lance_Cavalry" rank="2" num_guns="0" />
     <Knights key="House_Arryn_Knights_Generic_Gen" rank="3" />
-    <Levies key="Crownlands_Velaryon_Conscript_Swordsmen_Ship" percentage="8" max="LEVY" />
-    <Levies key="House_Arryn_Light_Billmen" percentage="34" max="LEVY" />
-    <Levies key="House_Stark_Catapult" percentage="8" max="LEVY" />
-    <Levies key="House_Tyrell_Catapult" percentage="34" max="LEVY" />
-    <Levies key="House_Tyrell_MAA_Outriders" percentage="8" max="LEVY" />
-    <Levies key="Westerlands_Brax_MAA_Swordsmen" percentage="8" max="LEVY" />
-    <Garrison key="Dorne_Dayne_MAA_Halberdiers" level="1" percentage="1" max="LEVY" />
-    <Garrison key="Dorne_Dayne_MAA_Mounted_Swordsmen" level="1" percentage="1" max="LEVY" />
-    <Garrison key="House_Bolton_Catapult" level="1" percentage="1" max="LEVY" />
-    <Garrison key="House_Frey_Spear_Sergeants" level="1" percentage="1" max="LEVY" />
-    <Garrison key="House_Lannister_Red_Cloak" level="1" percentage="1" max="LEVY" />
-    <Garrison key="House_Lannister_levy_spears" level="1" percentage="1" max="LEVY" />
-    <Garrison key="House_Tully_MAA_Archers" level="1" percentage="1" max="LEVY" />
-    <Garrison key="House_Tyrell_Rose_Knights_Mounted" level="1" percentage="1" max="LEVY" />
-    <Garrison key="Iron_Islands_Greyjoy_MAA_Spearmen" level="1" percentage="1" max="LEVY" />
-    <Garrison key="North_Bolton_MAA_Swordsmen" level="1" percentage="1" max="LEVY" />
-    <Garrison key="North_Cerwyn_MAA_Longbowmen" level="1" percentage="1" max="LEVY" />
-    <Garrison key="North_Mormont_MAA_Longbowmen" level="1" percentage="1" max="LEVY" />
-    <Garrison key="Reach_Tyrell_MAA_Crossbowmen" level="1" percentage="26" max="LEVY" />
-    <Garrison key="Riverlands_Tully_MAA_Halberdiers" level="1" percentage="1" max="LEVY" />
-    <Garrison key="Stormlands_Renly_MAA_Lance_Cavalry" level="1" percentage="1" max="LEVY" />
-    <Garrison key="Stormlands_Renly_MAA_Macemen" level="1" percentage="1" max="LEVY" />
-    <Garrison key="Stormlands_Renly_Stag_Sentinels" level="1" percentage="1" max="LEVY" />
-    <Garrison key="Vale_MAA_Spear_Cav" level="1" percentage="1" max="LEVY" />
-    <Garrison key="Vale_Royce_MAA_Crossbowmen" level="1" percentage="1" max="LEVY" />
-    <Garrison key="Westerlands_Brax_MAA_Spearmen" level="1" percentage="50" max="LEVY" />
-    <Garrison key="Westerlands_Crakehall_MAA_Billmen" level="1" percentage="2" max="LEVY" />
-    <Garrison key="Westerlands_Crakehall_MAA_Lance_Cavalry" level="1" percentage="2" max="LEVY" />
-    <Garrison key="Westerlands_Marbrand_MAA_Axemen" level="1" percentage="2" max="LEVY" />
+    <Levies key="Dorne_Dayne_MAA_Mounted_Swordsmen" percentage="11" max="LEVY" />
+    <Levies key="House_Frey_Milita_Crossbows_of_the_Twins" percentage="33" max="LEVY" />
+    <Levies key="House_Lannister_MAA_Outriders" percentage="11" max="LEVY" />
+    <Levies key="Reach_Tarly_MAA_Swordsmen" percentage="11" max="LEVY" />
+    <Levies key="Westerlands_Brax_Catapult" percentage="34" max="LEVY" />
+    <Garrison key="Dorne_Dayne_MAA_Halberdiers" level="1" percentage="5" max="LEVY" />
+    <Garrison key="Dorne_Dayne_MAA_Mounted_Swordsmen" level="1" percentage="5" max="LEVY" />
+    <Garrison key="House_Frey_Spear_Sergeants" level="1" percentage="5" max="LEVY" />
+    <Garrison key="House_Lannister_Red_Cloak" level="1" percentage="5" max="LEVY" />
+    <Garrison key="House_Lannister_levy_spears" level="1" percentage="5" max="LEVY" />
+    <Garrison key="House_Tully_MAA_Archers" level="1" percentage="5" max="LEVY" />
+    <Garrison key="House_Tyrell_Rose_Knights_Mounted" level="1" percentage="5" max="LEVY" />
+    <Garrison key="Iron_Islands_Greyjoy_MAA_Spearmen" level="1" percentage="5" max="LEVY" />
+    <Garrison key="North_Bolton_MAA_Swordsmen" level="1" percentage="5" max="LEVY" />
+    <Garrison key="North_Cerwyn_MAA_Longbowmen" level="1" percentage="5" max="LEVY" />
+    <Garrison key="North_Mormont_MAA_Longbowmen" level="1" percentage="5" max="LEVY" />
+    <Garrison key="Reach_Tyrell_MAA_Crossbowmen" level="1" percentage="5" max="LEVY" />
+    <Garrison key="Riverlands_Mallister_MAA_Crossbowmen" level="1" percentage="4" max="LEVY" />
+    <Garrison key="Riverlands_Tully_MAA_Halberdiers" level="1" percentage="4" max="LEVY" />
+    <Garrison key="Stormlands_Renly_MAA_Lance_Cavalry" level="1" percentage="4" max="LEVY" />
+    <Garrison key="Stormlands_Renly_MAA_Macemen" level="1" percentage="4" max="LEVY" />
+    <Garrison key="Stormlands_Renly_Stag_Sentinels" level="1" percentage="4" max="LEVY" />
+    <Garrison key="Vale_Royce_MAA_Crossbowmen" level="1" percentage="4" max="LEVY" />
+    <Garrison key="Westerlands_Brax_MAA_Spearmen" level="1" percentage="4" max="LEVY" />
+    <Garrison key="Westerlands_Crakehall_MAA_Billmen" level="1" percentage="4" max="LEVY" />
+    <Garrison key="Westerlands_Crakehall_MAA_Lance_Cavalry" level="1" percentage="4" max="LEVY" />
+    <Garrison key="Westerlands_Marbrand_MAA_Axemen" level="1" percentage="4" max="LEVY" />
     <Garrison key="House_Frey_Milita_Crossbows_of_the_Twins" level="2" percentage="34" max="LEVY" />
     <Garrison key="House_Tully_MAA_Pikemen" level="2" percentage="33" max="LEVY" />
     <Garrison key="Stormlands_Renly_MAA_Archers" level="2" percentage="33" max="LEVY" />
@@ -2483,7 +2485,7 @@
     <MenAtArm type="armored_footmen" key="House_Arryn_MAA_Swordsmen" max="INFANTRY" />
     <MenAtArm type="armored_horsemen" key="House_Arryn_Knights" max="CAVALRY" />
     <MenAtArm type="ayrudzi" key="House_Arryn_MAA_Mounted_Crossbowmen" max="CAVALRY" />
-    <MenAtArm type="ballistrai" key="Vale_Royce_Catapult" siege="true" siege_engine_per_unit="1" num_guns="4" />
+    <MenAtArm type="ballistrai" key="House_Frey_Catapult" siege="true" siege_engine_per_unit="1" num_guns="5" />
     <MenAtArm type="barrow_knights" key="House_Arryn_Knights" max="CAVALRY" />
     <MenAtArm type="battering_ram" key="House_Arryn_Catapult" siege="true" siege_engine_per_unit="1" num_guns="5" />
     <MenAtArm type="black_wall_chariots" key="Vale_MAA_Spear_Cav" siege="true" num_guns="0" />
@@ -2542,7 +2544,7 @@
     <MenAtArm type="maa_marauders" key="House_Arryn_MAA_Mounted_Crossbowmen" max="CAVALRY" />
     <MenAtArm type="maa_poachers" key="House_Arryn_MAA_Archers" max="RANGED" />
     <MenAtArm type="maa_thieves" key="House_Arryn_MAA_Pikemen" max="INFANTRY" />
-    <MenAtArm type="mangonel" key="Vale_Royce_Catapult" siege="true" siege_engine_per_unit="1" num_guns="4" />
+    <MenAtArm type="mangonel" key="House_Frey_Catapult" siege="true" siege_engine_per_unit="1" num_guns="5" />
     <MenAtArm type="marcher_longbowmen" key="House_Arryn_MAA_Swordsmen" max="RANGED" />
     <MenAtArm type="market_guard" key="House_Arryn_Light_Billmen" max="INFANTRY" />
     <MenAtArm type="marsh_walker" key="North_Stark_MAA_Spearmen" max="INFANTRY" />
@@ -2555,7 +2557,7 @@
     <MenAtArm type="northern_spears" key="Vale_Arryn_MAA_Pikemen" max="INFANTRY" />
     <MenAtArm type="nw_rangers" key="House_Arryn_MAA_Swordsmen" max="RANGED" />
     <MenAtArm type="nw_trackers" key="House_Arryn_MAA_Mounted_Crossbowmen" max="CAVALRY" />
-    <MenAtArm type="onager" key="Vale_Royce_Catapult" siege="true" siege_engine_per_unit="1" num_guns="4" />
+    <MenAtArm type="onager" key="House_Frey_Catapult" siege="true" siege_engine_per_unit="1" num_guns="5" />
     <MenAtArm type="ornate_helms" key="House_Arryn_MAA_Pikemen" max="INFANTRY" />
     <MenAtArm type="pass_pikes" key="Vale_Arryn_MAA_Pikemen" max="INFANTRY" />
     <MenAtArm type="pikemen_unit" key="Vale_Royce_MAA_Pikemen" max="INFANTRY" />
@@ -2580,7 +2582,6 @@
     <MenAtArm type="skahazdahn_wardens" key="House_Arryn_MAA_Swordsmen" max="INFANTRY" />
     <MenAtArm type="skoutatoi" key="House_Arryn_MAA_Pikemen" max="INFANTRY" />
     <MenAtArm type="slave_legion" key="House_Arryn_MAA_Swordsmen" max="INFANTRY" />
-    <MenAtArm type="slave_legion" key="Iron_Islands_Greyjoy_Guard_Swordsmen" />
     <MenAtArm type="smiths_axes" key="Vale_Arryn_MAA_Axemen" max="INFANTRY" />
     <MenAtArm type="stair_guard" key="House_Arryn_MAA_Pikemen" max="INFANTRY" />
     <MenAtArm type="star_carved" key="House_Arryn_MAA_Swordsmen" max="INFANTRY" />
@@ -2596,7 +2597,7 @@
     <MenAtArm type="tiger_cloaks" key="House_Arryn_MAA_Pikemen" max="INFANTRY" />
     <MenAtArm type="tolosi_slingers" key="Vale_Arryn_MAA_Longbowmen" max="RANGED" />
     <MenAtArm type="torch_bearers" key="Vale_Arryn_MAA_Swordsmen" siege="true" num_guns="0" />
-    <MenAtArm type="trebuchet" key="Vale_Royce_Catapult" siege="true" siege_engine_per_unit="1" num_guns="4" />
+    <MenAtArm type="trebuchet" key="House_Frey_Catapult" siege="true" siege_engine_per_unit="1" num_guns="5" />
     <MenAtArm type="triarchs_herd" key="House_Arryn_MAA_Swordsmen" max="CAVALRY" />
     <MenAtArm type="unicorn_riders" key="House_Arryn_MAA_Mounted_Crossbowmen" max="CAVALRY" />
     <MenAtArm type="unsullied" key="Essos_Targaryen_Unsullied_Pikemen" max="INFANTRY" />
@@ -2637,6 +2638,7 @@
     <General key="House_bolton_Bastards_Elite_Gen" rank="1" />
     <General key="Iron_Islands_Greyjoy_Catapult" rank="1" />
     <General key="Iron_Islands_Harlaw_MAA_Crossbowmen" rank="1" />
+    <General key="North_Cerwyn_MAA_Halberdiers" rank="1" />
     <General key="North_Cerwyn_MAA_Spearmen" rank="1" />
     <General key="North_Mormont_MAA_Lance_Cavalry" rank="1" />
     <General key="North_Stark_MAA_Mounted_Swordsmen" rank="1" />
@@ -2667,6 +2669,7 @@
     <Knights key="Reach_Tyrell_MAA_Billmen" rank="1" />
     <Knights key="Riverlands_Tully_MAA_Mounted_Swordsmen" rank="1" />
     <Knights key="Stormlands_Baratheon_Catapult" rank="1" />
+    <Knights key="Stormlands_Baratheon_MAA_Mounted_Swordsmen" rank="1" />
     <Knights key="Stormlands_Dragonstone_MAA_Mounted_Swordsmen" rank="1" />
     <Knights key="Stormlands_Renly_Stag_knights_Generic_Gen" rank="1" />
     <Knights key="Vale_Arryn_MAA_Billmen" rank="1" />
@@ -2674,38 +2677,38 @@
     <Knights key="Westerlands_Crakehall_MAA_Mounted_Swordsmen" rank="1" />
     <Knights key="Stormlands_Dondarrion_MAA_Mounted_Swordsmen" rank="2" />
     <Knights key="House_Arryn_MAA_Mounted_Crossbowmen" rank="3" />
-    <Levies key="House_Dragonstone_Archer_lightbringers" percentage="6" max="LEVY" />
-    <Levies key="House_Dragonstone_Queensmen_Knights" percentage="7" max="LEVY" />
-    <Levies key="House_Martell_Archers" percentage="33" max="LEVY" />
-    <Levies key="House_Tully_MAA_Crossbowmen" percentage="33" max="LEVY" />
-    <Levies key="House_Tyrell_MAA_Outriders" percentage="7" max="LEVY" />
-    <Levies key="Riverlands_Frey_MAA_Crossbowmen" percentage="7" max="LEVY" />
-    <Levies key="Stormlands_Baratheon_Guard_Spearmen" percentage="7" max="LEVY" />
-    <Garrison key="Crownlands_Velaryon_MAA_Lance_Cavalry" level="1" percentage="4" max="LEVY" />
-    <Garrison key="Dorne_Dayne_MAA_Lance_Cavalry" level="1" percentage="4" max="LEVY" />
-    <Garrison key="Dorne_Uller_MAA_Mounted_Swordsmen" level="1" percentage="4" max="LEVY" />
-    <Garrison key="Essos_Targaryen_Dothraki_Khalasar" level="1" percentage="4" max="LEVY" />
-    <Garrison key="House_Stark_Spear_MAA" level="1" percentage="4" max="LEVY" />
-    <Garrison key="House_Tully_Knights" level="1" percentage="4" max="LEVY" />
-    <Garrison key="House_Tully_MAA_Archers" level="1" percentage="4" max="LEVY" />
-    <Garrison key="House_Tyrell_MAA_Archers" level="1" percentage="4" max="LEVY" />
-    <Garrison key="House_Tyrell_Thorn_Watch" level="1" percentage="4" max="LEVY" />
-    <Garrison key="House_bolton_flayers" level="1" percentage="4" max="LEVY" />
-    <Garrison key="Iron_Islands_Harlaw_MAA_Billmen" level="1" percentage="4" max="LEVY" />
-    <Garrison key="North_Bolton_MAA_Pikemen" level="1" percentage="4" max="LEVY" />
-    <Garrison key="North_Cerwyn_MAA_Swordsmen" level="1" percentage="4" max="LEVY" />
-    <Garrison key="North_Glover_MAA_Mounted_Swordsmen" level="1" percentage="4" max="LEVY" />
-    <Garrison key="North_Karstark_MAA_Spearmen" level="1" percentage="4" max="LEVY" />
-    <Garrison key="North_Mormont_MAA_Mounted_Swordsmen" level="1" percentage="4" max="LEVY" />
-    <Garrison key="North_Stark_MAA_billmen" level="1" percentage="4" max="LEVY" />
-    <Garrison key="Reach_Tarly_MAA_Mounted_Swordsmen" level="1" percentage="4" max="LEVY" />
-    <Garrison key="Reach_Tyrell_MAA_Longbowmen" level="1" percentage="4" max="LEVY" />
-    <Garrison key="Stormlands_Baratheon_MAA_Longbowmen" level="1" percentage="4" max="LEVY" />
-    <Garrison key="Stormlands_Dondarrion_MAA_Crossbowmen" level="1" percentage="4" max="LEVY" />
-    <Garrison key="Stormlands_Dragonstone_MAA_Pikemen" level="1" percentage="4" max="LEVY" />
-    <Garrison key="Stormlands_Dragonstone_MAA_Spearmen" level="1" percentage="4" max="LEVY" />
-    <Garrison key="Stormlands_Renly_Catapult" level="1" percentage="4" max="LEVY" />
-    <Garrison key="Westerlands_Brax_MAA_Swordsmen" level="1" percentage="4" max="LEVY" />
+    <Levies key="Crownlands_Kings_Landing_Golden_Company_Swordsmen" percentage="6" max="LEVY" />
+    <Levies key="House_GreyJoy_Mounted_Raiders_Generic_Gen" percentage="7" max="LEVY" />
+    <Levies key="House_Tyrell_MAA_Archers" percentage="33" max="LEVY" />
+    <Levies key="North_Mormont_MAA_Lance_Cavalry" percentage="7" max="LEVY" />
+    <Levies key="Stormlands_Renly_MAA_Archers" percentage="33" max="LEVY" />
+    <Levies key="Stormlands_Renly_MAA_Billmen" percentage="7" max="LEVY" />
+    <Levies key="Westerlands_Crakehall_MAA_Pikemen" percentage="7" max="LEVY" />
+    <Garrison key="Crownlands_Velaryon_MAA_Lance_Cavalry" level="1" percentage="2" max="LEVY" />
+    <Garrison key="Dorne_Dayne_MAA_Lance_Cavalry" level="1" percentage="2" max="LEVY" />
+    <Garrison key="Dorne_Uller_MAA_Mounted_Swordsmen" level="1" percentage="2" max="LEVY" />
+    <Garrison key="Essos_Targaryen_Dothraki_Khalasar" level="1" percentage="2" max="LEVY" />
+    <Garrison key="House_Stark_Spear_MAA" level="1" percentage="2" max="LEVY" />
+    <Garrison key="House_Tully_Knights" level="1" percentage="2" max="LEVY" />
+    <Garrison key="House_Tully_MAA_Archers" level="1" percentage="2" max="LEVY" />
+    <Garrison key="House_Tyrell_MAA_Archers" level="1" percentage="2" max="LEVY" />
+    <Garrison key="House_Tyrell_Thorn_Watch" level="1" percentage="2" max="LEVY" />
+    <Garrison key="House_bolton_flayers" level="1" percentage="2" max="LEVY" />
+    <Garrison key="Iron_Islands_Harlaw_MAA_Billmen" level="1" percentage="2" max="LEVY" />
+    <Garrison key="North_Bolton_MAA_Pikemen" level="1" percentage="2" max="LEVY" />
+    <Garrison key="North_Cerwyn_MAA_Swordsmen" level="1" percentage="2" max="LEVY" />
+    <Garrison key="North_Glover_MAA_Mounted_Swordsmen" level="1" percentage="2" max="LEVY" />
+    <Garrison key="North_Karstark_MAA_Lance_Cavalry" level="1" percentage="51" max="LEVY" />
+    <Garrison key="North_Karstark_MAA_Spearmen" level="1" percentage="2" max="LEVY" />
+    <Garrison key="North_Mormont_MAA_Mounted_Swordsmen" level="1" percentage="2" max="LEVY" />
+    <Garrison key="North_Stark_MAA_billmen" level="1" percentage="2" max="LEVY" />
+    <Garrison key="Reach_Tarly_MAA_Mounted_Swordsmen" level="1" percentage="2" max="LEVY" />
+    <Garrison key="Reach_Tyrell_MAA_Longbowmen" level="1" percentage="2" max="LEVY" />
+    <Garrison key="Stormlands_Baratheon_MAA_Longbowmen" level="1" percentage="2" max="LEVY" />
+    <Garrison key="Stormlands_Dondarrion_MAA_Crossbowmen" level="1" percentage="2" max="LEVY" />
+    <Garrison key="Stormlands_Dragonstone_MAA_Pikemen" level="1" percentage="2" max="LEVY" />
+    <Garrison key="Stormlands_Dragonstone_MAA_Spearmen" level="1" percentage="2" max="LEVY" />
+    <Garrison key="Westerlands_Brax_MAA_Swordsmen" level="1" percentage="3" max="LEVY" />
     <Garrison key="Dorne_Uller_MAA_Spearmen" level="2" percentage="34" max="LEVY" />
     <Garrison key="House_Stormlands_MAA_Swordsmen" level="2" percentage="33" max="LEVY" />
     <Garrison key="House_Tully_MAA_Swordsmen" level="2" percentage="33" max="LEVY" />
@@ -2730,7 +2733,7 @@
     <MenAtArm type="armored_footmen" key="Westerlands_Lannister_MAA_Swordsmen" max="INFANTRY" />
     <MenAtArm type="armored_horsemen" key="House_Lannister_Knights" max="CAVALRY" />
     <MenAtArm type="ayrudzi" key="House_Lannister_MAA_Outriders" max="CAVALRY" />
-    <MenAtArm type="ballistrai" key="Vale_Royce_Catapult" siege="true" siege_engine_per_unit="1" num_guns="4" />
+    <MenAtArm type="ballistrai" key="House_Frey_Catapult" siege="true" siege_engine_per_unit="1" num_guns="5" />
     <MenAtArm type="barrow_knights" key="House_Lannister_Knights" max="CAVALRY" />
     <MenAtArm type="battering_ram" key="House_Lannister_Catapult" siege="true" siege_engine_per_unit="1" num_guns="5" />
     <MenAtArm type="black_wall_chariots" key="House_Lannister_Knights" siege="true" num_guns="0" />
@@ -2789,7 +2792,7 @@
     <MenAtArm type="maa_marauders" key="House_Lannister_MAA_Outriders" max="CAVALRY" />
     <MenAtArm type="maa_poachers" key="House_Lannister_MAA_Longbowmen" max="RANGED" />
     <MenAtArm type="maa_thieves" key="House_Lannister_MAA_Pikemen" max="INFANTRY" />
-    <MenAtArm type="mangonel" key="Vale_Royce_Catapult" siege="true" siege_engine_per_unit="1" num_guns="4" />
+    <MenAtArm type="mangonel" key="House_Frey_Catapult" siege="true" siege_engine_per_unit="1" num_guns="5" />
     <MenAtArm type="marcher_longbowmen" key="House_Lannister_MAA_Swordsmen" max="RANGED" />
     <MenAtArm type="market_guard" key="House_Lannister_MAA_Spearmen" max="INFANTRY" />
     <MenAtArm type="marsh_walker" key="House_Lannister_MAA_Spearmen" max="INFANTRY" />
@@ -2802,7 +2805,7 @@
     <MenAtArm type="northern_spears" key="House_Lannister_MAA_Pikemen" max="INFANTRY" />
     <MenAtArm type="nw_rangers" key="House_Lannister_MAA_Swordsmen" max="RANGED" />
     <MenAtArm type="nw_trackers" key="House_Lannister_MAA_Outriders" max="CAVALRY" />
-    <MenAtArm type="onager" key="Vale_Royce_Catapult" siege="true" siege_engine_per_unit="1" num_guns="4" />
+    <MenAtArm type="onager" key="House_Frey_Catapult" siege="true" siege_engine_per_unit="1" num_guns="5" />
     <MenAtArm type="ornate_helms" key="House_Lannister_MAA_Pikemen" max="INFANTRY" />
     <MenAtArm type="pass_pikes" key="House_Lannister_MAA_Pikemen" max="INFANTRY" />
     <MenAtArm type="pikemen_unit" key="House_Lannister_MAA_Pikemen" max="INFANTRY" />
@@ -2827,7 +2830,6 @@
     <MenAtArm type="skahazdahn_wardens" key="Westerlands_Lannister_MAA_Swordsmen" max="INFANTRY" />
     <MenAtArm type="skoutatoi" key="House_Lannister_MAA_Pikemen" max="INFANTRY" />
     <MenAtArm type="slave_legion" key="House_Lannister_MAA_Swordsmen" max="INFANTRY" />
-    <MenAtArm type="slave_legion" key="Dorne_Martell_Royal_Pikemen" />
     <MenAtArm type="smiths_axes" key="Westerlands_Brax_MAA_Axemen" max="INFANTRY" />
     <MenAtArm type="stair_guard" key="House_Lannister_MAA_Pikemen" max="INFANTRY" />
     <MenAtArm type="star_carved" key="House_Lannister_MAA_Swordsmen" max="INFANTRY" />
@@ -2843,7 +2845,7 @@
     <MenAtArm type="tiger_cloaks" key="House_Lannister_MAA_Pikemen" max="INFANTRY" />
     <MenAtArm type="tolosi_slingers" key="House_Lannister_MAA_Longbowmen" max="RANGED" />
     <MenAtArm type="torch_bearers" key="House_Lannister_Catapult" siege="true" siege_engine_per_unit="1" num_guns="5" />
-    <MenAtArm type="trebuchet" key="Vale_Royce_Catapult" siege="true" siege_engine_per_unit="1" num_guns="4" />
+    <MenAtArm type="trebuchet" key="House_Frey_Catapult" siege="true" siege_engine_per_unit="1" num_guns="5" />
     <MenAtArm type="triarchs_herd" key="House_Lannister_MAA_Swordsmen" max="CAVALRY" />
     <MenAtArm type="unicorn_riders" key="Dorne_Martell_MAA_Mounted_Archers" max="CAVALRY" />
     <MenAtArm type="unsullied" key="House_Lannister_MAA_Pikemen" max="INFANTRY" />
@@ -2865,28 +2867,28 @@
     <General key="Crownlands_Velaryon_MAA_Lance_Cavalry" rank="1" />
     <General key="Crownlands_Velaryon_MAA_Lance_Cavalry" rank="2" />
     <General key="Crownlands_Velaryon_MAA_Lance_Cavalry" rank="3" />
-    <Knights key="Crownlands_Aurane_Waters_Ship" rank="1" />
     <Knights key="Crownlands_Velaryon_MAA_Lance_Cavalry" rank="1" />
+    <Knights key="North_Hornwood_MAA_Mounted_Swordsmen" rank="1" />
     <Knights key="Crownlands_Velaryon_MAA_Lance_Cavalry" rank="2" />
     <Knights key="Crownlands_Velaryon_MAA_Lance_Cavalry" rank="3" />
+    <Levies key="Crownlands_Velaryon_Conscript_Pikemen" percentage="11" max="LEVY" />
     <Levies key="Crownlands_Velaryon_Conscript_Spearmen" percentage="11" max="LEVY" />
-    <Levies key="Crownlands_Velaryon_MAA_Crossbowmen" percentage="33" max="LEVY" />
-    <Levies key="Crownlands_Velaryon_MAA_Longbowmen_Ship" percentage="34" max="LEVY" />
-    <Levies key="Crownlands_Velaryon_MAA_Spearmen_Ship" percentage="11" max="LEVY" />
-    <Levies key="Crownlands_Velaryon_MAA_Swordsmen_Ship" percentage="11" max="LEVY" />
-    <Garrison key="Crownlands_Velaryon_MAA_Axemen" level="1" percentage="17" max="LEVY" />
-    <Garrison key="Crownlands_Velaryon_MAA_Crossbowmen" level="1" percentage="16" max="LEVY" />
-    <Garrison key="Crownlands_Velaryon_Marine" level="1" percentage="16" max="LEVY" />
-    <Garrison key="Crownlands_Velaryon_Marine_Ship" level="1" percentage="51" max="LEVY" />
-    <Garrison key="Crownlands_Velaryon_Conscript_Spearmen" level="2" percentage="34" max="LEVY" />
-    <Garrison key="Crownlands_Velaryon_MAA_Spearmen" level="2" percentage="33" max="LEVY" />
+    <Levies key="Crownlands_Velaryon_Conscript_Swordsmen" percentage="11" max="LEVY" />
+    <Levies key="Crownlands_Velaryon_MAA_Spearmen" percentage="33" max="LEVY" />
+    <Levies key="Stormlands_Renly_Catapult" percentage="34" max="LEVY" />
+    <Garrison key="Crownlands_Velaryon_MAA_Crossbowmen" level="1" percentage="17" max="LEVY" />
+    <Garrison key="Crownlands_Velaryon_MAA_Halberdiers" level="1" percentage="16" max="LEVY" />
+    <Garrison key="Crownlands_Velaryon_MAA_Spearmen" level="1" percentage="16" max="LEVY" />
+    <Garrison key="House_Arryn_Light_Billmen" level="1" percentage="51" max="LEVY" />
+    <Garrison key="Crownlands_Velaryon_MAA_Axemen" level="2" percentage="34" max="LEVY" />
     <Garrison key="Crownlands_Velaryon_MAA_Swordsmen" level="2" percentage="33" max="LEVY" />
+    <Garrison key="Crownlands_Velaryon_Marine" level="2" percentage="33" max="LEVY" />
     <Garrison key="Crownlands_Velaryon_Conscript_Pikemen" level="3" percentage="33" max="LEVY" />
     <Garrison key="Crownlands_Velaryon_Conscript_Spearmen" level="3" percentage="33" max="LEVY" />
     <Garrison key="Crownlands_Velaryon_Conscript_Swordsmen" level="3" percentage="34" max="LEVY" />
     <Garrison key="Crownlands_Velaryon_Conscript_Longbowmen" level="4" percentage="34" max="LEVY" />
+    <Garrison key="Crownlands_Velaryon_Conscript_Spearmen" level="4" percentage="33" max="LEVY" />
     <Garrison key="Crownlands_Velaryon_Conscript_Swordsmen" level="4" percentage="33" max="LEVY" />
-    <Garrison key="Crownlands_Velaryon_MAA_Longbowmen" level="4" percentage="33" max="LEVY" />
     <MenAtArm type="accolade_maa_archers" key="Crownlands_Velaryon_MAA_Crossbowmen" max="RANGED" />
     <MenAtArm type="accolade_maa_cameliers" key="Crownlands_Velaryon_MAA_Mounted_Swordsmen" max="CAVALRY" />
     <MenAtArm type="accolade_maa_crossbowers" key="Crownlands_Velaryon_MAA_Crossbowmen" max="RANGED" />
@@ -2902,7 +2904,7 @@
     <MenAtArm type="armored_footmen" key="Crownlands_Velaryon_MAA_Spearmen" max="INFANTRY" />
     <MenAtArm type="armored_horsemen" key="Crownlands_Velaryon_MAA_Mounted_Swordsmen" max="CAVALRY" />
     <MenAtArm type="ayrudzi" key="Crownlands_Velaryon_MAA_Mounted_Swordsmen" max="CAVALRY" />
-    <MenAtArm type="ballistrai" key="Vale_Royce_Catapult" siege="true" siege_engine_per_unit="1" num_guns="4" />
+    <MenAtArm type="ballistrai" key="House_Frey_Catapult" siege="true" siege_engine_per_unit="1" num_guns="5" />
     <MenAtArm type="barrow_knights" key="Crownlands_Velaryon_MAA_Mounted_Swordsmen" max="CAVALRY" />
     <MenAtArm type="battering_ram" key="Crownlands_Velaryon_Catapult" siege="true" siege_engine_per_unit="1" num_guns="4" />
     <MenAtArm type="black_wall_chariots" key="Crownlands_Velaryon_MAA_Mounted_Swordsmen" siege="true" num_guns="0" />
@@ -2961,7 +2963,7 @@
     <MenAtArm type="maa_marauders" key="BTW_White_Walkers" max="CAVALRY" />
     <MenAtArm type="maa_poachers" key="North_Stark_Militia_Hunters" max="RANGED" />
     <MenAtArm type="maa_thieves" key="Crownlands_Velaryon_MAA_Pikemen" max="INFANTRY" />
-    <MenAtArm type="mangonel" key="Vale_Royce_Catapult" siege="true" siege_engine_per_unit="1" num_guns="4" />
+    <MenAtArm type="mangonel" key="House_Frey_Catapult" siege="true" siege_engine_per_unit="1" num_guns="5" />
     <MenAtArm type="marcher_longbowmen" key="North_Cerwyn_MAA_Crossbowmen" max="RANGED" />
     <MenAtArm type="market_guard" key="Crownlands_Velaryon_MAA_Spearmen" max="INFANTRY" />
     <MenAtArm type="marsh_walker" key="House_Stark_Archers" max="INFANTRY" />
@@ -2974,7 +2976,7 @@
     <MenAtArm type="northern_spears" key="Crownlands_Velaryon_MAA_Pikemen" max="INFANTRY" />
     <MenAtArm type="nw_rangers" key="House_Crownlands_Goldcloak_Crossbowmen" max="RANGED" />
     <MenAtArm type="nw_trackers" key="Crownlands_Velaryon_MAA_Mounted_Swordsmen" max="CAVALRY" />
-    <MenAtArm type="onager" key="Vale_Royce_Catapult" siege="true" siege_engine_per_unit="1" num_guns="4" />
+    <MenAtArm type="onager" key="House_Frey_Catapult" siege="true" siege_engine_per_unit="1" num_guns="5" />
     <MenAtArm type="ornate_helms" key="Crownlands_Velaryon_MAA_Pikemen" max="INFANTRY" />
     <MenAtArm type="pass_pikes" key="Crownlands_Velaryon_MAA_Pikemen" max="INFANTRY" />
     <MenAtArm type="pikemen_unit" key="Crownlands_Velaryon_MAA_Pikemen" max="INFANTRY" />
@@ -2999,7 +3001,6 @@
     <MenAtArm type="skahazdahn_wardens" key="Crownlands_Velaryon_MAA_Spearmen" max="INFANTRY" />
     <MenAtArm type="skoutatoi" key="Crownlands_Velaryon_MAA_Pikemen" max="INFANTRY" />
     <MenAtArm type="slave_legion" key="House_Stark_Archers" max="INFANTRY" />
-    <MenAtArm type="slave_legion" key="Crownlands_Velaryon_Conscript_Spearmen_Ship" />
     <MenAtArm type="smiths_axes" key="Crownlands_Velaryon_MAA_Axemen" max="INFANTRY" />
     <MenAtArm type="stair_guard" key="Crownlands_Velaryon_MAA_Pikemen" max="INFANTRY" />
     <MenAtArm type="star_carved" key="Crownlands_Velaryon_MAA_Spearmen" max="INFANTRY" />
@@ -3015,7 +3016,7 @@
     <MenAtArm type="tiger_cloaks" key="Crownlands_Velaryon_MAA_Pikemen" max="INFANTRY" />
     <MenAtArm type="tolosi_slingers" key="Crownlands_Velaryon_MAA_Longbowmen" max="RANGED" />
     <MenAtArm type="torch_bearers" key="Crownlands_Velaryon_MAA_Axemen" siege="true" num_guns="0" />
-    <MenAtArm type="trebuchet" key="Vale_Royce_Catapult" siege="true" siege_engine_per_unit="1" num_guns="4" />
+    <MenAtArm type="trebuchet" key="House_Frey_Catapult" siege="true" siege_engine_per_unit="1" num_guns="5" />
     <MenAtArm type="triarchs_herd" key="Crownlands_Velaryon_MAA_Axemen" max="CAVALRY" />
     <MenAtArm type="unicorn_riders" key="BTW_White_Walkers" max="CAVALRY" />
     <MenAtArm type="unsullied" key="Crownlands_Velaryon_MAA_Pikemen" max="INFANTRY" />
@@ -3039,6 +3040,7 @@
     <General key="Dorne_Martell_MAA_Spearmen" rank="1" />
     <General key="Dorne_Martell_Medium_MAA_Spears" rank="1" />
     <General key="Dorne_Yronwood_MAA_Billmen" rank="1" />
+    <General key="House_Arryn_Knights" rank="1" />
     <General key="House_Stark_Outriders_Generic_Gen" rank="1" />
     <General key="House_Stormlands_MAA_Swordsmen" rank="1" />
     <General key="House_Tully_MAA_Outriders" rank="1" />
@@ -3067,6 +3069,7 @@
     <Knights key="Dorne_Martell_Medium_MAA_Sword" rank="1" />
     <Knights key="Dorne_Uller_MAA_Swordsmen" rank="1" />
     <Knights key="House_Bolton_Men_Hunters" rank="1" />
+    <Knights key="House_Frey_Ser_Stevron" rank="1" />
     <Knights key="House_GreyJoy_Mounted_Raiders_Generic_Gen" rank="1" />
     <Knights key="House_Tyrell_Guards_of_Thorns" rank="1" />
     <Knights key="House_Tyrell_Knights" rank="1" />
@@ -3093,34 +3096,32 @@
     <Knights key="Westerlands_Lefford_MAA_Longbowmen" rank="1" />
     <Knights key="Reach_Tarly_MAA_Lance_Cavalry" rank="2" />
     <Knights key="North_Stark_MAA_Lance_Cavalry" rank="3" num_guns="0" />
-    <Levies key="House_Dragonstone_MAA_Crossbowmen" percentage="50" max="LEVY" />
-    <Levies key="House_Frey_Catapult" percentage="50" max="LEVY" />
-    <Garrison key="BTW_Nights_Watch_MAA_Longbowmen" level="1" percentage="4" max="LEVY" />
-    <Garrison key="Crownlands_Kings_Landing_Goldcloak_Crossbowmen" level="1" percentage="4" max="LEVY" />
-    <Garrison key="Crownlands_Velaryon_MAA_Billmen" level="1" percentage="4" max="LEVY" />
-    <Garrison key="Dorne_Martell_Sunspear_Guards" level="1" percentage="4" max="LEVY" />
-    <Garrison key="Dorne_Uller_MAA_Spearmen" level="1" percentage="4" max="LEVY" />
-    <Garrison key="Essos_Targaryen_Unsullied_Swordsmen" level="1" percentage="4" max="LEVY" />
-    <Garrison key="House_Arryn_Catapult" level="1" percentage="4" max="LEVY" />
-    <Garrison key="House_Arryn_Honor_Guards" level="1" percentage="4" max="LEVY" />
-    <Garrison key="House_Bolton_Bowmen" level="1" percentage="4" max="LEVY" />
-    <Garrison key="House_Bolton_Spear_Recruits" level="1" percentage="4" max="LEVY" />
-    <Garrison key="House_Dragonstone_Archer_lightbringers" level="1" percentage="4" max="LEVY" />
-    <Garrison key="House_Frey_Milita_Crossbows_of_the_Twins" level="1" percentage="4" max="LEVY" />
-    <Garrison key="House_Tully_Sworn_Shield" level="1" percentage="4" max="LEVY" />
-    <Garrison key="North_Cerwyn_MAA_Spearmen" level="1" percentage="4" max="LEVY" />
-    <Garrison key="North_Hornwood_Catapult" level="1" percentage="4" max="LEVY" />
-    <Garrison key="Reach_Tyrell_MAA_Crossbowmen" level="1" percentage="4" max="LEVY" />
-    <Garrison key="Riverlands_Mallister_MAA_Spearmen" level="1" percentage="4" max="LEVY" />
-    <Garrison key="Stormlands_Baratheon_Catapult" level="1" percentage="4" max="LEVY" />
-    <Garrison key="Stormlands_Baratheon_MAA_Axemen" level="1" percentage="4" max="LEVY" />
-    <Garrison key="Stormlands_Renly_MAA_Longbowmen" level="1" percentage="4" max="LEVY" />
-    <Garrison key="Vale_Arryn_MAA_Pikemen" level="1" percentage="4" max="LEVY" />
-    <Garrison key="Vale_Royce_MAA_Halberdiers" level="1" percentage="4" max="LEVY" />
-    <Garrison key="Westerlands_Crakehall_MAA_Crossbowmen" level="1" percentage="3" max="LEVY" />
-    <Garrison key="Westerlands_Lannister_MAA_Billmen" level="1" percentage="3" max="LEVY" />
-    <Garrison key="Westerlands_Lefford_MAA_Crossbowmen" level="1" percentage="3" max="LEVY" />
-    <Garrison key="Westerlands_Marbrand_MAA_Mounted_Swordsmen" level="1" percentage="3" max="LEVY" />
+    <Levies key="Essos_Targaryen_Catapult" percentage="50" max="LEVY" />
+    <Levies key="North_Glover_Catapult" percentage="50" max="LEVY" />
+    <Garrison key="BTW_Nights_Watch_MAA_Longbowmen" level="1" percentage="2" max="LEVY" />
+    <Garrison key="Crownlands_Kings_Landing_Goldcloak_Crossbowmen" level="1" percentage="2" max="LEVY" />
+    <Garrison key="Crownlands_Velaryon_MAA_Billmen" level="1" percentage="2" max="LEVY" />
+    <Garrison key="Dorne_Martell_Sunspear_Guards" level="1" percentage="2" max="LEVY" />
+    <Garrison key="Dorne_Uller_MAA_Spearmen" level="1" percentage="2" max="LEVY" />
+    <Garrison key="Essos_Targaryen_Unsullied_Swordsmen" level="1" percentage="2" max="LEVY" />
+    <Garrison key="House_Arryn_Honor_Guards" level="1" percentage="2" max="LEVY" />
+    <Garrison key="House_Arryn_Light_Billmen" level="1" percentage="51" max="LEVY" />
+    <Garrison key="House_Bolton_Bowmen" level="1" percentage="2" max="LEVY" />
+    <Garrison key="House_Bolton_Spear_Recruits" level="1" percentage="2" max="LEVY" />
+    <Garrison key="House_Dragonstone_Archer_lightbringers" level="1" percentage="2" max="LEVY" />
+    <Garrison key="House_Frey_Milita_Crossbows_of_the_Twins" level="1" percentage="2" max="LEVY" />
+    <Garrison key="House_Tully_Sworn_Shield" level="1" percentage="2" max="LEVY" />
+    <Garrison key="North_Cerwyn_MAA_Spearmen" level="1" percentage="3" max="LEVY" />
+    <Garrison key="Reach_Tyrell_MAA_Crossbowmen" level="1" percentage="3" max="LEVY" />
+    <Garrison key="Riverlands_Mallister_MAA_Spearmen" level="1" percentage="3" max="LEVY" />
+    <Garrison key="Stormlands_Baratheon_MAA_Axemen" level="1" percentage="3" max="LEVY" />
+    <Garrison key="Stormlands_Renly_MAA_Longbowmen" level="1" percentage="3" max="LEVY" />
+    <Garrison key="Vale_Arryn_MAA_Pikemen" level="1" percentage="3" max="LEVY" />
+    <Garrison key="Vale_Royce_MAA_Halberdiers" level="1" percentage="3" max="LEVY" />
+    <Garrison key="Westerlands_Crakehall_MAA_Crossbowmen" level="1" percentage="1" max="LEVY" />
+    <Garrison key="Westerlands_Lannister_MAA_Billmen" level="1" percentage="1" max="LEVY" />
+    <Garrison key="Westerlands_Lefford_MAA_Crossbowmen" level="1" percentage="1" max="LEVY" />
+    <Garrison key="Westerlands_Marbrand_MAA_Mounted_Swordsmen" level="1" percentage="1" max="LEVY" />
     <Garrison key="House_Bolton_Spear_MAA" level="2" percentage="25" max="LEVY" />
     <Garrison key="North_Cerwyn_MAA_Pikemen" level="2" percentage="25" max="LEVY" />
     <Garrison key="North_Stark_Militia_Hunters" level="2" percentage="25" max="LEVY" />
@@ -3149,7 +3150,7 @@
     <MenAtArm type="armored_footmen" key="BTW_Night_King_Army_Wight_Infantry" max="INFANTRY" />
     <MenAtArm type="armored_horsemen" key="Dorne_Dayne_MAA_Lance_Cavalry" max="CAVALRY" />
     <MenAtArm type="ayrudzi" key="BTW_White_Walkers" max="CAVALRY" />
-    <MenAtArm type="ballistrai" key="Vale_Royce_Catapult" siege="true" siege_engine_per_unit="1" num_guns="4" />
+    <MenAtArm type="ballistrai" key="House_Frey_Catapult" siege="true" siege_engine_per_unit="1" num_guns="5" />
     <MenAtArm type="barrow_knights" key="Dorne_Dayne_MAA_Lance_Cavalry" max="CAVALRY" />
     <MenAtArm type="battering_ram" key="House_GreyJoy_Catapult" siege="true" siege_engine_per_unit="1" num_guns="5" />
     <MenAtArm type="black_wall_chariots" key="House_Tyrell_MAA_Outriders" siege="true" num_guns="0" />
@@ -3208,7 +3209,7 @@
     <MenAtArm type="maa_marauders" key="BTW_White_Walkers" max="CAVALRY" />
     <MenAtArm type="maa_poachers" key="House_GreyJoy_Sword_Raiders" max="RANGED" />
     <MenAtArm type="maa_thieves" key="House_Bolton_Pikemen" max="INFANTRY" />
-    <MenAtArm type="mangonel" key="Vale_Royce_Catapult" siege="true" siege_engine_per_unit="1" num_guns="4" />
+    <MenAtArm type="mangonel" key="House_Frey_Catapult" siege="true" siege_engine_per_unit="1" num_guns="5" />
     <MenAtArm type="marcher_longbowmen" key="House_Stark_Spear_MAA" max="RANGED" />
     <MenAtArm type="market_guard" key="BTW_Night_King_Army_Wight_Infantry" max="INFANTRY" />
     <MenAtArm type="marsh_walker" key="House_Stark_Archers" max="INFANTRY" />
@@ -3221,7 +3222,7 @@
     <MenAtArm type="northern_spears" key="House_Bolton_Pikemen" max="INFANTRY" />
     <MenAtArm type="nw_rangers" key="House_Crownlands_General_Robert_Baratheon" max="RANGED" />
     <MenAtArm type="nw_trackers" key="BTW_White_Walkers" max="CAVALRY" />
-    <MenAtArm type="onager" key="Vale_Royce_Catapult" siege="true" siege_engine_per_unit="1" num_guns="4" />
+    <MenAtArm type="onager" key="House_Frey_Catapult" siege="true" siege_engine_per_unit="1" num_guns="5" />
     <MenAtArm type="ornate_helms" key="House_Bolton_Pikemen" max="INFANTRY" />
     <MenAtArm type="pass_pikes" key="House_Bolton_Pikemen" max="INFANTRY" />
     <MenAtArm type="pikemen_unit" key="House_Bolton_Pikemen" max="INFANTRY" />
@@ -3246,7 +3247,6 @@
     <MenAtArm type="skahazdahn_wardens" key="House_Stark_Archers" max="INFANTRY" />
     <MenAtArm type="skoutatoi" key="House_Bolton_Pikemen" max="INFANTRY" />
     <MenAtArm type="slave_legion" key="House_Stark_Archers" max="INFANTRY" />
-    <MenAtArm type="slave_legion" key="House_Lannister_levy_swords" />
     <MenAtArm type="smiths_axes" key="BTW_Night_King_Army_Wight_Infantry" max="INFANTRY" />
     <MenAtArm type="stair_guard" key="House_Bolton_Pikemen" max="INFANTRY" />
     <MenAtArm type="star_carved" key="BTW_Night_King_Army_Wight_Infantry" max="INFANTRY" />
@@ -3262,7 +3262,7 @@
     <MenAtArm type="tiger_cloaks" key="House_Bolton_Pikemen" max="INFANTRY" />
     <MenAtArm type="tolosi_slingers" key="House_Stark_Archers" max="RANGED" />
     <MenAtArm type="torch_bearers" key="House_GreyJoy_Catapult" siege="true" siege_engine_per_unit="1" num_guns="5" />
-    <MenAtArm type="trebuchet" key="Vale_Royce_Catapult" siege="true" siege_engine_per_unit="1" num_guns="4" />
+    <MenAtArm type="trebuchet" key="House_Frey_Catapult" siege="true" siege_engine_per_unit="1" num_guns="5" />
     <MenAtArm type="triarchs_herd" key="Crownlands_Kings_Landing_Golden_Company_Elephants" max="CAVALRY" />
     <MenAtArm type="unicorn_riders" key="BTW_White_Walkers" max="CAVALRY" />
     <MenAtArm type="unsullied" key="House_Bolton_Pikemen" max="INFANTRY" />

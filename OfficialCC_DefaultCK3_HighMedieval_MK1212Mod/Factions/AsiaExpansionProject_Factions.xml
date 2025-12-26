@@ -1,6 +1,7 @@
 <?xml version='1.0' encoding='utf-8'?>
 <Factions>
   <Faction name="Default" subculture="att_sub_cult_roman_east">
+    <MenAtArm type="chu_ko_nu" key="mk_ghu_t2_dhanuks" />
     <MenAtArm type="emishi_riders" key="mk_ghu_t3_war_elephants" max="CAVALRY" />
     <MenAtArm type="gaemamusa" key="mk_alb_t3_heavy_cavalry" max="CAVALRY" />
     <MenAtArm type="heavy_khitan_cavalry" key="mk_alb_t3_heavy_cavalry" max="CAVALRY" />
@@ -2616,7 +2617,7 @@
     <MenAtArm type="gaemamusa" key="mk_eastern_chivalrous_knights" max="CAVALRY" />
     <MenAtArm type="heavy_khitan_cavalry" key="mk_eastern_chivalrous_knights" max="CAVALRY" />
     <MenAtArm type="hwarang" key="mk_rus_t3_guard_axemen" max="INFANTRY" />
-    <MenAtArm type="ji_pikemen" key="mk_ger_t1_pikemen" max="INFANTRY" />
+    <MenAtArm type="ji_pikemen" key="mk_rus_t2_spearmen" max="INFANTRY" />
     <MenAtArm type="ksatra" key="mk_merc_boh_t1_infantry" max="INFANTRY" />
     <MenAtArm type="luojuzi" key="mk_rus_t2_spearmen" max="INFANTRY" />
     <MenAtArm type="sohei" key="mk_rus_t2_spearmen" max="INFANTRY" />
@@ -4522,12 +4523,12 @@
     <MenAtArm type="sohei" key="mk_merc_iran_t1_daylami_infantry" max="INFANTRY" />
   </Faction>
   <Faction name="Upstalsboom League" subculture="att_sub_cult_roman_west">
-    <MenAtArm type="emishi_riders" key="mk_fla_t3_mounted_crossbowmen" max="CAVALRY" />
+    <MenAtArm type="emishi_riders" key="earl_eng_t2_longbowmen_mounted" max="CAVALRY" />
     <MenAtArm type="gaemamusa" key="mk_eng_t2_hobilars" max="CAVALRY" />
     <MenAtArm type="heavy_khitan_cavalry" key="mk_brab_t3_banneret_knights" max="CAVALRY" />
     <MenAtArm type="hwarang" key="mk_fla_t3_maa" max="INFANTRY" />
     <MenAtArm type="ji_pikemen" key="mk_fla_t2_pikemen" max="INFANTRY" />
-    <MenAtArm type="ksatra" key="mk_fla_t3_gendarmes" max="INFANTRY" />
+    <MenAtArm type="ksatra" key="mk_fla_t1_dismounted_maa" max="INFANTRY" />
     <MenAtArm type="luojuzi" key="mk_teu_t3_pavise_spearmen" max="INFANTRY" />
     <MenAtArm type="sohei" key="mk_brab_t3_low_countries_pikemen" max="INFANTRY" />
   </Faction>
@@ -5069,7 +5070,7 @@
     <MenAtArm type="ji_pikemen" key="mk_ilkhan_t2_dismounted_nokor" max="INFANTRY" />
     <MenAtArm type="ksatra" key="mk_ilkhan_t2_tserig_archers" max="INFANTRY" />
     <MenAtArm type="luojuzi" key="mk_ilkhan_t2_tserig_crossbowmen" max="INFANTRY" />
-    <MenAtArm type="sohei" key="mk_ilkhan_t2_hashar" max="INFANTRY" />
+    <MenAtArm type="sohei" key="mk_ilkhan_t2_khorchi_khisigten" max="INFANTRY" />
   </Faction>
   <Faction name="Malikate of Oman" subculture="att_sub_cult_eastern_desert">
     <MenAtArm type="emishi_riders" key="mk_merc_arab_t1_bedouin_horsemen" max="CAVALRY" />
