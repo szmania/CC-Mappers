@@ -532,19 +532,7 @@ def manage_faction_levies(faction, working_pool, unit_to_training_level, unit_ca
     changes = False
     failures = []
 
-    # --- NEW: Combine global and JSON-based core exclusions ---
-    from mapper_tools import faction_json_utils # Late import
-
     current_excluded_units = set(excluded_units_set) if excluded_units_set else set()
-
-    if faction_culture_map and faction_name:
-        json_core_exclusions = faction_json_utils.get_json_general_exclusions_for_faction(
-            faction_name, json_group_data, faction_culture_map, all_units, log_context="Levies"
-        )
-        if json_core_exclusions:
-            print(f"    -> Applying {len(json_core_exclusions)} JSON core exclusions to Levies for '{faction_name}'.")
-            current_excluded_units.update(json_core_exclusions)
-    # --- END NEW ---
 
     # Define training level mapping for numerical comparison
     TRAINING_LEVEL_MAP = {
