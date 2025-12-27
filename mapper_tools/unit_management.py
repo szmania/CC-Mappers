@@ -533,6 +533,13 @@ def manage_faction_levies(faction, working_pool, unit_to_training_level, unit_ca
     failures = []
 
     current_excluded_units = set(excluded_units_set) if excluded_units_set else set()
+    
+    # Add faction-specific core exclusions
+    from mapper_tools import faction_json_utils
+    faction_core_exclusions = faction_json_utils.get_json_general_exclusions_for_faction(
+        faction_name, json_group_data, faction_culture_map, all_units, log_context="Levies"
+    )
+    current_excluded_units.update(faction_core_exclusions)
 
     # Define training level mapping for numerical comparison
     TRAINING_LEVEL_MAP = {
@@ -718,7 +725,7 @@ def manage_faction_levies(faction, working_pool, unit_to_training_level, unit_ca
 
     return changes, failures
 
-def manage_faction_garrisons(faction, working_pool, unit_to_training_level, unit_categories, log_faction_str, general_units, unit_to_class_map, tier, unit_to_tier_map, excluded_units_set=None, destructive_on_failure=True, faction_to_heritage_map=None, heritage_to_factions_map=None, screen_name_to_faction_key_map=None, faction_key_to_units_map=None, json_group_data=None, all_units=None):
+def manage_faction_garrisons(faction, working_pool, unit_to_training_level, unit_categories, log_faction_str, general_units, unit_to_class_map, tier, unit_to_tier_map, excluded_units_set=None, destructive_on_failure=True, faction_to_heritage_map=None, heritage_to_factions_map=None, screen_name_to_faction_key_map=None, faction_key_to_units_map=None, json_group_data=None, all_units=None, faction_culture_map=None):
     """
     Manages the garrison units for a single faction.
     - Ensures each fortification level (1-4) has an appropriate number of units.
@@ -728,6 +735,16 @@ def manage_faction_garrisons(faction, working_pool, unit_to_training_level, unit
     changes = False
     failures = []
     json_override_applied = False
+
+    current_excluded_units = set(excluded_units_set) if excluded_units_set else set()
+    
+    # Add faction-specific core exclusions
+    faction_name = faction.get('name')
+    from mapper_tools import faction_json_utils
+    faction_core_exclusions = faction_json_utils.get_json_general_exclusions_for_faction(
+        faction_name, json_group_data, faction_culture_map, all_units, log_context="Garrisons"
+    )
+    current_excluded_units.update(faction_core_exclusions)
 
     # NEW: Keep track of all units used for garrisons within this faction
     all_used_garrison_keys = {g.get('key') for g in faction.findall('Garrison') if g.get('key')}
@@ -754,7 +771,7 @@ def manage_faction_garrisons(faction, working_pool, unit_to_training_level, unit
                 for unit_name in unit_list:
                     best_match, _ = find_best_unit_match(unit_name, all_units)
                     if best_match:
-                        if excluded_units_set and best_match in excluded_units_set:
+                        if current_excluded_units and best_match in current_excluded_units:
                             print(f"    -> WARNING: JSON override garrison unit '{best_match}' is excluded. Skipping.")
                             continue
                         if best_match in all_used_garrison_keys: # NEW: Check for uniqueness even in JSON overrides
@@ -775,7 +792,7 @@ def manage_faction_garrisons(faction, working_pool, unit_to_training_level, unit
         invalid_garrisons_removed = False
         for g in list(faction.findall('Garrison')): # Iterate over a copy
             key = g.get('key')
-            if key and excluded_units_set and key in excluded_units_set:
+            if key and current_excluded_units and key in current_excluded_units:
                 faction.remove(g)
                 changes = True
                 invalid_garrisons_removed = True
