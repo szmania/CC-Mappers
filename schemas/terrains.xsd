@@ -144,6 +144,22 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
+        <xs:element name="Naval_Maps" minOccurs="0" maxOccurs="1">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Naval" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="Variant" type="VariantType" />
+                  </xs:sequence>
+                  <xs:attribute name="name" type="xs:string" use="required" />
+                  <xs:attribute name="ck3_province" type="xs:integer" use="required" />
+                  <xs:attribute name="battle_type" type="xs:string" use="required" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
       </xs:sequence>
       <xs:attribute name="submod_tag" type="xs:string" use="optional" />
       <xs:attribute name="submod_addon_tag" type="xs:string" use="optional" />
