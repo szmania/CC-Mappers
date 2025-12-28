@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='utf-8'?>
 <Factions>
   <Faction name="Default" subculture="att_sub_cult_roman_east">
-    <MenAtArm type="chu_ko_nu" key="mk_ghu_t2_dhanuks" />
+    <MenAtArm type="chu_ko_nu" key="mk_ghu_t2_dhanuks" max="RANGED" />
     <MenAtArm type="emishi_riders" key="mk_ghu_t3_war_elephants" max="CAVALRY" />
     <MenAtArm type="gaemamusa" key="mk_alb_t3_heavy_cavalry" max="CAVALRY" />
     <MenAtArm type="heavy_khitan_cavalry" key="mk_alb_t3_heavy_cavalry" max="CAVALRY" />
@@ -383,7 +383,7 @@
     <MenAtArm type="sohei" key="mk_hre_t3_doppelsoldner_pikemen" max="INFANTRY" />
   </Faction>
   <Faction name="Avar Rebels" subculture="att_sub_cult_nomadic_sarmatian">
-    <MenAtArm type="emishi_riders" key="mk_merc_ger_t3_handgunners" max="CAVALRY" />
+    <MenAtArm type="emishi_riders" key="cha_merc_slav_raiders" max="CAVALRY" />
     <MenAtArm type="gaemamusa" key="mk_alb_t3_heavy_cavalry" max="CAVALRY" />
     <MenAtArm type="heavy_khitan_cavalry" key="mk_alb_t3_heavy_cavalry" max="CAVALRY" />
     <MenAtArm type="hwarang" key="mk_ven_t2_heavy_infantry" max="INFANTRY" />
@@ -3933,7 +3933,7 @@
     <MenAtArm type="sohei" key="mk_ger_t1_pikemen" max="INFANTRY" />
   </Faction>
   <Faction name="Sarmatian Separatists" subculture="att_sub_cult_nomadic_sarmatian">
-    <MenAtArm type="emishi_riders" key="earl_fre_t2_handgunners" max="CAVALRY" />
+    <MenAtArm type="emishi_riders" key="cha_merc_slav_raiders" max="CAVALRY" />
     <MenAtArm type="gaemamusa" key="mk_alb_t3_heavy_cavalry" max="CAVALRY" />
     <MenAtArm type="heavy_khitan_cavalry" key="mk_alb_t3_heavy_cavalry" max="CAVALRY" />
     <MenAtArm type="hwarang" key="mk_ven_t2_heavy_infantry" max="INFANTRY" />

@@ -1,40 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning" vc:minVersion="1.1">
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
 
   <xs:element name="Factions">
     <xs:complexType>
       <xs:sequence>
-        <!-- Enforce at least one Faction element in the main schema -->
-        <xs:element name="Faction" maxOccurs="unbounded" minOccurs="1">
+        <xs:element name="Faction" maxOccurs="unbounded" minOccurs="0">
           <xs:complexType>
-            <!-- Enforce presence of all core unit types in the main schema -->
-            <xs:sequence>
-              <xs:element name="General" minOccurs="1" maxOccurs="unbounded">
+            <xs:choice maxOccurs="unbounded">
+              <xs:element name="General" minOccurs="0" maxOccurs="unbounded">
                 <xs:complexType>
                   <xs:attribute name="key" type="xs:string" use="required"/>
                   <xs:attribute name="rank" type="xs:integer" use="optional"/>
                   <xs:attribute name="num_guns" type="xs:integer" use="optional"/>
-                  <xs:attribute name="naval_key" type="xs:string" use="optional"/>
                 </xs:complexType>
               </xs:element>
-              <xs:element name="Knights" minOccurs="1" maxOccurs="unbounded">
+              <xs:element name="Knights" minOccurs="0" maxOccurs="unbounded">
                 <xs:complexType>
                   <xs:attribute name="key" type="xs:string" use="required"/>
                   <xs:attribute name="rank" type="xs:integer" use="optional"/>
                   <xs:attribute name="num_guns" type="xs:integer" use="optional"/>
-                  <xs:attribute name="naval_key" type="xs:string" use="optional"/>
                 </xs:complexType>
               </xs:element>
-              <xs:element name="Levies" minOccurs="1" maxOccurs="unbounded">
+              <xs:element name="Levies" minOccurs="0" maxOccurs="unbounded">
                 <xs:complexType>
                   <xs:attribute name="key" type="xs:string" use="required"/>
                   <xs:attribute name="percentage" type="xs:integer" use="required"/>
                   <xs:attribute name="max" type="xs:string" use="required"/>
                   <xs:attribute name="num_guns" type="xs:integer" use="optional"/>
-                  <xs:attribute name="naval_key" type="xs:string" use="optional"/>
                 </xs:complexType>
               </xs:element>
-              <xs:element name="Garrison" minOccurs="1" maxOccurs="unbounded">
+              <xs:element name="Garrison" minOccurs="0" maxOccurs="unbounded">
                 <xs:complexType>
                   <xs:attribute name="key" type="xs:string" use="required"/>
                   <xs:attribute name="percentage" type="xs:integer" use="required"/>
@@ -43,7 +38,7 @@
                   <xs:attribute name="num_guns" type="xs:integer" use="optional"/>
                 </xs:complexType>
               </xs:element>
-              <xs:element name="MenAtArm" minOccurs="1" maxOccurs="unbounded">
+              <xs:element name="MenAtArm" minOccurs="0" maxOccurs="unbounded">
                 <xs:complexType>
                   <xs:attribute name="type" type="xs:string" use="required"/>
                   <xs:attribute name="key" type="xs:string" use="required"/>
@@ -51,33 +46,9 @@
                   <xs:attribute name="siege" type="xs:boolean" use="optional"/>
                   <xs:attribute name="siege_engine_per_unit" type="xs:integer" use="optional"/>
                   <xs:attribute name="num_guns" type="xs:integer" use="optional"/>
-                  <xs:attribute name="naval_key" type="xs:string" use="optional"/>
                 </xs:complexType>
               </xs:element>
-              <xs:element name="Naval" minOccurs="0" maxOccurs="unbounded">
-                <xs:complexType>
-                  <xs:sequence>
-                    <xs:element name="Variant" minOccurs="1" maxOccurs="unbounded">
-                      <xs:complexType>
-                        <xs:sequence>
-                          <xs:element name="Map">
-                            <xs:complexType>
-                              <xs:attribute name="x" type="xs:decimal" use="required"/>
-                              <xs:attribute name="y" type="xs:decimal" use="required"/>
-                            </xs:complexType>
-                          </xs:element>
-                        </xs:sequence>
-                        <xs:attribute name="key" type="xs:string" use="required"/>
-                      </xs:complexType>
-                    </xs:element>
-                  </xs:sequence>
-                  <xs:attribute name="type" type="xs:string" use="required"/>
-                  <xs:attribute name="category" type="xs:string" use="required"/>
-                  <xs:attribute name="class" type="xs:string" use="required"/>
-                  <xs:attribute name="naval_key" type="xs:string" use="required"/>
-                </xs:complexType>
-              </xs:element>
-            </xs:sequence>
+            </xs:choice>
             <xs:attribute name="name" type="xs:string" use="required"/>
             <xs:attribute name="subculture" type="xs:string" use="optional"/>
           </xs:complexType>

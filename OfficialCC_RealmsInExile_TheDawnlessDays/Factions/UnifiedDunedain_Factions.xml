@@ -1,51 +1,51 @@
 <?xml version='1.0' encoding='utf-8'?>
 <Factions>
   <Faction name="Default" subculture="att_sub_cult_roman_west">
-    <MenAtArm type="abrazanim_halberdiers" key="ere_halberdiers" />
-    <MenAtArm type="abrazanim_legion" key="kha_eastern_legion" />
-    <MenAtArm type="abrazanim_warbows" key="wr_lasgalen_bows" />
+    <MenAtArm type="abrazanim_halberdiers" key="ere_halberdiers" max="INFANTRY" />
+    <MenAtArm type="abrazanim_legion" key="kha_eastern_legion" max="INFANTRY" />
+    <MenAtArm type="abrazanim_warbows" key="wr_lasgalen_bows" max="RANGED" />
     <MenAtArm type="adunaic_elites" key="arn_royal_infantry" max="INFANTRY" />
     <MenAtArm type="adunaic_skirmishers" key="oro_skirmishers" max="INFANTRY" />
     <MenAtArm type="adunaic_soldiers" key="arn_royal_infantry" max="INFANTRY" />
     <MenAtArm type="adunaic_spearmen" key="dun_pikemen" max="INFANTRY" />
-    <MenAtArm type="adunaim_armsmen" key="lam_clansmen" />
-    <MenAtArm type="adunakhori" key="har_adunakhori" />
+    <MenAtArm type="adunaim_armsmen" key="lam_clansmen" max="INFANTRY" />
+    <MenAtArm type="adunakhori" key="har_adunakhori" max="INFANTRY" />
     <MenAtArm type="adunic_steelbowmen" key="rv_heavysword" max="RANGED" />
-    <MenAtArm type="arnorian_bowmen" key="gon_bowmen" />
-    <MenAtArm type="arnorian_cavalry" key="lin_cavalry" />
-    <MenAtArm type="arnorian_soldiers" key="Lorien_Swords" />
-    <MenAtArm type="belfalathric_bowmen" key="bal_variag_bowmen" />
-    <MenAtArm type="caledhrim_cavalry" key="iml_cavalry" />
-    <MenAtArm type="caledhrim_footmen" key="bal_feredrim_woodsmen" />
-    <MenAtArm type="dunedain_archers" key="lin_archers" />
-    <MenAtArm type="dunedain_elites" key="ere_mansion_reclaimers" />
-    <MenAtArm type="dunedain_knights" key="roh_eorling_knights" />
+    <MenAtArm type="arnorian_bowmen" key="gon_bowmen" max="RANGED" />
+    <MenAtArm type="arnorian_cavalry" key="lin_cavalry" max="CAVALRY" />
+    <MenAtArm type="arnorian_soldiers" key="Lorien_Swords" max="INFANTRY" />
+    <MenAtArm type="belfalathric_bowmen" key="bal_variag_bowmen" max="RANGED" />
+    <MenAtArm type="caledhrim_cavalry" key="iml_cavalry" max="CAVALRY" />
+    <MenAtArm type="caledhrim_footmen" key="bal_feredrim_woodsmen" max="RANGED" />
+    <MenAtArm type="dunedain_archers" key="lin_archers" max="RANGED" />
+    <MenAtArm type="dunedain_elites" key="ere_mansion_reclaimers" max="INFANTRY" />
+    <MenAtArm type="dunedain_knights" key="roh_eorling_knights" max="CAVALRY" />
     <MenAtArm type="dunedain_marines" key="oro_skirmishers" max="INFANTRY" />
-    <MenAtArm type="dunedain_outriders" key="dun_elder_riders" />
-    <MenAtArm type="dunedain_rangers" key="dun_rangers" />
+    <MenAtArm type="dunedain_outriders" key="dun_elder_riders" max="CAVALRY" />
+    <MenAtArm type="dunedain_rangers" key="dun_rangers" max="RANGED" />
     <MenAtArm type="dunedain_reformed_outriders" key="gon_cavalry_sword" max="CAVALRY" />
     <MenAtArm type="dunedain_reformed_rangers" key="oroc_blacklock_infantry" max="RANGED" />
     <MenAtArm type="dunedain_reformed_wardens" key="dun_pikemen" max="INFANTRY" />
-    <MenAtArm type="dunedain_soldiers" key="rhu_bondi_spears" />
-    <MenAtArm type="dunedain_wardens" key="dor_warden" />
-    <MenAtArm type="gondorian_bowmen" key="los_bowmen" />
-    <MenAtArm type="gondorian_clansmen" key="dol_prince_marksmen" />
+    <MenAtArm type="dunedain_soldiers" key="rhu_bondi_spears" max="INFANTRY" />
+    <MenAtArm type="dunedain_wardens" key="dor_warden" max="INFANTRY" />
+    <MenAtArm type="gondorian_bowmen" key="los_bowmen" max="RANGED" />
+    <MenAtArm type="gondorian_clansmen" key="dol_prince_marksmen" max="RANGED" />
     <MenAtArm type="gondorian_footmen" key="wr_lasgalen_swords" max="INFANTRY" />
-    <MenAtArm type="gondorian_marines" key="merc_nav_gondor_archer_marines" />
-    <MenAtArm type="grey_company" key="ere_dwarven_company" />
-    <MenAtArm type="guard_of_the_citadel" key="har_nav_lords_of_the_west" />
-    <MenAtArm type="harondorim_palace_guards" key="har_serpent_guards" />
-    <MenAtArm type="harondorim_rangers" key="iml_horse_rangers" />
+    <MenAtArm type="gondorian_marines" key="merc_nav_gondor_archer_marines" max="RANGED" />
+    <MenAtArm type="grey_company" key="ere_dwarven_company" max="INFANTRY" />
+    <MenAtArm type="guard_of_the_citadel" key="har_nav_lords_of_the_west" max="INFANTRY" />
+    <MenAtArm type="harondorim_palace_guards" key="har_serpent_guards" max="CAVALRY" />
+    <MenAtArm type="harondorim_rangers" key="iml_horse_rangers" max="CAVALRY" />
     <MenAtArm type="knights_of_the_adunai" key="gon_cavalry" max="CAVALRY" />
-    <MenAtArm type="mundburgian_eored" key="gun_warg_riders" />
-    <MenAtArm type="narunaru_royal_guard" key="arn_royal_wardens" />
+    <MenAtArm type="mundburgian_eored" key="gun_warg_riders" max="CAVALRY" />
+    <MenAtArm type="narunaru_royal_guard" key="arn_royal_wardens" max="INFANTRY" />
     <MenAtArm type="numenorean_archers_adunaic" key="arn_lords_westernesse" max="RANGED" />
     <MenAtArm type="numenorean_archers_custom" key="dol_amroth_knights" max="RANGED" />
     <MenAtArm type="numenorean_elites_adunaic" key="arn_royal_infantry" max="INFANTRY" />
     <MenAtArm type="numenorean_elites_custom" key="arn_royal_infantry" max="INFANTRY" />
     <MenAtArm type="numenorean_knights_adunaic" key="gon_cavalry" max="CAVALRY" />
     <MenAtArm type="numenorean_knights_custom" key="gon_cavalry" max="CAVALRY" />
-    <MenAtArm type="numenorean_marines" key="umb_har_corsair_marines" />
+    <MenAtArm type="numenorean_marines" key="umb_har_corsair_marines" max="INFANTRY" />
     <MenAtArm type="numenorean_marines_adunaic" key="oro_skirmishers" max="INFANTRY" />
     <MenAtArm type="numenorean_pikemen" key="dun_pikemen" max="INFANTRY" />
     <MenAtArm type="numenorean_pikemen_adunaic" key="dun_pikemen" max="INFANTRY" />
@@ -53,17 +53,17 @@
     <MenAtArm type="numenorean_reformed_outriders_adunaic" key="gon_cavalry_sword" max="CAVALRY" />
     <MenAtArm type="numenorean_soldiers_adunaic" key="arn_royal_infantry" max="INFANTRY" />
     <MenAtArm type="numenorean_soldiers_custom" key="arn_royal_infantry" max="INFANTRY" />
-    <MenAtArm type="orodbedhric_bowmen" key="har_desert_bowmen" />
-    <MenAtArm type="orthanc_guard" key="gob_chieftan_guard" />
+    <MenAtArm type="orodbedhric_bowmen" key="har_desert_bowmen" max="RANGED" />
+    <MenAtArm type="orthanc_guard" key="gob_chieftan_guard" max="INFANTRY" />
     <MenAtArm type="pelargir_mariners" key="oro_skirmishers" max="INFANTRY" />
-    <MenAtArm type="rangers_of_ithilien" key="merc_gon_ithilien_rangers" />
-    <MenAtArm type="swan_knights" key="gon_silver_swan_knights" />
-    <MenAtArm type="temple_knights_of_the_eye" key="mor_nav_servants_of_the_eye" />
-    <MenAtArm type="umbar_usurpers" key="bal_spears" />
-    <MenAtArm type="umbaredain_infantry" key="bal_haerrim_infantry" />
-    <MenAtArm type="umbaredain_spearmen" key="lin_spearmen" />
-    <MenAtArm type="wardens_of_annuminas" key="gon_wardens_ithilien" />
-    <MenAtArm type="wardens_tirith_aear" key="rv_sentinalspear" />
+    <MenAtArm type="rangers_of_ithilien" key="merc_gon_ithilien_rangers" max="RANGED" />
+    <MenAtArm type="swan_knights" key="gon_silver_swan_knights" max="CAVALRY" />
+    <MenAtArm type="temple_knights_of_the_eye" key="mor_nav_servants_of_the_eye" max="INFANTRY" />
+    <MenAtArm type="umbar_usurpers" key="bal_spears" max="RANGED" />
+    <MenAtArm type="umbaredain_infantry" key="bal_haerrim_infantry" max="INFANTRY" />
+    <MenAtArm type="umbaredain_spearmen" key="lin_spearmen" max="INFANTRY" />
+    <MenAtArm type="wardens_of_annuminas" key="gon_wardens_ithilien" max="INFANTRY" />
+    <MenAtArm type="wardens_tirith_aear" key="rv_sentinalspear" max="INFANTRY" />
   </Faction>
   <Faction name="Anduin-Vale" subculture="att_sub_cult_roman_west">
     <MenAtArm type="adunaic_elites" key="av_beorning_warriors" max="INFANTRY" />
@@ -93,16 +93,16 @@
   </Faction>
   <Faction name="lamedon" subculture="att_sub_cult_roman_west">
     <MenAtArm type="adunaic_elites" key="lam_guardsword" max="INFANTRY" />
-    <MenAtArm type="adunaic_skirmishers" key="oro_skirmishers" max="INFANTRY" />
-    <MenAtArm type="adunaic_soldiers" key="arn_royal_infantry" max="INFANTRY" />
+    <MenAtArm type="adunaic_skirmishers" key="lam_skirm" max="INFANTRY" />
+    <MenAtArm type="adunaic_soldiers" key="lam_mediumsword" max="INFANTRY" />
     <MenAtArm type="adunaic_spearmen" key="lam_guardspear" max="INFANTRY" />
-    <MenAtArm type="adunic_steelbowmen" key="kha_khandish_horse_archers" max="RANGED" />
-    <MenAtArm type="dunedain_marines" key="oro_skirmishers" max="INFANTRY" />
+    <MenAtArm type="adunic_steelbowmen" key="lam_heavyarcher" max="RANGED" />
+    <MenAtArm type="dunedain_marines" key="leb_marinearcher" max="INFANTRY" />
     <MenAtArm type="dunedain_reformed_outriders" key="anf_skirmcav" max="CAVALRY" />
-    <MenAtArm type="dunedain_reformed_rangers" key="gun_onager" siege="true" siege_engine_per_unit="1" num_guns="4" />
-    <MenAtArm type="dunedain_reformed_wardens" key="dun_pikemen" max="INFANTRY" />
+    <MenAtArm type="dunedain_reformed_rangers" key="brv_duinhir" siege="true" siege_engine_per_unit="1" num_guns="4" />
+    <MenAtArm type="dunedain_reformed_wardens" key="lam_pike" max="INFANTRY" />
     <MenAtArm type="knights_of_the_adunai" key="lam_angbor" max="CAVALRY" />
-    <MenAtArm type="numenorean_archers_adunaic" key="merc_loth_mallorn_defenders" max="RANGED" />
+    <MenAtArm type="numenorean_archers_adunaic" key="lam_archer" max="RANGED" />
     <MenAtArm type="numenorean_archers_custom" key="har_desert_bowmen" max="RANGED" />
     <MenAtArm type="numenorean_elites_adunaic" key="lam_chevaliers" max="INFANTRY" />
     <MenAtArm type="numenorean_elites_custom" key="arn_royal_infantry" max="INFANTRY" />
@@ -111,11 +111,11 @@
     <MenAtArm type="numenorean_marines_adunaic" key="oro_skirmishers" max="INFANTRY" />
     <MenAtArm type="numenorean_pikemen" key="dun_pikemen" max="INFANTRY" />
     <MenAtArm type="numenorean_pikemen_adunaic" key="dun_pikemen" max="INFANTRY" />
-    <MenAtArm type="numenorean_reformed_outriders" key="gon_cavalry_sword" max="CAVALRY" />
+    <MenAtArm type="numenorean_reformed_outriders" key="hor_horsearcher" max="CAVALRY" />
     <MenAtArm type="numenorean_reformed_outriders_adunaic" key="gon_cavalry_sword" max="CAVALRY" />
     <MenAtArm type="numenorean_soldiers_adunaic" key="arn_royal_infantry" max="INFANTRY" />
     <MenAtArm type="numenorean_soldiers_custom" key="arn_royal_infantry" max="INFANTRY" />
-    <MenAtArm type="pelargir_mariners" key="oro_skirmishers" max="INFANTRY" />
+    <MenAtArm type="pelargir_mariners" key="gon_pelargir_marines" max="INFANTRY" />
   </Faction>
   <Faction name="Dale" subculture="att_sub_cult_roman_west">
     <MenAtArm type="adunaic_elites" key="dale_vineland_guard_sword" max="INFANTRY" />
@@ -224,26 +224,26 @@
   <Faction name="Dunlending Tribes" subculture="att_sub_cult_barbarian_germanic_west">
     <MenAtArm type="adunaic_elites" key="dun_pillagers" max="INFANTRY" />
     <MenAtArm type="adunaic_skirmishers" key="dun_tribal_youth" max="INFANTRY" />
-    <MenAtArm type="adunaic_soldiers" key="dun_pillagers" max="INFANTRY" />
+    <MenAtArm type="adunaic_soldiers" key="dun_tribal_warriors" max="INFANTRY" />
     <MenAtArm type="adunaic_spearmen" key="dun_orthanc_servants" max="INFANTRY" />
-    <MenAtArm type="adunic_steelbowmen" key="dun_tribal_youth" max="RANGED" />
+    <MenAtArm type="adunic_steelbowmen" key="dun_archer_heerban" max="RANGED" />
     <MenAtArm type="dunedain_marines" key="dun_tribal_youth" max="INFANTRY" />
     <MenAtArm type="dunedain_reformed_outriders" key="dun_elder_riders" max="CAVALRY" />
     <MenAtArm type="dunedain_reformed_rangers" key="dun_rangers" max="RANGED" />
-    <MenAtArm type="dunedain_reformed_wardens" key="dun_orthanc_servants" max="INFANTRY" />
+    <MenAtArm type="dunedain_reformed_wardens" key="dun_pikemen" max="INFANTRY" />
     <MenAtArm type="knights_of_the_adunai" key="dun_warlords_cavalry" max="CAVALRY" />
     <MenAtArm type="numenorean_archers_adunaic" key="dun_tribal_youth" max="RANGED" />
     <MenAtArm type="numenorean_archers_custom" key="dun_tribal_youth" max="RANGED" />
-    <MenAtArm type="numenorean_elites_adunaic" key="dun_pillagers" max="INFANTRY" />
-    <MenAtArm type="numenorean_elites_custom" key="dun_pillagers" max="INFANTRY" />
+    <MenAtArm type="numenorean_elites_adunaic" key="dun_warlords_champions" max="INFANTRY" />
+    <MenAtArm type="numenorean_elites_custom" key="dun_huscarls" max="INFANTRY" />
     <MenAtArm type="numenorean_knights_adunaic" key="dun_warlords_cavalry" max="CAVALRY" />
     <MenAtArm type="numenorean_knights_custom" key="dun_warlords_cavalry" max="CAVALRY" />
-    <MenAtArm type="numenorean_marines_adunaic" key="dun_tribal_youth" max="INFANTRY" />
+    <MenAtArm type="numenorean_marines_adunaic" key="dun_slingers" max="INFANTRY" />
     <MenAtArm type="numenorean_pikemen" key="dun_orthanc_servants" max="INFANTRY" />
     <MenAtArm type="numenorean_pikemen_adunaic" key="dun_orthanc_servants" max="INFANTRY" />
     <MenAtArm type="numenorean_reformed_outriders" key="dun_elder_riders" max="CAVALRY" />
     <MenAtArm type="numenorean_reformed_outriders_adunaic" key="dun_elder_riders" max="CAVALRY" />
-    <MenAtArm type="numenorean_soldiers_adunaic" key="dun_pillagers" max="INFANTRY" />
+    <MenAtArm type="numenorean_soldiers_adunaic" key="dun_chosen_heerban" max="INFANTRY" />
     <MenAtArm type="numenorean_soldiers_custom" key="dun_pillagers" max="INFANTRY" />
     <MenAtArm type="pelargir_mariners" key="dun_tribal_youth" max="INFANTRY" />
   </Faction>
@@ -328,9 +328,9 @@
   <Faction name="Ered-Mithrin" subculture="att_sub_cult_eastern_caucasian">
     <MenAtArm type="adunaic_elites" key="em_dwarven_conscripts" max="INFANTRY" />
     <MenAtArm type="adunaic_skirmishers" key="em_grey_mountain_scouts" max="INFANTRY" />
-    <MenAtArm type="adunaic_soldiers" key="em_dwarven_conscripts" max="INFANTRY" />
+    <MenAtArm type="adunaic_soldiers" key="em_bronzewatch_spearmen" max="INFANTRY" />
     <MenAtArm type="adunaic_spearmen" key="em_ered_mithrin_pikes" max="INFANTRY" />
-    <MenAtArm type="adunic_steelbowmen" key="em_grey_mountain_scouts" max="RANGED" />
+    <MenAtArm type="adunic_steelbowmen" key="el_dwarven_shooters" max="RANGED" />
     <MenAtArm type="dunedain_marines" key="em_grey_mountain_scouts" max="INFANTRY" />
     <MenAtArm type="dunedain_reformed_outriders" key="gon_cavalry_sword" max="CAVALRY" />
     <MenAtArm type="dunedain_reformed_rangers" key="em_grey_mountain_scouts" max="RANGED" />
@@ -341,7 +341,7 @@
     <MenAtArm type="numenorean_elites_adunaic" key="em_ered_mithrin_veterans" max="INFANTRY" />
     <MenAtArm type="numenorean_elites_custom" key="em_ered_mithrin_veterans" max="INFANTRY" />
     <MenAtArm type="numenorean_knights_adunaic" key="tlb_ere_goat_riders" max="CAVALRY" />
-    <MenAtArm type="numenorean_knights_custom" key="em_nobles" max="CAVALRY" />
+    <MenAtArm type="numenorean_knights_custom" key="iml_cavalry" max="CAVALRY" />
     <MenAtArm type="numenorean_marines_adunaic" key="em_dragon_trackers" max="INFANTRY" />
     <MenAtArm type="numenorean_pikemen" key="em_frostguard" max="INFANTRY" />
     <MenAtArm type="numenorean_pikemen_adunaic" key="em_frostguard" max="INFANTRY" />
@@ -460,20 +460,20 @@
     <MenAtArm type="adunaic_skirmishers" key="pin_skirm" max="INFANTRY" />
     <MenAtArm type="adunaic_soldiers" key="pin_mediumsword" max="INFANTRY" />
     <MenAtArm type="adunaic_spearmen" key="pin_heavyspear" max="INFANTRY" />
-    <MenAtArm type="adunic_steelbowmen" key="pin_hirluin" max="RANGED" />
-    <MenAtArm type="dunedain_marines" key="oro_skirmishers" max="INFANTRY" />
+    <MenAtArm type="adunic_steelbowmen" key="pin_archer" max="RANGED" />
+    <MenAtArm type="dunedain_marines" key="leb_marinearcher" max="INFANTRY" />
     <MenAtArm type="dunedain_reformed_outriders" key="anf_skirmcav" max="CAVALRY" />
-    <MenAtArm type="dunedain_reformed_rangers" key="ere_gloin" max="RANGED" />
+    <MenAtArm type="dunedain_reformed_rangers" key="pin_forresters" max="RANGED" />
     <MenAtArm type="dunedain_reformed_wardens" key="pin_heavypike" max="INFANTRY" />
     <MenAtArm type="knights_of_the_adunai" key="pin_riders" max="CAVALRY" />
     <MenAtArm type="numenorean_archers_adunaic" key="mor_uruk_throng" max="RANGED" />
     <MenAtArm type="numenorean_archers_custom" key="exe_wr_forest_bows" max="RANGED" />
-    <MenAtArm type="numenorean_elites_adunaic" key="arn_royal_infantry" max="INFANTRY" />
-    <MenAtArm type="numenorean_elites_custom" key="arn_royal_infantry" max="INFANTRY" />
-    <MenAtArm type="numenorean_knights_adunaic" key="gon_cavalry" max="CAVALRY" />
+    <MenAtArm type="numenorean_elites_adunaic" key="pin_mace" max="INFANTRY" />
+    <MenAtArm type="numenorean_elites_custom" key="stan_mediumsword" max="INFANTRY" />
+    <MenAtArm type="numenorean_knights_adunaic" key="pin_cavshock" max="CAVALRY" />
     <MenAtArm type="numenorean_knights_custom" key="gon_cavalry" max="CAVALRY" />
-    <MenAtArm type="numenorean_marines_adunaic" key="oro_skirmishers" max="INFANTRY" />
-    <MenAtArm type="numenorean_pikemen" key="dun_pikemen" max="INFANTRY" />
+    <MenAtArm type="numenorean_marines_adunaic" key="dol_marinearcher" max="INFANTRY" />
+    <MenAtArm type="numenorean_pikemen" key="pin_pike" max="INFANTRY" />
     <MenAtArm type="numenorean_pikemen_adunaic" key="dun_pikemen" max="INFANTRY" />
     <MenAtArm type="numenorean_reformed_outriders" key="gon_cavalry_sword" max="CAVALRY" />
     <MenAtArm type="numenorean_reformed_outriders_adunaic" key="gon_cavalry_sword" max="CAVALRY" />
@@ -536,17 +536,17 @@
   <Faction name="Iron Hills" subculture="att_sub_cult_eastern_caucasian">
     <MenAtArm type="adunaic_elites" key="iro_dwarven_volunteers" max="INFANTRY" />
     <MenAtArm type="adunaic_skirmishers" key="iro_carnen_axe_throwers" max="INFANTRY" />
-    <MenAtArm type="adunaic_soldiers" key="iro_dwarven_volunteers" max="INFANTRY" />
+    <MenAtArm type="adunaic_soldiers" key="iro_dwarven_infantry" max="INFANTRY" />
     <MenAtArm type="adunaic_spearmen" key="iro_dwarven_spearguard" max="INFANTRY" />
-    <MenAtArm type="adunic_steelbowmen" key="iro_carnen_axe_throwers" max="RANGED" />
+    <MenAtArm type="adunic_steelbowmen" key="el_dwarven_shooters" max="RANGED" />
     <MenAtArm type="dunedain_marines" key="iro_carnen_axe_throwers" max="INFANTRY" />
     <MenAtArm type="dunedain_reformed_outriders" key="gon_cavalry_sword" max="CAVALRY" />
     <MenAtArm type="dunedain_reformed_rangers" key="iro_carnen_axe_throwers" max="RANGED" />
-    <MenAtArm type="dunedain_reformed_wardens" key="iro_dwarven_spearguard" max="INFANTRY" />
+    <MenAtArm type="dunedain_reformed_wardens" key="iro_iron_pikemen" max="INFANTRY" />
     <MenAtArm type="knights_of_the_adunai" key="tlb_ere_goat_riders" max="CAVALRY" />
     <MenAtArm type="numenorean_archers_adunaic" key="iro_carnen_axe_throwers" max="RANGED" />
     <MenAtArm type="numenorean_archers_custom" key="iro_carnen_axe_throwers" max="RANGED" />
-    <MenAtArm type="numenorean_elites_adunaic" key="iro_dwarven_volunteers" max="INFANTRY" />
+    <MenAtArm type="numenorean_elites_adunaic" key="ere_ered_mithrin_veterans" max="INFANTRY" />
     <MenAtArm type="numenorean_elites_custom" key="iro_dwarven_volunteers" max="INFANTRY" />
     <MenAtArm type="numenorean_knights_adunaic" key="tlb_ere_goat_riders" max="CAVALRY" />
     <MenAtArm type="numenorean_knights_custom" key="tlb_ere_goat_riders" max="CAVALRY" />
@@ -666,10 +666,10 @@
   <Faction name="Lothlórien" subculture="att_sub_cult_nomadic_hunnic">
     <MenAtArm type="adunaic_elites" key="loth_amroth_sentinels" max="INFANTRY" />
     <MenAtArm type="adunaic_skirmishers" key="loth_twilight_guard" max="INFANTRY" />
-    <MenAtArm type="adunaic_soldiers" key="loth_amroth_sentinels" max="INFANTRY" />
+    <MenAtArm type="adunaic_soldiers" key="loth_galad_sword_warriors" max="INFANTRY" />
     <MenAtArm type="adunaic_spearmen" key="Galadhrim_Spear_Infantry" max="INFANTRY" />
-    <MenAtArm type="adunic_steelbowmen" key="loth_twilight_guard" max="RANGED" />
-    <MenAtArm type="dunedain_marines" key="loth_twilight_guard" max="INFANTRY" />
+    <MenAtArm type="adunic_steelbowmen" key="loth_galadhon_archers" max="RANGED" />
+    <MenAtArm type="dunedain_marines" key="loth_naith_infantry" max="INFANTRY" />
     <MenAtArm type="dunedain_reformed_outriders" key="Lorien_Bow_Cav" max="CAVALRY" />
     <MenAtArm type="dunedain_reformed_rangers" key="loth_haldir" max="RANGED" />
     <MenAtArm type="dunedain_reformed_wardens" key="Galadhrim_Spear_Infantry" max="INFANTRY" />
@@ -677,13 +677,13 @@
     <MenAtArm type="numenorean_archers_adunaic" key="Lorien_Bows" max="RANGED" />
     <MenAtArm type="numenorean_archers_custom" key="Lorien_Bows" max="RANGED" />
     <MenAtArm type="numenorean_elites_adunaic" key="Lorien_Sword_Sentries" max="INFANTRY" />
-    <MenAtArm type="numenorean_elites_custom" key="Lorien_Sword_Sentries" max="INFANTRY" />
-    <MenAtArm type="numenorean_knights_adunaic" key="wr_forest_riders" max="CAVALRY" />
+    <MenAtArm type="numenorean_elites_custom" key="Galadhrim_Sword_Infantry" max="INFANTRY" />
+    <MenAtArm type="numenorean_knights_adunaic" key="Marchwarden_Of_The_Golden_Wood" max="CAVALRY" />
     <MenAtArm type="numenorean_knights_custom" key="gon_cavalry" max="CAVALRY" />
     <MenAtArm type="numenorean_marines_adunaic" key="loth_twilight_guard" max="INFANTRY" />
     <MenAtArm type="numenorean_pikemen" key="Galadhrim_Spear_Infantry" max="INFANTRY" />
     <MenAtArm type="numenorean_pikemen_adunaic" key="Galadhrim_Spear_Infantry" max="INFANTRY" />
-    <MenAtArm type="numenorean_reformed_outriders" key="Lorien_Bow_Cav" max="CAVALRY" />
+    <MenAtArm type="numenorean_reformed_outriders" key="loth_lor_outriders" max="CAVALRY" />
     <MenAtArm type="numenorean_reformed_outriders_adunaic" key="Lorien_Bow_Cav" max="CAVALRY" />
     <MenAtArm type="numenorean_soldiers_adunaic" key="loth_amroth_sentinels" max="INFANTRY" />
     <MenAtArm type="numenorean_soldiers_custom" key="loth_amroth_sentinels" max="INFANTRY" />
@@ -718,25 +718,25 @@
   <Faction name="Orcs Of The North" subculture="att_sub_cult_barbarian_germanic_west">
     <MenAtArm type="adunaic_elites" key="gob_goblin_blade_warriors" max="INFANTRY" />
     <MenAtArm type="adunaic_skirmishers" key="tomb_gundabad_tunnel_slaves" max="INFANTRY" />
-    <MenAtArm type="adunaic_soldiers" key="gob_goblin_blade_warriors" max="INFANTRY" />
+    <MenAtArm type="adunaic_soldiers" key="tomb_gundabad_warband" max="INFANTRY" />
     <MenAtArm type="adunaic_spearmen" key="tomb_gundabad_halberd" max="INFANTRY" />
-    <MenAtArm type="adunic_steelbowmen" key="tomb_gundabad_tunnel_slaves" max="RANGED" />
-    <MenAtArm type="dunedain_marines" key="tomb_gundabad_tunnel_slaves" max="INFANTRY" />
+    <MenAtArm type="adunic_steelbowmen" key="gob_goblin_heavy_archers" max="RANGED" />
+    <MenAtArm type="dunedain_marines" key="dg_mirkwood_trackers" max="INFANTRY" />
     <MenAtArm type="dunedain_reformed_outriders" key="kha_khandish_horse_archers" max="CAVALRY" />
     <MenAtArm type="dunedain_reformed_rangers" key="tomb_gundabad_tunnel_slaves" max="RANGED" />
-    <MenAtArm type="dunedain_reformed_wardens" key="tomb_gundabad_halberd" max="INFANTRY" />
+    <MenAtArm type="dunedain_reformed_wardens" key="dg_guldur_pikes" max="INFANTRY" />
     <MenAtArm type="knights_of_the_adunai" key="dg_nazgul" max="CAVALRY" />
     <MenAtArm type="numenorean_archers_adunaic" key="tomb_gundabad_tunnel_slaves" max="RANGED" />
     <MenAtArm type="numenorean_archers_custom" key="tomb_gundabad_tunnel_slaves" max="RANGED" />
-    <MenAtArm type="numenorean_elites_adunaic" key="gob_goblin_blade_warriors" max="INFANTRY" />
-    <MenAtArm type="numenorean_elites_custom" key="gob_goblin_blade_warriors" max="INFANTRY" />
-    <MenAtArm type="numenorean_knights_adunaic" key="dg_nazgul" max="CAVALRY" />
-    <MenAtArm type="numenorean_knights_custom" key="dg_nazgul" max="CAVALRY" />
-    <MenAtArm type="numenorean_marines_adunaic" key="tomb_gundabad_tunnel_slaves" max="INFANTRY" />
+    <MenAtArm type="numenorean_elites_adunaic" key="rhu_bondi_spears" max="INFANTRY" />
+    <MenAtArm type="numenorean_elites_custom" key="tomb_gundabad_blades" max="INFANTRY" />
+    <MenAtArm type="numenorean_knights_adunaic" key="har_adunakhori" max="CAVALRY" />
+    <MenAtArm type="numenorean_knights_custom" key="kha_variag_riders" max="CAVALRY" />
+    <MenAtArm type="numenorean_marines_adunaic" key="gob_goblin_spear_warriors" max="INFANTRY" />
     <MenAtArm type="numenorean_pikemen" key="tomb_gundabad_halberd" max="INFANTRY" />
     <MenAtArm type="numenorean_pikemen_adunaic" key="tomb_gundabad_halberd" max="INFANTRY" />
     <MenAtArm type="numenorean_reformed_outriders" key="gob_night_raiders" max="CAVALRY" />
-    <MenAtArm type="numenorean_reformed_outriders_adunaic" key="gob_night_raiders" max="CAVALRY" />
+    <MenAtArm type="numenorean_reformed_outriders_adunaic" key="dg_mirkwood_raiders" max="CAVALRY" />
     <MenAtArm type="numenorean_soldiers_adunaic" key="gob_goblin_blade_warriors" max="INFANTRY" />
     <MenAtArm type="numenorean_soldiers_custom" key="gob_goblin_blade_warriors" max="INFANTRY" />
     <MenAtArm type="pelargir_mariners" key="tomb_gundabad_tunnel_slaves" max="INFANTRY" />
@@ -957,34 +957,34 @@
     <MenAtArm type="adunic_steelbowmen" key="anf_archer" max="RANGED" />
     <MenAtArm type="dunedain_marines" key="anf_mediumskirm" max="INFANTRY" />
     <MenAtArm type="dunedain_reformed_outriders" key="anf_skirmcav" max="CAVALRY" />
-    <MenAtArm type="dunedain_reformed_rangers" key="anf_mediumskirm" max="RANGED" />
+    <MenAtArm type="dunedain_reformed_rangers" key="stan_ranger" max="RANGED" />
     <MenAtArm type="dunedain_reformed_wardens" key="anf_pike" max="INFANTRY" />
     <MenAtArm type="knights_of_the_adunai" key="anf_marshals" max="CAVALRY" />
     <MenAtArm type="numenorean_archers_adunaic" key="anf_archer" max="RANGED" />
     <MenAtArm type="numenorean_archers_custom" key="anf_archer" max="RANGED" />
-    <MenAtArm type="numenorean_elites_adunaic" key="anf_heavysword" max="INFANTRY" />
+    <MenAtArm type="numenorean_elites_adunaic" key="anf_mediumsword" max="INFANTRY" />
     <MenAtArm type="numenorean_elites_custom" key="anf_heavysword" max="INFANTRY" />
-    <MenAtArm type="numenorean_knights_adunaic" key="anf_marshals" max="CAVALRY" />
+    <MenAtArm type="numenorean_knights_adunaic" key="dol_cav" max="CAVALRY" />
     <MenAtArm type="numenorean_knights_custom" key="anf_marshals" max="CAVALRY" />
-    <MenAtArm type="numenorean_marines_adunaic" key="anf_mediumskirm" max="INFANTRY" />
+    <MenAtArm type="numenorean_marines_adunaic" key="dol_marinearcher" max="INFANTRY" />
     <MenAtArm type="numenorean_pikemen" key="anf_pike" max="INFANTRY" />
     <MenAtArm type="numenorean_pikemen_adunaic" key="anf_pike" max="INFANTRY" />
     <MenAtArm type="numenorean_reformed_outriders" key="anf_skirmcav" max="CAVALRY" />
     <MenAtArm type="numenorean_reformed_outriders_adunaic" key="anf_skirmcav" max="CAVALRY" />
-    <MenAtArm type="numenorean_soldiers_adunaic" key="anf_heavysword" max="INFANTRY" />
+    <MenAtArm type="numenorean_soldiers_adunaic" key="anf_mediumspear" max="INFANTRY" />
     <MenAtArm type="numenorean_soldiers_custom" key="anf_heavysword" max="INFANTRY" />
     <MenAtArm type="pelargir_mariners" key="anf_mediumskirm" max="INFANTRY" />
   </Faction>
   <Faction name="anorien" subculture="att_sub_cult_roman_west">
     <MenAtArm type="adunaic_elites" key="stan_heavysword" max="INFANTRY" />
-    <MenAtArm type="adunaic_skirmishers" key="stan_mediumarcher" max="INFANTRY" />
-    <MenAtArm type="adunaic_soldiers" key="stan_heavysword" max="INFANTRY" />
+    <MenAtArm type="adunaic_skirmishers" key="stan_skirm" max="INFANTRY" />
+    <MenAtArm type="adunaic_soldiers" key="stan_mediumspear" max="INFANTRY" />
     <MenAtArm type="adunaic_spearmen" key="stan_citadel" max="INFANTRY" />
-    <MenAtArm type="adunic_steelbowmen" key="stan_mediumarcher" max="RANGED" />
-    <MenAtArm type="dunedain_marines" key="stan_mediumarcher" max="INFANTRY" />
+    <MenAtArm type="adunic_steelbowmen" key="stan_archer" max="RANGED" />
+    <MenAtArm type="dunedain_marines" key="gon_pelargir_marines" max="INFANTRY" />
     <MenAtArm type="dunedain_reformed_outriders" key="hor_horsearcher" max="CAVALRY" />
-    <MenAtArm type="dunedain_reformed_rangers" key="stan_mediumarcher" max="RANGED" />
-    <MenAtArm type="dunedain_reformed_wardens" key="stan_citadel" max="INFANTRY" />
+    <MenAtArm type="dunedain_reformed_rangers" key="stan_ranger" max="RANGED" />
+    <MenAtArm type="dunedain_reformed_wardens" key="stan_pike" max="INFANTRY" />
     <MenAtArm type="knights_of_the_adunai" key="stan_cav" max="CAVALRY" />
     <MenAtArm type="numenorean_archers_adunaic" key="stan_mediumarcher" max="RANGED" />
     <MenAtArm type="numenorean_archers_custom" key="stan_mediumarcher" max="RANGED" />
@@ -992,8 +992,8 @@
     <MenAtArm type="numenorean_elites_custom" key="stan_heavysword" max="INFANTRY" />
     <MenAtArm type="numenorean_knights_adunaic" key="stan_cav" max="CAVALRY" />
     <MenAtArm type="numenorean_knights_custom" key="stan_cav" max="CAVALRY" />
-    <MenAtArm type="numenorean_marines_adunaic" key="stan_mediumarcher" max="INFANTRY" />
-    <MenAtArm type="numenorean_pikemen" key="stan_citadel" max="INFANTRY" />
+    <MenAtArm type="numenorean_marines_adunaic" key="leb_marinearcher" max="INFANTRY" />
+    <MenAtArm type="numenorean_pikemen" key="stan_fountainpike" max="INFANTRY" />
     <MenAtArm type="numenorean_pikemen_adunaic" key="stan_citadel" max="INFANTRY" />
     <MenAtArm type="numenorean_reformed_outriders" key="hor_horsearcher" max="CAVALRY" />
     <MenAtArm type="numenorean_reformed_outriders_adunaic" key="hor_horsearcher" max="CAVALRY" />
@@ -1004,26 +1004,26 @@
   <Faction name="blackroot" subculture="att_sub_cult_roman_west">
     <MenAtArm type="adunaic_elites" key="brv_heavysword" max="INFANTRY" />
     <MenAtArm type="adunaic_skirmishers" key="brv_duinhir" max="INFANTRY" />
-    <MenAtArm type="adunaic_soldiers" key="brv_heavysword" max="INFANTRY" />
+    <MenAtArm type="adunaic_soldiers" key="stan_mediumspear" max="INFANTRY" />
     <MenAtArm type="adunaic_spearmen" key="brv_heavyspear" max="INFANTRY" />
-    <MenAtArm type="adunic_steelbowmen" key="brv_duinhir" max="RANGED" />
-    <MenAtArm type="dunedain_marines" key="brv_duinhir" max="INFANTRY" />
+    <MenAtArm type="adunic_steelbowmen" key="brv_heavyarcher" max="RANGED" />
+    <MenAtArm type="dunedain_marines" key="gon_pelargir_marines" max="INFANTRY" />
     <MenAtArm type="dunedain_reformed_outriders" key="anf_skirmcav" max="CAVALRY" />
     <MenAtArm type="dunedain_reformed_rangers" key="brv_duinhir" max="RANGED" />
-    <MenAtArm type="dunedain_reformed_wardens" key="brv_heavyspear" max="INFANTRY" />
+    <MenAtArm type="dunedain_reformed_wardens" key="stan_pike" max="INFANTRY" />
     <MenAtArm type="knights_of_the_adunai" key="anf_heavysword" max="CAVALRY" />
-    <MenAtArm type="numenorean_archers_adunaic" key="brv_duinhir" max="RANGED" />
+    <MenAtArm type="numenorean_archers_adunaic" key="brv_archer" max="RANGED" />
     <MenAtArm type="numenorean_archers_custom" key="brv_duinhir" max="RANGED" />
-    <MenAtArm type="numenorean_elites_adunaic" key="brv_heavysword" max="INFANTRY" />
-    <MenAtArm type="numenorean_elites_custom" key="brv_heavysword" max="INFANTRY" />
-    <MenAtArm type="numenorean_knights_adunaic" key="stan_cav" max="CAVALRY" />
-    <MenAtArm type="numenorean_knights_custom" key="hor_cav" max="CAVALRY" />
-    <MenAtArm type="numenorean_marines_adunaic" key="brv_duinhir" max="INFANTRY" />
+    <MenAtArm type="numenorean_elites_adunaic" key="stan_mediumsword" max="INFANTRY" />
+    <MenAtArm type="numenorean_elites_custom" key="brv_guardians" max="INFANTRY" />
+    <MenAtArm type="numenorean_knights_adunaic" key="dol_cav" max="CAVALRY" />
+    <MenAtArm type="numenorean_knights_custom" key="stan_cav" max="CAVALRY" />
+    <MenAtArm type="numenorean_marines_adunaic" key="leb_marinearcher" max="INFANTRY" />
     <MenAtArm type="numenorean_pikemen" key="brv_heavyspear" max="INFANTRY" />
     <MenAtArm type="numenorean_pikemen_adunaic" key="brv_heavyspear" max="INFANTRY" />
-    <MenAtArm type="numenorean_reformed_outriders" key="anf_skirmcav" max="CAVALRY" />
+    <MenAtArm type="numenorean_reformed_outriders" key="hor_horsearcher" max="CAVALRY" />
     <MenAtArm type="numenorean_reformed_outriders_adunaic" key="anf_skirmcav" max="CAVALRY" />
-    <MenAtArm type="numenorean_soldiers_adunaic" key="brv_heavysword" max="INFANTRY" />
+    <MenAtArm type="numenorean_soldiers_adunaic" key="brv_mediumsword" max="INFANTRY" />
     <MenAtArm type="numenorean_soldiers_custom" key="brv_heavysword" max="INFANTRY" />
     <MenAtArm type="pelargir_mariners" key="brv_duinhir" max="INFANTRY" />
   </Faction>
@@ -1062,22 +1062,22 @@
     <MenAtArm type="dunedain_marines" key="hor_marksmen_rev" max="INFANTRY" />
     <MenAtArm type="dunedain_reformed_outriders" key="hor_horsearcher" max="CAVALRY" />
     <MenAtArm type="dunedain_reformed_rangers" key="hor_marksmen_rev" max="RANGED" />
-    <MenAtArm type="dunedain_reformed_wardens" key="hor_halberd" max="INFANTRY" />
+    <MenAtArm type="dunedain_reformed_wardens" key="hor_pike" max="INFANTRY" />
     <MenAtArm type="knights_of_the_adunai" key="hor_cav" max="CAVALRY" />
-    <MenAtArm type="numenorean_archers_adunaic" key="hor_marksmen_rev" max="RANGED" />
+    <MenAtArm type="numenorean_archers_adunaic" key="hor_archer" max="RANGED" />
     <MenAtArm type="numenorean_archers_custom" key="hor_marksmen_rev" max="RANGED" />
-    <MenAtArm type="numenorean_elites_adunaic" key="hor_mediumsword" max="INFANTRY" />
-    <MenAtArm type="numenorean_elites_custom" key="hor_mediumsword" max="INFANTRY" />
-    <MenAtArm type="numenorean_knights_adunaic" key="hor_cav" max="CAVALRY" />
+    <MenAtArm type="numenorean_elites_adunaic" key="hor_guardsword" max="INFANTRY" />
+    <MenAtArm type="numenorean_elites_custom" key="stan_mediumspear" max="INFANTRY" />
+    <MenAtArm type="numenorean_knights_adunaic" key="hor_heavysword" max="CAVALRY" />
     <MenAtArm type="numenorean_knights_custom" key="hor_cav" max="CAVALRY" />
-    <MenAtArm type="numenorean_marines_adunaic" key="hor_marksmen_rev" max="INFANTRY" />
+    <MenAtArm type="numenorean_marines_adunaic" key="leb_marinearcher" max="INFANTRY" />
     <MenAtArm type="numenorean_pikemen" key="hor_halberd" max="INFANTRY" />
     <MenAtArm type="numenorean_pikemen_adunaic" key="hor_halberd" max="INFANTRY" />
     <MenAtArm type="numenorean_reformed_outriders" key="hor_horsearcher" max="CAVALRY" />
     <MenAtArm type="numenorean_reformed_outriders_adunaic" key="hor_horsearcher" max="CAVALRY" />
-    <MenAtArm type="numenorean_soldiers_adunaic" key="hor_mediumsword" max="INFANTRY" />
+    <MenAtArm type="numenorean_soldiers_adunaic" key="hor_mediumspear" max="INFANTRY" />
     <MenAtArm type="numenorean_soldiers_custom" key="hor_mediumsword" max="INFANTRY" />
-    <MenAtArm type="pelargir_mariners" key="hor_marksmen_rev" max="INFANTRY" />
+    <MenAtArm type="pelargir_mariners" key="gon_pelargir_marines" max="INFANTRY" />
   </Faction>
   <Faction name="lamedon" subculture="att_sub_cult_roman_west">
     <MenAtArm type="adunaic_elites" key="lam_guardsword" max="INFANTRY" />
@@ -1108,19 +1108,19 @@
   <Faction name="lebennin" subculture="att_sub_cult_roman_west">
     <MenAtArm type="adunaic_elites" key="leb_sirgon_rev" max="INFANTRY" />
     <MenAtArm type="adunaic_skirmishers" key="leb_skirm" max="INFANTRY" />
-    <MenAtArm type="adunaic_soldiers" key="leb_sirgon_rev" max="INFANTRY" />
+    <MenAtArm type="adunaic_soldiers" key="leb_mediumsword" max="INFANTRY" />
     <MenAtArm type="adunaic_spearmen" key="leb_heavyspear" max="INFANTRY" />
     <MenAtArm type="adunic_steelbowmen" key="leb_archer" max="RANGED" />
-    <MenAtArm type="dunedain_marines" key="leb_archer" max="INFANTRY" />
+    <MenAtArm type="dunedain_marines" key="leb_marinesword" max="INFANTRY" />
     <MenAtArm type="dunedain_reformed_outriders" key="hor_horsearcher" max="CAVALRY" />
     <MenAtArm type="dunedain_reformed_rangers" key="leb_archer" max="RANGED" />
-    <MenAtArm type="dunedain_reformed_wardens" key="leb_heavyspear" max="INFANTRY" />
-    <MenAtArm type="knights_of_the_adunai" key="leb_mediumcav" max="CAVALRY" />
+    <MenAtArm type="dunedain_reformed_wardens" key="leb_pike" max="INFANTRY" />
+    <MenAtArm type="knights_of_the_adunai" key="dol_cav" max="CAVALRY" />
     <MenAtArm type="numenorean_archers_adunaic" key="leb_archer" max="RANGED" />
     <MenAtArm type="numenorean_archers_custom" key="leb_archer" max="RANGED" />
-    <MenAtArm type="numenorean_elites_adunaic" key="leb_sirgon_rev" max="INFANTRY" />
-    <MenAtArm type="numenorean_elites_custom" key="leb_sirgon_rev" max="INFANTRY" />
-    <MenAtArm type="numenorean_knights_adunaic" key="leb_mediumcav" max="CAVALRY" />
+    <MenAtArm type="numenorean_elites_adunaic" key="leb_retainer" max="INFANTRY" />
+    <MenAtArm type="numenorean_elites_custom" key="leb_guardsword" max="INFANTRY" />
+    <MenAtArm type="numenorean_knights_adunaic" key="stan_cav" max="CAVALRY" />
     <MenAtArm type="numenorean_knights_custom" key="leb_mediumcav" max="CAVALRY" />
     <MenAtArm type="numenorean_marines_adunaic" key="leb_marinearcher" max="INFANTRY" />
     <MenAtArm type="numenorean_pikemen" key="leb_heavyspear" max="INFANTRY" />
@@ -1134,28 +1134,28 @@
   <Faction name="lossarnach" subculture="att_sub_cult_roman_west">
     <MenAtArm type="adunaic_elites" key="los_forlong" max="INFANTRY" />
     <MenAtArm type="adunaic_skirmishers" key="los_axethrowers" max="INFANTRY" />
-    <MenAtArm type="adunaic_soldiers" key="los_forlong" max="INFANTRY" />
+    <MenAtArm type="adunaic_soldiers" key="los_medium2axe" max="INFANTRY" />
     <MenAtArm type="adunaic_spearmen" key="los_pike" max="INFANTRY" />
     <MenAtArm type="adunic_steelbowmen" key="los_archer" max="RANGED" />
     <MenAtArm type="dunedain_marines" key="los_bowmen" max="INFANTRY" />
     <MenAtArm type="dunedain_reformed_outriders" key="hor_horsearcher" max="CAVALRY" />
-    <MenAtArm type="dunedain_reformed_rangers" key="los_bowmen" max="RANGED" />
+    <MenAtArm type="dunedain_reformed_rangers" key="los_refugearcher" max="RANGED" />
     <MenAtArm type="dunedain_reformed_wardens" key="los_pike" max="INFANTRY" />
     <MenAtArm type="knights_of_the_adunai" key="los_flowercav" max="CAVALRY" />
     <MenAtArm type="numenorean_archers_adunaic" key="los_bowmen" max="RANGED" />
     <MenAtArm type="numenorean_archers_custom" key="los_bowmen" max="RANGED" />
     <MenAtArm type="numenorean_elites_adunaic" key="los_skirm" max="INFANTRY" />
-    <MenAtArm type="numenorean_elites_custom" key="los_spears" max="INFANTRY" />
+    <MenAtArm type="numenorean_elites_custom" key="stan_mediumspear" max="INFANTRY" />
     <MenAtArm type="numenorean_knights_adunaic" key="los_flowercav" max="CAVALRY" />
     <MenAtArm type="numenorean_knights_custom" key="los_flowercav" max="CAVALRY" />
-    <MenAtArm type="numenorean_marines_adunaic" key="los_axethrowers" max="INFANTRY" />
+    <MenAtArm type="numenorean_marines_adunaic" key="leb_marinearcher" max="INFANTRY" />
     <MenAtArm type="numenorean_pikemen" key="los_pike" max="INFANTRY" />
     <MenAtArm type="numenorean_pikemen_adunaic" key="los_pike" max="INFANTRY" />
-    <MenAtArm type="numenorean_reformed_outriders" key="hor_horsearcher" max="CAVALRY" />
-    <MenAtArm type="numenorean_reformed_outriders_adunaic" key="hor_horsearcher" max="CAVALRY" />
+    <MenAtArm type="numenorean_reformed_outriders" key="anf_skirmcav" max="CAVALRY" />
+    <MenAtArm type="numenorean_reformed_outriders_adunaic" key="leb_mediumcav" max="CAVALRY" />
     <MenAtArm type="numenorean_soldiers_adunaic" key="los_swords" max="INFANTRY" />
-    <MenAtArm type="numenorean_soldiers_custom" key="los_swords" max="INFANTRY" />
-    <MenAtArm type="pelargir_mariners" key="los_archer" max="INFANTRY" />
+    <MenAtArm type="numenorean_soldiers_custom" key="los_spears" max="INFANTRY" />
+    <MenAtArm type="pelargir_mariners" key="gon_pelargir_marines" max="INFANTRY" />
   </Faction>
   <Faction name="pinnath" subculture="att_sub_cult_roman_west">
     <MenAtArm type="adunaic_elites" key="pin_heavysword" max="INFANTRY" />
@@ -1179,8 +1179,8 @@
     <MenAtArm type="numenorean_pikemen_adunaic" key="pin_pike" max="INFANTRY" />
     <MenAtArm type="numenorean_reformed_outriders" key="pin_riders" max="CAVALRY" />
     <MenAtArm type="numenorean_reformed_outriders_adunaic" key="pin_riders" max="CAVALRY" />
-    <MenAtArm type="numenorean_soldiers_adunaic" key="pin_heavysword" max="INFANTRY" />
-    <MenAtArm type="numenorean_soldiers_custom" key="pin_mediumsword" max="INFANTRY" />
+    <MenAtArm type="numenorean_soldiers_adunaic" key="pin_mediumsword" max="INFANTRY" />
+    <MenAtArm type="numenorean_soldiers_custom" key="pin_mace" max="INFANTRY" />
     <MenAtArm type="pelargir_mariners" key="leb_marinearcher" max="INFANTRY" />
   </Faction>
   <Faction name="ringlo" subculture="att_sub_cult_roman_west">
@@ -1290,26 +1290,26 @@
   <Faction name="blackroot" subculture="att_sub_cult_barbarian_germanic_west">
     <MenAtArm type="adunaic_elites" key="brv_heavysword" max="INFANTRY" />
     <MenAtArm type="adunaic_skirmishers" key="brv_duinhir" max="INFANTRY" />
-    <MenAtArm type="adunaic_soldiers" key="arn_royal_infantry" max="INFANTRY" />
+    <MenAtArm type="adunaic_soldiers" key="stan_mediumspear" max="INFANTRY" />
     <MenAtArm type="adunaic_spearmen" key="brv_heavyspear" max="INFANTRY" />
-    <MenAtArm type="adunic_steelbowmen" key="gon_trained_spear_militia" max="RANGED" />
-    <MenAtArm type="dunedain_marines" key="oro_skirmishers" max="INFANTRY" />
+    <MenAtArm type="adunic_steelbowmen" key="brv_heavyarcher" max="RANGED" />
+    <MenAtArm type="dunedain_marines" key="gon_pelargir_marines" max="INFANTRY" />
     <MenAtArm type="dunedain_reformed_outriders" key="anf_skirmcav" max="CAVALRY" />
     <MenAtArm type="dunedain_reformed_rangers" key="pin_skirm" max="RANGED" />
-    <MenAtArm type="dunedain_reformed_wardens" key="dun_pikemen" max="INFANTRY" />
+    <MenAtArm type="dunedain_reformed_wardens" key="stan_pike" max="INFANTRY" />
     <MenAtArm type="knights_of_the_adunai" key="anf_heavysword" max="CAVALRY" />
-    <MenAtArm type="numenorean_archers_adunaic" key="merc_dg_chieftain" max="RANGED" />
-    <MenAtArm type="numenorean_archers_custom" key="ler_onager" siege="true" siege_engine_per_unit="1" num_guns="4" />
-    <MenAtArm type="numenorean_elites_adunaic" key="arn_royal_infantry" max="INFANTRY" />
-    <MenAtArm type="numenorean_elites_custom" key="arn_royal_infantry" max="INFANTRY" />
-    <MenAtArm type="numenorean_knights_adunaic" key="gon_cavalry" max="CAVALRY" />
-    <MenAtArm type="numenorean_knights_custom" key="gon_cavalry" max="CAVALRY" />
-    <MenAtArm type="numenorean_marines_adunaic" key="oro_skirmishers" max="INFANTRY" />
+    <MenAtArm type="numenorean_archers_adunaic" key="brv_archer" max="RANGED" />
+    <MenAtArm type="numenorean_archers_custom" key="dale_avari_wanderers" siege="true" siege_engine_per_unit="1" num_guns="4" />
+    <MenAtArm type="numenorean_elites_adunaic" key="stan_mediumsword" max="INFANTRY" />
+    <MenAtArm type="numenorean_elites_custom" key="brv_guardians" max="INFANTRY" />
+    <MenAtArm type="numenorean_knights_adunaic" key="dol_cav" max="CAVALRY" />
+    <MenAtArm type="numenorean_knights_custom" key="stan_cav" max="CAVALRY" />
+    <MenAtArm type="numenorean_marines_adunaic" key="leb_marinearcher" max="INFANTRY" />
     <MenAtArm type="numenorean_pikemen" key="dun_pikemen" max="INFANTRY" />
     <MenAtArm type="numenorean_pikemen_adunaic" key="dun_pikemen" max="INFANTRY" />
-    <MenAtArm type="numenorean_reformed_outriders" key="gon_cavalry_sword" max="CAVALRY" />
+    <MenAtArm type="numenorean_reformed_outriders" key="hor_horsearcher" max="CAVALRY" />
     <MenAtArm type="numenorean_reformed_outriders_adunaic" key="gon_cavalry_sword" max="CAVALRY" />
-    <MenAtArm type="numenorean_soldiers_adunaic" key="arn_royal_infantry" max="INFANTRY" />
+    <MenAtArm type="numenorean_soldiers_adunaic" key="brv_mediumsword" max="INFANTRY" />
     <MenAtArm type="numenorean_soldiers_custom" key="arn_royal_infantry" max="INFANTRY" />
     <MenAtArm type="pelargir_mariners" key="oro_skirmishers" max="INFANTRY" />
   </Faction>
@@ -1318,7 +1318,7 @@
     <MenAtArm type="adunaic_skirmishers" key="oro_skirmishers" max="INFANTRY" />
     <MenAtArm type="adunaic_soldiers" key="arn_royal_infantry" max="INFANTRY" />
     <MenAtArm type="adunaic_spearmen" key="dun_pikemen" max="INFANTRY" />
-    <MenAtArm type="adunic_steelbowmen" key="av_onager" siege="true" siege_engine_per_unit="1" num_guns="4" />
+    <MenAtArm type="adunic_steelbowmen" key="av_anduin_longbowmen" siege="true" siege_engine_per_unit="1" num_guns="4" />
     <MenAtArm type="dunedain_marines" key="oro_skirmishers" max="INFANTRY" />
     <MenAtArm type="dunedain_reformed_outriders" key="gon_cavalry_sword" max="CAVALRY" />
     <MenAtArm type="dunedain_reformed_rangers" key="rv_pike" max="RANGED" />
@@ -1380,7 +1380,7 @@
     <MenAtArm type="numenorean_archers_custom" key="el_dwarven_shooters" max="RANGED" />
     <MenAtArm type="numenorean_elites_adunaic" key="em_ered_mithrin_veterans" max="INFANTRY" />
     <MenAtArm type="numenorean_elites_custom" key="em_ered_mithrin_veterans" max="INFANTRY" />
-    <MenAtArm type="numenorean_knights_adunaic" key="gon_cavalry" max="CAVALRY" />
+    <MenAtArm type="numenorean_knights_adunaic" key="tlb_ere_goat_riders" max="CAVALRY" />
     <MenAtArm type="numenorean_knights_custom" key="gon_cavalry" max="CAVALRY" />
     <MenAtArm type="numenorean_marines_adunaic" key="em_dragon_trackers" max="INFANTRY" />
     <MenAtArm type="numenorean_pikemen" key="em_frostguard" max="INFANTRY" />
@@ -1389,7 +1389,7 @@
     <MenAtArm type="numenorean_reformed_outriders_adunaic" key="gon_cavalry_sword" max="CAVALRY" />
     <MenAtArm type="numenorean_soldiers_adunaic" key="em_dwarven_conscripts" max="INFANTRY" />
     <MenAtArm type="numenorean_soldiers_custom" key="em_dwarven_conscripts" max="INFANTRY" />
-    <MenAtArm type="pelargir_mariners" key="el_dwarven_shooters" max="INFANTRY" />
+    <MenAtArm type="pelargir_mariners" key="em_bronzewatch_spearmen" max="INFANTRY" />
   </Faction>
   <Faction name="harondor" subculture="att_sub_cult_roman_west">
     <MenAtArm type="adunaic_elites" key="hor_mediumsword" max="INFANTRY" />
@@ -1469,31 +1469,31 @@
     <MenAtArm type="numenorean_soldiers_custom" key="arn_royal_infantry" max="INFANTRY" />
     <MenAtArm type="pelargir_mariners" key="oro_skirmishers" max="INFANTRY" />
   </Faction>
-  <Faction name="Khazad" subculture="att_sub_cult_roman_west">
-    <MenAtArm type="adunaic_elites" key="arn_royal_infantry" max="INFANTRY" />
-    <MenAtArm type="adunaic_skirmishers" key="oro_skirmishers" max="INFANTRY" />
-    <MenAtArm type="adunaic_soldiers" key="arn_royal_infantry" max="INFANTRY" />
-    <MenAtArm type="adunaic_spearmen" key="dun_pikemen" max="INFANTRY" />
-    <MenAtArm type="adunic_steelbowmen" key="mor_warg_sentries" max="RANGED" />
-    <MenAtArm type="dunedain_marines" key="oro_skirmishers" max="INFANTRY" />
+  <Faction name="Khazad-dum" subculture="att_sub_cult_roman_west">
+    <MenAtArm type="adunaic_elites" key="khz_mansion_reclaimers" max="INFANTRY" />
+    <MenAtArm type="adunaic_skirmishers" key="khz_axe_throwers" max="INFANTRY" />
+    <MenAtArm type="adunaic_soldiers" key="khz_mountain_travellers" max="INFANTRY" />
+    <MenAtArm type="adunaic_spearmen" key="khz_longbeard_spears" max="INFANTRY" />
+    <MenAtArm type="adunic_steelbowmen" key="khz_crossbows" max="RANGED" />
+    <MenAtArm type="dunedain_marines" key="khz_hunters" max="INFANTRY" />
     <MenAtArm type="dunedain_reformed_outriders" key="gon_cavalry_sword" max="CAVALRY" />
-    <MenAtArm type="dunedain_reformed_rangers" key="tomb_gundabad_citadel" max="RANGED" />
-    <MenAtArm type="dunedain_reformed_wardens" key="dun_pikemen" max="INFANTRY" />
-    <MenAtArm type="knights_of_the_adunai" key="gon_cavalry" max="CAVALRY" />
-    <MenAtArm type="numenorean_archers_adunaic" key="dor_riders_of_the_vinter_court" max="RANGED" />
-    <MenAtArm type="numenorean_archers_custom" key="merc_dun_tribal_spearmen" max="RANGED" />
-    <MenAtArm type="numenorean_elites_adunaic" key="arn_royal_infantry" max="INFANTRY" />
-    <MenAtArm type="numenorean_elites_custom" key="arn_royal_infantry" max="INFANTRY" />
-    <MenAtArm type="numenorean_knights_adunaic" key="gon_cavalry" max="CAVALRY" />
+    <MenAtArm type="dunedain_reformed_rangers" key="khz_hunters" max="RANGED" />
+    <MenAtArm type="dunedain_reformed_wardens" key="khz_protectors_azanulbizar" max="INFANTRY" />
+    <MenAtArm type="knights_of_the_adunai" key="tlb_ere_goat_riders" max="CAVALRY" />
+    <MenAtArm type="numenorean_archers_adunaic" key="khz_crossbows" max="RANGED" />
+    <MenAtArm type="numenorean_archers_custom" key="khz_crossbows" max="RANGED" />
+    <MenAtArm type="numenorean_elites_adunaic" key="khz_darrowdelf_swordsmen" max="INFANTRY" />
+    <MenAtArm type="numenorean_elites_custom" key="em_ered_mithrin_veterans" max="INFANTRY" />
+    <MenAtArm type="numenorean_knights_adunaic" key="khz_legionaries" max="CAVALRY" />
     <MenAtArm type="numenorean_knights_custom" key="gon_cavalry" max="CAVALRY" />
-    <MenAtArm type="numenorean_marines_adunaic" key="oro_skirmishers" max="INFANTRY" />
-    <MenAtArm type="numenorean_pikemen" key="dun_pikemen" max="INFANTRY" />
-    <MenAtArm type="numenorean_pikemen_adunaic" key="dun_pikemen" max="INFANTRY" />
+    <MenAtArm type="numenorean_marines_adunaic" key="khz_crossbows" max="INFANTRY" />
+    <MenAtArm type="numenorean_pikemen" key="khz_halberds" max="INFANTRY" />
+    <MenAtArm type="numenorean_pikemen_adunaic" key="em_ered_mithrin_pikes" max="INFANTRY" />
     <MenAtArm type="numenorean_reformed_outriders" key="gon_cavalry_sword" max="CAVALRY" />
     <MenAtArm type="numenorean_reformed_outriders_adunaic" key="gon_cavalry_sword" max="CAVALRY" />
-    <MenAtArm type="numenorean_soldiers_adunaic" key="arn_royal_infantry" max="INFANTRY" />
-    <MenAtArm type="numenorean_soldiers_custom" key="arn_royal_infantry" max="INFANTRY" />
-    <MenAtArm type="pelargir_mariners" key="oro_skirmishers" max="INFANTRY" />
+    <MenAtArm type="numenorean_soldiers_adunaic" key="khz_legionaries" max="INFANTRY" />
+    <MenAtArm type="numenorean_soldiers_custom" key="khz_darrowdelf_swordsmen" max="INFANTRY" />
+    <MenAtArm type="pelargir_mariners" key="khz_hunters" max="INFANTRY" />
   </Faction>
   <Faction name="lebennin" subculture="att_sub_cult_roman_west">
     <MenAtArm type="adunaic_elites" key="leb_sirgon_rev" max="INFANTRY" />
@@ -1581,7 +1581,7 @@
     <MenAtArm type="adunic_steelbowmen" key="lam_levysword" max="RANGED" />
     <MenAtArm type="dunedain_marines" key="oro_skirmishers" max="INFANTRY" />
     <MenAtArm type="dunedain_reformed_outriders" key="gon_cavalry_sword" max="CAVALRY" />
-    <MenAtArm type="dunedain_reformed_rangers" key="dun_onager" siege="true" siege_engine_per_unit="1" num_guns="4" />
+    <MenAtArm type="dunedain_reformed_rangers" key="av_greenwood_rangers" siege="true" siege_engine_per_unit="1" num_guns="4" />
     <MenAtArm type="dunedain_reformed_wardens" key="dun_pikemen" max="INFANTRY" />
     <MenAtArm type="knights_of_the_adunai" key="gon_cavalry" max="CAVALRY" />
     <MenAtArm type="numenorean_archers_adunaic" key="khz_crossbows" max="RANGED" />
@@ -1607,7 +1607,7 @@
     <MenAtArm type="adunic_steelbowmen" key="gob_goblin_heavy_archers" max="RANGED" />
     <MenAtArm type="dunedain_marines" key="dg_mirkwood_trackers" max="INFANTRY" />
     <MenAtArm type="dunedain_reformed_outriders" key="kha_khandish_horse_archers" max="CAVALRY" />
-    <MenAtArm type="dunedain_reformed_rangers" key="gob_goblin_heavy_archers" max="RANGED" />
+    <MenAtArm type="dunedain_reformed_rangers" key="tomb_gundabad_stalkers" max="RANGED" />
     <MenAtArm type="dunedain_reformed_wardens" key="dg_guldur_pikes" max="INFANTRY" />
     <MenAtArm type="knights_of_the_adunai" key="dg_nazgul" max="CAVALRY" />
     <MenAtArm type="numenorean_archers_adunaic" key="gob_goblin_heavy_archers" max="RANGED" />
@@ -1622,8 +1622,8 @@
     <MenAtArm type="numenorean_reformed_outriders" key="gob_night_raiders" max="CAVALRY" />
     <MenAtArm type="numenorean_reformed_outriders_adunaic" key="dg_mirkwood_raiders" max="CAVALRY" />
     <MenAtArm type="numenorean_soldiers_adunaic" key="tomb_gundabad_warband" max="INFANTRY" />
-    <MenAtArm type="numenorean_soldiers_custom" key="gob_goblin_spear_warriors" max="INFANTRY" />
-    <MenAtArm type="pelargir_mariners" key="gob_goblin_heavy_archers" max="INFANTRY" />
+    <MenAtArm type="numenorean_soldiers_custom" key="tomb_gundabad_blades" max="INFANTRY" />
+    <MenAtArm type="pelargir_mariners" key="tomb_gundabad_raiders" max="INFANTRY" />
   </Faction>
   <Faction name="blackroot" subculture="att_sub_cult_barbarian_germanic_west">
     <MenAtArm type="adunaic_elites" key="brv_heavysword" max="INFANTRY" />
@@ -1651,48 +1651,48 @@
     <MenAtArm type="numenorean_soldiers_custom" key="brv_mediumsword" max="INFANTRY" />
     <MenAtArm type="pelargir_mariners" key="gon_pelargir_marines" max="INFANTRY" />
   </Faction>
-  <Faction name="Witch King" subculture="att_sub_cult_barbarian_germanic_west">
-    <MenAtArm type="adunaic_elites" key="arn_royal_infantry" max="INFANTRY" />
-    <MenAtArm type="adunaic_skirmishers" key="oro_skirmishers" max="INFANTRY" />
-    <MenAtArm type="adunaic_soldiers" key="arn_royal_infantry" max="INFANTRY" />
-    <MenAtArm type="adunaic_spearmen" key="dun_pikemen" max="INFANTRY" />
-    <MenAtArm type="adunic_steelbowmen" key="merc_dg_guldur_blades" max="RANGED" />
-    <MenAtArm type="dunedain_marines" key="oro_skirmishers" max="INFANTRY" />
-    <MenAtArm type="dunedain_reformed_outriders" key="gon_cavalry_sword" max="CAVALRY" />
-    <MenAtArm type="dunedain_reformed_rangers" key="exe_wr_border_guards" max="RANGED" />
-    <MenAtArm type="dunedain_reformed_wardens" key="dun_pikemen" max="INFANTRY" />
-    <MenAtArm type="knights_of_the_adunai" key="gon_cavalry" max="CAVALRY" />
-    <MenAtArm type="numenorean_archers_adunaic" key="khz_durins_gate_guard" max="RANGED" />
-    <MenAtArm type="numenorean_archers_custom" key="merc_mor_morgul_orcs" max="RANGED" />
-    <MenAtArm type="numenorean_elites_adunaic" key="arn_royal_infantry" max="INFANTRY" />
-    <MenAtArm type="numenorean_elites_custom" key="arn_royal_infantry" max="INFANTRY" />
-    <MenAtArm type="numenorean_knights_adunaic" key="gon_cavalry" max="CAVALRY" />
-    <MenAtArm type="numenorean_knights_custom" key="gon_cavalry" max="CAVALRY" />
-    <MenAtArm type="numenorean_marines_adunaic" key="oro_skirmishers" max="INFANTRY" />
-    <MenAtArm type="numenorean_pikemen" key="dun_pikemen" max="INFANTRY" />
-    <MenAtArm type="numenorean_pikemen_adunaic" key="dun_pikemen" max="INFANTRY" />
-    <MenAtArm type="numenorean_reformed_outriders" key="gon_cavalry_sword" max="CAVALRY" />
-    <MenAtArm type="numenorean_reformed_outriders_adunaic" key="gon_cavalry_sword" max="CAVALRY" />
-    <MenAtArm type="numenorean_soldiers_adunaic" key="arn_royal_infantry" max="INFANTRY" />
-    <MenAtArm type="numenorean_soldiers_custom" key="arn_royal_infantry" max="INFANTRY" />
-    <MenAtArm type="pelargir_mariners" key="oro_skirmishers" max="INFANTRY" />
+  <Faction name="Mordor" subculture="att_sub_cult_barbarian_germanic_west">
+    <MenAtArm type="adunaic_elites" key="mor_gothmog" max="INFANTRY" />
+    <MenAtArm type="adunaic_skirmishers" key="mor_orc_archers" max="INFANTRY" />
+    <MenAtArm type="adunaic_soldiers" key="mor_orc_warband" max="INFANTRY" />
+    <MenAtArm type="adunaic_spearmen" key="mor_orc_pikes" max="INFANTRY" />
+    <MenAtArm type="adunic_steelbowmen" key="mor_uruk_archers" max="RANGED" />
+    <MenAtArm type="dunedain_marines" key="mor_uruk_archers" max="INFANTRY" />
+    <MenAtArm type="dunedain_reformed_outriders" key="mor_warg_sentries" max="CAVALRY" />
+    <MenAtArm type="dunedain_reformed_rangers" key="mor_mirkwood_trackers" max="RANGED" />
+    <MenAtArm type="dunedain_reformed_wardens" key="mor_orc_pikes" max="INFANTRY" />
+    <MenAtArm type="knights_of_the_adunai" key="mor_warg_riders" max="CAVALRY" />
+    <MenAtArm type="numenorean_archers_adunaic" key="mor_orc_archers" max="RANGED" />
+    <MenAtArm type="numenorean_archers_custom" key="mor_orc_archers" max="RANGED" />
+    <MenAtArm type="numenorean_elites_adunaic" key="mor_guards_of_the_teeth" max="INFANTRY" />
+    <MenAtArm type="numenorean_elites_custom" key="mor_morgul_legion" max="INFANTRY" />
+    <MenAtArm type="numenorean_knights_adunaic" key="mor_the_nine" max="CAVALRY" />
+    <MenAtArm type="numenorean_knights_custom" key="mor_warg_riders" max="CAVALRY" />
+    <MenAtArm type="numenorean_marines_adunaic" key="mor_mirkwood_raiders" max="INFANTRY" />
+    <MenAtArm type="numenorean_pikemen" key="mor_orc_pikes" max="INFANTRY" />
+    <MenAtArm type="numenorean_pikemen_adunaic" key="mor_orc_pikes" max="INFANTRY" />
+    <MenAtArm type="numenorean_reformed_outriders" key="mor_warg_riders" max="CAVALRY" />
+    <MenAtArm type="numenorean_reformed_outriders_adunaic" key="mor_warg_sentries" max="CAVALRY" />
+    <MenAtArm type="numenorean_soldiers_adunaic" key="mor_orc_warriors" max="INFANTRY" />
+    <MenAtArm type="numenorean_soldiers_custom" key="mor_orc_warband" max="INFANTRY" />
+    <MenAtArm type="pelargir_mariners" key="mor_orc_archers" max="INFANTRY" />
   </Faction>
   <Faction name="Arnor" subculture="att_sub_cult_roman_west">
     <MenAtArm type="adunaic_elites" key="arn_royal_infantry" max="INFANTRY" />
     <MenAtArm type="adunaic_skirmishers" key="arn_eriador_hunters" max="INFANTRY" />
     <MenAtArm type="adunaic_soldiers" key="arn_sword_militia" max="INFANTRY" />
-    <MenAtArm type="adunaic_spearmen" key="arn_royal_wardens" max="INFANTRY" />
+    <MenAtArm type="adunaic_spearmen" key="arn_spear_militia" max="INFANTRY" />
     <MenAtArm type="adunic_steelbowmen" key="arn_royal_marksmen" max="RANGED" />
     <MenAtArm type="dunedain_marines" key="gon_ithilien_rangers" max="INFANTRY" />
     <MenAtArm type="dunedain_reformed_outriders" key="gon_cavalry_sword" max="CAVALRY" />
-    <MenAtArm type="dunedain_reformed_rangers" key="arn_royal_marksmen" max="RANGED" />
+    <MenAtArm type="dunedain_reformed_rangers" key="arn_eriador_foresters" max="RANGED" />
     <MenAtArm type="dunedain_reformed_wardens" key="arn_royal_wardens" max="INFANTRY" />
     <MenAtArm type="knights_of_the_adunai" key="arn_marshals_annuminas" max="CAVALRY" />
     <MenAtArm type="numenorean_archers_adunaic" key="arn_royal_marksmen" max="RANGED" />
     <MenAtArm type="numenorean_archers_custom" key="arn_royal_marksmen" max="RANGED" />
     <MenAtArm type="numenorean_elites_adunaic" key="arn_royal_infantry" max="INFANTRY" />
     <MenAtArm type="numenorean_elites_custom" key="arn_royal_infantry" max="INFANTRY" />
-    <MenAtArm type="numenorean_knights_adunaic" key="arn_marshals_annuminas" max="CAVALRY" />
+    <MenAtArm type="numenorean_knights_adunaic" key="gon_silver_swan_knights" max="CAVALRY" />
     <MenAtArm type="numenorean_knights_custom" key="arn_marshals_annuminas" max="CAVALRY" />
     <MenAtArm type="numenorean_marines_adunaic" key="arn_royal_marksmen" max="INFANTRY" />
     <MenAtArm type="numenorean_pikemen" key="arn_royal_wardens" max="INFANTRY" />
@@ -1701,7 +1701,7 @@
     <MenAtArm type="numenorean_reformed_outriders_adunaic" key="gon_cavalry_sword" max="CAVALRY" />
     <MenAtArm type="numenorean_soldiers_adunaic" key="arn_lords_westernesse" max="INFANTRY" />
     <MenAtArm type="numenorean_soldiers_custom" key="arn_lords_westernesse" max="INFANTRY" />
-    <MenAtArm type="pelargir_mariners" key="gon_pelargir_marines" max="INFANTRY" />
+    <MenAtArm type="pelargir_mariners" key="arn_ranged_patrollers" max="INFANTRY" />
   </Faction>
   <Faction name="Haradrim" subculture="att_sub_cult_barbarian_germanic_west">
     <MenAtArm type="adunaic_elites" key="har_mahud_clubmen" max="INFANTRY" />
@@ -1754,6 +1754,370 @@
     <MenAtArm type="numenorean_soldiers_adunaic" key="arn_lords_westernesse" max="INFANTRY" />
     <MenAtArm type="numenorean_soldiers_custom" key="arn_spear_militia" max="INFANTRY" />
     <MenAtArm type="pelargir_mariners" key="arn_ranged_patrollers" max="INFANTRY" />
+  </Faction>
+  <Faction name="anfalas">
+    <MenAtArm type="adunaic_elites" key="anf_hammers_rev" max="INFANTRY" />
+    <MenAtArm type="adunaic_skirmishers" key="anf_mediumskirm" max="INFANTRY" />
+    <MenAtArm type="adunaic_soldiers" key="anf_heavysword" max="INFANTRY" />
+    <MenAtArm type="adunaic_spearmen" key="anf_pike" max="INFANTRY" />
+    <MenAtArm type="adunic_steelbowmen" key="anf_archer" max="RANGED" />
+    <MenAtArm type="dunedain_marines" key="anf_mediumskirm" max="INFANTRY" />
+    <MenAtArm type="dunedain_reformed_outriders" key="anf_skirmcav" max="CAVALRY" />
+    <MenAtArm type="dunedain_reformed_rangers" key="stan_ranger" max="RANGED" />
+    <MenAtArm type="dunedain_reformed_wardens" key="anf_pike" max="INFANTRY" />
+    <MenAtArm type="knights_of_the_adunai" key="anf_marshals" max="CAVALRY" />
+    <MenAtArm type="numenorean_archers_adunaic" key="anf_archer" max="RANGED" />
+    <MenAtArm type="numenorean_archers_custom" key="anf_archer" max="RANGED" />
+    <MenAtArm type="numenorean_elites_adunaic" key="anf_mediumsword" max="INFANTRY" />
+    <MenAtArm type="numenorean_elites_custom" key="anf_heavysword" max="INFANTRY" />
+    <MenAtArm type="numenorean_knights_adunaic" key="dol_cav" max="CAVALRY" />
+    <MenAtArm type="numenorean_knights_custom" key="anf_heavysword" max="CAVALRY" />
+    <MenAtArm type="numenorean_marines_adunaic" key="dol_marinearcher" max="INFANTRY" />
+    <MenAtArm type="numenorean_pikemen" key="anf_pike" max="INFANTRY" />
+    <MenAtArm type="numenorean_pikemen_adunaic" key="anf_pike" max="INFANTRY" />
+    <MenAtArm type="numenorean_reformed_outriders" key="anf_skirmcav" max="CAVALRY" />
+    <MenAtArm type="numenorean_reformed_outriders_adunaic" key="anf_skirmcav" max="CAVALRY" />
+    <MenAtArm type="numenorean_soldiers_adunaic" key="anf_mediumspear" max="INFANTRY" />
+    <MenAtArm type="numenorean_soldiers_custom" key="stan_mediumsword" max="INFANTRY" />
+    <MenAtArm type="pelargir_mariners" key="gon_pelargir_marines" max="INFANTRY" />
+  </Faction>
+  <Faction name="anorien">
+    <MenAtArm type="adunaic_elites" key="stan_heavysword" max="INFANTRY" />
+    <MenAtArm type="adunaic_skirmishers" key="stan_skirm" max="INFANTRY" />
+    <MenAtArm type="adunaic_soldiers" key="stan_mediumspear" max="INFANTRY" />
+    <MenAtArm type="adunaic_spearmen" key="stan_citadel" max="INFANTRY" />
+    <MenAtArm type="adunic_steelbowmen" key="stan_archer" max="RANGED" />
+    <MenAtArm type="dunedain_marines" key="gon_pelargir_marines" max="INFANTRY" />
+    <MenAtArm type="dunedain_reformed_outriders" key="hor_horsearcher" max="CAVALRY" />
+    <MenAtArm type="dunedain_reformed_rangers" key="stan_ranger" max="RANGED" />
+    <MenAtArm type="dunedain_reformed_wardens" key="stan_pike" max="INFANTRY" />
+    <MenAtArm type="knights_of_the_adunai" key="stan_cav" max="CAVALRY" />
+    <MenAtArm type="numenorean_archers_adunaic" key="stan_mediumarcher" max="RANGED" />
+    <MenAtArm type="numenorean_archers_custom" key="stan_mediumarcher" max="RANGED" />
+    <MenAtArm type="numenorean_elites_adunaic" key="stan_mediumspear" max="INFANTRY" />
+    <MenAtArm type="numenorean_elites_custom" key="stan_mediumspear" max="INFANTRY" />
+    <MenAtArm type="numenorean_knights_adunaic" key="stan_cav" max="CAVALRY" />
+    <MenAtArm type="numenorean_knights_custom" key="stan_cav" max="CAVALRY" />
+    <MenAtArm type="numenorean_marines_adunaic" key="leb_marinearcher" max="INFANTRY" />
+    <MenAtArm type="numenorean_pikemen" key="stan_fountainpike" max="INFANTRY" />
+    <MenAtArm type="numenorean_pikemen_adunaic" key="stan_pike" max="INFANTRY" />
+    <MenAtArm type="numenorean_reformed_outriders" key="hor_horsearcher" max="CAVALRY" />
+    <MenAtArm type="numenorean_reformed_outriders_adunaic" key="hor_horsearcher" max="CAVALRY" />
+    <MenAtArm type="numenorean_soldiers_adunaic" key="stan_mediumspear" max="INFANTRY" />
+    <MenAtArm type="numenorean_soldiers_custom" key="stan_mediumspear" max="INFANTRY" />
+    <MenAtArm type="pelargir_mariners" key="gon_pelargir_marines" max="INFANTRY" />
+  </Faction>
+  <Faction name="blackroot">
+    <MenAtArm type="adunaic_elites" key="brv_heavysword" max="INFANTRY" />
+    <MenAtArm type="adunaic_skirmishers" key="brv_duinhir" max="INFANTRY" />
+    <MenAtArm type="adunaic_soldiers" key="stan_mediumspear" max="INFANTRY" />
+    <MenAtArm type="adunaic_spearmen" key="brv_heavyspear" max="INFANTRY" />
+    <MenAtArm type="adunic_steelbowmen" key="brv_heavyarcher" max="RANGED" />
+    <MenAtArm type="dunedain_marines" key="gon_pelargir_marines" max="INFANTRY" />
+    <MenAtArm type="dunedain_reformed_outriders" key="anf_skirmcav" max="CAVALRY" />
+    <MenAtArm type="dunedain_reformed_rangers" key="brv_ambushers" max="RANGED" />
+    <MenAtArm type="dunedain_reformed_wardens" key="stan_pike" max="INFANTRY" />
+    <MenAtArm type="knights_of_the_adunai" key="anf_heavysword" max="CAVALRY" />
+    <MenAtArm type="numenorean_archers_adunaic" key="brv_archer" max="RANGED" />
+    <MenAtArm type="numenorean_archers_custom" key="brv_heavyarcher" max="RANGED" />
+    <MenAtArm type="numenorean_elites_adunaic" key="stan_mediumsword" max="INFANTRY" />
+    <MenAtArm type="numenorean_elites_custom" key="brv_guardians" max="INFANTRY" />
+    <MenAtArm type="numenorean_knights_adunaic" key="dol_cav" max="CAVALRY" />
+    <MenAtArm type="numenorean_knights_custom" key="stan_cav" max="CAVALRY" />
+    <MenAtArm type="numenorean_marines_adunaic" key="leb_marinearcher" max="INFANTRY" />
+    <MenAtArm type="numenorean_pikemen" key="anf_pike" max="INFANTRY" />
+    <MenAtArm type="numenorean_pikemen_adunaic" key="stan_pike" max="INFANTRY" />
+    <MenAtArm type="numenorean_reformed_outriders" key="hor_horsearcher" max="CAVALRY" />
+    <MenAtArm type="numenorean_reformed_outriders_adunaic" key="merc_desert_guides" max="CAVALRY" />
+    <MenAtArm type="numenorean_soldiers_adunaic" key="brv_mediumsword" max="INFANTRY" />
+    <MenAtArm type="numenorean_soldiers_custom" key="brv_mediumsword" max="INFANTRY" />
+    <MenAtArm type="pelargir_mariners" key="gon_pelargir_marines" max="INFANTRY" />
+  </Faction>
+  <Faction name="Dunlending Tribes">
+    <MenAtArm type="adunaic_elites" key="dun_pillagers" max="INFANTRY" />
+    <MenAtArm type="adunaic_skirmishers" key="dun_tribal_youth" max="INFANTRY" />
+    <MenAtArm type="adunaic_soldiers" key="dun_tribal_warriors" max="INFANTRY" />
+    <MenAtArm type="adunaic_spearmen" key="dun_orthanc_servants" max="INFANTRY" />
+    <MenAtArm type="adunic_steelbowmen" key="dun_archer_heerban" max="RANGED" />
+    <MenAtArm type="dunedain_marines" key="dun_huscarls" max="INFANTRY" />
+    <MenAtArm type="dunedain_reformed_outriders" key="dun_tribal_raiders" max="CAVALRY" />
+    <MenAtArm type="dunedain_reformed_rangers" key="dun_rangers" max="RANGED" />
+    <MenAtArm type="dunedain_reformed_wardens" key="dun_pikemen" max="INFANTRY" />
+    <MenAtArm type="knights_of_the_adunai" key="dun_warlords_cavalry" max="CAVALRY" />
+    <MenAtArm type="numenorean_archers_adunaic" key="dun_archer_heerban" max="RANGED" />
+    <MenAtArm type="numenorean_archers_custom" key="dun_archer_heerban" max="RANGED" />
+    <MenAtArm type="numenorean_elites_adunaic" key="dun_warlords_champions" max="INFANTRY" />
+    <MenAtArm type="numenorean_elites_custom" key="dun_huscarls" max="INFANTRY" />
+    <MenAtArm type="numenorean_knights_adunaic" key="dun_warlords_cavalry" max="CAVALRY" />
+    <MenAtArm type="numenorean_knights_custom" key="dun_warlords_cavalry" max="CAVALRY" />
+    <MenAtArm type="numenorean_marines_adunaic" key="dun_slingers" max="INFANTRY" />
+    <MenAtArm type="numenorean_pikemen" key="dun_pikemen" max="INFANTRY" />
+    <MenAtArm type="numenorean_pikemen_adunaic" key="iro_iron_pikemen" max="INFANTRY" />
+    <MenAtArm type="numenorean_reformed_outriders" key="dun_elder_riders" max="CAVALRY" />
+    <MenAtArm type="numenorean_reformed_outriders_adunaic" key="dun_elder_riders" max="CAVALRY" />
+    <MenAtArm type="numenorean_soldiers_adunaic" key="dun_chosen_heerban" max="INFANTRY" />
+    <MenAtArm type="numenorean_soldiers_custom" key="dun_huscarls" max="INFANTRY" />
+    <MenAtArm type="pelargir_mariners" key="dun_archer_heerban" max="INFANTRY" />
+  </Faction>
+  <Faction name="Ered Luin">
+    <MenAtArm type="adunaic_elites" key="el_firebeared_orc_hunters" max="INFANTRY" />
+    <MenAtArm type="adunaic_skirmishers" key="el_firebeared_scouts" max="INFANTRY" />
+    <MenAtArm type="adunaic_soldiers" key="el_broadbeam_axe_warriors" max="INFANTRY" />
+    <MenAtArm type="adunaic_spearmen" key="el_broadbeam_pikes" max="INFANTRY" />
+    <MenAtArm type="adunic_steelbowmen" key="el_dwarven_shooters" max="RANGED" />
+    <MenAtArm type="dunedain_marines" key="el_firebeared_crossbows" max="INFANTRY" />
+    <MenAtArm type="dunedain_reformed_outriders" key="av_eotheod_outriders" max="CAVALRY" />
+    <MenAtArm type="dunedain_reformed_rangers" key="el_dwarven_shooters" max="RANGED" />
+    <MenAtArm type="dunedain_reformed_wardens" key="el_broadbeam_pikes" max="INFANTRY" />
+    <MenAtArm type="knights_of_the_adunai" key="av_eotheod_cavalry" max="CAVALRY" />
+    <MenAtArm type="numenorean_archers_adunaic" key="el_dwarven_shooters" max="RANGED" />
+    <MenAtArm type="numenorean_archers_custom" key="el_dwarven_shooters" max="RANGED" />
+    <MenAtArm type="numenorean_elites_adunaic" key="el_broadbeam_axe_warriors" max="INFANTRY" />
+    <MenAtArm type="numenorean_elites_custom" key="el_broadbeam_axe_warriors" max="INFANTRY" />
+    <MenAtArm type="numenorean_knights_adunaic" key="lin_cavalry" max="CAVALRY" />
+    <MenAtArm type="numenorean_knights_custom" key="tlb_ere_goat_riders" max="CAVALRY" />
+    <MenAtArm type="numenorean_marines_adunaic" key="el_firebeared_crossbows" max="INFANTRY" />
+    <MenAtArm type="numenorean_pikemen" key="el_broadbeam_pikes" max="INFANTRY" />
+    <MenAtArm type="numenorean_pikemen_adunaic" key="el_broadbeam_pikes" max="INFANTRY" />
+    <MenAtArm type="numenorean_reformed_outriders" key="ise_dunland_horse_raider" max="CAVALRY" />
+    <MenAtArm type="numenorean_reformed_outriders_adunaic" key="merc_desert_guides" max="CAVALRY" />
+    <MenAtArm type="numenorean_soldiers_adunaic" key="el_broadbeam_underground_guard" max="INFANTRY" />
+    <MenAtArm type="numenorean_soldiers_custom" key="el_broadbeam_axe_warriors" max="INFANTRY" />
+    <MenAtArm type="pelargir_mariners" key="el_dwarven_shooters" max="INFANTRY" />
+  </Faction>
+  <Faction name="harondor">
+    <MenAtArm type="adunaic_elites" key="hor_mediumsword" max="INFANTRY" />
+    <MenAtArm type="adunaic_skirmishers" key="hor_marksmen_rev" max="INFANTRY" />
+    <MenAtArm type="adunaic_soldiers" key="hor_mediumsword" max="INFANTRY" />
+    <MenAtArm type="adunaic_spearmen" key="hor_halberd" max="INFANTRY" />
+    <MenAtArm type="adunic_steelbowmen" key="hor_marksmen_rev" max="RANGED" />
+    <MenAtArm type="dunedain_marines" key="hor_marksmen_rev" max="INFANTRY" />
+    <MenAtArm type="dunedain_reformed_outriders" key="hor_horsearcher" max="CAVALRY" />
+    <MenAtArm type="dunedain_reformed_rangers" key="hor_marksmen_rev" max="RANGED" />
+    <MenAtArm type="dunedain_reformed_wardens" key="hor_pike" max="INFANTRY" />
+    <MenAtArm type="knights_of_the_adunai" key="hor_cav" max="CAVALRY" />
+    <MenAtArm type="numenorean_archers_adunaic" key="hor_archer" max="RANGED" />
+    <MenAtArm type="numenorean_archers_custom" key="hor_archer" max="RANGED" />
+    <MenAtArm type="numenorean_elites_adunaic" key="hor_guardsword" max="INFANTRY" />
+    <MenAtArm type="numenorean_elites_custom" key="stan_mediumspear" max="INFANTRY" />
+    <MenAtArm type="numenorean_knights_adunaic" key="hor_heavysword" max="CAVALRY" />
+    <MenAtArm type="numenorean_knights_custom" key="hor_cav" max="CAVALRY" />
+    <MenAtArm type="numenorean_marines_adunaic" key="leb_marinearcher" max="INFANTRY" />
+    <MenAtArm type="numenorean_pikemen" key="hor_pike" max="INFANTRY" />
+    <MenAtArm type="numenorean_pikemen_adunaic" key="hor_pike" max="INFANTRY" />
+    <MenAtArm type="numenorean_reformed_outriders" key="hor_cav" max="CAVALRY" />
+    <MenAtArm type="numenorean_reformed_outriders_adunaic" key="hor_horsearcher" max="CAVALRY" />
+    <MenAtArm type="numenorean_soldiers_adunaic" key="hor_mediumspear" max="INFANTRY" />
+    <MenAtArm type="numenorean_soldiers_custom" key="hor_mediumsword" max="INFANTRY" />
+    <MenAtArm type="pelargir_mariners" key="gon_pelargir_marines" max="INFANTRY" />
+  </Faction>
+  <Faction name="Iron Hills">
+    <MenAtArm type="adunaic_elites" key="iro_dwarven_volunteers" max="INFANTRY" />
+    <MenAtArm type="adunaic_skirmishers" key="iro_carnen_axe_throwers" max="INFANTRY" />
+    <MenAtArm type="adunaic_soldiers" key="iro_dwarven_infantry" max="INFANTRY" />
+    <MenAtArm type="adunaic_spearmen" key="iro_dwarven_spearguard" max="INFANTRY" />
+    <MenAtArm type="adunic_steelbowmen" key="el_dwarven_shooters" max="RANGED" />
+    <MenAtArm type="dunedain_marines" key="iro_carnen_axe_throwers" max="INFANTRY" />
+    <MenAtArm type="dunedain_reformed_outriders" key="av_eotheod_outriders" max="CAVALRY" />
+    <MenAtArm type="dunedain_reformed_rangers" key="iro_carnen_axe_throwers" max="RANGED" />
+    <MenAtArm type="dunedain_reformed_wardens" key="iro_iron_pikemen" max="INFANTRY" />
+    <MenAtArm type="knights_of_the_adunai" key="iml_cavalry" max="CAVALRY" />
+    <MenAtArm type="numenorean_archers_adunaic" key="iro_carnen_axe_throwers" max="RANGED" />
+    <MenAtArm type="numenorean_archers_custom" key="iro_carnen_axe_throwers" max="RANGED" />
+    <MenAtArm type="numenorean_elites_adunaic" key="ere_ered_mithrin_veterans" max="INFANTRY" />
+    <MenAtArm type="numenorean_elites_custom" key="ere_ered_mithrin_veterans" max="INFANTRY" />
+    <MenAtArm type="numenorean_knights_adunaic" key="tlb_ere_goat_riders" max="CAVALRY" />
+    <MenAtArm type="numenorean_knights_custom" key="tlb_ere_goat_riders" max="CAVALRY" />
+    <MenAtArm type="numenorean_marines_adunaic" key="iro_carnen_axe_throwers" max="INFANTRY" />
+    <MenAtArm type="numenorean_pikemen" key="iro_iron_pikemen" max="INFANTRY" />
+    <MenAtArm type="numenorean_pikemen_adunaic" key="iro_iron_pikemen" max="INFANTRY" />
+    <MenAtArm type="numenorean_reformed_outriders" key="ise_dunland_horse_raider" max="CAVALRY" />
+    <MenAtArm type="numenorean_reformed_outriders_adunaic" key="merc_desert_guides" max="CAVALRY" />
+    <MenAtArm type="numenorean_soldiers_adunaic" key="iro_dwarven_infantry" max="INFANTRY" />
+    <MenAtArm type="numenorean_soldiers_custom" key="iro_dwarven_infantry" max="INFANTRY" />
+    <MenAtArm type="pelargir_mariners" key="iro_carnen_axe_throwers" max="INFANTRY" />
+  </Faction>
+  <Faction name="lamedon">
+    <MenAtArm type="adunaic_elites" key="lam_guardsword" max="INFANTRY" />
+    <MenAtArm type="adunaic_skirmishers" key="lam_skirm" max="INFANTRY" />
+    <MenAtArm type="adunaic_soldiers" key="lam_mediumsword" max="INFANTRY" />
+    <MenAtArm type="adunaic_spearmen" key="lam_guardspear" max="INFANTRY" />
+    <MenAtArm type="adunic_steelbowmen" key="lam_heavyarcher" max="RANGED" />
+    <MenAtArm type="dunedain_marines" key="leb_marinearcher" max="INFANTRY" />
+    <MenAtArm type="dunedain_reformed_outriders" key="anf_skirmcav" max="CAVALRY" />
+    <MenAtArm type="dunedain_reformed_rangers" key="lam_mediumsword" max="RANGED" />
+    <MenAtArm type="dunedain_reformed_wardens" key="lam_pike" max="INFANTRY" />
+    <MenAtArm type="knights_of_the_adunai" key="lam_angbor" max="CAVALRY" />
+    <MenAtArm type="numenorean_archers_adunaic" key="lam_archer" max="RANGED" />
+    <MenAtArm type="numenorean_archers_custom" key="lam_archer" max="RANGED" />
+    <MenAtArm type="numenorean_elites_adunaic" key="lam_chevaliers" max="INFANTRY" />
+    <MenAtArm type="numenorean_elites_custom" key="lam_mediumsword" max="INFANTRY" />
+    <MenAtArm type="numenorean_knights_adunaic" key="lam_chevaliers" max="CAVALRY" />
+    <MenAtArm type="numenorean_knights_custom" key="lam_sergeantcav" max="CAVALRY" />
+    <MenAtArm type="numenorean_marines_adunaic" key="dol_marinearcher" max="INFANTRY" />
+    <MenAtArm type="numenorean_pikemen" key="lam_pike" max="INFANTRY" />
+    <MenAtArm type="numenorean_pikemen_adunaic" key="lam_pike" max="INFANTRY" />
+    <MenAtArm type="numenorean_reformed_outriders" key="hor_horsearcher" max="CAVALRY" />
+    <MenAtArm type="numenorean_reformed_outriders_adunaic" key="merc_desert_guides" max="CAVALRY" />
+    <MenAtArm type="numenorean_soldiers_adunaic" key="lam_mediumsword" max="INFANTRY" />
+    <MenAtArm type="numenorean_soldiers_custom" key="lam_mediumsword" max="INFANTRY" />
+    <MenAtArm type="pelargir_mariners" key="gon_pelargir_marines" max="INFANTRY" />
+  </Faction>
+  <Faction name="lebennin">
+    <MenAtArm type="adunaic_elites" key="leb_sirgon_rev" max="INFANTRY" />
+    <MenAtArm type="adunaic_skirmishers" key="leb_skirm" max="INFANTRY" />
+    <MenAtArm type="adunaic_soldiers" key="leb_mediumsword" max="INFANTRY" />
+    <MenAtArm type="adunaic_spearmen" key="leb_heavyspear" max="INFANTRY" />
+    <MenAtArm type="adunic_steelbowmen" key="leb_archer" max="RANGED" />
+    <MenAtArm type="dunedain_marines" key="leb_marinesword" max="INFANTRY" />
+    <MenAtArm type="dunedain_reformed_outriders" key="hor_horsearcher" max="CAVALRY" />
+    <MenAtArm type="dunedain_reformed_rangers" key="stan_ranger" max="RANGED" />
+    <MenAtArm type="dunedain_reformed_wardens" key="leb_pike" max="INFANTRY" />
+    <MenAtArm type="knights_of_the_adunai" key="dol_cav" max="CAVALRY" />
+    <MenAtArm type="numenorean_archers_adunaic" key="leb_archer" max="RANGED" />
+    <MenAtArm type="numenorean_archers_custom" key="leb_archer" max="RANGED" />
+    <MenAtArm type="numenorean_elites_adunaic" key="leb_retainer" max="INFANTRY" />
+    <MenAtArm type="numenorean_elites_custom" key="leb_guardsword" max="INFANTRY" />
+    <MenAtArm type="numenorean_knights_adunaic" key="stan_cav" max="CAVALRY" />
+    <MenAtArm type="numenorean_knights_custom" key="dol_swancav" max="CAVALRY" />
+    <MenAtArm type="numenorean_marines_adunaic" key="leb_marinearcher" max="INFANTRY" />
+    <MenAtArm type="numenorean_pikemen" key="leb_pike" max="INFANTRY" />
+    <MenAtArm type="numenorean_pikemen_adunaic" key="leb_pike" max="INFANTRY" />
+    <MenAtArm type="numenorean_reformed_outriders" key="anf_skirmcav" max="CAVALRY" />
+    <MenAtArm type="numenorean_reformed_outriders_adunaic" key="hor_horsearcher" max="CAVALRY" />
+    <MenAtArm type="numenorean_soldiers_adunaic" key="leb_mediumsword" max="INFANTRY" />
+    <MenAtArm type="numenorean_soldiers_custom" key="leb_retainer" max="INFANTRY" />
+    <MenAtArm type="pelargir_mariners" key="leb_marinearcher" max="INFANTRY" />
+  </Faction>
+  <Faction name="lossarnach">
+    <MenAtArm type="adunaic_elites" key="los_forlong" max="INFANTRY" />
+    <MenAtArm type="adunaic_skirmishers" key="los_axethrowers" max="INFANTRY" />
+    <MenAtArm type="adunaic_soldiers" key="los_medium2axe" max="INFANTRY" />
+    <MenAtArm type="adunaic_spearmen" key="los_pike" max="INFANTRY" />
+    <MenAtArm type="adunic_steelbowmen" key="los_archer" max="RANGED" />
+    <MenAtArm type="dunedain_marines" key="los_spears" max="INFANTRY" />
+    <MenAtArm type="dunedain_reformed_outriders" key="hor_horsearcher" max="CAVALRY" />
+    <MenAtArm type="dunedain_reformed_rangers" key="los_refugearcher" max="RANGED" />
+    <MenAtArm type="dunedain_reformed_wardens" key="los_pike" max="INFANTRY" />
+    <MenAtArm type="knights_of_the_adunai" key="los_flowercav" max="CAVALRY" />
+    <MenAtArm type="numenorean_archers_adunaic" key="los_bowmen" max="RANGED" />
+    <MenAtArm type="numenorean_archers_custom" key="los_refugearcher" max="RANGED" />
+    <MenAtArm type="numenorean_elites_adunaic" key="los_skirm" max="INFANTRY" />
+    <MenAtArm type="numenorean_elites_custom" key="stan_mediumspear" max="INFANTRY" />
+    <MenAtArm type="numenorean_knights_adunaic" key="los_flowercav" max="CAVALRY" />
+    <MenAtArm type="numenorean_knights_custom" key="los_flowercav" max="CAVALRY" />
+    <MenAtArm type="numenorean_marines_adunaic" key="leb_marinearcher" max="INFANTRY" />
+    <MenAtArm type="numenorean_pikemen" key="los_pike" max="INFANTRY" />
+    <MenAtArm type="numenorean_pikemen_adunaic" key="los_pike" max="INFANTRY" />
+    <MenAtArm type="numenorean_reformed_outriders" key="anf_skirmcav" max="CAVALRY" />
+    <MenAtArm type="numenorean_reformed_outriders_adunaic" key="leb_mediumcav" max="CAVALRY" />
+    <MenAtArm type="numenorean_soldiers_adunaic" key="los_swords" max="INFANTRY" />
+    <MenAtArm type="numenorean_soldiers_custom" key="los_spears" max="INFANTRY" />
+    <MenAtArm type="pelargir_mariners" key="gon_pelargir_marines" max="INFANTRY" />
+  </Faction>
+  <Faction name="Lothlórien">
+    <MenAtArm type="adunaic_elites" key="loth_amroth_sentinels" max="INFANTRY" />
+    <MenAtArm type="adunaic_skirmishers" key="loth_twilight_guard" max="INFANTRY" />
+    <MenAtArm type="adunaic_soldiers" key="loth_galad_sword_warriors" max="INFANTRY" />
+    <MenAtArm type="adunaic_spearmen" key="Galadhrim_Spear_Infantry" max="INFANTRY" />
+    <MenAtArm type="adunic_steelbowmen" key="loth_galadhon_archers" max="RANGED" />
+    <MenAtArm type="dunedain_marines" key="loth_naith_infantry" max="INFANTRY" />
+    <MenAtArm type="dunedain_reformed_outriders" key="Lorien_Bow_Cav" max="CAVALRY" />
+    <MenAtArm type="dunedain_reformed_rangers" key="loth_haldir" max="RANGED" />
+    <MenAtArm type="dunedain_reformed_wardens" key="loth_lor_sentries" max="INFANTRY" />
+    <MenAtArm type="knights_of_the_adunai" key="wr_forest_riders" max="CAVALRY" />
+    <MenAtArm type="numenorean_archers_adunaic" key="loth_galadhon_archers" max="RANGED" />
+    <MenAtArm type="numenorean_archers_custom" key="loth_galadhon_archers" max="RANGED" />
+    <MenAtArm type="numenorean_elites_adunaic" key="Galadhrim_Sword_Infantry" max="INFANTRY" />
+    <MenAtArm type="numenorean_elites_custom" key="Galadhrim_Sword_Infantry" max="INFANTRY" />
+    <MenAtArm type="numenorean_knights_adunaic" key="Marchwarden_Of_The_Golden_Wood" max="CAVALRY" />
+    <MenAtArm type="numenorean_knights_custom" key="merc_gon_silver_swan_knights" max="CAVALRY" />
+    <MenAtArm type="numenorean_marines_adunaic" key="Lorien_Bows" max="INFANTRY" />
+    <MenAtArm type="numenorean_pikemen" key="Galadhrim_Spear_Infantry" max="INFANTRY" />
+    <MenAtArm type="numenorean_pikemen_adunaic" key="Galadhrim_Spear_Infantry" max="INFANTRY" />
+    <MenAtArm type="numenorean_reformed_outriders" key="loth_lor_outriders" max="CAVALRY" />
+    <MenAtArm type="numenorean_reformed_outriders_adunaic" key="loth_lor_outriders" max="CAVALRY" />
+    <MenAtArm type="numenorean_soldiers_adunaic" key="Galadhrim_Sword_Infantry" max="INFANTRY" />
+    <MenAtArm type="numenorean_soldiers_custom" key="Galadhrim_Sword_Infantry" max="INFANTRY" />
+    <MenAtArm type="pelargir_mariners" key="loth_naith_infantry" max="INFANTRY" />
+  </Faction>
+  <Faction name="Arnor">
+    <MenAtArm type="adunaic_elites" key="arn_royal_infantry" max="INFANTRY" />
+    <MenAtArm type="adunaic_skirmishers" key="arn_eriador_hunters" max="INFANTRY" />
+    <MenAtArm type="adunaic_soldiers" key="arn_sword_militia" max="INFANTRY" />
+    <MenAtArm type="adunaic_spearmen" key="arn_spear_militia" max="INFANTRY" />
+    <MenAtArm type="adunic_steelbowmen" key="arn_royal_marksmen" max="RANGED" />
+    <MenAtArm type="dunedain_marines" key="gon_ithilien_rangers" max="INFANTRY" />
+    <MenAtArm type="dunedain_reformed_outriders" key="av_eotheod_outriders" max="CAVALRY" />
+    <MenAtArm type="dunedain_reformed_rangers" key="arn_eriador_foresters" max="RANGED" />
+    <MenAtArm type="dunedain_reformed_wardens" key="arn_royal_wardens" max="INFANTRY" />
+    <MenAtArm type="knights_of_the_adunai" key="arn_marshals_annuminas" max="CAVALRY" />
+    <MenAtArm type="numenorean_archers_adunaic" key="arn_royal_marksmen" max="RANGED" />
+    <MenAtArm type="numenorean_archers_custom" key="arn_royal_marksmen" max="RANGED" />
+    <MenAtArm type="numenorean_elites_adunaic" key="gon_ringlo_vale_footmen" max="INFANTRY" />
+    <MenAtArm type="numenorean_elites_custom" key="arn_lords_westernesse" max="INFANTRY" />
+    <MenAtArm type="numenorean_knights_adunaic" key="gon_silver_swan_knights" max="CAVALRY" />
+    <MenAtArm type="numenorean_knights_custom" key="gon_silver_swan_knights" max="CAVALRY" />
+    <MenAtArm type="numenorean_marines_adunaic" key="gon_pelargir_marines" max="INFANTRY" />
+    <MenAtArm type="numenorean_pikemen" key="gon_ringlo_vale_footmen" max="INFANTRY" />
+    <MenAtArm type="numenorean_pikemen_adunaic" key="gon_ringlo_vale_footmen" max="INFANTRY" />
+    <MenAtArm type="numenorean_reformed_outriders" key="ise_dunland_horse_raider" max="CAVALRY" />
+    <MenAtArm type="numenorean_reformed_outriders_adunaic" key="merc_desert_guides" max="CAVALRY" />
+    <MenAtArm type="numenorean_soldiers_adunaic" key="arn_lords_westernesse" max="INFANTRY" />
+    <MenAtArm type="numenorean_soldiers_custom" key="arn_royal_infantry" max="INFANTRY" />
+    <MenAtArm type="pelargir_mariners" key="arn_ranged_patrollers" max="INFANTRY" />
+  </Faction>
+  <Faction name="Pinnath Gelin">
+    <MenAtArm type="adunaic_elites" key="dun_pillagers" max="INFANTRY" />
+    <MenAtArm type="adunaic_skirmishers" key="oro_skirmishers" max="INFANTRY" />
+    <MenAtArm type="adunaic_soldiers" key="gun_stalkers" max="INFANTRY" />
+    <MenAtArm type="adunaic_spearmen" key="lin_spearmen" max="INFANTRY" />
+    <MenAtArm type="adunic_steelbowmen" key="av_anduin_longbowmen" max="RANGED" />
+    <MenAtArm type="dunedain_marines" key="dun_rangers" max="INFANTRY" />
+    <MenAtArm type="dunedain_reformed_outriders" key="av_eotheod_outriders" max="CAVALRY" />
+    <MenAtArm type="dunedain_reformed_rangers" key="av_greenwood_rangers" max="RANGED" />
+    <MenAtArm type="dunedain_reformed_wardens" key="ere_tomb_wardens" max="INFANTRY" />
+    <MenAtArm type="knights_of_the_adunai" key="roh_scouts_of_rohan" max="CAVALRY" />
+    <MenAtArm type="numenorean_archers_adunaic" key="ere_orocarni_archers" max="RANGED" />
+    <MenAtArm type="numenorean_archers_custom" key="merc_nav_corsair_archers" max="RANGED" />
+    <MenAtArm type="numenorean_elites_adunaic" key="dun_chosen_heerban" max="INFANTRY" />
+    <MenAtArm type="numenorean_elites_custom" key="merc_ise_white_hand_stormer" max="INFANTRY" />
+    <MenAtArm type="numenorean_knights_adunaic" key="gon_silver_swan_knights" max="CAVALRY" />
+    <MenAtArm type="numenorean_knights_custom" key="merc_gon_silver_swan_knights" max="CAVALRY" />
+    <MenAtArm type="numenorean_marines_adunaic" key="har_nav_corsair_marines_naft" max="INFANTRY" />
+    <MenAtArm type="numenorean_pikemen" key="dun_pikemen" max="INFANTRY" />
+    <MenAtArm type="numenorean_pikemen_adunaic" key="iro_iron_pikemen" max="INFANTRY" />
+    <MenAtArm type="numenorean_reformed_outriders" key="ise_dunland_horse_raider" max="CAVALRY" />
+    <MenAtArm type="numenorean_reformed_outriders_adunaic" key="merc_desert_guides" max="CAVALRY" />
+    <MenAtArm type="numenorean_soldiers_adunaic" key="ere_sons_of_mountain" max="INFANTRY" />
+    <MenAtArm type="numenorean_soldiers_custom" key="Lorien_Sword_Sentries" max="INFANTRY" />
+    <MenAtArm type="pelargir_mariners" key="har_corsair_marines" max="INFANTRY" />
+  </Faction>
+  <Faction name="ringlo">
+    <MenAtArm type="adunaic_elites" key="rv_mediumsword" max="INFANTRY" />
+    <MenAtArm type="adunaic_skirmishers" key="rv_archer" max="INFANTRY" />
+    <MenAtArm type="adunaic_soldiers" key="rv_mediumsword" max="INFANTRY" />
+    <MenAtArm type="adunaic_spearmen" key="rv_halberd" max="INFANTRY" />
+    <MenAtArm type="adunic_steelbowmen" key="rv_archer" max="RANGED" />
+    <MenAtArm type="dunedain_marines" key="leb_marineskirm" max="INFANTRY" />
+    <MenAtArm type="dunedain_reformed_outriders" key="anf_skirmcav" max="CAVALRY" />
+    <MenAtArm type="dunedain_reformed_rangers" key="rv_archer" max="RANGED" />
+    <MenAtArm type="dunedain_reformed_wardens" key="rv_pike" max="INFANTRY" />
+    <MenAtArm type="knights_of_the_adunai" key="rv_cav" max="CAVALRY" />
+    <MenAtArm type="numenorean_archers_adunaic" key="rv_archer" max="RANGED" />
+    <MenAtArm type="numenorean_archers_custom" key="rv_archer" max="RANGED" />
+    <MenAtArm type="numenorean_elites_adunaic" key="rv_mediumsword" max="INFANTRY" />
+    <MenAtArm type="numenorean_elites_custom" key="rv_mediumsword" max="INFANTRY" />
+    <MenAtArm type="numenorean_knights_adunaic" key="rv_cav" max="CAVALRY" />
+    <MenAtArm type="numenorean_knights_custom" key="rv_sergeantcav" max="CAVALRY" />
+    <MenAtArm type="numenorean_marines_adunaic" key="leb_marinearcher" max="INFANTRY" />
+    <MenAtArm type="numenorean_pikemen" key="rv_pike" max="INFANTRY" />
+    <MenAtArm type="numenorean_pikemen_adunaic" key="rv_pike" max="INFANTRY" />
+    <MenAtArm type="numenorean_reformed_outriders" key="rv_sergeantcav" max="CAVALRY" />
+    <MenAtArm type="numenorean_reformed_outriders_adunaic" key="hor_horsearcher" max="CAVALRY" />
+    <MenAtArm type="numenorean_soldiers_adunaic" key="rv_mediumsword" max="INFANTRY" />
+    <MenAtArm type="numenorean_soldiers_custom" key="rv_mediumsword" max="INFANTRY" />
+    <MenAtArm type="pelargir_mariners" key="rv_skirm" max="INFANTRY" />
   </Faction>
   <Faction name="Anfalas">
     <MenAtArm type="adunaic_elites" key="dun_pillagers" />
@@ -1963,6 +2327,32 @@
     <MenAtArm type="numenorean_soldiers_custom" key="Lorien_Sword_Sentries" />
     <MenAtArm type="pelargir_mariners" key="har_corsair_marines" />
   </Faction>
+  <Faction name="Khazad">
+    <MenAtArm type="adunaic_elites" key="dun_pillagers" />
+    <MenAtArm type="adunaic_skirmishers" key="oro_skirmishers" />
+    <MenAtArm type="adunaic_soldiers" key="gun_stalkers" />
+    <MenAtArm type="adunaic_spearmen" key="lin_spearmen" />
+    <MenAtArm type="adunic_steelbowmen" key="av_anduin_longbowmen" />
+    <MenAtArm type="dunedain_marines" key="dun_rangers" />
+    <MenAtArm type="dunedain_reformed_outriders" key="av_eotheod_outriders" />
+    <MenAtArm type="dunedain_reformed_rangers" key="av_greenwood_rangers" />
+    <MenAtArm type="dunedain_reformed_wardens" key="ere_tomb_wardens" />
+    <MenAtArm type="knights_of_the_adunai" key="roh_scouts_of_rohan" />
+    <MenAtArm type="numenorean_archers_adunaic" key="ere_orocarni_archers" />
+    <MenAtArm type="numenorean_archers_custom" key="merc_nav_corsair_archers" />
+    <MenAtArm type="numenorean_elites_adunaic" key="dun_chosen_heerban" />
+    <MenAtArm type="numenorean_elites_custom" key="merc_ise_white_hand_stormer" />
+    <MenAtArm type="numenorean_knights_adunaic" key="gon_silver_swan_knights" />
+    <MenAtArm type="numenorean_knights_custom" key="merc_gon_silver_swan_knights" />
+    <MenAtArm type="numenorean_marines_adunaic" key="har_nav_corsair_marines_naft" />
+    <MenAtArm type="numenorean_pikemen" key="dun_pikemen" />
+    <MenAtArm type="numenorean_pikemen_adunaic" key="iro_iron_pikemen" />
+    <MenAtArm type="numenorean_reformed_outriders" key="ise_dunland_horse_raider" />
+    <MenAtArm type="numenorean_reformed_outriders_adunaic" key="merc_desert_guides" />
+    <MenAtArm type="numenorean_soldiers_adunaic" key="ere_sons_of_mountain" />
+    <MenAtArm type="numenorean_soldiers_custom" key="Lorien_Sword_Sentries" />
+    <MenAtArm type="pelargir_mariners" key="har_corsair_marines" />
+  </Faction>
   <Faction name="Lamedon">
     <MenAtArm type="adunaic_elites" key="dun_pillagers" />
     <MenAtArm type="adunaic_skirmishers" key="oro_skirmishers" />
@@ -2119,7 +2509,7 @@
     <MenAtArm type="numenorean_soldiers_custom" key="Lorien_Sword_Sentries" />
     <MenAtArm type="pelargir_mariners" key="har_corsair_marines" />
   </Faction>
-  <Faction name="Pinnath Gelin">
+  <Faction name="Ringló Vale">
     <MenAtArm type="adunaic_elites" key="dun_pillagers" />
     <MenAtArm type="adunaic_skirmishers" key="oro_skirmishers" />
     <MenAtArm type="adunaic_soldiers" key="gun_stalkers" />
@@ -2145,7 +2535,7 @@
     <MenAtArm type="numenorean_soldiers_custom" key="Lorien_Sword_Sentries" />
     <MenAtArm type="pelargir_mariners" key="har_corsair_marines" />
   </Faction>
-  <Faction name="Ringló Vale">
+  <Faction name="Witch King">
     <MenAtArm type="adunaic_elites" key="dun_pillagers" />
     <MenAtArm type="adunaic_skirmishers" key="oro_skirmishers" />
     <MenAtArm type="adunaic_soldiers" key="gun_stalkers" />

@@ -428,12 +428,12 @@
         <Map x="0.4420" y="0.5250" />
       </Variant>
     </Settlement_Unique>
-    <Settlement_Unique battle_type="settlement_standard" province_names="Helm's Deep">
+    <Settlement_Unique battle_type="settlement_standard" province_names="Helm's Deep, Le Gouffre de Helm, Helms Klamm, 헬름협곡, Хельмова Падь, 头盔深渊, El abismo de Helm">
       <Variant key="preset_city_hornburg" besieger_orientations="S,E">
         <Map x="0.4240" y="0.5200" />
       </Variant>
     </Settlement_Unique>
-    <Settlement_Unique battle_type="settlement_standard" province_names="Encampment of Isengard,Lordship of Isengard,Isengard">
+    <Settlement_Unique battle_type="settlement_standard" province_names="Encampment of Isengard, Lordship of Isengard, Isengard, Campement de l'Isengard, Lager von Isengart, 아이센가드의 야영지, Лагерь Изенгарда, 艾辛格的营地, Campamento de Isengard, Seigneurie d'Isengard, Herrschaft von Isengart, 아이센가드의 영주권, Светлость Изенгарда, 艾辛格领主, Señorío de Isengard, Isengart, 아이센가드, Изенгард, 艾辛格">
       <Variant key="preset_city_isengard">
         <Map x="0.3990" y="0.4680" />
       </Variant>
@@ -455,9 +455,9 @@
     </Settlement_Unique>
   </Settlement_Maps_Unique>
   <Settlement_Maps>
-    <Settlement faction="Default" battle_type="settlement_standard">
-      <Variant key="preset_city_generic_wildmen_a">
-        <Map x="0.3250" y="0.4580" />
+    <Settlement faction="Default" battle_type="settlement_unfortified">
+      <Variant key="preset_city_unwalled_generic_dunedain_a">
+        <Map x="0.4480" y="0.6290" />
       </Variant>
     </Settlement>
     <Settlement faction="Anduin-Vale" battle_type="settlement_standard">
@@ -471,45 +471,33 @@
       </Variant>
     </Settlement>
     <Settlement faction="Anfalas" battle_type="settlement_standard">
-      <Variant key="preset_city_unwalled_generic_northmen_b">
-        <Map x="0.4080" y="0.4920" />
-      </Variant>
-      <Variant key="preset_city_unwalled_generic_northmen_a">
-        <Map x="0.3880" y="0.5190" />
+      <Variant key="preset_city_unwalled_generic_dunedain_a">
+        <Map x="0.4480" y="0.6290" />
       </Variant>
     </Settlement>
     <Settlement faction="Anfalas" battle_type="settlement_unfortified">
-      <Variant key="preset_city_unwalled_generic_northmen_b">
-        <Map x="0.4080" y="0.4920" />
-      </Variant>
-      <Variant key="preset_city_unwalled_generic_northmen_a">
-        <Map x="0.3880" y="0.5190" />
+      <Variant key="preset_city_unwalled_generic_dunedain_a">
+        <Map x="0.4480" y="0.6290" />
       </Variant>
     </Settlement>
     <Settlement faction="Angmar" battle_type="settlement_standard">
-      <Variant key="preset_city_generic_northmen_b">
-        <Map x="0.4080" y="0.4920" />
+      <Variant key="preset_city_generic_orc_a">
+        <Map x="0.6930" y="0.5750" />
       </Variant>
     </Settlement>
     <Settlement faction="Angmar" battle_type="settlement_unfortified">
-      <Variant key="preset_city_generic_northmen_b">
-        <Map x="0.4080" y="0.4920" />
+      <Variant key="preset_city_generic_orc_a">
+        <Map x="0.6930" y="0.5750" />
       </Variant>
     </Settlement>
     <Settlement faction="Anorien" battle_type="settlement_standard">
-      <Variant key="preset_city_unwalled_generic_northmen_b">
-        <Map x="0.4080" y="0.4920" />
-      </Variant>
-      <Variant key="preset_city_unwalled_generic_northmen_a">
-        <Map x="0.3880" y="0.5190" />
+      <Variant key="preset_city_unwalled_generic_dunedain_a">
+        <Map x="0.4480" y="0.6290" />
       </Variant>
     </Settlement>
     <Settlement faction="Anorien" battle_type="settlement_unfortified">
-      <Variant key="preset_city_unwalled_generic_northmen_a">
-        <Map x="0.3880" y="0.5190" />
-      </Variant>
-      <Variant key="preset_city_unwalled_generic_northmen_b">
-        <Map x="0.4080" y="0.4920" />
+      <Variant key="preset_city_unwalled_generic_dunedain_a">
+        <Map x="0.4480" y="0.6290" />
       </Variant>
     </Settlement>
     <Settlement faction="Arnor" battle_type="settlement_standard">
@@ -523,23 +511,23 @@
       </Variant>
     </Settlement>
     <Settlement faction="Blackroot Vale" battle_type="settlement_standard">
-      <Variant key="preset_city_generic_wildmen_a">
-        <Map x="0.3250" y="0.4580" />
+      <Variant key="preset_city_unwalled_generic_dunedain_a">
+        <Map x="0.4480" y="0.6290" />
       </Variant>
     </Settlement>
     <Settlement faction="Blackroot Vale" battle_type="settlement_unfortified">
-      <Variant key="preset_city_generic_wildmen_a">
-        <Map x="0.3250" y="0.4580" />
+      <Variant key="preset_city_unwalled_generic_dunedain_a">
+        <Map x="0.4480" y="0.6290" />
       </Variant>
     </Settlement>
     <Settlement faction="Bree Land" battle_type="settlement_standard">
-      <Variant key="preset_city_generic_orc_a">
-        <Map x="0.6930" y="0.5750" />
+      <Variant key="preset_city_unwalled_generic_dunedain_a">
+        <Map x="0.4480" y="0.6290" />
       </Variant>
     </Settlement>
     <Settlement faction="Bree Land" battle_type="settlement_unfortified">
-      <Variant key="preset_city_generic_orc_a">
-        <Map x="0.6930" y="0.5750" />
+      <Variant key="preset_city_unwalled_generic_dunedain_a">
+        <Map x="0.4480" y="0.6290" />
       </Variant>
     </Settlement>
     <Settlement faction="Dale" battle_type="settlement_standard">
@@ -603,13 +591,13 @@
       </Variant>
     </Settlement>
     <Settlement faction="Easterlings" battle_type="settlement_standard">
-      <Variant key="preset_city_generic_orc_a">
-        <Map x="0.6930" y="0.5750" />
+      <Variant key="preset_city_generic_wildmen_a">
+        <Map x="0.3250" y="0.4580" />
       </Variant>
     </Settlement>
     <Settlement faction="Easterlings" battle_type="settlement_unfortified">
-      <Variant key="preset_city_generic_orc_a">
-        <Map x="0.6930" y="0.5750" />
+      <Variant key="preset_city_generic_wildmen_a">
+        <Map x="0.3250" y="0.4580" />
       </Variant>
     </Settlement>
     <Settlement faction="Elves" battle_type="settlement_standard">
@@ -633,13 +621,13 @@
       </Variant>
     </Settlement>
     <Settlement faction="Ered" battle_type="settlement_standard">
-      <Variant key="preset_city_unwalled_generic_dunedain_a">
-        <Map x="0.4480" y="0.6290" />
+      <Variant key="preset_city_generic_orc_a">
+        <Map x="0.6930" y="0.5750" />
       </Variant>
     </Settlement>
     <Settlement faction="Ered" battle_type="settlement_unfortified">
-      <Variant key="preset_city_unwalled_generic_dunedain_a">
-        <Map x="0.4480" y="0.6290" />
+      <Variant key="preset_city_generic_orc_a">
+        <Map x="0.6930" y="0.5750" />
       </Variant>
     </Settlement>
     <Settlement faction="Ered Luin" battle_type="settlement_standard">
@@ -713,13 +701,13 @@
       </Variant>
     </Settlement>
     <Settlement faction="Harondor" battle_type="settlement_standard">
-      <Variant key="preset_city_generic_northmen_b">
-        <Map x="0.4080" y="0.4920" />
+      <Variant key="preset_city_unwalled_generic_dunedain_a">
+        <Map x="0.4480" y="0.6290" />
       </Variant>
     </Settlement>
     <Settlement faction="Harondor" battle_type="settlement_unfortified">
-      <Variant key="preset_city_generic_northmen_b">
-        <Map x="0.4080" y="0.4920" />
+      <Variant key="preset_city_unwalled_generic_dunedain_a">
+        <Map x="0.4480" y="0.6290" />
       </Variant>
     </Settlement>
     <Settlement faction="High Elves" battle_type="settlement_standard">
@@ -743,13 +731,13 @@
       </Variant>
     </Settlement>
     <Settlement faction="Iron Hill" battle_type="settlement_standard">
-      <Variant key="preset_city_generic_wildmen_a">
-        <Map x="0.3250" y="0.4580" />
+      <Variant key="preset_city_unwalled_generic_dwarven_a">
+        <Map x="0.6480" y="0.1440" />
       </Variant>
     </Settlement>
     <Settlement faction="Iron Hill" battle_type="settlement_unfortified">
-      <Variant key="preset_city_generic_wildmen_a">
-        <Map x="0.3250" y="0.4580" />
+      <Variant key="preset_city_unwalled_generic_dwarven_a">
+        <Map x="0.6480" y="0.1440" />
       </Variant>
     </Settlement>
     <Settlement faction="Iron Hills" battle_type="settlement_standard">
@@ -773,13 +761,13 @@
       </Variant>
     </Settlement>
     <Settlement faction="Khamûl" battle_type="settlement_standard">
-      <Variant key="preset_city_unwalled_generic_dwarven_a">
-        <Map x="0.6480" y="0.1440" />
+      <Variant key="preset_city_generic_orc_a">
+        <Map x="0.6930" y="0.5750" />
       </Variant>
     </Settlement>
     <Settlement faction="Khamûl" battle_type="settlement_unfortified">
-      <Variant key="preset_city_unwalled_generic_dwarven_a">
-        <Map x="0.6480" y="0.1440" />
+      <Variant key="preset_city_generic_orc_a">
+        <Map x="0.6930" y="0.5750" />
       </Variant>
     </Settlement>
     <Settlement faction="Khand" battle_type="settlement_standard">
@@ -793,13 +781,13 @@
       </Variant>
     </Settlement>
     <Settlement faction="Khazad" battle_type="settlement_standard">
-      <Variant key="preset_city_unwalled_generic_orc_a">
-        <Map x="0.6930" y="0.5750" />
+      <Variant key="preset_city_unwalled_generic_dwarven_a">
+        <Map x="0.6480" y="0.1440" />
       </Variant>
     </Settlement>
     <Settlement faction="Khazad" battle_type="settlement_unfortified">
-      <Variant key="preset_city_unwalled_generic_orc_a">
-        <Map x="0.6930" y="0.5750" />
+      <Variant key="preset_city_unwalled_generic_dwarven_a">
+        <Map x="0.6480" y="0.1440" />
       </Variant>
     </Settlement>
     <Settlement faction="Khazad-dum" battle_type="settlement_standard">
@@ -813,29 +801,23 @@
       </Variant>
     </Settlement>
     <Settlement faction="Lamedon" battle_type="settlement_standard">
-      <Variant key="preset_city_unwalled_generic_northmen_b">
-        <Map x="0.4080" y="0.4920" />
-      </Variant>
-      <Variant key="preset_city_unwalled_generic_northmen_a">
-        <Map x="0.3880" y="0.5190" />
+      <Variant key="preset_city_unwalled_generic_dunedain_a">
+        <Map x="0.4480" y="0.6290" />
       </Variant>
     </Settlement>
     <Settlement faction="Lamedon" battle_type="settlement_unfortified">
-      <Variant key="preset_city_unwalled_generic_northmen_b">
-        <Map x="0.4080" y="0.4920" />
-      </Variant>
-      <Variant key="preset_city_unwalled_generic_northmen_a">
-        <Map x="0.3880" y="0.5190" />
+      <Variant key="preset_city_unwalled_generic_dunedain_a">
+        <Map x="0.4480" y="0.6290" />
       </Variant>
     </Settlement>
     <Settlement faction="Lebennin" battle_type="settlement_standard">
-      <Variant key="preset_city_unwalled_generic_dwarven_a">
-        <Map x="0.6480" y="0.1440" />
+      <Variant key="preset_city_unwalled_generic_dunedain_a">
+        <Map x="0.4480" y="0.6290" />
       </Variant>
     </Settlement>
     <Settlement faction="Lebennin" battle_type="settlement_unfortified">
-      <Variant key="preset_city_unwalled_generic_dwarven_a">
-        <Map x="0.6480" y="0.1440" />
+      <Variant key="preset_city_unwalled_generic_dunedain_a">
+        <Map x="0.4480" y="0.6290" />
       </Variant>
     </Settlement>
     <Settlement faction="Lindon" battle_type="settlement_standard">
@@ -859,13 +841,13 @@
       </Variant>
     </Settlement>
     <Settlement faction="Lothlorien" battle_type="settlement_standard">
-      <Variant key="preset_city_generic_orc_a">
-        <Map x="0.6930" y="0.5750" />
+      <Variant key="preset_city_unwalled_generic_dunedain_a">
+        <Map x="0.4480" y="0.6290" />
       </Variant>
     </Settlement>
     <Settlement faction="Lothlorien" battle_type="settlement_unfortified">
-      <Variant key="preset_city_generic_orc_a">
-        <Map x="0.6930" y="0.5750" />
+      <Variant key="preset_city_unwalled_generic_dunedain_a">
+        <Map x="0.4480" y="0.6290" />
       </Variant>
     </Settlement>
     <Settlement faction="Lothlórien" battle_type="settlement_standard">
@@ -889,33 +871,33 @@
       </Variant>
     </Settlement>
     <Settlement faction="Northern Dunedain" battle_type="settlement_standard">
-      <Variant key="preset_city_generic_wildmen_a">
-        <Map x="0.3250" y="0.4580" />
+      <Variant key="preset_city_unwalled_generic_dunedain_a">
+        <Map x="0.4480" y="0.6290" />
       </Variant>
     </Settlement>
     <Settlement faction="Northern Dunedain" battle_type="settlement_unfortified">
-      <Variant key="preset_city_generic_wildmen_a">
-        <Map x="0.3250" y="0.4580" />
+      <Variant key="preset_city_unwalled_generic_dunedain_a">
+        <Map x="0.4480" y="0.6290" />
       </Variant>
     </Settlement>
     <Settlement faction="Numenorean" battle_type="settlement_standard">
-      <Variant key="preset_city_generic_wildmen_a">
-        <Map x="0.3250" y="0.4580" />
+      <Variant key="preset_city_unwalled_generic_dunedain_a">
+        <Map x="0.4480" y="0.6290" />
       </Variant>
     </Settlement>
     <Settlement faction="Numenorean" battle_type="settlement_unfortified">
-      <Variant key="preset_city_generic_wildmen_a">
-        <Map x="0.3250" y="0.4580" />
+      <Variant key="preset_city_unwalled_generic_dunedain_a">
+        <Map x="0.4480" y="0.6290" />
       </Variant>
     </Settlement>
     <Settlement faction="Orc" battle_type="settlement_standard">
-      <Variant key="preset_city_unwalled_generic_dunedain_a">
-        <Map x="0.4480" y="0.6290" />
+      <Variant key="preset_city_generic_orc_a">
+        <Map x="0.6930" y="0.5750" />
       </Variant>
     </Settlement>
     <Settlement faction="Orc" battle_type="settlement_unfortified">
-      <Variant key="preset_city_unwalled_generic_dunedain_a">
-        <Map x="0.4480" y="0.6290" />
+      <Variant key="preset_city_generic_orc_a">
+        <Map x="0.6930" y="0.5750" />
       </Variant>
     </Settlement>
     <Settlement faction="Orcs Of The North" battle_type="settlement_standard">
@@ -945,29 +927,29 @@
       </Variant>
     </Settlement>
     <Settlement faction="Orocarni South" battle_type="settlement_standard">
-      <Variant key="preset_city_unwalled_generic_northmen_b">
-        <Map x="0.4080" y="0.4920" />
-      </Variant>
       <Variant key="preset_city_unwalled_generic_northmen_a">
         <Map x="0.3880" y="0.5190" />
+      </Variant>
+      <Variant key="preset_city_unwalled_generic_northmen_b">
+        <Map x="0.4080" y="0.4920" />
       </Variant>
     </Settlement>
     <Settlement faction="Orocarni South" battle_type="settlement_unfortified">
-      <Variant key="preset_city_unwalled_generic_northmen_b">
-        <Map x="0.4080" y="0.4920" />
-      </Variant>
       <Variant key="preset_city_unwalled_generic_northmen_a">
         <Map x="0.3880" y="0.5190" />
       </Variant>
+      <Variant key="preset_city_unwalled_generic_northmen_b">
+        <Map x="0.4080" y="0.4920" />
+      </Variant>
     </Settlement>
     <Settlement faction="Pinnath Gelin" battle_type="settlement_standard">
-      <Variant key="preset_city_generic_orc_a">
-        <Map x="0.6930" y="0.5750" />
+      <Variant key="preset_city_unwalled_generic_dunedain_a">
+        <Map x="0.4480" y="0.6290" />
       </Variant>
     </Settlement>
     <Settlement faction="Pinnath Gelin" battle_type="settlement_unfortified">
-      <Variant key="preset_city_generic_orc_a">
-        <Map x="0.6930" y="0.5750" />
+      <Variant key="preset_city_unwalled_generic_dunedain_a">
+        <Map x="0.4480" y="0.6290" />
       </Variant>
     </Settlement>
     <Settlement faction="Rhudaur" battle_type="settlement_standard">
@@ -981,13 +963,19 @@
       </Variant>
     </Settlement>
     <Settlement faction="Ringló Vale" battle_type="settlement_standard">
-      <Variant key="preset_city_generic_orc_a">
-        <Map x="0.6930" y="0.5750" />
+      <Variant key="preset_city_unwalled_generic_northmen_a">
+        <Map x="0.3880" y="0.5190" />
+      </Variant>
+      <Variant key="preset_city_unwalled_generic_northmen_b">
+        <Map x="0.4080" y="0.4920" />
       </Variant>
     </Settlement>
     <Settlement faction="Ringló Vale" battle_type="settlement_unfortified">
-      <Variant key="preset_city_generic_orc_a">
-        <Map x="0.6930" y="0.5750" />
+      <Variant key="preset_city_unwalled_generic_northmen_a">
+        <Map x="0.3880" y="0.5190" />
+      </Variant>
+      <Variant key="preset_city_unwalled_generic_northmen_b">
+        <Map x="0.4080" y="0.4920" />
       </Variant>
     </Settlement>
     <Settlement faction="Rohan" battle_type="settlement_standard">
@@ -1021,19 +1009,13 @@
       </Variant>
     </Settlement>
     <Settlement faction="Witch King" battle_type="settlement_standard">
-      <Variant key="preset_city_unwalled_generic_northmen_b">
-        <Map x="0.4080" y="0.4920" />
-      </Variant>
-      <Variant key="preset_city_unwalled_generic_northmen_a">
-        <Map x="0.3880" y="0.5190" />
+      <Variant key="preset_city_generic_orc_a">
+        <Map x="0.6930" y="0.5750" />
       </Variant>
     </Settlement>
     <Settlement faction="Witch King" battle_type="settlement_unfortified">
-      <Variant key="preset_city_unwalled_generic_northmen_b">
-        <Map x="0.4080" y="0.4920" />
-      </Variant>
-      <Variant key="preset_city_unwalled_generic_northmen_a">
-        <Map x="0.3880" y="0.5190" />
+      <Variant key="preset_city_generic_orc_a">
+        <Map x="0.6930" y="0.5750" />
       </Variant>
     </Settlement>
     <Settlement faction="Woodland Realm" battle_type="settlement_standard">
@@ -1176,13 +1158,13 @@
   </Siege_Engines>
   <Land_Bridge_Maps>
     <Land_Bridge name="adjacency_101_190" ck3_province_from="101" ck3_province_to="190" ck3_type="river_large" battle_type="land_bridge">
-      <Variant key="preset_river_crossing_argonath">
-        <Map x="0.5210" y="0.5070" />
+      <Variant key="preset_river_crossing_fords_of_isen">
+        <Map x="0.3990" y="0.5010" />
       </Variant>
     </Land_Bridge>
     <Land_Bridge name="adjacency_111_2835" ck3_province_from="111" ck3_province_to="2835" ck3_type="river_large" battle_type="land_bridge">
-      <Variant key="preset_river_crossing_fords_of_isen">
-        <Map x="0.3990" y="0.5010" />
+      <Variant key="preset_river_crossing_argonath">
+        <Map x="0.5210" y="0.5070" />
       </Variant>
     </Land_Bridge>
     <Land_Bridge name="adjacency_1847_1863" ck3_province_from="1847" ck3_province_to="1863" ck3_type="river_large" battle_type="land_bridge">
@@ -1191,43 +1173,43 @@
       </Variant>
     </Land_Bridge>
     <Land_Bridge name="adjacency_1859_1856" ck3_province_from="1859" ck3_province_to="1856" ck3_type="river_large" battle_type="land_bridge">
-      <Variant key="preset_river_crossing_fords_of_isen">
-        <Map x="0.3990" y="0.5010" />
+      <Variant key="preset_river_crossing_argonath">
+        <Map x="0.5210" y="0.5070" />
       </Variant>
     </Land_Bridge>
     <Land_Bridge name="adjacency_1978_1977" ck3_province_from="1978" ck3_province_to="1977" ck3_type="river_large" battle_type="land_bridge">
-      <Variant key="preset_river_crossing_argonath">
-        <Map x="0.5210" y="0.5070" />
+      <Variant key="preset_river_crossing_fords_of_isen">
+        <Map x="0.3990" y="0.5010" />
       </Variant>
     </Land_Bridge>
     <Land_Bridge name="adjacency_1982_1977" ck3_province_from="1982" ck3_province_to="1977" ck3_type="river_large" battle_type="land_bridge">
-      <Variant key="preset_river_crossing_fords_of_isen">
-        <Map x="0.3990" y="0.5010" />
+      <Variant key="preset_river_crossing_argonath">
+        <Map x="0.5210" y="0.5070" />
       </Variant>
     </Land_Bridge>
     <Land_Bridge name="adjacency_202_203" ck3_province_from="202" ck3_province_to="203" ck3_type="river_large" battle_type="land_bridge">
-      <Variant key="preset_river_crossing_argonath">
-        <Map x="0.5210" y="0.5070" />
+      <Variant key="preset_river_crossing_fords_of_isen">
+        <Map x="0.3990" y="0.5010" />
       </Variant>
     </Land_Bridge>
     <Land_Bridge name="adjacency_209_208" ck3_province_from="209" ck3_province_to="208" ck3_type="river_large" battle_type="land_bridge">
-      <Variant key="preset_river_crossing_fords_of_isen">
-        <Map x="0.3990" y="0.5010" />
+      <Variant key="preset_river_crossing_argonath">
+        <Map x="0.5210" y="0.5070" />
       </Variant>
     </Land_Bridge>
     <Land_Bridge name="adjacency_2118_2094" ck3_province_from="2118" ck3_province_to="2094" ck3_type="river_large" battle_type="land_bridge">
-      <Variant key="preset_river_crossing_argonath">
-        <Map x="0.5210" y="0.5070" />
-      </Variant>
-    </Land_Bridge>
-    <Land_Bridge name="adjacency_2192_2196" ck3_province_from="2192" ck3_province_to="2196" ck3_type="river_large" battle_type="land_bridge">
       <Variant key="preset_river_crossing_fords_of_isen">
         <Map x="0.3990" y="0.5010" />
       </Variant>
     </Land_Bridge>
-    <Land_Bridge name="adjacency_231_208" ck3_province_from="231" ck3_province_to="208" ck3_type="river_large" battle_type="land_bridge">
+    <Land_Bridge name="adjacency_2192_2196" ck3_province_from="2192" ck3_province_to="2196" ck3_type="river_large" battle_type="land_bridge">
       <Variant key="preset_river_crossing_argonath">
         <Map x="0.5210" y="0.5070" />
+      </Variant>
+    </Land_Bridge>
+    <Land_Bridge name="adjacency_231_208" ck3_province_from="231" ck3_province_to="208" ck3_type="river_large" battle_type="land_bridge">
+      <Variant key="preset_river_crossing_fords_of_isen">
+        <Map x="0.3990" y="0.5010" />
       </Variant>
     </Land_Bridge>
     <Land_Bridge name="adjacency_256_952" ck3_province_from="256" ck3_province_to="952" ck3_type="river_large" battle_type="land_bridge">
@@ -1236,13 +1218,13 @@
       </Variant>
     </Land_Bridge>
     <Land_Bridge name="adjacency_2621_2615" ck3_province_from="2621" ck3_province_to="2615" ck3_type="river_large" battle_type="land_bridge">
-      <Variant key="preset_river_crossing_argonath">
-        <Map x="0.5210" y="0.5070" />
+      <Variant key="preset_river_crossing_fords_of_isen">
+        <Map x="0.3990" y="0.5010" />
       </Variant>
     </Land_Bridge>
     <Land_Bridge name="adjacency_26_22" ck3_province_from="26" ck3_province_to="22" ck3_type="river_large" battle_type="land_bridge">
-      <Variant key="preset_river_crossing_fords_of_isen">
-        <Map x="0.3990" y="0.5010" />
+      <Variant key="preset_river_crossing_argonath">
+        <Map x="0.5210" y="0.5070" />
       </Variant>
     </Land_Bridge>
     <Land_Bridge name="adjacency_3132_761" ck3_province_from="3132" ck3_province_to="761" ck3_type="river_large" battle_type="land_bridge">
@@ -1251,28 +1233,28 @@
       </Variant>
     </Land_Bridge>
     <Land_Bridge name="adjacency_3149_3144" ck3_province_from="3149" ck3_province_to="3144" ck3_type="river_large" battle_type="land_bridge">
-      <Variant key="preset_river_crossing_fords_of_isen">
-        <Map x="0.3990" y="0.5010" />
+      <Variant key="preset_river_crossing_argonath">
+        <Map x="0.5210" y="0.5070" />
       </Variant>
     </Land_Bridge>
     <Land_Bridge name="adjacency_3152_3154" ck3_province_from="3152" ck3_province_to="3154" ck3_type="river_large" battle_type="land_bridge">
-      <Variant key="preset_river_crossing_argonath">
-        <Map x="0.5210" y="0.5070" />
+      <Variant key="preset_river_crossing_fords_of_isen">
+        <Map x="0.3990" y="0.5010" />
       </Variant>
     </Land_Bridge>
     <Land_Bridge name="adjacency_3160_3158" ck3_province_from="3160" ck3_province_to="3158" ck3_type="river_large" battle_type="land_bridge">
-      <Variant key="preset_river_crossing_fords_of_isen">
-        <Map x="0.3990" y="0.5010" />
-      </Variant>
-    </Land_Bridge>
-    <Land_Bridge name="adjacency_3160_4102" ck3_province_from="3160" ck3_province_to="4102" ck3_type="river_large" battle_type="land_bridge">
       <Variant key="preset_river_crossing_argonath">
         <Map x="0.5210" y="0.5070" />
       </Variant>
     </Land_Bridge>
-    <Land_Bridge name="adjacency_3468_3552" ck3_province_from="3468" ck3_province_to="3552" ck3_type="river_large" battle_type="land_bridge">
+    <Land_Bridge name="adjacency_3160_4102" ck3_province_from="3160" ck3_province_to="4102" ck3_type="river_large" battle_type="land_bridge">
       <Variant key="preset_river_crossing_fords_of_isen">
         <Map x="0.3990" y="0.5010" />
+      </Variant>
+    </Land_Bridge>
+    <Land_Bridge name="adjacency_3468_3552" ck3_province_from="3468" ck3_province_to="3552" ck3_type="river_large" battle_type="land_bridge">
+      <Variant key="preset_river_crossing_argonath">
+        <Map x="0.5210" y="0.5070" />
       </Variant>
     </Land_Bridge>
     <Land_Bridge name="adjacency_3481_3542" ck3_province_from="3481" ck3_province_to="3542" ck3_type="river_large" battle_type="land_bridge">
@@ -1281,8 +1263,8 @@
       </Variant>
     </Land_Bridge>
     <Land_Bridge name="adjacency_3483_3549" ck3_province_from="3483" ck3_province_to="3549" ck3_type="river_large" battle_type="land_bridge">
-      <Variant key="preset_river_crossing_fords_of_isen">
-        <Map x="0.3990" y="0.5010" />
+      <Variant key="preset_river_crossing_argonath">
+        <Map x="0.5210" y="0.5070" />
       </Variant>
     </Land_Bridge>
     <Land_Bridge name="adjacency_3539_3525" ck3_province_from="3539" ck3_province_to="3525" ck3_type="river_large" battle_type="land_bridge">
@@ -1291,13 +1273,13 @@
       </Variant>
     </Land_Bridge>
     <Land_Bridge name="adjacency_380_387" ck3_province_from="380" ck3_province_to="387" ck3_type="river_large" battle_type="land_bridge">
-      <Variant key="preset_river_crossing_fords_of_isen">
-        <Map x="0.3990" y="0.5010" />
+      <Variant key="preset_river_crossing_argonath">
+        <Map x="0.5210" y="0.5070" />
       </Variant>
     </Land_Bridge>
     <Land_Bridge name="adjacency_387_421" ck3_province_from="387" ck3_province_to="421" ck3_type="river_large" battle_type="land_bridge">
-      <Variant key="preset_river_crossing_argonath">
-        <Map x="0.5210" y="0.5070" />
+      <Variant key="preset_river_crossing_fords_of_isen">
+        <Map x="0.3990" y="0.5010" />
       </Variant>
     </Land_Bridge>
     <Land_Bridge name="adjacency_441_491" ck3_province_from="441" ck3_province_to="491" ck3_type="river_large" battle_type="land_bridge">
@@ -1306,43 +1288,43 @@
       </Variant>
     </Land_Bridge>
     <Land_Bridge name="adjacency_531_598" ck3_province_from="531" ck3_province_to="598" ck3_type="river_large" battle_type="land_bridge">
-      <Variant key="preset_river_crossing_argonath">
-        <Map x="0.5210" y="0.5070" />
+      <Variant key="preset_river_crossing_fords_of_isen">
+        <Map x="0.3990" y="0.5010" />
       </Variant>
     </Land_Bridge>
     <Land_Bridge name="adjacency_532_558" ck3_province_from="532" ck3_province_to="558" ck3_type="river_large" battle_type="land_bridge">
-      <Variant key="preset_river_crossing_fords_of_isen">
-        <Map x="0.3990" y="0.5010" />
+      <Variant key="preset_river_crossing_argonath">
+        <Map x="0.5210" y="0.5070" />
       </Variant>
     </Land_Bridge>
     <Land_Bridge name="adjacency_538_541" ck3_province_from="538" ck3_province_to="541" ck3_type="river_large" battle_type="land_bridge">
-      <Variant key="preset_river_crossing_argonath">
-        <Map x="0.5210" y="0.5070" />
+      <Variant key="preset_river_crossing_fords_of_isen">
+        <Map x="0.3990" y="0.5010" />
       </Variant>
     </Land_Bridge>
     <Land_Bridge name="adjacency_585_550" ck3_province_from="585" ck3_province_to="550" ck3_type="river_large" battle_type="land_bridge">
-      <Variant key="preset_river_crossing_fords_of_isen">
-        <Map x="0.3990" y="0.5010" />
+      <Variant key="preset_river_crossing_argonath">
+        <Map x="0.5210" y="0.5070" />
       </Variant>
     </Land_Bridge>
     <Land_Bridge name="adjacency_6307_6315" ck3_province_from="6307" ck3_province_to="6315" ck3_type="river_large" battle_type="land_bridge">
-      <Variant key="preset_river_crossing_argonath">
-        <Map x="0.5210" y="0.5070" />
+      <Variant key="preset_river_crossing_fords_of_isen">
+        <Map x="0.3990" y="0.5010" />
       </Variant>
     </Land_Bridge>
     <Land_Bridge name="adjacency_6461_6495" ck3_province_from="6461" ck3_province_to="6495" ck3_type="river_large" battle_type="land_bridge">
-      <Variant key="preset_river_crossing_fords_of_isen">
-        <Map x="0.3990" y="0.5010" />
-      </Variant>
-    </Land_Bridge>
-    <Land_Bridge name="adjacency_6722_6730" ck3_province_from="6722" ck3_province_to="6730" ck3_type="river_large" battle_type="land_bridge">
       <Variant key="preset_river_crossing_argonath">
         <Map x="0.5210" y="0.5070" />
       </Variant>
     </Land_Bridge>
-    <Land_Bridge name="adjacency_6728_6734" ck3_province_from="6728" ck3_province_to="6734" ck3_type="river_large" battle_type="land_bridge">
+    <Land_Bridge name="adjacency_6722_6730" ck3_province_from="6722" ck3_province_to="6730" ck3_type="river_large" battle_type="land_bridge">
       <Variant key="preset_river_crossing_fords_of_isen">
         <Map x="0.3990" y="0.5010" />
+      </Variant>
+    </Land_Bridge>
+    <Land_Bridge name="adjacency_6728_6734" ck3_province_from="6728" ck3_province_to="6734" ck3_type="river_large" battle_type="land_bridge">
+      <Variant key="preset_river_crossing_argonath">
+        <Map x="0.5210" y="0.5070" />
       </Variant>
     </Land_Bridge>
     <Land_Bridge name="adjacency_6746_6761" ck3_province_from="6746" ck3_province_to="6761" ck3_type="river_large" battle_type="land_bridge">
@@ -1361,8 +1343,8 @@
       </Variant>
     </Land_Bridge>
     <Land_Bridge name="adjacency_6926_7027" ck3_province_from="6926" ck3_province_to="7027" ck3_type="river_large" battle_type="land_bridge">
-      <Variant key="preset_river_crossing_fords_of_isen">
-        <Map x="0.3990" y="0.5010" />
+      <Variant key="preset_river_crossing_argonath">
+        <Map x="0.5210" y="0.5070" />
       </Variant>
     </Land_Bridge>
     <Land_Bridge name="adjacency_6931_7017" ck3_province_from="6931" ck3_province_to="7017" ck3_type="river_large" battle_type="land_bridge">
@@ -1371,8 +1353,8 @@
       </Variant>
     </Land_Bridge>
     <Land_Bridge name="adjacency_6971_6978" ck3_province_from="6971" ck3_province_to="6978" ck3_type="river_large" battle_type="land_bridge">
-      <Variant key="preset_river_crossing_fords_of_isen">
-        <Map x="0.3990" y="0.5010" />
+      <Variant key="preset_river_crossing_argonath">
+        <Map x="0.5210" y="0.5070" />
       </Variant>
     </Land_Bridge>
     <Land_Bridge name="adjacency_769_773" ck3_province_from="769" ck3_province_to="773" ck3_type="river_large" battle_type="land_bridge">
@@ -1381,28 +1363,28 @@
       </Variant>
     </Land_Bridge>
     <Land_Bridge name="adjacency_880_891" ck3_province_from="880" ck3_province_to="891" ck3_type="river_large" battle_type="land_bridge">
-      <Variant key="preset_river_crossing_fords_of_isen">
-        <Map x="0.3990" y="0.5010" />
+      <Variant key="preset_river_crossing_argonath">
+        <Map x="0.5210" y="0.5070" />
       </Variant>
     </Land_Bridge>
     <Land_Bridge name="adjacency_880_920" ck3_province_from="880" ck3_province_to="920" ck3_type="river_large" battle_type="land_bridge">
-      <Variant key="preset_river_crossing_argonath">
-        <Map x="0.5210" y="0.5070" />
+      <Variant key="preset_river_crossing_fords_of_isen">
+        <Map x="0.3990" y="0.5010" />
       </Variant>
     </Land_Bridge>
     <Land_Bridge name="adjacency_895_2947" ck3_province_from="895" ck3_province_to="2947" ck3_type="river_large" battle_type="land_bridge">
-      <Variant key="preset_river_crossing_fords_of_isen">
-        <Map x="0.3990" y="0.5010" />
-      </Variant>
-    </Land_Bridge>
-    <Land_Bridge name="adjacency_899_940" ck3_province_from="899" ck3_province_to="940" ck3_type="river_large" battle_type="land_bridge">
       <Variant key="preset_river_crossing_argonath">
         <Map x="0.5210" y="0.5070" />
       </Variant>
     </Land_Bridge>
-    <Land_Bridge name="adjacency_902_2889" ck3_province_from="902" ck3_province_to="2889" ck3_type="river_large" battle_type="land_bridge">
+    <Land_Bridge name="adjacency_899_940" ck3_province_from="899" ck3_province_to="940" ck3_type="river_large" battle_type="land_bridge">
       <Variant key="preset_river_crossing_fords_of_isen">
         <Map x="0.3990" y="0.5010" />
+      </Variant>
+    </Land_Bridge>
+    <Land_Bridge name="adjacency_902_2889" ck3_province_from="902" ck3_province_to="2889" ck3_type="river_large" battle_type="land_bridge">
+      <Variant key="preset_river_crossing_argonath">
+        <Map x="0.5210" y="0.5070" />
       </Variant>
     </Land_Bridge>
     <Land_Bridge name="adjacency_97_181" ck3_province_from="97" ck3_province_to="181" ck3_type="river_large" battle_type="land_bridge">
@@ -1411,13 +1393,13 @@
       </Variant>
     </Land_Bridge>
     <Land_Bridge name="adjacency_98_181" ck3_province_from="98" ck3_province_to="181" ck3_type="river_large" battle_type="land_bridge">
-      <Variant key="preset_river_crossing_fords_of_isen">
-        <Map x="0.3990" y="0.5010" />
+      <Variant key="preset_river_crossing_argonath">
+        <Map x="0.5210" y="0.5070" />
       </Variant>
     </Land_Bridge>
     <Land_Bridge name="adjacency_99_185" ck3_province_from="99" ck3_province_to="185" ck3_type="river_large" battle_type="land_bridge">
-      <Variant key="preset_river_crossing_argonath">
-        <Map x="0.5210" y="0.5070" />
+      <Variant key="preset_river_crossing_fords_of_isen">
+        <Map x="0.3990" y="0.5010" />
       </Variant>
     </Land_Bridge>
   </Land_Bridge_Maps>

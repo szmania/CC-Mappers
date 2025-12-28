@@ -1,150 +1,150 @@
 <?xml version='1.0' encoding='utf-8'?>
 <Factions>
   <Faction name="Default">
-    <MenAtArm type="abbasid_trebuchet" key="cha_byz_large_onager" siege="true" num_guns="2" />
+    <MenAtArm type="abbasid_trebuchet" key="att_ger_captured_cheiroballistra" siege="true" num_guns="2" />
     <MenAtArm type="abid_alshira" key="HEP_steppe_bows" max="RANGED" />
     <MenAtArm type="abrazanim_legion" key="BAL_chieftains_retinue" max="INFANTRY" />
     <MenAtArm type="accolade_maa_horse_archers" key="BRIT_arwrweision" max="CAVALRY" />
     <MenAtArm type="accolade_maa_lancers" key="GOTH_dux" max="CAVALRY" />
-    <MenAtArm type="akritai" key="BRIT_ardu" />
-    <MenAtArm type="armored_footmen" key="mubs_armored_footmen" />
-    <MenAtArm type="armored_horsemen" key="ARM_mountain_horsemen" />
-    <MenAtArm type="artamat" key="mubs_rumat" />
+    <MenAtArm type="akritai" key="BRIT_ardu" max="INFANTRY" />
+    <MenAtArm type="armored_footmen" key="mubs_armored_footmen" max="INFANTRY" />
+    <MenAtArm type="armored_horsemen" key="ARM_mountain_horsemen" max="CAVALRY" />
+    <MenAtArm type="artamat" key="mubs_rumat" max="RANGED" />
     <MenAtArm type="avarin_skirmishers" key="ANG_duguthe_spears" max="RANGED" />
     <MenAtArm type="ayrudzi" key="parabol_ERE" max="CAVALRY" />
-    <MenAtArm type="ballista_elephant" key="AKS_elephant_tower" />
+    <MenAtArm type="ballista_elephant" key="AKS_elephant_tower" max="CAVALRY" />
     <MenAtArm type="ballistrai" key="BYZ_ballista" siege="true" num_guns="4" />
-    <MenAtArm type="barbary_corsairs" key="GARAM_slingers" />
-    <MenAtArm type="bed_crossbows" key="att_cel_celtic_crossbows" />
-    <MenAtArm type="berdiche_axemen" key="bur_pueri_axemen" />
-    <MenAtArm type="bokator" key="bel_rom_skutatoi" />
-    <MenAtArm type="bombard" key="att_cel_onager" siege="true" siege_engine_per_unit="1" num_guns="2" />
-    <MenAtArm type="bowmen" key="mubs_bowmen" />
-    <MenAtArm type="bulgarian_ciobani" key="BRIT_sag_brit" />
-    <MenAtArm type="bulgarian_konnik" key="BYZ_farganoi" />
-    <MenAtArm type="bulgarian_oklopnitsi" key="ERE_bucellarii_pedites" />
-    <MenAtArm type="bulgarian_testudos" key="bel_ost_onager_bastion" />
-    <MenAtArm type="bulgarian_voynik" key="BRIT_longbows" />
-    <MenAtArm type="byzantine_akontistai" key="BYZ_toxovolistrai" />
-    <MenAtArm type="byzantine_apelatai" key="att_mar_rom_byzantine_archer_marines" />
-    <MenAtArm type="byzantine_hippotoxotai" key="bel_rom_hippo_toxotai" />
-    <MenAtArm type="byzantine_klibanophoroi" key="BYZ_ikanatoi" />
-    <MenAtArm type="byzantine_kontophoros" key="att_mar_rom_byzantine_marines" />
-    <MenAtArm type="byzantine_koursores" key="cha_gen_horsemen" />
-    <MenAtArm type="byzantine_latinkon" key="BYZ_athanatoi" />
-    <MenAtArm type="byzantine_menaulatoi" key="att_rom_eastern_auxilia_palatina" />
-    <MenAtArm type="byzantine_peltast" key="ARM_mountain_archers" />
-    <MenAtArm type="byzantine_psiloi" key="bas_slingers" />
-    <MenAtArm type="byzantine_skoutatoi" key="cha_byz_skutatoi" />
-    <MenAtArm type="byzantine_skythikon" key="BYZ_tasinarioi" />
-    <MenAtArm type="byzantine_toxotai" key="bel_ost_elite_sagittarii" />
-    <MenAtArm type="byzantine_trapezitai" key="cha_eng_royal_horse_idea" />
-    <MenAtArm type="byzantine_trebuchet" key="cha_byz_artillery_crew" />
-    <MenAtArm type="byzantine_vardariotai" key="BYZ_tourkoi" />
-    <MenAtArm type="cam_quan" key="cha_lom_axemen" />
-    <MenAtArm type="cataphract" key="ALAN_cataphracts" />
-    <MenAtArm type="conrois" key="cha_lom_lancers" />
-    <MenAtArm type="cossack_cavalry" key="bas_spear_cavalry" />
-    <MenAtArm type="crossbowmen" key="cha_cel_pictish_crossbowmen" />
-    <MenAtArm type="danish_obudshaer" key="ANG_geburas_axes" />
-    <MenAtArm type="danish_svenner" key="cha_gen_noble_cavalry" />
-    <MenAtArm type="dievas_guard" key="cha_sax_gasindi" />
-    <MenAtArm type="druzhina_cavalry" key="HEP_hindi_cavalry" />
-    <MenAtArm type="dvor_cavalry" key="bas_javelin_cavalry" />
-    <MenAtArm type="dzukijan_horsemen" key="AKS_himyarite_horsemen" />
-    <MenAtArm type="egyptian_khassaki" key="BYZ_katafraktoi" />
-    <MenAtArm type="egyptian_tabardariyya" key="HEP_hindi_warriors" />
-    <MenAtArm type="english_billmen" key="cha_eng_thegn_boatmen" />
-    <MenAtArm type="fire_lances" key="att_merc_ger_gothic_pikemen" />
-    <MenAtArm type="french_aventurier" key="cha_gen_archers" />
-    <MenAtArm type="french_caballarii" key="ERE_bucellarii" />
-    <MenAtArm type="french_voulgier" key="franci_homines" />
-    <MenAtArm type="gaelic_ceathairne" key="cha_cel_ceithern" />
-    <MenAtArm type="genoese_crossbowmen" key="cha_merc_cel_pictish_crossbowmen" />
-    <MenAtArm type="germanic_verlorene_haufe" key="att_mar_ger_germanic_marauders" />
-    <MenAtArm type="ghilman_nubians" key="GHAS_mubarizun" />
-    <MenAtArm type="giltines_chosen" key="BRIT_britones_seniores" />
-    <MenAtArm type="gondi_shahanshah" key="att_des_es_khahyahlim" />
-    <MenAtArm type="halberdiers_unit" key="ARM_halberdiers" />
-    <MenAtArm type="hand_cannons" key="cha_cel_kerns" />
-    <MenAtArm type="handpicked_faithful" key="cha_fra_picked_marines" />
-    <MenAtArm type="house_guard" key="mubs_house_guards" />
-    <MenAtArm type="hungarian_banderium" key="HIM_banu_abs_lancer" />
-    <MenAtArm type="hungarian_hussar" key="cha_sax_reitman_herizogo" />
-    <MenAtArm type="hungarian_tizlandzsasok" key="THUR_elite_lancers" />
-    <MenAtArm type="iberian_coseletes" key="bel_ost_milites" />
-    <MenAtArm type="iberian_picas_secas" key="BRIT_angli_axes" />
-    <MenAtArm type="iberian_raiders" key="MERC_syrian_archers" />
-    <MenAtArm type="irish_ceithern" key="BRIT_saethwyr" />
-    <MenAtArm type="irish_cliathairi" key="GHAS_limitanei" />
-    <MenAtArm type="irish_galloglaigh" key="VISI_milites_gothi" />
-    <MenAtArm type="irish_horseboys" key="THUR_light_horse_archers" />
-    <MenAtArm type="irish_muire" key="BRIT_rherel" />
-    <MenAtArm type="irish_ostmen" key="bas_swordsmen" />
-    <MenAtArm type="irish_ridire" key="cha_nor_riddarar" />
-    <MenAtArm type="iron_buddhas" key="QUR_banu_judham_lancers" />
-    <MenAtArm type="iron_hawks" key="ARM_azats" />
-    <MenAtArm type="islamic_alashair_infantry" key="cha_merc_sax_spear_band" />
-    <MenAtArm type="islamic_fursan" key="SAS_fursan" />
-    <MenAtArm type="islamic_hasham" key="GHAS_judham" />
-    <MenAtArm type="islamic_iqtadar" key="ARM_nakhara" />
-    <MenAtArm type="islamic_khasseki_infantry" key="cha_spa_skirm" />
-    <MenAtArm type="islamic_naffatun" key="cha_slav_light_boatmen" />
-    <MenAtArm type="islamic_rijal" key="mubs_rijal" />
-    <MenAtArm type="islamic_rumat" key="att_merc_rom_sagittarii" />
-    <MenAtArm type="janissaries_archer" key="SAS_syrian_archers" />
-    <MenAtArm type="janissaries_infantry" key="cha_mus_andalusian_infantry" />
-    <MenAtArm type="lanze_spezzate" key="MERC_sarmatae" />
-    <MenAtArm type="light_footmen" key="mubs_light_footmen" />
-    <MenAtArm type="light_horsemen" key="GARAM_tribal_horsemen" />
-    <MenAtArm type="lithuanian_bajorija" key="cha_nor_riddarar_idea" />
-    <MenAtArm type="luojuzi" key="MAUR_amxzni" />
-    <MenAtArm type="maa_bandits" key="bel_rom_funditores" />
-    <MenAtArm type="maa_marauders" key="cha_slav_raiders" />
-    <MenAtArm type="maa_poachers" key="BAL_archers" />
-    <MenAtArm type="maa_thieves" key="att_ger_gothic_pikemen" />
-    <MenAtArm type="mamluk_cavalry" key="ARM_light_cavalry" />
-    <MenAtArm type="mande_hunter" key="cha_vik_hunters" />
-    <MenAtArm type="mangonel" key="att_cel_onager" siege="true" siege_engine_per_unit="1" num_guns="2" />
-    <MenAtArm type="milan_famiglia_ducale" key="MAUR_amazigh_raiders" />
-    <MenAtArm type="mongol_cataphract" key="mubs_cataphracts" />
-    <MenAtArm type="muslim_jinete" key="cha_mus_berber_jinetes" />
-    <MenAtArm type="nangchen_cavalry" key="cha_nor_chevalers" />
-    <MenAtArm type="norman_knights" key="cha_gen_knights" />
-    <MenAtArm type="onager" key="att_cel_onager" siege="true" siege_engine_per_unit="1" num_guns="2" />
-    <MenAtArm type="outremer_bowmen" key="mubs_berber_bowmen" />
-    <MenAtArm type="outremer_heavy_cavalry" key="att_ger_noble_alani_cavalry" />
-    <MenAtArm type="outremer_turcopoles" key="NOM_T2_horse_archers" />
-    <MenAtArm type="pavise_spearmen" key="HEP_steppe_spearmen" />
-    <MenAtArm type="persian_cataphract" key="HEP_kushan_cataphracts" />
-    <MenAtArm type="persian_kamandaran" key="att_merc_est_persian_skirmishers" />
-    <MenAtArm type="persian_neyzedaran" key="ERE_limitanei_levy_spears" />
-    <MenAtArm type="persian_paighan" key="FRA_pueri_javelins" />
-    <MenAtArm type="persian_war_elephant" key="MAUR_spear_throwers" />
-    <MenAtArm type="pikemen_unit" key="bel_ost_gothic_pikemen" />
-    <MenAtArm type="polish_strzelcy" key="equites_sag_ERE" />
-    <MenAtArm type="portugal_aventuros" key="CORD_vesontes" />
-    <MenAtArm type="portugal_crossbowmen" key="att_merc_des_desert_bowmen" />
-    <MenAtArm type="sherwood_archers" key="HEP_hindi_archers" />
-    <MenAtArm type="shotel_warriors" key="KOK_axe_warriors" />
-    <MenAtArm type="sibyan_alkhass" key="VISI_caballarii_vascones" />
-    <MenAtArm type="sicilian_archers" key="mubs_arab_sicilian_archers" />
-    <MenAtArm type="sipahi_lancers" key="LOM_lancers" />
-    <MenAtArm type="sipahis" key="cha_spa_jinetes" />
-    <MenAtArm type="skoutatoi" key="pict_gairmorlom" />
-    <MenAtArm type="sofa" key="LOM_fara_skirm" />
-    <MenAtArm type="spanish_jinete" key="VISI_cab_iuvenes" />
-    <MenAtArm type="sumpitan" key="cha_lom_light_boatmen" />
+    <MenAtArm type="barbary_corsairs" key="GARAM_slingers" max="RANGED" />
+    <MenAtArm type="bed_crossbows" key="att_cel_celtic_crossbows" siege="true" num_guns="0" />
+    <MenAtArm type="berdiche_axemen" key="bur_pueri_axemen" max="INFANTRY" />
+    <MenAtArm type="bokator" key="bel_rom_skutatoi" max="INFANTRY" />
+    <MenAtArm type="bombard" key="LOM_lancers" siege="true" num_guns="0" />
+    <MenAtArm type="bowmen" key="mubs_bowmen" max="RANGED" />
+    <MenAtArm type="bulgarian_ciobani" key="BRIT_sag_brit" max="RANGED" />
+    <MenAtArm type="bulgarian_konnik" key="BYZ_farganoi" max="CAVALRY" />
+    <MenAtArm type="bulgarian_oklopnitsi" key="ERE_bucellarii_pedites" max="INFANTRY" />
+    <MenAtArm type="bulgarian_testudos" key="cha_merc_sax_javelinmen" />
+    <MenAtArm type="bulgarian_voynik" key="BRIT_longbows" max="RANGED" />
+    <MenAtArm type="byzantine_akontistai" key="BYZ_toxovolistrai" max="RANGED" />
+    <MenAtArm type="byzantine_apelatai" key="cha_byz_mar_ballista" />
+    <MenAtArm type="byzantine_hippotoxotai" key="bel_rom_hippo_toxotai" max="CAVALRY" />
+    <MenAtArm type="byzantine_klibanophoroi" key="BYZ_ikanatoi" max="CAVALRY" />
+    <MenAtArm type="byzantine_kontophoros" key="att_merc_nom_bosphoran_warriors" />
+    <MenAtArm type="byzantine_koursores" key="cha_gen_horsemen" max="CAVALRY" />
+    <MenAtArm type="byzantine_latinkon" key="BYZ_athanatoi" max="CAVALRY" />
+    <MenAtArm type="byzantine_menaulatoi" key="att_rom_eastern_auxilia_palatina" max="INFANTRY" />
+    <MenAtArm type="byzantine_peltast" key="ARM_mountain_archers" max="RANGED" />
+    <MenAtArm type="byzantine_psiloi" key="bas_slingers" max="RANGED" />
+    <MenAtArm type="byzantine_skoutatoi" key="cha_byz_skutatoi" max="INFANTRY" />
+    <MenAtArm type="byzantine_skythikon" key="BYZ_tasinarioi" max="CAVALRY" />
+    <MenAtArm type="byzantine_toxotai" key="bel_ost_elite_sagittarii" max="RANGED" />
+    <MenAtArm type="byzantine_trapezitai" key="cha_eng_royal_horse_idea" max="CAVALRY" />
+    <MenAtArm type="byzantine_trebuchet" key="cha_byz_artillery_crew" siege="true" num_guns="1" />
+    <MenAtArm type="byzantine_vardariotai" key="BYZ_tourkoi" max="CAVALRY" />
+    <MenAtArm type="cam_quan" key="cha_lom_axemen" max="INFANTRY" />
+    <MenAtArm type="cataphract" key="ALAN_cataphracts" max="CAVALRY" />
+    <MenAtArm type="conrois" key="cha_lom_lancers" max="CAVALRY" />
+    <MenAtArm type="cossack_cavalry" key="bas_spear_cavalry" max="CAVALRY" />
+    <MenAtArm type="crossbowmen" key="cha_cel_pictish_crossbowmen" max="RANGED" />
+    <MenAtArm type="danish_obudshaer" key="ANG_geburas_axes" max="INFANTRY" />
+    <MenAtArm type="danish_svenner" key="cha_gen_noble_cavalry" max="CAVALRY" />
+    <MenAtArm type="dievas_guard" key="cha_sax_gasindi" max="CAVALRY" />
+    <MenAtArm type="druzhina_cavalry" key="HEP_hindi_cavalry" max="CAVALRY" />
+    <MenAtArm type="dvor_cavalry" key="bas_javelin_cavalry" max="CAVALRY" />
+    <MenAtArm type="dzukijan_horsemen" key="AKS_himyarite_horsemen" max="CAVALRY" />
+    <MenAtArm type="egyptian_khassaki" key="BYZ_katafraktoi" max="CAVALRY" />
+    <MenAtArm type="egyptian_tabardariyya" key="HEP_hindi_warriors" max="INFANTRY" />
+    <MenAtArm type="english_billmen" key="cha_eng_thegn_boatmen" max="INFANTRY" />
+    <MenAtArm type="fire_lances" key="att_merc_ger_gothic_pikemen" max="INFANTRY" />
+    <MenAtArm type="french_aventurier" key="cha_gen_archers" max="RANGED" />
+    <MenAtArm type="french_caballarii" key="ERE_bucellarii" max="CAVALRY" />
+    <MenAtArm type="french_voulgier" key="franci_homines" max="INFANTRY" />
+    <MenAtArm type="gaelic_ceathairne" key="cha_cel_ceithern" max="RANGED" />
+    <MenAtArm type="genoese_crossbowmen" key="cha_merc_cel_pictish_crossbowmen" max="RANGED" />
+    <MenAtArm type="germanic_verlorene_haufe" key="franci_homines_bur" />
+    <MenAtArm type="ghilman_nubians" key="GHAS_mubarizun" max="INFANTRY" />
+    <MenAtArm type="giltines_chosen" key="BRIT_britones_seniores" max="INFANTRY" />
+    <MenAtArm type="gondi_shahanshah" key="att_des_es_khahyahlim" max="INFANTRY" />
+    <MenAtArm type="halberdiers_unit" key="ARM_halberdiers" max="INFANTRY" />
+    <MenAtArm type="hand_cannons" key="cha_cel_kerns" max="RANGED" />
+    <MenAtArm type="handpicked_faithful" key="cha_fra_picked_marines" max="INFANTRY" />
+    <MenAtArm type="house_guard" key="mubs_house_guards" max="INFANTRY" />
+    <MenAtArm type="hungarian_banderium" key="HIM_banu_abs_lancer" max="CAVALRY" />
+    <MenAtArm type="hungarian_hussar" key="cha_sax_reitman_herizogo" max="CAVALRY" />
+    <MenAtArm type="hungarian_tizlandzsasok" key="THUR_elite_lancers" max="CAVALRY" />
+    <MenAtArm type="iberian_coseletes" key="bel_ost_milites" max="INFANTRY" />
+    <MenAtArm type="iberian_picas_secas" key="BRIT_angli_axes" max="INFANTRY" />
+    <MenAtArm type="iberian_raiders" key="MERC_syrian_archers" max="RANGED" />
+    <MenAtArm type="irish_ceithern" key="BRIT_saethwyr" max="RANGED" />
+    <MenAtArm type="irish_cliathairi" key="GHAS_limitanei" max="INFANTRY" />
+    <MenAtArm type="irish_galloglaigh" key="VISI_milites_gothi" max="INFANTRY" />
+    <MenAtArm type="irish_horseboys" key="THUR_light_horse_archers" max="CAVALRY" />
+    <MenAtArm type="irish_muire" key="BRIT_rherel" max="INFANTRY" />
+    <MenAtArm type="irish_ostmen" key="bas_swordsmen" max="RANGED" />
+    <MenAtArm type="irish_ridire" key="cha_nor_riddarar" max="CAVALRY" />
+    <MenAtArm type="iron_buddhas" key="QUR_banu_judham_lancers" max="CAVALRY" />
+    <MenAtArm type="iron_hawks" key="ARM_azats" max="CAVALRY" />
+    <MenAtArm type="islamic_alashair_infantry" key="cha_merc_sax_spear_band" max="INFANTRY" />
+    <MenAtArm type="islamic_fursan" key="SAS_fursan" max="CAVALRY" />
+    <MenAtArm type="islamic_hasham" key="GHAS_judham" max="CAVALRY" />
+    <MenAtArm type="islamic_iqtadar" key="ARM_nakhara" max="CAVALRY" />
+    <MenAtArm type="islamic_khasseki_infantry" key="cha_spa_skirm" max="RANGED" />
+    <MenAtArm type="islamic_naffatun" key="cha_slav_light_boatmen" max="RANGED" />
+    <MenAtArm type="islamic_rijal" key="mubs_rijal" max="RANGED" />
+    <MenAtArm type="islamic_rumat" key="att_merc_rom_sagittarii" max="RANGED" />
+    <MenAtArm type="janissaries_archer" key="SAS_syrian_archers" max="RANGED" />
+    <MenAtArm type="janissaries_infantry" key="cha_mus_andalusian_infantry" max="INFANTRY" />
+    <MenAtArm type="lanze_spezzate" key="MERC_sarmatae" max="CAVALRY" />
+    <MenAtArm type="light_footmen" key="mubs_light_footmen" max="INFANTRY" />
+    <MenAtArm type="light_horsemen" key="GARAM_tribal_horsemen" max="CAVALRY" />
+    <MenAtArm type="lithuanian_bajorija" key="cha_nor_riddarar_idea" max="CAVALRY" />
+    <MenAtArm type="luojuzi" key="MAUR_amxzni" max="INFANTRY" />
+    <MenAtArm type="maa_bandits" key="bel_rom_funditores" max="INFANTRY" />
+    <MenAtArm type="maa_marauders" key="cha_slav_raiders" max="CAVALRY" />
+    <MenAtArm type="maa_poachers" key="BAL_archers" max="RANGED" />
+    <MenAtArm type="maa_thieves" key="att_ger_gothic_pikemen" max="INFANTRY" />
+    <MenAtArm type="mamluk_cavalry" key="ARM_light_cavalry" max="CAVALRY" />
+    <MenAtArm type="mande_hunter" key="cha_vik_hunters" max="RANGED" />
+    <MenAtArm type="mangonel" key="LOM_lancers" siege="true" num_guns="0" />
+    <MenAtArm type="milan_famiglia_ducale" key="MAUR_amazigh_raiders" max="CAVALRY" />
+    <MenAtArm type="mongol_cataphract" key="mubs_cataphracts" max="CAVALRY" />
+    <MenAtArm type="muslim_jinete" key="cha_mus_berber_jinetes" max="CAVALRY" />
+    <MenAtArm type="nangchen_cavalry" key="cha_nor_chevalers" max="CAVALRY" />
+    <MenAtArm type="norman_knights" key="cha_gen_knights" max="CAVALRY" />
+    <MenAtArm type="onager" key="LOM_lancers" siege="true" num_guns="0" />
+    <MenAtArm type="outremer_bowmen" key="mubs_maghrebi_bowmen" />
+    <MenAtArm type="outremer_heavy_cavalry" key="att_ger_noble_alani_cavalry" max="CAVALRY" />
+    <MenAtArm type="outremer_turcopoles" key="NOM_T2_horse_archers" max="CAVALRY" />
+    <MenAtArm type="pavise_spearmen" key="HEP_steppe_spearmen" max="INFANTRY" />
+    <MenAtArm type="persian_cataphract" key="HEP_kushan_cataphracts" max="CAVALRY" />
+    <MenAtArm type="persian_kamandaran" key="att_merc_est_persian_skirmishers" max="RANGED" />
+    <MenAtArm type="persian_neyzedaran" key="ERE_limitanei_levy_spears" max="INFANTRY" />
+    <MenAtArm type="persian_paighan" key="FRA_pueri_javelins" max="RANGED" />
+    <MenAtArm type="persian_war_elephant" key="MAUR_spear_throwers" max="CAVALRY" />
+    <MenAtArm type="pikemen_unit" key="bel_ost_gothic_pikemen" max="INFANTRY" />
+    <MenAtArm type="polish_strzelcy" key="equites_sag_ERE" max="CAVALRY" />
+    <MenAtArm type="portugal_aventuros" key="CORD_vesontes" max="INFANTRY" />
+    <MenAtArm type="portugal_crossbowmen" key="att_merc_des_desert_bowmen" max="RANGED" />
+    <MenAtArm type="sherwood_archers" key="HEP_hindi_archers" max="RANGED" />
+    <MenAtArm type="shotel_warriors" key="KOK_axe_warriors" max="RANGED" />
+    <MenAtArm type="sibyan_alkhass" key="VISI_caballarii_vascones" max="CAVALRY" />
+    <MenAtArm type="sicilian_archers" key="mubs_arab_sicilian_archers" max="RANGED" />
+    <MenAtArm type="sipahi_lancers" key="LOM_lancers" max="CAVALRY" />
+    <MenAtArm type="sipahis" key="cha_spa_jinetes" max="CAVALRY" />
+    <MenAtArm type="skoutatoi" key="pict_gairmorlom" max="INFANTRY" />
+    <MenAtArm type="sofa" key="LOM_fara_skirm" max="RANGED" />
+    <MenAtArm type="spanish_jinete" key="VISI_cab_iuvenes" max="CAVALRY" />
+    <MenAtArm type="sumpitan" key="cha_lom_light_boatmen" max="RANGED" />
     <MenAtArm type="trebuchet" key="REB_manicheans" siege="true" num_guns="0" />
-    <MenAtArm type="turkish_azabs" key="mubs_arab_levy_bows" />
-    <MenAtArm type="turkish_qapukulu" key="BRIT_teulu" />
-    <MenAtArm type="varangian_guards" key="att_rom_hetaireia_guards" />
-    <MenAtArm type="welsh_helwyr" key="BRIT_helwyr" />
-    <MenAtArm type="welsh_rhyfelwyr" key="BRIT_rhyfelwyr_swords" />
-    <MenAtArm type="welsh_saethwyr" key="cha_cel_welsh_archers" />
-    <MenAtArm type="welsh_teulu" key="cha_cel_teulu" />
-    <MenAtArm type="woodsmen" key="bel_ost_javelinmen" />
-    <MenAtArm type="yeoman_archers" key="bas_archers" />
+    <MenAtArm type="turkish_azabs" key="mubs_arab_levy_bows" max="RANGED" />
+    <MenAtArm type="turkish_qapukulu" key="BRIT_teulu" max="CAVALRY" />
+    <MenAtArm type="varangian_guards" key="att_rom_hetaireia_guards" max="INFANTRY" />
+    <MenAtArm type="welsh_helwyr" key="BRIT_helwyr" max="RANGED" />
+    <MenAtArm type="welsh_rhyfelwyr" key="BRIT_rhyfelwyr_swords" max="INFANTRY" />
+    <MenAtArm type="welsh_saethwyr" key="cha_cel_welsh_archers" max="RANGED" />
+    <MenAtArm type="welsh_teulu" key="cha_cel_teulu" max="CAVALRY" />
+    <MenAtArm type="woodsmen" key="bel_ost_javelinmen" max="RANGED" />
+    <MenAtArm type="yeoman_archers" key="bas_archers" max="RANGED" />
   </Faction>
   <Faction name="Abarshahr">
     <MenAtArm type="abrazanim_legion" key="SAS_elite_heavy_dailamite_infantry" max="INFANTRY" />
@@ -250,9 +250,9 @@
     <MenAtArm type="abrazanim_legion" key="mubs_armored_footmen" max="INFANTRY" />
     <MenAtArm type="avarin_skirmishers" key="AKS_spear_throwers" max="RANGED" />
   </Faction>
-  <Faction name="Aramean">
-    <MenAtArm type="abrazanim_legion" key="BRIT_aulue" max="INFANTRY" />
-    <MenAtArm type="avarin_skirmishers" key="cha_gen_levy_skirm" max="RANGED" />
+  <Faction name="Aria">
+    <MenAtArm type="abrazanim_legion" key="SAS_elite_heavy_dailamite_infantry" max="INFANTRY" />
+    <MenAtArm type="avarin_skirmishers" key="SAS_Nomad_javelinmen" max="RANGED" />
   </Faction>
   <Faction name="Aria">
     <MenAtArm type="abrazanim_legion" key="SAS_elite_heavy_dailamite_infantry" max="INFANTRY" />
@@ -268,7 +268,6 @@
     <MenAtArm type="avarin_skirmishers" key="ARM_skirmishers" max="RANGED" />
   </Faction>
   <Faction name="Asia">
-    <MenAtArm type="abid_alshira" key="ERE_boukelaroi_toxotai" max="RANGED" />
     <MenAtArm type="abrazanim_legion" key="ERE_legio" max="INFANTRY" />
     <MenAtArm type="avarin_skirmishers" key="ERE_boukelaroi_toxotai" max="RANGED" />
   </Faction>
@@ -313,12 +312,13 @@
     <MenAtArm type="avarin_skirmishers" key="BAL_javelins" max="RANGED" />
   </Faction>
   <Faction name="Balto Finnic">
+    <MenAtArm type="abid_alshira" key="BRIT_saethwyr" />
     <MenAtArm type="abrazanim_legion" key="cha_nor_lancent" max="INFANTRY" />
     <MenAtArm type="avarin_skirmishers" key="att_merc_cel_celtic_brigands" max="RANGED" />
   </Faction>
   <Faction name="Berbers">
     <MenAtArm type="abrazanim_legion" key="GARAM_amazigh_swords" max="INFANTRY" />
-    <MenAtArm type="avarin_skirmishers" key="mubs_berber_levy_javs" max="RANGED" />
+    <MenAtArm type="avarin_skirmishers" key="mubs_arab_sicilian_archers" max="RANGED" />
   </Faction>
   <Faction name="Banu Ghassan">
     <MenAtArm type="abrazanim_legion" key="GHAS_limitanei" max="INFANTRY" />
@@ -347,11 +347,11 @@
   </Faction>
   <Faction name="Berbers">
     <MenAtArm type="abrazanim_legion" key="GARAM_amazigh_swords" max="INFANTRY" />
-    <MenAtArm type="avarin_skirmishers" key="mubs_berber_levy_javs" max="RANGED" />
+    <MenAtArm type="avarin_skirmishers" key="mubs_arab_sicilian_archers" max="RANGED" />
   </Faction>
   <Faction name="Berbers">
     <MenAtArm type="abrazanim_legion" key="GARAM_amazigh_swords" max="INFANTRY" />
-    <MenAtArm type="avarin_skirmishers" key="mubs_berber_levy_javs" max="RANGED" />
+    <MenAtArm type="avarin_skirmishers" key="mubs_bedouin_light_footmen" max="RANGED" />
   </Faction>
   <Faction name="Blemmyes">
     <MenAtArm type="abrazanim_legion" key="BLEMM_khanda" max="INFANTRY" />
@@ -422,6 +422,7 @@
     <MenAtArm type="avarin_skirmishers" key="att_rom_matiarii" max="RANGED" />
   </Faction>
   <Faction name="Chinese">
+    <MenAtArm type="abid_alshira" key="bas_ambushers" />
     <MenAtArm type="abrazanim_legion" key="bel_rom_skutatoi_spears" max="INFANTRY" />
     <MenAtArm type="avarin_skirmishers" key="BLEMM_skirm" max="RANGED" />
   </Faction>
@@ -524,7 +525,7 @@
     <MenAtArm type="avarin_skirmishers" key="BAL_javelins" max="RANGED" />
   </Faction>
   <Faction name="Slavic Rebels">
-    <MenAtArm type="abid_alshira" key="KOK_cha_gen_archers" />
+    <MenAtArm type="abid_alshira" key="KOK_cha_gen_archers" max="RANGED" />
     <MenAtArm type="abrazanim_legion" key="BAL_armoured_retinue" max="INFANTRY" />
     <MenAtArm type="avarin_skirmishers" key="cha_slav_archers" max="RANGED" />
   </Faction>
@@ -545,7 +546,6 @@
     <MenAtArm type="avarin_skirmishers" key="cha_sax_javelinmen" max="RANGED" />
   </Faction>
   <Faction name="Egypt">
-    <MenAtArm type="abid_alshira" key="MAUR_amazigh_archers" max="RANGED" />
     <MenAtArm type="abrazanim_legion" key="ERE_quinta_macedonica" max="INFANTRY" />
     <MenAtArm type="avarin_skirmishers" key="ERE_boukelaroi_toxotai" max="RANGED" />
   </Faction>
@@ -647,6 +647,7 @@
     <MenAtArm type="avarin_skirmishers" key="bel_ost_javelinmen" max="RANGED" />
   </Faction>
   <Faction name="Goidelic">
+    <MenAtArm type="abid_alshira" key="bas_ambushers" />
     <MenAtArm type="abrazanim_legion" key="cha_mus_umayyad_guardsmen" max="INFANTRY" />
     <MenAtArm type="avarin_skirmishers" key="att_ger_visigothic_slingers" max="RANGED" />
   </Faction>
@@ -655,6 +656,7 @@
     <MenAtArm type="avarin_skirmishers" key="BAL_javelins" max="RANGED" />
   </Faction>
   <Faction name="Guinean Uplander">
+    <MenAtArm type="abid_alshira" key="bas_ambushers" />
     <MenAtArm type="abrazanim_legion" key="cha_cel_armoured_spear" max="INFANTRY" />
     <MenAtArm type="avarin_skirmishers" key="cha_gen_levy_skirm" max="RANGED" />
   </Faction>
@@ -663,6 +665,7 @@
     <MenAtArm type="avarin_skirmishers" key="bas_ambushers" max="RANGED" />
   </Faction>
   <Faction name="Hellenic">
+    <MenAtArm type="abid_alshira" key="bas_ambushers" />
     <MenAtArm type="abrazanim_legion" key="cha_slav_spear" max="INFANTRY" />
     <MenAtArm type="avarin_skirmishers" key="cha_cel_javelinmen" max="RANGED" />
   </Faction>
@@ -685,12 +688,10 @@
     <MenAtArm type="avarin_skirmishers" key="VISI_iuvenes_javelinmen" max="RANGED" />
   </Faction>
   <Faction name="Hunnic Separatists">
-    <MenAtArm type="abid_alshira" key="HEP_hindi_archers" />
     <MenAtArm type="abrazanim_legion" key="HEP_steppe_tribesmen" max="INFANTRY" />
     <MenAtArm type="avarin_skirmishers" key="HEP_steppe_hordes" max="RANGED" />
   </Faction>
   <Faction name="Hunnic Separatists">
-    <MenAtArm type="abid_alshira" key="HEP_tokharistani_spear_throwers" max="RANGED" />
     <MenAtArm type="abrazanim_legion" key="HEP_steppe_tribesmen" max="INFANTRY" />
     <MenAtArm type="avarin_skirmishers" key="HEP_steppe_hordes" max="RANGED" />
   </Faction>
@@ -709,11 +710,11 @@
   </Faction>
   <Faction name="Irish Rebels">
     <MenAtArm type="abid_alshira" key="CEL_slingers" max="RANGED" />
-    <MenAtArm type="abrazanim_legion" key="CEL_gaslath_spears" max="INFANTRY" />
+    <MenAtArm type="abrazanim_legion" key="pict_myrchan" max="INFANTRY" />
     <MenAtArm type="avarin_skirmishers" key="bas_levy_skirmishers" max="RANGED" />
   </Faction>
   <Faction name="Irish Separatists">
-    <MenAtArm type="abrazanim_legion" key="CEL_gaslath_spears" max="INFANTRY" />
+    <MenAtArm type="abrazanim_legion" key="pict_myrchan" max="INFANTRY" />
     <MenAtArm type="avarin_skirmishers" key="bas_levy_skirmishers" max="RANGED" />
   </Faction>
   <Faction name="Irrawaddy">
@@ -756,7 +757,7 @@
     <MenAtArm type="avarin_skirmishers" key="cha_lom_skirm" max="RANGED" />
   </Faction>
   <Faction name="Kingdom of Ailech">
-    <MenAtArm type="abrazanim_legion" key="CEL_gaslath_spears" max="INFANTRY" />
+    <MenAtArm type="abrazanim_legion" key="bas_gothic_refugee_axemen" max="INFANTRY" />
     <MenAtArm type="avarin_skirmishers" key="CEL_slingers" max="RANGED" />
   </Faction>
   <Faction name="Kingdom of Alt Clut">
@@ -781,17 +782,17 @@
     <MenAtArm type="avarin_skirmishers" key="cha_fra_skirm" max="RANGED" />
   </Faction>
   <Faction name="Kingdom of Connachta">
-    <MenAtArm type="abrazanim_legion" key="CEL_gaslath_spears" max="INFANTRY" />
-    <MenAtArm type="avarin_skirmishers" key="CEL_gaslath_spears" max="RANGED" />
+    <MenAtArm type="abrazanim_legion" key="bas_spear_levy" max="INFANTRY" />
+    <MenAtArm type="avarin_skirmishers" key="bas_levy_skirmishers" max="RANGED" />
   </Faction>
   <Faction name="Kingdom of Glywysing">
     <MenAtArm type="abrazanim_legion" key="bas_brit_swords" max="INFANTRY" />
     <MenAtArm type="avarin_skirmishers" key="bas_levy_skirmishers" max="RANGED" />
   </Faction>
   <Faction name="Kingdom of Gwynedd">
-    <MenAtArm type="abid_alshira" key="CEL_gaslath_spears" max="RANGED" />
+    <MenAtArm type="abid_alshira" key="bas_levy_archers" max="RANGED" />
     <MenAtArm type="abrazanim_legion" key="bas_nobles" max="INFANTRY" />
-    <MenAtArm type="avarin_skirmishers" key="CEL_gaslath_spears" max="RANGED" />
+    <MenAtArm type="avarin_skirmishers" key="bas_levy_skirmishers" max="RANGED" />
   </Faction>
   <Faction name="Kingdom of Kent">
     <MenAtArm type="abid_alshira" key="cha_eng_select_archers" max="RANGED" />
@@ -800,7 +801,7 @@
   </Faction>
   <Faction name="Kingdom of Leinster">
     <MenAtArm type="abid_alshira" key="CEL_slingers" max="RANGED" />
-    <MenAtArm type="abrazanim_legion" key="CEL_gaslath_spears" max="INFANTRY" />
+    <MenAtArm type="abrazanim_legion" key="bas_levy_axemen" max="INFANTRY" />
     <MenAtArm type="avarin_skirmishers" key="bas_levy_skirmishers" max="RANGED" />
   </Faction>
   <Faction name="Kingdom of Mercia">
@@ -809,7 +810,7 @@
   </Faction>
   <Faction name="Kingdom of Munster">
     <MenAtArm type="abid_alshira" key="CEL_slingers" max="RANGED" />
-    <MenAtArm type="abrazanim_legion" key="CEL_gaslath_spears" max="INFANTRY" />
+    <MenAtArm type="abrazanim_legion" key="bas_nobles" max="INFANTRY" />
     <MenAtArm type="avarin_skirmishers" key="CEL_slingers" max="RANGED" />
   </Faction>
   <Faction name="Kingdom of Northumbria">
@@ -823,7 +824,7 @@
     <MenAtArm type="avarin_skirmishers" key="CEL_slingers" max="RANGED" />
   </Faction>
   <Faction name="Kingdom of Ulaid">
-    <MenAtArm type="abrazanim_legion" key="CEL_gaslath_spears" max="INFANTRY" />
+    <MenAtArm type="abrazanim_legion" key="pict_myrchan" max="INFANTRY" />
     <MenAtArm type="avarin_skirmishers" key="CEL_slingers" max="RANGED" />
   </Faction>
   <Faction name="Kingdom of Wessex">
@@ -870,6 +871,7 @@
     <MenAtArm type="avarin_skirmishers" key="cha_lom_levy_skirm" max="RANGED" />
   </Faction>
   <Faction name="Latin">
+    <MenAtArm type="abid_alshira" key="bas_ambushers" />
     <MenAtArm type="abrazanim_legion" key="GHAS_limitanei" max="INFANTRY" />
     <MenAtArm type="avarin_skirmishers" key="BRIT_scoti_javelins" max="RANGED" />
   </Faction>
@@ -887,12 +889,10 @@
     <MenAtArm type="avarin_skirmishers" key="cha_lom_levy_skirm" max="RANGED" />
   </Faction>
   <Faction name="Magiaroi">
-    <MenAtArm type="abid_alshira" key="HEP_tokharistani_spear_throwers" max="RANGED" />
     <MenAtArm type="abrazanim_legion" key="HEP_steppe_tribesmen" max="INFANTRY" />
     <MenAtArm type="avarin_skirmishers" key="HEP_tokharistani_spear_throwers" max="RANGED" />
   </Faction>
   <Faction name="Magiaroi">
-    <MenAtArm type="abid_alshira" key="HEP_steppe_tribesmen" max="RANGED" />
     <MenAtArm type="abrazanim_legion" key="HEP_steppe_tribesmen" max="INFANTRY" />
     <MenAtArm type="avarin_skirmishers" key="HEP_tokharistani_spear_throwers" max="RANGED" />
   </Faction>
@@ -915,7 +915,7 @@
   </Faction>
   <Faction name="Moors">
     <MenAtArm type="abrazanim_legion" key="GARAM_amazigh_swords" max="INFANTRY" />
-    <MenAtArm type="avarin_skirmishers" key="mubs_berber_levy_javs" max="RANGED" />
+    <MenAtArm type="avarin_skirmishers" key="GARAM_slingers" max="RANGED" />
   </Faction>
   <Faction name="Muslim Rebels">
     <MenAtArm type="abrazanim_legion" key="SAS_elite_heavy_dailamite_infantry" max="INFANTRY" />
@@ -1078,7 +1078,7 @@
   </Faction>
   <Faction name="Saracenoi">
     <MenAtArm type="abrazanim_legion" key="mubs_mubarizun" max="INFANTRY" />
-    <MenAtArm type="avarin_skirmishers" key="mubs_berber_levy_javs" max="RANGED" />
+    <MenAtArm type="avarin_skirmishers" key="GARAM_slingers" max="RANGED" />
   </Faction>
   <Faction name="Sardinians">
     <MenAtArm type="abrazanim_legion" key="bel_ost_milites_comitatenses" max="INFANTRY" />
@@ -1129,12 +1129,12 @@
     <MenAtArm type="avarin_skirmishers" key="ALL_garrison_archers" max="RANGED" />
   </Faction>
   <Faction name="Scoti">
-    <MenAtArm type="abrazanim_legion" key="CEL_gaslath_spears" max="INFANTRY" />
+    <MenAtArm type="abrazanim_legion" key="cha_eng_fyrd_spear_2" max="INFANTRY" />
     <MenAtArm type="avarin_skirmishers" key="CEL_slingers" max="RANGED" />
   </Faction>
   <Faction name="Scoti Separatists">
     <MenAtArm type="abrazanim_legion" key="pict_gairmorlom" max="INFANTRY" />
-    <MenAtArm type="avarin_skirmishers" key="CEL_gaslath_spears" max="RANGED" />
+    <MenAtArm type="avarin_skirmishers" key="bas_levy_skirmishers" max="RANGED" />
   </Faction>
   <Faction name="Septimania">
     <MenAtArm type="abrazanim_legion" key="CORD_vesontes" max="INFANTRY" />
@@ -1145,6 +1145,7 @@
     <MenAtArm type="avarin_skirmishers" key="BAL_javelins" max="RANGED" />
   </Faction>
   <Faction name="Serindian">
+    <MenAtArm type="abid_alshira" key="bas_ambushers" />
     <MenAtArm type="abrazanim_legion" key="ARM_spear_levy" max="INFANTRY" />
     <MenAtArm type="avarin_skirmishers" key="LOM_fara_skirm" max="RANGED" />
   </Faction>
@@ -1191,9 +1192,9 @@
     <MenAtArm type="abrazanim_legion" key="cha_slav_warriors" max="INFANTRY" />
     <MenAtArm type="avarin_skirmishers" key="att_nor_nordic_skirmishers" max="RANGED" />
   </Faction>
-  <Faction name="Tai">
-    <MenAtArm type="abrazanim_legion" key="att_merc_nor_wolf_coats" max="INFANTRY" />
-    <MenAtArm type="avarin_skirmishers" key="cha_byz_skirm" max="RANGED" />
+  <Faction name="Taifa of Badajoz">
+    <MenAtArm type="abrazanim_legion" key="SAS_elite_heavy_dailamite_infantry" max="INFANTRY" />
+    <MenAtArm type="avarin_skirmishers" key="SAS_Nomad_javelinmen" max="RANGED" />
   </Faction>
   <Faction name="Taifa of Badajoz">
     <MenAtArm type="abrazanim_legion" key="SAS_elite_heavy_dailamite_infantry" max="INFANTRY" />
@@ -1288,11 +1289,11 @@
   </Faction>
   <Faction name="Welsh Rebels">
     <MenAtArm type="abid_alshira" key="bas_levy_slingers" max="RANGED" />
-    <MenAtArm type="abrazanim_legion" key="CEL_gaslath_spears" max="INFANTRY" />
+    <MenAtArm type="abrazanim_legion" key="bas_nobles" max="INFANTRY" />
     <MenAtArm type="avarin_skirmishers" key="CEL_slingers" max="RANGED" />
   </Faction>
   <Faction name="Welsh Separatists">
-    <MenAtArm type="abrazanim_legion" key="CEL_gaslath_spears" max="INFANTRY" />
+    <MenAtArm type="abrazanim_legion" key="bas_brit_swords" max="INFANTRY" />
     <MenAtArm type="avarin_skirmishers" key="CEL_slingers" max="RANGED" />
   </Faction>
   <Faction name="Wenden">
@@ -1304,7 +1305,6 @@
     <MenAtArm type="avarin_skirmishers" key="BLEMM_skirm" max="RANGED" />
   </Faction>
   <Faction name="West Germanic Separatists">
-    <MenAtArm type="abid_alshira" key="REB_dediticii" max="RANGED" />
     <MenAtArm type="abrazanim_legion" key="NOR_geburas_spears" max="INFANTRY" />
     <MenAtArm type="avarin_skirmishers" key="cha_eng_fyrd_javelinmen" max="RANGED" />
   </Faction>
@@ -1363,98 +1363,202 @@
     <MenAtArm type="avarin_skirmishers" key="bas_levy_skirmishers" max="RANGED" />
   </Faction>
   <Faction name="Yugrian">
+    <MenAtArm type="abid_alshira" key="bas_ambushers" />
     <MenAtArm type="abrazanim_legion" key="bel_ost_iuvenes" max="INFANTRY" />
     <MenAtArm type="avarin_skirmishers" key="att_rom_matiarii" max="RANGED" />
   </Faction>
+  <Faction name="Alania">
+    <MenAtArm type="abrazanim_legion" key="ERE_gepids" max="INFANTRY" />
+    <MenAtArm type="avarin_skirmishers" key="BAL_javelins" max="RANGED" />
+  </Faction>
+  <Faction name="Arabian Rebels">
+    <MenAtArm type="abrazanim_legion" key="mubs_armored_footmen" max="INFANTRY" />
+    <MenAtArm type="avarin_skirmishers" key="AKS_spear_throwers" max="RANGED" />
+  </Faction>
+  <Faction name="Aestii">
+    <MenAtArm type="abrazanim_legion" key="BAL_shieldwall" max="INFANTRY" />
+    <MenAtArm type="avarin_skirmishers" key="BAL_javelins" max="RANGED" />
+  </Faction>
+  <Faction name="Bantu">
+    <MenAtArm type="abid_alshira" key="bas_ambushers" />
+    <MenAtArm type="abrazanim_legion" key="att_rom_legio" max="INFANTRY" />
+    <MenAtArm type="avarin_skirmishers" key="ARM_skirmishers" max="RANGED" />
+  </Faction>
+  <Faction name="Berbers">
+    <MenAtArm type="abrazanim_legion" key="GARAM_amazigh_swords" max="INFANTRY" />
+    <MenAtArm type="avarin_skirmishers" key="GARAM_slingers" max="RANGED" />
+  </Faction>
+  <Faction name="Bretons">
+    <MenAtArm type="abrazanim_legion" key="bel_ost_spear_milites_comitatenses" max="INFANTRY" />
+    <MenAtArm type="avarin_skirmishers" key="bel_ost_javelinmen" max="RANGED" />
+  </Faction>
+  <Faction name="Britanni">
+    <MenAtArm type="abrazanim_legion" key="BRIT_britones_seniores" max="INFANTRY" />
+    <MenAtArm type="avarin_skirmishers" key="BRIT_rhyfelwyr_javelins" max="RANGED" />
+  </Faction>
+  <Faction name="Romania">
+    <MenAtArm type="abrazanim_legion" key="ERE_legio" max="INFANTRY" />
+    <MenAtArm type="avarin_skirmishers" key="ERE_att_alan_alani_swordsmen" max="RANGED" />
+  </Faction>
+  <Faction name="African Separatists">
+    <MenAtArm type="abid_alshira" key="BLEMM_tribal_spears" max="RANGED" />
+    <MenAtArm type="abrazanim_legion" key="BLEMM_heavy_khanda" max="INFANTRY" />
+    <MenAtArm type="avarin_skirmishers" key="BLEMM_skirm" max="RANGED" />
+  </Faction>
+  <Faction name="Central Germanic">
+    <MenAtArm type="abid_alshira" key="bas_ambushers" />
+    <MenAtArm type="abrazanim_legion" key="att_rom_legio" max="INFANTRY" />
+    <MenAtArm type="avarin_skirmishers" key="ARM_skirmishers" max="RANGED" />
+  </Faction>
+  <Faction name="East African">
+    <MenAtArm type="abid_alshira" key="BRIT_saethwyr" />
+    <MenAtArm type="abrazanim_legion" key="att_rom_legio" max="INFANTRY" />
+    <MenAtArm type="avarin_skirmishers" key="ARM_skirmishers" max="RANGED" />
+  </Faction>
+  <Faction name="East Slavic">
+    <MenAtArm type="abid_alshira" key="bas_ambushers" />
+    <MenAtArm type="abrazanim_legion" key="att_rom_legio" max="INFANTRY" />
+    <MenAtArm type="avarin_skirmishers" key="ARM_skirmishers" max="RANGED" />
+  </Faction>
+  <Faction name="Persia">
+    <MenAtArm type="abrazanim_legion" key="SAS_elite_heavy_dailamite_infantry" max="INFANTRY" />
+    <MenAtArm type="avarin_skirmishers" key="SAS_Nomad_javelinmen" max="RANGED" />
+  </Faction>
+  <Faction name="Frankish Kingdom">
+    <MenAtArm type="abrazanim_legion" key="bel_ost_spear_milites_comitatenses" max="INFANTRY" />
+    <MenAtArm type="avarin_skirmishers" key="bel_ost_javelinmen" max="RANGED" />
+  </Faction>
+  <Faction name="White Hun Rebels">
+    <MenAtArm type="abid_alshira" key="HEP_tokharistani_spear_throwers" max="RANGED" />
+    <MenAtArm type="abrazanim_legion" key="HEP_steppe_tribesmen" max="INFANTRY" />
+    <MenAtArm type="avarin_skirmishers" key="HEP_tokharistani_spear_throwers" max="RANGED" />
+  </Faction>
+  <Faction name="Hispania">
+    <MenAtArm type="abid_alshira" key="CORD_vesontes" max="RANGED" />
+    <MenAtArm type="abrazanim_legion" key="VISI_bellatores" max="INFANTRY" />
+    <MenAtArm type="avarin_skirmishers" key="VISI_iuvenes_javelinmen" max="RANGED" />
+  </Faction>
+  <Faction name="Indo Aryan">
+    <MenAtArm type="abid_alshira" key="bas_ambushers" />
+    <MenAtArm type="abrazanim_legion" key="att_rom_legio" max="INFANTRY" />
+    <MenAtArm type="avarin_skirmishers" key="ARM_skirmishers" max="RANGED" />
+  </Faction>
+  <Faction name="Eranshahr">
+    <MenAtArm type="abrazanim_legion" key="SAS_soghdian_footmen" max="INFANTRY" />
+    <MenAtArm type="avarin_skirmishers" key="cha_mus_slingers" max="RANGED" />
+  </Faction>
+  <Faction name="Magiaroi">
+    <MenAtArm type="abrazanim_legion" key="HEP_steppe_tribesmen" max="INFANTRY" />
+    <MenAtArm type="avarin_skirmishers" key="HEP_tokharistani_spear_throwers" max="RANGED" />
+  </Faction>
+  <Faction name="Niger Delta">
+    <MenAtArm type="abid_alshira" key="bas_ambushers" />
+    <MenAtArm type="abrazanim_legion" key="att_rom_legio" max="INFANTRY" />
+    <MenAtArm type="avarin_skirmishers" key="ARM_skirmishers" max="RANGED" />
+  </Faction>
+  <Faction name="Roman Empire">
+    <MenAtArm type="abrazanim_legion" key="ERE_legio" max="INFANTRY" />
+    <MenAtArm type="avarin_skirmishers" key="ERE_boukelaroi_toxotai" max="RANGED" />
+  </Faction>
+  <Faction name="Aksumite Separatists">
+    <MenAtArm type="abrazanim_legion" key="AKS_tribal_spears" max="INFANTRY" />
+    <MenAtArm type="avarin_skirmishers" key="BLEMM_skirm" max="RANGED" />
+  </Faction>
+  <Faction name="African Rebels">
+    <MenAtArm type="abrazanim_legion" key="REB_circumcelliones" max="INFANTRY" />
+    <MenAtArm type="avarin_skirmishers" key="BLEMM_skirm" max="RANGED" />
+  </Faction>
   <Faction name="Albanian">
+    <MenAtArm type="abid_alshira" key="bas_ambushers" />
     <MenAtArm type="abrazanim_legion" key="att_rom_legio" />
     <MenAtArm type="avarin_skirmishers" key="ARM_skirmishers" />
   </Faction>
   <Faction name="Arabic">
+    <MenAtArm type="abid_alshira" key="BRIT_saethwyr" />
+    <MenAtArm type="abrazanim_legion" key="att_rom_legio" />
+    <MenAtArm type="avarin_skirmishers" key="ARM_skirmishers" />
+  </Faction>
+  <Faction name="Aramean">
+    <MenAtArm type="abid_alshira" key="bas_ambushers" />
     <MenAtArm type="abrazanim_legion" key="att_rom_legio" />
     <MenAtArm type="avarin_skirmishers" key="ARM_skirmishers" />
   </Faction>
   <Faction name="Baltic">
-    <MenAtArm type="abrazanim_legion" key="att_rom_legio" />
-    <MenAtArm type="avarin_skirmishers" key="ARM_skirmishers" />
-  </Faction>
-  <Faction name="Bantu">
+    <MenAtArm type="abid_alshira" key="BRIT_saethwyr" />
     <MenAtArm type="abrazanim_legion" key="att_rom_legio" />
     <MenAtArm type="avarin_skirmishers" key="ARM_skirmishers" />
   </Faction>
   <Faction name="Berber">
+    <MenAtArm type="abid_alshira" key="BRIT_saethwyr" />
     <MenAtArm type="abrazanim_legion" key="att_rom_legio" />
     <MenAtArm type="avarin_skirmishers" key="ARM_skirmishers" />
   </Faction>
   <Faction name="Briton">
+    <MenAtArm type="abid_alshira" key="BRIT_saethwyr" />
     <MenAtArm type="abrazanim_legion" key="att_rom_legio" />
     <MenAtArm type="avarin_skirmishers" key="ARM_skirmishers" />
   </Faction>
   <Faction name="Brythonic">
+    <MenAtArm type="abid_alshira" key="BRIT_saethwyr" />
     <MenAtArm type="abrazanim_legion" key="att_rom_legio" />
     <MenAtArm type="avarin_skirmishers" key="ARM_skirmishers" />
   </Faction>
   <Faction name="Byzantine">
+    <MenAtArm type="abid_alshira" key="BRIT_saethwyr" />
     <MenAtArm type="abrazanim_legion" key="att_rom_legio" />
     <MenAtArm type="avarin_skirmishers" key="ARM_skirmishers" />
   </Faction>
   <Faction name="Central African">
-    <MenAtArm type="abrazanim_legion" key="att_rom_legio" />
-    <MenAtArm type="avarin_skirmishers" key="ARM_skirmishers" />
-  </Faction>
-  <Faction name="Central Germanic">
-    <MenAtArm type="abrazanim_legion" key="att_rom_legio" />
-    <MenAtArm type="avarin_skirmishers" key="ARM_skirmishers" />
-  </Faction>
-  <Faction name="East African">
-    <MenAtArm type="abrazanim_legion" key="att_rom_legio" />
-    <MenAtArm type="avarin_skirmishers" key="ARM_skirmishers" />
-  </Faction>
-  <Faction name="East Slavic">
+    <MenAtArm type="abid_alshira" key="bas_ambushers" />
     <MenAtArm type="abrazanim_legion" key="att_rom_legio" />
     <MenAtArm type="avarin_skirmishers" key="ARM_skirmishers" />
   </Faction>
   <Faction name="Elamite">
+    <MenAtArm type="abid_alshira" key="bas_ambushers" />
     <MenAtArm type="abrazanim_legion" key="att_rom_legio" />
     <MenAtArm type="avarin_skirmishers" key="ARM_skirmishers" />
   </Faction>
   <Faction name="Frankish">
+    <MenAtArm type="abid_alshira" key="bas_ambushers" />
     <MenAtArm type="abrazanim_legion" key="att_rom_legio" />
     <MenAtArm type="avarin_skirmishers" key="ARM_skirmishers" />
   </Faction>
   <Faction name="Hunnic">
+    <MenAtArm type="abid_alshira" key="bas_ambushers" />
     <MenAtArm type="abrazanim_legion" key="att_rom_legio" />
     <MenAtArm type="avarin_skirmishers" key="ARM_skirmishers" />
   </Faction>
   <Faction name="Iberian">
-    <MenAtArm type="abrazanim_legion" key="att_rom_legio" />
-    <MenAtArm type="avarin_skirmishers" key="ARM_skirmishers" />
-  </Faction>
-  <Faction name="Indo Aryan">
+    <MenAtArm type="abid_alshira" key="bas_ambushers" />
     <MenAtArm type="abrazanim_legion" key="att_rom_legio" />
     <MenAtArm type="avarin_skirmishers" key="ARM_skirmishers" />
   </Faction>
   <Faction name="Iranian">
+    <MenAtArm type="abid_alshira" key="bas_ambushers" />
     <MenAtArm type="abrazanim_legion" key="att_rom_legio" />
     <MenAtArm type="avarin_skirmishers" key="ARM_skirmishers" />
   </Faction>
   <Faction name="Magyar">
-    <MenAtArm type="abrazanim_legion" key="att_rom_legio" />
-    <MenAtArm type="avarin_skirmishers" key="ARM_skirmishers" />
-  </Faction>
-  <Faction name="Niger Delta">
+    <MenAtArm type="abid_alshira" key="bas_ambushers" />
     <MenAtArm type="abrazanim_legion" key="att_rom_legio" />
     <MenAtArm type="avarin_skirmishers" key="ARM_skirmishers" />
   </Faction>
   <Faction name="Roman">
+    <MenAtArm type="abid_alshira" key="bas_ambushers" />
     <MenAtArm type="abrazanim_legion" key="att_rom_legio" />
     <MenAtArm type="avarin_skirmishers" key="ARM_skirmishers" />
   </Faction>
   <Faction name="Somalian">
+    <MenAtArm type="abid_alshira" key="BRIT_saethwyr" />
+    <MenAtArm type="abrazanim_legion" key="att_rom_legio" />
+    <MenAtArm type="avarin_skirmishers" key="ARM_skirmishers" />
+  </Faction>
+  <Faction name="Tai">
     <MenAtArm type="abrazanim_legion" key="att_rom_legio" />
     <MenAtArm type="avarin_skirmishers" key="ARM_skirmishers" />
   </Faction>
   <Faction name="West African">
+    <MenAtArm type="abid_alshira" key="BRIT_saethwyr" />
     <MenAtArm type="abrazanim_legion" key="att_rom_legio" />
     <MenAtArm type="avarin_skirmishers" key="ARM_skirmishers" />
   </Faction>
