@@ -1,73 +1,343 @@
 <?xml version='1.0' encoding='utf-8'?>
 <Cultures>
-    <Heritage name="Default" faction="Default">
-        <Culture name="Default" faction="Anduin-Vale" />
-        <Culture name="Default" faction="Anfalas" />
-        <Culture name="Default" faction="Angmar" />
-        <Culture name="Default" faction="Anorien" />
-        <Culture name="Default" faction="Arnor" />
-        <Culture name="Default" faction="Blackroot Vale" />
-        <Culture name="Default" faction="Bree Land" />
-        <Culture name="Default" faction="Dale" />
-        <Culture name="Default" faction="Dol Amroth" />
-        <Culture name="Default" faction="Dol Guldur" />
-        <Culture name="Default" faction="Dorwinion" />
-        <Culture name="Default" faction="Dunlending" />
-        <Culture name="Default" faction="Dunlending Tribes" />
-        <Culture name="Default" faction="Easterlings" />
-        <Culture name="Default" faction="Elves" />
-        <Culture name="Default" faction="Erebor" />
-        <Culture name="Default" faction="Ered" />
-        <Culture name="Default" faction="Ered Luin" />
-        <Culture name="Default" faction="Ered-Mithrin" />
-        <Culture name="Default" faction="Eregion" />
-        <Culture name="Default" faction="Goblins" />
-        <Culture name="Default" faction="Gondor" />
-        <Culture name="Default" faction="Gundabad" />
-        <Culture name="Default" faction="Haradrim" />
-        <Culture name="Default" faction="Harondor" />
-        <Culture name="Default" faction="High Elves" />
-        <Culture name="Default" faction="Imladris" />
-        <Culture name="Default" faction="Iron Hill" />
-        <Culture name="Default" faction="Iron Hills" />
-        <Culture name="Default" faction="Isengard" />
-        <Culture name="Default" faction="Khamûl" />
-        <Culture name="Default" faction="Khand" />
-        <Culture name="Default" faction="Khazad" />
-        <Culture name="Default" faction="Khazad-dum" />
-        <Culture name="Default" faction="Lamedon" />
-        <Culture name="Default" faction="Lebennin" />
-        <Culture name="Default" faction="Lossarnach" />
-        <Culture name="Default" faction="Lothlorien" />
-        <Culture name="Default" faction="Lothlórien" />
-        <Culture name="Default" faction="Mordor" />
-        <Culture name="Default" faction="Northern Dunedain" />
-        <Culture name="Default" faction="Numenorean" />
-        <Culture name="Default" faction="Orc" />
-        <Culture name="Default" faction="Orcs Of The North" />
-        <Culture name="Default" faction="Orocarni North" />
-        <Culture name="Default" faction="Orocarni South" />
-        <Culture name="Default" faction="Pinnath Gelin" />
-        <Culture name="Default" faction="Rhudaur" />
-        <Culture name="Default" faction="Ringló Vale" />
-        <Culture name="Default" faction="Rohan" />
-        <Culture name="Default" faction="Silvan Elves" />
-        <Culture name="Default" faction="Umbar" />
-        <Culture name="Default" faction="Witch King" />
-        <Culture name="Default" faction="Woodland Realm" />
-        <Culture name="Default" faction="all" />
-        <Culture name="Default" faction="anfalas" />
-        <Culture name="Default" faction="anorien" />
-        <Culture name="Default" faction="blackroot" />
-        <Culture name="Default" faction="dolamroth" />
-        <Culture name="Default" faction="harondor" />
-        <Culture name="Default" faction="lamedon" />
-        <Culture name="Default" faction="lebennin" />
-        <Culture name="Default" faction="lossarnach" />
-        <Culture name="Default" faction="pinnath" />
-        <Culture name="Default" faction="ringlo" />
-    </Heritage>
-    <Heritage name="heritage_lomiquendi" faction="Lindon">
-        <Culture name="laurenoldor" faction="Lindon" />
-    </Heritage>
+  <Heritage name="Default" faction="Default">
+    <Culture name="Anduin-Vale" faction="Anduin-Vale" />
+    <Culture name="Anfalas" faction="anfalas" />
+    <Culture name="Angmar" faction="Arnor" />
+    <Culture name="Anorien" faction="anorien" />
+    <Culture name="Arnor" faction="Arnor" />
+    <Culture name="Blackroot Vale" faction="blackroot" />
+    <Culture name="Bree Land" faction="Default" />
+    <Culture name="Dale" faction="Dale" />
+    <Culture name="Dol Amroth" faction="Dol Amroth" />
+    <Culture name="Dol Guldur" faction="Dol Guldur" />
+    <Culture name="Dorwinion" faction="Dorwinion" />
+    <Culture name="Dunlending" faction="Dunlending Tribes" />
+    <Culture name="Dunlending Tribes" faction="Dunlending Tribes" />
+    <Culture name="Easterlings" faction="Default" />
+    <Culture name="Elves" faction="Elves" />
+    <Culture name="Erebor" faction="Erebor" />
+    <Culture name="Ered" faction="Feredrim" />
+    <Culture name="Ered Luin" faction="Ered Luin" />
+    <Culture name="Ered-Mithrin" faction="Ered-Mithrin" />
+    <Culture name="Eregion" faction="Eregion" />
+    <Culture name="Goblins" faction="Goblins" />
+    <Culture name="Gondor" faction="Gondor" />
+    <Culture name="Gundabad" faction="Gundabad" />
+    <Culture name="Haradrim" faction="Haradrim" />
+    <Culture name="Harondor" faction="harondor" />
+    <Culture name="High Elves" faction="High Elves" />
+    <Culture name="Imladris" faction="Imladris" />
+    <Culture name="Iron Hill" faction="Iron Hills" />
+    <Culture name="Iron Hills" faction="Iron Hills" />
+    <Culture name="Isengard" faction="Isengard" />
+    <Culture name="Khamûl" faction="Default" />
+    <Culture name="Khand" faction="Khand" />
+    <Culture name="Khazad" faction="Khazad-dum" />
+    <Culture name="Khazad-dum" faction="Khazad-dum" />
+    <Culture name="Lamedon" faction="lamedon" />
+    <Culture name="Lebennin" faction="lebennin" />
+    <Culture name="Lindon" faction="Lindon" />
+    <Culture name="Lossarnach" faction="lossarnach" />
+    <Culture name="Lothlorien" faction="Lothlórien" />
+    <Culture name="Lothlórien" faction="Lothlórien" />
+    <Culture name="Mordor" faction="Mordor" />
+    <Culture name="Northern Dunedain" faction="Default" />
+    <Culture name="Numenorean" faction="Arnor" />
+    <Culture name="Orc" faction="Orc Bands" />
+    <Culture name="Orcs Of The North" faction="Orcs Of The North" />
+    <Culture name="Orocarni North" faction="Orocarni North" />
+    <Culture name="Orocarni South" faction="Orocarni South" />
+    <Culture name="Pinnath Gelin" faction="pinnath" />
+    <Culture name="Rhudaur" faction="Rhudaur" />
+    <Culture name="Ringló Vale" faction="Numenorean" />
+    <Culture name="Rohan" faction="Rohan" />
+    <Culture name="Umbar" faction="Umbar" />
+    <Culture name="Witch King" faction="Default" />
+    <Culture name="Woodland Realm" faction="Woodland Realm" />
+    <Culture name="all" faction="all" />
+    <Culture name="anfalas" faction="anfalas" />
+    <Culture name="anorien" faction="anorien" />
+    <Culture name="blackroot" faction="blackroot" />
+    <Culture name="dolamroth" faction="dolamroth" />
+    <Culture name="harondor" faction="harondor" />
+    <Culture name="lamedon" faction="lamedon" />
+    <Culture name="lebennin" faction="lebennin" />
+    <Culture name="lossarnach" faction="lossarnach" />
+    <Culture name="pinnath" faction="pinnath" />
+    <Culture name="ringlo" faction="ringlo" />
+    <Culture name="Abarshahr" faction="Abarshahr" />
+    <Culture name="Abasgia" faction="Abasgia" />
+    <Culture name="Aethiopian Rebels" faction="Aethiopian Rebels" />
+    <Culture name="Aethiopian Separatists" faction="Aethiopian Separatists" />
+    <Culture name="Africa" faction="Africa" />
+    <Culture name="African Rebels" faction="African Rebels" />
+    <Culture name="African Separatists" faction="African Separatists" />
+    <Culture name="Afrighids" faction="Afrighids" />
+    <Culture name="Aksum" faction="Aksum" />
+    <Culture name="Aksumite Separatists" faction="Aksumite Separatists" />
+    <Culture name="Alamannic Separatists" faction="Alamannic Separatists" />
+    <Culture name="Alamans" faction="Alamans" />
+    <Culture name="Alanic Separatists" faction="Alanic Separatists" />
+    <Culture name="Alans" faction="Alans" />
+    <Culture name="Anatolia" faction="Anatolia" />
+    <Culture name="Anfalas" faction="Anfalas" />
+    <Culture name="Angles" faction="Angles" />
+    <Culture name="Angmar" faction="Angmar" />
+    <Culture name="Angria" faction="Angria" />
+    <Culture name="Anorien" faction="Anorien" />
+    <Culture name="Antean Separatists" faction="Antean Separatists" />
+    <Culture name="Anteans" faction="Anteans" />
+    <Culture name="Arabian Rebels" faction="Arabian Rebels" />
+    <Culture name="Arabian Separatists" faction="Arabian Separatists" />
+    <Culture name="Aria" faction="Aria" />
+    <Culture name="Armenia" faction="Armenia" />
+    <Culture name="Arran" faction="Arran" />
+    <Culture name="Asia" faction="Asia" />
+    <Culture name="Asturian Separatists" faction="Asturian Separatists" />
+    <Culture name="Atropatene" faction="Atropatene" />
+    <Culture name="Austrasian Separatists" faction="Austrasian Separatists" />
+    <Culture name="Avar Rebels" faction="Avar Rebels" />
+    <Culture name="Avar Separatists" faction="Avar Separatists" />
+    <Culture name="Avars" faction="Avars" />
+    <Culture name="Balchoth" faction="Balchoth" />
+    <Culture name="Basques" faction="Basques" />
+    <Culture name="Bastarnians" faction="Bastarnians" />
+    <Culture name="Berbers" faction="Berbers" />
+    <Culture name="Blackroot Vale" faction="Blackroot Vale" />
+    <Culture name="Bohemia" faction="Bohemia" />
+    <Culture name="Bree Land" faction="Bree Land" />
+    <Culture name="Bretons" faction="Bretons" />
+    <Culture name="Britain" faction="Britain" />
+    <Culture name="Budinians" faction="Budinians" />
+    <Culture name="Burgundian Separatists" faction="Burgundian Separatists" />
+    <Culture name="Burgundians" faction="Burgundians" />
+    <Culture name="Caledonian Separatists" faction="Caledonian Separatists" />
+    <Culture name="Caledonians" faction="Caledonians" />
+    <Culture name="Caucasian Rebels" faction="Caucasian Rebels" />
+    <Culture name="Caucasian Separatists" faction="Caucasian Separatists" />
+    <Culture name="Celtic Rebels" faction="Celtic Rebels" />
+    <Culture name="Celtic Separatists" faction="Celtic Separatists" />
+    <Culture name="Christian Rebels" faction="Christian Rebels" />
+    <Culture name="Christian Separatists" faction="Christian Separatists" />
+    <Culture name="Cordoban Separatists" faction="Cordoban Separatists" />
+    <Culture name="Corsair Freebooters" faction="Corsair Freebooters" />
+    <Culture name="Corsairs" faction="Corsairs" />
+    <Culture name="Dacia" faction="Dacia" />
+    <Culture name="Danes" faction="Danes" />
+    <Culture name="Danish Separatists" faction="Danish Separatists" />
+    <Culture name="Domain of Soissons" faction="Domain of Soissons" />
+    <Culture name="Drúedain" faction="Drúedain" />
+    <Culture name="Duchy of Alemannia" faction="Duchy of Alemannia" />
+    <Culture name="Duchy of Aquitane" faction="Duchy of Aquitane" />
+    <Culture name="Duchy of Bavaria" faction="Duchy of Bavaria" />
+    <Culture name="Duchy of Benevento" faction="Duchy of Benevento" />
+    <Culture name="Duchy of Burgundy" faction="Duchy of Burgundy" />
+    <Culture name="Duchy of Croatia" faction="Duchy of Croatia" />
+    <Culture name="Duchy of Frisia" faction="Duchy of Frisia" />
+    <Culture name="Duchy of Gascony" faction="Duchy of Gascony" />
+    <Culture name="Duchy of Pamplona" faction="Duchy of Pamplona" />
+    <Culture name="Duchy of Provence" faction="Duchy of Provence" />
+    <Culture name="Duchy of Spoleto" faction="Duchy of Spoleto" />
+    <Culture name="Dunlending" faction="Dunlending" />
+    <Culture name="East Germanic Separatists" faction="East Germanic Separatists" />
+    <Culture name="Easterling Raiders" faction="Easterling Raiders" />
+    <Culture name="Easterlings" faction="Easterlings" />
+    <Culture name="Eastern Germanic Rebels" faction="Eastern Germanic Rebels" />
+    <Culture name="Eastern Rebels" faction="Eastern Rebels" />
+    <Culture name="Eastern Roman Empire" faction="Eastern Roman Empire" />
+    <Culture name="Eastern Roman Rebels" faction="Eastern Roman Rebels" />
+    <Culture name="Eastern Roman Separatists" faction="Eastern Roman Separatists" />
+    <Culture name="Eastern Separatists" faction="Eastern Separatists" />
+    <Culture name="Eastphalia" faction="Eastphalia" />
+    <Culture name="Ebdanian Separatists" faction="Ebdanian Separatists" />
+    <Culture name="Ebdanians" faction="Ebdanians" />
+    <Culture name="Egypt" faction="Egypt" />
+    <Culture name="Emirate of Cordoba" faction="Emirate of Cordoba" />
+    <Culture name="Emirate of Granada" faction="Emirate of Granada" />
+    <Culture name="English Rebels" faction="English Rebels" />
+    <Culture name="English Separatists" faction="English Separatists" />
+    <Culture name="Ered" faction="Ered" />
+    <Culture name="Frankish Kingdom" faction="Frankish Kingdom" />
+    <Culture name="Frankish Rebels" faction="Frankish Rebels" />
+    <Culture name="Frankish Separatists" faction="Frankish Separatists" />
+    <Culture name="Franks" faction="Franks" />
+    <Culture name="Gaetulians" faction="Gaetulians" />
+    <Culture name="Gallacian Separatists" faction="Gallacian Separatists" />
+    <Culture name="Garamantian Separatists" faction="Garamantian Separatists" />
+    <Culture name="Garamantians" faction="Garamantians" />
+    <Culture name="Gaul" faction="Gaul" />
+    <Culture name="Geat Separatists" faction="Geat Separatists" />
+    <Culture name="Geats" faction="Geats" />
+    <Culture name="Gepids" faction="Gepids" />
+    <Culture name="Germanic Rebels" faction="Germanic Rebels" />
+    <Culture name="Ghassanids" faction="Ghassanids" />
+    <Culture name="Goblin Looters" faction="Goblin Looters" />
+    <Culture name="Greuthungians" faction="Greuthungians" />
+    <Culture name="Haerim" faction="Haerim" />
+    <Culture name="Haradrim Marauders" faction="Haradrim Marauders" />
+    <Culture name="Harondor" faction="Harondor" />
+    <Culture name="Harondor Tribes" faction="Harondor Tribes" />
+    <Culture name="Himyar" faction="Himyar" />
+    <Culture name="Himyarite Separatists" faction="Himyarite Separatists" />
+    <Culture name="Hispania" faction="Hispania" />
+    <Culture name="Hunnic Rebels" faction="Hunnic Rebels" />
+    <Culture name="Hunnic Separatists" faction="Hunnic Separatists" />
+    <Culture name="Huns" faction="Huns" />
+    <Culture name="Iazyges" faction="Iazyges" />
+    <Culture name="Illyria" faction="Illyria" />
+    <Culture name="Irish Rebels" faction="Irish Rebels" />
+    <Culture name="Irish Separatists" faction="Irish Separatists" />
+    <Culture name="Iron Hill" faction="Iron Hill" />
+    <Culture name="Italia" faction="Italia" />
+    <Culture name="Italian Rebels" faction="Italian Rebels" />
+    <Culture name="Italian Separatists" faction="Italian Separatists" />
+    <Culture name="Judea" faction="Judea" />
+    <Culture name="Jute Separatists" faction="Jute Separatists" />
+    <Culture name="Jutes" faction="Jutes" />
+    <Culture name="Kartli" faction="Kartli" />
+    <Culture name="Khamûl" faction="Khamûl" />
+    <Culture name="Khazad" faction="Khazad" />
+    <Culture name="Kingdom of Ailech" faction="Kingdom of Ailech" />
+    <Culture name="Kingdom of Alt Clut" faction="Kingdom of Alt Clut" />
+    <Culture name="Kingdom of Asturias" faction="Kingdom of Asturias" />
+    <Culture name="Kingdom of Brittany" faction="Kingdom of Brittany" />
+    <Culture name="Kingdom of Carloman" faction="Kingdom of Carloman" />
+    <Culture name="Kingdom of Charlemagne" faction="Kingdom of Charlemagne" />
+    <Culture name="Kingdom of Connachta" faction="Kingdom of Connachta" />
+    <Culture name="Kingdom of Glywysing" faction="Kingdom of Glywysing" />
+    <Culture name="Kingdom of Gwynedd" faction="Kingdom of Gwynedd" />
+    <Culture name="Kingdom of Kent" faction="Kingdom of Kent" />
+    <Culture name="Kingdom of Leinster" faction="Kingdom of Leinster" />
+    <Culture name="Kingdom of Mercia" faction="Kingdom of Mercia" />
+    <Culture name="Kingdom of Munster" faction="Kingdom of Munster" />
+    <Culture name="Kingdom of Northumbria" faction="Kingdom of Northumbria" />
+    <Culture name="Kingdom of Powys" faction="Kingdom of Powys" />
+    <Culture name="Kingdom of Ulaid" faction="Kingdom of Ulaid" />
+    <Culture name="Kingdom of Wessex" faction="Kingdom of Wessex" />
+    <Culture name="Kingdom of the Danes" faction="Kingdom of the Danes" />
+    <Culture name="Kingdom of the Lombards" faction="Kingdom of the Lombards" />
+    <Culture name="Kingdom of the Picts" faction="Kingdom of the Picts" />
+    <Culture name="Lakhmid Separatists" faction="Lakhmid Separatists" />
+    <Culture name="Lakhmids" faction="Lakhmids" />
+    <Culture name="Lamedon" faction="Lamedon" />
+    <Culture name="Langobard Separatists" faction="Langobard Separatists" />
+    <Culture name="Langobards" faction="Langobards" />
+    <Culture name="Lazica" faction="Lazica" />
+    <Culture name="Lebennin" faction="Lebennin" />
+    <Culture name="Lombard Separatists" faction="Lombard Separatists" />
+    <Culture name="Lossarnach" faction="Lossarnach" />
+    <Culture name="Lothlorien" faction="Lothlorien" />
+    <Culture name="Lugians" faction="Lugians" />
+    <Culture name="Macedonia" faction="Macedonia" />
+    <Culture name="Magyars" faction="Magyars" />
+    <Culture name="Mahuds" faction="Mahuds" />
+    <Culture name="Makran" faction="Makran" />
+    <Culture name="Marcomans" faction="Marcomans" />
+    <Culture name="Maurians" faction="Maurians" />
+    <Culture name="Mazun" faction="Mazun" />
+    <Culture name="Mercian Separatists" faction="Mercian Separatists" />
+    <Culture name="Mirkwood Creatures" faction="Mirkwood Creatures" />
+    <Culture name="Moors" faction="Moors" />
+    <Culture name="Muslim Rebels" faction="Muslim Rebels" />
+    <Culture name="Muslim Separatists" faction="Muslim Separatists" />
+    <Culture name="Nobatia" faction="Nobatia" />
+    <Culture name="Nomad Separatists" faction="Nomad Separatists" />
+    <Culture name="Nordalbingia" faction="Nordalbingia" />
+    <Culture name="Nordic Rebels" faction="Nordic Rebels" />
+    <Culture name="Nordic Separatists" faction="Nordic Separatists" />
+    <Culture name="North Germanic Separatists" faction="North Germanic Separatists" />
+    <Culture name="Northern Dunedain" faction="Northern Dunedain" />
+    <Culture name="Northern Enedwaith" faction="Northern Enedwaith" />
+    <Culture name="Northern Germanic Rebels" faction="Northern Germanic Rebels" />
+    <Culture name="Obodrite" faction="Obodrite" />
+    <Culture name="Orc" faction="Orc" />
+    <Culture name="Oriens" faction="Oriens" />
+    <Culture name="Ostrogothic Kingdom" faction="Ostrogothic Kingdom" />
+    <Culture name="Ostrogothic Separatists" faction="Ostrogothic Separatists" />
+    <Culture name="Ostrogoths" faction="Ostrogoths" />
+    <Culture name="Palmyra" faction="Palmyra" />
+    <Culture name="Papal States" faction="Papal States" />
+    <Culture name="Parthia" faction="Parthia" />
+    <Culture name="Persia" faction="Persia" />
+    <Culture name="Pictish Rebels" faction="Pictish Rebels" />
+    <Culture name="Pictish Separatists" faction="Pictish Separatists" />
+    <Culture name="Picts" faction="Picts" />
+    <Culture name="Pinnath Gelin" faction="Pinnath Gelin" />
+    <Culture name="Pontus" faction="Pontus" />
+    <Culture name="Quadians" faction="Quadians" />
+    <Culture name="Rachrochir" faction="Rachrochir" />
+    <Culture name="Republic of Venice" faction="Republic of Venice" />
+    <Culture name="Rhurim" faction="Rhurim" />
+    <Culture name="Ringló Vale" faction="Ringló Vale" />
+    <Culture name="Roman Empire" faction="Roman Empire" />
+    <Culture name="Roman Expedition" faction="Roman Expedition" />
+    <Culture name="Roman Expedition Separatists" faction="Roman Expedition Separatists" />
+    <Culture name="Roman Rebels" faction="Roman Rebels" />
+    <Culture name="Roman Separatists" faction="Roman Separatists" />
+    <Culture name="Roxolanians" faction="Roxolanians" />
+    <Culture name="Ruffians" faction="Ruffians" />
+    <Culture name="Rugians" faction="Rugians" />
+    <Culture name="Sabirs" faction="Sabirs" />
+    <Culture name="Sardinians" faction="Sardinians" />
+    <Culture name="Sarmatian Rebels" faction="Sarmatian Rebels" />
+    <Culture name="Sarmatian Separatists" faction="Sarmatian Separatists" />
+    <Culture name="Sassanid Empire" faction="Sassanid Empire" />
+    <Culture name="Sassanid Separatists" faction="Sassanid Separatists" />
+    <Culture name="Saxon Rebels" faction="Saxon Rebels" />
+    <Culture name="Saxon Separatists" faction="Saxon Separatists" />
+    <Culture name="Saxons" faction="Saxons" />
+    <Culture name="Sclavenian Separatists" faction="Sclavenian Separatists" />
+    <Culture name="Sclavenians" faction="Sclavenians" />
+    <Culture name="Septimania" faction="Septimania" />
+    <Culture name="Silvan Elves" faction="Silvan Elves" />
+    <Culture name="Slavic Rebels" faction="Slavic Rebels" />
+    <Culture name="Slavic Separatists" faction="Slavic Separatists" />
+    <Culture name="Southern Enedwaith" faction="Southern Enedwaith" />
+    <Culture name="Southron Nomads" faction="Southron Nomads" />
+    <Culture name="Spahan" faction="Spahan" />
+    <Culture name="Spanish Rebels" faction="Spanish Rebels" />
+    <Culture name="Suebian Separatists" faction="Suebian Separatists" />
+    <Culture name="Suebians" faction="Suebians" />
+    <Culture name="Taifa of Badajoz" faction="Taifa of Badajoz" />
+    <Culture name="Taifa of Barcelona" faction="Taifa of Barcelona" />
+    <Culture name="Taifa of Sevilla" faction="Taifa of Sevilla" />
+    <Culture name="Taifa of Toledo" faction="Taifa of Toledo" />
+    <Culture name="Taifa of Valencia" faction="Taifa of Valencia" />
+    <Culture name="Taifa of Zaragoza" faction="Taifa of Zaragoza" />
+    <Culture name="Tanukhid Separatists" faction="Tanukhid Separatists" />
+    <Culture name="Tanukhids" faction="Tanukhids" />
+    <Culture name="Theme of Sicily" faction="Theme of Sicily" />
+    <Culture name="Thuringians" faction="Thuringians" />
+    <Culture name="Vandalic Kingdom" faction="Vandalic Kingdom" />
+    <Culture name="Vandalic Separatists" faction="Vandalic Separatists" />
+    <Culture name="Vandals" faction="Vandals" />
+    <Culture name="Variags" faction="Variags" />
+    <Culture name="Varinians" faction="Varinians" />
+    <Culture name="Venedian Separatists" faction="Venedian Separatists" />
+    <Culture name="Venedians" faction="Venedians" />
+    <Culture name="Viking Rebels" faction="Viking Rebels" />
+    <Culture name="Viking Separatists" faction="Viking Separatists" />
+    <Culture name="Visigothic Kingdom" faction="Visigothic Kingdom" />
+    <Culture name="Visigothic Separatists" faction="Visigothic Separatists" />
+    <Culture name="Visigoths" faction="Visigoths" />
+    <Culture name="Welsh Rebels" faction="Welsh Rebels" />
+    <Culture name="Welsh Separatists" faction="Welsh Separatists" />
+    <Culture name="West Germanic Separatists" faction="West Germanic Separatists" />
+    <Culture name="Western Germanic Rebels" faction="Western Germanic Rebels" />
+    <Culture name="Western Roman Empire" faction="Western Roman Empire" />
+    <Culture name="Western Roman Rebels" faction="Western Roman Rebels" />
+    <Culture name="Western Roman Separatists" faction="Western Roman Separatists" />
+    <Culture name="Western Separatists" faction="Western Separatists" />
+    <Culture name="Westphalia" faction="Westphalia" />
+    <Culture name="Westphalian Separatists" faction="Westphalian Separatists" />
+    <Culture name="White Hun Rebels" faction="White Hun Rebels" />
+    <Culture name="White Hun Separatists" faction="White Hun Separatists" />
+    <Culture name="White Huns" faction="White Huns" />
+    <Culture name="Wilzi" faction="Wilzi" />
+    <Culture name="Witch King" faction="Witch King" />
+  </Heritage>
+  <Heritage name="heritage_lomiquendi" faction="Imladris">
+    <Culture name="laurenoldor" faction="Imladris" />
+  </Heritage>
 </Cultures>
