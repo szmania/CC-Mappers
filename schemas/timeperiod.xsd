@@ -7,6 +7,7 @@
         <xs:element name="StartDate" type="xs:string" />
         <xs:element name="EndDate" type="xs:string" />
       </xs:sequence>
+      <xs:attribute name="description" type="xs:string" use="optional" />
     </xs:complexType>
   </xs:element>
 
