@@ -539,9 +539,9 @@
     <Culture name="ultramar" faction="Crown of Castile" />
   </Heritage>
   <Heritage name="heritage_west_germanic" faction="Kingdom of England">
-    <Culture name="anglo_saxon" faction="West Germanic" />
+    <Culture name="anglo_saxon" faction="Duchy of Saxony" />
     <Culture name="english" faction="Kingdom of England" />
-    <Culture name="old_saxon" faction="Kingdom of England" />
+    <Culture name="old_saxon" faction="Saxons" />
     <Culture name="scottish" faction="Scottish Pretenders" />
     <Culture name="Default" faction="Western Germanic Rebels" />
     <Culture name="angevin_hybrid" faction="Angles" />
@@ -556,6 +556,7 @@
     <Culture name="Default" faction="Kingdom of Scotland" />
     <Culture name="Default" faction="Kingdom of Ulaid" />
     <Culture name="East Germanic" faction="East Germanic" />
+    <Culture name="West Germanic" faction="West Germanic" />
   </Heritage>
   <Heritage name="heritage_caucasian" faction="Byzantine">
     <Culture name="armenian" faction="Byzantine" />
@@ -596,24 +597,24 @@
     <Culture name="parsi_hybrid" faction="Indo Aryan" />
     <Culture name="siddi" faction="Indo Aryan" />
   </Heritage>
-  <Heritage name="heritage_syriac" faction="Ayyubid Sultanate">
-    <Culture name="assyrian" faction="Ayyubid Sultanate" />
+  <Heritage name="heritage_syriac" faction="Syriac">
+    <Culture name="assyrian" faction="Syriac" />
     <Culture name="Default" faction="Syriac" />
   </Heritage>
-  <Heritage name="heritage_turkic" faction="Turkic">
+  <Heritage name="heritage_turkic" faction="Golden Horde">
     <Culture name="avar" faction="Golden Horde" />
     <Culture name="bashkir" faction="Ottoman Pretenders" />
     <Culture name="bolghar" faction="Ottoman Pretenders" />
-    <Culture name="chuvash" faction="Turkic" />
+    <Culture name="chuvash" faction="Golden Horde" />
     <Culture name="cuman" faction="Ottoman Beylik" />
-    <Culture name="karluk" faction="Tibetan" />
+    <Culture name="karluk" faction="Nogai Horde" />
     <Culture name="khazar" faction="Cuman-Kipchak Confederacy" />
     <Culture name="kimek" faction="Golden Horde" />
     <Culture name="kipchak" faction="Cuman Pretenders" />
-    <Culture name="kirghiz" faction="Turkic" />
+    <Culture name="kirghiz" faction="Huns" />
     <Culture name="laktan" faction="Akan" />
     <Culture name="pecheneg" faction="Cuman Pretenders" />
-    <Culture name="shatuo" faction="Turkic" />
+    <Culture name="shatuo" faction="Cuman-Kipchak Confederacy" />
     <Culture name="turkish" faction="Golden Horde" />
     <Culture name="turkmen" faction="Golden Horde" />
     <Culture name="uriankhai" faction="Cuman-Kipchak Confederacy" />
@@ -800,12 +801,12 @@
     <Culture name="new_english_hybrid" faction="Mongolic" />
   </Heritage>
   <Heritage name="heritage_west_slavic" faction="Kingdom of Poland">
-    <Culture name="carantanian" faction="Sclavenians" />
-    <Culture name="czech" faction="Kingdom of Poland" />
-    <Culture name="polabian" faction="Kingdom of Bohemia" />
+    <Culture name="carantanian" faction="Kingdom of Poland" />
+    <Culture name="czech" faction="Duchy of Greater Poland" />
+    <Culture name="polabian" faction="Kingdom of Poland" />
     <Culture name="polish" faction="Polish Pretenders" />
-    <Culture name="pommeranian" faction="Kingdom of Poland" />
-    <Culture name="slovien" faction="Slavic Rebels" />
+    <Culture name="pommeranian" faction="Slavic Rebels" />
+    <Culture name="slovien" faction="slavic_rebels" />
     <Culture name="Default" faction="West Slavic Rebels" />
     <Culture name="bohemian_hybrid" faction="Kingdom of Bohemia" />
     <Culture name="jeruzaleman" faction="Kingdom of Jerusalem &amp; Cyprus" />
@@ -873,7 +874,7 @@
   <Heritage name="heritage_balto_finnic" faction="Balto Finnic">
     <Culture name="estonian" faction="Balto Finnic" />
     <Culture name="finnish" faction="Balto Finnic" />
-    <Culture name="karelian" faction="Baltic" />
+    <Culture name="karelian" faction="Balto Finnic" />
     <Culture name="sami" faction="Balto Finnic" />
     <Culture name="vepsian" faction="Balto Finnic" />
     <Culture name="Default" faction="Kartli" />
@@ -981,10 +982,11 @@
     <Culture name="jurchen" faction="Mongolic" />
     <Culture name="mohe" faction="Han Empire" />
   </Heritage>
-  <Heritage name="heritage_ugro_permian" faction="Ugro Permian">
-    <Culture name="khanty" faction="Ugro Permian" />
-    <Culture name="komi" faction="Balto Finnic" />
-    <Culture name="samoyed" faction="Steppe Rebels" />
+  <Heritage name="heritage_ugro_permian" faction="Rus' Rebels">
+    <Culture name="khanty" faction="Rus' Rebels" />
+    <Culture name="komi" faction="Khanate of Kazan" />
+    <Culture name="samoyed" faction="Yugrian" />
+    <Culture name="Ugro Permian" faction="Ugro Permian" />
   </Heritage>
   <Heritage name="heritage_mon_khmer" faction="Han Empire">
     <Culture name="khmer" faction="Han Empire" />
@@ -1006,12 +1008,12 @@
     <Culture name="Default" faction="Caledonians" />
     <Culture name="Default" faction="Macedonia" />
   </Heritage>
-  <Heritage name="heritage_volga_finnic" faction="Yugrian">
+  <Heritage name="heritage_volga_finnic" faction="Marinid Sultanate">
     <Culture name="mari" faction="Marinid Sultanate" />
-    <Culture name="merya" faction="Yugrian" />
-    <Culture name="meshchera" faction="Yugrian" />
-    <Culture name="mordvin" faction="Avars" />
-    <Culture name="muroma" faction="Balto Finnic" />
+    <Culture name="merya" faction="Balto Finnic" />
+    <Culture name="meshchera" faction="Finnish" />
+    <Culture name="mordvin" faction="Baltic Rebels" />
+    <Culture name="muroma" faction="Moldavian Pretenders" />
     <Culture name="Default" faction="Aria" />
     <Culture name="Volga Finnic" faction="Volga Finnic" />
   </Heritage>

@@ -5,7 +5,6 @@
     <Culture name="Anfalas" faction="anfalas" />
     <Culture name="Angmar" faction="Default" />
     <Culture name="Blackroot Vale" faction="blackroot" />
-    <Culture name="Bree Land" faction="all" />
     <Culture name="Dale" faction="Dale" />
     <Culture name="Dol Amroth" faction="Dol Amroth" />
     <Culture name="Dol Guldur" faction="Dol Guldur" />
@@ -39,11 +38,9 @@
     <Culture name="Orocarni South" faction="Orocarni South" />
     <Culture name="Pinnath Gelin" faction="pinnath" />
     <Culture name="Rhudaur" faction="Rhudaur" />
-    <Culture name="Ringló Vale" faction="Elves" />
+    <Culture name="Ringló Vale" faction="all" />
     <Culture name="Rohan" faction="Rohan" />
     <Culture name="Silvan Elves" faction="Silvan Elves" />
-    <Culture name="Umbar" faction="Umbar" />
-    <Culture name="Witch King" faction="Witch King" />
     <Culture name="Woodland Realm" faction="Woodland Realm" />
     <Culture name="all" faction="all" />
     <Culture name="anfalas" faction="anfalas" />
@@ -53,6 +50,8 @@
     <Culture name="lossarnach" faction="lossarnach" />
     <Culture name="pinnath" faction="pinnath" />
     <Culture name="ringlo" faction="ringlo" />
+    <Culture name="Easterlings" faction="Default" />
+    <Culture name="Anduin" faction="Anduin-Vale" />
     <Culture name="Abarshahr" faction="Abarshahr" />
     <Culture name="Abasgia" faction="Abasgia" />
     <Culture name="Aethiopian Rebels" faction="Aethiopian Rebels" />
@@ -68,6 +67,7 @@
     <Culture name="Alanic Separatists" faction="Alanic Separatists" />
     <Culture name="Alans" faction="Alans" />
     <Culture name="Anatolia" faction="Anatolia" />
+    <Culture name="Anduin" faction="Anduin" />
     <Culture name="Anfalas" faction="Anfalas" />
     <Culture name="Angles" faction="Angles" />
     <Culture name="Angmar" faction="Angmar" />
@@ -155,7 +155,9 @@
     <Culture name="Greuthungians" faction="Greuthungians" />
     <Culture name="Haerim" faction="Haerim" />
     <Culture name="Haradrim Marauders" faction="Haradrim Marauders" />
+    <Culture name="Himyar" faction="Himyar" />
     <Culture name="Himyarite Separatists" faction="Himyarite Separatists" />
+    <Culture name="House Velaryon" faction="House Velaryon" />
     <Culture name="Hunnic Rebels" faction="Hunnic Rebels" />
     <Culture name="Hunnic Separatists" faction="Hunnic Separatists" />
     <Culture name="Huns" faction="Huns" />
@@ -164,6 +166,7 @@
     <Culture name="Irish Rebels" faction="Irish Rebels" />
     <Culture name="Irish Separatists" faction="Irish Separatists" />
     <Culture name="Iron Hill" faction="Iron Hill" />
+    <Culture name="Isengard Good" faction="Isengard Good" />
     <Culture name="Italia" faction="Italia" />
     <Culture name="Italian Rebels" faction="Italian Rebels" />
     <Culture name="Italian Separatists" faction="Italian Separatists" />
@@ -303,29 +306,30 @@
     <Culture name="White Hun Separatists" faction="White Hun Separatists" />
     <Culture name="White Huns" faction="White Huns" />
     <Culture name="Wilzi" faction="Wilzi" />
+    <Culture name="Witch King" faction="Witch King" />
   </Heritage>
-  <Heritage name="heritage_northern_adunaic" faction="Arnor">
-    <Culture name="ar_adunaim_numenorean" faction="Arnor" />
+  <Heritage name="heritage_northern_adunaic" faction="Rochrochir">
+    <Culture name="ar_adunaim_numenorean" faction="Rochrochir" />
+    <Culture name="Haradrim" faction="Haradrim" />
     <Culture name="Northern Enedwaith" faction="Northern Enedwaith" />
   </Heritage>
-  <Heritage name="heritage_southern_adunaic" faction="Himyar">
-    <Culture name="kharatakhori" faction="Himyar" />
+  <Heritage name="heritage_southern_adunaic" faction="att_fact_kharatakhori">
+    <Culture name="kharatakhori" faction="att_fact_kharatakhori" />
     <Culture name="Bastarnians" faction="Bastarnians" />
-    <Culture name="Haradrim" faction="Haradrim" />
     <Culture name="Hispania" faction="Hispania" />
+    <Culture name="Kharatakhori" faction="Kharatakhori" />
     <Culture name="Southern Enedwaith" faction="Southern Enedwaith" />
+    <Culture name="Umbar" faction="Umbar" />
   </Heritage>
-  <Heritage name="heritage_dunedain" faction="Arnor">
-    <Culture name="new_dunedain" faction="Arnor" />
-    <Culture name="new_numenorean" faction="Arnor" />
+  <Heritage name="heritage_dunedain" faction="Drúedain">
+    <Culture name="new_dunedain" faction="Drúedain" />
+    <Culture name="new_numenorean" faction="huns" />
     <Culture name="Angria" faction="Angria" />
     <Culture name="Anorien" faction="Anorien" />
     <Culture name="Armenia" faction="Armenia" />
     <Culture name="Arran" faction="Arran" />
     <Culture name="Caledonians" faction="Caledonians" />
-    <Culture name="Drúedain" faction="Drúedain" />
     <Culture name="Dunlending" faction="Dunlending" />
-    <Culture name="Gondor" faction="Gondor" />
     <Culture name="Harondor" faction="Harondor" />
     <Culture name="Harondor Tribes" faction="Harondor Tribes" />
     <Culture name="Lamedon" faction="Lamedon" />
@@ -335,10 +339,12 @@
     <Culture name="anorien" faction="anorien" />
     <Culture name="harondor" faction="harondor" />
     <Culture name="lamedon" faction="lamedon" />
+    <Culture name="Bree Land" faction="Gondor" />
     <Culture name="Khamûl" faction="Arnor" />
+    <Culture name="Witch King" faction="Gondor" />
   </Heritage>
-  <Heritage name="heritage_unified_adunaic" faction="Numenorean">
-    <Culture name="new_numenorean_adunaic" faction="Numenorean" />
+  <Heritage name="heritage_unified_adunaic" faction="att_fact_avars">
+    <Culture name="new_numenorean_adunaic" faction="att_fact_avars" />
     <Culture name="pharazaini_culture" faction="Numenorean" />
   </Heritage>
 </Cultures>

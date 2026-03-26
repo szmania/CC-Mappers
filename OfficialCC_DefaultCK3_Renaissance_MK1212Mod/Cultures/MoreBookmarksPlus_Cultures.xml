@@ -353,6 +353,9 @@
     <Culture name="Irish Pretenders" faction="Irish Pretenders" />
     <Culture name="Nobatia" faction="Nobatia" />
     <Culture name="Vandalic Kingdom" faction="Vandalic Kingdom" />
+    <Culture name="Yotvingians" faction="Yotvingians" />
+    <Culture name="Ottoman Beylik" faction="Ottoman Beylik" />
+    <Culture name="Wendish Pretenders" faction="Wendish Pretenders" />
   </Heritage>
   <Heritage name="heritage_east_african" faction="Kingdom of Abyssinia">
     <Culture name="aari" faction="Aksum" />
@@ -684,7 +687,6 @@
   </Heritage>
   <Heritage name="heritage_vlach" faction="Voivodeship of Wallachia">
     <Culture name="istro_romanian" faction="Voivodeship of Wallachia" />
-    <Culture name="Roxolanians" faction="Roxolanians" />
   </Heritage>
   <Heritage name="heritage_israelite" faction="Judea">
     <Culture name="italkim" faction="Judea" />
@@ -818,12 +820,12 @@
     <Culture name="ot_danum" faction="Default" />
     <Culture name="punan" faction="Default" />
   </Heritage>
-  <Heritage name="heritage_balto_finnic" faction="Grand Duchy of Lithuania">
+  <Heritage name="heritage_balto_finnic" faction="att_fact_blue_horde">
     <Culture name="bjarmian" faction="Default" />
-    <Culture name="ingrian" faction="Grand Duchy of Lithuania" />
+    <Culture name="ingrian" faction="att_fact_blue_horde" />
     <Culture name="livonians" faction="Baltic Rebels" />
     <Culture name="savonian" faction="Nordic Rebels" />
-    <Culture name="sitonian" faction="Baltic Pretenders" />
+    <Culture name="sitonian" faction="golden_horde" />
     <Culture name="tavastian" faction="Default" />
     <Culture name="Angria" faction="Angria" />
     <Culture name="Caledonians" faction="Caledonians" />
@@ -842,23 +844,23 @@
     <Culture name="Bretons" faction="Bretons" />
     <Culture name="Picts" faction="Picts" />
   </Heritage>
-  <Heritage name="heritage_sulawesi" faction="Timurid Empire">
+  <Heritage name="heritage_sulawesi" faction="att_fact_ottoman_sultanate">
     <Culture name="bungku" faction="Default" />
-    <Culture name="gorontalo" faction="Timurid Empire" />
-    <Culture name="kaili" faction="Timurid Empire" />
-    <Culture name="makassar" faction="Ottoman Beylik" />
+    <Culture name="gorontalo" faction="att_fact_ottoman_sultanate" />
+    <Culture name="kaili" faction="att_fact_ottoman_sultanate" />
+    <Culture name="makassar" faction="att_fact_timurid_empire" />
     <Culture name="mandar" faction="Default" />
     <Culture name="minahasa" faction="Default" />
     <Culture name="munan" faction="Default" />
     <Culture name="salua" faction="Default" />
-    <Culture name="tomini" faction="Asia" />
+    <Culture name="tomini" faction="ottoman_pretenders" />
   </Heritage>
-  <Heritage name="heritage_moluccan" faction="Oriens">
-    <Culture name="buli" faction="Oriens" />
-    <Culture name="halmahera" faction="Default" />
-    <Culture name="nunusaku" faction="Kingdom of Abyssinia" />
-    <Culture name="sumba" faction="Oriens" />
-    <Culture name="timor" faction="Default" />
+  <Heritage name="heritage_moluccan" faction="att_fact_ottoman_sultanate">
+    <Culture name="buli" faction="white_huns" />
+    <Culture name="halmahera" faction="att_fact_ottoman_sultanate" />
+    <Culture name="nunusaku" faction="ottoman_pretenders" />
+    <Culture name="sumba" faction="att_fact_latin_empire" />
+    <Culture name="timor" faction="att_fact_ottoman_sultanate" />
   </Heritage>
   <Heritage name="heritage_east_germanic" faction="Ostrogothic Separatists">
     <Culture name="crimean_gothic" faction="Ostrogothic Separatists" />
@@ -874,85 +876,85 @@
     <Culture name="lendian" faction="Duchy of Lesser Poland" />
     <Culture name="lutici" faction="Duchy of Pomerania" />
     <Culture name="masovian" faction="Duchy of Greater Poland" />
-    <Culture name="masovian_kingdom" faction="Wendish Pretenders" />
-    <Culture name="nitravan" faction="Duchy of Greater Poland" />
-    <Culture name="obotrite" faction="Duchy of Pomerania" />
-    <Culture name="opolan" faction="Duchy of Greater Poland" />
-    <Culture name="polans" faction="Duchy of Greater Poland" />
+    <Culture name="masovian_kingdom" faction="att_fact_baltic_pretenders" />
+    <Culture name="nitravan" faction="West Slavic Rebels" />
+    <Culture name="obotrite" faction="att_fact_polish_pretenders" />
+    <Culture name="opolan" faction="West Slavic Rebels" />
+    <Culture name="polans" faction="Bohemia" />
     <Culture name="ranian" faction="Iranian Rebels" />
-    <Culture name="silesian" faction="Duchy of Greater Poland" />
-    <Culture name="silesian_kingdom" faction="Kingdom of Poland" />
-    <Culture name="sorbian" faction="Obodrite" />
+    <Culture name="silesian" faction="West Slavic Rebels" />
+    <Culture name="silesian_kingdom" faction="att_fact_slavic_rebels" />
+    <Culture name="sorbian" faction="Slavic Separatists" />
     <Culture name="vistulan" faction="Kingdom of Poland" />
-    <Culture name="vistulan_kingdom" faction="Sclavenian Separatists" />
-    <Culture name="West Slavic Rebels" faction="West Slavic Rebels" />
+    <Culture name="vistulan_kingdom" faction="Duchy of Lesser Poland" />
   </Heritage>
-  <Heritage name="heritage_khmer" faction="Asia">
-    <Culture name="chong" faction="Default" />
+  <Heritage name="heritage_khmer" faction="att_fact_khwarazmian_empire">
+    <Culture name="chong" faction="att_fact_khwarazmian_empire" />
   </Heritage>
-  <Heritage name="heritage_baltic" faction="Baltic Rebels">
-    <Culture name="curonian" faction="Baltic Pretenders" />
-    <Culture name="east_galindian" faction="Baltic Rebels" />
-    <Culture name="galindian" faction="Grand Duchy of Lithuania" />
-    <Culture name="selonian" faction="Prussians" />
-    <Culture name="sudovian" faction="Baltic Rebels" />
-    <Culture name="zemgalian" faction="Yotvingians" />
+  <Heritage name="heritage_baltic" faction="att_fact_baltic_pretenders">
+    <Culture name="curonian" faction="att_fact_baltic_pretenders" />
+    <Culture name="east_galindian" faction="Prussians" />
+    <Culture name="galindian" faction="att_fact_baltic_pretenders" />
+    <Culture name="selonian" faction="Baltic Pretenders" />
+    <Culture name="sudovian" faction="att_fact_baltic_pretenders" />
+    <Culture name="zemgalian" faction="Grand Duchy of Lithuania" />
   </Heritage>
   <Heritage name="heritage_north_germanic" faction="Danes">
     <Culture name="dane" faction="Danes" />
-    <Culture name="faroese" faction="Kingdom of Denmark" />
-    <Culture name="gall_goidel" faction="Geats" />
+    <Culture name="faroese" faction="Danes" />
+    <Culture name="gall_goidel" faction="Danes" />
     <Culture name="geat" faction="Geats" />
     <Culture name="got" faction="Visigoths" />
     <Culture name="greenlandic" faction="Danes" />
-    <Culture name="jamts" faction="Kingdom of Norway" />
+    <Culture name="jamts" faction="Danes" />
     <Culture name="norn" faction="Northern Germanic Rebels" />
-    <Culture name="svear" faction="North Germanic Separatists" />
+    <Culture name="svear" faction="Kingdom of Denmark" />
+    <Culture name="North Germanic Separatists" faction="North Germanic Separatists" />
     <Culture name="Sardinians" faction="Sardinians" />
   </Heritage>
-  <Heritage name="heritage_east_bantu" faction="Kingdom of Abyssinia">
-    <Culture name="shona" faction="Kingdom of Abyssinia" />
+  <Heritage name="heritage_east_bantu" faction="Aethiopian Rebels">
+    <Culture name="shona" faction="Aethiopian Rebels" />
   </Heritage>
-  <Heritage name="heritage_elamite" faction="Persia">
-    <Culture name="elamite" faction="Persia" />
+  <Heritage name="heritage_elamite" faction="att_fact_sassanid_empire">
+    <Culture name="elamite" faction="att_fact_sassanid_empire" />
   </Heritage>
-  <Heritage name="heritage_central_african" faction="Kingdom of Makuria">
-    <Culture name="fur" faction="Kingdom of Makuria" />
-    <Culture name="jukun" faction="Africa" />
-    <Culture name="maban" faction="Kingdom of Makuria" />
-    <Culture name="nuba" faction="Kingdom of Makuria" />
-    <Culture name="toubou" faction="Kingdom of Makuria" />
+  <Heritage name="heritage_central_african" faction="African Rebels">
+    <Culture name="fur" faction="Aethiopian Rebels" />
+    <Culture name="jukun" faction="African Separatists" />
+    <Culture name="maban" faction="African Rebels" />
+    <Culture name="nuba" faction="African Rebels" />
+    <Culture name="toubou" faction="Africa" />
     <Culture name="Makran" faction="Makran" />
   </Heritage>
-  <Heritage name="heritage_goidelic" faction="Kingdom of Connacht">
-    <Culture name="manx" faction="Kingdom of Connacht" />
+  <Heritage name="heritage_goidelic" faction="Irish Pretenders">
+    <Culture name="manx" faction="Irish Pretenders" />
   </Heritage>
   <Heritage name="heritage_chinese" faction="Asia">
-    <Culture name="gan" faction="Asia" />
+    <Culture name="gan" faction="att_fact_ottoman_sultanate" />
     <Culture name="hakka" faction="Asia" />
-    <Culture name="min" faction="Default" />
-    <Culture name="sichuan" faction="Default" />
+    <Culture name="min" faction="Asia" />
+    <Culture name="sichuan" faction="Ulus of Tolui" />
     <Culture name="wenmo" faction="Asia" />
     <Culture name="wu" faction="Turkoman Pretenders" />
-    <Culture name="xiang" faction="Default" />
+    <Culture name="xiang" faction="att_fact_hanseatic_league" />
     <Culture name="yue" faction="Default" />
   </Heritage>
-  <Heritage name="heritage_siberian" faction="Golden Horde">
-    <Culture name="gilyak" faction="Golden Horde" />
-    <Culture name="jie" faction="Nogai Horde" />
-    <Culture name="kott" faction="Golden Horde" />
-    <Culture name="xiongnu" faction="Huns" />
-    <Culture name="yeniseian" faction="Nogai Horde" />
-    <Culture name="yukaghir" faction="White Huns" />
+  <Heritage name="heritage_siberian" faction="Huns">
+    <Culture name="gilyak" faction="Huns" />
+    <Culture name="jie" faction="ulus_of_tolui" />
+    <Culture name="kott" faction="Huns" />
+    <Culture name="xiongnu" faction="att_fact_alan" />
+    <Culture name="yeniseian" faction="att_fact_blue_horde" />
+    <Culture name="yukaghir" faction="golden_horde" />
   </Heritage>
   <Heritage name="heritage_korean" faction="Asia">
     <Culture name="jeju" faction="Asia" />
     <Culture name="samhan" faction="Golden Horde" />
   </Heritage>
-  <Heritage name="heritage_south_arabian" faction="Himyar">
+  <Heritage name="heritage_south_arabian" faction="Hafsid Sultanate">
     <Culture name="hadhrami" faction="Hafsid Sultanate" />
     <Culture name="himyarite" faction="Himyar" />
-    <Culture name="south_arabian" faction="Himyar" />
+    <Culture name="south_arabian" faction="Arabian Separatists" />
   </Heritage>
   <Heritage name="heritage_yamato" faction="Asia">
     <Culture name="hayato" faction="Default" />
@@ -960,22 +962,23 @@
     <Culture name="oshu" faction="Default" />
     <Culture name="yamato" faction="Asia" />
   </Heritage>
-  <Heritage name="heritage_mien" faction="Default">
-    <Culture name="sheren" faction="Default" />
+  <Heritage name="heritage_mien" faction="Oriens">
+    <Culture name="sheren" faction="Oriens" />
   </Heritage>
   <Heritage name="heritage_magyar" faction="Kingdom of Hungary">
     <Culture name="szekely" faction="Kingdom of Hungary" />
     <Culture name="Hungarian Rebels" faction="Hungarian Rebels" />
+    <Culture name="Magyars" faction="Magyars" />
   </Heritage>
   <Heritage name="heritage_kadazan" faction="Asia">
-    <Culture name="kadazan" faction="Default" />
+    <Culture name="kadazan" faction="Asia" />
   </Heritage>
-  <Heritage name="heritage_ugro_permian" faction="Magyars">
-    <Culture name="udmurt" faction="Magyars" />
+  <Heritage name="heritage_ugro_permian" faction="Republic of Novgorod">
+    <Culture name="udmurt" faction="Republic of Novgorod" />
   </Heritage>
   <Heritage name="heritage_palaungic" faction="Ilkhanate">
     <Culture name="khasi" faction="Ilkhanate" />
-    <Culture name="palaung" faction="Default" />
+    <Culture name="palaung" faction="Huns" />
     <Culture name="wa" faction="Kingdom of Norway" />
   </Heritage>
   <Heritage name="heritage_tocharian" faction="Kingdom of Makuria">
@@ -987,19 +990,19 @@
   </Heritage>
   <Heritage name="heritage_south_bantu" faction="Abyssinian Pretenders">
     <Culture name="makua" faction="Abyssinian Pretenders" />
-    <Culture name="nguni" faction="Kingdom of Abyssinia" />
+    <Culture name="nguni" faction="Africa" />
     <Culture name="sotho_tswana" faction="Default" />
     <Culture name="tsonga" faction="Aksum" />
   </Heritage>
-  <Heritage name="heritage_samoyedic" faction="Nomad Separatists">
-    <Culture name="nenets" faction="Default" />
-    <Culture name="solqumyt" faction="Nomad Separatists" />
+  <Heritage name="heritage_samoyedic" faction="att_fact_ottoman_sultanate">
+    <Culture name="nenets" faction="att_fact_ottoman_sultanate" />
+    <Culture name="solqumyt" faction="Roxolanians" />
   </Heritage>
   <Heritage name="heritage_levantine" faction="Levantine Rebels">
     <Culture name="phoenician" faction="Levantine Rebels" />
     <Culture name="punic" faction="Levantine Rebels" />
   </Heritage>
-  <Heritage name="heritage_ryukyu" faction="Abarshahr">
-    <Culture name="ryukyu" faction="Abarshahr" />
+  <Heritage name="heritage_ryukyu" faction="att_fact_ottoman_sultanate">
+    <Culture name="ryukyu" faction="att_fact_ottoman_sultanate" />
   </Heritage>
 </Cultures>

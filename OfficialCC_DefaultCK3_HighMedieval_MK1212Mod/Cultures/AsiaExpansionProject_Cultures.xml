@@ -479,43 +479,45 @@
     <Culture name="Blue Horde" faction="Blue Horde" />
     <Culture name="Genoese Famiglie Nobili" faction="Genoese Famiglie Nobili" />
     <Culture name="White Horde" faction="White Horde" />
+    <Culture name="East Germanic Separatists" faction="East Germanic Separatists" />
+    <Culture name="Teutonic Order" faction="Teutonic Order" />
   </Heritage>
-  <Heritage name="heritage_lesser_sunda" faction="Abyssinian Pretenders">
-    <Culture name="abui" faction="East Germanic Separatists" />
-    <Culture name="bima" faction="Abyssinian Pretenders" />
-    <Culture name="fataluku" faction="Abyssinian Pretenders" />
-    <Culture name="kambera" faction="Tanukhids " />
-    <Culture name="larantuka" faction="Default" />
-    <Culture name="manggarai" faction="Default" />
-    <Culture name="ngada" faction="Aksum" />
-    <Culture name="sika" faction="Teutonic Order" />
-    <Culture name="tambora" faction="Default" />
+  <Heritage name="heritage_lesser_sunda" faction="att_fact_huns">
+    <Culture name="abui" faction="Asia" />
+    <Culture name="bima" faction="att_fact_huns" />
+    <Culture name="fataluku" faction="att_fact_white_huns" />
+    <Culture name="kambera" faction="att_fact_hind" />
+    <Culture name="larantuka" faction="att_fact_huns" />
+    <Culture name="manggarai" faction="att_fact_crimean_khanate" />
+    <Culture name="ngada" faction="att_fact_oriental_sep" />
+    <Culture name="sika" faction="african" />
+    <Culture name="tambora" faction="khwarazmian_empire" />
     <Culture name="tetun" faction="Default" />
     <Culture name="uab_meto" faction="Aria" />
   </Heritage>
-  <Heritage name="heritage_papuan" faction="Africa">
-    <Culture name="abun" faction="Asia" />
-    <Culture name="arandai" faction="Default" />
-    <Culture name="awera" faction="Africa" />
-    <Culture name="baham" faction="Abarshahr" />
-    <Culture name="buruwai" faction="Abarshahr" />
-    <Culture name="hatam" faction="Default" />
+  <Heritage name="heritage_papuan" faction="Caledonians">
+    <Culture name="abun" faction="att_fact_roman_expedition_sep" />
+    <Culture name="arandai" faction="roman_empire" />
+    <Culture name="awera" faction="att_fact_roman_empire" />
+    <Culture name="baham" faction="att_fact_eastern_rebels" />
+    <Culture name="buruwai" faction="att_fact_eastern_roman_empire" />
+    <Culture name="hatam" faction="Abyssinian Pretenders" />
     <Culture name="iha" faction="Default" />
-    <Culture name="kemoro" faction="Africa" />
-    <Culture name="kwesten" faction="Default" />
-    <Culture name="mairasi" faction="Default" />
+    <Culture name="kemoro" faction="Anteans" />
+    <Culture name="kwesten" faction="African Rebels" />
+    <Culture name="mairasi" faction="att_fact_eastern_roman_sep" />
     <Culture name="maybrat" faction="Default" />
     <Culture name="moi" faction="Default" />
-    <Culture name="semimi" faction="Africa" />
-    <Culture name="sumuri" faction="Africa" />
+    <Culture name="semimi" faction="att_fact_eastern_roman_rebels" />
+    <Culture name="sumuri" faction="Caledonians" />
     <Culture name="tor" faction="Electorate of Trier" />
     <Culture name="tunggare" faction="Default" />
-    <Culture name="warembori" faction="Default" />
-    <Culture name="yapen" faction="Default" />
+    <Culture name="warembori" faction="Hunnic Separatists" />
+    <Culture name="yapen" faction="Caledonians" />
   </Heritage>
   <Heritage name="heritage_chamic" faction="Ghurid Sultanate">
     <Culture name="aceh" faction="Ghurid Sultanate" />
-    <Culture name="champ" faction="Default" />
+    <Culture name="champ" faction="Maurians" />
   </Heritage>
   <Heritage name="heritage_negrito" faction="Africa">
     <Culture name="aeta" faction="Africa" />
@@ -523,7 +525,7 @@
   </Heritage>
   <Heritage name="heritage_moluccan" faction="Africa">
     <Culture name="alune" faction="Asia" />
-    <Culture name="aru" faction="Makran" />
+    <Culture name="aru" faction="Asia" />
     <Culture name="biak" faction="Africa" />
     <Culture name="buru" faction="Africa" />
     <Culture name="galela" faction="Kingdom of Makuria" />
@@ -536,50 +538,50 @@
     <Culture name="maden" faction="Africa" />
     <Culture name="makian" faction="Africa" />
     <Culture name="manusela" faction="Africa" />
-    <Culture name="matbat" faction="Africa" />
-    <Culture name="sahu" faction="Default" />
-    <Culture name="sawai" faction="Kingdom of Makuria" />
-    <Culture name="sula" faction="Asia" />
-    <Culture name="tanimbar" faction="Kingdom of Abyssinia" />
-    <Culture name="ternate" faction="Africa" />
-    <Culture name="tidore" faction="Muslim Rebels" />
-    <Culture name="tobelo" faction="Africa" />
-    <Culture name="waigeo" faction="Africa" />
-    <Culture name="wandamen" faction="Default" />
-    <Culture name="wemale" faction="Huns" />
-    <Culture name="wetar" faction="Africa" />
+    <Culture name="matbat" faction="Avar" />
+    <Culture name="sahu" faction="att_fact_abbasid_caliphate" />
+    <Culture name="sawai" faction="att_fact_east_roman_empire" />
+    <Culture name="sula" faction="att_fact_crimean_khanate" />
+    <Culture name="tanimbar" faction="Kingdom of Sicily" />
+    <Culture name="ternate" faction="att_fact_ayyubid_sultanate" />
+    <Culture name="tidore" faction="att_fact_huns" />
+    <Culture name="tobelo" faction="Asia" />
+    <Culture name="waigeo" faction="roman_expedition" />
+    <Culture name="wandamen" faction="ayyubid_sultanate" />
+    <Culture name="wemale" faction="att_fact_oriental_nomads" />
+    <Culture name="wetar" faction="att_fact_oriental_culture_group" />
   </Heritage>
-  <Heritage name="heritage_ryukyuan" faction="Abarshahr">
-    <Culture name="amami" faction="Abarshahr" />
-    <Culture name="miyako" faction="Default" />
-    <Culture name="okinawa" faction="Default" />
+  <Heritage name="heritage_ryukyuan" faction="Roman Empire">
+    <Culture name="amami" faction="Roman Empire" />
+    <Culture name="miyako" faction="att_fact_asia" />
+    <Culture name="okinawa" faction="att_fact_roman_rebels" />
     <Culture name="yaeyama" faction="Default" />
   </Heritage>
-  <Heritage name="heritage_formosan" faction="Abarshahr">
-    <Culture name="atayal" faction="Default" />
-    <Culture name="babuza" faction="Default" />
-    <Culture name="bunun" faction="Default" />
+  <Heritage name="heritage_formosan" faction="Sclavenians">
+    <Culture name="atayal" faction="Sclavenians" />
+    <Culture name="babuza" faction="att_fact_sassanid_empire" />
+    <Culture name="bunun" faction="att_fact_sclavenians" />
     <Culture name="kulun" faction="Default" />
     <Culture name="paiwanese" faction="Default" />
     <Culture name="siraya" faction="Default" />
   </Heritage>
-  <Heritage name="heritage_aslian" faction="Seljuk Sultanate of Rûm">
+  <Heritage name="heritage_aslian" faction="Asia">
     <Culture name="aslian" faction="Default" />
   </Heritage>
   <Heritage name="heritage_chinese" faction="Asia">
     <Culture name="ba_shu" faction="Asia" />
     <Culture name="hexi" faction="Asia" />
-    <Culture name="min" faction="Asia" />
+    <Culture name="min" faction="White Horde" />
     <Culture name="wu" faction="Abarshahr" />
     <Culture name="yue" faction="Abarshahr" />
   </Heritage>
-  <Heritage name="heritage_malay" faction="Moors">
+  <Heritage name="heritage_malay" faction="Tanukhids ">
     <Culture name="bacan" faction="Default" />
     <Culture name="banjar" faction="Tanukhids " />
     <Culture name="basemah" faction="Egypt" />
     <Culture name="brunei" faction="Makran" />
     <Culture name="lampung" faction="Moors" />
-    <Culture name="minangkabau" faction="Moors" />
+    <Culture name="minangkabau" faction="Asia" />
   </Heritage>
   <Heritage name="heritage_korean" faction="Kingdom of Georgia">
     <Culture name="goryeon" faction="Kingdom of Georgia" />
@@ -600,8 +602,6 @@
     <Culture name="sasak" faction="Sassanid Empire" />
     <Culture name="sumbawa" faction="Default" />
     <Culture name="sunda" faction="Asia" />
-    <Culture name="Anteans" faction="Anteans" />
-    <Culture name="Maurians" faction="Maurians" />
   </Heritage>
   <Heritage name="heritage_sulawesi" faction="Africa">
     <Culture name="banggai" faction="Muslim Rebels" />
@@ -638,7 +638,7 @@
     <Culture name="ibanag" faction="Asia" />
     <Culture name="ifugao" faction="Asia" />
     <Culture name="ilokano" faction="Africa" />
-    <Culture name="manobo" faction="Africa" />
+    <Culture name="manobo" faction="Asia" />
     <Culture name="minahasa" faction="Asia" />
     <Culture name="mongondow" faction="Makran" />
     <Culture name="palawan" faction="Makran" />
@@ -709,7 +709,7 @@
     <Culture name="tripuri" faction="Aksum" />
     <Culture name="Armenia" faction="Armenia" />
   </Heritage>
-  <Heritage name="heritage_khasic" faction="Kingdom of Abyssinia">
+  <Heritage name="heritage_khasic" faction="Asia">
     <Culture name="khasi" faction="Default" />
   </Heritage>
   <Heritage name="heritage_palaungic" faction="White Huns">
