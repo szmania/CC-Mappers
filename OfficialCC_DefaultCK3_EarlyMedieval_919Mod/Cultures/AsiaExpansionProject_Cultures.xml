@@ -249,6 +249,9 @@
     <Culture name="Ystrad Clut Separatists" faction="Ystrad Clut Separatists" />
     <Culture name="Hepthalites" faction="Hepthalites" />
     <Culture name="Hunnic" faction="Hunnic Separatists" />
+    <Culture name="Indo Aryan" faction="att_fact_franks" />
+    <Culture name="Kök Türük" faction="Kök Türük" />
+    <Culture name="West African" faction="Abarshahr" />
     <Culture name="Arabic" faction="Arabic" />
     <Culture name="Aramean" faction="Aramean" />
     <Culture name="Balto Finnic" faction="Balto Finnic" />
@@ -264,12 +267,14 @@
     <Culture name="Gur" faction="Gur" />
     <Culture name="Hellenic" faction="Hellenic" />
     <Culture name="Indo Aryan" faction="Indo Aryan" />
-    <Culture name="Kök Türük" faction="Kök Türük" />
     <Culture name="Latin" faction="Latin" />
     <Culture name="Niger Delta" faction="Niger Delta" />
     <Culture name="Syriac" faction="Syriac" />
     <Culture name="West African" faction="West African" />
     <Culture name="Yoruba" faction="Yoruba" />
+    <Culture name="Yugrian" faction="Yugrian" />
+    <Culture name="att_fact_african_rebels" faction="att_fact_african_rebels" />
+    <Culture name="att_fact_viking" faction="att_fact_viking" />
   </Heritage>
   <Heritage name="heritage_lesser_sunda" faction="Malayic">
     <Culture name="abui" faction="Irrawaddy" />
@@ -293,10 +298,10 @@
     <Culture name="buruwai" faction="att_fact_aethiopian_rebels" />
     <Culture name="hatam" faction="Filipino" />
     <Culture name="iha" faction="Malayic" />
-    <Culture name="kemoro" faction="Sulawesi" />
+    <Culture name="kemoro" faction="att_fact_arab" />
     <Culture name="kwesten" faction="Filipino" />
     <Culture name="mairasi" faction="Sulawesi" />
-    <Culture name="maybrat" faction="Filipino" />
+    <Culture name="maybrat" faction="Sulawesi" />
     <Culture name="moi" faction="Guinean Uplander" />
     <Culture name="semimi" faction="Filipino" />
     <Culture name="sumuri" faction="Filipino" />
@@ -320,16 +325,16 @@
     <Culture name="biak" faction="Malayic" />
     <Culture name="buru" faction="Filipino" />
     <Culture name="galela" faction="Sulawesi" />
-    <Culture name="gane" faction="att_fact_arabian_rebels" />
+    <Culture name="gane" faction="att_fact_malayic" />
     <Culture name="hitu" faction="att_fact_malayic" />
     <Culture name="kei" faction="Malayic" />
     <Culture name="kowiai" faction="Serindian" />
     <Culture name="kuri" faction="Central African" />
-    <Culture name="maba" faction="att_fact_hunnic" />
-    <Culture name="maden" faction="att_fact_malayic" />
+    <Culture name="maba" faction="att_fact_malayic" />
+    <Culture name="maden" faction="att_fact_arabian_rebels" />
     <Culture name="makian" faction="malayic" />
-    <Culture name="manusela" faction="filipino" />
-    <Culture name="matbat" faction="Malayic" />
+    <Culture name="manusela" faction="att_fact_malayic" />
+    <Culture name="matbat" faction="filipino" />
     <Culture name="sahu" faction="sulawesi" />
     <Culture name="sawai" faction="att_fact_hunnic" />
     <Culture name="sula" faction="att_fact_aethiopian_rebels" />
@@ -369,13 +374,13 @@
     <Culture name="wu" faction="Chinese" />
     <Culture name="yue" faction="Chinese" />
   </Heritage>
-  <Heritage name="heritage_malay" faction="Malayic">
-    <Culture name="bacan" faction="Malayic" />
-    <Culture name="banjar" faction="att_fact_malayic" />
+  <Heritage name="heritage_malay" faction="att_fact_malay">
+    <Culture name="bacan" faction="att_fact_malay" />
+    <Culture name="banjar" faction="att_fact_malay" />
     <Culture name="basemah" faction="Malayic" />
     <Culture name="brunei" faction="att_fact_malay" />
     <Culture name="lampung" faction="Malayic" />
-    <Culture name="minangkabau" faction="malayic" />
+    <Culture name="minangkabau" faction="att_fact_hunnic" />
   </Heritage>
   <Heritage name="heritage_korean" faction="Korean">
     <Culture name="goryeon" faction="Korean" />
@@ -393,45 +398,44 @@
     <Culture name="bali" faction="Israelite" />
     <Culture name="java" faction="Malayic" />
     <Culture name="kangean" faction="Malayic" />
-    <Culture name="madura" faction="att_fact_sulawesi" />
-    <Culture name="sasak" faction="Malayic" />
+    <Culture name="madura" faction="att_fact_malayic" />
+    <Culture name="sasak" faction="att_fact_malay" />
     <Culture name="sumbawa" faction="Khmer" />
-    <Culture name="sunda" faction="malayic" />
+    <Culture name="sunda" faction="att_fact_javanese" />
     <Culture name="Mauri" faction="Mauri" />
-    <Culture name="mauri" faction="mauri" />
   </Heritage>
   <Heritage name="heritage_sulawesi" faction="Sulawesi">
     <Culture name="banggai" faction="Sulawesi" />
     <Culture name="bungku" faction="Sulawesi" />
     <Culture name="kaili" faction="Sulawesi" />
     <Culture name="makassar" faction="Malayic" />
-    <Culture name="mamuju" faction="sulawesi" />
+    <Culture name="mamuju" faction="att_fact_malay" />
     <Culture name="mandar" faction="Malayic" />
-    <Culture name="moronene" faction="sulawesi" />
+    <Culture name="moronene" faction="att_fact_sulawesi" />
     <Culture name="munan" faction="Sulawesi" />
     <Culture name="pamona" faction="Sulawesi" />
     <Culture name="salua" faction="Sulawesi" />
-    <Culture name="seko" faction="malayic" />
-    <Culture name="tolaki" faction="Malayic" />
+    <Culture name="seko" faction="att_fact_sulawesi" />
+    <Culture name="tolaki" faction="att_fact_sulawesi" />
     <Culture name="tomini" faction="Sulawesi" />
-    <Culture name="totoli" faction="att_fact_arab" />
+    <Culture name="totoli" faction="att_fact_sulawesi" />
     <Culture name="Kartli" faction="Kartli" />
   </Heritage>
-  <Heritage name="heritage_sumatran" faction="Malayic">
-    <Culture name="batak" faction="Malayic" />
-    <Culture name="enggano" faction="Malayic" />
-    <Culture name="gayo" faction="att_fact_viking" />
-    <Culture name="mentawai" faction="att_fact_sassanid_persians" />
-    <Culture name="nias" faction="Malayic" />
-    <Culture name="simeulue" faction="att_fact_viking_separatists" />
+  <Heritage name="heritage_sumatran" faction="att_fact_malay">
+    <Culture name="batak" faction="att_fact_white_hun_rebels" />
+    <Culture name="enggano" faction="att_fact_malay" />
+    <Culture name="gayo" faction="att_fact_malay" />
+    <Culture name="mentawai" faction="att_fact_malayic" />
+    <Culture name="nias" faction="att_fact_malay" />
+    <Culture name="simeulue" faction="att_fact_malay" />
   </Heritage>
   <Heritage name="heritage_filipino" faction="Filipino">
     <Culture name="batanic" faction="malayic" />
     <Culture name="bisaya" faction="Filipino" />
-    <Culture name="buol" faction="filipino" />
+    <Culture name="buol" faction="malayic" />
     <Culture name="buranun" faction="Filipino" />
     <Culture name="danao" faction="Filipino" />
-    <Culture name="gorontalo" faction="att_fact_malayic" />
+    <Culture name="gorontalo" faction="filipino" />
     <Culture name="ibanag" faction="Filipino" />
     <Culture name="ifugao" faction="Filipino" />
     <Culture name="ilokano" faction="Filipino" />
@@ -440,9 +444,9 @@
     <Culture name="mongondow" faction="Dravidian" />
     <Culture name="palawan" faction="Filipino" />
     <Culture name="pampangan" faction="Malayic" />
-    <Culture name="pangasinan" faction="Filipino" />
+    <Culture name="pangasinan" faction="att_fact_sulawesi" />
     <Culture name="sambal" faction="Filipino" />
-    <Culture name="sangir" faction="att_fact_malayic" />
+    <Culture name="sangir" faction="Sulawesi" />
     <Culture name="sinauna" faction="Filipino" />
     <Culture name="subanen" faction="Malayic" />
     <Culture name="tawo" faction="Filipino" />
@@ -450,89 +454,89 @@
     <Culture name="Baltic" faction="Baltic" />
     <Culture name="Danir" faction="Danir" />
   </Heritage>
-  <Heritage name="heritage_kradai" faction="att_fact_white_hun_rebels">
-    <Culture name="beish" faction="Korean" />
-    <Culture name="biao" faction="att_fact_white_hun_rebels" />
-    <Culture name="kam_sui" faction="att_fact_white_hun_rebels" />
-    <Culture name="liliao" faction="att_fact_hunnic" />
+  <Heritage name="heritage_kradai" faction="att_fact_chinese">
+    <Culture name="beish" faction="att_fact_chinese" />
+    <Culture name="biao" faction="att_fact_viking_rebels" />
+    <Culture name="kam_sui" faction="Chinese" />
+    <Culture name="liliao" faction="Khmer" />
     <Culture name="pu" faction="Republic of Venice" />
-    <Culture name="tay" faction="att_fact_chinese" />
+    <Culture name="tay" faction="Tai" />
     <Culture name="Antai" faction="Antai" />
-    <Culture name="Tai" faction="Tai" />
   </Heritage>
-  <Heritage name="heritage_dayak" faction="Filipino">
-    <Culture name="bidayuh" faction="att_fact_malayic" />
-    <Culture name="iban" faction="Filipino" />
+  <Heritage name="heritage_dayak" faction="att_fact_sulawesi">
+    <Culture name="bidayuh" faction="mauri" />
+    <Culture name="iban" faction="att_fact_malayic" />
     <Culture name="kayan" faction="Malayic" />
     <Culture name="murut" faction="att_fact_sulawesi" />
     <Culture name="ngaju" faction="Filipino" />
     <Culture name="ot_danum" faction="Filipino" />
-    <Culture name="rejang" faction="Sulawesi" />
+    <Culture name="rejang" faction="att_fact_sulawesi" />
     <Culture name="Iberian" faction="Iberian" />
   </Heritage>
   <Heritage name="heritage_mongolic" faction="Mongolic">
     <Culture name="di" faction="Magyar" />
     <Culture name="jie" faction="att_fact_hunnic" />
-    <Culture name="khamag" faction="Hunnic" />
+    <Culture name="khamag" faction="att_fact_white_hun_rebels" />
     <Culture name="qay" faction="Avars" />
     <Culture name="rouran" faction="Mongolic" />
     <Culture name="tataric" faction="Mongolic" />
     <Culture name="tiele" faction="Hunnic" />
-    <Culture name="wuhuan" faction="Mongolic" />
+    <Culture name="wuhuan" faction="Kök Türük" />
     <Culture name="xianbei" faction="Mongolic" />
-    <Culture name="xiongnu" faction="Mongolic" />
+    <Culture name="xiongnu" faction="att_fact_mongolic" />
     <Culture name="Arran" faction="Arran" />
     <Culture name="Roman" faction="Roman" />
   </Heritage>
-  <Heritage name="heritage_north_borneo" faction="att_fact_viking_rebels">
-    <Culture name="dusun" faction="att_fact_viking_rebels" />
-    <Culture name="kadazan" faction="att_fact_malayic" />
-    <Culture name="kadazandusun" faction="att_fact_white_hun_rebels" />
+  <Heritage name="heritage_north_borneo" faction="att_fact_viking_separatists">
+    <Culture name="dusun" faction="att_fact_viking_separatists" />
+    <Culture name="kadazan" faction="att_fact_malay" />
+    <Culture name="kadazandusun" faction="att_fact_malayic" />
     <Culture name="melanau" faction="Guinean Uplander" />
   </Heritage>
   <Heritage name="heritage_tungusic" faction="Mongolic">
     <Culture name="evenk" faction="Mongolic" />
-    <Culture name="mohese" faction="att_fact_african_rebels" />
-    <Culture name="udege" faction="Yugrian" />
+    <Culture name="mohese" faction="att_fact_arab" />
+    <Culture name="udege" faction="Kök Türük" />
   </Heritage>
   <Heritage name="heritage_nivkh" faction="Iranian">
     <Culture name="gilyak" faction="Iranian" />
-    <Culture name="mishihase" faction="Yamato" />
+    <Culture name="mishihase" faction="att_fact_hunnic" />
   </Heritage>
   <Heritage name="heritage_loloish" faction="Israelite">
     <Culture name="hani" faction="Israelite" />
-    <Culture name="wuman" faction="Loloish" />
+    <Culture name="wuman" faction="att_fact_arab" />
+    <Culture name="Loloish" faction="Loloish" />
   </Heritage>
   <Heritage name="heritage_burman" faction="Burman">
-    <Culture name="karenic" faction="Burman" />
-    <Culture name="manipur" faction="Irrawaddy" />
-    <Culture name="mizo" faction="att_fact_khmer" />
+    <Culture name="karenic" faction="att_fact_burman" />
+    <Culture name="manipur" faction="Burman" />
+    <Culture name="mizo" faction="att_fact_viking_rebels" />
     <Culture name="naga" faction="Burman" />
-    <Culture name="rakhine" faction="att_fact_chinese" />
-    <Culture name="tripuri" faction="att_fact_khmer" />
+    <Culture name="rakhine" faction="Irrawaddy" />
+    <Culture name="tripuri" faction="Burman" />
     <Culture name="Armenia" faction="Armenia" />
   </Heritage>
   <Heritage name="heritage_khasic" faction="att_fact_khmer">
     <Culture name="khasi" faction="att_fact_khmer" />
   </Heritage>
-  <Heritage name="heritage_palaungic" faction="Burman">
-    <Culture name="lawa" faction="Burman" />
+  <Heritage name="heritage_palaungic" faction="att_fact_malay">
+    <Culture name="lawa" faction="att_fact_malay" />
     <Culture name="palaungic" faction="Burman" />
-    <Culture name="waic" faction="att_fact_viking" />
+    <Culture name="waic" faction="att_fact_burmese" />
   </Heritage>
-  <Heritage name="heritage_viet" faction="att_fact_khmer">
-    <Culture name="kinh" faction="att_fact_khmer" />
+  <Heritage name="heritage_viet" faction="Khmer">
+    <Culture name="kinh" faction="Khmer" />
     <Culture name="muong" faction="att_fact_chinese" />
     <Culture name="tho" faction="Gothoi" />
     <Culture name="Vietic" faction="Vietic" />
   </Heritage>
-  <Heritage name="heritage_sea_gypsy" faction="Sulu">
-    <Culture name="moklen" faction="Sulu" />
-    <Culture name="orang_laut" faction="att_fact_malayic" />
-    <Culture name="sama_bajau" faction="att_fact_viking_rebels" />
+  <Heritage name="heritage_sea_gypsy" faction="att_fact_malay">
+    <Culture name="moklen" faction="att_fact_malay" />
+    <Culture name="orang_laut" faction="Malayic" />
+    <Culture name="sama_bajau" faction="att_fact_malay" />
   </Heritage>
-  <Heritage name="heritage_munda" faction="Dravidian">
-    <Culture name="munda" faction="Dravidian" />
+  <Heritage name="heritage_munda" faction="att_fact_arab">
+    <Culture name="munda" faction="att_fact_arab" />
   </Heritage>
   <Heritage name="heritage_nicobarese" faction="att_fact_nicobarese">
     <Culture name="nicobarese" faction="att_fact_nicobarese" />
@@ -540,7 +544,7 @@
   <Heritage name="heritage_hmong" faction="att_fact_sheren">
     <Culture name="sheren" faction="att_fact_sheren" />
   </Heritage>
-  <Heritage name="heritage_japanese" faction="att_fact_khmer">
-    <Culture name="yamato" faction="att_fact_khmer" />
+  <Heritage name="heritage_japanese" faction="Yamato">
+    <Culture name="yamato" faction="Yamato" />
   </Heritage>
 </Cultures>

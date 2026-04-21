@@ -488,6 +488,9 @@
     <Culture name="Duchy of Pamplona" faction="Duchy of Pamplona" />
     <Culture name="Sclavenians" faction="Sclavenians" />
     <Culture name="Himyar" faction="Himyar" />
+    <Culture name="Aria" faction="Aria" />
+    <Culture name="att_fact_arab_rebels" faction="att_fact_arab_rebels" />
+    <Culture name="att_fact_franks" faction="att_fact_franks" />
   </Heritage>
   <Heritage name="heritage_lesser_sunda" faction="Kingdom of Abyssinia">
     <Culture name="abui" faction="nomad_separatists" />
@@ -510,7 +513,7 @@
     <Culture name="buruwai" faction="Kingdom of Abyssinia" />
     <Culture name="hatam" faction="Abbasid Caliphate" />
     <Culture name="iha" faction="Huns" />
-    <Culture name="kemoro" faction="Maurians" />
+    <Culture name="kemoro" faction="att_fact_papuan" />
     <Culture name="kwesten" faction="persia" />
     <Culture name="mairasi" faction="att_fact_roman_empire" />
     <Culture name="maybrat" faction="Asia" />
@@ -528,12 +531,12 @@
   </Heritage>
   <Heritage name="heritage_negrito" faction="null">
     <Culture name="aeta" faction="null" />
-    <Culture name="andamanese" faction="att_fact_indigenous_tribes" />
+    <Culture name="andamanese" faction="att_fact_arab" />
   </Heritage>
   <Heritage name="heritage_moluccan" faction="att_fact_indigenous_tribes">
     <Culture name="alune" faction="att_fact_moluccans" />
     <Culture name="aru" faction="att_fact_indigenous_tribes" />
-    <Culture name="biak" faction="att_fact_indigenous_tribes" />
+    <Culture name="biak" faction="att_fact_moluccans" />
     <Culture name="buru" faction="att_fact_eastern_roman_rebels" />
     <Culture name="galela" faction="Asia" />
     <Culture name="gane" faction="att_fact_indigenous_tribes" />
@@ -542,17 +545,17 @@
     <Culture name="kowiai" faction="Malikate of Oman" />
     <Culture name="kuri" faction="Kingdom of Makuria" />
     <Culture name="maba" faction="att_fact_abarshahr" />
-    <Culture name="maden" faction="att_fact_indigenous_tribes" />
+    <Culture name="maden" faction="att_fact_moluccans" />
     <Culture name="makian" faction="Ilkhanate" />
     <Culture name="manusela" faction="att_fact_arabian_separatists" />
     <Culture name="matbat" faction="Asia" />
     <Culture name="sahu" faction="Malikate of Oman" />
     <Culture name="sawai" faction="Malikate of Oman" />
     <Culture name="sula" faction="Asia" />
-    <Culture name="tanimbar" faction="Abbasid Caliphate" />
+    <Culture name="tanimbar" faction="att_fact_indigenous_tribes" />
     <Culture name="ternate" faction="Mamluk Sultanate" />
     <Culture name="tidore" faction="att_fact_indigenous_tribes" />
-    <Culture name="tobelo" faction="Default" />
+    <Culture name="tobelo" faction="att_fact_indigenous_tribes" />
     <Culture name="waigeo" faction="Viking Rebels" />
     <Culture name="wandamen" faction="White Horde" />
     <Culture name="wemale" faction="att_fact_cuman_kipchak_confederacy" />
@@ -614,7 +617,7 @@
     <Culture name="Anteans" faction="Anteans" />
   </Heritage>
   <Heritage name="heritage_sulawesi" faction="Asia">
-    <Culture name="banggai" faction="att_fact_arab" />
+    <Culture name="banggai" faction="att_fact_indigenous_tribes" />
     <Culture name="bungku" faction="Asia" />
     <Culture name="kaili" faction="Aethiopian Separatists" />
     <Culture name="makassar" faction="Aethiopian Separatists" />
@@ -625,9 +628,9 @@
     <Culture name="pamona" faction="Asia" />
     <Culture name="salua" faction="Default" />
     <Culture name="seko" faction="att_fact_indigenous_tribes" />
-    <Culture name="tolaki" faction="att_fact_asia" />
+    <Culture name="tolaki" faction="att_fact_moluccans" />
     <Culture name="tomini" faction="Asia" />
-    <Culture name="totoli" faction="att_fact_arab_rebels" />
+    <Culture name="totoli" faction="att_fact_indigenous_tribes" />
     <Culture name="Kartli" faction="Kartli" />
   </Heritage>
   <Heritage name="heritage_sumatran" faction="Rasulid Sultanate">
@@ -649,13 +652,13 @@
     <Culture name="ifugao" faction="Asia" />
     <Culture name="ilokano" faction="Asia" />
     <Culture name="manobo" faction="Asia" />
-    <Culture name="minahasa" faction="Default" />
-    <Culture name="mongondow" faction="Asia" />
+    <Culture name="minahasa" faction="att_fact_moluccans" />
+    <Culture name="mongondow" faction="att_fact_indigenous_tribes" />
     <Culture name="palawan" faction="Oriens" />
     <Culture name="pampangan" faction="Asia" />
     <Culture name="pangasinan" faction="Mazun" />
     <Culture name="sambal" faction="Asia" />
-    <Culture name="sangir" faction="Asia" />
+    <Culture name="sangir" faction="att_fact_asia" />
     <Culture name="sinauna" faction="Asia" />
     <Culture name="subanen" faction="Default" />
     <Culture name="tawo" faction="Default" />
@@ -663,11 +666,11 @@
   </Heritage>
   <Heritage name="heritage_kradai" faction="Huns">
     <Culture name="beish" faction="Huns" />
-    <Culture name="biao" faction="Chinese Rebels" />
+    <Culture name="biao" faction="att_fact_burman" />
     <Culture name="kam_sui" faction="Eastern Rebels" />
     <Culture name="liliao" faction="Huns" />
     <Culture name="pu" faction="Republic of Pisa" />
-    <Culture name="tay" faction="att_fact_franks" />
+    <Culture name="tay" faction="att_fact_avars" />
   </Heritage>
   <Heritage name="heritage_dayak" faction="Asia">
     <Culture name="bidayuh" faction="Asia" />
@@ -695,47 +698,47 @@
     <Culture name="dusun" faction="Default" />
     <Culture name="kadazan" faction="Asia" />
     <Culture name="kadazandusun" faction="Oriens" />
-    <Culture name="melanau" faction="Default" />
+    <Culture name="melanau" faction="att_fact_indigenous_tribes" />
   </Heritage>
-  <Heritage name="heritage_tungusic" faction="White Huns">
+  <Heritage name="heritage_tungusic" faction="Golden Horde">
     <Culture name="evenk" faction="Golden Horde" />
-    <Culture name="mohese" faction="White Huns" />
+    <Culture name="mohese" faction="att_fact_mongols" />
     <Culture name="udege" faction="White Huns" />
   </Heritage>
   <Heritage name="heritage_nivkh" faction="att_fact_arabian_separatists">
     <Culture name="gilyak" faction="att_fact_arabian_separatists" />
-    <Culture name="mishihase" faction="att_fact_indigenous_tribes" />
+    <Culture name="mishihase" faction="att_fact_mongols" />
   </Heritage>
-  <Heritage name="heritage_loloish" faction="huns">
-    <Culture name="hani" faction="huns" />
-    <Culture name="wuman" faction="Asia" />
+  <Heritage name="heritage_loloish" faction="att_fact_mongols">
+    <Culture name="hani" faction="att_fact_mongols" />
+    <Culture name="wuman" faction="att_fact_arab" />
   </Heritage>
-  <Heritage name="heritage_burman" faction="att_fact_arabian_separatists">
-    <Culture name="karenic" faction="att_fact_arabian_separatists" />
-    <Culture name="manipur" faction="cuman_kipchak_confederacy" />
+  <Heritage name="heritage_burman" faction="att_fact_indigenous_tribes">
+    <Culture name="karenic" faction="att_fact_indigenous_tribes" />
+    <Culture name="manipur" faction="att_fact_burman" />
     <Culture name="mizo" faction="att_fact_burman" />
     <Culture name="naga" faction="Asia" />
     <Culture name="rakhine" faction="Kartid Sultanate" />
-    <Culture name="tripuri" faction="Aria" />
+    <Culture name="tripuri" faction="att_fact_indigenous_tribes" />
     <Culture name="Armenia" faction="Armenia" />
   </Heritage>
   <Heritage name="heritage_khasic" faction="att_fact_indigenous_tribes">
     <Culture name="khasi" faction="att_fact_indigenous_tribes" />
   </Heritage>
-  <Heritage name="heritage_palaungic" faction="Asia">
-    <Culture name="lawa" faction="Asia" />
+  <Heritage name="heritage_palaungic" faction="att_fact_burman">
+    <Culture name="lawa" faction="att_fact_burman" />
     <Culture name="palaungic" faction="Asia" />
-    <Culture name="waic" faction="Asia" />
+    <Culture name="waic" faction="att_fact_burman" />
   </Heritage>
-  <Heritage name="heritage_viet" faction="Chinese Rebels">
-    <Culture name="kinh" faction="Chinese Rebels" />
+  <Heritage name="heritage_viet" faction="att_fact_arab">
+    <Culture name="kinh" faction="att_fact_arab" />
     <Culture name="muong" faction="Default" />
-    <Culture name="tho" faction="Chinese Rebels" />
+    <Culture name="tho" faction="att_fact_burman" />
   </Heritage>
   <Heritage name="heritage_sea_gypsy" faction="Parthia">
     <Culture name="moklen" faction="Parthia" />
     <Culture name="orang_laut" faction="Viking Separatists" />
-    <Culture name="sama_bajau" faction="Angria" />
+    <Culture name="sama_bajau" faction="att_fact_indigenous_tribes" />
   </Heritage>
   <Heritage name="heritage_munda" faction="att_fact_indigenous_tribes">
     <Culture name="munda" faction="att_fact_indigenous_tribes" />
@@ -743,8 +746,8 @@
   <Heritage name="heritage_nicobarese" faction="Default">
     <Culture name="nicobarese" faction="Default" />
   </Heritage>
-  <Heritage name="heritage_hmong" faction="Chinese Rebels">
-    <Culture name="sheren" faction="Chinese Rebels" />
+  <Heritage name="heritage_hmong" faction="att_fact_mongols">
+    <Culture name="sheren" faction="att_fact_mongols" />
   </Heritage>
   <Heritage name="heritage_japanese" faction="Asia">
     <Culture name="yamato" faction="Default" />

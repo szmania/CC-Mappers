@@ -347,6 +347,10 @@
     <Culture name="Kingdom of Cilicia" faction="Kingdom of Cilicia" />
     <Culture name="Turkoman Pretenders" faction="Turkoman Pretenders" />
     <Culture name="Wilzi" faction="Wilzi" />
+    <Culture name="Abasgia" faction="Abasgia" />
+    <Culture name="Eastern Rebels" faction="Eastern Rebels" />
+    <Culture name="Palmyra" faction="Palmyra" />
+    <Culture name="Shirvan Shahdom" faction="Shirvan Shahdom" />
   </Heritage>
   <Heritage name="heritage_east_african" faction="Kingdom of Abyssinia">
     <Culture name="aari" faction="Kingdom of Abyssinia" />
@@ -569,7 +573,7 @@
     <Culture name="kavalan" faction="att_fact_asian_nomads" />
     <Culture name="paiwan" faction="Caledonians" />
     <Culture name="pepo" faction="Kingdom of Jerusalem &amp; Cyprus" />
-    <Culture name="siraya" faction="Asia" />
+    <Culture name="siraya" faction="att_fact_asian_nomads" />
   </Heritage>
   <Heritage name="heritage_turkic" faction="Cuman-Kipchak Confederacy">
     <Culture name="az" faction="Ulus of Jochi" />
@@ -623,9 +627,10 @@
     <Culture name="Basques" faction="Basques" />
     <Culture name="Visigothic Kingdom" faction="Visigothic Kingdom" />
   </Heritage>
-  <Heritage name="heritage_andaman" faction="Alamans">
-    <Culture name="andaman" faction="Default" />
+  <Heritage name="heritage_andaman" faction="att_fact_arabian_rebels">
+    <Culture name="andaman" faction="att_fact_arabian_rebels" />
     <Culture name="ongan" faction="Default" />
+    <Culture name="Alamans" faction="Alamans" />
   </Heritage>
   <Heritage name="heritage_frankish" faction="Frankish Kingdom">
     <Culture name="angevin" faction="Frankish Kingdom" />
@@ -651,7 +656,7 @@
     <Culture name="middle_anglian" faction="Saxons" />
     <Culture name="northerner" faction="Angles" />
     <Culture name="northumbrian" faction="att_fact_west_germanic" />
-    <Culture name="old_anglian" faction="Angles" />
+    <Culture name="old_anglian" faction="att_fact_franks" />
     <Culture name="south_saxon" faction="Kingdom of England" />
     <Culture name="west_saxon" faction="Kingdom of Mercia" />
     <Culture name="Jutes" faction="Jutes" />
@@ -666,8 +671,8 @@
     <Culture name="tauro_romaic" faction="att_fact_roman_rebels" />
     <Culture name="tsakonian" faction="Eastern Roman Empire" />
   </Heritage>
-  <Heritage name="heritage_syriac" faction="Palmyra">
-    <Culture name="aramean" faction="Palmyra" />
+  <Heritage name="heritage_syriac" faction="Antiochian Pretenders">
+    <Culture name="aramean" faction="Antiochian Pretenders" />
     <Culture name="mandaic" faction="Levantine Rebels" />
     <Culture name="syriac" faction="Ayyubid Sultanate" />
   </Heritage>
@@ -689,7 +694,7 @@
   <Heritage name="heritage_aslianic" faction="Ghurid Sultanate">
     <Culture name="aslian" faction="Ghurid Sultanate" />
     <Culture name="moklen" faction="Makran" />
-    <Culture name="semang" faction="Default" />
+    <Culture name="semang" faction="srivijaya" />
   </Heritage>
   <Heritage name="heritage_celtic" faction="Bretons">
     <Culture name="asturian" faction="Bretons" />
@@ -700,7 +705,7 @@
     <Culture name="baatonu" faction="Garamantians" />
     <Culture name="kibsi" faction="Garamantians" />
     <Culture name="konkomba" faction="African Separatists" />
-    <Culture name="kulango" faction="Africa" />
+    <Culture name="kulango" faction="att_fact_arab" />
     <Culture name="kurumba" faction="Africa" />
     <Culture name="senufo" faction="Almohad Caliphate" />
     <Culture name="zarma" faction="african_rebels" />
@@ -710,7 +715,7 @@
     <Culture name="bruso" faction="att_fact_oriental_nomads" />
     <Culture name="dega" faction="att_fact_khmer" />
     <Culture name="katang" faction="siam" />
-    <Culture name="kuy" faction="Asia" />
+    <Culture name="kuy" faction="siam" />
     <Culture name="mnong" faction="att_fact_oriental_nomads" />
     <Culture name="stieng" faction="att_fact_franks" />
   </Heritage>
@@ -726,23 +731,23 @@
     <Culture name="udege" faction="att_fact_asian_nomads" />
   </Heritage>
   <Heritage name="heritage_malayic" faction="srivijaya">
-    <Culture name="bali" faction="Asia" />
+    <Culture name="bali" faction="att_fact_huns" />
     <Culture name="banjar" faction="att_fact_arabian_rebels" />
-    <Culture name="basemah" faction="Muslim Rebels" />
+    <Culture name="basemah" faction="att_fact_srivijaya" />
     <Culture name="batak" faction="srivijaya" />
     <Culture name="gayo" faction="srivijaya" />
     <Culture name="java" faction="Default" />
-    <Culture name="kerinci" faction="Default" />
-    <Culture name="komering" faction="Eastern Rebels" />
+    <Culture name="kerinci" faction="att_fact_malay" />
+    <Culture name="komering" faction="srivijaya" />
     <Culture name="lampung" faction="srivijaya" />
     <Culture name="madura" faction="srivijaya" />
-    <Culture name="mentawai" faction="Asia" />
-    <Culture name="minangkabau" faction="Asia" />
+    <Culture name="mentawai" faction="att_fact_malay" />
+    <Culture name="minangkabau" faction="att_fact_malay" />
     <Culture name="nias" faction="srivijaya" />
     <Culture name="rejang" faction="siam" />
-    <Culture name="sama" faction="Default" />
+    <Culture name="sama" faction="att_fact_malay" />
     <Culture name="samawa" faction="att_fact_arabian_rebels" />
-    <Culture name="seletar" faction="Shirvan Shahdom" />
+    <Culture name="seletar" faction="srivijaya" />
     <Culture name="sunda" faction="att_fact_malay" />
   </Heritage>
   <Heritage name="heritage_berber" faction="Almohad Caliphate">
@@ -770,7 +775,7 @@
     <Culture name="onggirad" faction="Cuman-Kipchak Confederacy" />
     <Culture name="qay" faction="Golden Horde" />
     <Culture name="qitai" faction="Huns" />
-    <Culture name="rouran" faction="att_fact_oriental_nomads" />
+    <Culture name="rouran" faction="cuman_kipchak_confederation" />
     <Culture name="sibe" faction="Golden Horde" />
     <Culture name="tajiuud" faction="att_fact_mongols" />
     <Culture name="tataric" faction="Toluid Pretenders" />
@@ -794,7 +799,7 @@
     <Culture name="poloch" faction="Kievan Pretenders" />
     <Culture name="polyan" faction="Grand Knyazate of Kiev" />
     <Culture name="proto_ruthenian" faction="Grand Knyazate of Kiev" />
-    <Culture name="radimichi" faction="Grand Knyazate of Kiev" />
+    <Culture name="radimichi" faction="att_fact_slavic_rebels" />
     <Culture name="ruthenian" faction="Rus' Rebels" />
     <Culture name="ryazanian" faction="Grand Knyazate of Chernigov" />
     <Culture name="tiverian" faction="Grand Knyazate of Kiev" />
@@ -805,13 +810,13 @@
     <Culture name="Greuthungians" faction="Greuthungians" />
     <Culture name="Rugians" faction="Rugians" />
   </Heritage>
-  <Heritage name="heritage_dayak" faction="Asia">
-    <Culture name="bidayuh" faction="Asia" />
+  <Heritage name="heritage_dayak" faction="att_fact_malay">
+    <Culture name="bidayuh" faction="huns" />
     <Culture name="iban" faction="srivijaya" />
     <Culture name="kayan" faction="Asia" />
-    <Culture name="murut" faction="Default" />
+    <Culture name="murut" faction="att_fact_malay" />
     <Culture name="ngaju" faction="att_fact_khmer" />
-    <Culture name="ot_danum" faction="Abasgia" />
+    <Culture name="ot_danum" faction="att_fact_malay" />
     <Culture name="punan" faction="Default" />
   </Heritage>
   <Heritage name="heritage_balto_finnic" faction="Yotvingians">
@@ -835,16 +840,16 @@
     <Culture name="old_brythonic" faction="Kingdom of Gwynedd" />
     <Culture name="Britain" faction="Britain" />
   </Heritage>
-  <Heritage name="heritage_sulawesi" faction="Africa">
+  <Heritage name="heritage_sulawesi" faction="srivijaya">
     <Culture name="bungku" faction="Malikate of Oman" />
     <Culture name="gorontalo" faction="Ayyubid Sultanate" />
-    <Culture name="kaili" faction="Africa" />
-    <Culture name="makassar" faction="Africa" />
+    <Culture name="kaili" faction="att_fact_malay" />
+    <Culture name="makassar" faction="att_fact_indian_rajasthan" />
     <Culture name="mandar" faction="srivijaya" />
-    <Culture name="minahasa" faction="Makran" />
+    <Culture name="minahasa" faction="srivijaya" />
     <Culture name="munan" faction="srivijaya" />
     <Culture name="salua" faction="Default" />
-    <Culture name="tomini" faction="Asia" />
+    <Culture name="tomini" faction="att_fact_malay" />
   </Heritage>
   <Heritage name="heritage_moluccan" faction="att_fact_asian_nomads">
     <Culture name="buli" faction="att_fact_arabian_rebels" />
@@ -926,7 +931,7 @@
     <Culture name="sichuan" faction="Khwarazmian Empire" />
     <Culture name="wenmo" faction="att_fact_khmer" />
     <Culture name="wu" faction="Default" />
-    <Culture name="xiang" faction="Default" />
+    <Culture name="xiang" faction="att_fact_asian_nomads" />
     <Culture name="yue" faction="White Horde" />
   </Heritage>
   <Heritage name="heritage_siberian" faction="Golden Horde">
@@ -950,7 +955,7 @@
     <Culture name="hayato" faction="Default" />
     <Culture name="kyushu" faction="Default" />
     <Culture name="oshu" faction="Asia" />
-    <Culture name="yamato" faction="Default" />
+    <Culture name="yamato" faction="att_fact_asian_nomads" />
   </Heritage>
   <Heritage name="heritage_mien" faction="Mihrabanid Malikate">
     <Culture name="sheren" faction="Mihrabanid Malikate" />
@@ -960,7 +965,7 @@
     <Culture name="Hungarian Rebels" faction="Hungarian Rebels" />
     <Culture name="Magyars" faction="Magyars" />
   </Heritage>
-  <Heritage name="heritage_kadazan" faction="Default">
+  <Heritage name="heritage_kadazan" faction="att_fact_malay">
     <Culture name="kadazan" faction="Default" />
   </Heritage>
   <Heritage name="heritage_ugro_permian" faction="Budinians">
