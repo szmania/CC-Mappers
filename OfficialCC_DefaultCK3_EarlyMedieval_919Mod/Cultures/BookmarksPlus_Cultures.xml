@@ -69,7 +69,7 @@
     <Culture name="Emirate of Granada" faction="Emirate of Granada" />
     <Culture name="English Rebels" faction="English Rebels" />
     <Culture name="English Separatists" faction="English Separatists" />
-    <Culture name="Filipino" faction="Aethiopian Rebels" />
+    <Culture name="Filipino" faction="Default" />
     <Culture name="Frankish" faction="Frankish Rebels" />
     <Culture name="Frankish Kingdom" faction="Frankish Kingdom" />
     <Culture name="Frankish Rebels" faction="Frankish Rebels" />
@@ -88,7 +88,7 @@
     <Culture name="Himyarite Separatists" faction="Himyarite Separatists" />
     <Culture name="Hispania" faction="Hispania" />
     <Culture name="Hunnic Separatists" faction="Hunnic Separatists" />
-    <Culture name="Indo Aryan" faction="Aksum" />
+    <Culture name="Indo Aryan" faction="att_fact_franks" />
     <Culture name="Irish Rebels" faction="Irish Rebels" />
     <Culture name="Irish Separatists" faction="Irish Separatists" />
     <Culture name="Irrawaddy" faction="Default" />
@@ -118,7 +118,7 @@
     <Culture name="Kingdom of the Danes" faction="Kingdom of the Danes" />
     <Culture name="Kingdom of the Lombards" faction="Kingdom of the Lombards" />
     <Culture name="Kingdom of the Picts" faction="Kingdom of the Picts" />
-    <Culture name="Korean" faction="Aethiopian Rebels" />
+    <Culture name="Korean" faction="Frankish Kingdom" />
     <Culture name="Koutrigoi" faction="Koutrigoi" />
     <Culture name="Lakhmid Separatists" faction="Lakhmid Separatists" />
     <Culture name="Langobard Separatists" faction="Langobard Separatists" />
@@ -216,28 +216,29 @@
     <Culture name="Alamannic Separatists" faction="Alamannic Separatists" />
     <Culture name="Banu Ghassan" faction="Banu Ghassan" />
     <Culture name="Ducatus Alemanniae" faction="Ducatus Alemanniae" />
-    <Culture name="Filipino" faction="White Hun Rebels" />
     <Culture name="Gallacian Separatists" faction="Gallacian Separatists" />
-    <Culture name="Indo Aryan" faction="Avar Separatists" />
     <Culture name="Israelite" faction="Default" />
     <Culture name="Italia" faction="Italia" />
-    <Culture name="Korean" faction="Default" />
     <Culture name="Nobatia" faction="Nobatia" />
     <Culture name="Sclavenian Separatists" faction="Sclavenian Separatists" />
     <Culture name="Venedian Separatists" faction="Venedian Separatists" />
     <Culture name="Abasgia" faction="Abasgia" />
-    <Culture name="Filipino" faction="Filipino" />
     <Culture name="Himyar" faction="Himyar" />
-    <Culture name="Indo Aryan" faction="Indo Aryan" />
-    <Culture name="Korean" faction="att_fact_franks" />
     <Culture name="Visigothic Kingdom" faction="Visigothic Kingdom" />
+    <Culture name="sarmatian_rebels" faction="Sarmatian Rebels" />
+    <Culture name="Avar" faction="Avars" />
+    <Culture name="att_fact_hunnic" faction="att_fact_franks" />
+    <Culture name="Avar" faction="Avar" />
     <Culture name="Bantu" faction="Bantu" />
     <Culture name="Briton" faction="Briton" />
     <Culture name="Brythonic" faction="Brythonic" />
     <Culture name="Chamic" faction="Chamic" />
     <Culture name="East African" faction="East African" />
+    <Culture name="Filipino" faction="Filipino" />
+    <Culture name="Frankish" faction="Frankish" />
     <Culture name="Guinean Uplander" faction="Guinean Uplander" />
     <Culture name="Gur" faction="Gur" />
+    <Culture name="Indo Aryan" faction="Indo Aryan" />
     <Culture name="Irrawaddy" faction="Irrawaddy" />
     <Culture name="Israelite" faction="Israelite" />
     <Culture name="Khmer" faction="Khmer" />
@@ -245,13 +246,12 @@
     <Culture name="Loloish" faction="Loloish" />
     <Culture name="Niger Delta" faction="Niger Delta" />
     <Culture name="Sulawesi" faction="Sulawesi" />
+    <Culture name="Tai" faction="Tai" />
     <Culture name="Vietic" faction="Vietic" />
     <Culture name="West African" faction="West African" />
     <Culture name="Yamato" faction="Yamato" />
     <Culture name="Yoruba" faction="Yoruba" />
-    <Culture name="sarmatian_rebels" faction="Sarmatian Rebels" />
-    <Culture name="Frankish" faction="Frankish" />
-    <Culture name="Tai" faction="Tai" />
+    <Culture name="att_fact_hunnic" faction="att_fact_hunnic" />
     <Culture name="sarmatian_rebels" faction="sarmatian_rebels" />
   </Heritage>
   <Heritage name="heritage_caucasian" faction="att_fact_abkhaz">
@@ -287,13 +287,13 @@
     <Culture name="kangchu" faction="Kök Türük" />
     <Culture name="kazanskotatar" faction="Kök Türük" />
     <Culture name="khakas" faction="att_fact_kok_turk" />
-    <Culture name="litovtatar" faction="Iranian" />
+    <Culture name="litovtatar" faction="Kök Türük" />
     <Culture name="nogai" faction="Kök Türük" />
     <Culture name="sabir" faction="Sabiroi" />
     <Culture name="sibirtatar" faction="Kök Türük" />
     <Culture name="teleut" faction="Hunnic" />
     <Culture name="turetskaya" faction="Kök Türük" />
-    <Culture name="turgesh" faction="Avar" />
+    <Culture name="turgesh" faction="Kök Türük" />
     <Culture name="uzbek" faction="att_fact_kok_turk" />
     <Culture name="wusun" faction="Kök Türük" />
     <Culture name="xiongnu" faction="Kök Türük" />
@@ -382,8 +382,8 @@
     <Culture name="numidian" faction="Berbers" />
     <Culture name="Berber" faction="Berber" />
   </Heritage>
-  <Heritage name="heritage_south_slavic" faction="Balto Finnic">
-    <Culture name="slavonian" faction="Balto Finnic" />
+  <Heritage name="heritage_south_slavic" faction="Sclavenoi">
+    <Culture name="slavonian" faction="Sclavenoi" />
     <Culture name="Saxonia" faction="Saxonia" />
     <Culture name="Serboi" faction="Serboi" />
     <Culture name="Yugrian" faction="Yugrian" />
@@ -433,7 +433,7 @@
   </Heritage>
   <Heritage name="heritage_zagrosi" faction="Akan">
     <Culture name="gutian" faction="Akan" />
-    <Culture name="kassite" faction="Eranshahr" />
+    <Culture name="kassite" faction="Elamite" />
     <Culture name="lullubi" faction="Sassanid Separatists" />
   </Heritage>
   <Heritage name="heritage_hurrian" faction="Aramean">
@@ -456,6 +456,7 @@
   </Heritage>
   <Heritage name="heritage_balto_finnic" faction="att_fact_balto_finnic">
     <Culture name="livy" faction="att_fact_balto_finnic" />
+    <Culture name="Balto Finnic" faction="Balto Finnic" />
   </Heritage>
   <Heritage name="heritage_somalian" faction="Somalian">
     <Culture name="socotrian" faction="Somalian" />
