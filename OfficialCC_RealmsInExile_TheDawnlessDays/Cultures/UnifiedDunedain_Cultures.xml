@@ -37,7 +37,6 @@
     <Culture name="Orocarni South" faction="Orocarni South" />
     <Culture name="Pinnath Gelin" faction="pinnath" />
     <Culture name="Rhudaur" faction="Rhudaur" />
-    <Culture name="Ringló Vale" faction="all" />
     <Culture name="Rohan" faction="Rohan" />
     <Culture name="Silvan Elves" faction="Silvan Elves" />
     <Culture name="Woodland Realm" faction="Woodland Realm" />
@@ -49,7 +48,7 @@
     <Culture name="lossarnach" faction="lossarnach" />
     <Culture name="pinnath" faction="pinnath" />
     <Culture name="ringlo" faction="ringlo" />
-    <Culture name="Easterlings" faction="all" />
+    <Culture name="Easterlings" faction="Dol Amroth" />
     <Culture name="Anduin" faction="Anduin-Vale" />
     <Culture name="Corsairs" faction="Corsairs" />
     <Culture name="Haerim" faction="Haerim" />
@@ -67,26 +66,28 @@
     <Culture name="Ruffians" faction="Ruffians" />
     <Culture name="Southron Nomads" faction="Southron Nomads" />
   </Heritage>
-  <Heritage name="heritage_northern_adunaic" faction="Gondor">
-    <Culture name="ar_adunaim_numenorean" faction="Gondor" />
+  <Heritage name="heritage_northern_adunaic" faction="Arnor">
+    <Culture name="ar_adunaim_numenorean" faction="Arnor" />
+    <Culture name="Haradrim" faction="Haradrim" />
     <Culture name="Northern Enedwaith" faction="Northern Enedwaith" />
   </Heritage>
-  <Heritage name="heritage_southern_adunaic" faction="Haradrim">
-    <Culture name="kharatakhori" faction="Haradrim" />
+  <Heritage name="heritage_southern_adunaic" faction="Gondor">
+    <Culture name="kharatakhori" faction="Gondor" />
     <Culture name="Southern Enedwaith" faction="Southern Enedwaith" />
     <Culture name="Umbar" faction="Umbar" />
   </Heritage>
-  <Heritage name="heritage_dunedain" faction="Drúedain">
-    <Culture name="new_dunedain" faction="Drúedain" />
-    <Culture name="new_numenorean" faction="Gondor" />
-    <Culture name="Arnor" faction="Arnor" />
+  <Heritage name="heritage_dunedain" faction="Arnor">
+    <Culture name="new_dunedain" faction="Arnor" />
+    <Culture name="new_numenorean" faction="Arnor" />
+    <Culture name="Drúedain" faction="Drúedain" />
     <Culture name="Harondor Tribes" faction="Harondor Tribes" />
     <Culture name="anorien" faction="anorien" />
     <Culture name="harondor" faction="harondor" />
     <Culture name="lamedon" faction="lamedon" />
+    <Culture name="Ringló Vale" faction="Gondor" />
   </Heritage>
-  <Heritage name="heritage_unified_adunaic" faction="Gondor">
-    <Culture name="new_numenorean_adunaic" faction="Gondor" />
-    <Culture name="pharazaini_culture" faction="Dol Amroth" />
+  <Heritage name="heritage_unified_adunaic" faction="Corsairs">
+    <Culture name="new_numenorean_adunaic" faction="Corsairs" />
+    <Culture name="pharazaini_culture" faction="Corsairs" />
   </Heritage>
 </Cultures>
