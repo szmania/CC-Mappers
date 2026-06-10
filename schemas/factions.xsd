@@ -11,6 +11,7 @@
                 <xs:complexType>
                   <xs:attribute name="key" type="xs:string" use="required"/>
                   <xs:attribute name="rank" type="xs:integer" use="optional"/>
+                  <xs:attribute name="naval_key" type="xs:string" use="optional"/>
                   <xs:attribute name="num_guns" type="xs:integer" use="optional"/>
                 </xs:complexType>
               </xs:element>
@@ -18,6 +19,7 @@
                 <xs:complexType>
                   <xs:attribute name="key" type="xs:string" use="required"/>
                   <xs:attribute name="rank" type="xs:integer" use="optional"/>
+                  <xs:attribute name="naval_key" type="xs:string" use="optional"/>
                   <xs:attribute name="num_guns" type="xs:integer" use="optional"/>
                 </xs:complexType>
               </xs:element>
@@ -26,6 +28,7 @@
                   <xs:attribute name="key" type="xs:string" use="required"/>
                   <xs:attribute name="percentage" type="xs:integer" use="required"/>
                   <xs:attribute name="max" type="xs:string" use="required"/>
+                  <xs:attribute name="naval_key" type="xs:string" use="optional"/>
                   <xs:attribute name="num_guns" type="xs:integer" use="optional"/>
                 </xs:complexType>
               </xs:element>
@@ -35,6 +38,7 @@
                   <xs:attribute name="percentage" type="xs:integer" use="required"/>
                   <xs:attribute name="max" type="xs:string" use="required"/>
                   <xs:attribute name="level" type="xs:integer" use="required"/>
+                  <xs:attribute name="naval_key" type="xs:string" use="optional"/>
                   <xs:attribute name="num_guns" type="xs:integer" use="optional"/>
                 </xs:complexType>
               </xs:element>
@@ -45,7 +49,16 @@
                   <xs:attribute name="max" type="xs:string" use="optional"/>
                   <xs:attribute name="siege" type="xs:boolean" use="optional"/>
                   <xs:attribute name="siege_engine_per_unit" type="xs:integer" use="optional"/>
+                  <xs:attribute name="naval_key" type="xs:string" use="optional"/>
                   <xs:attribute name="num_guns" type="xs:integer" use="optional"/>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="Naval" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:attribute name="type" type="xs:string" use="required"/>
+                  <xs:attribute name="category" type="xs:string" use="required"/>
+                  <xs:attribute name="Class" type="xs:string" use="required"/>
+                  <xs:attribute name="naval_key" type="xs:string" use="required"/>
                 </xs:complexType>
               </xs:element>
             </xs:choice>
