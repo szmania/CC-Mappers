@@ -7,15 +7,14 @@
     <Culture name="Alemannic Separatists" faction="Alamannic Separatists" />
     <Culture name="Duchy of Alemannia" faction="Duchy of Alemannia" />
     <Culture name="att_fact_afrighids" faction="Afrighids" />
-    <Culture name="att_fact_frankish" faction="att_fact_vandals" />
-    <Culture name="att_fact_vandals" faction="att_fact_danjai" />
+    <Culture name="att_fact_frankish" faction="Western Roman Empire" />
     <Culture name="att_fact_western_roman_empire" faction="Western Roman Empire" />
     <Culture name="Aksum" faction="Aksum" />
-    <Culture name="att_fact_danjai" faction="att_fact_franks" />
-    <Culture name="att_fact_kru" faction="att_fact_danjai" />
-    <Culture name="att_fact_noba" faction="att_fact_frankish" />
+    <Culture name="att_fact_danjai" faction="att_fact_afrighids" />
+    <Culture name="att_fact_kru" faction="att_fact_western_roman_empire" />
+    <Culture name="att_fact_noba" faction="Western Roman Empire" />
     <Culture name="att_fact_sarmatian_separatists" faction="Sarmatian Separatists" />
-    <Culture name="att_fact_visigoths" faction="att_fact_vandals" />
+    <Culture name="att_fact_visigoths" faction="Roman Expedition" />
     <Culture name="Alanic Separatists" faction="Alanic Separatists" />
     <Culture name="Alt Clut" faction="Alt Clut" />
     <Culture name="Angli Separatists" faction="Angli Separatists" />
@@ -129,771 +128,774 @@
     <Culture name="Westphalian Separatists" faction="Westphalian Separatists" />
     <Culture name="White Hun Separatists" faction="White Hun Separatists" />
     <Culture name="Ystrad Clut Separatists" faction="Ystrad Clut Separatists" />
+    <Culture name="Dakiai" faction="Dakiai" />
+    <Culture name="Kingdom of Brittany" faction="Kingdom of Brittany" />
+    <Culture name="Kingdom of the Lombards" faction="Kingdom of the Lombards" />
+    <Culture name="Vascones" faction="Vascones" />
+    <Culture name="Aethiopian Separatists" faction="Aethiopian Separatists" />
   </Heritage>
-  <Heritage name="heritage_latin" faction="Avars">
-    <Culture name="italian" faction="Italia" />
-    <Culture name="roman" faction="Romania" />
-    <Culture name="illyro_roman" faction="Avars" />
-    <Culture name="gallo_roman" faction="Avars" />
-    <Culture name="afro_roman" faction="Alemannic Separatists" />
-    <Culture name="mauro_roman" faction="Alemannia" />
+  <Heritage name="heritage_latin" faction="Roman Empire">
+    <Culture name="italian" faction="Italian Rebels" />
+    <Culture name="roman" faction="Roman Empire" />
+    <Culture name="illyro_roman" faction="Roman Empire" />
+    <Culture name="gallo_roman" faction="Roman Empire" />
+    <Culture name="afro_roman" faction="Roman Empire" />
+    <Culture name="mauro_roman" faction="att_fact_italia" />
     <Culture name="thracio_roman" faction="Regnum Langobardorum" />
-    <Culture name="dacio_roman" faction="Duchy of Aquitane" />
-    <Culture name="hispano_roman" faction="Duchy of Aquitane" />
-    <Culture name="rhaetio_roman" faction="Avars" />
-    <Culture name="sicilian" faction="Alemannic Separatists" />
+    <Culture name="dacio_roman" faction="Roman Empire" />
+    <Culture name="hispano_roman" faction="Roman Empire" />
+    <Culture name="rhaetio_roman" faction="Western Roman Empire" />
+    <Culture name="sicilian" faction="Avars" />
     <Culture name="lombard" faction="Lombard Separatists" />
-    <Culture name="cisalpine" faction="att_fact_italian" />
+    <Culture name="cisalpine" faction="Roman Empire" />
     <Culture name="Default" faction="Roman Empire" />
-    <Culture name="britano_roman" faction="Avars" />
-    <Culture name="etruscan" faction="Avars" />
-    <Culture name="helleno_roman" faction="Roman Empire" />
-    <Culture name="nuragic" faction="Alemannic Separatists" />
-    <Culture name="rhaetian" faction="Alemannic Separatists" />
+    <Culture name="britano_roman" faction="Avaroi" />
+    <Culture name="etruscan" faction="Roman Empire" />
+    <Culture name="helleno_roman" faction="Avaroi" />
+    <Culture name="nuragic" faction="Regnum Langobardorum" />
+    <Culture name="rhaetian" faction="Duchy of Burgundy" />
     <Culture name="sardinian" faction="Sardinians" />
-    <Culture name="aesto_roman" faction="Alemannic Separatists" />
-    <Culture name="anglo_roman" faction="Avars" />
-    <Culture name="arpitan_hybrid" faction="Duchy of Benevento" />
-    <Culture name="bari" faction="Avars" />
-    <Culture name="caledo_roman" faction="Avars" />
+    <Culture name="aesto_roman" faction="Italia" />
+    <Culture name="anglo_roman" faction="Roman Empire" />
+    <Culture name="arpitan_hybrid" faction="Avars" />
+    <Culture name="bari" faction="Duchy of Aquitane" />
+    <Culture name="caledo_roman" faction="att_fact_italia" />
     <Culture name="celto_roman" faction="Regnum Langobardorum" />
-    <Culture name="dalmatian" faction="Avars" />
-    <Culture name="dalmatian_hybrid" faction="Avars" />
+    <Culture name="dalmatian" faction="Duchy of Burgundy" />
+    <Culture name="dalmatian_hybrid" faction="Roman Empire" />
     <Culture name="egypto_roman" faction="Egypt" />
-    <Culture name="erano_roman" faction="Alemannic Separatists" />
-    <Culture name="fenno_roman" faction="Regnum Langobardorum" />
-    <Culture name="franco_roman" faction="Alemannic Separatists" />
+    <Culture name="erano_roman" faction="Avars" />
+    <Culture name="fenno_roman" faction="att_fact_italia" />
+    <Culture name="franco_roman" faction="Avars" />
     <Culture name="gasmouloi_hybrid" faction="Regnum Langobardorum" />
-    <Culture name="germano_roman" faction="Roman Empire" />
-    <Culture name="griko_hybrid" faction="att_fact_italian" />
-    <Culture name="hiberno_roman" faction="Avars" />
-    <Culture name="indo_roman" faction="Roman Empire" />
-    <Culture name="ligurian" faction="Kingdom of the Lombards" />
-    <Culture name="neapolitan" faction="Roman Empire" />
-    <Culture name="neapolitan_hybrid" faction="Regnum Langobardorum" />
-    <Culture name="oltremare" faction="Avar Rebels" />
-    <Culture name="romagnol" faction="Avars" />
-    <Culture name="romansh_hybrid" faction="Roman Empire" />
+    <Culture name="germano_roman" faction="att_fact_italia" />
+    <Culture name="griko_hybrid" faction="att_fact_italia" />
+    <Culture name="hiberno_roman" faction="Italia" />
+    <Culture name="indo_roman" faction="att_fact_italia" />
+    <Culture name="ligurian" faction="Regnum Langobardorum" />
+    <Culture name="neapolitan" faction="Duchy of Aquitane" />
+    <Culture name="neapolitan_hybrid" faction="Avars" />
+    <Culture name="oltremare" faction="Regnum Langobardorum" />
+    <Culture name="romagnol" faction="Italia" />
+    <Culture name="romansh_hybrid" faction="Duchy of Burgundy" />
     <Culture name="sarmatio_roman" faction="Avars" />
     <Culture name="scando_roman" faction="Avars" />
-    <Culture name="scytho_roman" faction="Roman Empire" />
-    <Culture name="siculo_norman" faction="Avar Rebels" />
-    <Culture name="swiss" faction="Avars" />
-    <Culture name="turko_roman" faction="Avars" />
-    <Culture name="tuscan" faction="Alemannic Separatists" />
-    <Culture name="umbrian" faction="Avars" />
+    <Culture name="scytho_roman" faction="Duchy of Aquitane" />
+    <Culture name="siculo_norman" faction="Duchy of Burgundy" />
+    <Culture name="swiss" faction="att_fact_italia" />
+    <Culture name="turko_roman" faction="Roman Empire" />
+    <Culture name="tuscan" faction="Italia" />
+    <Culture name="umbrian" faction="Italia" />
     <Culture name="venedo_roman" faction="Avars" />
-    <Culture name="venetian" faction="Duchy of Aquitane" />
+    <Culture name="venetian" faction="Roman Empire" />
+    <Culture name="Langobards" faction="Langobards" />
   </Heritage>
-  <Heritage name="heritage_hellenistic" faction="Avars">
-    <Culture name="greek" faction="Lazica" />
+  <Heritage name="heritage_hellenistic" faction="Egypt">
+    <Culture name="greek" faction="Avars" />
     <Culture name="aegyptian" faction="Egypt" />
-    <Culture name="cappadocian" faction="Roman Empire" />
-    <Culture name="phrygian" faction="Afrighids" />
-    <Culture name="pontic" faction="Avars" />
-    <Culture name="syrian" faction="Avars" />
-    <Culture name="lydian" faction="Anatolia" />
-    <Culture name="macedonian" faction="Avaroi" />
-    <Culture name="isaurian" faction="Alemannic Separatists" />
-    <Culture name="trojan" faction="att_fact_roman_separatists" />
-    <Culture name="helleno_roman" faction="Avars" />
+    <Culture name="cappadocian" faction="Lazica" />
+    <Culture name="phrygian" faction="Avaroi" />
+    <Culture name="pontic" faction="Egypt" />
+    <Culture name="syrian" faction="Anatolia" />
+    <Culture name="lydian" faction="Avars" />
+    <Culture name="macedonian" faction="Avars" />
+    <Culture name="isaurian" faction="Lazica" />
+    <Culture name="trojan" faction="Avaroi Rebels" />
+    <Culture name="helleno_roman" faction="Lazica" />
   </Heritage>
-  <Heritage name="heritage_iberian" faction="Avars">
+  <Heritage name="heritage_iberian" faction="Basques">
     <Culture name="aquitanian" faction="Aquitainia" />
     <Culture name="basque" faction="Basques" />
-    <Culture name="aragonese" faction="Avars" />
+    <Culture name="aragonese" faction="Regnum Visigothorum" />
     <Culture name="Default" faction="Hispania" />
-    <Culture name="andalusian" faction="Avars" />
-    <Culture name="asturleonese" faction="Banu Ghassan" />
-    <Culture name="castilian" faction="Basques" />
-    <Culture name="catalan" faction="Alemannia" />
+    <Culture name="andalusian" faction="Himyar" />
+    <Culture name="asturleonese" faction="Avars" />
+    <Culture name="castilian" faction="Duchy of Aquitane" />
+    <Culture name="catalan" faction="Avaroi" />
     <Culture name="galician" faction="Avars" />
-    <Culture name="portuguese" faction="Avaroi" />
-    <Culture name="baetican" faction="Avars" />
-    <Culture name="balearic" faction="Basques" />
-    <Culture name="galecian" faction="Alemannic Separatists" />
+    <Culture name="portuguese" faction="Hispania" />
+    <Culture name="baetican" faction="Regnum Visigothorum" />
+    <Culture name="balearic" faction="Regnum Visigothorum" />
+    <Culture name="galecian" faction="Aquitainia" />
     <Culture name="hispanian" faction="Hispania" />
-    <Culture name="iberian" faction="Regnum Visigothorum" />
-    <Culture name="lusitanian" faction="Aquitainia" />
-    <Culture name="western_suebi" faction="Avaroi" />
-    <Culture name="ultramar" faction="Hispantia" />
+    <Culture name="iberian" faction="Aquitainia" />
+    <Culture name="lusitanian" faction="Avars" />
+    <Culture name="western_suebi" faction="Himyar" />
+    <Culture name="ultramar" faction="Basques" />
   </Heritage>
   <Heritage name="heritage_daco_thracian" faction="Dakiai">
     <Culture name="thracian" faction="Dakiai" />
     <Culture name="dacian" faction="Dakiai" />
   </Heritage>
-  <Heritage name="heritage_turkic" faction="Avars">
+  <Heritage name="heritage_turkic" faction="Avar Rebels">
     <Culture name="hun" faction="White Hun Rebels" />
-    <Culture name="akatzir" faction="Kök Türük" />
+    <Culture name="akatzir" faction="Avars" />
     <Culture name="sabir" faction="Sabiroi" />
-    <Culture name="saragur" faction="Avar Rebels" />
-    <Culture name="avar" faction="Avars" />
+    <Culture name="saragur" faction="att_fact_white_huns" />
+    <Culture name="avar" faction="Avar Rebels" />
     <Culture name="tiele" faction="Avars" />
-    <Culture name="tujue" faction="Avars" />
-    <Culture name="uyghur" faction="Avars" />
-    <Culture name="turkish" faction="Avar Separatists" />
-    <Culture name="pecheneg" faction="Avar Rebels" />
+    <Culture name="tujue" faction="att_fact_hunnic" />
+    <Culture name="uyghur" faction="Kök Türük" />
+    <Culture name="turkish" faction="Kök Türük" />
+    <Culture name="pecheneg" faction="Kök Türük" />
     <Culture name="cuman" faction="Avars" />
-    <Culture name="khazar" faction="Avar Rebels" />
-    <Culture name="bolghar" faction="Avar Rebels" />
-    <Culture name="bashkir" faction="Avars" />
+    <Culture name="khazar" faction="att_fact_white_huns" />
+    <Culture name="bolghar" faction="att_fact_kok_turuk" />
+    <Culture name="bashkir" faction="Kök Türük" />
     <Culture name="karluk" faction="Avars" />
-    <Culture name="kimek" faction="Avar Rebels" />
-    <Culture name="kipchak" faction="Avaroi" />
+    <Culture name="kimek" faction="Avars" />
+    <Culture name="kipchak" faction="Avars" />
     <Culture name="laktan" faction="Avars" />
     <Culture name="kirghiz" faction="Avars" />
     <Culture name="yughur" faction="Avars" />
     <Culture name="uriankhai" faction="Avars" />
-    <Culture name="chuvash" faction="Avar Rebels" />
+    <Culture name="chuvash" faction="Kök Türük" />
     <Culture name="shatuo" faction="Avars" />
-    <Culture name="kangar" faction="att_fact_white_huns" />
-    <Culture name="kurykan" faction="Avaroi Rebels" />
+    <Culture name="kangar" faction="Avars" />
+    <Culture name="kurykan" faction="Avars" />
     <Culture name="Default" faction="Kök Türük" />
-    <Culture name="yueban" faction="Avars" />
+    <Culture name="yueban" faction="koutrigoi" />
     <Culture name="anatolian_turkish" faction="Anatolia" />
-    <Culture name="azeri" faction="Avars" />
+    <Culture name="azeri" faction="Kök Türük" />
     <Culture name="azeri_hybrid" faction="Avars" />
     <Culture name="dobrujan" faction="Avars" />
-    <Culture name="hindustani_proper" faction="Avar Separatists" />
+    <Culture name="hindustani_proper" faction="Avars" />
     <Culture name="kazakh" faction="Avars" />
     <Culture name="new_english_hybrid" faction="Avar Rebels" />
-    <Culture name="turko_roman" faction="Avar Rebels" />
+    <Culture name="turko_roman" faction="att_fact_kok_turuk" />
   </Heritage>
-  <Heritage name="heritage_east_germanic" faction="Vandalic Kingdom">
+  <Heritage name="heritage_east_germanic" faction="East Germanic Separatists">
     <Culture name="vandal" faction="Vandalic Kingdom" />
     <Culture name="gothic" faction="Visigothic Kingdom" />
     <Culture name="gothonic" faction="Gothoi" />
     <Culture name="visigothic" faction="Visigothic Kingdom" />
     <Culture name="ostrogothic" faction="Ostrogothic Kingdom" />
     <Culture name="gepid" faction="Gepidae" />
-    <Culture name="herulian" faction="Alemannic Separatists" />
-    <Culture name="scirian" faction="Vandalic Kingdom" />
-    <Culture name="burgundian" faction="Burgundians" />
-    <Culture name="przeworsk" faction="Gepidae" />
+    <Culture name="herulian" faction="Gepidae" />
+    <Culture name="scirian" faction="ostrogit_kingdom" />
+    <Culture name="burgundian" faction="Burgundian Separatists" />
+    <Culture name="przeworsk" faction="Visigothic Kingdom" />
     <Culture name="Default" faction="Ostrogothic Kingdom" />
-    <Culture name="bastarnian" faction="Vandalic Kingdom" />
+    <Culture name="bastarnian" faction="Visigothic Kingdom" />
     <Culture name="rugian" faction="Gepidae" />
-    <Culture name="varinian" faction="Alemannic Separatists" />
-    <Culture name="germano_roman" faction="Vandalic Kingdom" />
+    <Culture name="varinian" faction="Gepidae" />
+    <Culture name="germano_roman" faction="Gepidae" />
+    <Culture name="Burgundians" faction="Burgundians" />
     <Culture name="Eastern Germanic Rebels" faction="Eastern Germanic Rebels" />
-    <Culture name="default" faction="att_fact_germanic" />
   </Heritage>
-  <Heritage name="heritage_magyar" faction="Avaroi">
+  <Heritage name="heritage_magyar" faction="Avars">
     <Culture name="mogyer" faction="Avaroi" />
-    <Culture name="kulfoldi" faction="Abarshahr" />
-    <Culture name="transylvanian" faction="Avars" />
-    <Culture name="Magiaroi" faction="Magiaroi" />
+    <Culture name="kulfoldi" faction="Magiaroi" />
+    <Culture name="transylvanian" faction="Magyaroi" />
   </Heritage>
-  <Heritage name="heritage_central_germanic" faction="Alemannic Separatists">
+  <Heritage name="heritage_central_germanic" faction="Duchy of Alemannia">
     <Culture name="thuringian" faction="Thuringia" />
     <Culture name="alamannic" faction="Alamannic Separatists" />
     <Culture name="suebi" faction="Suebians" />
-    <Culture name="langobard" faction="Langobards" />
+    <Culture name="langobard" faction="Langobard Separatists" />
     <Culture name="Default" faction="Bavaria" />
-    <Culture name="dutch" faction="Alemannic Separatists" />
+    <Culture name="dutch" faction="Duchy of Alemannia" />
     <Culture name="german" faction="Germanic Rebels" />
-    <Culture name="saxon" faction="Saxones" />
-    <Culture name="swabian" faction="Duchy of Alemannia" />
+    <Culture name="saxon" faction="Saxon Rebels" />
+    <Culture name="swabian" faction="regnum suevorum" />
     <Culture name="bavarian" faction="Bavaria" />
     <Culture name="marcomannic" faction="Duchy of Alemannia" />
-    <Culture name="old_suebi" faction="Ducatus Alemanniae" />
-    <Culture name="alsatian" faction="att_fact_alemannia" />
+    <Culture name="old_suebi" faction="Duchy of Alemannia" />
+    <Culture name="alsatian" faction="Duchy of Alemannia" />
     <Culture name="austrian" faction="Austrasia" />
     <Culture name="bohemian_hybrid" faction="Bohemia" />
-    <Culture name="germano_roman" faction="Alemannic Separatists" />
-    <Culture name="jerusalemer" faction="Alemannic Separatists" />
-    <Culture name="kurlander" faction="Alemannic Separatists" />
+    <Culture name="germano_roman" faction="Langobard Separatists" />
+    <Culture name="jerusalemer" faction="Duchy of Alemannia" />
+    <Culture name="kurlander" faction="Avars" />
     <Culture name="lothringian" faction="Thuringia" />
-    <Culture name="rhinelander" faction="Avars" />
-    <Culture name="romansh_hybrid" faction="Avars" />
-    <Culture name="swiss" faction="Duchy of Alemannia" />
-    <Culture name="wendish_hybrid" faction="Alemannic" />
+    <Culture name="rhinelander" faction="att_fact_alemannia" />
+    <Culture name="romansh_hybrid" faction="Duchy of Alemanniae" />
+    <Culture name="swiss" faction="Ducatus Alemanniae" />
+    <Culture name="wendish_hybrid" faction="Duchy of Alemannia" />
     <Culture name="Neustria" faction="Neustria" />
     <Culture name="Saxonia" faction="Saxonia" />
     <Culture name="Serboi" faction="Serboi" />
-    <Culture name="att_fact_avaroi" faction="Avaroi" />
   </Heritage>
-  <Heritage name="heritage_frankish" faction="Frankish Kingdom">
-    <Culture name="franconian" faction="Duchy of Frisia" />
-    <Culture name="french" faction="Duchy of Alemannia" />
+  <Heritage name="heritage_frankish" faction="Frankish Rebels">
+    <Culture name="franconian" faction="Avars" />
+    <Culture name="french" faction="Frankish Kingdom" />
     <Culture name="Default" faction="Frankish Kingdom" />
     <Culture name="frankish" faction="Frankish Rebels" />
-    <Culture name="norman" faction="att_fact_frankish" />
-    <Culture name="occitan" faction="att_fact_frankish" />
+    <Culture name="norman" faction="Avars" />
+    <Culture name="occitan" faction="Frankish Kingdom" />
     <Culture name="alsatian" faction="Avars" />
-    <Culture name="angevin_hybrid" faction="att_fact_frankish" />
+    <Culture name="angevin_hybrid" faction="Frankish Kingdom" />
     <Culture name="aquitanian_hybrid" faction="Frankish Kingdom" />
-    <Culture name="arpitan" faction="Avars" />
+    <Culture name="arpitan" faction="Duchy of Alemannia" />
     <Culture name="arpitan_hybrid" faction="Frankish Kingdom" />
-    <Culture name="arvorigeg" faction="Duchy of Alemannia" />
-    <Culture name="bari" faction="Duchy of Alemannia" />
-    <Culture name="burgundian" faction="Burgundians" />
-    <Culture name="franco_roman" faction="Duchy of Burgundy" />
-    <Culture name="gallo" faction="Avars" />
-    <Culture name="gasmouloi_hybrid" faction="Avars" />
+    <Culture name="arvorigeg" faction="Frankish Kingdom" />
+    <Culture name="bari" faction="Frankish Kingdom" />
+    <Culture name="burgundian" faction="Burgundian Separatists" />
+    <Culture name="franco_roman" faction="Frankish Kingdom" />
+    <Culture name="gallo" faction="Frankish Kingdom" />
+    <Culture name="gasmouloi_hybrid" faction="Frankish Kingdom" />
     <Culture name="outremer" faction="Frankish Kingdom" />
     <Culture name="rhinelander" faction="Frankish Kingdom" />
-    <Culture name="romansh_hybrid" faction="Duchy of Alemannia" />
+    <Culture name="romansh_hybrid" faction="Frankish Kingdom" />
     <Culture name="swiss" faction="Frankish Kingdom" />
-    <Culture name="vlaemsch" faction="Avars" />
-    <Culture name="walloon" faction="att_fact_frankish" />
+    <Culture name="vlaemsch" faction="Duchy of Frisia" />
+    <Culture name="walloon" faction="Frankish Kingdom" />
   </Heritage>
-  <Heritage name="heritage_iranian" faction="Persia">
+  <Heritage name="heritage_iranian" faction="Avars">
     <Culture name="persian" faction="Persia" />
-    <Culture name="kurdish" faction="Avaroi Rebels" />
-    <Culture name="baloch" faction="Avaroi Rebels" />
-    <Culture name="daylamite" faction="Avars" />
-    <Culture name="elymaean" faction="Avaroi" />
-    <Culture name="parata" faction="Avaroi" />
+    <Culture name="kurdish" faction="Persia" />
+    <Culture name="baloch" faction="Persia" />
+    <Culture name="daylamite" faction="Persia" />
+    <Culture name="elymaean" faction="Avars" />
+    <Culture name="parata" faction="Persian" />
     <Culture name="Default" faction="Persia" />
-    <Culture name="afghan" faction="Avars" />
-    <Culture name="aorsi" faction="Avaroi" />
-    <Culture name="cadusian" faction="Persia" />
+    <Culture name="afghan" faction="Persia" />
+    <Culture name="aorsi" faction="Avars" />
+    <Culture name="cadusian" faction="Avars" />
     <Culture name="median" faction="Persia" />
-    <Culture name="pactyan" faction="Aestii" />
-    <Culture name="parthian" faction="Avar Rebels" />
-    <Culture name="tajik" faction="Hepthalites" />
-    <Culture name="azeri_hybrid" faction="Avaroi" />
-    <Culture name="erano_roman" faction="Afrighids" />
-    <Culture name="hindustani_proper" faction="att_fact_franks" />
-    <Culture name="luri" faction="Persia" />
-    <Culture name="mervi" faction="Persia" />
-    <Culture name="parsi_hybrid" faction="Avars" />
+    <Culture name="pactyan" faction="Persia" />
+    <Culture name="parthian" faction="Persia" />
+    <Culture name="tajik" faction="Eranshahr" />
+    <Culture name="azeri_hybrid" faction="Avars" />
+    <Culture name="erano_roman" faction="Avars" />
+    <Culture name="hindustani_proper" faction="Persia" />
+    <Culture name="luri" faction="Avars" />
+    <Culture name="mervi" faction="Avars" />
+    <Culture name="parsi_hybrid" faction="Persia" />
     <Culture name="scytho_roman" faction="Avars" />
-    <Culture name="tabari" faction="Aestii" />
+    <Culture name="tabari" faction="Persia" />
   </Heritage>
-  <Heritage name="heritage_sarmatian" faction="Avaroi">
-    <Culture name="thyssagataen" faction="Avaroi" />
+  <Heritage name="heritage_sarmatian" faction="Sarmatian Rebels">
+    <Culture name="thyssagataen" faction="Sarmatian Separatists" />
     <Culture name="roxolan" faction="Sarmatian Separatists" />
-    <Culture name="yazige" faction="Avars" />
-    <Culture name="kangju" faction="Avaroi" />
+    <Culture name="yazige" faction="Sarmatian Rebels" />
+    <Culture name="kangju" faction="Avars" />
     <Culture name="ciscaucasian" faction="Asia" />
     <Culture name="Default" faction="Alania" />
     <Culture name="alan" faction="Alania" />
-    <Culture name="taifal" faction="Sarmatian Separatists" />
-    <Culture name="sarmatio_roman" faction="Avaroi" />
-    <Culture name="Sarmatian Rebels" faction="Sarmatian Rebels" />
+    <Culture name="taifal" faction="Avaroi" />
+    <Culture name="sarmatio_roman" faction="Sarmatian Separatists" />
   </Heritage>
-  <Heritage name="heritage_north_germanic" faction="Avars">
-    <Culture name="norse" faction="Alemannic Separatists" />
+  <Heritage name="heritage_north_germanic" faction="North Germanic Separatists">
+    <Culture name="norse" faction="Danir" />
     <Culture name="swedish" faction="North Germanic Separatists" />
-    <Culture name="norwegian" faction="Duchy of Alemannia" />
+    <Culture name="norwegian" faction="att_fact_saxones" />
     <Culture name="danish" faction="Danish Separatists" />
     <Culture name="gutish" faction="Aestii" />
     <Culture name="Default" faction="Danir" />
-    <Culture name="anglo_norse" faction="Avars" />
-    <Culture name="danelander" faction="Nordalbingia" />
-    <Culture name="horse" faction="Abarshahr" />
-    <Culture name="icelandic" faction="Avars" />
-    <Culture name="jerusalemer" faction="Avars" />
+    <Culture name="anglo_norse" faction="att_fact_saxones" />
+    <Culture name="danelander" faction="Avars" />
+    <Culture name="horse" faction="North Germanic Separatists" />
+    <Culture name="icelandic" faction="Nordalbingia" />
+    <Culture name="jerusalemer" faction="att_fact_franks" />
     <Culture name="norse_gael" faction="Avars" />
-    <Culture name="scando_roman" faction="Avars" />
+    <Culture name="scando_roman" faction="North Germanic Separatists" />
     <Culture name="scanian" faction="Avars" />
     <Culture name="Northern Germanic Rebels" faction="Northern Germanic Rebels" />
   </Heritage>
-  <Heritage name="heritage_volga_finnic" faction="Avars">
-    <Culture name="moksha" faction="gaetuli" />
+  <Heritage name="heritage_volga_finnic" faction="Mauri">
+    <Culture name="moksha" faction="att_fact_sclavenoi" />
     <Culture name="merya" faction="Avars" />
     <Culture name="muroma" faction="Avars" />
-    <Culture name="meshchera" faction="Alemannic Separatists" />
-    <Culture name="mordvin" faction="Aestii" />
+    <Culture name="meshchera" faction="Avars" />
+    <Culture name="mordvin" faction="Sclavenoi" />
     <Culture name="Default" faction="Aestii" />
     <Culture name="mari" faction="Mauri" />
   </Heritage>
-  <Heritage name="heritage_west_germanic" faction="Alemannic Separatists">
+  <Heritage name="heritage_west_germanic" faction="West Germanic Separatists">
     <Culture name="jute" faction="Jute Separatists" />
-    <Culture name="anglo_saxon" faction="Austrasia" />
-    <Culture name="old_saxon" faction="Visigothic Kingdom" />
-    <Culture name="ripurian" faction="Alemannic Separatists" />
-    <Culture name="frisian" faction="Frisia" />
+    <Culture name="anglo_saxon" faction="Avars" />
+    <Culture name="old_saxon" faction="West Germanic Separatists" />
+    <Culture name="ripurian" faction="Avars" />
+    <Culture name="frisian" faction="Frisian Separatists" />
     <Culture name="frisa" faction="Frisia" />
     <Culture name="Default" faction="Saxones" />
     <Culture name="english" faction="English Rebels" />
-    <Culture name="scottish" faction="att_fact_saxones" />
+    <Culture name="scottish" faction="Angli" />
     <Culture name="angle" faction="Angli" />
-    <Culture name="salian" faction="Alemannic Separatists" />
+    <Culture name="salian" faction="Duchy of Alemannia" />
     <Culture name="angevin_hybrid" faction="Avars" />
-    <Culture name="anglo_roman" faction="att_fact_franks" />
+    <Culture name="anglo_roman" faction="Duchy of Alemannia" />
     <Culture name="bohemian_hybrid" faction="Bohemia" />
-    <Culture name="jerusalemer" faction="Alemannic Separatists" />
-    <Culture name="new_english" faction="Alemannic Separatists" />
-    <Culture name="new_english_hybrid" faction="Alemannic Separatists" />
-    <Culture name="wendish_hybrid" faction="Alemannic Separatists" />
+    <Culture name="jerusalemer" faction="Visigothic Kingdom" />
+    <Culture name="new_english" faction="wenden" />
+    <Culture name="new_english_hybrid" faction="Anglia" />
+    <Culture name="wendish_hybrid" faction="Visigothic Kingdom" />
     <Culture name="Western Germanic Rebels" faction="Western Germanic Rebels" />
   </Heritage>
-  <Heritage name="heritage_goidelic" faction="Avaroi">
-    <Culture name="gaelic" faction="Avaroi" />
+  <Heritage name="heritage_goidelic" faction="Irish Rebels">
+    <Culture name="gaelic" faction="Alt Clut" />
     <Culture name="irish" faction="Irish Rebels" />
     <Culture name="Default" faction="Scoti" />
     <Culture name="coigriche" faction="Avaroi" />
-    <Culture name="hiberno_roman" faction="Avars" />
-    <Culture name="norse_gael" faction="Alemannic Separatists" />
+    <Culture name="hiberno_roman" faction="Irish Rebels" />
+    <Culture name="norse_gael" faction="Scoti" />
   </Heritage>
-  <Heritage name="heritage_celtic" faction="Gaul">
-    <Culture name="noric" faction="Alemannic Separatists" />
+  <Heritage name="heritage_celtic" faction="Celtic Rebels">
+    <Culture name="noric" faction="Aestii" />
     <Culture name="Default" faction="Britanni" />
-    <Culture name="galatian" faction="Gaul" />
+    <Culture name="galatian" faction="Britanni" />
     <Culture name="gaul" faction="Gaul" />
-    <Culture name="celto_roman" faction="Avar Rebels" />
+    <Culture name="celto_roman" faction="Alania" />
   </Heritage>
-  <Heritage name="heritage_brythonic" faction="Britanni">
-    <Culture name="briton" faction="Britanni" />
+  <Heritage name="heritage_brythonic" faction="Pictish Rebels">
+    <Culture name="briton" faction="att_fact_bretons" />
     <Culture name="Default" faction="Britanni" />
     <Culture name="breton" faction="Bretons" />
-    <Culture name="cornish" faction="Alemannic Separatists" />
+    <Culture name="cornish" faction="Britanni" />
     <Culture name="cumbrian" faction="Britanni" />
     <Culture name="welsh" faction="Welsh Rebels" />
     <Culture name="britanian" faction="Britanni" />
-    <Culture name="pictish" faction="Picti" />
-    <Culture name="arvorigeg" faction="Avaroi" />
-    <Culture name="dramor" faction="Kingdom of Brittany" />
-    <Culture name="gallo" faction="Alemannic Separatists" />
+    <Culture name="pictish" faction="Pictish Rebels" />
+    <Culture name="arvorigeg" faction="Britanni" />
+    <Culture name="dramor" faction="Britanni" />
+    <Culture name="gallo" faction="Britanni" />
+    <Culture name="Picti" faction="Picti" />
   </Heritage>
-  <Heritage name="heritage_pictish" faction="Gepidae">
-    <Culture name="caledo_roman" faction="Gepidae" />
+  <Heritage name="heritage_pictish" faction="Pictish Rebels">
+    <Culture name="caledo_roman" faction="Aestii" />
   </Heritage>
   <Heritage name="heritage_berber" faction="Berbers">
-    <Culture name="butr" faction="Berbers" />
-    <Culture name="baranis" faction="Alemannic Separatists" />
+    <Culture name="butr" faction="African Rebels" />
+    <Culture name="baranis" faction="Afrighids" />
     <Culture name="masmuda" faction="Berbers" />
-    <Culture name="tora" faction="Berbers" />
-    <Culture name="tuareg" faction="Alemannic Separatists" />
+    <Culture name="tora" faction="Afrighids" />
+    <Culture name="tuareg" faction="Berbers" />
     <Culture name="garamantian" faction="Garamantian Separatists" />
-    <Culture name="libian" faction="Avars" />
-    <Culture name="autoleles" faction="Avars" />
-    <Culture name="pharusian" faction="Berbers" />
-    <Culture name="guanches" faction="Avars" />
-    <Culture name="laguatan" faction="Berbers" />
+    <Culture name="libian" faction="Afrighids" />
+    <Culture name="autoleles" faction="Berbers" />
+    <Culture name="pharusian" faction="Afrighids" />
+    <Culture name="guanches" faction="Avaroi" />
+    <Culture name="laguatan" faction="Avars" />
     <Culture name="Default" faction="Arabian Rebels" />
     <Culture name="gaetulian" faction="Gaetuli" />
     <Culture name="maurian" faction="Mauri" />
     <Culture name="sanhaja" faction="Avars" />
     <Culture name="algerian_hybrid" faction="Berbers" />
-    <Culture name="bari" faction="Abarshahr" />
-    <Culture name="moroccan_hybrid" faction="Afrighids" />
+    <Culture name="bari" faction="Berbers" />
+    <Culture name="moroccan_hybrid" faction="Garamantes" />
     <Culture name="neapolitan" faction="Berbers" />
     <Culture name="neapolitan_hybrid" faction="Berbers" />
-    <Culture name="siculo_norman" faction="Avaroi Rebels" />
-    <Culture name="tripolitanian_hybrid" faction="Avaroi" />
-    <Culture name="tunisian_hybrid" faction="Alemannic Separatists" />
-    <Culture name="Garamantes" faction="Garamantes" />
+    <Culture name="siculo_norman" faction="Berbers" />
+    <Culture name="tripolitanian_hybrid" faction="Berbers" />
+    <Culture name="tunisian_hybrid" faction="Berbers" />
   </Heritage>
-  <Heritage name="heritage_central_african" faction="Avars">
-    <Culture name="sao" faction="Afrighids" />
-    <Culture name="nupe" faction="Avars" />
-    <Culture name="zaghawa" faction="Alemannic Separatists" />
-    <Culture name="toubou" faction="Avars" />
+  <Heritage name="heritage_central_african" faction="African Separatists">
+    <Culture name="sao" faction="Avaroi" />
+    <Culture name="nupe" faction="Afrighids" />
+    <Culture name="zaghawa" faction="Avars" />
+    <Culture name="toubou" faction="Aethiopian Rebels" />
     <Culture name="Default" faction="African Rebels" />
-    <Culture name="hausa" faction="Avar Rebels" />
-    <Culture name="kanuri" faction="Avaroi" />
+    <Culture name="hausa" faction="Aethiopian Rebels" />
+    <Culture name="kanuri" faction="Afrighids" />
   </Heritage>
-  <Heritage name="heritage_bantu" faction="Afrighids">
-    <Culture name="east_bantu" faction="Afrighids" />
+  <Heritage name="heritage_bantu" faction="Aksum">
+    <Culture name="east_bantu" faction="Aksum" />
   </Heritage>
-  <Heritage name="heritage_sahelian" faction="Aksum">
-    <Culture name="bafour" faction="Aksum" />
-    <Culture name="soninke" faction="Aksum" />
-    <Culture name="bozo" faction="Aethiopian Rebels" />
-    <Culture name="mossi" faction="Avaroi" />
-    <Culture name="sorko" faction="Afrighids" />
-    <Culture name="gaw" faction="Alemannic Separatists" />
-    <Culture name="songhai" faction="Avars" />
+  <Heritage name="heritage_sahelian" faction="Avar Rebels">
+    <Culture name="bafour" faction="Avar Rebels" />
+    <Culture name="soninke" faction="Afrighids" />
+    <Culture name="bozo" faction="African Rebels" />
+    <Culture name="mossi" faction="Afrighids" />
+    <Culture name="sorko" faction="Aksum" />
+    <Culture name="gaw" faction="Avars" />
+    <Culture name="songhai" faction="Afrighids" />
   </Heritage>
   <Heritage name="heritage_west_african" faction="Aethiopian Rebels">
     <Culture name="malinke" faction="Aethiopian Rebels" />
-    <Culture name="bobo" faction="African Separatists" />
-    <Culture name="gur" faction="Avars" />
-    <Culture name="mel" faction="Avaroi Rebels" />
-    <Culture name="marka" faction="Aethiopian Separatists" />
+    <Culture name="bobo" faction="African Rebels" />
+    <Culture name="gur" faction="Aethiopian Rebels" />
+    <Culture name="mel" faction="Aethiopian Rebels" />
+    <Culture name="marka" faction="Avars" />
   </Heritage>
-  <Heritage name="heritage_akan" faction="Alemannic Separatists">
-    <Culture name="akan" faction="Alemannic Separatists" />
-    <Culture name="kru" faction="Afrighids" />
-    <Culture name="guan" faction="Aksum" />
+  <Heritage name="heritage_akan" faction="Avars">
+    <Culture name="akan" faction="Aksum" />
+    <Culture name="kru" faction="Aksum" />
+    <Culture name="guan" faction="Afrighids" />
   </Heritage>
-  <Heritage name="heritage_senegambian" faction="Afrighids">
-    <Culture name="pulaar" faction="Afrighids" />
-    <Culture name="wolof" faction="Avaroi" />
+  <Heritage name="heritage_senegambian" faction="Suebians">
+    <Culture name="pulaar" faction="Avars" />
+    <Culture name="wolof" faction="Avars" />
     <Culture name="serer" faction="Avars" />
   </Heritage>
-  <Heritage name="heritage_levantine" faction="Banu Ghassan">
-    <Culture name="hebrew" faction="Banu Ghassan" />
-    <Culture name="phoenician" faction="Avars" />
-    <Culture name="punic" faction="att_fact_lazica" />
+  <Heritage name="heritage_levantine" faction="Avar Rebels">
+    <Culture name="hebrew" faction="Avars" />
+    <Culture name="phoenician" faction="Avar Rebels" />
+    <Culture name="punic" faction="Avar Rebels" />
     <Culture name="Default" faction="Palmyra" />
     <Culture name="soissons" faction="Domain of Soissons" />
   </Heritage>
-  <Heritage name="heritage_yoruba" faction="Aethiopian Rebels">
-    <Culture name="yoruba" faction="Aethiopian Rebels" />
+  <Heritage name="heritage_yoruba" faction="Taifa of Toledo">
+    <Culture name="yoruba" faction="Avars" />
     <Culture name="edo" faction="Taifa of Toledo" />
-    <Culture name="igbo" faction="African Separatists" />
-    <Culture name="ewe" faction="Abarshahr" />
+    <Culture name="igbo" faction="Afrighids" />
+    <Culture name="ewe" faction="Avars" />
     <Culture name="Default" faction="Nobatia" />
     <Culture name="Corduba" faction="Corduba" />
   </Heritage>
-  <Heritage name="heritage_somalian" faction="Afrighids">
-    <Culture name="afar" faction="Afrighids" />
-    <Culture name="oromo" faction="Aksum" />
+  <Heritage name="heritage_somalian" faction="Romania">
+    <Culture name="afar" faction="Aksum" />
+    <Culture name="oromo" faction="African Separatists" />
     <Culture name="harla" faction="Aksum" />
     <Culture name="somali" faction="African Rebels" />
-    <Culture name="siddi" faction="Afrighids" />
+    <Culture name="siddi" faction="somali" />
   </Heritage>
-  <Heritage name="heritage_east_african" faction="Afrighids">
-    <Culture name="welayta" faction="Afrighids" />
-    <Culture name="daju" faction="Aksum" />
-    <Culture name="nuba" faction="Avar Rebels" />
-    <Culture name="meroitic" faction="Avar Separatists" />
+  <Heritage name="heritage_east_african" faction="Nobatia">
+    <Culture name="welayta" faction="Avars" />
+    <Culture name="daju" faction="Avars" />
+    <Culture name="nuba" faction="Afrighids" />
+    <Culture name="meroitic" faction="Afrighids" />
     <Culture name="dinka" faction="Afrighids" />
     <Culture name="Default" faction="Aksumite Separatists" />
     <Culture name="aari" faction="Avaroi" />
-    <Culture name="beja" faction="Afrighids" />
+    <Culture name="beja" faction="Avar Separatists" />
     <Culture name="noba" faction="Nobatia" />
-    <Culture name="nubian" faction="Avar Rebels" />
-    <Culture name="sidama" faction="Avar Separatists" />
-    <Culture name="beta_israeli" faction="att_fact_franks" />
-    <Culture name="siddi" faction="Alemannic Separatists" />
+    <Culture name="nubian" faction="att_fact_aksum" />
+    <Culture name="sidama" faction="Afrighids" />
+    <Culture name="beta_israeli" faction="Avars" />
+    <Culture name="siddi" faction="att_fact_aksum" />
   </Heritage>
   <Heritage name="heritage_kemetic" faction="Egypt">
-    <Culture name="kemetic" faction="koutrigoi" />
+    <Culture name="kemetic" faction="Egypt" />
     <Culture name="ancient_egyptian" faction="Egypt" />
     <Culture name="egypto_roman" faction="Egypt" />
   </Heritage>
-  <Heritage name="heritage_arabic" faction="Banu Ghassan">
-    <Culture name="bedouin" faction="Banu Ghassan" />
+  <Heritage name="heritage_arabic" faction="Avars">
+    <Culture name="bedouin" faction="Avars" />
     <Culture name="egyptian" faction="Egypt" />
     <Culture name="Default" faction="Banu Tamim" />
-    <Culture name="levantine" faction="Avaroi" />
-    <Culture name="maghrebi" faction="Banu Ghassan" />
-    <Culture name="nabatean" faction="Alemannic Separatists" />
-    <Culture name="yemeni" faction="Alemannic Separatists" />
-    <Culture name="algerian_hybrid" faction="Alemannic Separatists" />
-    <Culture name="coigriche" faction="att_fact_arabian_rebels" />
-    <Culture name="dramor" faction="Banu Ghassan" />
+    <Culture name="levantine" faction="Avars" />
+    <Culture name="maghrebi" faction="Arabian Rebels" />
+    <Culture name="nabatean" faction="Avars" />
+    <Culture name="yemeni" faction="Avars" />
+    <Culture name="algerian_hybrid" faction="Avars" />
+    <Culture name="coigriche" faction="Avars" />
+    <Culture name="dramor" faction="Avars" />
     <Culture name="egyptiote_hybrid" faction="Egypt" />
-    <Culture name="iraqi" faction="Avars" />
-    <Culture name="jerusalemer" faction="Banu Ghassan" />
-    <Culture name="jeruzaleman" faction="Afrighids" />
-    <Culture name="khaleeji" faction="Banu Ghassan" />
-    <Culture name="kulfoldi" faction="Avars" />
-    <Culture name="lebanese" faction="Abarshahr" />
+    <Culture name="iraqi" faction="Arabian Rebels" />
+    <Culture name="jerusalemer" faction="att_fact_arabian_rebels" />
+    <Culture name="jeruzaleman" faction="Avars" />
+    <Culture name="khaleeji" faction="Avars" />
+    <Culture name="kulfoldi" faction="Saracenoi" />
+    <Culture name="lebanese" faction="att_fact_arabian_rebels" />
     <Culture name="lebanese_hybrid" faction="Avars" />
     <Culture name="mahri" faction="Mauri" />
-    <Culture name="moroccan_hybrid" faction="Alemannic Separatists" />
-    <Culture name="oltremare" faction="Banu Ghassan" />
+    <Culture name="moroccan_hybrid" faction="att_fact_arabian_rebels" />
+    <Culture name="oltremare" faction="Avars" />
     <Culture name="omani" faction="Romania" />
-    <Culture name="outremer" faction="Alemannic Separatists" />
+    <Culture name="outremer" faction="Avars" />
     <Culture name="palestinian" faction="Banu Ghassan" />
     <Culture name="soqotri" faction="Avars" />
-    <Culture name="syrian" faction="Abarshahr" />
-    <Culture name="tripolitanian_hybrid" faction="Banu Ghassan" />
+    <Culture name="syrian" faction="Avars" />
+    <Culture name="tripolitanian_hybrid" faction="Arabian Rebels" />
     <Culture name="tunisian_hybrid" faction="Avars" />
     <Culture name="ultramar" faction="Avars" />
   </Heritage>
-  <Heritage name="heritage_south_semitic" faction="Aksum">
-    <Culture name="south_arabian" faction="Aksum" />
-    <Culture name="himyarite" faction="Himyar" />
+  <Heritage name="heritage_south_semitic" faction="Aethiopian Rebels">
+    <Culture name="south_arabian" faction="Avars" />
+    <Culture name="himyarite" faction="Himyarite Separatists" />
     <Culture name="ethiopian" faction="Aethiopian Rebels" />
     <Culture name="Default" faction="Himyarite Separatists" />
-    <Culture name="maganite" faction="Avaroi" />
+    <Culture name="maganite" faction="Avar Rebels" />
   </Heritage>
-  <Heritage name="heritage_baltic" faction="Avars">
+  <Heritage name="heritage_baltic" faction="Venedian Separatists">
     <Culture name="lithuanian" faction="Avars" />
-    <Culture name="prussian" faction="Avars" />
-    <Culture name="aestian" faction="Avars" />
+    <Culture name="prussian" faction="Aestii" />
+    <Culture name="aestian" faction="Aestii" />
     <Culture name="semigallian" faction="Aestii" />
-    <Culture name="selonian" faction="Aestii" />
+    <Culture name="selonian" faction="Avars" />
     <Culture name="east_galindian" faction="Aestii" />
-    <Culture name="scalvian" faction="Avars" />
-    <Culture name="dnieper" faction="Avars" />
+    <Culture name="scalvian" faction="Aestii" />
+    <Culture name="dnieper" faction="Aestii" />
     <Culture name="kolochin" faction="Avars" />
     <Culture name="venedian" faction="Venedian Separatists" />
     <Culture name="Default" faction="Aestii" />
     <Culture name="curonian" faction="Avars" />
-    <Culture name="galindian" faction="Aethiopian Rebels" />
+    <Culture name="galindian" faction="Aestii" />
     <Culture name="latgalian" faction="Avars" />
-    <Culture name="samogitian" faction="Avars" />
+    <Culture name="samogitian" faction="Aestii" />
     <Culture name="sudovian" faction="Avars" />
-    <Culture name="aesto_roman" faction="Avars" />
-    <Culture name="kurlander" faction="Avars" />
-    <Culture name="livonian" faction="Aestii" />
+    <Culture name="aesto_roman" faction="Aestii" />
+    <Culture name="kurlander" faction="Aestii" />
+    <Culture name="livonian" faction="Avars" />
   </Heritage>
   <Heritage name="heritage_balto_finnic" faction="Avars">
-    <Culture name="finnish" faction="att_fact_sclavenoi" />
-    <Culture name="tavastian" faction="Avars" />
-    <Culture name="estonian" faction="Avars" />
-    <Culture name="livonian" faction="Aestii" />
-    <Culture name="chudic" faction="Avar Rebels" />
-    <Culture name="fenni" faction="Aestii" />
-    <Culture name="sami" faction="Avar Separatists" />
-    <Culture name="vepsian" faction="att_fact_aestii" />
+    <Culture name="finnish" faction="Avaroi" />
+    <Culture name="tavastian" faction="att_fact_sclavenoi" />
+    <Culture name="estonian" faction="Aestii" />
+    <Culture name="livonian" faction="Avars" />
+    <Culture name="chudic" faction="Avaroi" />
+    <Culture name="fenni" faction="att_fact_sclavenoi" />
+    <Culture name="sami" faction="Avars" />
+    <Culture name="vepsian" faction="Avars" />
     <Culture name="Default" faction="Wilzi" />
-    <Culture name="karelian" faction="Avaroi" />
-    <Culture name="sitonian" faction="Avaroi" />
-    <Culture name="fenno_roman" faction="Avaroi" />
-    <Culture name="kurlander" faction="Avars" />
+    <Culture name="karelian" faction="Aestii" />
+    <Culture name="sitonian" faction="Avars" />
+    <Culture name="fenno_roman" faction="att_fact_aestii" />
+    <Culture name="kurlander" faction="Aestii" />
     <Culture name="Kartli" faction="Kartli" />
   </Heritage>
-  <Heritage name="heritage_east_slavic" faction="Alemannic Separatists">
+  <Heritage name="heritage_east_slavic" faction="Slavic Rebels">
     <Culture name="ilmenian" faction="Avars" />
-    <Culture name="volhynian" faction="Sclavenoi" />
-    <Culture name="russian" faction="Alemannic Separatists" />
-    <Culture name="severian" faction="venedo_roman" />
-    <Culture name="jeruzaleman" faction="Alemannic Separatists" />
-    <Culture name="venedo_roman" faction="Alemannic Separatists" />
-  </Heritage>
-  <Heritage name="heritage_west_slavic" faction="Avars">
-    <Culture name="czech" faction="Avars" />
-    <Culture name="polish" faction="Saxon Rebels" />
-    <Culture name="mazovian" faction="Avar Rebels" />
-    <Culture name="polabian" faction="Aethiopian Rebels" />
-    <Culture name="lutici" faction="Slavic Rebels" />
-    <Culture name="slovien" faction="Slavic Rebels" />
-    <Culture name="carantanian" faction="Avars" />
-    <Culture name="lendian" faction="Avars" />
-    <Culture name="pommeranian" faction="Avars" />
-    <Culture name="silesian" faction="Avars" />
-    <Culture name="vistulian" faction="Avars" />
-    <Culture name="bohemian_hybrid" faction="Bohemia" />
-    <Culture name="jeruzaleman" faction="att_fact_sclavenoi" />
+    <Culture name="volhynian" faction="Avar Separatists" />
+    <Culture name="russian" faction="att_fact_antai" />
+    <Culture name="severian" faction="att_fact_anti" />
+    <Culture name="jeruzaleman" faction="Sclavenoi" />
     <Culture name="venedo_roman" faction="Avars" />
-    <Culture name="wendish_hybrid" faction="Avars" />
   </Heritage>
-  <Heritage name="heritage_south_slavic" faction="Avars">
-    <Culture name="croatian" faction="Avar Rebels" />
+  <Heritage name="heritage_west_slavic" faction="Avaroi">
+    <Culture name="czech" faction="Slavic Rebels" />
+    <Culture name="polish" faction="Avars" />
+    <Culture name="mazovian" faction="Avars" />
+    <Culture name="polabian" faction="Avars" />
+    <Culture name="lutici" faction="Avaroi" />
+    <Culture name="slovien" faction="Sclavenoi" />
+    <Culture name="carantanian" faction="att_fact_sclavenian_separatists" />
+    <Culture name="lendian" faction="Sclavenoi" />
+    <Culture name="pommeranian" faction="att_fact_slavenoi" />
+    <Culture name="silesian" faction="Avars" />
+    <Culture name="vistulian" faction="Avaroi" />
+    <Culture name="bohemian_hybrid" faction="Bohemia" />
+    <Culture name="jeruzaleman" faction="Gepidae" />
+    <Culture name="venedo_roman" faction="Avaroi" />
+    <Culture name="wendish_hybrid" faction="Avaroi" />
+  </Heritage>
+  <Heritage name="heritage_south_slavic" faction="att_fact_slavs">
+    <Culture name="croatian" faction="Avaroi" />
     <Culture name="belocroat" faction="Avars" />
-    <Culture name="beloserb" faction="Slavic Rebels" />
-    <Culture name="bosnian" faction="Avars" />
+    <Culture name="beloserb" faction="Duchy of Croatia" />
+    <Culture name="bosnian" faction="Avaroi" />
     <Culture name="Default" faction="Sclavenian Separatists" />
     <Culture name="bulgarian" faction="Aria" />
     <Culture name="serbian" faction="Suebians" />
-    <Culture name="dalmatian" faction="Avars" />
-    <Culture name="dalmatian_hybrid" faction="Avars" />
+    <Culture name="dalmatian" faction="Duchy of Croatia" />
+    <Culture name="dalmatian_hybrid" faction="Sclavenoi" />
     <Culture name="jeruzaleman" faction="Avars" />
-    <Culture name="venedo_roman" faction="Duchy of Croatia" />
+    <Culture name="venedo_roman" faction="Avaroi" />
   </Heritage>
-  <Heritage name="heritage_vlach" faction="att_fact_sclavenoi">
-    <Culture name="vlach" faction="att_fact_sclavenoi" />
+  <Heritage name="heritage_vlach" faction="Romania">
+    <Culture name="vlach" faction="Avars" />
     <Culture name="aromanian" faction="Romania" />
-    <Culture name="dobrujan" faction="vlach" />
-    <Culture name="transylvanian" faction="Avars" />
+    <Culture name="dobrujan" faction="Romania" />
+    <Culture name="transylvanian" faction="Avaroi" />
   </Heritage>
-  <Heritage name="heritage_ugro_permian" faction="Avaroi">
-    <Culture name="ugrian" faction="Avars" />
-    <Culture name="khanty" faction="Avaroi" />
-    <Culture name="komi" faction="Avaroi" />
-    <Culture name="udmurt" faction="Avaroi" />
-    <Culture name="samoyed" faction="att_fact_magyaroi" />
+  <Heritage name="heritage_ugro_permian" faction="Avar Separatists">
+    <Culture name="ugrian" faction="Magiaroi" />
+    <Culture name="khanty" faction="Avar Separatists" />
+    <Culture name="komi" faction="Avars" />
+    <Culture name="udmurt" faction="Avars" />
+    <Culture name="samoyed" faction="Avars" />
   </Heritage>
-  <Heritage name="heritage_caucasian" faction="Avars">
-    <Culture name="abkhazian" faction="Avars" />
+  <Heritage name="heritage_caucasian" faction="Caucasian Rebels">
+    <Culture name="abkhazian" faction="Avar Rebels" />
     <Culture name="circassian" faction="Avars" />
     <Culture name="armenian" faction="Armenia" />
-    <Culture name="georgian" faction="Avars" />
-    <Culture name="mingrelian" faction="Aethiopian Rebels" />
+    <Culture name="georgian" faction="Avar Rebels" />
+    <Culture name="mingrelian" faction="Avars" />
     <Culture name="laz" faction="Lazica" />
     <Culture name="arran" faction="Arran" />
     <Culture name="abasgian" faction="Abasgia" />
-    <Culture name="colchian" faction="Avar Rebels" />
+    <Culture name="colchian" faction="att_fact_armenia" />
     <Culture name="Default" faction="Caucasian Rebels" />
-    <Culture name="caspian" faction="Avar Rebels" />
-    <Culture name="kartvelian" faction="Alania" />
-    <Culture name="svan" faction="Avar Rebels" />
+    <Culture name="caspian" faction="Avars" />
+    <Culture name="kartvelian" faction="Abasgia" />
+    <Culture name="svan" faction="att_fact_armenia" />
   </Heritage>
-  <Heritage name="heritage_mongolic" faction="Avars">
-    <Culture name="rouran" faction="Hepthalites" />
-    <Culture name="mongol" faction="Avaroi" />
-    <Culture name="buryat" faction="Avars" />
-    <Culture name="kerait" faction="Alemannic Separatists" />
-    <Culture name="khitan" faction="Avars" />
-    <Culture name="tuyuhun" faction="Hepthalites" />
-    <Culture name="jurchen" faction="Afrighids" />
+  <Heritage name="heritage_mongolic" faction="att_fact_mongols">
+    <Culture name="rouran" faction="Koutrigoi" />
+    <Culture name="mongol" faction="Koutrigoi" />
+    <Culture name="buryat" faction="att_fact_white_huns" />
+    <Culture name="kerait" faction="Hunnic Separatists" />
+    <Culture name="khitan" faction="att_fact_white_huns" />
+    <Culture name="tuyuhun" faction="att_fact_white_huns" />
+    <Culture name="jurchen" faction="Avars" />
     <Culture name="xianbei" faction="Avars" />
-    <Culture name="donghu" faction="Avaroi Rebels" />
-    <Culture name="oirat" faction="Koutrigoi" />
+    <Culture name="donghu" faction="Avars" />
+    <Culture name="oirat" faction="Avars" />
     <Culture name="Default" faction="Avars" />
     <Culture name="naiman" faction="Avaroi" />
-    <Culture name="ongud" faction="Hunnic Separatists" />
-    <Culture name="kazakh" faction="Avaroi Rebels" />
-    <Culture name="khalkha" faction="Avars" />
-    <Culture name="new_english_hybrid" faction="Avaroi" />
+    <Culture name="ongud" faction="att_fact_mongols" />
+    <Culture name="kazakh" faction="Hepthalites" />
+    <Culture name="khalkha" faction="att_fact_mongols" />
+    <Culture name="new_english_hybrid" faction="att_fact_white_huns" />
   </Heritage>
-  <Heritage name="heritage_indo_aryan" faction="Abarshahr">
-    <Culture name="kashmiri" faction="Alemannic Separatists" />
-    <Culture name="madraka" faction="Persia" />
+  <Heritage name="heritage_indo_aryan" faction="Kingdom of Carloman">
+    <Culture name="kashmiri" faction="Avars" />
+    <Culture name="madraka" faction="Afrighids" />
     <Culture name="sindhi" faction="Avars" />
-    <Culture name="yaudheya" faction="Afrighids" />
-    <Culture name="kaushali" faction="Hepthalites" />
-    <Culture name="arjunayana" faction="Abarshahr" />
-    <Culture name="bhil" faction="Hepthalites" />
-    <Culture name="abhira" faction="Avars" />
-    <Culture name="saurashtri" faction="Alemannic Separatists" />
-    <Culture name="maithili" faction="Avaroi" />
-    <Culture name="radhi" faction="Abarshahr" />
-    <Culture name="jat" faction="Aethiopian Rebels" />
-    <Culture name="vedda" faction="Abarshahr" />
-    <Culture name="gurjara" faction="Afrighids" />
-    <Culture name="med" faction="Hepthalites" />
-    <Culture name="burusho" faction="Alemannic Separatists" />
+    <Culture name="yaudheya" faction="Kingdom of Carloman" />
+    <Culture name="kaushali" faction="Persia" />
+    <Culture name="arjunayana" faction="Avaroi" />
+    <Culture name="bhil" faction="Persia" />
+    <Culture name="abhira" faction="Kingdom of Carloman" />
+    <Culture name="saurashtri" faction="Persia" />
+    <Culture name="maithili" faction="Kingdom of Carloman" />
+    <Culture name="radhi" faction="Kingdom of Carloman" />
+    <Culture name="jat" faction="Hepthalites" />
+    <Culture name="vedda" faction="Afrighids" />
+    <Culture name="gurjara" faction="Avaroi" />
+    <Culture name="med" faction="Avars" />
+    <Culture name="burusho" faction="Afrighids" />
     <Culture name="Default" faction="Hepthalites" />
-    <Culture name="assamese" faction="Afrighids" />
-    <Culture name="brahui" faction="Avaroi" />
-    <Culture name="gujarati" faction="Abarshahr" />
-    <Culture name="hindustani" faction="Abarshahr" />
-    <Culture name="nepali" faction="Alemannic Separatists" />
-    <Culture name="punjabi" faction="Avar Rebels" />
+    <Culture name="assamese" faction="Kingdom of Carloman" />
+    <Culture name="brahui" faction="Afrighids" />
+    <Culture name="gujarati" faction="Avaroi" />
+    <Culture name="hindustani" faction="Avaroi" />
+    <Culture name="nepali" faction="Avars" />
+    <Culture name="punjabi" faction="Avars" />
     <Culture name="rajput" faction="Avars" />
-    <Culture name="avantika" faction="att_fact_hephtalites" />
-    <Culture name="bengali" faction="Afrighids" />
-    <Culture name="bharatiya" faction="Avar Rebels" />
-    <Culture name="gandhari" faction="att_fact_hephtalites" />
-    <Culture name="kashika" faction="Avars" />
-    <Culture name="magadhi" faction="Aethiopian Rebels" />
+    <Culture name="avantika" faction="Avars" />
+    <Culture name="bengali" faction="Kingdom of Carloman" />
+    <Culture name="bharatiya" faction="Avars" />
+    <Culture name="gandhari" faction="Avars" />
+    <Culture name="kashika" faction="att_fact_sasanid" />
+    <Culture name="magadhi" faction="Hepthalites" />
     <Culture name="malvi" faction="Afrighids" />
-    <Culture name="marathi" faction="Avaroi" />
-    <Culture name="nuristani" faction="Avar Rebels" />
-    <Culture name="oriya" faction="Abarshahr" />
-    <Culture name="pahari" faction="Hepthalites" />
-    <Culture name="sinhala" faction="Avars" />
-    <Culture name="varendri" faction="Persia" />
-    <Culture name="avadhi" faction="Alemannic Separatists" />
+    <Culture name="marathi" faction="Afrighids" />
+    <Culture name="nuristani" faction="Avars" />
+    <Culture name="oriya" faction="Hepthalites" />
+    <Culture name="pahari" faction="Afrighids" />
+    <Culture name="sinhala" faction="Afrighids" />
+    <Culture name="varendri" faction="Kingdom of Carloman" />
+    <Culture name="avadhi" faction="Kingdom of Carloman" />
     <Culture name="bihari" faction="Avars" />
-    <Culture name="hindustani_proper" faction="Abarshahr" />
+    <Culture name="hindustani_proper" faction="Avars" />
+    <Culture name="indo_roman" faction="Persia" />
+    <Culture name="parsi_hybrid" faction="Avars" />
+    <Culture name="siddi" faction="Afrighids" />
+  </Heritage>
+  <Heritage name="heritage_kherwal" faction="Afrighids">
+    <Culture name="munda" faction="Afrighids" />
+    <Culture name="indo_roman" faction="Afrighids" />
+  </Heritage>
+  <Heritage name="heritage_dravidian" faction="Afrighids">
+    <Culture name="tamil" faction="Persia" />
+    <Culture name="telugu" faction="Avars" />
+    <Culture name="kannada" faction="Avars" />
+    <Culture name="gond" faction="Avars" />
+    <Culture name="khond" faction="Avars" />
+    <Culture name="Default" faction="Nasamounes" />
+    <Culture name="malaiya" faction="Avars" />
+    <Culture name="maler" faction="Afrighids" />
     <Culture name="indo_roman" faction="Afrighids" />
     <Culture name="parsi_hybrid" faction="Avars" />
-    <Culture name="siddi" faction="Abarshahr" />
+    <Culture name="siddi" faction="Afrighids" />
   </Heritage>
-  <Heritage name="heritage_kherwal" faction="Avars">
-    <Culture name="munda" faction="Avars" />
-    <Culture name="indo_roman" faction="Aestii" />
-  </Heritage>
-  <Heritage name="heritage_dravidian" faction="Abarshahr">
-    <Culture name="tamil" faction="Afrighids" />
-    <Culture name="telugu" faction="Abarshahr" />
-    <Culture name="kannada" faction="Avars" />
-    <Culture name="gond" faction="Avaroi" />
-    <Culture name="khond" faction="Avaroi" />
-    <Culture name="Default" faction="Nasamounes" />
-    <Culture name="malaiya" faction="Abarshahr" />
-    <Culture name="maler" faction="Himyar" />
-    <Culture name="indo_roman" faction="Avar Separatists" />
-    <Culture name="parsi_hybrid" faction="Persia" />
-    <Culture name="siddi" faction="Avar Separatists" />
-  </Heritage>
-  <Heritage name="heritage_elamite" faction="Avaroi">
-    <Culture name="elamite" faction="Avaroi" />
+  <Heritage name="heritage_elamite" faction="Persia">
+    <Culture name="elamite" faction="Persia" />
     <Culture name="Default" faction="Spahan" />
   </Heritage>
   <Heritage name="heritage_tibetan" faction="Avars">
     <Culture name="zo" faction="Avars" />
     <Culture name="kachari" faction="Avars" />
-    <Culture name="bodpa" faction="Avar Separatists" />
-    <Culture name="kirati" faction="Avaroi Rebels" />
-    <Culture name="lhomon" faction="Avars" />
-    <Culture name="tsangpa" faction="Avaroi" />
-    <Culture name="zhangzhung" faction="Avars" />
+    <Culture name="bodpa" faction="Avar Rebels" />
+    <Culture name="kirati" faction="Avars" />
+    <Culture name="lhomon" faction="Avaroi" />
+    <Culture name="tsangpa" faction="Avars" />
+    <Culture name="zhangzhung" faction="Avaroi" />
     <Culture name="meitei" faction="Avars" />
-    <Culture name="newari" faction="att_fact_franks" />
+    <Culture name="newari" faction="Persia" />
     <Culture name="sumpa" faction="Avars" />
     <Culture name="gyalrong" faction="Avars" />
-    <Culture name="himalayan" faction="att_fact_hephtalites" />
-    <Culture name="khalkha" faction="Avaroi Rebels" />
+    <Culture name="himalayan" faction="Avaroi" />
+    <Culture name="khalkha" faction="Avars" />
   </Heritage>
-  <Heritage name="heritage_qiangic" faction="Avars">
+  <Heritage name="heritage_qiangic" faction="Vidivarii">
     <Culture name="di" faction="Vidivarii" />
-    <Culture name="tangut" faction="Avars" />
+    <Culture name="tangut" faction="Hepthalites" />
     <Culture name="qiang" faction="Avars" />
     <Culture name="gyalrong" faction="Avars" />
   </Heritage>
-  <Heritage name="heritage_yeniseian" faction="Avars">
-    <Culture name="yeniseian" faction="Avars" />
+  <Heritage name="heritage_yeniseian" faction="Avaroi">
+    <Culture name="yeniseian" faction="Avaroi" />
     <Culture name="xiongnu" faction="Avars" />
   </Heritage>
   <Heritage name="heritage_chinese" faction="Spahan">
     <Culture name="han" faction="Spahan" />
-    <Culture name="horse" faction="Avars" />
+    <Culture name="horse" faction="Hepthalites" />
   </Heritage>
-  <Heritage name="heritage_siberian" faction="Avaroi">
-    <Culture name="evenk" faction="Avaroi" />
+  <Heritage name="heritage_siberian" faction="Britanni">
+    <Culture name="evenk" faction="Britanni" />
   </Heritage>
-  <Heritage name="heritage_gaulish" faction="African Rebels">
+  <Heritage name="heritage_gaulish" faction="Gaul">
     <Culture name="Default" faction="African Rebels" />
     <Culture name="aquitan" faction="Duchy of Aquitane" />
-    <Culture name="armorican" faction="Germanic Rebels" />
-    <Culture name="gallian" faction="Avars" />
-    <Culture name="germanian" faction="Gothoi" />
-    <Culture name="helvetian" faction="Alemannic Separatists" />
+    <Culture name="armorican" faction="Gaul" />
+    <Culture name="gallian" faction="Gaul" />
+    <Culture name="germanian" faction="Avaroi" />
+    <Culture name="helvetian" faction="Avaroi" />
   </Heritage>
-  <Heritage name="heritage_albanian" faction="Avars">
+  <Heritage name="heritage_albanian" faction="Alania">
     <Culture name="albanian" faction="Alania" />
     <Culture name="Default" faction="Nordalbingia" />
-    <Culture name="illyrian" faction="Avar Rebels" />
-    <Culture name="arvanite" faction="Avars" />
-    <Culture name="arvanite_hybrid" faction="Avars" />
+    <Culture name="illyrian" faction="Avars" />
+    <Culture name="arvanite" faction="Duchy of Alemannia" />
+    <Culture name="arvanite_hybrid" faction="Dakiai" />
   </Heritage>
-  <Heritage name="heritage_burman" faction="Aethiopian Rebels">
-    <Culture name="burmese" faction="Himyar" />
-    <Culture name="mon" faction="Aethiopian Rebels" />
-    <Culture name="pyu" faction="Aethiopian Rebels" />
+  <Heritage name="heritage_burman" faction="Romania">
+    <Culture name="burmese" faction="Avars" />
+    <Culture name="mon" faction="Afrighids" />
+    <Culture name="pyu" faction="Avars" />
   </Heritage>
-  <Heritage name="heritage_syriac" faction="syriac">
-    <Culture name="chaldean" faction="syriac" />
+  <Heritage name="heritage_syriac" faction="Persia">
+    <Culture name="chaldean" faction="Avars" />
     <Culture name="Default" faction="Palmyra" />
     <Culture name="aramean" faction="Persia" />
-    <Culture name="assyrian" faction="att_fact_aksum" />
+    <Culture name="assyrian" faction="Avaroi" />
   </Heritage>
-  <Heritage name="heritage_tocharian" faction="Hepthalites">
+  <Heritage name="heritage_tocharian" faction="Aria">
     <Culture name="khwarezmian" faction="Hepthalites" />
     <Culture name="Default" faction="Koutrigoi" />
-    <Culture name="bactrian" faction="Avars" />
-    <Culture name="ferghanan" faction="Alemannic Separatists" />
+    <Culture name="bactrian" faction="Hepthalites" />
+    <Culture name="ferghanan" faction="Hepthalites" />
     <Culture name="hephthalite" faction="Hepthalites" />
-    <Culture name="old_ferghanan" faction="Hepthalites" />
-    <Culture name="saka" faction="att_fact_white_huns" />
-    <Culture name="shaka" faction="Avaroi" />
-    <Culture name="sogdian" faction="Avaroi" />
+    <Culture name="old_ferghanan" faction="Avars" />
+    <Culture name="saka" faction="Hepthalites" />
+    <Culture name="shaka" faction="att_fact_hephtalites" />
+    <Culture name="sogdian" faction="att_fact_franks" />
     <Culture name="tocharian" faction="Aria" />
-    <Culture name="turco_hephthalite" faction="Hunnic Separatists" />
-    <Culture name="wusun" faction="Avars" />
-    <Culture name="xiao_yuezhi" faction="Afrighids" />
-    <Culture name="xionite" faction="att_fact_hephtalites" />
-    <Culture name="yuezhi" faction="Alemannic Separatists" />
+    <Culture name="turco_hephthalite" faction="Avars" />
+    <Culture name="wusun" faction="att_fact_tocharian" />
+    <Culture name="xiao_yuezhi" faction="Hepthalites" />
+    <Culture name="xionite" faction="Avars" />
+    <Culture name="yuezhi" faction="Hunnic Separatists" />
   </Heritage>
   <Heritage name="heritage_israelite" faction="Afrighids">
-    <Culture name="ashkenazi" faction="Afrighids" />
-    <Culture name="bavlim" faction="Avars" />
-    <Culture name="kochinim" faction="Banu Ghassan" />
-    <Culture name="radhanite" faction="Persia" />
-    <Culture name="sephardi" faction="Afrighids" />
-    <Culture name="kuzarim" faction="Alemannic Separatists" />
+    <Culture name="ashkenazi" faction="Banu Ghassan" />
+    <Culture name="bavlim" faction="Afrighids" />
+    <Culture name="kochinim" faction="Afrighids" />
+    <Culture name="radhanite" faction="Afrighids" />
+    <Culture name="sephardi" faction="att_fact_aksumite_separatists" />
+    <Culture name="kuzarim" faction="Avars" />
   </Heritage>
-  <Heritage name="heritage_slavic" faction="Antean Separatists">
+  <Heritage name="heritage_slavic" faction="Slavic Rebels">
     <Culture name="antean" faction="Antean Separatists" />
     <Culture name="sclavenian" faction="Sclavenian Separatists" />
     <Culture name="slavic" faction="Slavic Rebels" />
-    <Culture name="wendish" faction="Avars" />
-    <Culture name="venedo_roman" faction="Aethiopian Rebels" />
+    <Culture name="wendish" faction="Avaroi" />
+    <Culture name="venedo_roman" faction="Avaroi Rebels" />
     <Culture name="Antai" faction="Antai" />
   </Heritage>
-  <Heritage name="heritage_celtiberian" faction="Asturian Separatists">
+  <Heritage name="heritage_celtiberian" faction="Austrian Separatists">
     <Culture name="asturian" faction="Asturian Separatists" />
-    <Culture name="cantabrian" faction="Vascones" />
-    <Culture name="castran" faction="Avars" />
+    <Culture name="cantabrian" faction="Avaroi" />
+    <Culture name="castran" faction="Avaroi" />
     <Culture name="Default" faction="Austrasia" />
   </Heritage>
   <Heritage name="heritage_hunnic" faction="Hunnic Separatists">
     <Culture name="hunnic" faction="Hunnic Separatists" />
   </Heritage>
-  <Heritage name="heritage_byzantine" faction="Avars">
+  <Heritage name="heritage_byzantine" faction="Romania">
     <Culture name="aromanian" faction="Romania" />
-    <Culture name="arvanite_hybrid" faction="att_fact_franks" />
-    <Culture name="dalmatian" faction="Duchy of Aquitane" />
-    <Culture name="dalmatian_hybrid" faction="Avaroi" />
+    <Culture name="arvanite_hybrid" faction="Avars" />
+    <Culture name="dalmatian" faction="Avars" />
+    <Culture name="dalmatian_hybrid" faction="Romania" />
     <Culture name="egyptiote_hybrid" faction="Egypt" />
     <Culture name="gasmouloi_hybrid" faction="Roman Empire" />
-    <Culture name="griko_hybrid" faction="Avars" />
-    <Culture name="lebanese_hybrid" faction="Avars" />
-    <Culture name="neapolitan" faction="Avars" />
+    <Culture name="griko_hybrid" faction="Roman Empire" />
+    <Culture name="lebanese_hybrid" faction="Duchy of Benevento" />
+    <Culture name="neapolitan" faction="Romania" />
     <Culture name="neapolitan_hybrid" faction="Roman Empire" />
-    <Culture name="siculo_norman" faction="Avars" />
+    <Culture name="siculo_norman" faction="Avaroi Rebels" />
   </Heritage>
 </Cultures>

@@ -2,9 +2,9 @@
 <Cultures submod_tag="IceAndFireTotalWar">
   <Heritage name="Default" faction="Default">
     <Culture name="Default" faction="Default" />
-    <Culture name="House Celtigar" faction="The North" />
-    <Culture name="House Dustin" faction="House Arryn" />
-    <Culture name="House Hightower" faction="att_fact_goths" />
+    <Culture name="House Celtigar" faction="Default" />
+    <Culture name="House Dustin" faction="att_fact_north" />
+    <Culture name="House Hightower" faction="Default" />
     <Culture name="House Qorgyle" faction="The North" />
     <Culture name="House Reed" faction="House Frey" />
     <Culture name="The Riverlands" faction="All Houses of the Riverlands" />
@@ -31,25 +31,25 @@
     <Culture name="The Vale" faction="All Houses of the Vale" />
     <Culture name="House Dayne" faction="House Arryn" />
     <Culture name="House Glover" faction="The North" />
-    <Culture name="House Hersy" faction="Default" />
-    <Culture name="House Hewett" faction="House Arryn" />
+    <Culture name="House Hersy" faction="att_fact_north" />
+    <Culture name="House Hewett" faction="Default" />
     <Culture name="House Manderly" faction="House Tarly" />
-    <Culture name="House Mormont" faction="House Arryn" />
-    <Culture name="House Redwyne" faction="att_fact_north" />
+    <Culture name="House Mormont" faction="att_fact_north" />
+    <Culture name="House Redwyne" faction="The North" />
     <Culture name="All Houses of the Crownlands" faction="All Houses of the Crownlands" />
     <Culture name="Free Folk" faction="Free Folk" />
     <Culture name="House Arryn" faction="House Arryn" />
-    <Culture name="House Belmore" faction="att_fact_goths" />
-    <Culture name="House Sunderland" faction="The North" />
+    <Culture name="House Belmore" faction="The North" />
+    <Culture name="House Sunderland" faction="att_fact_north" />
     <Culture name="House Velaryon &amp; Celtigar" faction="House Velaryon &amp; Celtigar" />
     <Culture name="House Martell" faction="House Martell" />
-    <Culture name="House Qaleen" faction="The North" />
+    <Culture name="House Qaleen" faction="att_fact_north" />
     <Culture name="the_iron_islands" faction="All Houses of the Iron Islands" />
     <Culture name="The_iron_islands" faction="All Houses of the Iron Islands" />
     <Culture name="the_nights_watch" faction="Nights Watch" />
     <Culture name="the_north" faction="All Houses of the North" />
-    <Culture name="att_fact_dorne" faction="The North" />
-    <Culture name="att_fact_ostrogoths" faction="The North" />
+    <Culture name="att_fact_dorne" faction="att_fact_north" />
+    <Culture name="att_fact_ostrogoths" faction="att_fact_north" />
     <Culture name="The Night's Watch" faction="Nights Watch" />
   </Heritage>
   <Heritage name="heritage_andal" faction="The Reach">
@@ -64,12 +64,12 @@
     <Culture name="vineman" faction="The Reach" />
     <Culture name="Default" faction="The Reach" />
     <Culture name="stone_dornish" faction="Dorne" />
-    <Culture name="riverman_main" faction="House Arryn" />
+    <Culture name="riverman_main" faction="The Reach" />
     <Culture name="sisterman" faction="The Vale" />
     <Culture name="stormlander_main" faction="The Stormlands" />
-    <Culture name="valeman_finger" faction="House Martell" />
-    <Culture name="valeman_main" faction="House Arryn" />
-    <Culture name="valeman_upper" faction="House Martell" />
+    <Culture name="valeman_finger" faction="The Reach" />
+    <Culture name="valeman_main" faction="The Reach" />
+    <Culture name="valeman_upper" faction="The Reach" />
     <Culture name="westerman_main" faction="The Westerlands" />
   </Heritage>
   <Heritage name="heritage_hyrkooni" faction="Essos">
@@ -85,19 +85,19 @@
     <Culture name="meereenese" faction="Essos" />
     <Culture name="shuzduni" faction="Essos" />
     <Culture name="Default" faction="Essos" />
-    <Culture name="ghaeni" faction="Essos" />
-    <Culture name="ghardaqi" faction="Essos" />
+    <Culture name="ghaeni" faction="House Velaryon &amp; Celtigar" />
+    <Culture name="ghardaqi" faction="House Velaryon &amp; Celtigar" />
     <Culture name="ghiscari_original" faction="Essos" />
-    <Culture name="goroshari" faction="Essos" />
-    <Culture name="yunkaii" faction="Essos" />
-    <Culture name="zamettari" faction="Essos" />
+    <Culture name="goroshari" faction="House Velaryon &amp; Celtigar" />
+    <Culture name="yunkaii" faction="House Velaryon &amp; Celtigar" />
+    <Culture name="zamettari" faction="House Velaryon &amp; Celtigar" />
   </Heritage>
   <Heritage name="heritage_first_man" faction="The North">
     <Culture name="barrowman" faction="The North" />
     <Culture name="bearman" faction="The North" />
     <Culture name="clawman" faction="The Crownlands" />
     <Culture name="crannogman" faction="The North" />
-    <Culture name="first_man" faction="House Arryn" />
+    <Culture name="first_man" faction="The North" />
     <Culture name="northman" faction="The North" />
     <Culture name="skagosi" faction="The North" />
     <Culture name="wolfswood_clansman" faction="The North" />
@@ -122,10 +122,10 @@
     <Culture name="gipps" faction="Essos" />
     <Culture name="zoqora" faction="Essos" />
     <Culture name="cenaakh_fen" faction="Beyond the Wall" />
-    <Culture name="cewi_fen" faction="House Targaryen of Kingslanding" />
-    <Culture name="dawiz_fen" faction="House Targaryen of Kingslanding" />
+    <Culture name="cewi_fen" faction="Beyond the Wall" />
+    <Culture name="dawiz_fen" faction="Beyond the Wall" />
     <Culture name="gilal_fen" faction="Beyond the Wall" />
-    <Culture name="giren_fen" faction="House Arryn" />
+    <Culture name="giren_fen" faction="Beyond the Wall" />
     <Culture name="goraez_fen" faction="Beyond the Wall" />
     <Culture name="madekh_fen" faction="Beyond the Wall" />
     <Culture name="tagaez_fen" faction="Beyond the Wall" />
@@ -153,31 +153,31 @@
   <Heritage name="heritage_human_antiquity" faction="Essos">
     <Culture name="mazemaker" faction="Essos" />
   </Heritage>
-  <Heritage name="heritage_qaathi" faction="House Martell">
+  <Heritage name="heritage_qaathi" faction="Essos">
     <Culture name="qartheen" faction="Essos" />
-    <Culture name="qaathi" faction="House Martell" />
-    <Culture name="qaleen" faction="House Martell" />
+    <Culture name="qaathi" faction="Essos" />
+    <Culture name="qaleen" faction="Essos" />
   </Heritage>
-  <Heritage name="heritage_rhoynar" faction="House Martell">
-    <Culture name="abular" faction="House Martell" />
-    <Culture name="chroyanar" faction="House Martell" />
-    <Culture name="mellar" faction="House Targaryen of Kingslanding" />
-    <Culture name="noynar" faction="House Velaryon &amp; Celtigar" />
-    <Culture name="qhoynar" faction="House Targaryen of Kingslanding" />
-    <Culture name="rhoynar_original" faction="House Velaryon &amp; Celtigar" />
-    <Culture name="sarar" faction="House Martell" />
-    <Culture name="sarhar" faction="House Arryn" />
+  <Heritage name="heritage_rhoynar" faction="House Targaryen of Kingslanding">
+    <Culture name="abular" faction="House Targaryen of Kingslanding" />
+    <Culture name="chroyanar" faction="The North" />
+    <Culture name="mellar" faction="House Martell" />
+    <Culture name="noynar" faction="House Martell" />
+    <Culture name="qhoynar" faction="The North" />
+    <Culture name="rhoynar_original" faction="House Targaryen of Kingslanding" />
+    <Culture name="sarar" faction="House Targaryen of Kingslanding" />
+    <Culture name="sarhar" faction="House Targaryen of Kingslanding" />
   </Heritage>
-  <Heritage name="heritage_yitish" faction="House Arryn">
-    <Culture name="aobao_ren" faction="House Arryn" />
-    <Culture name="bixi_ren" faction="House Arryn" />
-    <Culture name="feicui_ren" faction="House Arryn" />
-    <Culture name="haungyu_ren" faction="House Arryn" />
-    <Culture name="heinao_ren" faction="att_fact_franks" />
-    <Culture name="zhenzhu_ren" faction="House Arryn" />
+  <Heritage name="heritage_yitish" faction="The North">
+    <Culture name="aobao_ren" faction="The North" />
+    <Culture name="bixi_ren" faction="The North" />
+    <Culture name="feicui_ren" faction="Beyond the Wall" />
+    <Culture name="haungyu_ren" faction="The North" />
+    <Culture name="heinao_ren" faction="The North" />
+    <Culture name="zhenzhu_ren" faction="Beyond the Wall" />
   </Heritage>
-  <Heritage name="heritage_shadowlanders" faction="House Stark">
-    <Culture name="asshaii" faction="House Stark" />
+  <Heritage name="heritage_shadowlanders" faction="House Targaryen of Kingslanding">
+    <Culture name="asshaii" faction="House Targaryen of Kingslanding" />
     <Culture name="shadowman" faction="House Targaryen of Kingslanding" />
   </Heritage>
   <Heritage name="heritage_sothoryi" faction="Default">
@@ -194,16 +194,16 @@
     <Culture name="shamyrianan" faction="House Targaryen of Kingslanding" />
     <Culture name="shan_ren" faction="House Targaryen of Kingslanding" />
   </Heritage>
-  <Heritage name="heritage_mennight" faction="House Arryn">
-    <Culture name="bloodless_man" faction="House Arryn" />
-    <Culture name="carcosan" faction="House Arryn" />
+  <Heritage name="heritage_mennight" faction="House Targaryen of Kingslanding">
+    <Culture name="bloodless_man" faction="House Targaryen of Kingslanding" />
+    <Culture name="carcosan" faction="Beyond the Wall" />
     <Culture name="dathian" faction="House Arryn" />
-    <Culture name="fish_man" faction="House Arryn" />
-    <Culture name="grey_man" faction="House Arryn" />
-    <Culture name="lion_man" faction="House Arryn" />
-    <Culture name="mossovite" faction="House Arryn" />
-    <Culture name="shryke" faction="House Arryn" />
-    <Culture name="winged_man" faction="House Arryn" />
+    <Culture name="fish_man" faction="House Targaryen of Kingslanding" />
+    <Culture name="grey_man" faction="House Targaryen of Kingslanding" />
+    <Culture name="lion_man" faction="House Targaryen of Kingslanding" />
+    <Culture name="mossovite" faction="House Targaryen of Kingslanding" />
+    <Culture name="shryke" faction="House Targaryen of Kingslanding" />
+    <Culture name="winged_man" faction="House Targaryen of Kingslanding" />
   </Heritage>
   <Heritage name="heritage_freecities" faction="House Velaryon">
     <Culture name="braavosi" faction="House Velaryon" />
@@ -212,7 +212,7 @@
     <Culture name="lorathi" faction="House Velaryon" />
     <Culture name="lyseni" faction="House Velaryon" />
     <Culture name="myrish" faction="House Velaryon" />
-    <Culture name="nonteloshi" faction="House Tyrell" />
+    <Culture name="nonteloshi" faction="Essos" />
     <Culture name="norvoshi" faction="House Velaryon" />
     <Culture name="pentoshi" faction="House Velaryon" />
     <Culture name="qohorik" faction="House Velaryon" />
@@ -233,15 +233,15 @@
     <Culture name="nightrunner" faction="Beyond the Wall" />
     <Culture name="thenn" faction="Beyond the Wall" />
   </Heritage>
-  <Heritage name="heritage_elder_races" faction="House Arryn">
-    <Culture name="children_culture" faction="House Arryn" />
-    <Culture name="dragon_culture" faction="House Stark" />
-    <Culture name="fisher_queen_race" faction="House Arryn" />
-    <Culture name="giant_culture" faction="House Arryn" />
+  <Heritage name="heritage_elder_races" faction="House Targaryen of Kingslanding">
+    <Culture name="children_culture" faction="beyond_the_wall" />
+    <Culture name="dragon_culture" faction="House Targaryen of Kingslanding" />
+    <Culture name="fisher_queen_race" faction="House Targaryen of Kingslanding" />
+    <Culture name="giant_culture" faction="beyond_the_wall" />
     <Culture name="ifequevron" faction="House Stark" />
-    <Culture name="jhogwin" faction="House Arryn" />
-    <Culture name="others_culture" faction="House Arryn" />
-    <Culture name="unknown_culture" faction="House Arryn" />
+    <Culture name="jhogwin" faction="beyond_the_wall" />
+    <Culture name="others_culture" faction="House Targaryen of Kingslanding" />
+    <Culture name="unknown_culture" faction="House Targaryen of Kingslanding" />
   </Heritage>
   <Heritage name="heritage_grasslands" faction="Essos">
     <Culture name="dothraki" faction="Essos" />
@@ -250,7 +250,7 @@
   <Heritage name="heritage_moraqi" faction="House Targaryen of Kingslanding">
     <Culture name="farosi" faction="House Targaryen of Kingslanding" />
     <Culture name="moraqi" faction="House Targaryen of Kingslanding" />
-    <Culture name="vahari" faction="House Martell" />
+    <Culture name="vahari" faction="House Targaryen of Kingslanding" />
     <Culture name="zabhadi" faction="Essos" />
   </Heritage>
   <Heritage name="heritage_ironman" faction="The Iron Islands">
@@ -260,11 +260,11 @@
   <Heritage name="heritage_hairyman" faction="Essos">
     <Culture name="ibbatese" faction="Essos" />
   </Heritage>
-  <Heritage name="heritage_jadeislands" faction="House Arryn">
-    <Culture name="jade_islander" faction="Beyond the Wall" />
-    <Culture name="lengii" faction="House Arryn" />
-    <Culture name="manticorian" faction="House Arryn" />
-    <Culture name="marahaiian" faction="House Arryn" />
+  <Heritage name="heritage_jadeislands" faction="Essos">
+    <Culture name="jade_islander" faction="House Targaryen of Kingslanding" />
+    <Culture name="lengii" faction="Essos" />
+    <Culture name="manticorian" faction="Essos" />
+    <Culture name="marahaiian" faction="Essos" />
   </Heritage>
   <Heritage name="heritage_summer" faction="Essos">
     <Culture name="jhalai" faction="Essos" />
@@ -273,8 +273,8 @@
     <Culture name="omborui" faction="Essos" />
     <Culture name="walanoi" faction="Essos" />
   </Heritage>
-  <Heritage name="heritage_nghai" faction="House Arryn">
-    <Culture name="jogos_nhai" faction="House Arryn" />
-    <Culture name="nefer" faction="House Targaryen of Kingslanding" />
+  <Heritage name="heritage_nghai" faction="Beyond the Wall">
+    <Culture name="jogos_nhai" faction="Beyond the Wall" />
+    <Culture name="nefer" faction="Beyond the Wall" />
   </Heritage>
 </Cultures>

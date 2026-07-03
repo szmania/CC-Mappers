@@ -17,17 +17,17 @@
     <Culture name="House Reed" faction="House Reed" />
     <Culture name="House Sunderland" faction="House Sunderland" />
     <Culture name="The Riverlands" faction="The Riverlands" />
-    <Culture name="att_fact_axeman" faction="att_fact_irons" />
+    <Culture name="att_fact_axeman" faction="Default" />
     <Culture name="the_night_s_watch" faction="The North" />
-    <Culture name="House Qaleen" faction="The North" />
+    <Culture name="House Qaleen" faction="Default" />
     <Culture name="The_iron_islands" faction="The Iron Islands" />
-    <Culture name="att_fact_franks" faction="House Belmore" />
+    <Culture name="att_fact_franks" faction="Default" />
     <Culture name="att_fact_irons" faction="The North" />
     <Culture name="the_iron_islands" faction="The Iron Islands" />
-    <Culture name="the_nights_watch" faction="The North" />
-    <Culture name="att_fact_ostroghoths" faction="att_fact_irons" />
+    <Culture name="the_nights_watch" faction="Default" />
+    <Culture name="att_fact_ostroghoths" faction="Default" />
     <Culture name="att_fact_sassanids" faction="The North" />
-    <Culture name="The Night's Watch" faction="The North" />
+    <Culture name="The Night's Watch" faction="The Night's Watch" />
   </Heritage>
   <Heritage name="heritage_andal" faction="The Reach">
     <Culture name="andal" faction="The Reach" />
@@ -41,12 +41,12 @@
     <Culture name="vineman" faction="The Reach" />
     <Culture name="Default" faction="The Crownlands" />
     <Culture name="stone_dornish" faction="Dorne" />
-    <Culture name="riverman_main" faction="The Reach" />
+    <Culture name="riverman_main" faction="The North" />
     <Culture name="sisterman" faction="The Vale" />
     <Culture name="stormlander_main" faction="The Stormlands" />
-    <Culture name="valeman_finger" faction="The Reach" />
-    <Culture name="valeman_main" faction="The Reach" />
-    <Culture name="valeman_upper" faction="The Reach" />
+    <Culture name="valeman_finger" faction="The North" />
+    <Culture name="valeman_main" faction="The North" />
+    <Culture name="valeman_upper" faction="The North" />
     <Culture name="westerman_main" faction="The Westerlands" />
   </Heritage>
   <Heritage name="heritage_hyrkooni" faction="Essos">
@@ -62,12 +62,12 @@
     <Culture name="meereenese" faction="Essos" />
     <Culture name="shuzduni" faction="Essos" />
     <Culture name="Default" faction="Essos" />
-    <Culture name="ghaeni" faction="House Belmore" />
+    <Culture name="ghaeni" faction="Default" />
     <Culture name="ghardaqi" faction="Essos" />
     <Culture name="ghiscari_original" faction="Essos" />
-    <Culture name="goroshari" faction="House Belmore" />
-    <Culture name="yunkaii" faction="House Belmore" />
-    <Culture name="zamettari" faction="House Belmore" />
+    <Culture name="goroshari" faction="Essos" />
+    <Culture name="yunkaii" faction="Essos" />
+    <Culture name="zamettari" faction="Default" />
   </Heritage>
   <Heritage name="heritage_first_man" faction="The North">
     <Culture name="barrowman" faction="The North" />
@@ -94,21 +94,21 @@
     <Culture name="Default" faction="House Velaryon" />
     <Culture name="valyrian_original" faction="Essos" />
   </Heritage>
-  <Heritage name="heritage_sarnori" faction="Beyond the Wall">
+  <Heritage name="heritage_sarnori" faction="the_crownlands">
     <Culture name="cymmeri" faction="Essos" />
     <Culture name="gipps" faction="Essos" />
     <Culture name="zoqora" faction="Essos" />
-    <Culture name="cenaakh_fen" faction="Beyond the Wall" />
-    <Culture name="cewi_fen" faction="Beyond the Wall" />
-    <Culture name="dawiz_fen" faction="Beyond the Wall" />
-    <Culture name="gilal_fen" faction="Beyond the Wall" />
-    <Culture name="giren_fen" faction="Beyond the Wall" />
-    <Culture name="goraez_fen" faction="Beyond the Wall" />
-    <Culture name="madekh_fen" faction="Beyond the Wall" />
-    <Culture name="tagaez_fen" faction="Beyond the Wall" />
-    <Culture name="trimbaez_fen" faction="Beyond the Wall" />
-    <Culture name="zanhar_fen" faction="Beyond the Wall" />
-    <Culture name="zivylar_fen" faction="Beyond the Wall" />
+    <Culture name="cenaakh_fen" faction="the_crownlands" />
+    <Culture name="cewi_fen" faction="the_crownlands" />
+    <Culture name="dawiz_fen" faction="the_crownlands" />
+    <Culture name="gilal_fen" faction="the_crownlands" />
+    <Culture name="giren_fen" faction="the_crownlands" />
+    <Culture name="goraez_fen" faction="the_crownlands" />
+    <Culture name="madekh_fen" faction="the_crownlands" />
+    <Culture name="tagaez_fen" faction="the_crownlands" />
+    <Culture name="trimbaez_fen" faction="the_crownlands" />
+    <Culture name="zanhar_fen" faction="the_crownlands" />
+    <Culture name="zivylar_fen" faction="the_crownlands" />
   </Heritage>
   <Heritage name="heritage_rhoynish" faction="Essos">
     <Culture name="greenblood" faction="Essos" />
@@ -130,57 +130,57 @@
   <Heritage name="heritage_human_antiquity" faction="Essos">
     <Culture name="mazemaker" faction="Essos" />
   </Heritage>
-  <Heritage name="heritage_qaathi" faction="Essos">
+  <Heritage name="heritage_qaathi" faction="House Reed">
     <Culture name="qartheen" faction="Essos" />
-    <Culture name="qaathi" faction="The North" />
-    <Culture name="qaleen" faction="House Qorgyle" />
+    <Culture name="qaathi" faction="House Reed" />
+    <Culture name="qaleen" faction="House Reed" />
   </Heritage>
   <Heritage name="heritage_rhoynar" faction="House Mormont">
     <Culture name="abular" faction="House Mormont" />
     <Culture name="chroyanar" faction="House Mormont" />
     <Culture name="mellar" faction="House Mormont" />
     <Culture name="noynar" faction="House Mormont" />
-    <Culture name="qhoynar" faction="House Mormont" />
+    <Culture name="qhoynar" faction="Dorne" />
     <Culture name="rhoynar_original" faction="The North" />
-    <Culture name="sarar" faction="House Mormont" />
-    <Culture name="sarhar" faction="The North" />
+    <Culture name="sarar" faction="Dorne" />
+    <Culture name="sarhar" faction="Dorne" />
   </Heritage>
-  <Heritage name="heritage_yitish" faction="The North">
+  <Heritage name="heritage_yitish" faction="Beyond the Wall">
     <Culture name="aobao_ren" faction="Beyond the Wall" />
     <Culture name="bixi_ren" faction="Default" />
     <Culture name="feicui_ren" faction="The North" />
     <Culture name="haungyu_ren" faction="Beyond the Wall" />
     <Culture name="heinao_ren" faction="The North" />
-    <Culture name="zhenzhu_ren" faction="The North" />
+    <Culture name="zhenzhu_ren" faction="Essos" />
   </Heritage>
-  <Heritage name="heritage_shadowlanders" faction="House Belmore">
-    <Culture name="asshaii" faction="House Belmore" />
-    <Culture name="shadowman" faction="House Belmore" />
+  <Heritage name="heritage_shadowlanders" faction="The North">
+    <Culture name="asshaii" faction="The North" />
+    <Culture name="shadowman" faction="The North" />
   </Heritage>
-  <Heritage name="heritage_sothoryi" faction="Beyond the Wall">
-    <Culture name="basiliskite" faction="Beyond the Wall" />
-    <Culture name="brindled_man" faction="House Mormont" />
-    <Culture name="gogossite" faction="Beyond the Wall" />
-    <Culture name="gorgari" faction="Beyond the Wall" />
-    <Culture name="yeenite" faction="Beyond the Wall" />
+  <Heritage name="heritage_sothoryi" faction="The North">
+    <Culture name="basiliskite" faction="The North" />
+    <Culture name="brindled_man" faction="The North" />
+    <Culture name="gogossite" faction="The North" />
+    <Culture name="gorgari" faction="The North" />
+    <Culture name="yeenite" faction="The North" />
   </Heritage>
-  <Heritage name="heritage_hyrkoonan" faction="House Belmore">
-    <Culture name="bayasabhadan" faction="House Belmore" />
+  <Heritage name="heritage_hyrkoonan" faction="The North">
+    <Culture name="bayasabhadan" faction="The North" />
     <Culture name="hyrkoonan_original" faction="The North" />
     <Culture name="kayakayanayan" faction="The North" />
-    <Culture name="shamyrianan" faction="House Belmore" />
-    <Culture name="shan_ren" faction="House Belmore" />
+    <Culture name="shamyrianan" faction="The North" />
+    <Culture name="shan_ren" faction="The North" />
   </Heritage>
-  <Heritage name="heritage_mennight" faction="House Belmore">
-    <Culture name="bloodless_man" faction="House Belmore" />
-    <Culture name="carcosan" faction="The Night's Watch" />
-    <Culture name="dathian" faction="House Belmore" />
-    <Culture name="fish_man" faction="House Belmore" />
-    <Culture name="grey_man" faction="House Belmore" />
-    <Culture name="lion_man" faction="House Belmore" />
-    <Culture name="mossovite" faction="House Belmore" />
-    <Culture name="shryke" faction="House Belmore" />
-    <Culture name="winged_man" faction="House Belmore" />
+  <Heritage name="heritage_mennight" faction="The North">
+    <Culture name="bloodless_man" faction="The North" />
+    <Culture name="carcosan" faction="The North" />
+    <Culture name="dathian" faction="The North" />
+    <Culture name="fish_man" faction="The North" />
+    <Culture name="grey_man" faction="The North" />
+    <Culture name="lion_man" faction="The North" />
+    <Culture name="mossovite" faction="The North" />
+    <Culture name="shryke" faction="The North" />
+    <Culture name="winged_man" faction="The North" />
   </Heritage>
   <Heritage name="heritage_freecities" faction="House Velaryon">
     <Culture name="braavosi" faction="House Velaryon" />
@@ -189,7 +189,7 @@
     <Culture name="lorathi" faction="House Velaryon" />
     <Culture name="lyseni" faction="House Velaryon" />
     <Culture name="myrish" faction="House Velaryon" />
-    <Culture name="nonteloshi" faction="House Belmore" />
+    <Culture name="nonteloshi" faction="the_crownlands" />
     <Culture name="norvoshi" faction="House Velaryon" />
     <Culture name="pentoshi" faction="House Velaryon" />
     <Culture name="qohorik" faction="House Velaryon" />
@@ -197,37 +197,37 @@
     <Culture name="volantene" faction="House Velaryon" />
   </Heritage>
   <Heritage name="heritage_wildling" faction="Beyond the Wall">
-    <Culture name="cave_dweller" faction="House Belmore" />
+    <Culture name="cave_dweller" faction="The North" />
     <Culture name="fangman" faction="Beyond the Wall" />
-    <Culture name="first_clan" faction="House Belmore" />
+    <Culture name="first_clan" faction="The North" />
     <Culture name="forestman" faction="Default" />
     <Culture name="frozen_shoreman" faction="Beyond the Wall" />
     <Culture name="hornfoot" faction="Beyond the Wall" />
     <Culture name="ice_riverman" faction="Beyond the Wall" />
-    <Culture name="lakefolk" faction="House Belmore" />
-    <Culture name="milkwaterman" faction="House Belmore" />
-    <Culture name="moon_clan" faction="House Belmore" />
+    <Culture name="lakefolk" faction="The North" />
+    <Culture name="milkwaterman" faction="The North" />
+    <Culture name="moon_clan" faction="The North" />
     <Culture name="nightrunner" faction="Beyond the Wall" />
     <Culture name="thenn" faction="Beyond the Wall" />
   </Heritage>
-  <Heritage name="heritage_elder_races" faction="Beyond the Wall">
-    <Culture name="children_culture" faction="House Belmore" />
-    <Culture name="dragon_culture" faction="Beyond the Wall" />
-    <Culture name="fisher_queen_race" faction="House Belmore" />
-    <Culture name="giant_culture" faction="Beyond the Wall" />
-    <Culture name="ifequevron" faction="Beyond the Wall" />
-    <Culture name="jhogwin" faction="Beyond the Wall" />
-    <Culture name="others_culture" faction="House Belmore" />
-    <Culture name="unknown_culture" faction="Beyond the Wall" />
+  <Heritage name="heritage_elder_races" faction="The North">
+    <Culture name="children_culture" faction="The North" />
+    <Culture name="dragon_culture" faction="The North" />
+    <Culture name="fisher_queen_race" faction="The North" />
+    <Culture name="giant_culture" faction="The North" />
+    <Culture name="ifequevron" faction="The North" />
+    <Culture name="jhogwin" faction="The North" />
+    <Culture name="others_culture" faction="The North" />
+    <Culture name="unknown_culture" faction="The North" />
   </Heritage>
   <Heritage name="heritage_grasslands" faction="Essos">
     <Culture name="dothraki" faction="Essos" />
     <Culture name="omberi" faction="Essos" />
   </Heritage>
-  <Heritage name="heritage_moraqi" faction="House Mormont">
-    <Culture name="farosi" faction="House Mormont" />
-    <Culture name="moraqi" faction="House Belmore" />
-    <Culture name="vahari" faction="House Mormont" />
+  <Heritage name="heritage_moraqi" faction="The North">
+    <Culture name="farosi" faction="The North" />
+    <Culture name="moraqi" faction="The North" />
+    <Culture name="vahari" faction="The North" />
     <Culture name="zabhadi" faction="Essos" />
   </Heritage>
   <Heritage name="heritage_ironman" faction="The Iron Islands">
@@ -237,11 +237,11 @@
   <Heritage name="heritage_hairyman" faction="Essos">
     <Culture name="ibbatese" faction="Essos" />
   </Heritage>
-  <Heritage name="heritage_jadeislands" faction="House Celtigar">
-    <Culture name="jade_islander" faction="House Celtigar" />
-    <Culture name="lengii" faction="The North" />
-    <Culture name="manticorian" faction="The North" />
-    <Culture name="marahaiian" faction="House Celtigar" />
+  <Heritage name="heritage_jadeislands" faction="Essos">
+    <Culture name="jade_islander" faction="Essos" />
+    <Culture name="lengii" faction="Beyond the Wall" />
+    <Culture name="manticorian" faction="Essos" />
+    <Culture name="marahaiian" faction="Beyond the Wall" />
   </Heritage>
   <Heritage name="heritage_summer" faction="Essos">
     <Culture name="jhalai" faction="Essos" />
@@ -250,8 +250,8 @@
     <Culture name="omborui" faction="Essos" />
     <Culture name="walanoi" faction="Essos" />
   </Heritage>
-  <Heritage name="heritage_nghai" faction="The North">
-    <Culture name="jogos_nhai" faction="The North" />
-    <Culture name="nefer" faction="the_north" />
+  <Heritage name="heritage_nghai" faction="Beyond the Wall">
+    <Culture name="jogos_nhai" faction="Beyond the Wall" />
+    <Culture name="nefer" faction="Beyond the Wall" />
   </Heritage>
 </Cultures>
