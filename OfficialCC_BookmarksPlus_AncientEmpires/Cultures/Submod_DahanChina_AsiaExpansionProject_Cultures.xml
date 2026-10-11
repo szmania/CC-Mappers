@@ -33,11 +33,11 @@
     <Culture name="sumuri" faction="Avars" />
     <Culture name="tor" faction="Turkic" />
     <Culture name="tunggare" faction="Avars" />
-    <Culture name="warembori" faction="at_fact_franks" />
+    <Culture name="warembori" faction="Avars" />
     <Culture name="yapen" faction="Avars" />
     <Culture name="Ardiaei" faction="Ardiaei" />
   </Heritage>
-  <Heritage name="heritage_chamic" faction="Chatti">
+  <Heritage name="heritage_chamic" faction="Chamic">
     <Culture name="aceh" faction="Avars" />
     <Culture name="champ" faction="Han Empire" />
     <Culture name="Chamic" faction="Chamic" />
@@ -46,7 +46,7 @@
     <Culture name="aeta" faction="Avar Separatists" />
     <Culture name="andamanese" faction="Angria" />
   </Heritage>
-  <Heritage name="heritage_moluccan" faction="Makran">
+  <Heritage name="heritage_moluccan" faction="Lucania">
     <Culture name="alune" faction="Afrighids" />
     <Culture name="aru" faction="Atropatene" />
     <Culture name="biak" faction="Avars" />
@@ -112,7 +112,6 @@
     <Culture name="brunei" faction="Han Empire" />
     <Culture name="lampung" faction="Han Empire" />
     <Culture name="minangkabau" faction="Avars" />
-    <Culture name="Malayic" faction="Malayic" />
   </Heritage>
   <Heritage name="heritage_katuic" faction="Kartli">
     <Culture name="bahnaric" faction="Avars" />
@@ -133,20 +132,19 @@
   </Heritage>
   <Heritage name="heritage_sulawesi" faction="Suebi">
     <Culture name="banggai" faction="Han Empire" />
-    <Culture name="bungku" faction="Avars" />
-    <Culture name="kaili" faction="Avars" />
-    <Culture name="makassar" faction="Avars" />
-    <Culture name="mamuju" faction="Avars" />
+    <Culture name="bungku" faction="Sulawesi" />
+    <Culture name="kaili" faction="Sulawesi" />
+    <Culture name="makassar" faction="Sulawesi" />
+    <Culture name="mamuju" faction="Sulawesi" />
     <Culture name="mandar" faction="Han Empire" />
-    <Culture name="moronene" faction="Avars" />
-    <Culture name="munan" faction="Avars" />
-    <Culture name="pamona" faction="Avars" />
-    <Culture name="salua" faction="Avars" />
-    <Culture name="seko" faction="Avars" />
-    <Culture name="tolaki" faction="Huns" />
-    <Culture name="tomini" faction="Avars" />
-    <Culture name="totoli" faction="Afrighids" />
-    <Culture name="Sulawesi" faction="Sulawesi" />
+    <Culture name="moronene" faction="Sulawesi" />
+    <Culture name="munan" faction="Sulawesi" />
+    <Culture name="pamona" faction="Sulawesi" />
+    <Culture name="salua" faction="Sulawesi" />
+    <Culture name="seko" faction="Sulawesi" />
+    <Culture name="tolaki" faction="Sulawesi" />
+    <Culture name="tomini" faction="Sulawesi" />
+    <Culture name="totoli" faction="Sulawesi" />
   </Heritage>
   <Heritage name="heritage_sumatran" faction="Makran">
     <Culture name="batak" faction="Avars" />
@@ -195,12 +193,12 @@
   </Heritage>
   <Heritage name="heritage_dayak" faction="Dacia">
     <Culture name="bidayuh" faction="Avars" />
-    <Culture name="iban" faction="Avars" />
-    <Culture name="kayan" faction="Avars" />
-    <Culture name="murut" faction="Avars" />
-    <Culture name="ngaju" faction="Avars" />
-    <Culture name="ot_danum" faction="Avars" />
-    <Culture name="rejang" faction="Avars" />
+    <Culture name="iban" faction="Malayic" />
+    <Culture name="kayan" faction="Malayic" />
+    <Culture name="murut" faction="Malayic" />
+    <Culture name="ngaju" faction="Malayic" />
+    <Culture name="ot_danum" faction="Malayic" />
+    <Culture name="rejang" faction="Malayic" />
     <Culture name="Iberian" faction="Iberian" />
     <Culture name="Tibetan" faction="Tibetan" />
   </Heritage>
@@ -230,23 +228,22 @@
     <Culture name="gilyak" faction="Avars" />
     <Culture name="mishihase" faction="Avars" />
   </Heritage>
-  <Heritage name="heritage_korean" faction="Gordyene">
-    <Culture name="goryeon" faction="Avars" />
-    <Culture name="saro" faction="Atropatene" />
-    <Culture name="tamna" faction="Avars" />
+  <Heritage name="heritage_korean" faction="Korean">
+    <Culture name="goryeon" faction="Korean" />
+    <Culture name="saro" faction="Korean" />
+    <Culture name="tamna" faction="Korean" />
     <Culture name="yemaek" faction="Han Empire" />
     <Culture name="Baleares" faction="Baleares" />
     <Culture name="Dahae" faction="Dahae" />
+    <Culture name="Gordyene" faction="Gordyene" />
     <Culture name="Gortyna" faction="Gortyna" />
-    <Culture name="Korean" faction="Korean" />
     <Culture name="Tanais" faction="Tanais" />
   </Heritage>
-  <Heritage name="heritage_loloish" faction="Ardhanian Nobles">
-    <Culture name="hani" faction="Avars" />
-    <Culture name="wuman" faction="Avars" />
-    <Culture name="Loloish" faction="Loloish" />
+  <Heritage name="heritage_loloish" faction="Loloish">
+    <Culture name="hani" faction="Loloish" />
+    <Culture name="wuman" faction="Loloish" />
   </Heritage>
-  <Heritage name="heritage_burman" faction="Britain">
+  <Heritage name="heritage_burman" faction="Han Empire">
     <Culture name="karenic" faction="Han Empire" />
     <Culture name="manipur" faction="Han Empire" />
     <Culture name="mizo" faction="Avars" />
@@ -261,7 +258,7 @@
     <Culture name="khasi" faction="Han Empire" />
     <Culture name="Khorasani" faction="Khorasani" />
   </Heritage>
-  <Heritage name="heritage_viet" faction="Veneti">
+  <Heritage name="heritage_viet" faction="Vietic">
     <Culture name="kinh" faction="Atropatene" />
     <Culture name="muong" faction="Avar Rebels" />
     <Culture name="tho" faction="Regnum Visigothorum" />
@@ -277,16 +274,16 @@
     <Culture name="orang_laut" faction="Afrighids" />
     <Culture name="sama_bajau" faction="Sabirs" />
   </Heritage>
-  <Heritage name="heritage_munda" faction="Judea">
+  <Heritage name="heritage_munda" faction="Gurma">
     <Culture name="munda" faction="Africa" />
   </Heritage>
-  <Heritage name="heritage_nicobarese" faction="Pontic Nobles">
+  <Heritage name="heritage_nicobarese" faction="Han Empire">
     <Culture name="nicobarese" faction="Han Empire" />
   </Heritage>
-  <Heritage name="heritage_hmong" faction="Avars">
+  <Heritage name="heritage_hmong" faction="Han Empire">
     <Culture name="sheren" faction="Han Empire" />
   </Heritage>
-  <Heritage name="heritage_japanese" faction="Alans">
+  <Heritage name="heritage_japanese" faction="Yamato">
     <Culture name="yamato" faction="Avar Separatists" />
     <Culture name="Yamato" faction="Yamato" />
   </Heritage>
