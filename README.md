@@ -78,6 +78,26 @@ When the field is absent, the mode is auto-detected: **tournament activates only
 
 Recommendation: point the judge at a small/fast/cheap model with `tool_calling` unset or false — judges emit tiny strict JSON (`{"winner": "A"|"B"|"tie", "reason": "..."}`).
 
+### Faction JSON Exclusions in Review
+
+Faction JSON exclusion fields (`exclude_units_core`, `exclude_units_core_prefix`, `exclude_units_core_non_thematic_maa`, `exclude_units_core_non_thematic_maa_prefix`, and per-MAA `exclude_units_men_at_arm`) are enforced in BOTH the procedural passes AND the LLM review rounds:
+
+- **Pool filtering** — review request pools (`local_unit_pool`, `tiered_pools`, `validation_pool`) are filtered per faction, so banned units are never offered to the reviewer LLMs. Thematic MAA types are exempt (consistent with prefix/class rules).
+- **Known-bad flagging** — resident roster units violating the faction's applicable exclusion set are mechanically flagged as `known_bad_units` (mandatory replacement), with the violating config field named in the reason.
+- **In-round validation** — reviewer suggestions of banned units are rejected during correction validation and fed back via `retry_context`, so the LLM is re-asked to pick another unit.
+- **Prompt transparency** — the review prompt renders a "Faction JSON-Excluded Units (never suggest)" list (capped at 50 entries) when the faction has bans.
+- **Post-apply safety net** — after review application, a scan removes the keys of any residual JSON-excluded units; the keyless-tag refill pass then replaces them procedurally.
+
+Factions without JSON bans keep byte-identical review requests and cache keys (exclusion fields are attached only when non-empty, so there is zero cache re-query for unaffected factions).
+
+### Core/MAA Request Split
+
+Each faction's roster review is split into TWO requests: `review|{faction}|core` (General/Knights/Levies/Garrison) and `review|{faction}|maa` (non-thematic MenAtArm). The tag sets are disjoint, so each prompt is smaller and carries only its own `known_bad_units` subset (the MAA request additionally carries `maa_type_classes`). This roughly doubles reviewer/judge call counts per faction but keeps provider prompt caching effective on the shared static preambles; the split is a one-time cache re-query for previously reviewed factions.
+
+### Empty-Candidate Rule (Tournament)
+
+A no-change tournament outcome may only stand when BOTH candidates are empty. If exactly ONE candidate is empty, that reviewer is re-asked once (with the other reviewer's suggestions as feedback); if it still returns empty, the non-empty candidate advances automatically without a judge call. This prevents a silent reviewer from beating one that correctly fixes a foreign unit.
+
 ### Tournament Bracket
 
 ```mermaid
@@ -95,7 +115,7 @@ flowchart TD
 
 - **Round 1 (semifinals):** Judge A picks between the r1 vs r2 candidates; Judge B picks between r3 vs r4 (both run in parallel).
 - **Round 2 (FINAL):** the final judge picks between the two Round-1 winners; the winner's corrections are applied to the XML.
-- A tie (or an invalid judge response) applies the unanimous intersection of both candidates — never worse than the legacy consensus. If both candidates are empty, nothing is applied and no judge call is made.
+- A tie (or an invalid judge response) applies the unanimous intersection of both candidates — never worse than the legacy consensus. If both candidates are empty, nothing is applied and no judge call is made. If exactly one candidate is empty, the empty reviewer is re-asked once; if it stays empty, the non-empty candidate advances (see Empty-Candidate Rule above).
 
 ### When to Use Which Mode
 
