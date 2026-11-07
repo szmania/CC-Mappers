@@ -4,20 +4,20 @@
     <Culture name="Default" faction="Default" />
   </Heritage>
   <Heritage name="heritage_northern_adunaic" faction="Northern Enedwaith">
-    <Culture name="black_numenorean" faction="Corsairs" />
+    <Culture name="black_numenorean" faction="Corsairs of Umbar" />
     <Culture name="old_umbarean" faction="Umbar" />
-    <Culture name="adurim" faction="Arnor" />
+    <Culture name="adurim" faction="Corsairs of Umbar" />
     <Culture name="anadrim" faction="Corsairs" />
     <Culture name="andrunai" faction="Corsair Freebooters" />
-    <Culture name="edledhrim" faction="Corsairs" />
+    <Culture name="edledhrim" faction="Drúedain" />
     <Culture name="hyarmenedain" faction="Arnor" />
-    <Culture name="pharazaini" faction="Corsairs" />
+    <Culture name="pharazaini" faction="Corsairs of Umbar" />
     <Culture name="sakalaze" faction="Corsairs" />
   </Heritage>
   <Heritage name="heritage_southern_adunaic" faction="Southern Enedwaith">
-    <Culture name="south_adunai_colonial" faction="Harondor Tribes" />
+    <Culture name="south_adunai_colonial" faction="Haradrim" />
     <Culture name="anbalukkhori" faction="Umbar" />
-    <Culture name="Default" faction="Khazad-dum" />
+    <Culture name="Default" faction="Haradrim" />
     <Culture name="kharadunaim" faction="Haradrim" />
     <Culture name="tanturaki" faction="Haradrim" />
     <Culture name="adurim" faction="Haradrim" />
@@ -26,13 +26,13 @@
     <Culture name="anadrim" faction="Haradrim" />
     <Culture name="andrunai" faction="Haradrim" />
     <Culture name="azaridani" faction="Haradrim" />
-    <Culture name="ciryatanorean" faction="Haradrim" />
-    <Culture name="edledhrim" faction="Haradrim" />
+    <Culture name="ciryatanorean" faction="Corsairs of Umbar" />
+    <Culture name="edledhrim" faction="Drúedain" />
     <Culture name="gimiladen" faction="Haradrim" />
     <Culture name="gimilethi" faction="Haradrim" />
     <Culture name="gimilthadunai" faction="Haradrim" />
     <Culture name="holzoriyan" faction="Haradrim" />
-    <Culture name="hyarmenedain" faction="Haradrim" />
+    <Culture name="hyarmenedain" faction="Arnor" />
     <Culture name="karasalai" faction="Haradrim" />
     <Culture name="kharaden" faction="Haradrim" />
     <Culture name="kiradunai" faction="Haradrim" />
@@ -46,7 +46,7 @@
   <Heritage name="heritage_ainur" faction="Arnor">
     <Culture name="istari" faction="Arnor" />
     <Culture name="maiar" faction="Arnor" />
-    <Culture name="Default" faction="High Elves" />
+    <Culture name="Default" faction="Arnor" />
   </Heritage>
   <Heritage name="heritage_fallen_ainur" faction="all">
     <Culture name="istari_evil" faction="Isengard" />
@@ -54,7 +54,7 @@
   </Heritage>
   <Heritage name="heritage_baradhrim" faction="Haradrim">
     <Culture name="baradhrim" faction="Haradrim" />
-    <Culture name="lossoth" faction="Haradrim" />
+    <Culture name="lossoth" faction="Northern Enedwaith" />
     <Culture name="Default" faction="Gondor" />
     <Culture name="angmarrim" faction="Angmar" />
     <Culture name="balsharim" faction="Haradrim" />
@@ -69,7 +69,7 @@
     <Culture name="bellaruze" faction="Haradrim" />
     <Culture name="bozisharani" faction="Haradrim" />
     <Culture name="edledhrim" faction="Haradrim" />
-    <Culture name="hyarmenedain" faction="Umbar" />
+    <Culture name="hyarmenedain" faction="Haradrim" />
     <Culture name="pharazaini" faction="Umbar" />
     <Culture name="phurutunaim" faction="Haradrim" />
   </Heritage>
@@ -78,13 +78,13 @@
   </Heritage>
   <Heritage name="heritage_daen_lintis" faction="Dunlending Tribes">
     <Culture name="Default" faction="Dunlending Tribes" />
-    <Culture name="enedhwaithrim" faction="Drúedain" />
+    <Culture name="enedhwaithrim" faction="Southern Enedwaith" />
     <Culture name="daen_lintis" faction="Dunlending" />
     <Culture name="adornaen" faction="Dunlending" />
     <Culture name="dunlending" faction="Dunlending" />
     <Culture name="dunmen" faction="Dunlending" />
     <Culture name="isengard_dunlending" faction="Dunlending" />
-    <Culture name="saralain" faction="Dunlending Tribes" />
+    <Culture name="saralain" faction="Southern Enedwaith" />
     <Culture name="angrastrim" faction="Dunlending Tribes" />
     <Culture name="druthuirim" faction="Dunlending Tribes" />
     <Culture name="dunelending" faction="Dunlending" />
@@ -93,7 +93,7 @@
     <Culture name="fulcagrim" faction="Dunlending Tribes" />
     <Culture name="isenfolk_dunlending" faction="Dunlending Tribes" />
     <Culture name="low_dunlending" faction="Southern Enedwaith" />
-    <Culture name="neudaen" faction="Northern Enedwaith" />
+    <Culture name="neudaen" faction="Southern Enedwaith" />
     <Culture name="stonefort_dunlending" faction="Dunlending Tribes" />
   </Heritage>
   <Heritage name="heritage_daen_coentis" faction="Feredrim">
@@ -113,7 +113,7 @@
     <Culture name="neudaen" faction="Dunlending Tribes" />
     <Culture name="nimraisorim" faction="Numenorean" />
     <Culture name="southlander" faction="Dunlending Tribes" />
-    <Culture name="Default" faction="Ered Luin" />
+    <Culture name="Default" faction="Feredrim" />
     <Culture name="Eregion" faction="Eregion" />
   </Heritage>
   <Heritage name="heritage_danan_lin" faction="Haradrim">
@@ -163,8 +163,8 @@
     <Culture name="lamedonian" faction="Lamedon" />
     <Culture name="lithaerean" faction="Numenorean" />
     <Culture name="mundburgian" faction="Arnor" />
-    <Culture name="nimraisorim" faction="Arnor" />
-    <Culture name="pelargirian" faction="Numenorean" />
+    <Culture name="nimraisorim" faction="lamedon" />
+    <Culture name="pelargirian" faction="lebennin" />
     <Culture name="phurutunaim" faction="Gondor" />
     <Culture name="rhovandorian" faction="Arnor" />
     <Culture name="arnoredain" faction="Arnor" />
@@ -176,9 +176,9 @@
     <Culture name="rhudauredain" faction="Rhudaur" />
     <Culture name="rhudaurian" faction="Rhudaur" />
     <Culture name="rhudaurrim" faction="Rhudaur" />
+    <Culture name="Harondor Tribes" faction="Harondor Tribes" />
     <Culture name="anorien" faction="anorien" />
     <Culture name="harondor" faction="harondor" />
-    <Culture name="lamedon" faction="lamedon" />
   </Heritage>
   <Heritage name="heritage_broadbeam" faction="Khazad-dum">
     <Culture name="Default" faction="Ered Luin" />
@@ -196,13 +196,13 @@
     <Culture name="magriag" faction="Easterlings" />
     <Culture name="ioriag" faction="Easterlings" />
     <Culture name="nurniag" faction="Variags" />
-    <Culture name="variag" faction="Variags" />
+    <Culture name="variag" faction="Variag" />
     <Culture name="talathrim" faction="Easterlings" />
     <Culture name="adariag" faction="Variags" />
     <Culture name="aitheirim" faction="Variags" />
     <Culture name="andriag" faction="Variags" />
     <Culture name="dalriag" faction="Variags" />
-    <Culture name="dorwinriag" faction="Variags" />
+    <Culture name="dorwinriag" faction="Dorwinion" />
     <Culture name="gramriag" faction="Variags" />
     <Culture name="iorgath" faction="Variags" />
     <Culture name="khariag" faction="Variags" />
@@ -228,8 +228,8 @@
     <Culture name="soriyan" faction="Dunlending Tribes" />
     <Culture name="tedyin" faction="Dunlending Tribes" />
   </Heritage>
-  <Heritage name="heritage_atanatari" faction="Arnor">
-    <Culture name="beorian" faction="Arnor" />
+  <Heritage name="heritage_atanatari" faction="Dunlending Tribes">
+    <Culture name="beorian" faction="Dunlending Tribes" />
     <Culture name="hadorim" faction="Arnor" />
     <Culture name="haladin" faction="Dale" />
   </Heritage>
@@ -267,9 +267,9 @@
     <Culture name="tatyar" faction="Imladris" />
   </Heritage>
   <Heritage name="heritage_eriadorim" faction="Arnor">
-    <Culture name="breemen" faction="Arnor" />
-    <Culture name="hithaeglirim" faction="Lindon" />
-    <Culture name="eriadorim" faction="Lindon" />
+    <Culture name="breemen" faction="Bree Land" />
+    <Culture name="hithaeglirim" faction="Arnor" />
+    <Culture name="eriadorim" faction="Arnor" />
     <Culture name="arnoredain" faction="Arnor" />
   </Heritage>
   <Heritage name="heritage_goblin" faction="Goblin Looters">
@@ -328,13 +328,13 @@
     <Culture name="jelut" faction="Dunlending Tribes" />
     <Culture name="rysisan" faction="Dunlending Tribes" />
   </Heritage>
-  <Heritage name="heritage_northern_apysaic" faction="Haradrim">
+  <Heritage name="heritage_northern_apysaic" faction="Corsair Freebooters">
     <Culture name="haruze" faction="Haradrim" />
     <Culture name="chelkari" faction="Haradrim" />
     <Culture name="lurmsakari" faction="Haradrim" />
     <Culture name="pezarsani" faction="Haradrim" />
-    <Culture name="harmakuze" faction="Easterling Raiders" />
-    <Culture name="corsair" faction="Corsair Freebooters" />
+    <Culture name="harmakuze" faction="Haradrim" />
+    <Culture name="corsair" faction="Corsairs" />
     <Culture name="karrani" faction="Haradrim" />
     <Culture name="sakalai" faction="Haradrim" />
     <Culture name="siaken" faction="Haradrim" />
@@ -347,7 +347,7 @@
     <Culture name="lurmsakaze" faction="Haradrim" />
     <Culture name="narakaze" faction="Haradrim" />
     <Culture name="newapysaic" faction="Haradrim" />
-    <Culture name="sakalaze" faction="Haradrim" />
+    <Culture name="sakalaze" faction="Easterling Raiders" />
     <Culture name="sarominan" faction="Haradrim" />
     <Culture name="saroniags" faction="Haradrim" />
     <Culture name="tedyin" faction="Haradrim" />
@@ -357,37 +357,33 @@
     <Culture name="rhudauredain" faction="Rhudaur" />
     <Culture name="rhudaurrim" faction="Rhudaur" />
   </Heritage>
-  <Heritage name="heritage_southern_apysaic" faction="Haradrim">
+  <Heritage name="heritage_southern_apysaic" faction="Southern Enedwaith">
     <Culture name="narudbriyig" faction="Haradrim" />
     <Culture name="gai" faction="Haradrim" />
     <Culture name="bozishnarud" faction="Haradrim" />
-    <Culture name="gusar" faction="Haradrim" />
+    <Culture name="gusar" faction="Easterling Raiders" />
     <Culture name="bozisharani" faction="Haradrim" />
-    <Culture name="miraznarud" faction="Haradrim" />
-    <Culture name="nafarnarud" faction="Haradrim" />
+    <Culture name="miraznarud" faction="Southron Nomads" />
+    <Culture name="nafarnarud" faction="Easterling Raiders" />
     <Culture name="newapysaic" faction="Haradrim" />
     <Culture name="rayan" faction="Haradrim" />
     <Culture name="bozishpowa" faction="Haradrim" />
-    <Culture name="kindinarud" faction="Haradrim" />
+    <Culture name="kindinarud" faction="Southron Nomads" />
     <Culture name="powarnarud" faction="Easterling Raiders" />
-    <Culture name="siraynarud" faction="Easterling Raiders" />
+    <Culture name="siraynarud" faction="Haradrim" />
     <Culture name="sireshnarud" faction="Easterling Raiders" />
   </Heritage>
   <Heritage name="heritage_periannath" faction="all">
-    <Culture name="fallohides" faction="Rohan" />
-    <Culture name="harfoots" faction="Rohan" />
+    <Culture name="fallohides" faction="Ruffians" />
+    <Culture name="harfoots" faction="Ruffians" />
     <Culture name="breelander" faction="Bree Land" />
-    <Culture name="hobbit" faction="Rohan" />
-    <Culture name="bucklander" faction="Rohan" />
+    <Culture name="hobbit" faction="Ruffians" />
+    <Culture name="bucklander" faction="Anduin-Vale" />
     <Culture name="Default" faction="Anduin-Vale" />
     <Culture name="stoors" faction="Rohan" />
   </Heritage>
-  <Heritage name="heritage_nafarati" faction="Haradrim">
-    </Heritage>
-  <Heritage name="heritage_hadorim" faction="Rohan">
-    </Heritage>
-  <Heritage name="heritage_northron" faction="Rohan">
-    <Culture name="northron" faction="orc_bands" />
+  <Heritage name="heritage_northron" faction="Dorwinion">
+    <Culture name="northron" faction="Dorwinion" />
     <Culture name="dalemen" faction="Dale" />
     <Culture name="Default" faction="Orcs Of The North" />
     <Culture name="dorwinionrim" faction="Dorwinion" />
@@ -405,11 +401,11 @@
     <Culture name="cragsmen" faction="orc_bands" />
     <Culture name="fulcagrim" faction="orc_bands" />
     <Culture name="gargath" faction="orc_bands" />
-    <Culture name="gramsmen" faction="Rohan" />
+    <Culture name="gramsmen" faction="Balchoth" />
     <Culture name="mirkmen" faction="Mirkwood Creatures" />
-    <Culture name="plainmen" faction="orc_bands" />
+    <Culture name="plainmen" faction="Rohan" />
     <Culture name="dwergwine" faction="Dale" />
-    <Culture name="flodufulka" faction="Dale" />
+    <Culture name="flodufulka" faction="Southron Nomads" />
   </Heritage>
   <Heritage name="heritage_orc" faction="Orc Bands">
     <Culture name="utumno_orcs" faction="Orcs Of The North" />
@@ -418,27 +414,27 @@
     <Culture name="morlughai" faction="Orc Bands" />
     <Culture name="luftutaumhai" faction="Orc Bands" />
     <Culture name="gazoghai" faction="Orc Bands" />
-    <Culture name="kazgumhoth" faction="Orc Bands" />
+    <Culture name="kazgumhoth" faction="Orcs Of The North" />
     <Culture name="isengard_urukhai" faction="Isengard" />
     <Culture name="worauthai_madur" faction="Orcs Of The North" />
-    <Culture name="burgulhai" faction="Orc Bands" />
-    <Culture name="ghashhai" faction="Orc Bands" />
-    <Culture name="ghrazim" faction="Mordor" />
-    <Culture name="gurgurhai" faction="Orc Bands" />
-    <Culture name="kuhai" faction="Orc Bands" />
-    <Culture name="maraudhai" faction="Orc Bands" />
-    <Culture name="ruhai" faction="Orc Bands" />
-    <Culture name="rukhashai" faction="Orc Bands" />
-    <Culture name="ungurhai" faction="Orc Bands" />
-    <Culture name="lugulkai" faction="Orc Bands" />
-    <Culture name="nagradkai" faction="Orc Bands" />
-    <Culture name="othrodhai" faction="Orc Bands" />
-    <Culture name="shaglukhai" faction="Orc Bands" />
+    <Culture name="burgulhai" faction="Orcs Of The North" />
+    <Culture name="ghashhai" faction="Orcs Of The North" />
+    <Culture name="ghrazim" faction="Orcs Of The North" />
+    <Culture name="gurgurhai" faction="Orcs Of The North" />
+    <Culture name="kuhai" faction="Orcs Of The North" />
+    <Culture name="maraudhai" faction="Orcs Of The North" />
+    <Culture name="ruhai" faction="Orcs Of The North" />
+    <Culture name="rukhashai" faction="Orcs Of The North" />
+    <Culture name="ungurhai" faction="Orcs Of The North" />
+    <Culture name="lugulkai" faction="Orcs Of The North" />
+    <Culture name="nagradkai" faction="Orcs Of The North" />
+    <Culture name="othrodhai" faction="Orcs Of The North" />
+    <Culture name="shaglukhai" faction="Orcs Of The North" />
   </Heritage>
   <Heritage name="heritage_north_khailuza" faction="Haradrim">
     <Culture name="khailuza" faction="Haradrim" />
   </Heritage>
-  <Heritage name="heritage_north_khailuza" faction="Haradrim">
+  <Heritage name="heritage_north_khailuza" faction="Orcs Of The North">
     <Culture name="khailuza" faction="Haradrim" />
   </Heritage>
   <Heritage name="heritage_tulwangi" faction="Haradrim">
@@ -447,11 +443,11 @@
     <Culture name="fariyin" faction="Easterling Raiders" />
     <Culture name="tandi" faction="Dunlending Tribes" />
     <Culture name="tuladen" faction="Dunlending Tribes" />
-    <Culture name="tuloriyan" faction="Rohan" />
+    <Culture name="tuloriyan" faction="Haradrim" />
     <Culture name="tuladunai" faction="Dunlending Tribes" />
     <Culture name="tulwany" faction="Dunlending Tribes" />
   </Heritage>
-  <Heritage name="heritage_undead" faction="Mordor">
+  <Heritage name="heritage_undead" faction="Gundabad">
     <Culture name="ringwraith" faction="Mordor" />
   </Heritage>
   <Heritage name="heritage_wastelands" faction="Haradrim">
@@ -471,7 +467,7 @@
     <Culture name="pelmag" faction="Easterling Raiders" />
     <Culture name="zimraden" faction="Easterling Raiders" />
   </Heritage>
-  <Heritage name="heritage_south_khailuza" faction="Southron Nomads">
+  <Heritage name="heritage_south_khailuza" faction="Orocarni South">
     <Culture name="anarikean" faction="Southron Nomads" />
     <Culture name="ashanuri" faction="Southron Nomads" />
     <Culture name="bulchyadean" faction="Southron Nomads" />
@@ -482,13 +478,13 @@
     <Culture name="anarikarne" faction="Southron Nomads" />
     <Culture name="asharysor" faction="Southron Nomads" />
     <Culture name="azralai" faction="Southron Nomads" />
-    <Culture name="lodenyan" faction="Easterling Raiders" />
-    <Culture name="muranhyan" faction="Easterling Raiders" />
-    <Culture name="narikyan" faction="Easterling Raiders" />
-    <Culture name="rysisan" faction="Easterling Raiders" />
-    <Culture name="samarean" faction="Easterling Raiders" />
-    <Culture name="siraniyen" faction="Easterling Raiders" />
-    <Culture name="sireshnyen" faction="Easterling Raiders" />
+    <Culture name="lodenyan" faction="Southron Nomads" />
+    <Culture name="muranhyan" faction="Southron Nomads" />
+    <Culture name="narikyan" faction="Southron Nomads" />
+    <Culture name="rysisan" faction="Southron Nomads" />
+    <Culture name="samarean" faction="Southron Nomads" />
+    <Culture name="siraniyen" faction="Southron Nomads" />
+    <Culture name="sireshnyen" faction="Southron Nomads" />
   </Heritage>
   <Heritage name="heritage_new_sirayni" faction="Haradrim">
     <Culture name="chennacatti" faction="Haradrim" />
@@ -498,8 +494,8 @@
     <Culture name="ayten" faction="Haradrim" />
     <Culture name="bausairin" faction="Haradrim" />
     <Culture name="bulgan" faction="Haradrim" />
-    <Culture name="poan" faction="Dorwinion" />
-    <Culture name="tyari" faction="Dorwinion" />
+    <Culture name="poan" faction="Haradrim" />
+    <Culture name="tyari" faction="Haradrim" />
     <Culture name="chennacari" faction="Haradrim" />
     <Culture name="eshnya" faction="Haradrim" />
     <Culture name="nuarian" faction="Haradrim" />
@@ -510,23 +506,23 @@
     <Culture name="siroyaarna" faction="Haradrim" />
     <Culture name="tyrnak" faction="Haradrim" />
   </Heritage>
-  <Heritage name="heritage_troll" faction="Goblin Looters">
-    <Culture name="black_troll" faction="Goblin Looters" />
-    <Culture name="cave_troll" faction="Goblin Looters" />
-    <Culture name="hill_troll" faction="Goblin Looters" />
-    <Culture name="mountain_troll" faction="Goblin Looters" />
-    <Culture name="sand_troll" faction="Goblin Looters" />
-    <Culture name="snow_troll" faction="Goblin Looters" />
+  <Heritage name="heritage_troll" faction="Mordor">
+    <Culture name="black_troll" faction="Mordor" />
+    <Culture name="cave_troll" faction="Mordor" />
+    <Culture name="hill_troll" faction="Mordor" />
+    <Culture name="mountain_troll" faction="Mordor" />
+    <Culture name="sand_troll" faction="Mordor" />
+    <Culture name="snow_troll" faction="Mordor" />
     <Culture name="Default" faction="Goblin Looters" />
   </Heritage>
-  <Heritage name="heritage_womaw" faction="Rohan">
+  <Heritage name="heritage_womaw" faction="Corsairs">
     <Culture name="codyan" faction="Corsairs" />
     <Culture name="lokhaw" faction="Corsairs" />
     <Culture name="vulmaw" faction="Corsairs" />
     <Culture name="womaw" faction="Corsairs" />
     <Culture name="narikyan" faction="Rohan" />
   </Heritage>
-  <Heritage name="heritage_shayn" faction="Khand">
+  <Heritage name="heritage_shayn" faction="Rohan">
     <Culture name="danak" faction="Khand" />
     <Culture name="lynerian" faction="Khand" />
     <Culture name="ahava" faction="Khand" />
@@ -537,14 +533,14 @@
     <Culture name="siroyaarna" faction="Haradrim" />
   </Heritage>
   <Heritage name="heritage_eastern_adunaic" faction="Easterling Raiders">
-    <Culture name="east_adunai_colonial" faction="Easterling Raiders" />
-    <Culture name="edledhrim" faction="Easterling Raiders" />
-    <Culture name="hyarmenedain" faction="Easterling Raiders" />
-    <Culture name="azralai" faction="Easterling Raiders" />
+    <Culture name="east_adunai_colonial" faction="Arnor" />
+    <Culture name="edledhrim" faction="Arnor" />
+    <Culture name="hyarmenedain" faction="Arnor" />
+    <Culture name="azralai" faction="Arnor" />
   </Heritage>
-  <Heritage name="heritage_elinse" faction="Elves">
-    <Culture name="elinse" faction="Elves" />
-    <Culture name="anarikarne" faction="Elves" />
+  <Heritage name="heritage_elinse" faction="Goblins">
+    <Culture name="elinse" faction="High Elves" />
+    <Culture name="anarikarne" faction="High Elves" />
   </Heritage>
   <Heritage name="heritage_old_sirayni" faction="Haradrim">
     <Culture name="harani" faction="Haradrim" />
@@ -557,10 +553,10 @@
     <Culture name="sireshnyen" faction="Haradrim" />
     <Culture name="siroyaarna" faction="Haradrim" />
   </Heritage>
-  <Heritage name="heritage_kirani" faction="Khand">
-    <Culture name="mulamburil" faction="Khand" />
-    <Culture name="sederi" faction="Khand" />
-    <Culture name="kirani" faction="Easterling Raiders" />
+  <Heritage name="heritage_kirani" faction="Haradrim">
+    <Culture name="mulamburil" faction="Variags" />
+    <Culture name="sederi" faction="Haradrim" />
+    <Culture name="kirani" faction="Haradrim" />
     <Culture name="usakani" faction="Haradrim" />
     <Culture name="adasari" faction="Haradrim" />
     <Culture name="kiradunai" faction="Haradrim" />
@@ -568,18 +564,18 @@
     <Culture name="koronandi" faction="Khand" />
     <Culture name="usamag" faction="Khand" />
   </Heritage>
-  <Heritage name="heritage_magri" faction="Haradrim">
-    <Culture name="kuyumag" faction="Haradrim" />
+  <Heritage name="heritage_magri" faction="Imladris">
+    <Culture name="kuyumag" faction="Variags" />
     <Culture name="mag" faction="Umbar" />
-    <Culture name="tumag" faction="Haradrim" />
-    <Culture name="drelmag" faction="Haradrim" />
-    <Culture name="pelmag" faction="Haradrim" />
-    <Culture name="usamag" faction="Haradrim" />
+    <Culture name="tumag" faction="Variags" />
+    <Culture name="drelmag" faction="Variags" />
+    <Culture name="pelmag" faction="Variags" />
+    <Culture name="usamag" faction="Variags" />
   </Heritage>
-  <Heritage name="heritage_harshandatt" faction="Balchoth">
-    <Culture name="muranian" faction="Balchoth" />
-    <Culture name="muranhyan" faction="Balchoth" />
-    <Culture name="nuarian" faction="Balchoth" />
+  <Heritage name="heritage_harshandatt" faction="Haradrim">
+    <Culture name="muranian" faction="Haradrim" />
+    <Culture name="muranhyan" faction="Haradrim" />
+    <Culture name="nuarian" faction="Haradrim" />
   </Heritage>
   <Heritage name="heritage_khazad" faction="Khazad-dum">
     <Culture name="blacklocks" faction="Khazad" />
@@ -645,9 +641,9 @@
     <Culture name="stonelock" faction="Easterling Raiders" />
   </Heritage>
   <Heritage name="heritage_mumakani" faction="Haradrim">
-    <Culture name="akanali" faction="Default" />
-    <Culture name="inkamakil" faction="Default" />
-    <Culture name="mulamburil" faction="Default" />
+    <Culture name="akanali" faction="Haradrim" />
+    <Culture name="inkamakil" faction="Haradrim" />
+    <Culture name="mulamburil" faction="Haradrim" />
     <Culture name="mumakanil" faction="Haradrim" />
     <Culture name="nafarati" faction="Haradrim" />
     <Culture name="shennakati" faction="Haradrim" />
@@ -671,17 +667,16 @@
     <Culture name="Rhurim" faction="Rhurim" />
   </Heritage>
   <Heritage name="heritage_geshan" faction="Khand">
-    <Culture name="dusherae" faction="Default" />
-    <Culture name="geshani" faction="Default" />
-    <Culture name="sharaeke" faction="Default" />
-    <Culture name="tuktani" faction="Default" />
+    <Culture name="dusherae" faction="Khand" />
+    <Culture name="geshani" faction="Khand" />
+    <Culture name="sharaeke" faction="Khand" />
+    <Culture name="tuktani" faction="Khand" />
   </Heritage>
-  <Heritage name="heritage_hathorim" faction="Haradrim">
-    <Culture name="hathorim" faction="Haradrim" />
-    <Culture name="Haerim" faction="Haerim" />
+  <Heritage name="heritage_hathorim" faction="Haerim">
+    <Culture name="hathorim" faction="Haerim" />
   </Heritage>
-  <Heritage name="heritage_sare" faction="Variags">
-    <Culture name="sare" faction="Variags" />
-    <Culture name="sengani" faction="Variags" />
+  <Heritage name="heritage_sare" faction="Haradrim">
+    <Culture name="sare" faction="Haradrim" />
+    <Culture name="sengani" faction="Haradrim" />
   </Heritage>
 </Cultures>
