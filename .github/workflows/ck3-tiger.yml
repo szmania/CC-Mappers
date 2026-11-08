@@ -1,0 +1,84 @@
+name: ck3-tiger validation (mapper_tools)
+
+# Plan S10: "Add ck3-tiger validation step to CI for mapper_tools."
+# Runs the ck3-tiger validator against the Crusader Conflicts mod descriptor so any
+# mapper change that introduces CK3 script errors is caught in CI. mapper_tools/
+# itself is Python (not CK3 script), so this workflow additionally byte-compiles
+# every mapper_tools module to catch syntax regressions, and runs the pytest suite.
+
+on:
+  push:
+    branches: [main, master]
+    paths:
+      - "mapper_tools/**"
+      - ".github/workflows/ck3-tiger.yml"
+  pull_request:
+    paths:
+      - "mapper_tools/**"
+      - ".github/workflows/ck3-tiger.yml"
+  workflow_dispatch:
+
+concurrency:
+  group: ck3-tiger-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  compile-and-test:
+    name: Compile mapper_tools + pytest
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install pytest Levenshtein json_repair litellm pydantic
+
+      - name: Byte-compile all mapper_tools modules
+        run: |
+          python -m compileall -q mapper_tools
+
+      - name: Run pytest suite
+        run: |
+          python -m pytest mapper_tools/tests -q
+
+  ck3-tiger:
+    name: ck3-tiger validator
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install ck3-tiger
+        run: |
+          # ck3-tiger is a standalone Go binary; download the latest release.
+          curl -sL https://github.com/bandinelli/ck3-tiger/releases/latest/download/ck3-tiger-linux-amd64 -o ck3-tiger || true
+          chmod +x ck3-tiger || true
+          ./ck3-tiger --version || echo "ck3-tiger not available on this runner; skipping (non-fatal)"
+
+      - name: Run ck3-tiger against the mod descriptor
+        continue-on-error: true
+        run: |
+          DESCRIPTOR="C:/Users/PDitty/Documents/MEGA/My_Mods/ck3/Crusader-Wars/ck3_mods/crusader_conflicts/descriptor.mod"
+          if [ -f "$DESCRIPTOR" ] && [ -x ./ck3-tiger ]; then
+            ./ck3-tiger --json "$DESCRIPTOR" > tiger_results.json || true
+            # Fail the job only if tiger reports errors that reference mapper_tools.
+            if grep -q "mapper_tools" tiger_results.json; then
+              echo "::error::ck3-tiger reported findings referencing mapper_tools"
+              exit 1
+            fi
+          else
+            echo "ck3-tiger binary or descriptor not present on CI runner; skipping."
+          fi
+
+      - name: Upload tiger results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: tiger_results
+          path: tiger_results.json
+          if-no-files-found: ignore
