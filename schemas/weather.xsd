@@ -7,9 +7,9 @@
 
   <xs:complexType name="WeatherType">
     <xs:sequence>
-      <xs:element name="Environment" type="EnvironmentType" maxOccurs="unbounded" />
+      <xs:element name="Environment" type="EnvironmentType" minOccurs="1" maxOccurs="unbounded" />
     </xs:sequence>
-    <xs:attribute name="type" use="required">
+    <xs:attribute name="ck3_type" use="required">
       <xs:simpleType>
         <xs:restriction base="xs:string">
           <xs:enumeration value="fall" />
@@ -24,10 +24,24 @@
     </xs:attribute>
   </xs:complexType>
 
+  <xs:complexType name="DayNightType">
+    <xs:sequence>
+      <xs:element name="WeatherType" type="WeatherType" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="LandSeaType">
+    <xs:sequence>
+      <xs:element name="Day" type="DayNightType" minOccurs="0" maxOccurs="1" />
+      <xs:element name="Night" type="DayNightType" minOccurs="0" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+
   <xs:element name="Weather">
     <xs:complexType>
       <xs:sequence>
-        <xs:element name="WeatherType" type="WeatherType" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="Land" type="LandSeaType" minOccurs="0" maxOccurs="1" />
+        <xs:element name="Sea" type="LandSeaType" minOccurs="0" maxOccurs="1" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
