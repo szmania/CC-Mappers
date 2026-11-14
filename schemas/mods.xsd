@@ -9,6 +9,7 @@
             </xs:choice>
             <xs:attribute name="playthrough_screen_name" type="xs:string" use="optional"/>
             <xs:attribute name="playthrough_screen_name_short" type="xs:string" use="optional"/>
+            <xs:attribute name="playthrough_tooltip" type="xs:string" use="optional"/>
             <xs:attribute name="ck3_mod_names" type="xs:string" use="optional"/>
             <xs:attribute name="ck3_mod_file_names" type="xs:string" use="optional"/>
         </xs:complexType>
