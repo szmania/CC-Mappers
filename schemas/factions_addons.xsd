@@ -38,6 +38,7 @@
                   <xs:attribute name="percentage" type="xs:integer" use="required"/>
                   <xs:attribute name="max" type="xs:string" use="required"/>
                   <xs:attribute name="level" type="xs:integer" use="required"/>
+                  <xs:attribute name="naval_key" type="xs:string" use="optional"/>
                   <xs:attribute name="num_guns" type="xs:integer" use="optional"/>
                 </xs:complexType>
               </xs:element>
@@ -54,19 +55,10 @@
               </xs:element>
               <xs:element name="Naval" minOccurs="0" maxOccurs="unbounded">
                 <xs:complexType>
-                  <xs:attribute name="type" use="required">
-                    <xs:simpleType>
-                      <xs:restriction base="xs:string">
-                        <xs:enumeration value="warship_light"/>
-                        <xs:enumeration value="warship_medium"/>
-                        <xs:enumeration value="warship_heavy"/>
-                      </xs:restriction>
-                    </xs:simpleType>
-                  </xs:attribute>
+                  <xs:attribute name="type" type="xs:string" use="required"/>
                   <xs:attribute name="category" type="xs:string" use="required"/>
                   <xs:attribute name="Class" type="xs:string" use="required"/>
                   <xs:attribute name="naval_key" type="xs:string" use="required"/>
-                  <xs:attribute name="percentage" type="xs:integer" use="required"/>
                 </xs:complexType>
               </xs:element>
             </xs:choice>
